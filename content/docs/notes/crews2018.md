@@ -31,3 +31,4 @@ The mean field {{< katex >}}\langle \vec E \rangle{{< /katex >}} is responsible 
 
 Plasma is seen to become collisionless as the temperature becomes high or the plasma becomes more rarified.
 
+Maybe this will publish...
