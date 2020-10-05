@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduction on My Notes</title>
+    <link>https://peppyhare.github.io/r/</link>
+    <description>Recent content in Introduction on My Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://peppyhare.github.io/r/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>With ToC</title>
+      <link>https://peppyhare.github.io/r/docs/example/table-of-contents/with-toc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peppyhare.github.io/r/docs/example/table-of-contents/with-toc/</guid>
+      <description>Caput vino delphine in tamen vias #  Cognita laeva illo fracta #  Lorem markdownum pavent auras, surgit nunc cingentibus libet Laomedonque que est. Pastor An arbor filia foedat, ne fugit aliter, per. Helicona illas et callida neptem est Oresitrophos caput, dentibus est venit. Tenet reddite famuli praesentem fortibus, quaeque vis foret si frondes gelidos gravidae circumtulit inpulit armenta nativum.
+ Te at cruciabere vides rubentis manebo Maturuit in praetemptat ruborem ignara postquam habitasse Subitarum supplevit quoque fontesque venabula spretis modo Montis tot est mali quasque gravis Quinquennem domus arsit ipse Pellem turis pugnabant locavit  Natus quaerere #  Pectora et sine mulcere, coniuge dum tincta incurvae.</description>
+    </item>
+    
+    <item>
+      <title>Without ToC</title>
+      <link>https://peppyhare.github.io/r/docs/example/table-of-contents/without-toc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peppyhare.github.io/r/docs/example/table-of-contents/without-toc/</guid>
+      <description>At me ipso nepotibus nunc celebratior genus #  Tanto oblite #  Lorem markdownum pectora novis patenti igne sua opus aurae feras materiaque illic demersit imago et aristas questaque posset. Vomit quoque suo inhaesuro clara. Esse cumque, per referri triste. Ut exponit solisque communis in tendens vincetis agisque iamque huic bene ante vetat omina Thebae rates. Aeacus servat admonitu concidit, ad resimas vultus et rugas vultu dignamque Siphnon.
+Quam iugulum regia simulacra, plus meruit humo pecorumque haesit, ab discedunt dixit: ritu pharetramque.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://peppyhare.github.io/r/docs/example/collapsed/3rd-level/4th-level/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peppyhare.github.io/r/docs/example/collapsed/3rd-level/4th-level/</guid>
+      <description>4th Level of Menu #  Caesorum illa tu sentit micat vestes papyriferi #  Inde aderam facti; Theseus vis de tauri illa peream. Oculos uberaque non regisque vobis cursuque, opus venit quam vulnera. Et maiora necemque, lege modo; gestanda nitidi, vero? Dum ne pectoraque testantur.
+Venasque repulsa Samos qui, exspectatum eram animosque hinc, aut manes, Assyrii. Cupiens auctoribus pariter rubet, profana magni super nocens. Vos ius sibilat inpar turba visae iusto!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://peppyhare.github.io/r/docs/example/hidden/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peppyhare.github.io/r/docs/example/hidden/</guid>
+      <description>This page is hidden in menu #  Quondam non pater est dignior ille Eurotas #  Latent te facies #  Lorem markdownum arma ignoscas vocavit quoque ille texit mandata mentis ultimus, frementes, qui in vel. Hippotades Peleus pennas conscia cuiquam Caeneus quas.
+ Pater demittere evincitque reddunt Maxime adhuc pressit huc Danaas quid freta Soror ego Luctus linguam saxa ultroque prior Tatiumque inquit Saepe liquitur subita superata dederat Anius sudor  Cum honorum Latona #  O fallor in sustinui iussorum equidem.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://peppyhare.github.io/r/docs/shortcodes/buttons/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peppyhare.github.io/r/docs/shortcodes/buttons/</guid>
+      <description>Buttons #  Buttons are styled links that can lead to local page or external link.
+Example #  {{&amp;lt; button relref=&amp;#34;/&amp;#34; [class=&amp;#34;...&amp;#34;] &amp;gt;}}Get Home{{&amp;lt; /button &amp;gt;}} {{&amp;lt; button href=&amp;#34;https://github.com/alex-shpak/hugo-book&amp;#34; &amp;gt;}}Contribute{{&amp;lt; /button &amp;gt;}}  Get Home  Contribute  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://peppyhare.github.io/r/docs/shortcodes/columns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peppyhare.github.io/r/docs/shortcodes/columns/</guid>
+      <description>Columns #  Columns help organize shorter pieces of content horizontally for readability.
+{{&amp;lt; columns &amp;gt;}} &amp;lt;!-- begin columns block --&amp;gt; # Left Content Lorem markdownum insigne... &amp;lt;---&amp;gt; &amp;lt;!-- magic separator, between columns --&amp;gt; # Mid Content Lorem markdownum insigne... &amp;lt;---&amp;gt; &amp;lt;!-- magic separator, between columns --&amp;gt; # Right Content Lorem markdownum insigne... {{&amp;lt; /columns &amp;gt;}} Example #  Left Content Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://peppyhare.github.io/r/docs/shortcodes/details/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peppyhare.github.io/r/docs/shortcodes/details/</guid>
+      <description>Details #  Details shortcode is a helper for details html5 element. It is going to replace expand shortcode.
+Example #  {{&amp;lt; details &amp;#34;Title&amp;#34; [open] &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /details &amp;gt;}} {{&amp;lt; details title=&amp;#34;Title&amp;#34; open=true &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /details &amp;gt;}} Title Markdown content Lorem markdownum insigne&amp;hellip;   </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://peppyhare.github.io/r/docs/shortcodes/expand/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peppyhare.github.io/r/docs/shortcodes/expand/</guid>
+      <description>Expand #  Expand shortcode can help to decrease clutter on screen by hiding part of text. Expand content by clicking on it.
+Example #  Default #  {{&amp;lt; expand &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /expand &amp;gt;}}   Expand ↕  Markdown content Lorem markdownum insigne&amp;hellip;    With Custom Label #  {{&amp;lt; expand &amp;#34;Custom Label&amp;#34; &amp;#34;...&amp;#34; &amp;gt;}} ## Markdown content Lorem markdownum insigne.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://peppyhare.github.io/r/docs/shortcodes/hints/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peppyhare.github.io/r/docs/shortcodes/hints/</guid>
+      <description>Hints #  Hint shortcode can be used as hint/alerts/notification block.
+There are 3 colors to choose: info, warning and danger.
+{{&amp;lt; hint [info|warning|danger] &amp;gt;}} **Markdown content** Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa {{&amp;lt; /hint &amp;gt;}} Example #  Markdown content
+Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa  Markdown content</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://peppyhare.github.io/r/docs/shortcodes/katex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peppyhare.github.io/r/docs/shortcodes/katex/</guid>
+      <description>KaTeX #  KaTeX shortcode let you render math typesetting in markdown document. See KaTeX
+Example #  {{&amp;lt; katex [display] [class=&amp;#34;text-center&amp;#34;] &amp;gt;}} f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi {{&amp;lt; /katex &amp;gt;}}     document.addEventListener(&#34;DOMContentLoaded&#34;, function() { renderMathInElement(document.body, { delimiters: [ {left: &#34;$$&#34;, right: &#34;$$&#34;, display: true}, {left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true}, {left: &#34;$&#34;, right: &#34;$&#34;, display: false}, {left: &#34;\\(&#34;, right: &#34;\\)&#34;, display: false} ], macros: {  &amp;quot;\\lcm&amp;quot;: &amp;quot;\\mathop{\\mathrm{lcm}}&amp;quot;, &amp;quot;\\sen&amp;quot;: &#39;\\text{sen}\\,&#39;, &amp;quot;\\dd&amp;quot;: &amp;quot;\\mathop{\\mathrm{d} #1}&amp;quot;, &amp;quot;\\abs&amp;quot;: &amp;quot;\\lvert #1 \\rvert&amp;quot;, &amp;quot;\\dd&amp;quot;: &amp;quot;\\text{d}&amp;quot;, &amp;quot;\\cross&amp;quot; : &amp;quot;\\times&amp;quot;, &amp;quot;\\pdv&amp;quot;: &amp;quot;\\frac{\\partial #1}{\\partial #2}&amp;quot;, &amp;quot;\curl&amp;quot;: &amp;quot;\\nabla \\cross #1&amp;quot;, &amp;quot;\\vu&amp;quot;: &amp;quot;\\mathbf{\\hat{#1}}&amp;quot;, &amp;quot;\\dot&amp;quot;: &amp;quot;\\boldsymbol\\cdot&amp;quot;, &amp;quot;\\vdot&amp;quot; : &amp;quot;\\dot&amp;quot;, &amp;quot;\\div&amp;quot;: &amp;quot;\\nabla \\dot #1&amp;quot;, &amp;quot;\\grad&amp;quot; : &amp;quot;\\nabla&amp;quot;, &amp;quot;\\dv&amp;quot; : &amp;quot;\\frac{d\\,#1}{d\\,#2}&amp;quot;, &amp;quot;\\gr&amp;quot; : &amp;quot;\\gamma&amp;quot;, &amp;quot;\\vec&amp;quot; : &amp;quot;\\mathbf{#1}&amp;quot;, &amp;quot;\\tagl&amp;quot; : &amp;quot;\\tag{#1}&amp;quot;, &amp;quot;\\eqref&amp;quot; : &amp;quot;(#1)&amp;quot;, &amp;quot;\\laplacian&amp;quot; : &amp;quot;\\mathbf{\\nabla ^2}&amp;quot;, &amp;quot;\\label&amp;quot; : &amp;quot;{}&amp;quot;, &amp;quot;\\negadelta&amp;quot; : &amp;quot;\\nabla&amp;quot;, }  }); }); [f(x) = \int_{-\infty}^\infty\hat f(\xi),e^{2 \pi i \xi x},d\xi]</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://peppyhare.github.io/r/docs/shortcodes/mermaid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peppyhare.github.io/r/docs/shortcodes/mermaid/</guid>
+      <description>Mermaid Chart #   Mermaid is library for generating svg charts and diagrams from text.
+Example #  {{&amp;lt; mermaid [class=&amp;#34;text-center&amp;#34;]&amp;gt;}} sequenceDiagram Alice-&amp;gt;&amp;gt;Bob: Hello Bob, how are you? alt is sick Bob-&amp;gt;&amp;gt;Alice: Not so good :( else is well Bob-&amp;gt;&amp;gt;Alice: Feeling fresh like a daisy end opt Extra response Bob-&amp;gt;&amp;gt;Alice: Thanks for asking end {{&amp;lt; /mermaid &amp;gt;}}    mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxWidth&#34;:true }, &#34;theme&#34;: &#34;default&#34; } ) sequenceDiagram Alice-Bob: Hello Bob, how are you?</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://peppyhare.github.io/r/docs/shortcodes/section/page1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peppyhare.github.io/r/docs/shortcodes/section/page1/</guid>
+      <description>Page 1 #  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://peppyhare.github.io/r/docs/shortcodes/section/page2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peppyhare.github.io/r/docs/shortcodes/section/page2/</guid>
+      <description>Page 2 #  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://peppyhare.github.io/r/docs/shortcodes/tabs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peppyhare.github.io/r/docs/shortcodes/tabs/</guid>
+      <description>Tabs #  Tabs let you organize content by context, for example installation instructions for each supported platform.
+{{&amp;lt; tabs &amp;#34;uniqueid&amp;#34; &amp;gt;}} {{&amp;lt; tab &amp;#34;MacOS&amp;#34; &amp;gt;}} # MacOS Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab &amp;#34;Linux&amp;#34; &amp;gt;}} # Linux Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab &amp;#34;Windows&amp;#34; &amp;gt;}} # Windows Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; /tabs &amp;gt;}} Example #  MacOS MacOS This is tab MacOS content.
+Lorem markdownum insigne. Olympo signis Delphis!</description>
+    </item>
+    
+    <item>
+      <title>Crews (2018)</title>
+      <link>https://peppyhare.github.io/r/docs/notes/crews2018/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peppyhare.github.io/r/docs/notes/crews2018/</guid>
+      <description>Development of a Collisionless Plasma Kinetic Solver and an Investigation of One-Dimensional Plasma Waves and Instabilities #  Shielded potential of a test electron:
+  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { renderMathInElement(document.body, { delimiters: [ {left: &#34;$$&#34;, right: &#34;$$&#34;, display: true}, {left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true}, {left: &#34;$&#34;, right: &#34;$&#34;, display: false}, {left: &#34;\\(&#34;, right: &#34;\\)&#34;, display: false} ], macros: { &#34;\\lcm&#34;: &#34;\\mathop{\\mathrm{lcm}}&#34;, &#34;\\sen&#34;: &#39;\\text{sen}\\,&#39;, &#34;\\dd&#34;: &#34;\\mathop{\\mathrm{d} #1}&#34;, &#34;\\abs&#34;: &#34;\\lvert #1 \\rvert&#34;</description>
+    </item>
+    
+  </channel>
+</rss>

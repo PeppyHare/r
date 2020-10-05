@@ -3,6 +3,7 @@
 baseURL: https://peppyhare.github.io/r/
 title: My Notes
 theme: hugo-book
+publishDir: docs
 
 # Book configuration
 disablePathToLower: true
