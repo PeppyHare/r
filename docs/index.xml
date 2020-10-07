@@ -4,160 +4,135 @@
     <title>Introduction on My Notes</title>
     <link>https://peppyhare.github.io/r/</link>
     <description>Recent content in Introduction on My Notes</description>
-    <generator>Hugo -- gohugo.io</generator>
-    
-	<atom:link href="https://peppyhare.github.io/r/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://peppyhare.github.io/r/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>With ToC</title>
-      <link>https://peppyhare.github.io/r/docs/example/table-of-contents/with-toc/</link>
+      <title>Syllabus</title>
+      <link>https://peppyhare.github.io/r/notes/UWAA558/01-syllabus/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://peppyhare.github.io/r/docs/example/table-of-contents/with-toc/</guid>
-      <description>Caput vino delphine in tamen vias #  Cognita laeva illo fracta #  Lorem markdownum pavent auras, surgit nunc cingentibus libet Laomedonque que est. Pastor An arbor filia foedat, ne fugit aliter, per. Helicona illas et callida neptem est Oresitrophos caput, dentibus est venit. Tenet reddite famuli praesentem fortibus, quaeque vis foret si frondes gelidos gravidae circumtulit inpulit armenta nativum.
- Te at cruciabere vides rubentis manebo Maturuit in praetemptat ruborem ignara postquam habitasse Subitarum supplevit quoque fontesque venabula spretis modo Montis tot est mali quasque gravis Quinquennem domus arsit ipse Pellem turis pugnabant locavit  Natus quaerere #  Pectora et sine mulcere, coniuge dum tincta incurvae.</description>
+      <guid>https://peppyhare.github.io/r/notes/UWAA558/01-syllabus/</guid>
+      <description>Syllabus #  The course topics planned for this section are (in rough order):
+Particle Model, Boltzmann-Maxwell Model, Magnetohydrodynamic (MHD) Model, Region of Validity, Common Assumptions, Ideal MHD Model, General Properties (Equilibrium, Boundary Conditions, Conservation Laws, &amp;ldquo;Frozen-In&amp;rdquo; Flux)
+Ideal MHD Equilibrium, Virial Theorem, Magnetic Flux Surfaces
+One-Dimensional Equilibria, Theta-Pinch, Z-Pinch, Screw-Pinch, Safety Factor q
+Two-Dimensional Equilibria, Toroidal Geometry, Grad-Shafranov Equation, Closed Flux Surfaces, Safety Factor q, Magnetic Shear, Magnetic Well, Shafranov Shift, Spheromak, Reversed Field Pinch (RFP), Tokamaks, Stellarators (Elmo Bumpy Torus)</description>
     </item>
     
     <item>
-      <title>Without ToC</title>
-      <link>https://peppyhare.github.io/r/docs/example/table-of-contents/without-toc/</link>
+      <title>Plasma Models</title>
+      <link>https://peppyhare.github.io/r/notes/UWAA558/02-plasma-models/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://peppyhare.github.io/r/docs/example/table-of-contents/without-toc/</guid>
-      <description>At me ipso nepotibus nunc celebratior genus #  Tanto oblite #  Lorem markdownum pectora novis patenti igne sua opus aurae feras materiaque illic demersit imago et aristas questaque posset. Vomit quoque suo inhaesuro clara. Esse cumque, per referri triste. Ut exponit solisque communis in tendens vincetis agisque iamque huic bene ante vetat omina Thebae rates. Aeacus servat admonitu concidit, ad resimas vultus et rugas vultu dignamque Siphnon.
-Quam iugulum regia simulacra, plus meruit humo pecorumque haesit, ab discedunt dixit: ritu pharetramque.</description>
+      <guid>https://peppyhare.github.io/r/notes/UWAA558/02-plasma-models/</guid>
+      <description>Plasma Models #  Working towards MHD #  Let&amp;rsquo;s start from a full-particle description with the goal of reaching a continuum description (kinetic model). Then, we&amp;rsquo;ll look at the forces on the separate species and form a multi-fluid model, finally simplifying to a single-fluid MHD model.
+The most important question to ask ourselves is &amp;ldquo;when is this model going to be useful?&amp;rdquo; The MHD model is the mathematical model for magnetized plasmas that are treated as a fluid.</description>
     </item>
     
     <item>
-      <title></title>
-      <link>https://peppyhare.github.io/r/docs/example/collapsed/3rd-level/4th-level/</link>
+      <title>Plasma Fluid Model</title>
+      <link>https://peppyhare.github.io/r/notes/UWAA558/03-plasma-fluid-model/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://peppyhare.github.io/r/docs/example/collapsed/3rd-level/4th-level/</guid>
-      <description>4th Level of Menu #  Caesorum illa tu sentit micat vestes papyriferi #  Inde aderam facti; Theseus vis de tauri illa peream. Oculos uberaque non regisque vobis cursuque, opus venit quam vulnera. Et maiora necemque, lege modo; gestanda nitidi, vero? Dum ne pectoraque testantur.
-Venasque repulsa Samos qui, exspectatum eram animosque hinc, aut manes, Assyrii. Cupiens auctoribus pariter rubet, profana magni super nocens. Vos ius sibilat inpar turba visae iusto!</description>
+      <guid>https://peppyhare.github.io/r/notes/UWAA558/03-plasma-fluid-model/</guid>
+      <description>Plasma Fluid Model #  We take velocity moments of each of the pieces of the kinetic model:
+ distribution function,   \( f_\alpha \)   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;\\(&#34;, right: &#34;\\)&#34;, display: false }], macros: { &#34;\\lcm&#34;: &#34;</description>
     </item>
     
     <item>
-      <title></title>
-      <link>https://peppyhare.github.io/r/docs/example/hidden/</link>
+      <title>Two-Fluid Plasma Model</title>
+      <link>https://peppyhare.github.io/r/notes/UWAA558/04-two-fluid-plasma-model/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://peppyhare.github.io/r/docs/example/hidden/</guid>
-      <description>This page is hidden in menu #  Quondam non pater est dignior ille Eurotas #  Latent te facies #  Lorem markdownum arma ignoscas vocavit quoque ille texit mandata mentis ultimus, frementes, qui in vel. Hippotades Peleus pennas conscia cuiquam Caeneus quas.
- Pater demittere evincitque reddunt Maxime adhuc pressit huc Danaas quid freta Soror ego Luctus linguam saxa ultroque prior Tatiumque inquit Saepe liquitur subita superata dederat Anius sudor  Cum honorum Latona #  O fallor in sustinui iussorum equidem.</description>
+      <guid>https://peppyhare.github.io/r/notes/UWAA558/04-two-fluid-plasma-model/</guid>
+      <description>Two-Fluid Plasma Model (ions-electrons) #  Restricting our multi-species fluid model to ions and electrons, what can we say about wave behavior in a magnetized 2-fluid plasma? Let&amp;rsquo;s start with a cold plasma approximation (   \( p = 0 \)   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;</description>
     </item>
     
     <item>
-      <title></title>
-      <link>https://peppyhare.github.io/r/docs/shortcodes/buttons/</link>
+      <title>Magnetohydrodynamic (MHD) Model</title>
+      <link>https://peppyhare.github.io/r/notes/UWAA558/05-mhd-model/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://peppyhare.github.io/r/docs/shortcodes/buttons/</guid>
-      <description>Buttons #  Buttons are styled links that can lead to local page or external link.
-Example #  {{&amp;lt; button relref=&amp;#34;/&amp;#34; [class=&amp;#34;...&amp;#34;] &amp;gt;}}Get Home{{&amp;lt; /button &amp;gt;}} {{&amp;lt; button href=&amp;#34;https://github.com/alex-shpak/hugo-book&amp;#34; &amp;gt;}}Contribute{{&amp;lt; /button &amp;gt;}}  Get Home  Contribute  </description>
+      <guid>https://peppyhare.github.io/r/notes/UWAA558/05-mhd-model/</guid>
+      <description>Magnetohydrodynamic (MHD) Model #  Applying approximations to the two-fluid plasma model will allow us to arrive at a single-fluid (center-of-mass) description. The result is the ideal magnetohydrodynamic model (MHD).
+First, define the MHD variables:
+  \[\text{mass density:} \qquad \rho = n_i m_i &amp;#43; n_i m_e\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;</description>
     </item>
     
     <item>
-      <title></title>
-      <link>https://peppyhare.github.io/r/docs/shortcodes/columns/</link>
+      <title>Boundary Conditions</title>
+      <link>https://peppyhare.github.io/r/notes/UWAA558/06-boundary-conditions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://peppyhare.github.io/r/docs/shortcodes/columns/</guid>
-      <description>Columns #  Columns help organize shorter pieces of content horizontally for readability.
-{{&amp;lt; columns &amp;gt;}} &amp;lt;!-- begin columns block --&amp;gt; # Left Content Lorem markdownum insigne... &amp;lt;---&amp;gt; &amp;lt;!-- magic separator, between columns --&amp;gt; # Mid Content Lorem markdownum insigne... &amp;lt;---&amp;gt; &amp;lt;!-- magic separator, between columns --&amp;gt; # Right Content Lorem markdownum insigne... {{&amp;lt; /columns &amp;gt;}} Example #  Left Content Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter!</description>
+      <guid>https://peppyhare.github.io/r/notes/UWAA558/06-boundary-conditions/</guid>
+      <description>Boundary Conditions #  Mathematically, a well-posed problem requires both governing equations and a complete set of boundary conditions (the Cauchy data for the problem). The most common boundary conditions we use are perfectly conducting walls (flux surfaces) or a vacuum region.
+Perfectly Conducting Wall #  For the case where the plasma extends out to a perfectly conducting (impermeable) wall. Perfectly conducting walls do not support tangential electric field:</description>
     </item>
     
     <item>
-      <title></title>
-      <link>https://peppyhare.github.io/r/docs/shortcodes/details/</link>
+      <title>Equilibrium for Fusion</title>
+      <link>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://peppyhare.github.io/r/docs/shortcodes/details/</guid>
-      <description>Details #  Details shortcode is a helper for details html5 element. It is going to replace expand shortcode.
-Example #  {{&amp;lt; details &amp;#34;Title&amp;#34; [open] &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /details &amp;gt;}} {{&amp;lt; details title=&amp;#34;Title&amp;#34; open=true &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /details &amp;gt;}} Title Markdown content Lorem markdownum insigne&amp;hellip;   </description>
+      <guid>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</guid>
+      <description>Equilibrium for Fusion (   \( \beta \)   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;\\(&#34;, right: &#34;\\)&#34;, display: false }], macros: { &#34;\\lcm&#34;: &#34;\\mathop{\\mathrm{lcm}}&#34;, &#34;\\sen&#34;: &#39;\\text{sen}\\,&#39;, &#34;\\dd&#34;: &#34;\\mathop{\\mathrm{d} #1}&#34;, &#34;\\abs&#34;: &#34;\\lvert #1 \\rvert&#34;, &#34;\\dd&#34;: &#34;\\text{d}&#34;, &#34;\\cross&#34;: &#34;\\times&#34;, &#34;\\pdv&#34;: &#34;\\frac{\\partial #1}{\\partial #2}&#34;</description>
     </item>
     
     <item>
-      <title></title>
-      <link>https://peppyhare.github.io/r/docs/shortcodes/expand/</link>
+      <title>1-D Equilibria</title>
+      <link>https://peppyhare.github.io/r/notes/UWAA558/08-1d-equilibria/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://peppyhare.github.io/r/docs/shortcodes/expand/</guid>
-      <description>Expand #  Expand shortcode can help to decrease clutter on screen by hiding part of text. Expand content by clicking on it.
-Example #  Default #  {{&amp;lt; expand &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /expand &amp;gt;}}   Expand ↕  Markdown content Lorem markdownum insigne&amp;hellip;    With Custom Label #  {{&amp;lt; expand &amp;#34;Custom Label&amp;#34; &amp;#34;...&amp;#34; &amp;gt;}} ## Markdown content Lorem markdownum insigne.</description>
+      <guid>https://peppyhare.github.io/r/notes/UWAA558/08-1d-equilibria/</guid>
+      <description>1-Dimensional Equilibria #  The   \( \theta \)   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;\\(&#34;, right: &#34;\\)&#34;, display: false }], macros: { &#34;\\lcm&#34;: &#34;\\mathop{\\mathrm{lcm}}&#34;, &#34;\\sen&#34;: &#39;\\text{sen}\\,&#39;, &#34;\\dd&#34;: &#34;\\mathop{\\mathrm{d} #1}&#34;, &#34;\\abs&#34;: &#34;\\lvert #1 \\rvert&#34;, &#34;\\dd&#34;: &#34;\\text{d}&#34;, &#34;\\cross&#34;: &#34;\\times&#34;, &#34;\\pdv&#34;: &#34;\\frac{\\partial #1}{\\partial #2}&#34;</description>
     </item>
     
     <item>
-      <title></title>
-      <link>https://peppyhare.github.io/r/docs/shortcodes/hints/</link>
+      <title>2D Equilibria</title>
+      <link>https://peppyhare.github.io/r/notes/UWAA558/09-2d-equilibria/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://peppyhare.github.io/r/docs/shortcodes/hints/</guid>
-      <description>Hints #  Hint shortcode can be used as hint/alerts/notification block.
-There are 3 colors to choose: info, warning and danger.
-{{&amp;lt; hint [info|warning|danger] &amp;gt;}} **Markdown content** Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa {{&amp;lt; /hint &amp;gt;}} Example #  Markdown content
-Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa  Markdown content</description>
+      <guid>https://peppyhare.github.io/r/notes/UWAA558/09-2d-equilibria/</guid>
+      <description>2D Equilibria #  Let&amp;rsquo;s connect the ends of our 1D equilibria. Doing so is what gives us inherently toroidal configurations. From the 1-dimensional picture:
+  \[\vec j \cross \vec B = j_\theta B_z - j_z B_\theta \\ = \grad p = \dv{p}{r}\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;</description>
     </item>
     
     <item>
-      <title></title>
-      <link>https://peppyhare.github.io/r/docs/shortcodes/katex/</link>
+      <title>Equilibrium of 3D Configurations</title>
+      <link>https://peppyhare.github.io/r/notes/UWAA558/10-equilibrium-of-3d-configurations/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://peppyhare.github.io/r/docs/shortcodes/katex/</guid>
-      <description>KaTeX #  KaTeX shortcode let you render math typesetting in markdown document. See KaTeX
-Example #  {{&amp;lt; katex [display] [class=&amp;#34;text-center&amp;#34;] &amp;gt;}} f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi {{&amp;lt; /katex &amp;gt;}}     document.addEventListener(&#34;DOMContentLoaded&#34;, function() { renderMathInElement(document.body, { delimiters: [ {left: &#34;$$&#34;, right: &#34;$$&#34;, display: true}, {left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true}, {left: &#34;$&#34;, right: &#34;$&#34;, display: false}, {left: &#34;\\(&#34;, right: &#34;\\)&#34;, display: false} ], macros: {  &amp;quot;\\lcm&amp;quot;: &amp;quot;\\mathop{\\mathrm{lcm}}&amp;quot;, &amp;quot;\\sen&amp;quot;: &#39;\\text{sen}\\,&#39;, &amp;quot;\\dd&amp;quot;: &amp;quot;\\mathop{\\mathrm{d} #1}&amp;quot;, &amp;quot;\\abs&amp;quot;: &amp;quot;\\lvert #1 \\rvert&amp;quot;, &amp;quot;\\dd&amp;quot;: &amp;quot;\\text{d}&amp;quot;, &amp;quot;\\cross&amp;quot; : &amp;quot;\\times&amp;quot;, &amp;quot;\\pdv&amp;quot;: &amp;quot;\\frac{\\partial #1}{\\partial #2}&amp;quot;, &amp;quot;\curl&amp;quot;: &amp;quot;\\nabla \\cross #1&amp;quot;, &amp;quot;\\vu&amp;quot;: &amp;quot;\\mathbf{\\hat{#1}}&amp;quot;, &amp;quot;\\dot&amp;quot;: &amp;quot;\\boldsymbol\\cdot&amp;quot;, &amp;quot;\\vdot&amp;quot; : &amp;quot;\\dot&amp;quot;, &amp;quot;\\div&amp;quot;: &amp;quot;\\nabla \\dot #1&amp;quot;, &amp;quot;\\grad&amp;quot; : &amp;quot;\\nabla&amp;quot;, &amp;quot;\\dv&amp;quot; : &amp;quot;\\frac{d\\,#1}{d\\,#2}&amp;quot;, &amp;quot;\\gr&amp;quot; : &amp;quot;\\gamma&amp;quot;, &amp;quot;\\vec&amp;quot; : &amp;quot;\\mathbf{#1}&amp;quot;, &amp;quot;\\tagl&amp;quot; : &amp;quot;\\tag{#1}&amp;quot;, &amp;quot;\\eqref&amp;quot; : &amp;quot;(#1)&amp;quot;, &amp;quot;\\laplacian&amp;quot; : &amp;quot;\\mathbf{\\nabla ^2}&amp;quot;, &amp;quot;\\label&amp;quot; : &amp;quot;{}&amp;quot;, &amp;quot;\\negadelta&amp;quot; : &amp;quot;\\nabla&amp;quot;, }  }); }); [f(x) = \int_{-\infty}^\infty\hat f(\xi),e^{2 \pi i \xi x},d\xi]</description>
+      <guid>https://peppyhare.github.io/r/notes/UWAA558/10-equilibrium-of-3d-configurations/</guid>
+      <description>Equilibrium of 3D Configurations #  In 3 dimensions, we lose the axisymmetry that allowed us to reach the Grad-Shefranov equation and we need to solve the full momentum equation in three dimensions. This is not something that we can actually do in this class, and the existing codes that do this are quite sophisticated.
+Some general features of 3D equilibria are:
+ No net toroidal current. This means that they tend to be steady-state configurations.</description>
     </item>
     
     <item>
-      <title></title>
-      <link>https://peppyhare.github.io/r/docs/shortcodes/mermaid/</link>
+      <title>MHD Stability</title>
+      <link>https://peppyhare.github.io/r/notes/UWAA558/11-mhd-stability/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://peppyhare.github.io/r/docs/shortcodes/mermaid/</guid>
-      <description>Mermaid Chart #   Mermaid is library for generating svg charts and diagrams from text.
-Example #  {{&amp;lt; mermaid [class=&amp;#34;text-center&amp;#34;]&amp;gt;}} sequenceDiagram Alice-&amp;gt;&amp;gt;Bob: Hello Bob, how are you? alt is sick Bob-&amp;gt;&amp;gt;Alice: Not so good :( else is well Bob-&amp;gt;&amp;gt;Alice: Feeling fresh like a daisy end opt Extra response Bob-&amp;gt;&amp;gt;Alice: Thanks for asking end {{&amp;lt; /mermaid &amp;gt;}}    mermaid.initialize({ &#34;flowchart&#34;: { &#34;useMaxWidth&#34;:true }, &#34;theme&#34;: &#34;default&#34; } ) sequenceDiagram Alice-Bob: Hello Bob, how are you?</description>
+      <guid>https://peppyhare.github.io/r/notes/UWAA558/11-mhd-stability/</guid>
+      <description>MHD Stability #  Equilibrium is simply a balance of forces that results in a steady state. Beyond equilibrium, stability is the tendency of a perturbation to return to equilibrium, rather than increasing. We are very interested in analyzing the stability of MHD equilibria, including the plasma dynamics, so we need to use the complete ideal MHD model. The MHD equations are non-linear, which means that any evolution/dynamics are also going to be non-linear.</description>
     </item>
     
     <item>
-      <title></title>
-      <link>https://peppyhare.github.io/r/docs/shortcodes/section/page1/</link>
+      <title>Formulary</title>
+      <link>https://peppyhare.github.io/r/notes/UWAA558/formulary/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://peppyhare.github.io/r/docs/shortcodes/section/page1/</guid>
-      <description>Page 1 #  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://peppyhare.github.io/r/docs/shortcodes/section/page2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://peppyhare.github.io/r/docs/shortcodes/section/page2/</guid>
-      <description>Page 2 #  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://peppyhare.github.io/r/docs/shortcodes/tabs/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://peppyhare.github.io/r/docs/shortcodes/tabs/</guid>
-      <description>Tabs #  Tabs let you organize content by context, for example installation instructions for each supported platform.
-{{&amp;lt; tabs &amp;#34;uniqueid&amp;#34; &amp;gt;}} {{&amp;lt; tab &amp;#34;MacOS&amp;#34; &amp;gt;}} # MacOS Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab &amp;#34;Linux&amp;#34; &amp;gt;}} # Linux Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab &amp;#34;Windows&amp;#34; &amp;gt;}} # Windows Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; /tabs &amp;gt;}} Example #  MacOS MacOS This is tab MacOS content.
-Lorem markdownum insigne. Olympo signis Delphis!</description>
+      <guid>https://peppyhare.github.io/r/notes/UWAA558/formulary/</guid>
+      <description>\( \)   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;\\(&#34;, right: &#34;\\)&#34;, display: false }], macros: { &#34;\\lcm&#34;: &#34;\\mathop{\\mathrm{lcm}}&#34;, &#34;\\sen&#34;: &#39;\\text{sen}\\,&#39;, &#34;\\dd&#34;: &#34;\\mathop{\\mathrm{d} #1}&#34;, &#34;\\abs&#34;: &#34;\\lvert #1 \\rvert&#34;, &#34;\\dd&#34;: &#34;\\text{d}&#34;, &#34;\\cross&#34;: &#34;\\times&#34;, &#34;\\pdv&#34;: &#34;\\frac{\\partial #1}{\\partial #2}&#34;, &#34;\\curl&#34;: &#34;\\nabla \\cross #1&#34;</description>
     </item>
     
     <item>
       <title>Crews (2018)</title>
-      <link>https://peppyhare.github.io/r/docs/notes/crews2018/</link>
+      <link>https://peppyhare.github.io/r/notes/working/crews2018/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://peppyhare.github.io/r/docs/notes/crews2018/</guid>
+      <guid>https://peppyhare.github.io/r/notes/working/crews2018/</guid>
       <description>Development of a Collisionless Plasma Kinetic Solver and an Investigation of One-Dimensional Plasma Waves and Instabilities #  Shielded potential of a test electron:
-  document.addEventListener(&#34;DOMContentLoaded&#34;, function() { renderMathInElement(document.body, { delimiters: [ {left: &#34;$$&#34;, right: &#34;$$&#34;, display: true}, {left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true}, {left: &#34;$&#34;, right: &#34;$&#34;, display: false}, {left: &#34;\\(&#34;, right: &#34;\\)&#34;, display: false} ], macros: { &#34;\\lcm&#34;: &#34;\\mathop{\\mathrm{lcm}}&#34;, &#34;\\sen&#34;: &#39;\\text{sen}\\,&#39;, &#34;\\dd&#34;: &#34;\\mathop{\\mathrm{d} #1}&#34;, &#34;\\abs&#34;: &#34;\\lvert #1 \\rvert&#34;</description>
+  \[\phi(r) = \frac{-e}{4 \pi \epsilon_0 r} e ^{- r / \lambda_D}\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;</description>
     </item>
     
   </channel>

@@ -2,6 +2,21 @@
     display: none;
 }
 
-body::-webkit-scrollbar {
-    display: none;
+// body::-webkit-scrollbar {
+//     display: none;
+// }
+
+@import "plugins/scrollbars";
+
+img {
+    width: 80%;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --body-background: #212121
+    }
+    img {
+        filter: invert(87.05%);
+    }
 }

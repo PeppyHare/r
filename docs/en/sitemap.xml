@@ -3,108 +3,59 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://peppyhare.github.io/r/docs/example/</loc>
-    <lastmod>2020-10-03T15:58:56-07:00</lastmod>
+    <loc>https://peppyhare.github.io/r/notes/UWAA558/01-syllabus/</loc>
   </url>
   
   <url>
-    <loc>https://peppyhare.github.io/r/docs/example/table-of-contents/with-toc/</loc>
-    <lastmod>2020-10-03T15:58:56-07:00</lastmod>
+    <loc>https://peppyhare.github.io/r/notes/UWAA558/02-plasma-models/</loc>
   </url>
   
   <url>
-    <loc>https://peppyhare.github.io/r/docs/example/table-of-contents/without-toc/</loc>
-    <lastmod>2020-10-03T15:58:56-07:00</lastmod>
+    <loc>https://peppyhare.github.io/r/notes/UWAA558/03-plasma-fluid-model/</loc>
   </url>
   
   <url>
-    <loc>https://peppyhare.github.io/r/docs/example/table-of-contents/</loc>
-    <lastmod>2020-10-03T15:58:56-07:00</lastmod>
+    <loc>https://peppyhare.github.io/r/notes/UWAA558/04-two-fluid-plasma-model/</loc>
   </url>
   
   <url>
-    <loc>https://peppyhare.github.io/r/docs/example/collapsed/</loc>
-    <lastmod>2020-10-03T15:58:56-07:00</lastmod>
+    <loc>https://peppyhare.github.io/r/notes/UWAA558/05-mhd-model/</loc>
   </url>
   
   <url>
-    <loc>https://peppyhare.github.io/r/docs/example/collapsed/3rd-level/4th-level/</loc>
-    <lastmod>2020-10-03T15:58:56-07:00</lastmod>
+    <loc>https://peppyhare.github.io/r/notes/UWAA558/06-boundary-conditions/</loc>
   </url>
   
   <url>
-    <loc>https://peppyhare.github.io/r/docs/example/collapsed/3rd-level/</loc>
-    <lastmod>2020-10-03T15:58:56-07:00</lastmod>
+    <loc>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</loc>
   </url>
   
   <url>
-    <loc>https://peppyhare.github.io/r/docs/example/hidden/</loc>
-    <lastmod>2020-10-03T15:58:56-07:00</lastmod>
+    <loc>https://peppyhare.github.io/r/notes/UWAA558/08-1d-equilibria/</loc>
   </url>
   
   <url>
-    <loc>https://peppyhare.github.io/r/docs/notes/</loc>
-    <lastmod>2020-10-04T18:02:27-07:00</lastmod>
+    <loc>https://peppyhare.github.io/r/notes/UWAA558/09-2d-equilibria/</loc>
   </url>
   
   <url>
-    <loc>https://peppyhare.github.io/r/docs/shortcodes/</loc>
-    <lastmod>2020-10-03T15:58:56-07:00</lastmod>
+    <loc>https://peppyhare.github.io/r/notes/UWAA558/10-equilibrium-of-3d-configurations/</loc>
   </url>
   
   <url>
-    <loc>https://peppyhare.github.io/r/docs/shortcodes/buttons/</loc>
-    <lastmod>2020-10-03T15:58:56-07:00</lastmod>
+    <loc>https://peppyhare.github.io/r/notes/UWAA558/11-mhd-stability/</loc>
   </url>
   
   <url>
-    <loc>https://peppyhare.github.io/r/docs/shortcodes/columns/</loc>
-    <lastmod>2020-10-03T15:58:56-07:00</lastmod>
+    <loc>https://peppyhare.github.io/r/notes/UWAA558/formulary/</loc>
   </url>
   
   <url>
-    <loc>https://peppyhare.github.io/r/docs/shortcodes/details/</loc>
-    <lastmod>2020-10-03T15:58:56-07:00</lastmod>
+    <loc>https://peppyhare.github.io/r/notes/</loc>
   </url>
   
   <url>
-    <loc>https://peppyhare.github.io/r/docs/shortcodes/expand/</loc>
-    <lastmod>2020-10-03T15:58:56-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://peppyhare.github.io/r/docs/shortcodes/hints/</loc>
-    <lastmod>2020-10-03T15:58:56-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://peppyhare.github.io/r/docs/shortcodes/katex/</loc>
-    <lastmod>2020-10-03T16:51:38-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://peppyhare.github.io/r/docs/shortcodes/mermaid/</loc>
-    <lastmod>2020-10-03T15:58:56-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://peppyhare.github.io/r/docs/shortcodes/section/</loc>
-    <lastmod>2020-10-03T15:58:56-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://peppyhare.github.io/r/docs/shortcodes/section/page1/</loc>
-    <lastmod>2020-10-03T15:58:56-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://peppyhare.github.io/r/docs/shortcodes/section/page2/</loc>
-    <lastmod>2020-10-03T15:58:56-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://peppyhare.github.io/r/docs/shortcodes/tabs/</loc>
-    <lastmod>2020-10-03T15:58:56-07:00</lastmod>
+    <loc>https://peppyhare.github.io/r/notes/working/</loc>
   </url>
   
   <url>
@@ -127,13 +78,7 @@
   </url>
   
   <url>
-    <loc>https://peppyhare.github.io/r/docs/notes/crews2018/</loc>
-    <lastmod>2020-10-04T18:02:27-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://peppyhare.github.io/r/docs/</loc>
-    <lastmod>2020-10-04T18:02:27-07:00</lastmod>
+    <loc>https://peppyhare.github.io/r/notes/working/crews2018/</loc>
   </url>
   
   <url>
@@ -154,6 +99,10 @@
                 hreflang="en"
                 href="https://peppyhare.github.io/r/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://peppyhare.github.io/r/notes/UWAA558/</loc>
   </url>
   
   <url>

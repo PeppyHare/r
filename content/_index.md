@@ -1,6 +1,6 @@
 ---
 title: Introduction
-type: docs
+type: notes
 ---
 
 # Acerbo datus maxime
