@@ -65,7 +65,7 @@ Line Integrals #  A line integral is an expression of the form
       
       <guid>https://peppyhare.github.io/r/notes/UWAA558/03-plasma-fluid-model/</guid>
       <description>Plasma Fluid Model #  We take velocity moments of each of the pieces of the kinetic model:
- distribution function,   \( f_\alpha \)   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;$`math&#34;, right: &#34;`$&#34;, display: true }, { left: &#34;\\(&#34;, right: &#34;</description>
+ distribution function,   \( f_\alpha \)   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;\\(&#34;, right: &#34;\\)&#34;, display: false }], macros: { &#34;\\lcm&#34;: &#34;</description>
     </item>
     
     <item>
@@ -98,6 +98,16 @@ First, define the MHD variables:
     </item>
     
     <item>
+      <title>The Dirac Delta Function</title>
+      <link>https://peppyhare.github.io/r/notes/griffiths/ch1-5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peppyhare.github.io/r/notes/griffiths/ch1-5/</guid>
+      <description>1.5: The Dirac Delta Function #  1.5.1: The Divergence of \( \vu{r} / r^2 \) #  Consider the vector function
+  \[\vec{v} = \frac{1}{r^2} \vu{r} \tagl{1.83}\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;\\(&#34;, right: &#34;\\)&#34;, display: false }], macros: { &#34;</description>
+    </item>
+    
+    <item>
       <title>Boundary Conditions</title>
       <link>https://peppyhare.github.io/r/notes/UWAA558/06-boundary-conditions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -108,12 +118,21 @@ Perfectly Conducting Wall #  For the case where the plasma extends out to a perf
     </item>
     
     <item>
+      <title>The Theory of Vector Fields</title>
+      <link>https://peppyhare.github.io/r/notes/griffiths/ch1-6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peppyhare.github.io/r/notes/griffiths/ch1-6/</guid>
+      <description>1.6: The Theory of Vector Fields #  1.6.1: The Helmholtz Theorem #  Ever since Faraday, the laws of electricity and magnetism have been expressed in terms of electric and magnetic fields, E and B. Like many physical laws, these are most compactly expressed as differential equations. Since E and B are vectors, the differential equations naturally involve vector derivatives: divergence and curl. Indeed, Maxwell reduced the entire theory to four equations, specifying respectively the divergence and the curl of E and B.</description>
+    </item>
+    
+    <item>
       <title>Equilibrium for Fusion</title>
       <link>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</guid>
-      <description>Equilibrium for Fusion (   \( \beta \)   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;$`math&#34;, right: &#34;`$&#34;, display: true }, { left: &#34;\\(&#34;, right: &#34;\\)&#34;, display: false }], macros: { &#34;\\lcm&#34;: &#34;\\mathop{\\mathrm{lcm}}&#34;, &#34;\\sen&#34;: &#39;\\text{sen}\\,&#39;, &#34;\\dd&#34;: &#34;\\mathop{\\mathrm{d} #1}&#34;, &#34;\\abs&#34;: &#34;\\lvert #1 \\rvert&#34;</description>
+      <description>Equilibrium for Fusion (   \( \beta \)   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;\\(&#34;, right: &#34;\\)&#34;, display: false }], macros: { &#34;\\lcm&#34;: &#34;\\mathop{\\mathrm{lcm}}&#34;, &#34;\\sen&#34;: &#39;\\text{sen}\\,&#39;, &#34;\\dd&#34;: &#34;\\mathop{\\mathrm{d} #1}&#34;, &#34;\\abs&#34;: &#34;\\lvert #1 \\rvert&#34;, &#34;\\dd&#34;: &#34;\\text{d}&#34;, &#34;\\cross&#34;: &#34;\\times&#34;, &#34;\\pdv&#34;: &#34;\\frac{\\partial #1}{\\partial #2}&#34;</description>
     </item>
     
     <item>
@@ -122,7 +141,7 @@ Perfectly Conducting Wall #  For the case where the plasma extends out to a perf
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://peppyhare.github.io/r/notes/UWAA558/08-1d-equilibria/</guid>
-      <description>1-Dimensional Equilibria #  The   \( \theta \)   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;$`math&#34;, right: &#34;`$&#34;, display: true }, { left: &#34;\\(&#34;, right: &#34;\\)&#34;, display: false }], macros: { &#34;\\lcm&#34;: &#34;\\mathop{\\mathrm{lcm}}&#34;, &#34;\\sen&#34;: &#39;\\text{sen}\\,&#39;, &#34;\\dd&#34;: &#34;\\mathop{\\mathrm{d} #1}&#34;, &#34;\\abs&#34;: &#34;\\lvert #1 \\rvert&#34;</description>
+      <description>1-Dimensional Equilibria #  The   \( \theta \)   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;\\(&#34;, right: &#34;\\)&#34;, display: false }], macros: { &#34;\\lcm&#34;: &#34;\\mathop{\\mathrm{lcm}}&#34;, &#34;\\sen&#34;: &#39;\\text{sen}\\,&#39;, &#34;\\dd&#34;: &#34;\\mathop{\\mathrm{d} #1}&#34;, &#34;\\abs&#34;: &#34;\\lvert #1 \\rvert&#34;, &#34;\\dd&#34;: &#34;\\text{d}&#34;, &#34;\\cross&#34;: &#34;\\times&#34;, &#34;\\pdv&#34;: &#34;\\frac{\\partial #1}{\\partial #2}&#34;</description>
     </item>
     
     <item>
@@ -156,74 +175,7 @@ Some general features of 3D equilibria are:
     </item>
     
     <item>
-      <title>Formulary</title>
-      <link>https://peppyhare.github.io/r/notes/UWAA558/formulary/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://peppyhare.github.io/r/notes/UWAA558/formulary/</guid>
-      <description>\( \)   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;$`math&#34;, right: &#34;`$&#34;, display: true }, { left: &#34;\\(&#34;, right: &#34;\\)&#34;, display: false }], macros: { &#34;\\lcm&#34;: &#34;\\mathop{\\mathrm{lcm}}&#34;, &#34;\\sen&#34;: &#39;\\text{sen}\\,&#39;, &#34;\\dd&#34;: &#34;\\mathop{\\mathrm{d} #1}&#34;, &#34;\\abs&#34;: &#34;\\lvert #1 \\rvert&#34;, &#34;\\dd&#34;: &#34;\\text{d}&#34;, &#34;\\cross&#34;: &#34;</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://peppyhare.github.io/r/notes/griffiths/ch1-5/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://peppyhare.github.io/r/notes/griffiths/ch1-5/</guid>
-      <description>1.5: The Dirac Delta Function #  1.5.1: The Divergence of \( \vu{r} / r^2 \) #  Consider the vector function
-  \[\vec{v} = \frac{1}{r^2} \vu{r} \tagl{1.83}\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;$`math&#34;, right: &#34;`$&#34;, display: true }, { left: &#34;</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://peppyhare.github.io/r/notes/griffiths/ch1-6/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://peppyhare.github.io/r/notes/griffiths/ch1-6/</guid>
-      <description>1.6: The Theory of Vector Fields #  1.6.1: The Helmholtz Theorem #  Ever since Faraday, the laws of electricity and magnetism have been expressed in terms of electric and magnetic fields, E and B. Like many physical laws, these are most compactly expressed as differential equations. Since E and B are vectors, the differential equations naturally involve vector derivatives: divergence and curl. Indeed, Maxwell reduced the entire theory to four equations, specifying respectively the divergence and the curl of E and B.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://peppyhare.github.io/r/notes/griffiths/ch10-1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://peppyhare.github.io/r/notes/griffiths/ch10-1/</guid>
-      <description>10.0.1 Presentation/Paper notes #  A few words about the paper/presentation
- It&amp;rsquo;s supposed to be on a topic related to the class (classical electromagnetism) The topic can be wide-ranging. Some sample topics will be put it. It should be thematically related to what we&amp;rsquo;ve been talking about, and you should be making connections to things we&amp;rsquo;ve been talking about (waveguides, waves, generation of waves, etc.) There will be two class periods in the last week which are reserved for presentations of about 15 minutes each.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://peppyhare.github.io/r/notes/griffiths/ch10-2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://peppyhare.github.io/r/notes/griffiths/ch10-2/</guid>
-      <description>10.2.1 Retarded Potentials #  In the Lorenz gauge, we want to find the potentials by solving
-  \[\laplacian \vec A - \mu_0 \epsilon_0 \pdv{^2 \vec A}{t^2} = - \mu_0 \vec J\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;$`math&#34;, right: &#34;</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://peppyhare.github.io/r/notes/griffiths/ch10-3/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://peppyhare.github.io/r/notes/griffiths/ch10-3/</guid>
-      <description>10.3 Point Charges #  10.3.1 Moving Point Charges: Lienard-Wiechert Potentials #  Suppose we have a point charge moving on some trajectory \( \vec w(t) \). If we naively read off the retarded potential
-  \[V(\vec r, t) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\vec r&amp;#39;, t_r)}{\gr} \dd \tau&amp;#39;\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://peppyhare.github.io/r/notes/griffiths/ch11-1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://peppyhare.github.io/r/notes/griffiths/ch11-1/</guid>
-      <description>11.1 Dipole Radiation #  11.1.1 Electric Dipole Radiation #  Consider a dipole which is &amp;ldquo;oscillating&amp;rdquo; at some particular frequency. This looks like two metal spheres separated by distance \( d \) and connected by a small wire; at time \( t \) the charge on the upper sphere is \( q(t) \) and the charge on the lower sphere is \( -q(t) \). We drive the charge back and forth through the wire from one sphere to the other at an angular frequency \( \omega \)</description>
-    </item>
-    
-    <item>
-      <title></title>
+      <title>The Electric Field</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch2-1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -232,7 +184,7 @@ Some general features of 3D equilibria are:
     </item>
     
     <item>
-      <title></title>
+      <title>Divergence and Curl of Electrostatic Fields</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch2-2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -241,7 +193,7 @@ Some general features of 3D equilibria are:
     </item>
     
     <item>
-      <title></title>
+      <title>Electric Potential</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch2-3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -250,7 +202,7 @@ Some general features of 3D equilibria are:
     </item>
     
     <item>
-      <title></title>
+      <title>Work and Energy in Electrostatics</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch2-4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -259,7 +211,7 @@ Some general features of 3D equilibria are:
     </item>
     
     <item>
-      <title></title>
+      <title>Conductors</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch2-5/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -268,7 +220,7 @@ Some general features of 3D equilibria are:
     </item>
     
     <item>
-      <title></title>
+      <title>Laplace&#39;s Equation</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch3-1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -278,7 +230,7 @@ Some general features of 3D equilibria are:
     </item>
     
     <item>
-      <title></title>
+      <title>The Method of Images</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch3-2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -287,7 +239,7 @@ Some general features of 3D equilibria are:
     </item>
     
     <item>
-      <title></title>
+      <title>Separation of Variables</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch3-3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -296,7 +248,7 @@ Some general features of 3D equilibria are:
     </item>
     
     <item>
-      <title></title>
+      <title>Multipole Expansion</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch3-4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -305,7 +257,7 @@ Some general features of 3D equilibria are:
     </item>
     
     <item>
-      <title></title>
+      <title>Polarization</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch4-1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -314,7 +266,7 @@ Some general features of 3D equilibria are:
     </item>
     
     <item>
-      <title></title>
+      <title>The Field of a Polarized Object</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch4-2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -323,7 +275,7 @@ Some general features of 3D equilibria are:
     </item>
     
     <item>
-      <title></title>
+      <title>The Electric Displacement</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch4-3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -332,7 +284,7 @@ Some general features of 3D equilibria are:
     </item>
     
     <item>
-      <title></title>
+      <title>The Linear Dielectrics</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch4-4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -341,7 +293,7 @@ Some general features of 3D equilibria are:
     </item>
     
     <item>
-      <title></title>
+      <title>The Lorentz Force Law</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch5-1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -350,7 +302,7 @@ Some general features of 3D equilibria are:
     </item>
     
     <item>
-      <title></title>
+      <title>The Biot-Savart Law</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch5-2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -360,7 +312,7 @@ By &amp;ldquo;steady current&amp;rdquo; I mean a continuous flow that has been g
     </item>
     
     <item>
-      <title></title>
+      <title>The Divergence and Curl of B</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch5-3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -370,7 +322,7 @@ According to Eq. 5.38, the integral of B around a circular path of radius s, cen
     </item>
     
     <item>
-      <title></title>
+      <title>Magnetic Vector Potential</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch5-4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -380,7 +332,7 @@ According to Eq. 5.38, the integral of B around a circular path of radius s, cen
     </item>
     
     <item>
-      <title></title>
+      <title>Magnetization</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch6-1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -389,7 +341,7 @@ According to Eq. 5.38, the integral of B around a circular path of radius s, cen
     </item>
     
     <item>
-      <title></title>
+      <title>The Field of a Magnetized Object</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch6-2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -399,7 +351,7 @@ According to Eq. 5.38, the integral of B around a circular path of radius s, cen
     </item>
     
     <item>
-      <title></title>
+      <title>The Auxiliary Field H</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch6-3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -408,7 +360,7 @@ According to Eq. 5.38, the integral of B around a circular path of radius s, cen
     </item>
     
     <item>
-      <title></title>
+      <title>Linear and Nonlinear Media</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch6-4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -418,38 +370,38 @@ According to Eq. 5.38, the integral of B around a circular path of radius s, cen
     </item>
     
     <item>
-      <title></title>
+      <title>Electromotive Force</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch7-1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://peppyhare.github.io/r/notes/griffiths/ch7-1/</guid>
-      <description>Electromotive Force #   7.1.1: Ohm&amp;rsquo;s Law #  To make a current flow, you have to push on the charges. How fast they move, in response to a given push, depends on the nature of the material. For most sub- stances, the current density \( \vec{J} \) is proportional to the force per unit charge, \( \vec{f} \):
+      <description>7.1 Electromotive Force #  7.1.1: Ohm&amp;rsquo;s Law #  To make a current flow, you have to push on the charges. How fast they move, in response to a given push, depends on the nature of the material. For most sub- stances, the current density \( \vec{J} \) is proportional to the force per unit charge, \( \vec{f} \):
   \[\vec{J} = \sigma \vec{f} \tagl{7.1}\]   function loadKatex() { renderMathInElement(document.</description>
     </item>
     
     <item>
-      <title></title>
+      <title>Electromagnetic Induction</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch7-2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://peppyhare.github.io/r/notes/griffiths/ch7-2/</guid>
-      <description>7.2: Electromagnetic Induction #   7.2.1: Faraday&amp;rsquo;s Law #  In 1831 Michael Faraday reported on a series of experiments, including three that (with some violence to history) can be characterized as follows:
+      <description>7.2: Electromagnetic Induction #  7.2.1: Faraday&amp;rsquo;s Law #  In 1831 Michael Faraday reported on a series of experiments, including three that (with some violence to history) can be characterized as follows:
 Experiment 1:. He pulled a loop of wire to the right through a magnetic field (Fig 7.21a). A current flowed in the loop.
 Experiment 2: He moved the magnet to the left, holding the loop still (Fig 7.</description>
     </item>
     
     <item>
-      <title></title>
+      <title>Maxwell&#39;s Equations</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch7-3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://peppyhare.github.io/r/notes/griffiths/ch7-3/</guid>
-      <description>7.3: Maxwell&amp;rsquo;s Equations #   7.3.1: Electrodynamics Before Maxwell #  So far, we have encountered the following laws, specifying the divergence and curl of electric and magnetic fields
+      <description>7.3: Maxwell&amp;rsquo;s Equations #  7.3.1: Electrodynamics Before Maxwell #  So far, we have encountered the following laws, specifying the divergence and curl of electric and magnetic fields
   \[\begin{aligned} (\text{i}) &amp;amp; \quad \div \vec{E} = \frac{1}{\epsilon_0 } \rho \quad \text{(Gauss&amp;#39;s law)} \\ (\text{ii}) &amp;amp; \quad \div \vec{B} = 0 \quad \text{(Ng&amp;#39;s Law)} \\ (\text{iii}) &amp;amp; \quad \curl \vec{E} = - \pdv{\vec{B}}{t} \quad \text{(Faraday&amp;#39;s Law}) \\ (\text{iv}) &amp;amp; \quad \curl \vec{B} = \mu_0 \vec{J} \quad \text{(Ampere&amp;#39;s Law)} \end{aligned}\]   function loadKatex() { renderMathInElement(document.</description>
     </item>
     
     <item>
-      <title></title>
+      <title>Phys 544 Introduction</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch8-0/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -460,7 +412,7 @@ Course Structure #  We&amp;rsquo;ve got some real homework this time!
     </item>
     
     <item>
-      <title></title>
+      <title>Charge and Energy</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch8-1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -470,7 +422,7 @@ Conservation of Charge #  We know that charge is conserved. You can&amp;rsquo;t 
     </item>
     
     <item>
-      <title></title>
+      <title>Momentum</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch8-2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -481,7 +433,7 @@ What happens between the two charges? Well, the magnetic field of \( q_1 \) poin
     </item>
     
     <item>
-      <title></title>
+      <title>Electromagnetic Waves in One Dimension</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch9-1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -491,7 +443,7 @@ Suppose some quantity &amp;ldquo;\( f \)&amp;rdquo; is propagating with speed \(
     </item>
     
     <item>
-      <title></title>
+      <title>Wave Equation for E and B</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch9-2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -501,7 +453,7 @@ Suppose some quantity &amp;ldquo;\( f \)&amp;rdquo; is propagating with speed \(
     </item>
     
     <item>
-      <title></title>
+      <title>Electromagnetic Waves in Matter</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch9-3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -511,7 +463,7 @@ Suppose some quantity &amp;ldquo;\( f \)&amp;rdquo; is propagating with speed \(
     </item>
     
     <item>
-      <title></title>
+      <title>Electromagnetic Waves in Conductors</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch9-4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -521,7 +473,7 @@ As a refresher, when we last took a good look at conductors we had just moved be
     </item>
     
     <item>
-      <title></title>
+      <title>Guided Waves</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/ch9-5/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -532,41 +484,87 @@ Monochromatic plane wave solutions will look like
     </item>
     
     <item>
-      <title></title>
+      <title>Formulary</title>
+      <link>https://peppyhare.github.io/r/notes/UWAA558/formulary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peppyhare.github.io/r/notes/UWAA558/formulary/</guid>
+      <description>\( \)   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;\\(&#34;, right: &#34;\\)&#34;, display: false }], macros: { &#34;\\lcm&#34;: &#34;\\mathop{\\mathrm{lcm}}&#34;, &#34;\\sen&#34;: &#39;\\text{sen}\\,&#39;, &#34;\\dd&#34;: &#34;\\mathop{\\mathrm{d} #1}&#34;, &#34;\\abs&#34;: &#34;\\lvert #1 \\rvert&#34;, &#34;\\dd&#34;: &#34;\\text{d}&#34;, &#34;\\cross&#34;: &#34;\\times&#34;, &#34;\\pdv&#34;: &#34;\\frac{\\partial #1}{\\partial #2}&#34;, &#34;\\curl&#34;: &#34;\\nabla \\cross #1&#34;</description>
+    </item>
+    
+    <item>
+      <title>Scalar and Vector Potentials</title>
+      <link>https://peppyhare.github.io/r/notes/griffiths/ch10-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peppyhare.github.io/r/notes/griffiths/ch10-1/</guid>
+      <description>10.0.1 Presentation/Paper notes #  A few words about the paper/presentation
+ It&amp;rsquo;s supposed to be on a topic related to the class (classical electromagnetism) The topic can be wide-ranging. Some sample topics will be put it. It should be thematically related to what we&amp;rsquo;ve been talking about, and you should be making connections to things we&amp;rsquo;ve been talking about (waveguides, waves, generation of waves, etc.) There will be two class periods in the last week which are reserved for presentations of about 15 minutes each.</description>
+    </item>
+    
+    <item>
+      <title>Retarded Potentials</title>
+      <link>https://peppyhare.github.io/r/notes/griffiths/ch10-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peppyhare.github.io/r/notes/griffiths/ch10-2/</guid>
+      <description>10.2.1 Retarded Potentials #  In the Lorenz gauge, we want to find the potentials by solving
+  \[\laplacian \vec A - \mu_0 \epsilon_0 \pdv{^2 \vec A}{t^2} = - \mu_0 \vec J\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;\\(&#34;, right: &#34;</description>
+    </item>
+    
+    <item>
+      <title>Point Charges</title>
+      <link>https://peppyhare.github.io/r/notes/griffiths/ch10-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peppyhare.github.io/r/notes/griffiths/ch10-3/</guid>
+      <description>10.3 Point Charges #  10.3.1 Moving Point Charges: Lienard-Wiechert Potentials #  Suppose we have a point charge moving on some trajectory \( \vec w(t) \). If we naively read off the retarded potential
+  \[V(\vec r, t) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\vec r&amp;#39;, t_r)}{\gr} \dd \tau&amp;#39;\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;</description>
+    </item>
+    
+    <item>
+      <title>Dipole Radiation</title>
+      <link>https://peppyhare.github.io/r/notes/griffiths/ch11-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://peppyhare.github.io/r/notes/griffiths/ch11-1/</guid>
+      <description>11.1 Dipole Radiation #  11.1.1 Electric Dipole Radiation #  Consider a dipole which is &amp;ldquo;oscillating&amp;rdquo; at some particular frequency. This looks like two metal spheres separated by distance \( d \) and connected by a small wire; at time \( t \) the charge on the upper sphere is \( q(t) \) and the charge on the lower sphere is \( -q(t) \). We drive the charge back and forth through the wire from one sphere to the other at an angular frequency \( \omega \)</description>
+    </item>
+    
+    <item>
+      <title>Solved Problems Ch3</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/problems-ch3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://peppyhare.github.io/r/notes/griffiths/problems-ch3/</guid>
-      <description>Problem 3.24 #  !!! question &amp;quot;&amp;quot;
-__Solution__ Since we are in cylindrical coordinates, we will write Laplace&#39;s equation in cylindrical coordinates \\( (s, \phi, z) \\):    \[ \laplacian V = \frac{1}{s} \pdv{}{s} \left( s \pdv{V}{s} \right) &amp;#43; \frac{1}{s^2} \frac{\partial ^2 V}{\partial \phi ^2} = 0 \]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;</description>
+      <description>Chapter 3 Solved Problems #    \[\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;\\(&#34;, right: &#34;\\)&#34;, display: false }], macros: { &#34;\\lcm&#34;: &#34;\\mathop{\\mathrm{lcm}}&#34;, &#34;\\sen&#34;: &#39;\\text{sen}\\,&#39;, &#34;\\dd&#34;: &#34;\\mathop{\\mathrm{d} #1}&#34;, &#34;\\abs&#34;: &#34;\\lvert #1 \\rvert&#34;, &#34;\\dd&#34;: &#34;\\text{d}&#34;, &#34;\\cross&#34;: &#34;\\times&#34;, &#34;\\pdv&#34;: &#34;\\frac{\\partial #1}{\\partial #2}&#34;</description>
     </item>
     
     <item>
-      <title></title>
+      <title>Solved Problems Ch5</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/problems-ch5/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://peppyhare.github.io/r/notes/griffiths/problems-ch5/</guid>
-      <description>Problem 5.5 #  !!! question &amp;ldquo;A current I flows down a wire of radius a. (a) If it is uniformly distributed over the surface, what is the surface current density K? (b) If it is distributed in such a way that the volume current density is inversely proportional to the distance from the axis, what is J(s)?&amp;rdquo;
-K is the current per unit width \\( \perp \\) to the direction of the flow.</description>
+      <description>Chapter 5 Solved Problems #    \[\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;\\(&#34;, right: &#34;\\)&#34;, display: false }], macros: { &#34;\\lcm&#34;: &#34;\\mathop{\\mathrm{lcm}}&#34;, &#34;\\sen&#34;: &#39;\\text{sen}\\,&#39;, &#34;\\dd&#34;: &#34;\\mathop{\\mathrm{d} #1}&#34;, &#34;\\abs&#34;: &#34;\\lvert #1 \\rvert&#34;, &#34;\\dd&#34;: &#34;\\text{d}&#34;, &#34;\\cross&#34;: &#34;\\times&#34;, &#34;\\pdv&#34;: &#34;\\frac{\\partial #1}{\\partial #2}&#34;</description>
     </item>
     
     <item>
-      <title></title>
+      <title>Solved Problems Ch7</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/problems-ch7/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://peppyhare.github.io/r/notes/griffiths/problems-ch7/</guid>
-      <description>Problem 7.7 #  !!! question &amp;ldquo;A metal bar of mass m slides frictionlessly on two parallel conducting rails a distance l apart. A resistor R is connected across the rails, and a uniform magnetic field B pointing into the page fills the region. (a) If the bar moves to the right at speed v, what is the current in the resistor? (b) What is the magnetic force on the bar?</description>
+      <description>Chapter 7 Solved Problems #    \[\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;\\(&#34;, right: &#34;\\)&#34;, display: false }], macros: { &#34;\\lcm&#34;: &#34;\\mathop{\\mathrm{lcm}}&#34;, &#34;\\sen&#34;: &#39;\\text{sen}\\,&#39;, &#34;\\dd&#34;: &#34;\\mathop{\\mathrm{d} #1}&#34;, &#34;\\abs&#34;: &#34;\\lvert #1 \\rvert&#34;, &#34;\\dd&#34;: &#34;\\text{d}&#34;, &#34;\\cross&#34;: &#34;\\times&#34;, &#34;\\pdv&#34;: &#34;\\frac{\\partial #1}{\\partial #2}&#34;</description>
     </item>
     
     <item>
-      <title></title>
+      <title>Solved Problems Ch9</title>
       <link>https://peppyhare.github.io/r/notes/griffiths/problems-ch9/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://peppyhare.github.io/r/notes/griffiths/problems-ch9/</guid>
-      <description>Review Problem 1 #  !!! question &amp;ldquo;Current-carrying wire with gap. A large diameter wire of cross-section area \( A \) carries current uniformly over its cross-section. There is a narrow gap of width \( d \), forming a parallel-plate capacitor. The current is zero for times \( t &amp;lt; 0 \) and the current is \( I \) at times \( t &amp;gt; 0 \). The charge on the capacitor is zero at \( t = 0 \).</description>
+      <description>Chapter 9 Solved Problems #    \[\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;\\(&#34;, right: &#34;\\)&#34;, display: false }], macros: { &#34;\\lcm&#34;: &#34;\\mathop{\\mathrm{lcm}}&#34;, &#34;\\sen&#34;: &#39;\\text{sen}\\,&#39;, &#34;\\dd&#34;: &#34;\\mathop{\\mathrm{d} #1}&#34;, &#34;\\abs&#34;: &#34;\\lvert #1 \\rvert&#34;, &#34;\\dd&#34;: &#34;\\text{d}&#34;, &#34;\\cross&#34;: &#34;\\times&#34;, &#34;\\pdv&#34;: &#34;\\frac{\\partial #1}{\\partial #2}&#34;</description>
     </item>
     
     <item>

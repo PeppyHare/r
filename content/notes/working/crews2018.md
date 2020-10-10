@@ -47,10 +47,13 @@ and define the phase space coordinates as {{< katex >}}\vec{\dot r} = \vec F \eq
 {{< /katex >}}
 
 If the phase fluid density is given by a function {{< katex >}}f(x, v, t){{< /katex >}} where {{< katex >}}t{{< /katex >}} is the time parameter, because any instantiation of a particle can not leave the phase plane, the probability density will be conserved. We can write a conservation law:
+
 {{< katex display >}}
 \pdv{f(x, v, t)}{t} = - \div ( f (x, v, t) \vec F)
 {{< /katex >}}
+
 and due to the flow's incompressibility
+
 {{< katex display >}}
 \div (f \vec F) = f ( \div \vec F) + \vec F \cdot \grad f = \vec F \cdot \grad f \\
 \rightarrow \pdv{f}{t} = - \left[ v, F(x) \right] \cdot \left[ \pdv{f}{x}, \pdv{f}{v} \right] \\
