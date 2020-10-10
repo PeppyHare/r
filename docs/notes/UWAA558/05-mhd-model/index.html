@@ -13,12 +13,12 @@ First, define the MHD variables:
   \[\text{mass density:} \qquad \rho = n_i m_i &#43; n_i m_e\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://peppyhare.github.io/r/notes/UWAA558/05-mhd-model/" />
-
+<meta property="article:modified_time" content="2020-10-07T06:24:55-07:00" />
 <title>Magnetohydrodynamic (MHD) Model | My Notes</title>
 <link rel="manifest" href="/r/manifest.json">
 <link rel="icon" href="/r/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/r/book.min.380d288a2e7eab258a84160c4cb9893132f45d4b08499d9a8114e97c3dc3733e.css" integrity="sha256-OA0oii5&#43;qyWKhBYMTLmJMTL0XUsISZ2agRTpfD3Dcz4=">
-<script defer src="/r/en.search.min.e183efc585b4431392428eef634aace5569ece2f19bfd8169c77c3d190d9ac41.js" integrity="sha256-4YPvxYW0QxOSQo7vY0qs5Vaezi8Zv9gWnHfD0ZDZrEE="></script>
+<script defer src="/r/en.search.min.b5bd16c4f84f2b7fb2d348aaf0af4cd8ed419930e44f9ed5b97164abf01db426.js" integrity="sha256-tb0WxPhPK3&#43;y00iq8K9M2O1BmTDkT57VuXFkq/AdtCY="></script>
 
 <script defer src="/r/sw.min.7dd1b982abb2287010a43b99e3233ff99ced25fbe0e72dc2e6ad364145177485.js" integrity="sha256-fdG5gquyKHAQpDuZ4yM/&#43;ZztJfvg5y3C5q02QUUXdIU="></script>
 <!--
@@ -1089,10 +1089,10 @@ where
     });
   };
 </script></p>
-<p>!!! info &ldquo;MHD Momentum Equation&rdquo;</p>
-<pre><code><span>
-  \[    \rho \left(\pdv{\vec v}{t} &#43; \vec v \cdot \grad \vec v \right) &#43; \grad p - \vec j \cross \vec B = - \div (\vec \Pi _i &#43; \vec \Pi _e)
-    \]
+<blockquote class="book-hint info">
+  <p><strong>&ldquo;MHD Momentum Equation&rdquo;</strong></p>
+<span>
+  \[\rho \left(\pdv{\vec v}{t} &#43; \vec v \cdot \grad \vec v \right) &#43; \grad p - \vec j \cross \vec B = - \div (\vec \Pi _i &#43; \vec \Pi _e)\]
 </span>
 <script>
   function loadKatex() {
@@ -1103,34 +1103,36 @@ where
         { left: "$", right: "$", display: false },
         { left: "\\(", right: "\\)", display: false }],
       macros: {
-        
-        "\\lcm": "\\mathop{\\mathrm{lcm}}",
-        "\\sen": '\\text{sen}\\,',
-        
-        "\\dd": "\\mathop{\\mathrm{d} #1}",
-        "\\abs": "\\lvert #1 \\rvert",
-        
-        "\\dd": "\\text{d}",
-        "\\cross": "\\times",
-        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
-        "\\curl": "\\nabla \\cross #1",
-        "\\vu": "\\mathbf{\\hat{#1}}",
-        "\\vdot": "\\dot",
-        "\\div": "\\nabla \\cdot #1",
-        "\\grad": "\\nabla",
-        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
-        "\\gr": "\\gamma",
-        "\\vec": "\\mathbf{#1}",
-        "\\tagl": "\\tag{#1}",
-        "\\eqref": "(#1)",
-        "\\laplacian": "\\mathbf{\\nabla ^2}",
-        "\\label": "{}",
-        "\\negadelta": "\\nabla",
-      }
-    });
-  };
-</script>
+<pre><code>    &quot;\\lcm&quot;: &quot;\\mathop{\\mathrm{lcm}}&quot;,
+    &quot;\\sen&quot;: '\\text{sen}\\,',
+    
+    &quot;\\dd&quot;: &quot;\\mathop{\\mathrm{d} #1}&quot;,
+    &quot;\\abs&quot;: &quot;\\lvert #1 \\rvert&quot;,
+    
+    &quot;\\dd&quot;: &quot;\\text{d}&quot;,
+    &quot;\\cross&quot;: &quot;\\times&quot;,
+    &quot;\\pdv&quot;: &quot;\\frac{\\partial #1}{\\partial #2}&quot;,
+    &quot;\\curl&quot;: &quot;\\nabla \\cross #1&quot;,
+    &quot;\\vu&quot;: &quot;\\mathbf{\\hat{#1}}&quot;,
+    &quot;\\vdot&quot;: &quot;\\dot&quot;,
+    &quot;\\div&quot;: &quot;\\nabla \\cdot #1&quot;,
+    &quot;\\grad&quot;: &quot;\\nabla&quot;,
+    &quot;\\dv&quot;: &quot;\\frac{d\\,#1}{d\\,#2}&quot;,
+    &quot;\\gr&quot;: &quot;\\gamma&quot;,
+    &quot;\\vec&quot;: &quot;\\mathbf{#1}&quot;,
+    &quot;\\tagl&quot;: &quot;\\tag{#1}&quot;,
+    &quot;\\eqref&quot;: &quot;(#1)&quot;,
+    &quot;\\laplacian&quot;: &quot;\\mathbf{\\nabla ^2}&quot;,
+    &quot;\\label&quot;: &quot;{}&quot;,
+    &quot;\\negadelta&quot;: &quot;\\nabla&quot;,
+  }
+});
 </code></pre>
+<p>};
+</script></p>
+
+</blockquote>
+
 <p>If we take the electron momentum equation, apply the small electron mass asymptotic approximation and introduce the current density, then we have</p>
 <h3 id="mhd-ohms-law">
   MHD Ohm&rsquo;s Law
@@ -1254,10 +1256,10 @@ where
     });
   };
 </script></p>
-<p>!!! info &ldquo;MHD Generalized Ohms Law&rdquo;</p>
-<pre><code><span>
-  \[    \vec E &#43; \vec v \cross \vec B = \eta \vec j &#43; \frac{1}{Z e n} \left(\vec j \cross \vec B - \grad p_e - \div \vec \Pi_e \right)
-    \]
+<blockquote class="book-hint info">
+  <p><strong>&ldquo;MHD Generalized Ohms Law&rdquo;</strong></p>
+<span>
+  \[\vec E &#43; \vec v \cross \vec B = \eta \vec j &#43; \frac{1}{Z e n} \left(\vec j \cross \vec B - \grad p_e - \div \vec \Pi_e \right)\]
 </span>
 <script>
   function loadKatex() {
@@ -1268,34 +1270,36 @@ where
         { left: "$", right: "$", display: false },
         { left: "\\(", right: "\\)", display: false }],
       macros: {
-        
-        "\\lcm": "\\mathop{\\mathrm{lcm}}",
-        "\\sen": '\\text{sen}\\,',
-        
-        "\\dd": "\\mathop{\\mathrm{d} #1}",
-        "\\abs": "\\lvert #1 \\rvert",
-        
-        "\\dd": "\\text{d}",
-        "\\cross": "\\times",
-        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
-        "\\curl": "\\nabla \\cross #1",
-        "\\vu": "\\mathbf{\\hat{#1}}",
-        "\\vdot": "\\dot",
-        "\\div": "\\nabla \\cdot #1",
-        "\\grad": "\\nabla",
-        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
-        "\\gr": "\\gamma",
-        "\\vec": "\\mathbf{#1}",
-        "\\tagl": "\\tag{#1}",
-        "\\eqref": "(#1)",
-        "\\laplacian": "\\mathbf{\\nabla ^2}",
-        "\\label": "{}",
-        "\\negadelta": "\\nabla",
-      }
-    });
-  };
-</script>
+<pre><code>    &quot;\\lcm&quot;: &quot;\\mathop{\\mathrm{lcm}}&quot;,
+    &quot;\\sen&quot;: '\\text{sen}\\,',
+    
+    &quot;\\dd&quot;: &quot;\\mathop{\\mathrm{d} #1}&quot;,
+    &quot;\\abs&quot;: &quot;\\lvert #1 \\rvert&quot;,
+    
+    &quot;\\dd&quot;: &quot;\\text{d}&quot;,
+    &quot;\\cross&quot;: &quot;\\times&quot;,
+    &quot;\\pdv&quot;: &quot;\\frac{\\partial #1}{\\partial #2}&quot;,
+    &quot;\\curl&quot;: &quot;\\nabla \\cross #1&quot;,
+    &quot;\\vu&quot;: &quot;\\mathbf{\\hat{#1}}&quot;,
+    &quot;\\vdot&quot;: &quot;\\dot&quot;,
+    &quot;\\div&quot;: &quot;\\nabla \\cdot #1&quot;,
+    &quot;\\grad&quot;: &quot;\\nabla&quot;,
+    &quot;\\dv&quot;: &quot;\\frac{d\\,#1}{d\\,#2}&quot;,
+    &quot;\\gr&quot;: &quot;\\gamma&quot;,
+    &quot;\\vec&quot;: &quot;\\mathbf{#1}&quot;,
+    &quot;\\tagl&quot;: &quot;\\tag{#1}&quot;,
+    &quot;\\eqref&quot;: &quot;(#1)&quot;,
+    &quot;\\laplacian&quot;: &quot;\\mathbf{\\nabla ^2}&quot;,
+    &quot;\\label&quot;: &quot;{}&quot;,
+    &quot;\\negadelta&quot;: &quot;\\nabla&quot;,
+  }
+});
 </code></pre>
+<p>};
+</script></p>
+
+</blockquote>
+
 <h3 id="mhd-energy-equation">
   MHD Energy Equation
   <a class="anchor" href="#mhd-energy-equation">#</a>
@@ -2009,10 +2013,10 @@ Multiply by <span>
     });
   };
 </script>
-<p>!!! info &ldquo;MHD Energy Equation&rdquo;</p>
-<pre><code><span>
-  \[    \dv{}{t} \left( \frac{p}{\rho^\gamma} \right) = \frac{\gamma - 1}{\rho^\gamma} \left[ Q_{ie} &#43; Q_{ei} - \div (\vec h_i &#43; \vec h_e) - \vec \pi_i \cdot \cdot \grad \vec v_i - \vec \Pi_e \cdot \cdot \grad \vec v_e \right] &#43; \frac{\vec j}{Z e n} \cdot \grad \frac{p_e}{\rho^\gamma}
-    \]
+<blockquote class="book-hint info">
+  <p><strong>&ldquo;MHD Energy Equation&rdquo;</strong></p>
+<span>
+  \[\dv{}{t} \left( \frac{p}{\rho^\gamma} \right) = \frac{\gamma - 1}{\rho^\gamma} \left[ Q_{ie} &#43; Q_{ei} - \div (\vec h_i &#43; \vec h_e) - \vec \pi_i \cdot \cdot \grad \vec v_i - \vec \Pi_e \cdot \cdot \grad \vec v_e \right] &#43; \frac{\vec j}{Z e n} \cdot \grad \frac{p_e}{\rho^\gamma}\]
 </span>
 <script>
   function loadKatex() {
@@ -2023,34 +2027,36 @@ Multiply by <span>
         { left: "$", right: "$", display: false },
         { left: "\\(", right: "\\)", display: false }],
       macros: {
-        
-        "\\lcm": "\\mathop{\\mathrm{lcm}}",
-        "\\sen": '\\text{sen}\\,',
-        
-        "\\dd": "\\mathop{\\mathrm{d} #1}",
-        "\\abs": "\\lvert #1 \\rvert",
-        
-        "\\dd": "\\text{d}",
-        "\\cross": "\\times",
-        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
-        "\\curl": "\\nabla \\cross #1",
-        "\\vu": "\\mathbf{\\hat{#1}}",
-        "\\vdot": "\\dot",
-        "\\div": "\\nabla \\cdot #1",
-        "\\grad": "\\nabla",
-        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
-        "\\gr": "\\gamma",
-        "\\vec": "\\mathbf{#1}",
-        "\\tagl": "\\tag{#1}",
-        "\\eqref": "(#1)",
-        "\\laplacian": "\\mathbf{\\nabla ^2}",
-        "\\label": "{}",
-        "\\negadelta": "\\nabla",
-      }
-    });
-  };
-</script>
+<pre><code>    &quot;\\lcm&quot;: &quot;\\mathop{\\mathrm{lcm}}&quot;,
+    &quot;\\sen&quot;: '\\text{sen}\\,',
+    
+    &quot;\\dd&quot;: &quot;\\mathop{\\mathrm{d} #1}&quot;,
+    &quot;\\abs&quot;: &quot;\\lvert #1 \\rvert&quot;,
+    
+    &quot;\\dd&quot;: &quot;\\text{d}&quot;,
+    &quot;\\cross&quot;: &quot;\\times&quot;,
+    &quot;\\pdv&quot;: &quot;\\frac{\\partial #1}{\\partial #2}&quot;,
+    &quot;\\curl&quot;: &quot;\\nabla \\cross #1&quot;,
+    &quot;\\vu&quot;: &quot;\\mathbf{\\hat{#1}}&quot;,
+    &quot;\\vdot&quot;: &quot;\\dot&quot;,
+    &quot;\\div&quot;: &quot;\\nabla \\cdot #1&quot;,
+    &quot;\\grad&quot;: &quot;\\nabla&quot;,
+    &quot;\\dv&quot;: &quot;\\frac{d\\,#1}{d\\,#2}&quot;,
+    &quot;\\gr&quot;: &quot;\\gamma&quot;,
+    &quot;\\vec&quot;: &quot;\\mathbf{#1}&quot;,
+    &quot;\\tagl&quot;: &quot;\\tag{#1}&quot;,
+    &quot;\\eqref&quot;: &quot;(#1)&quot;,
+    &quot;\\laplacian&quot;: &quot;\\mathbf{\\nabla ^2}&quot;,
+    &quot;\\label&quot;: &quot;{}&quot;,
+    &quot;\\negadelta&quot;: &quot;\\nabla&quot;,
+  }
+});
 </code></pre>
+<p>};
+</script></p>
+
+</blockquote>
+
 <p>Obviously, we&rsquo;ve retained a number of terms that are specific to the behavior of the electrons. It is possible to incorporate the electron behavior by using a single-fluid MHD model with two temperatures <span>
   \( T_i \neq T_e \)
 </span>
@@ -2909,10 +2915,10 @@ Multiply by <span>
   };
 </script>
 <p>The continuity equation remains unchanged from the extended MHD model</p>
-<p>!!! info &ldquo;Ideal MHD Continuity Equation&rdquo;</p>
-<pre><code><span>
-  \[    \pdv{\rho}{t} &#43; \div (\rho \vec v) = 0
-    \]
+<blockquote class="book-hint info">
+  <p><strong>&ldquo;Ideal MHD Continuity Equation&rdquo;</strong></p>
+<span>
+  \[\pdv{\rho}{t} &#43; \div (\rho \vec v) = 0\]
 </span>
 <script>
   function loadKatex() {
@@ -2923,34 +2929,36 @@ Multiply by <span>
         { left: "$", right: "$", display: false },
         { left: "\\(", right: "\\)", display: false }],
       macros: {
-        
-        "\\lcm": "\\mathop{\\mathrm{lcm}}",
-        "\\sen": '\\text{sen}\\,',
-        
-        "\\dd": "\\mathop{\\mathrm{d} #1}",
-        "\\abs": "\\lvert #1 \\rvert",
-        
-        "\\dd": "\\text{d}",
-        "\\cross": "\\times",
-        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
-        "\\curl": "\\nabla \\cross #1",
-        "\\vu": "\\mathbf{\\hat{#1}}",
-        "\\vdot": "\\dot",
-        "\\div": "\\nabla \\cdot #1",
-        "\\grad": "\\nabla",
-        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
-        "\\gr": "\\gamma",
-        "\\vec": "\\mathbf{#1}",
-        "\\tagl": "\\tag{#1}",
-        "\\eqref": "(#1)",
-        "\\laplacian": "\\mathbf{\\nabla ^2}",
-        "\\label": "{}",
-        "\\negadelta": "\\nabla",
-      }
-    });
-  };
-</script>    
+<pre><code>    &quot;\\lcm&quot;: &quot;\\mathop{\\mathrm{lcm}}&quot;,
+    &quot;\\sen&quot;: '\\text{sen}\\,',
+    
+    &quot;\\dd&quot;: &quot;\\mathop{\\mathrm{d} #1}&quot;,
+    &quot;\\abs&quot;: &quot;\\lvert #1 \\rvert&quot;,
+    
+    &quot;\\dd&quot;: &quot;\\text{d}&quot;,
+    &quot;\\cross&quot;: &quot;\\times&quot;,
+    &quot;\\pdv&quot;: &quot;\\frac{\\partial #1}{\\partial #2}&quot;,
+    &quot;\\curl&quot;: &quot;\\nabla \\cross #1&quot;,
+    &quot;\\vu&quot;: &quot;\\mathbf{\\hat{#1}}&quot;,
+    &quot;\\vdot&quot;: &quot;\\dot&quot;,
+    &quot;\\div&quot;: &quot;\\nabla \\cdot #1&quot;,
+    &quot;\\grad&quot;: &quot;\\nabla&quot;,
+    &quot;\\dv&quot;: &quot;\\frac{d\\,#1}{d\\,#2}&quot;,
+    &quot;\\gr&quot;: &quot;\\gamma&quot;,
+    &quot;\\vec&quot;: &quot;\\mathbf{#1}&quot;,
+    &quot;\\tagl&quot;: &quot;\\tag{#1}&quot;,
+    &quot;\\eqref&quot;: &quot;(#1)&quot;,
+    &quot;\\laplacian&quot;: &quot;\\mathbf{\\nabla ^2}&quot;,
+    &quot;\\label&quot;: &quot;{}&quot;,
+    &quot;\\negadelta&quot;: &quot;\\nabla&quot;,
+  }
+});
 </code></pre>
+<p>};
+</script></p>
+
+</blockquote>
+
 <p>The momentum equation is</p>
 <p><span>
   \[\rho \left( \pdv{\vec v}{t} &#43; \vec v \cdot \grad \vec v \right) &#43; \grad p - \vec j \cross \vec B = - \div (\vec \Pi_e &#43; \vec \Pi_e)\]
@@ -2992,10 +3000,10 @@ Multiply by <span>
   };
 </script>
 Drop the anisotropic pressure</p>
-<p>!!! info &ldquo;Ideal MHD Momentum Equation&rdquo;</p>
-<pre><code><span>
-  \[    \rho \left( \pdv{\vec v}{t} &#43; \vec v \cdot \grad \vec v \right) &#43; \grad p - \vec j \cross \vec B = 0
-    \]
+<blockquote class="book-hint info">
+  <p><strong>&ldquo;Ideal MHD Momentum Equation&rdquo;</strong></p>
+<span>
+  \[\rho \left( \pdv{\vec v}{t} &#43; \vec v \cdot \grad \vec v \right) &#43; \grad p - \vec j \cross \vec B = 0\]
 </span>
 <script>
   function loadKatex() {
@@ -3006,34 +3014,36 @@ Drop the anisotropic pressure</p>
         { left: "$", right: "$", display: false },
         { left: "\\(", right: "\\)", display: false }],
       macros: {
-        
-        "\\lcm": "\\mathop{\\mathrm{lcm}}",
-        "\\sen": '\\text{sen}\\,',
-        
-        "\\dd": "\\mathop{\\mathrm{d} #1}",
-        "\\abs": "\\lvert #1 \\rvert",
-        
-        "\\dd": "\\text{d}",
-        "\\cross": "\\times",
-        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
-        "\\curl": "\\nabla \\cross #1",
-        "\\vu": "\\mathbf{\\hat{#1}}",
-        "\\vdot": "\\dot",
-        "\\div": "\\nabla \\cdot #1",
-        "\\grad": "\\nabla",
-        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
-        "\\gr": "\\gamma",
-        "\\vec": "\\mathbf{#1}",
-        "\\tagl": "\\tag{#1}",
-        "\\eqref": "(#1)",
-        "\\laplacian": "\\mathbf{\\nabla ^2}",
-        "\\label": "{}",
-        "\\negadelta": "\\nabla",
-      }
-    });
-  };
-</script>
+<pre><code>    &quot;\\lcm&quot;: &quot;\\mathop{\\mathrm{lcm}}&quot;,
+    &quot;\\sen&quot;: '\\text{sen}\\,',
+    
+    &quot;\\dd&quot;: &quot;\\mathop{\\mathrm{d} #1}&quot;,
+    &quot;\\abs&quot;: &quot;\\lvert #1 \\rvert&quot;,
+    
+    &quot;\\dd&quot;: &quot;\\text{d}&quot;,
+    &quot;\\cross&quot;: &quot;\\times&quot;,
+    &quot;\\pdv&quot;: &quot;\\frac{\\partial #1}{\\partial #2}&quot;,
+    &quot;\\curl&quot;: &quot;\\nabla \\cross #1&quot;,
+    &quot;\\vu&quot;: &quot;\\mathbf{\\hat{#1}}&quot;,
+    &quot;\\vdot&quot;: &quot;\\dot&quot;,
+    &quot;\\div&quot;: &quot;\\nabla \\cdot #1&quot;,
+    &quot;\\grad&quot;: &quot;\\nabla&quot;,
+    &quot;\\dv&quot;: &quot;\\frac{d\\,#1}{d\\,#2}&quot;,
+    &quot;\\gr&quot;: &quot;\\gamma&quot;,
+    &quot;\\vec&quot;: &quot;\\mathbf{#1}&quot;,
+    &quot;\\tagl&quot;: &quot;\\tag{#1}&quot;,
+    &quot;\\eqref&quot;: &quot;(#1)&quot;,
+    &quot;\\laplacian&quot;: &quot;\\mathbf{\\nabla ^2}&quot;,
+    &quot;\\label&quot;: &quot;{}&quot;,
+    &quot;\\negadelta&quot;: &quot;\\nabla&quot;,
+  }
+});
 </code></pre>
+<p>};
+</script></p>
+
+</blockquote>
+
 <p>The generalized Ohm&rsquo;s law is</p>
 <span>
   \[\vec E &#43; \vec v \cross \vec B = \eta \vec j &#43; \frac{1}{Z e n} \left( \vec j \cross B - \grad p_e - \div \vec \Pi_e \right)\]
@@ -3075,10 +3085,10 @@ Drop the anisotropic pressure</p>
   };
 </script>
 <p>We&rsquo;re going to drop the entire right hand side</p>
-<p>!!! info &ldquo;Ideal MHD Generalized Ohm&rsquo;s Law&rdquo;</p>
-<pre><code><span>
-  \[    \vec E &#43; \vec v \cross \vec B = 0
-    \]
+<blockquote class="book-hint info">
+  <p><strong>&ldquo;Ideal MHD Generalized Ohm&rsquo;s Law&rdquo;</strong></p>
+<span>
+  \[\vec E &#43; \vec v \cross \vec B = 0\]
 </span>
 <script>
   function loadKatex() {
@@ -3089,34 +3099,36 @@ Drop the anisotropic pressure</p>
         { left: "$", right: "$", display: false },
         { left: "\\(", right: "\\)", display: false }],
       macros: {
-        
-        "\\lcm": "\\mathop{\\mathrm{lcm}}",
-        "\\sen": '\\text{sen}\\,',
-        
-        "\\dd": "\\mathop{\\mathrm{d} #1}",
-        "\\abs": "\\lvert #1 \\rvert",
-        
-        "\\dd": "\\text{d}",
-        "\\cross": "\\times",
-        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
-        "\\curl": "\\nabla \\cross #1",
-        "\\vu": "\\mathbf{\\hat{#1}}",
-        "\\vdot": "\\dot",
-        "\\div": "\\nabla \\cdot #1",
-        "\\grad": "\\nabla",
-        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
-        "\\gr": "\\gamma",
-        "\\vec": "\\mathbf{#1}",
-        "\\tagl": "\\tag{#1}",
-        "\\eqref": "(#1)",
-        "\\laplacian": "\\mathbf{\\nabla ^2}",
-        "\\label": "{}",
-        "\\negadelta": "\\nabla",
-      }
-    });
-  };
-</script>
+<pre><code>    &quot;\\lcm&quot;: &quot;\\mathop{\\mathrm{lcm}}&quot;,
+    &quot;\\sen&quot;: '\\text{sen}\\,',
+    
+    &quot;\\dd&quot;: &quot;\\mathop{\\mathrm{d} #1}&quot;,
+    &quot;\\abs&quot;: &quot;\\lvert #1 \\rvert&quot;,
+    
+    &quot;\\dd&quot;: &quot;\\text{d}&quot;,
+    &quot;\\cross&quot;: &quot;\\times&quot;,
+    &quot;\\pdv&quot;: &quot;\\frac{\\partial #1}{\\partial #2}&quot;,
+    &quot;\\curl&quot;: &quot;\\nabla \\cross #1&quot;,
+    &quot;\\vu&quot;: &quot;\\mathbf{\\hat{#1}}&quot;,
+    &quot;\\vdot&quot;: &quot;\\dot&quot;,
+    &quot;\\div&quot;: &quot;\\nabla \\cdot #1&quot;,
+    &quot;\\grad&quot;: &quot;\\nabla&quot;,
+    &quot;\\dv&quot;: &quot;\\frac{d\\,#1}{d\\,#2}&quot;,
+    &quot;\\gr&quot;: &quot;\\gamma&quot;,
+    &quot;\\vec&quot;: &quot;\\mathbf{#1}&quot;,
+    &quot;\\tagl&quot;: &quot;\\tag{#1}&quot;,
+    &quot;\\eqref&quot;: &quot;(#1)&quot;,
+    &quot;\\laplacian&quot;: &quot;\\mathbf{\\nabla ^2}&quot;,
+    &quot;\\label&quot;: &quot;{}&quot;,
+    &quot;\\negadelta&quot;: &quot;\\nabla&quot;,
+  }
+});
 </code></pre>
+<p>};
+</script></p>
+
+</blockquote>
+
 <p>For the energy equation we have</p>
 <span>
   \[\dv{}{t} \left( \frac{p}{\rho^\gamma} \right) = \frac{\gamma - 1}{\rho^\gamma} [Q_{ie} &#43; Q_{ei} - \div (\vec h_i &#43; \vec h_e) - \vec \Pi_i \cdot \cdot \grad \vec v_i - \vec \Pi_e \cdot \cdot \grad \vec v_e] &#43; \frac{\vec j}{Z e n} \cdot \grad \frac{p_e}{\rho^\gamma}\]
@@ -3158,10 +3170,10 @@ Drop the anisotropic pressure</p>
   };
 </script>
 <p>We neglect the entire right-hand side</p>
-<p>!!! info &ldquo;Ideal MHD Energy Equation&rdquo;</p>
-<pre><code><span>
-  \[    \pdv{\rho}{t} &#43; \div (p \vec v) = (1 - \gamma) p \div \vec v 
-    \]
+<blockquote class="book-hint info">
+  <p><strong>&ldquo;Ideal MHD Energy Equation&rdquo;</strong></p>
+<span>
+  \[\pdv{\rho}{t} &#43; \div (p \vec v) = (1 - \gamma) p \div \vec v \]
 </span>
 <script>
   function loadKatex() {
@@ -3172,34 +3184,36 @@ Drop the anisotropic pressure</p>
         { left: "$", right: "$", display: false },
         { left: "\\(", right: "\\)", display: false }],
       macros: {
-        
-        "\\lcm": "\\mathop{\\mathrm{lcm}}",
-        "\\sen": '\\text{sen}\\,',
-        
-        "\\dd": "\\mathop{\\mathrm{d} #1}",
-        "\\abs": "\\lvert #1 \\rvert",
-        
-        "\\dd": "\\text{d}",
-        "\\cross": "\\times",
-        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
-        "\\curl": "\\nabla \\cross #1",
-        "\\vu": "\\mathbf{\\hat{#1}}",
-        "\\vdot": "\\dot",
-        "\\div": "\\nabla \\cdot #1",
-        "\\grad": "\\nabla",
-        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
-        "\\gr": "\\gamma",
-        "\\vec": "\\mathbf{#1}",
-        "\\tagl": "\\tag{#1}",
-        "\\eqref": "(#1)",
-        "\\laplacian": "\\mathbf{\\nabla ^2}",
-        "\\label": "{}",
-        "\\negadelta": "\\nabla",
-      }
-    });
-  };
-</script>
+<pre><code>    &quot;\\lcm&quot;: &quot;\\mathop{\\mathrm{lcm}}&quot;,
+    &quot;\\sen&quot;: '\\text{sen}\\,',
+    
+    &quot;\\dd&quot;: &quot;\\mathop{\\mathrm{d} #1}&quot;,
+    &quot;\\abs&quot;: &quot;\\lvert #1 \\rvert&quot;,
+    
+    &quot;\\dd&quot;: &quot;\\text{d}&quot;,
+    &quot;\\cross&quot;: &quot;\\times&quot;,
+    &quot;\\pdv&quot;: &quot;\\frac{\\partial #1}{\\partial #2}&quot;,
+    &quot;\\curl&quot;: &quot;\\nabla \\cross #1&quot;,
+    &quot;\\vu&quot;: &quot;\\mathbf{\\hat{#1}}&quot;,
+    &quot;\\vdot&quot;: &quot;\\dot&quot;,
+    &quot;\\div&quot;: &quot;\\nabla \\cdot #1&quot;,
+    &quot;\\grad&quot;: &quot;\\nabla&quot;,
+    &quot;\\dv&quot;: &quot;\\frac{d\\,#1}{d\\,#2}&quot;,
+    &quot;\\gr&quot;: &quot;\\gamma&quot;,
+    &quot;\\vec&quot;: &quot;\\mathbf{#1}&quot;,
+    &quot;\\tagl&quot;: &quot;\\tag{#1}&quot;,
+    &quot;\\eqref&quot;: &quot;(#1)&quot;,
+    &quot;\\laplacian&quot;: &quot;\\mathbf{\\nabla ^2}&quot;,
+    &quot;\\label&quot;: &quot;{}&quot;,
+    &quot;\\negadelta&quot;: &quot;\\nabla&quot;,
+  }
+});
 </code></pre>
+<p>};
+</script></p>
+
+</blockquote>
+
 <h3 id="collisionpressure-terms">
   Collision/Pressure terms
   <a class="anchor" href="#collisionpressure-terms">#</a>
@@ -7993,10 +8007,7 @@ where <span>
 </script> to the magnetic field, and is therefore preferred. We will continue to use ideal MHD outside of its region of validity.</p>
 </article>
  
-      <script>window.onload = function() {
-    window.scrollTo(0,document.body.scrollHeight);
-};</script>
-
+      
 
       <footer class="book-footer">
         
@@ -8049,6 +8060,12 @@ where <span>
 
 
 
+
+  <div><a class="flex align-center" href="https://github.com/Peppyhare/r/commit/4bc8cf02c7d8cbd1b08cea142146d75769771797" title='Last modified by Evan Bluhm | October 7, 2020' target="_blank" rel="noopener">
+      <img src="/r/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>October 7, 2020</span>
+    </a>
+  </div>
 
 
 

@@ -69,7 +69,7 @@ That is, {{< katex >}} f(x, v, t) {{< /katex >}} is the number of particles at p
 By our definition, we can integrate to get the total number of particles at time {{< katex >}} t {{< /katex >}}.
 
 {{< katex display >}}
-\int \int \dd x \dd v f(x, v, t) = N(t)
+\iint \dd x \dd v f(x, v, t) = N(t)
 {{< /katex >}}
 
 The ensemble averaging process works well if the the number of particles is very large

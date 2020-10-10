@@ -9,7 +9,7 @@ bookToc: false
 # Formulary
 
 {{< hint info >}}
-**"Kinetic Description"**
+**Kinetic Description**
 
 
 {{< katex display >}}
@@ -42,7 +42,7 @@ N \equiv \sum_i \delta (p - p_i) \delta(q - q_i)
 {{< /hint >}}
 
 {{< hint info >}}
-**"Plasma Fluid Description"**
+**Plasma Fluid Description**
     
 Boltzmann Equation
 
@@ -93,7 +93,7 @@ Closure relations
 ## Ideal MHD
 
 {{< hint info >}}
-**"Ideal MHD"**
+**Ideal MHD**
 
 Continuity:
 
@@ -129,7 +129,7 @@ n \tau_E > 10^4 s/m^3
 {{< /hint >}}
 
 {{< hint info >}}
-**"Conservation Law Form of Ideal MHD"**
+**Conservation Law Form of Ideal MHD**
 
 Continuity:
 
@@ -189,7 +189,7 @@ Conservation of flux:
 ## 1D Equilibria
 
 {{< hint info >}}
-**"\\( \theta \\)-pinch"**
+**\\( \theta \\)-pinch**
 
 
 {{< katex display >}}
@@ -223,7 +223,7 @@ W = \frac{\mu_0 r}{B_z ^2} \dv{}{r} \left( p + \frac{B_z ^2}{2 \mu_0} \right) = 
 {{< /hint >}}
 
 {{< hint info >}}
-**"Z-pinch"**
+**Z-pinch**
 
 
 {{< katex display >}}
@@ -253,7 +253,7 @@ W = 1
 {{< /hint >}}
 
 {{< hint info >}}
-**"Screw pinch"**
+**Screw pinch**
 
 
 {{< katex display >}}
@@ -287,7 +287,7 @@ W = - \frac{B_\theta ^2}{B_\theta ^2 + B_z ^2}
 {{< /hint >}}
 
 {{< hint info >}}
-**"Stability"**
+**Stability**
 
 Shear:
 
@@ -319,7 +319,7 @@ For stabilization, \\( B^2 / 2 \mu_0 \\) should increase faster than \\( p \\) d
 ## 2D Equilibria
 
 {{< hint info >}}
-**"Grad-Shafranov Equation: Static toroidal equilibrium"**
+**Grad-Shafranov Equation: Static toroidal equilibrium**
 
 
 {{< katex display >}}
@@ -396,7 +396,7 @@ Limits:
 ## MHD Stability
 
 {{< hint info >}}
-**"Linear stability"**
+**Linear stability**
     
 
 {{< katex display >}}
@@ -430,7 +430,7 @@ Eigenvalues of \\( \frac{1}{\rho_0} \vec F (\xi) = \omega^2 \xi \\) are real and
 {{< /hint >}}
 
 {{< hint info >}}
-**"\\( \delta W \\) Approach"**
+**\\( \delta W \\) Approach**
 
 \\( \delta W = \\) change in potential energy due to a displacement \\( \xi \\)
 
