@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="4.3: The Electric Displacement #  4.3.1: Gauss&rsquo;s Law in the Presence of Dielectrics #  In Section 4.2 we found that the effect of polarization is to produce accumulations of (bound) charge, \( \rho_b = - \div \vec{P} \) within the dielectric and \( \sigma_b = \vec{P} \cdot \vu{n} \) on the surface. The field due to polarization of the medium is just the field of this bound charge. We are now ready to put it all together: the field attributable to bound charge plus the field due to everything else (which, for want of a better term, we call free charge, \( \rho_f \)).">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="4.3: The Electric Displacement #  4.3.1: Gauss&rsquo;s Law in the Presence of Dielectrics #  In Section 4.2 we found that the effect of polarization is to produce accumulations of (bound) charge, \( \rho_b = - \div \vec{P} \) within the dielectric and \( \sigma_b = \vec{P} \cdot \vu{n} \) on the surface. The field due to polarization of the medium is just the field of this bound charge. We are now ready to put it all together: the field attributable to bound charge plus the field due to everything else (which, for want of a better term, we call free charge, \( \rho_f \))." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://peppyhare.github.io/r/notes/griffiths/ch4-3/" />
+
+<title>Ch4 3 | My Notes</title>
+<link rel="manifest" href="/r/manifest.json">
+<link rel="icon" href="/r/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/r/book.min.f0d8d89a3c8ce0924c15fd3abdb2eb561162f95dd0ce5d8e24fe8d5b9498a68c.css" integrity="sha256-8NjYmjyM4JJMFf06vbLrVhFi&#43;V3Qzl2OJP6NW5SYpow=">
+<script defer src="/r/en.search.min.1e3631a1a72f85459af4770e969c2f3a1dd8b19c7f8c3fbf98191f5c4a301820.js" integrity="sha256-HjYxoacvhUWa9HcOlpwvOh3YsZx/jD&#43;/mBkfXEowGCA="></script>
+
+<script defer src="/r/sw.min.7dd1b982abb2287010a43b99e3233ff99ced25fbe0e72dc2e6ad364145177485.js" integrity="sha256-fdG5gquyKHAQpDuZ4yM/&#43;ZztJfvg5y3C5q02QUUXdIU="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/r"><span>My Notes</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Notes</span>
+  
+
+          
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Working</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/working/crews2018/" class="">Crews (2018)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ee5e070eb25b63f2c377d750d37f67ae" class="toggle" checked />
+    <label for="section-ee5e070eb25b63f2c377d750d37f67ae" class="flex justify-between">
+      <a href="https://peppyhare.github.io/r/notes/griffiths/" class="">Griffiths Introduction to Electrodynamics</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-1/" class="">Vector Algebra</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-2/" class="">Differential Calculus</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-3/" class="">Integral Calculus</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-4/" class="">Curvilinear Coordinates</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-5/" class="">Ch1 5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-6/" class="">Ch1 6</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch10-1/" class="">Ch10 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch10-2/" class="">Ch10 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch10-3/" class="">Ch10 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch11-1/" class="">Ch11 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-1/" class="">Ch2 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-2/" class="">Ch2 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-3/" class="">Ch2 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-4/" class="">Ch2 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-5/" class="">Ch2 5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch3-1/" class="">Ch3 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch3-2/" class="">Ch3 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch3-3/" class="">Ch3 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch3-4/" class="">Ch3 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch4-1/" class="">Ch4 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch4-2/" class="">Ch4 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch4-3/" class=" active">Ch4 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch4-4/" class="">Ch4 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch5-1/" class="">Ch5 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch5-2/" class="">Ch5 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch5-3/" class="">Ch5 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch5-4/" class="">Ch5 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch6-1/" class="">Ch6 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch6-2/" class="">Ch6 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch6-3/" class="">Ch6 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch6-4/" class="">Ch6 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch7-1/" class="">Ch7 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch7-2/" class="">Ch7 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch7-3/" class="">Ch7 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch8-0/" class="">Ch8 0</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch8-1/" class="">Ch8 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch8-2/" class="">Ch8 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-1/" class="">Ch9 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-2/" class="">Ch9 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-3/" class="">Ch9 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-4/" class="">Ch9 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-5/" class="">Ch9 5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/problems-ch3/" class="">Problems Ch3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/problems-ch5/" class="">Problems Ch5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/problems-ch7/" class="">Problems Ch7</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/problems-ch9/" class="">Problems Ch9</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-edf338bf880234e7aba93d04934ebde0" class="toggle"  />
+    <label for="section-edf338bf880234e7aba93d04934ebde0" class="flex justify-between">
+      <a  class="">MHD Theory</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/01-syllabus/" class="">Syllabus</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/02-plasma-models/" class="">Plasma Models</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/03-plasma-fluid-model/" class="">Plasma Fluid Model</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/04-two-fluid-plasma-model/" class="">Two-Fluid Plasma Model</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/05-mhd-model/" class="">Magnetohydrodynamic (MHD) Model</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/06-boundary-conditions/" class="">Boundary Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/" class="">Equilibrium for Fusion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/08-1d-equilibria/" class="">1-D Equilibria</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/09-2d-equilibria/" class="">2D Equilibria</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/10-equilibrium-of-3d-configurations/" class="">Equilibrium of 3D Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/11-mhd-stability/" class="">MHD Stability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/formulary/" class="">Formulary</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/Peppyhare/r" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://themes.gohugo.io/hugo-book/" target="_blank" rel="noopener">
+        Hugo Themes
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/r/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Ch4 3</strong>
+
+  <label for="toc-control">
+    
+    <img src="/r/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#43-the-electric-displacement">4.3: The Electric Displacement</a>
+      <ul>
+        <li><a href="#431-gausss-law-in-the-presence-of-dielectrics">4.3.1: Gauss&rsquo;s Law in the Presence of Dielectrics</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#432-a-deceptive-parallel">4.3.2: A Deceptive Parallel</a></li>
+        <li><a href="#433-boundary-conditions">4.3.3: Boundary Conditions</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="43-the-electric-displacement">
+  4.3: The Electric Displacement
+  <a class="anchor" href="#43-the-electric-displacement">#</a>
+</h1>
+<h2 id="431-gausss-law-in-the-presence-of-dielectrics">
+  4.3.1: Gauss&rsquo;s Law in the Presence of Dielectrics
+  <a class="anchor" href="#431-gausss-law-in-the-presence-of-dielectrics">#</a>
+</h2>
+<p>In Section 4.2 we found that the effect of polarization is to produce accumulations of (bound) charge, \( \rho_b = - \div \vec{P} \) within the dielectric and \( \sigma_b = \vec{P} \cdot \vu{n} \) on the surface. The field due to polarization of the medium is just the field of this bound charge. We are now ready to put it all together: the field attributable to bound charge plus the field due to everything <em>else</em> (which, for want of a better term, we call <strong>free charge</strong>, \( \rho_f \)). The free charge might consist of electrons on a conductor or ions embedded in the dielectric material or whatever; any charge, in other words, that is <em>not</em> a result of polarization. Within the dielectric, the total charge density can be written</p>
+
+<link rel="stylesheet" href="/r/katex/katex.min.css" />
+<script defer src="/r/katex/katex.min.js"></script>
+<script defer src="/r/katex/auto-render.min.js" onload="loadKatex();"></script><span>
+  \[\rho = \rho_b &#43; \rho_f \tagl{4.20}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>and Gauss&rsquo;s law reads</p>
+<span>
+  \[\epsilon_0 \div \vec{E} = \rho = \rho_b &#43; \rho_f = - \div \vec{P} &#43; \rho_f\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>where <strong>E</strong> is now the total field, not just that portion generated by polarization.</p>
+<p>It is convenient to combine the two divergence terms:</p>
+<span>
+  \[\div (\epsilon_0 \vec{E} &#43; \vec{P}) = \rho_f\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>The expression in parentheses is known as the <strong>electric displacement</strong> and is designated by the letter <strong>D</strong>:</p>
+<span>
+  \[\vec{D} \equiv \epsilon_0 \vec{E} &#43; \vec{P} \tagl{4.21}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>In terms of <strong>D</strong>, Gauss&rsquo;s law then reads</p>
+<span>
+  \[\div \vec{D} = \rho_f \tagl{4.22}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>or in integral form</p>
+<span>
+  \[\oint \vec{D} \cdot \dd \vec{a} = Q_{f_{enc}} \tagl{4.23}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>where \( Q_{f_{enc}} \) denotes the total free charge enclosed in the volume. This is a particularly useful way to express Gauss&rsquo;s law, in the context of dielectrics, because it _makes reference only to the free charges_, and free charge is the stuff we control. Bound charge comes along for the ride: when we put the free charge in place, a certain polarization automatically arises, by the mechanisms of Sect 4.1, and this polarization produces the bound charge. In a typical problem, therefore, we know \( \rho_f \), but we do not (initially) know \( \rho_b \); \( \eqref{4.23} \) lets us go right to work with the information at hand. In particular, whenever the requisite symmetry is present, we can immediately calculate __D__ by the standard Gauss&rsquo;s law methods.</p>
+<h4 id="example-44">
+  Example 4.4
+  <a class="anchor" href="#example-44">#</a>
+</h4>
+<p>!!! question &ldquo;A long straight wire, carrying uniform line charge \( \lambda \), is surrounded by rubber insulation out to a radius <em>a</em> (Fig 4.17). Find the electric displacement.&rdquo;</p>
+<pre><code>&lt;p align=&quot;center&quot;&gt; &lt;img alt=&quot;Figure 4.17&quot; src=&quot;/r/img/griffiths/4.17.png&quot; /&gt; &lt;/p&gt;
+__Solution__
+Drawing a cylindrical Gaussian surface, of radius _s_ and length _L_, and applying \\( \eqref{4.23} \\) we find
+</code></pre>
+<span>
+  \[    D( 2\pi s L) = \lambda L
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>Therefore
+</code></pre>
+<span>
+  \[    \vec{D} = \frac{\lambda}{2 \pi s} \vu{s} \tagl{4.24}
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>Notice that this formula holds both within the insulation and outside it. In the latter region, \\( \vec{P} = 0 \\) so
+</code></pre>
+<span>
+  \[    \vec{E}  =\frac{1}{\epsilon_0} \vec{D} = \frac{\lambda}{2 \pi \epsilon_0 s} \vu{s}, \quad \text{ for } s &gt; a
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>Inside the rubber, the electric field cannot be determined, since we do not know __P__.
+</code></pre>
+<p>Hold on a tick! We got all the way to a field we can calculate by Gauss&rsquo;s law, but we have left out the surface bound charge \( \sigma_b \). What happened to it? To be more precise, \( \eqref{4.22} \) works within a dielectric, but we cannot apply Gauss&rsquo;s law precisely <em>at</em> the boundary of the dielectric, because the local \( \rho_b \) blows up there, taking \( \div \vec{E} \) with it. The polarization drops abruptly to zero outside the material, so its <em>derivative</em> is a delta function. The surface bound charge is precisely this term, so in this sense it is actually included in \( \rho_b \), but we ordinarily prefer to handle it separately as \( \sigma_b \). We could even picture the edge of the dielectric as having some finite thickness, within which the polarization drops off to zero (which is probably a more realistic model anyway), in which case there is no \( \sigma_b \), \( \rho_b \) varies rapidly but smoothly, and Gauss&rsquo;s law can safely be applied everywhere. In any case, we can use \( \eqref{4.23} \) safely without fear of this &ldquo;defect.&rdquo;</p>
+<h2 id="432-a-deceptive-parallel">
+  4.3.2: A Deceptive Parallel
+  <a class="anchor" href="#432-a-deceptive-parallel">#</a>
+</h2>
+<p>Our expression for the divergence of the displacement looks <em>just</em> like Gauss&rsquo;s law, only the total charge density \( \rho \) is replaced by the free charge density \( \rho_f \), and \( \vec{D} \) is substituted for \( \epsilon_0 \vec{E} \). For this reason, you may be tempted to conclude that <strong>D</strong> is &ldquo;just like&rdquo; <strong>E</strong> (apart from the factor \( \epsilon_0 \)), except that its source is \( \rho_f \) instead of \( \rho \). That is, it&rsquo;s tempting to say &ldquo;To solve problems involving dielectrics, you just forget all about the bound charge - calculate the field as you ordinarily would, only call the answer <strong>D</strong> instead of <strong>E</strong>.&rdquo; This reasoning is seductive, but the conclusion is false; in particular there is no &ldquo;Coulomb&rsquo;s law&rdquo; for <strong>D</strong>:</p>
+<span>
+  \[\vec{D}(\vec{r}) \neq \frac{1}{4 \pi} \int \frac{\vu{\gr}}{\gr ^2} \rho_f(\vec{r&#39;}) \dd \tau&#39;\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>This is because the divergence alone is insufficient to determine a vector field; you need to know its curl as well. One tends to forget this in the case of electrostatics because we usually don&rsquo;t care about the curl of <strong>E</strong> anyway. But the curl of <strong>D</strong> is <em>not</em> always zero, even in electrostatics, since there is no reason, in general, to suppose that the curl of <strong>P</strong> vanishes:</p>
+<span>
+  \[\curl \vec{D} = \epsilon_0 (\curl \vec{E}) &#43; (\curl \vec{P}) = \curl \vec{P} \tagl{4.25}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>Sometimes it does, but more often it does not. The bar electret of Prob 4.11 is one example of this: here there is no free charge anywhere, so if you really believe that the only source of <strong>D</strong> is \( \rho_f \) you will be forced to conclude that \( \vec{D} = 0 \) everywhere, and hence that \( \vec{E} = (-1 / \epsilon_0) \vec{P} \) inside and \( \vec{E} = 0 \) outside the electret, which is obviously wrong. And because \( \curl \vec{D} \neq 0 \) in general, <strong>D</strong> cannot be expressed as the gradient of a scalar - there is no &ldquo;potential&rdquo; for <strong>D</strong>.</p>
+<p><em>Advice</em>: When you are asked to compute the electric displacement, first look for symmetry. If the problem exhibits spherical, cylindrical, or plane symmetry, then you can get <strong>D</strong> directly from Eq. 4.23 by the usual Gauss&rsquo;s law methods. (Evidently in such cases \( \curl \vec{P} \)  is automatically zero, but since symmetry alone dictates the answer, you&rsquo;re not really obliged to worry about the curl.) If the requisite symmetry is absent, you&rsquo;ll have to think of another approach, and, in particular, you must not assume that <strong>D</strong> is determined exclusively by the free charge.</p>
+<h2 id="433-boundary-conditions">
+  4.3.3: Boundary Conditions
+  <a class="anchor" href="#433-boundary-conditions">#</a>
+</h2>
+<p>The electrostatic boundary conditions we had in Sect 2.3 can be re-cast in terms of <strong>D</strong>. \( \eqref{4.23} \) tells us the discontinuity in the component perpendicular to an interface:</p>
+<span>
+  \[D_{above} ^{\perp} - D_{below} ^{\perp} = \sigma_f \tagl{4.26}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>while \( \eqref{4.25} \) gives the discontinuity in parallel components:</p>
+<span>
+  \[\vec{D}_{above} ^{\parallel} - \vec{D}_{below} ^{\parallel} = \vec{P}_{above} ^{\parallel} - \vec{P}_{below} ^{\parallel} \tagl{4.27}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>In the presence of dielectrics, these are sometimes more useful than the corresponding boundary conditions on <strong>E</strong> (Eqs 2.31 and 2.32):</p>
+<span>
+  \[E_{above} ^{\perp} - E_{below} ^{\perp} = \frac{1}{\epsilon_0} \sigma \tagl{4.28}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>and</p>
+<span>
+  \[\vec{E}_{above} ^{\parallel} - \vec{E}_{below} ^{\parallel} = 0 \tagl{4.29}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+
+  
+
+  
+
+  
+
+
+
+<div class="book-languages" tabindex="0" aria-haspopup="true">
+  <ul>
+    <li class="flex align-center">
+      <img src="/r/svg/translate.svg" class="book-icon" alt="Languages" />
+      English
+    </li> 
+  </ul>
+
+  <ul class="book-languages-list">
+    
+    <li class="active">
+      <a href="https://peppyhare.github.io/r/" class="flex align-center">
+        <img src="/r/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="https://peppyhare.github.io/r/ru/" class="flex align-center">
+        <img src="/r/svg/translate.svg" class="book-icon" alt="Languages" />
+        Russian
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="https://peppyhare.github.io/r/zh/" class="flex align-center">
+        <img src="/r/svg/translate.svg" class="book-icon" alt="Languages" />
+        Chinese
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#43-the-electric-displacement">4.3: The Electric Displacement</a>
+      <ul>
+        <li><a href="#431-gausss-law-in-the-presence-of-dielectrics">4.3.1: Gauss&rsquo;s Law in the Presence of Dielectrics</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#432-a-deceptive-parallel">4.3.2: A Deceptive Parallel</a></li>
+        <li><a href="#433-boundary-conditions">4.3.3: Boundary Conditions</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

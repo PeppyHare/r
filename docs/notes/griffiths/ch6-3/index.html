@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="6.3: The Auxiliary Field H #  6.3.1: Ampere&rsquo;s Law in Magnetized Materials #  In Section 6.2, we found that the effect of magnetization is to establish bound currents \( \vec{J_b} = \curl \vec{M} \) within the material and \( \vec{K_b} = \vec{M} \cross \vu{n} \) on the surface. The field due to magnetization of the medium is just the field produced by these bound currents. We are now ready to put everything together: the field attributable to bound currents, plus the field due to everything else - which I will call the free current.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="6.3: The Auxiliary Field H #  6.3.1: Ampere&rsquo;s Law in Magnetized Materials #  In Section 6.2, we found that the effect of magnetization is to establish bound currents \( \vec{J_b} = \curl \vec{M} \) within the material and \( \vec{K_b} = \vec{M} \cross \vu{n} \) on the surface. The field due to magnetization of the medium is just the field produced by these bound currents. We are now ready to put everything together: the field attributable to bound currents, plus the field due to everything else - which I will call the free current." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://peppyhare.github.io/r/notes/griffiths/ch6-3/" />
+
+<title>Ch6 3 | My Notes</title>
+<link rel="manifest" href="/r/manifest.json">
+<link rel="icon" href="/r/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/r/book.min.f0d8d89a3c8ce0924c15fd3abdb2eb561162f95dd0ce5d8e24fe8d5b9498a68c.css" integrity="sha256-8NjYmjyM4JJMFf06vbLrVhFi&#43;V3Qzl2OJP6NW5SYpow=">
+<script defer src="/r/en.search.min.1e3631a1a72f85459af4770e969c2f3a1dd8b19c7f8c3fbf98191f5c4a301820.js" integrity="sha256-HjYxoacvhUWa9HcOlpwvOh3YsZx/jD&#43;/mBkfXEowGCA="></script>
+
+<script defer src="/r/sw.min.7dd1b982abb2287010a43b99e3233ff99ced25fbe0e72dc2e6ad364145177485.js" integrity="sha256-fdG5gquyKHAQpDuZ4yM/&#43;ZztJfvg5y3C5q02QUUXdIU="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/r"><span>My Notes</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Notes</span>
+  
+
+          
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Working</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/working/crews2018/" class="">Crews (2018)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ee5e070eb25b63f2c377d750d37f67ae" class="toggle" checked />
+    <label for="section-ee5e070eb25b63f2c377d750d37f67ae" class="flex justify-between">
+      <a href="https://peppyhare.github.io/r/notes/griffiths/" class="">Griffiths Introduction to Electrodynamics</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-1/" class="">Vector Algebra</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-2/" class="">Differential Calculus</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-3/" class="">Integral Calculus</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-4/" class="">Curvilinear Coordinates</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-5/" class="">Ch1 5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-6/" class="">Ch1 6</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch10-1/" class="">Ch10 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch10-2/" class="">Ch10 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch10-3/" class="">Ch10 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch11-1/" class="">Ch11 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-1/" class="">Ch2 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-2/" class="">Ch2 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-3/" class="">Ch2 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-4/" class="">Ch2 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-5/" class="">Ch2 5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch3-1/" class="">Ch3 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch3-2/" class="">Ch3 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch3-3/" class="">Ch3 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch3-4/" class="">Ch3 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch4-1/" class="">Ch4 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch4-2/" class="">Ch4 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch4-3/" class="">Ch4 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch4-4/" class="">Ch4 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch5-1/" class="">Ch5 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch5-2/" class="">Ch5 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch5-3/" class="">Ch5 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch5-4/" class="">Ch5 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch6-1/" class="">Ch6 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch6-2/" class="">Ch6 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch6-3/" class=" active">Ch6 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch6-4/" class="">Ch6 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch7-1/" class="">Ch7 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch7-2/" class="">Ch7 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch7-3/" class="">Ch7 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch8-0/" class="">Ch8 0</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch8-1/" class="">Ch8 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch8-2/" class="">Ch8 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-1/" class="">Ch9 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-2/" class="">Ch9 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-3/" class="">Ch9 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-4/" class="">Ch9 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-5/" class="">Ch9 5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/problems-ch3/" class="">Problems Ch3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/problems-ch5/" class="">Problems Ch5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/problems-ch7/" class="">Problems Ch7</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/problems-ch9/" class="">Problems Ch9</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-edf338bf880234e7aba93d04934ebde0" class="toggle"  />
+    <label for="section-edf338bf880234e7aba93d04934ebde0" class="flex justify-between">
+      <a  class="">MHD Theory</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/01-syllabus/" class="">Syllabus</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/02-plasma-models/" class="">Plasma Models</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/03-plasma-fluid-model/" class="">Plasma Fluid Model</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/04-two-fluid-plasma-model/" class="">Two-Fluid Plasma Model</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/05-mhd-model/" class="">Magnetohydrodynamic (MHD) Model</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/06-boundary-conditions/" class="">Boundary Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/" class="">Equilibrium for Fusion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/08-1d-equilibria/" class="">1-D Equilibria</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/09-2d-equilibria/" class="">2D Equilibria</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/10-equilibrium-of-3d-configurations/" class="">Equilibrium of 3D Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/11-mhd-stability/" class="">MHD Stability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/formulary/" class="">Formulary</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/Peppyhare/r" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://themes.gohugo.io/hugo-book/" target="_blank" rel="noopener">
+        Hugo Themes
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/r/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Ch6 3</strong>
+
+  <label for="toc-control">
+    
+    <img src="/r/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#63-the-auxiliary-field-h">6.3: The Auxiliary Field H</a>
+      <ul>
+        <li><a href="#631-amperes-law-in-magnetized-materials">6.3.1: Ampere&rsquo;s Law in Magnetized Materials</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#632-a-deceptive-parallel">6.3.2: A Deceptive Parallel</a></li>
+        <li><a href="#633-boundary-conditions">6.3.3: Boundary Conditions</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="63-the-auxiliary-field-h">
+  6.3: The Auxiliary Field H
+  <a class="anchor" href="#63-the-auxiliary-field-h">#</a>
+</h1>
+<h2 id="631-amperes-law-in-magnetized-materials">
+  6.3.1: Ampere&rsquo;s Law in Magnetized Materials
+  <a class="anchor" href="#631-amperes-law-in-magnetized-materials">#</a>
+</h2>
+<p>In Section 6.2, we found that the effect of magnetization is to establish bound currents \( \vec{J_b} = \curl \vec{M} \) within the material and \( \vec{K_b} = \vec{M} \cross \vu{n} \) on the surface. The field due to magnetization of the medium is just the field produced by these bound currents. We are now ready to put everything together: the field attributable to bound currents, plus the field due to everything else - which I will call the <strong>free current</strong>. The free current might flow through wires embedded in the magnetized substance or, if the latter is a conductor, through the material itself. In any event, the total current can be written as</p>
+
+<link rel="stylesheet" href="/r/katex/katex.min.css" />
+<script defer src="/r/katex/katex.min.js"></script>
+<script defer src="/r/katex/auto-render.min.js" onload="loadKatex();"></script><span>
+  \[\vec{J} = \vec{J_b} &#43; \vec{J_f} \tagl{6.17}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>There is no new physics in Eq. 6.17; it is simply a convenience to separate the current into these two parts, because they got there by quite different means: the free current is there because somebody hooked up a wire to a battery - it involves actual transport of charge; the bound current is there because of magnetization - it results from the conspiracy of many aligned atomic dipoles.</p>
+<p>In view of Eqs. 6.13 and 6.17, Ampere&rsquo;s law can be written</p>
+<span>
+  \[\frac{1}{\mu_0} (\curl \vec{B}) = \vec{J} = \vec{J_b} &#43; \vec{J_f} = \vec{J_f} &#43; (\curl \vec{M})\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>or, collecting together the two curls:</p>
+<span>
+  \[\curl \left( \frac{1}{\mu_0} \vec{B} - \vec{M} \right) = \vec{J_f}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>The quantity in parentheses is designated by the letter <strong>H</strong>:</p>
+<span>
+  \[\vec{H} \equiv \frac{1}{\mu_0} \vec{B} - \vec{M} \tagl{6.18}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>In terms of <strong>H</strong>, then, Ampere&rsquo;s law reads</p>
+<span>
+  \[\curl \vec{H} = \vec{J_f} \tagl{6.19}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>or, in integral form,</p>
+<span>
+  \[\oint \vec{H} \cdot \dd \vec{l} = I _{f, enc} \tagl{6.20}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>where \( I_{f, enc} \) is the total free current passing through the Amperian loop.</p>
+<p><strong>H</strong> plays a role in magnetostatics analogous to <strong>D</strong> in electroostatics: Just as <strong>D</strong> allowed us to write Gauss&rsquo;s law in terms of the free charge alone, <strong>H</strong> permits us to express Ampere&rsquo;s law in terms of the free current alone - and free current is what we control directly. Bound current, like bound charge, comes along for the ride - the material gets magnetized, and this results in bound currents; we cannot turn them on or off independently, as we can the free currents. In applying Eq. 6.20, all we need to worry about is the free current, which we know about because we put it there. In particular, when symmetry permits, we can calculate <strong>H</strong> immediately from Eq. 6.20 by the usual Ampere&rsquo;s law methods. (For example, problems 6.7 and 6.8 can be done in one line by noting that \( \vec{H} = 0 \).)</p>
+<h4 id="example-62">
+  Example 6.2
+  <a class="anchor" href="#example-62">#</a>
+</h4>
+<p>!!! question &ldquo;A long copper rod of radius \( R \) carries a uniformly distributed (free) current \( I \) (Fig 6.19). Find <strong>H</strong> inside and outside the rod.&rdquo;</p>
+<pre><code>__Solution__
+Copper is weakly diamagnetic, so the dipoles will line up opposite to the field. This results in a bound current running antiparallel to \\( I \\), within the wire, and parallel to \\( I \\) along the surface (Fig 6.20). Just how great these bound currents will be we are not yet in a position to say - but in order to calculate __H__ it is sufficient to realize that all the currents are longitudinal, so \\( \vec{B} \\), \\( \vec{M} \\), and therefore also \\( \vec{H} \\), are circumferential. Applying Eq. 6.20 to an Amperian loop of radius \\( s &lt; R \\),
+&lt;p align=&quot;center&quot;&gt; &lt;img alt=&quot;Figure 6.19&quot; src=&quot;/r/img/griffiths/6.19.png&quot; /&gt; &lt;/p&gt;
+</code></pre>
+<span>
+  \[    H (2 \pi s) = I_{f, enc} = I \frac{\pi s^2}{\pi R^2} 
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>so, inside the wire,
+</code></pre>
+<span>
+  \[    \vec{H} = \frac{I}{2 \pi R^2} s \vu{\phi} \quad (s \leq R) \tagl{6.21} 
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>Outside the wire,
+</code></pre>
+<span>
+  \[    \vec{H} = \frac{I}{2 \pi s} \vu{\phi} \quad (s \geq R) \tagl{6.22}
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>Outside of the wire (as always in empty space) \\( \vec{M} = 0 \\), so
+</code></pre>
+<span>
+  \[     \vec{B} = \mu_0 \vec{H} = \frac{\mu_0 I}{2 \pi s} \vu{\phi} \quad (s \geq R)
+     \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>the same as for a nonmagnetized wire (Ex. 5.7). Within the wire, we are not yet quite ready to determine __B__, since we have no way of knowing __M__. (In practice, the magnetization of copper is so small that for most purposes we can ignore it altogether.)
+</code></pre>
+<p>As it turns, out, <strong>H</strong> is a more useful quantity than <strong>D</strong>. In the laboratory, you will frequently hear people talking about <strong>H</strong> (more often even than <strong>B</strong>), but you will never hear anyone speak of <strong>D</strong> (only <strong>E</strong>). The reason is this: to build an electromagnet you run a certain (free) current through a coil. The current is the thing you read on the dial, and this determines <strong>H</strong> (or at any rate, the line integral of <strong>H</strong>); <strong>B</strong> depends on the specific materials you used and even, if iron is present, on the history of your magnet. On the other hand, if you want to set up an electric field, you do not plaster a known free charge on the plates of a parallel plate capacitor; rather, you connect them to a battery of known voltage. It&rsquo;s the potential difference you read on your dial, and that determines <strong>E</strong> (or rather, the line integral of <strong>E</strong>); <strong>D</strong> depends on the details of the dielectric you&rsquo;re using. If it were easy to measure charge, and hard to measure potential, then you&rsquo;d find experimentalists talking about <strong>D</strong> instead of <strong>E</strong>. So the relative familiarity of <strong>H</strong> as contrasted with <strong>D</strong> derives from purely practical considerations; theoretically, they&rsquo;re on an equal footing.</p>
+<p>Many authors call <strong>H</strong>, not <strong>B</strong>, the &ldquo;magnetic field.&rdquo; Then they have to invent a new word for <strong>B</strong>: the &ldquo;flux density,&rdquo; or magnetic &ldquo;induction&rdquo; (an absurd choice, since that term already has at least two other meanings in electrodynamics). Anyway, <strong>B</strong> is indisputably the fundamental quantity, so I shall continue to call it the &ldquo;magnetic field,&rdquo; as everyone does in the spoken language. <strong>H</strong> has no sensible name: just call it &ldquo;<strong>H</strong>.&rdquo;</p>
+<h2 id="632-a-deceptive-parallel">
+  6.3.2: A Deceptive Parallel
+  <a class="anchor" href="#632-a-deceptive-parallel">#</a>
+</h2>
+<p>Equation 6.19 looks just like Ampere&rsquo;s original law, except that the total current is replaced by the free current, and \( \vec{B} \) is replaced by \( \mu_0 \vec{H} \). As in the case of <strong>D</strong>, however, I must warn you against reading too much into this correspondence. It does not say that \( \mu_0 \vec{H} \) is &ldquo;just like \( \vec{B} \), only its source is \( \vec{J_f} \) instead of \( \vec{J} \).&rdquo; For the curl alone does not determine a vector field - you must also know the divergence. And whereas \( \div \vec{B} = 0 \), the divergence of <strong>H</strong> is not, in general, zero. In fact, from Eq. 6.18,</p>
+<span>
+  \[\div \vec{H} = - \div \vec{M} \tagl{6.23}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>Only when the divergence of <strong>M</strong> vanishes is the parallel between \( \vec{B} \) and \( \mu_0 \vec{H} \) faithful.</p>
+<p>If you think I&rsquo;m being pedantic, consider the example of a bar magnet - a short cylinder of iron that carries a permanent uniform magnetization <strong>M</strong> parallel to its axis. In this case there is no free current anywhere, and a naive application of Eq. 6.20 might lead you to suppose that \( \vec{H} = 0 \), and hence that \( \vec{B} = \mu_0 M \) inside the magnet and \( \vec{B} = 0 \) outside, which is nonsense. It is quite true that the curl of <strong>H</strong> vanishes everywhere, but the divergence does not (check top and bottom surfaces of the magnet!). Advice: When you are asked to find <strong>B</strong> or <strong>H</strong> in a problem involving magnetic materials, first look for symmetry. If the problem exhibits cylindrical, plane, solenoidal, or toroidal symmetry, then you can get <strong>H</strong> directly from Eq. 6.20 by the usual Ampere&rsquo;s law methods. (Evidently, in such cases \( \div \vec{M} \) is automatically zero, since the free current alone determines the answer.) If the requisite symmetry is absent, you&rsquo;ll have to think of another approach, and in particular you must not assume that <strong>H</strong> is zero just because there is no free current in sight.</p>
+<h2 id="633-boundary-conditions">
+  6.3.3: Boundary Conditions
+  <a class="anchor" href="#633-boundary-conditions">#</a>
+</h2>
+<p>The magnetostatic boundary conditions of Section 5.4.2 can be rewritten in terms of <strong>H</strong> and the free current. From Eq. 6.23 it follows that</p>
+<span>
+  \[H_{above} ^\perp - H_{below} ^\perp = -(M_{above} ^\perp - M_{below} ^\perp) \tagl{6.24}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>while Eq. 6.19 says</p>
+<span>
+  \[\vec{H}_{above} ^\parallel - \vec{H}_{below} ^\parallel = \vec{K}_f \cross \vu{n} \tagl{6.25}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>In the presence of materials, these are sometimes more useful than the corresponding boundary conditions on <strong>B</strong> (Eqs. 5.74 and 5.76)</p>
+<span>
+  \[B_{above} ^\perp -  B_{below} ^\perp = 0 \tagl{6.26}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>and</p>
+<span>
+  \[\vec{B}_{above} ^\parallel - \vec{B}_{below} ^\parallel = \mu_0 (\vec{K} \cross \vu{n} ) \tagl{6.27}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+
+  
+
+  
+
+  
+
+
+
+<div class="book-languages" tabindex="0" aria-haspopup="true">
+  <ul>
+    <li class="flex align-center">
+      <img src="/r/svg/translate.svg" class="book-icon" alt="Languages" />
+      English
+    </li> 
+  </ul>
+
+  <ul class="book-languages-list">
+    
+    <li class="active">
+      <a href="https://peppyhare.github.io/r/" class="flex align-center">
+        <img src="/r/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="https://peppyhare.github.io/r/ru/" class="flex align-center">
+        <img src="/r/svg/translate.svg" class="book-icon" alt="Languages" />
+        Russian
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="https://peppyhare.github.io/r/zh/" class="flex align-center">
+        <img src="/r/svg/translate.svg" class="book-icon" alt="Languages" />
+        Chinese
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#63-the-auxiliary-field-h">6.3: The Auxiliary Field H</a>
+      <ul>
+        <li><a href="#631-amperes-law-in-magnetized-materials">6.3.1: Ampere&rsquo;s Law in Magnetized Materials</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#632-a-deceptive-parallel">6.3.2: A Deceptive Parallel</a></li>
+        <li><a href="#633-boundary-conditions">6.3.3: Boundary Conditions</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

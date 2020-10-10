@@ -1,0 +1,2495 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="3.1: Laplace&rsquo;s Equation #  3.1.1: Introduction #  The primary task of electrostatics is to find the electric field of a given stationary charge distribution. In principle, this purpose is accomplished by Coulomb&rsquo;s law, in the form of
+  \[\vec{E}(\vec{r}) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\vec{r&#39;})}{\gr ^2} \vu{\gr} \dd{\tau&#39;} \label{3.1}\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="3.1: Laplace&rsquo;s Equation #  3.1.1: Introduction #  The primary task of electrostatics is to find the electric field of a given stationary charge distribution. In principle, this purpose is accomplished by Coulomb&rsquo;s law, in the form of
+  \[\vec{E}(\vec{r}) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\vec{r&#39;})}{\gr ^2} \vu{\gr} \dd{\tau&#39;} \label{3.1}\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://peppyhare.github.io/r/notes/griffiths/ch3-1/" />
+
+<title>Ch3 1 | My Notes</title>
+<link rel="manifest" href="/r/manifest.json">
+<link rel="icon" href="/r/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/r/book.min.f0d8d89a3c8ce0924c15fd3abdb2eb561162f95dd0ce5d8e24fe8d5b9498a68c.css" integrity="sha256-8NjYmjyM4JJMFf06vbLrVhFi&#43;V3Qzl2OJP6NW5SYpow=">
+<script defer src="/r/en.search.min.1e3631a1a72f85459af4770e969c2f3a1dd8b19c7f8c3fbf98191f5c4a301820.js" integrity="sha256-HjYxoacvhUWa9HcOlpwvOh3YsZx/jD&#43;/mBkfXEowGCA="></script>
+
+<script defer src="/r/sw.min.7dd1b982abb2287010a43b99e3233ff99ced25fbe0e72dc2e6ad364145177485.js" integrity="sha256-fdG5gquyKHAQpDuZ4yM/&#43;ZztJfvg5y3C5q02QUUXdIU="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/r"><span>My Notes</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Notes</span>
+  
+
+          
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Working</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/working/crews2018/" class="">Crews (2018)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ee5e070eb25b63f2c377d750d37f67ae" class="toggle" checked />
+    <label for="section-ee5e070eb25b63f2c377d750d37f67ae" class="flex justify-between">
+      <a href="https://peppyhare.github.io/r/notes/griffiths/" class="">Griffiths Introduction to Electrodynamics</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-1/" class="">Vector Algebra</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-2/" class="">Differential Calculus</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-3/" class="">Integral Calculus</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-4/" class="">Curvilinear Coordinates</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-5/" class="">Ch1 5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-6/" class="">Ch1 6</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch10-1/" class="">Ch10 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch10-2/" class="">Ch10 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch10-3/" class="">Ch10 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch11-1/" class="">Ch11 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-1/" class="">Ch2 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-2/" class="">Ch2 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-3/" class="">Ch2 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-4/" class="">Ch2 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-5/" class="">Ch2 5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch3-1/" class=" active">Ch3 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch3-2/" class="">Ch3 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch3-3/" class="">Ch3 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch3-4/" class="">Ch3 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch4-1/" class="">Ch4 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch4-2/" class="">Ch4 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch4-3/" class="">Ch4 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch4-4/" class="">Ch4 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch5-1/" class="">Ch5 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch5-2/" class="">Ch5 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch5-3/" class="">Ch5 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch5-4/" class="">Ch5 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch6-1/" class="">Ch6 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch6-2/" class="">Ch6 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch6-3/" class="">Ch6 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch6-4/" class="">Ch6 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch7-1/" class="">Ch7 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch7-2/" class="">Ch7 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch7-3/" class="">Ch7 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch8-0/" class="">Ch8 0</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch8-1/" class="">Ch8 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch8-2/" class="">Ch8 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-1/" class="">Ch9 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-2/" class="">Ch9 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-3/" class="">Ch9 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-4/" class="">Ch9 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-5/" class="">Ch9 5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/problems-ch3/" class="">Problems Ch3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/problems-ch5/" class="">Problems Ch5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/problems-ch7/" class="">Problems Ch7</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/problems-ch9/" class="">Problems Ch9</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-edf338bf880234e7aba93d04934ebde0" class="toggle"  />
+    <label for="section-edf338bf880234e7aba93d04934ebde0" class="flex justify-between">
+      <a  class="">MHD Theory</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/01-syllabus/" class="">Syllabus</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/02-plasma-models/" class="">Plasma Models</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/03-plasma-fluid-model/" class="">Plasma Fluid Model</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/04-two-fluid-plasma-model/" class="">Two-Fluid Plasma Model</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/05-mhd-model/" class="">Magnetohydrodynamic (MHD) Model</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/06-boundary-conditions/" class="">Boundary Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/" class="">Equilibrium for Fusion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/08-1d-equilibria/" class="">1-D Equilibria</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/09-2d-equilibria/" class="">2D Equilibria</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/10-equilibrium-of-3d-configurations/" class="">Equilibrium of 3D Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/11-mhd-stability/" class="">MHD Stability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/formulary/" class="">Formulary</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/Peppyhare/r" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://themes.gohugo.io/hugo-book/" target="_blank" rel="noopener">
+        Hugo Themes
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/r/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Ch3 1</strong>
+
+  <label for="toc-control">
+    
+    <img src="/r/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#31-laplaces-equation">3.1: Laplace&rsquo;s Equation</a>
+      <ul>
+        <li><a href="#311-introduction">3.1.1: Introduction</a></li>
+        <li><a href="#312-laplaces-equation-in-one-dimension">3.1.2: Laplace&rsquo;s Equation in One Dimension</a></li>
+        <li><a href="#313-laplaces-equation-in-two-dimensions">3.1.3: Laplace&rsquo;s Equation in Two Dimensions</a></li>
+        <li><a href="#314-laplaces-equation-in-three-dimensions">3.1.4: Laplace&rsquo;s Equation in Three Dimensions</a></li>
+        <li><a href="#315-boundary-conditions-and-uniqueness-theorems">3.1.5: Boundary Conditions and Uniqueness Theorems</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#316-conductors-and-the-second-uniqueness-theorem">3.1.6: Conductors and the Second Uniqueness Theorem</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="31-laplaces-equation">
+  3.1: Laplace&rsquo;s Equation
+  <a class="anchor" href="#31-laplaces-equation">#</a>
+</h1>
+<h2 id="311-introduction">
+  3.1.1: Introduction
+  <a class="anchor" href="#311-introduction">#</a>
+</h2>
+<p>The primary task of electrostatics is to find the electric field of a given stationary charge distribution. In principle, this purpose is accomplished by Coulomb&rsquo;s law, in the form of</p>
+
+<link rel="stylesheet" href="/r/katex/katex.min.css" />
+<script defer src="/r/katex/katex.min.js"></script>
+<script defer src="/r/katex/auto-render.min.js" onload="loadKatex();"></script><span>
+  \[\vec{E}(\vec{r}) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\vec{r&#39;})}{\gr ^2} \vu{\gr} \dd{\tau&#39;} \label{3.1}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>Unfortunately, integrals of this type can be difficult to calculate for any but the simplest charge configurations. Occasionally we can get around this by exploiting symmetry and using Gauss&rsquo;s law, but ordinarily the best strategy is first to calculate the <em>potential</em>, V, which is given by the somewhat more tractable</p>
+<span>
+  \[V(r) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\vec{r}&#39;)}{\gr} \dd{\tau&#39;} \tagl{3.2}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>Still, even <em>this</em> integral is often too tough to handle analytically. Moreover, in problems involving conductors \( \rho \) itself may not be known in advance; since charge is free to move around, the only thing we control directly is the total charge (or perhaps the potential) of each conductor.</p>
+<p>In such cases, it is fruitful to recast the problem in differential form, using Poisson&rsquo;s equation</p>
+<span>
+  \[\laplacian{V} = - \frac{1}{\epsilon_0} \rho \label{3.3}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>which, together with appropriate boundary conditions, is equivalent to \( \eqref{3.2} \). Very often, in fact, we are interested in finding the potential in a region where \( \rho = 0 \). (If \( \rho = 0 \) everywhere, of course, then \( V = 0  \), and there is nothing further to say - that&rsquo;s not what I mean. There may be plenty of charge elsewhere, but we&rsquo;re confining our attention to places where there is no charge.) In this case, Poisson&rsquo;s equation reduces to Laplace&rsquo;s equation</p>
+<span>
+  \[\laplacian{V} = 0 \label{3.4}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>or, written out in Cartesian coordinates,</p>
+<span>
+  \[\frac{\partial^2{V}}{\partial{x^2}} &#43; \frac{\partial^2 V}{\partial{y^2}} &#43; \frac{\partial^2{V}}{\partial{z^2}}  = 0 \label{3.5}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>This formula is so fundamental to the subject that one might almost say electrostatics is the study of Laplace&rsquo;s equation. At the same time, it is a ubiquitous equation, appearing in such diverse branches of physics as gravitation and magnetism, the theory of heat, and the study of soap bubbles. In mathematics, it plays a major role in analytic function theory. To get a feel for Laplace&rsquo;s equation and its solutions (which are called <strong>harmonic functions</strong>), we shall begin with the one- and two-dimensional versions, which are easier to picture, and illustrate all the essential properties of the three-dimensional case.</p>
+<h2 id="312-laplaces-equation-in-one-dimension">
+  3.1.2: Laplace&rsquo;s Equation in One Dimension
+  <a class="anchor" href="#312-laplaces-equation-in-one-dimension">#</a>
+</h2>
+<p>Suppose V depends on only one variable, x. Then Laplace&rsquo;s equation becomes</p>
+<span>
+  \[\frac{d^2 V}{dx^2} = 0\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>The general solution is</p>
+<span>
+  \[V(x) = mx &#43; b \label{3.6} \tag{3.6}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>the equation for a straight line. It contains two undetermined constants (m and b), as is appropriate for a second-order (ordinary) differential equation. They are fixed, in any particular case, by the boundary conditions of that problem. For instance, it might be specified that \( V = 4 \)  at \( x = 1 \) and \( V = 0 \) at \( x = 5 \). In that case, \( m = -1 \) and \( b = 5 \), so \( V = - x + 5 \)  (See Fig. 3.1)</p>
+<p align="center"> <img alt="Figure 3.1" src="/r/img/griffiths/3.1.png" /> </p>
+<p>I want to call your attention to two features of this result; they may seem silly and obvious in one dimension, where I can write down the general solution explicitly, but the analogs in two and three dimensions are powerful and by no means obvious:</p>
+<ol>
+<li>V(x) is the <em>average</em> of \( V(x + a) \) and \( V(x - a) \) for any a:</li>
+</ol>
+<span>
+  \[V(x) = \frac{1}{2} [V(x &#43; a) &#43; V(x-a)]\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>Laplace&rsquo;s equation is a kind of averaging instruction; it tells you to assign to the point x the average of the values to the left and to the right of x. Solutions to Laplace&rsquo;s equation are, in this sense, as boring as they could possibly be, and yet fit the end points properly.</p>
+<ol start="2">
+<li>Laplace&rsquo;s equation tolerates <em>no local maxima or minima</em>; extreme values of V must occur at the end points. Actually, this is a consequence of (1), for if there were a local maximum, V would be greater at that point than on either side, and therefore could not be the average. (Ordinarily, you expect the second derivative to be negative at a maximum and positive at a minimum. Since Laplace&rsquo;s equation requires, on the contrary, that the second derivative is zero, it seems reasonable that solutions should exhibit no extrema. However, this is not a proof, since there exist functions that have maxima and minima at points where the second derivative vanishes: \( x^4 \) for example, has such a minimum point at \( x=0 \)).</li>
+</ol>
+<h2 id="313-laplaces-equation-in-two-dimensions">
+  3.1.3: Laplace&rsquo;s Equation in Two Dimensions
+  <a class="anchor" href="#313-laplaces-equation-in-two-dimensions">#</a>
+</h2>
+<p>If V depends on two variables, Laplace&rsquo;s equation becomes</p>
+<span>
+  \[\frac{\partial^2{V}}{\partial{x^2}} &#43; \frac{\partial^2{V}}{\partial{y^2}} = 0 \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>This is no longer an <em>ordinary</em> differential equation (that is, one involving ordinary derivatives only); it is a partial differential equation. As a consequence, some of the simple rules you may be familiar with do not apply. For instance, the general solution to this equation doesn&rsquo;t contain just two arbitrary constants - or, for that matter, any finite number - despite the fact that it&rsquo;s a second order equation. Indeed, one cannot write down a &ldquo;general solution&rdquo; (at least, not in a closed form like \( \eqref{3.6} \)). Nevertheless, it is possible to deduce certain properties common to all solutions.</p>
+<p align="center"> <img alt="Figure 3.2" src="/r/img/griffiths/3.2.png" /> </p>
+<p>It may help to have a physical example in mind. Picture a thin rubber sheet (or a soap film) stretched over some support. For definiteness, suppose you take a cardboard box, cut a wavy line all the way around, and remove the top part (Fig. 3.2). Now glue a tightly stretched rubber membrane over the box, so that it fits like a drum head (it won&rsquo;t be a flat drumhead, of course, unless you choose to cut the edges off straight). Now, if you lay out the coordinates (x, y) on the bottom of the box, the height V(x, y) of the sheet above the point (x, y) will satisfy Laplace&rsquo;s equation. (The one-dimensional analog would be a rubber band stretched between two points. Of course, it would form a straight line.)</p>
+<blockquote>
+<p>Actually, the equation satisfied by a rubber sheet is</p>
+</blockquote>
+<span>
+  \[\frac{\partial}{\partial{x}} \left( g \pdv{V}{y}  \right) &#43; \frac{\partial}{\partial{y}}  \left( g \pdv{V}{y} \right) = 0, \\ \qquad \text{ where } g = \left[ 1 &#43; \left( \pdv{V}{x} \right)^2 &#43; \left( \pdv{V}{y} \right)^2 \right]^{-1/2}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>Harmonic functions in two dimensions have the same properties we noted in one dimension:</p>
+<ol>
+<li>The value of V at a point (x, y) is the average of those around the point. More precisely, if you draw a circle of any radius R about the point (x, y), the average value of V on the circle is equal to the value at the center:</li>
+</ol>
+<span>
+  \[V(x, y) = \frac{1}{2 \pi R} \oint_{\text{circle}} = V \dd{l} \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>(This, incidentally, suggests the method of relaxation, on which computer solutions to Laplace&rsquo;s equation are based: Starting with specified values for V at the boundary, and reasonable guesses for V on a grid of interior points, the first pass reassigns to each point the average of its nearest neighbors. The second pass repeats this process, using the corrected values, and so on. After a few iterations, the numbers begin to settle down, so that subsequent passes produce negligible changes, and a numerical solution to Laplace&rsquo;s equation, with the given boundary values, has been achieved.)</p>
+<ol start="2">
+<li>V has no local maxima or minima; all extrema occur at the boundaries. (As before, this follows from (1)). Again, Laplace&rsquo;s equation picks the most featureless function possible, consistent with the boundary conditions: no hills, no valleys, just the smoothest conceivable surface. For instance, if you put a ping-pong ball on the stretched rubber sheet of Fig 3.2, it will roll over to one side and fall off - it will not find a &ldquo;pocket&rdquo; somewhere to settle into, for Laplace&rsquo;s equation allows no such dents in the surface. From a geometrical point of view, just as a straight line is the shortest distance between two points, so a harmonic function in two dimensions minimizes the surface area spanning the given boundary line.</li>
+</ol>
+<h2 id="314-laplaces-equation-in-three-dimensions">
+  3.1.4: Laplace&rsquo;s Equation in Three Dimensions
+  <a class="anchor" href="#314-laplaces-equation-in-three-dimensions">#</a>
+</h2>
+<p>In three dimensions I can neither provide you with an explicit solution (as in one dimension) nor offer a suggestive physical example to guide your intuition (as I did in two dimensions). Nevertheless, the same two properties remain true, and this time I will sketch a proof.</p>
+<blockquote>
+<p>For a proof that does not rely on Coulomb&rsquo;s law (only on Laplace&rsquo;s equation), see Prob. 3.37</p>
+</blockquote>
+<ol>
+<li>The value of V at point <strong>r</strong> is the average value of V over a spherical surface of radius R centered at <strong>r</strong>:</li>
+</ol>
+<span>
+  \[V(\vec{r}) = \frac{1}{4 \pi R^2} \oint_{\text{sphere}} V \dd{a}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<ol start="2">
+<li>As a consequence, V can have no local maxima or minima; the extreme values of V must occur at the boundaries (For if V had a local maximum at <strong>r</strong>, then by the very nature of the maximum I could draw a sphere around <strong>r</strong> over which all the values of V - and a fortiori the average - would be less than at <strong>r</strong>.)</li>
+</ol>
+<p>!!! info &ldquo;Proof: V is a solution to the three-dimensional Laplace&rsquo;s equation. Then the value of V at point <strong>r</strong> is the average value of V over a spherical surface of radius R centered at <strong>r</strong>&rdquo;</p>
+<pre><code>Let's begin by calculating the average potential over a spherical surface of radius R due to a _single_ point charge q located outside the sphere. We may as well center the sphere at the origin and choose coordinates so that q lies on the z-axis (Fig 3.3). 
+
+&lt;p align=&quot;center&quot;&gt; &lt;img alt=&quot;Figure 3.3&quot; src=&quot;/r/img/griffiths/3.3.png&quot; /&gt; &lt;/p&gt;
+
+The potential at a point on the surface is
+</code></pre>
+<span>
+  \[    V = \frac{1}{4 \pi \epsilon_0} \frac{q}{\gr} 
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>where
+</code></pre>
+<span>
+  \[    \gr ^2 = z^2 &#43; R^2 - 2z R \cos \theta
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>so
+</code></pre>
+<span>
+  \[    V_{\text{ave}} = \frac{1}{4\pi R^2} \frac{1}{4 \pi \epsilon_0} \int [z^2 &#43; R^2 - 2 z R \cos \theta]^{-1/2} R^2 \sin \theta \dd{\theta} \dd{\phi} \\
+     = \left. \frac{q}{4 \pi \epsilon_0} \frac{1}{2 z R} \sqrt{z^2 &#43; R^2 - 2 z R \cos\theta} \right|_{0} ^{\pi} \\
+     = \frac{q}{4 \pi \epsilon_0} \frac{1}{2zR} [(z &#43; R) - (z-R)] = \frac{1}{4 \pi \epsilon_0} \frac{q}{z}  
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>But this is precisely the potential due to q at the _center_ of the sphere! By the superposition principle, the same goes for any collection of charges outside the sphere: their average potential over the sphere is equal to the net potential they produce at the center
+</code></pre>
+<h2 id="315-boundary-conditions-and-uniqueness-theorems">
+  3.1.5: Boundary Conditions and Uniqueness Theorems
+  <a class="anchor" href="#315-boundary-conditions-and-uniqueness-theorems">#</a>
+</h2>
+<p>Laplace&rsquo;s equation does not by itself determine V; in addition, suitable boundary conditions must be supplied. This raises a delicate question: What are appropriate boundary conditions, sufficient to determine the answer and yet not so strong as to generate inconsistencies? The one-dimensional case is easy, for here the general solution \( V = mx + b \) contains two arbitrary constants, and we therefore require two boundary conditions. We might, for instance, specify the value of the function at each end, or we might give the value of the function and its derivative at one end, or the value at one end and the derivative at the other, and so on. But we cannot get away with <em>just</em> the value or <em>just</em> the derivative at <em>one</em> end - this is insufficient information. Nor would it do to specify the derivatives at both ends - this would be either redundant (if the two are equal) or inconsistent (if they are not).</p>
+<p>In two or three dimensions we are confronted by a <em>partial</em> differential equation, and it is not so obvious what would constitute acceptable boundary conditions. Is the shape of a taut rubber membrane, for instance, uniquely determined by the frame over which it is stretched, or, like a canning jar lid, can it snap from one stable configuration to another? The answer, as I think your intuition would suggest, that V is uniquely determined by its value at the boundary (canning jars evidently do not obey Laplace&rsquo;s equation). However, other boundary conditions can also be used (see Prob. 3.5). The <em>proof</em> that a proposed set of boundary conditions will suffice is usually presented in the form of a uniqueness theorem. There are many such theorems for electrostatics, all sharing the same basic format - I&rsquo;ll show you the two most useful ones:</p>
+<p>!!! info &ldquo;First Uniqueness Theorem: The solution to Laplace&rsquo;s equation in some volume \( \mathscr{V} \) is uniquely determined if V is specified on the boundary surface \( \mathscr{S} \).&rdquo;</p>
+<pre><code>In Fig. 3.5 I have drawn such a region and its boundary. (There could also be &quot;islands&quot; inside, so long as V is given on all their surfaces; also, the outer boundary could be at infinity, where V is ordinarily taken to be zero.)
+
+&lt;p align=&quot;center&quot;&gt; &lt;img alt=&quot;Figure 3.5&quot; src=&quot;/r/img/griffiths/3.5.png&quot; /&gt; &lt;/p&gt;
+
+_Proof_: Suppose there were _two_ solutions to Laplace's equation:
+</code></pre>
+<span>
+  \[    \laplacian{V_1} = 0 \quad \text{and} \quad \laplacian{V_2} = 0
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>both of which assume the specified value on the surface. I want to prove that they must be equal. The trick is to look at their _difference_:
+</code></pre>
+<span>
+  \[    V_3 \equiv V_1 - V_2
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>This obeys Laplace's equation (obviously)
+</code></pre>
+<span>
+  \[    \laplacian{V_3} = \laplacian{V_1} - \laplacian{V_2} = 0
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>and it takes the value _zero_ on all boundaries (since \\( V_1 \\) and \\( V_2 \\) are equal there). But Laplace's equation allows no local maxima or minima - all extrema occur on the boundaries. So the maximum and minimum of \\( V_3 \\) are both zero. Therefore \\( V_3 \\) must be zero everywhere, and hence
+</code></pre>
+<span>
+  \[    V_1 = V_2
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<h4 id="example-31">
+  Example 3.1
+  <a class="anchor" href="#example-31">#</a>
+</h4>
+<p>!!! question &ldquo;Show that the potential is <em>constant</em> inside an enclosure completely surrounded by conducting material, provided there is no charge within the enclosure.&rdquo;</p>
+<pre><code>__Solution__
+The potential on the cavity wall is some constant \\( V_0 \\) (that's item (iv) in Sect. 2.5.1), so the potential inside is a function that satisfies Laplace's equation and has the constant value \\( V_0 \\) at the boundary. It doesn't take a genius to think of _one_ solution to this problem: \\( V = V_0 \\) everywhere. The uniqueness theorem guarantees that this is the _only_ solution. (It follows that the field inside an empty cavity is zero - the same result we found in Sect. 2.5.2 on rather different grounds.)
+</code></pre>
+<p>The uniqueness theorem is a license to your imagination. It doesn&rsquo;t matter how you come by your solution; if (a) it satisfies Laplace&rsquo;s equation and (b) it has the correct value on the boundaries, then it&rsquo;s <em>right</em>. You&rsquo;ll see the power of this argument when we come to the method of images.</p>
+<p>Incidentally, it is easy to improve on the first uniqueness theorem: I assumed there was no charge inside the region in question, so the potential obeyed Laplace&rsquo;s equation, but we may as well throw in some charge (in which case V obeys Poisson&rsquo;s equation).</p>
+<p>!!! info &ldquo;<strong>Corollary:</strong> The potential in a volume \( \mathscr{V}  \) is uniquely determined if (a) the charge density throughout the region, and (b) the value of V on all boundaries, are specified&rdquo;</p>
+<pre><code>The argument is the same, only this time
+</code></pre>
+<span>
+  \[    \laplacian{V_1} = -\frac{1}{\epsilon_0} \rho, \qquad \laplacian{V_2} = - \frac{1}{\epsilon_0} \rho 
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>so
+</code></pre>
+<span>
+  \[    \laplacian{V_3} = \laplacian{V_1} - \laplacian{V_2} = - \frac{1}{\epsilon_0} \rho &#43; \frac{1}{\epsilon_0} \rho = 0
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>Once again the _difference_ \\( (V_3 \equiv V_1 - V_2) \\) satisfies Laplace's equation and has the value zero on all boundaries, so \\( V_3 = 0 \\) and hence \\( V_1 = V_2 \\) 
+</code></pre>
+<h2 id="316-conductors-and-the-second-uniqueness-theorem">
+  3.1.6: Conductors and the Second Uniqueness Theorem
+  <a class="anchor" href="#316-conductors-and-the-second-uniqueness-theorem">#</a>
+</h2>
+<p>The <em>simplest</em> way to set the boundary conditions for an electrostatic problem is to specify the value of V on all surfaces surrounding the region of interest. And this situation often occurs in practice: In the laboratory, we have conductors connected to batteries, which maintain a given potential, or to <strong>ground</strong>, which is the experimentalist&rsquo;s word for \( V = 0 \). However, there are other circumstances in which we do not know the <em>potential</em> at the boundary, but rather the <em>charges</em> on various conducting surfaces. Suppose I put \( Q_a \) on the first conductor, \( Q_b \) on the second conductor, and so on - I&rsquo;m not telling you how the charge distributes itself over each conducting surface, because as soon as I put it on, it moves around in a way I do not control. And for good measure, let&rsquo;s say there is some specified charge density \( \rho \) in the region between the conductors. Is the electric field now uniquely determined? Or are there perhaps a number of different ways the charges could arrange themselves on their respective conductors, each leading to a different field?</p>
+<p>!!! info &ldquo;<strong>Second uniqueness theorem</strong>: In a volume \( \mathscr{V} \) surrounded by conductors and containing a specified charge density \( \rho \), the electric field is uniquely determined if the total charge on each conductor is given (Fig. 3.6). (The region as a whole can be bounded by another conductor, or else unbounded.)&rdquo;</p>
+<pre><code>__Proof__: Suppose there are two fields satisfying the conditions of the problem. Both obey Gauss's law in differential form in the space betwen the conductors:
+</code></pre>
+<span>
+  \[    \div{\vec{E_1}} = \frac{1}{\epsilon_0} \rho, \qquad \div{\vec{E_2}} = \frac{1}{\epsilon_0} \rho
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>&lt;p align=&quot;center&quot;&gt; &lt;img alt=&quot;Figure 3.6&quot; src=&quot;/r/img/griffiths/3.6.png&quot; /&gt; &lt;/p&gt;
+And both obey Gauss's law in integral form for a Gaussian surface enclosing each conductor
+</code></pre>
+<span>
+  \[    \oint_{i_{th} \text{ conducting surface}} \vec{E_1} \cdot \dd{\vec{a}} = \frac{1}{\epsilon_0} Q_i \quad \text{ and } \\
+    \oint_{i_{th} \text{ conducting surface}} \vec{E_2} \cdot \dd{\vec{a}} = \frac{1}{\epsilon_0} Q_i \quad \text{ and } \\
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>Likewise, for the outer boundary (whether this is just inside an enclosing conductor at infinity),
+</code></pre>
+<span>
+  \[    \oint_{\text{outer boundary}} \vec{E_1} \cdot \dd{\vec{a}} = \frac{1}{\epsilon_0} Q_{tot} \\
+    \oint_{\text{outer boundary}} \vec{E_2} \cdot \dd{\vec{a}} = \frac{1}{\epsilon_0} Q_{tot}
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>As before, we examine the difference
+</code></pre>
+<span>
+  \[    \vec{E_3} \equiv \vec{E_1} - \vec{E_2}
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>which obeys
+</code></pre>
+<span>
+  \[    \div{\vec{E_3}} = 0 \label{3.7} \tag{3.7}
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>in the region between the conductors, and
+</code></pre>
+<span>
+  \[    \oint \vec{E_3} \cdot \dd{\vec{a}} = 0 \label{3.8} \tag{3.8}
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>over each boundary surface.
+Now there is one final piece of information we must exploit: Although we do not know how the charge \\( Q_i \\) distributes itself over the _i_th conductor, we do know that each conductor is an equipotential, and hence \\( V_3 \\) is a constant (not necessarily the same constant) over each conducting surface. (It need not be zero, for the potentials \\( V_1 \\) and \\( V_2 \\) may not be equal - all we know for sure is that both are constant over any given conductor.) Next comes a trick. Invoking the product rule
+</code></pre>
+<span>
+  \[    \div{(V_3 \vec{E_3})} = V_3 (\div{\vec{E_3}}) &#43; \vec{E_3} \cdot (\grad{V_3}) = - (E_3)^2
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>Here I have used \\( \eqref{3.7} \\) and \\( \vec{E_3} = - \grad{V_3} \\). Integrating this over \\( \mathscr{V} \\) and applying the divergence theorem to the left side:
+</code></pre>
+<span>
+  \[    \int_{\mathscr{V}} \div{(V_3 \vec{E_3})} \dd{\tau} = \oint_{S} V_3 \vec{E_3} \cdot \dd{\vec{a}} = - \int_{\mathscr{V}} (E_3)^2 \dd{\tau}
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>The surface integral covers all boundaries of the region in question - the conductors and outer boundary. Now \\( V_3 \\) is a constant over each surface (if the outer boundary is invinity, \\( V_3 = 0 \\) there), so it comes outside each integral, and what remains is zero, according to \\( \eqref{3.8} \\). Therefore
+</code></pre>
+<span>
+  \[     \int_{\mathscr{V}}(E_3)^2 \dd{\tau} = 0
+     \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>The integrand is never negative, so the only way the integral can vanish is if \\( E_3 = 0 \\) everywhere. Consequently, \\( \vec{E_1} = \vec{E_2} \\) and the theorem is proved.
+</code></pre>
+<p>This proof was not easy, and there is a real danger that the theorem itself will seem more plausible to you than the proof. In case you think the second uniqueness theorem is &ldquo;obvious,&rdquo; consider this example of Purcell&rsquo;s: Figure 3.7 shows a simple electrostatic configuration, consisting of four conductors with charges \( \pm Q \), situated so that the plusses are near the minuses. It all looks very comfortable. Now, what happens if we join them in pairs, by tiny wires, as indicated in Fig. 3.8? Since the positive charges are very near negative charges (which is where they like to be) you might well guess that nothing will happen - the configuration looks stable.</p>
+<p align="center"> <img alt="Figure 3.7" src="/r/img/griffiths/3.7.png" /> </p>
+<p>Well, that sounds reasonable, but it&rsquo;s wrong. The configuration in Fig. 3.8 is impossible. For there are now effectively two conductors, and the total charge on each is zero. One possible way to distribute zero charge over these conductors is to have no accumulation of charge anywhere, and hence zero field everywhere (Fig. 3.9). By the second uniqueness theorem, this must be <em>the</em> solution: The charge will flow down the tiny wires, canceling itself off.</p>
+<p align="center"> <img alt="Figure 3.9" src="/r/img/griffiths/3.9.png" /> </p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+
+  
+
+  
+
+  
+
+
+
+<div class="book-languages" tabindex="0" aria-haspopup="true">
+  <ul>
+    <li class="flex align-center">
+      <img src="/r/svg/translate.svg" class="book-icon" alt="Languages" />
+      English
+    </li> 
+  </ul>
+
+  <ul class="book-languages-list">
+    
+    <li class="active">
+      <a href="https://peppyhare.github.io/r/" class="flex align-center">
+        <img src="/r/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="https://peppyhare.github.io/r/ru/" class="flex align-center">
+        <img src="/r/svg/translate.svg" class="book-icon" alt="Languages" />
+        Russian
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="https://peppyhare.github.io/r/zh/" class="flex align-center">
+        <img src="/r/svg/translate.svg" class="book-icon" alt="Languages" />
+        Chinese
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#31-laplaces-equation">3.1: Laplace&rsquo;s Equation</a>
+      <ul>
+        <li><a href="#311-introduction">3.1.1: Introduction</a></li>
+        <li><a href="#312-laplaces-equation-in-one-dimension">3.1.2: Laplace&rsquo;s Equation in One Dimension</a></li>
+        <li><a href="#313-laplaces-equation-in-two-dimensions">3.1.3: Laplace&rsquo;s Equation in Two Dimensions</a></li>
+        <li><a href="#314-laplaces-equation-in-three-dimensions">3.1.4: Laplace&rsquo;s Equation in Three Dimensions</a></li>
+        <li><a href="#315-boundary-conditions-and-uniqueness-theorems">3.1.5: Boundary Conditions and Uniqueness Theorems</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+        <li><a href="#316-conductors-and-the-second-uniqueness-theorem">3.1.6: Conductors and the Second Uniqueness Theorem</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

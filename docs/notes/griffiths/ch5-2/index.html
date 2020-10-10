@@ -1,0 +1,1962 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="5.2: The Biot-Savart Law #  5.2.1: Steady Currents #  Stationary charges produce electric fields that are constant in time; hence the term electrostatics. Steady currents produce magnetic fields that are constant in time; the theory of steady currents is called magnetostatics.
+By &ldquo;steady current&rdquo; I mean a continuous flow that has been going on forever, without change and without piling up anywhere (some people call them &ldquo;stationary currents&rdquo;; to my ear, that&rsquo;s a contradiction in terms).">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="5.2: The Biot-Savart Law #  5.2.1: Steady Currents #  Stationary charges produce electric fields that are constant in time; hence the term electrostatics. Steady currents produce magnetic fields that are constant in time; the theory of steady currents is called magnetostatics.
+By &ldquo;steady current&rdquo; I mean a continuous flow that has been going on forever, without change and without piling up anywhere (some people call them &ldquo;stationary currents&rdquo;; to my ear, that&rsquo;s a contradiction in terms)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://peppyhare.github.io/r/notes/griffiths/ch5-2/" />
+
+<title>Ch5 2 | My Notes</title>
+<link rel="manifest" href="/r/manifest.json">
+<link rel="icon" href="/r/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/r/book.min.f0d8d89a3c8ce0924c15fd3abdb2eb561162f95dd0ce5d8e24fe8d5b9498a68c.css" integrity="sha256-8NjYmjyM4JJMFf06vbLrVhFi&#43;V3Qzl2OJP6NW5SYpow=">
+<script defer src="/r/en.search.min.1e3631a1a72f85459af4770e969c2f3a1dd8b19c7f8c3fbf98191f5c4a301820.js" integrity="sha256-HjYxoacvhUWa9HcOlpwvOh3YsZx/jD&#43;/mBkfXEowGCA="></script>
+
+<script defer src="/r/sw.min.7dd1b982abb2287010a43b99e3233ff99ced25fbe0e72dc2e6ad364145177485.js" integrity="sha256-fdG5gquyKHAQpDuZ4yM/&#43;ZztJfvg5y3C5q02QUUXdIU="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/r"><span>My Notes</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Notes</span>
+  
+
+          
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Working</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/working/crews2018/" class="">Crews (2018)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ee5e070eb25b63f2c377d750d37f67ae" class="toggle" checked />
+    <label for="section-ee5e070eb25b63f2c377d750d37f67ae" class="flex justify-between">
+      <a href="https://peppyhare.github.io/r/notes/griffiths/" class="">Griffiths Introduction to Electrodynamics</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-1/" class="">Vector Algebra</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-2/" class="">Differential Calculus</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-3/" class="">Integral Calculus</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-4/" class="">Curvilinear Coordinates</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-5/" class="">Ch1 5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-6/" class="">Ch1 6</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch10-1/" class="">Ch10 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch10-2/" class="">Ch10 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch10-3/" class="">Ch10 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch11-1/" class="">Ch11 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-1/" class="">Ch2 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-2/" class="">Ch2 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-3/" class="">Ch2 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-4/" class="">Ch2 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-5/" class="">Ch2 5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch3-1/" class="">Ch3 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch3-2/" class="">Ch3 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch3-3/" class="">Ch3 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch3-4/" class="">Ch3 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch4-1/" class="">Ch4 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch4-2/" class="">Ch4 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch4-3/" class="">Ch4 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch4-4/" class="">Ch4 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch5-1/" class="">Ch5 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch5-2/" class=" active">Ch5 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch5-3/" class="">Ch5 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch5-4/" class="">Ch5 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch6-1/" class="">Ch6 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch6-2/" class="">Ch6 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch6-3/" class="">Ch6 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch6-4/" class="">Ch6 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch7-1/" class="">Ch7 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch7-2/" class="">Ch7 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch7-3/" class="">Ch7 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch8-0/" class="">Ch8 0</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch8-1/" class="">Ch8 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch8-2/" class="">Ch8 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-1/" class="">Ch9 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-2/" class="">Ch9 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-3/" class="">Ch9 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-4/" class="">Ch9 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-5/" class="">Ch9 5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/problems-ch3/" class="">Problems Ch3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/problems-ch5/" class="">Problems Ch5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/problems-ch7/" class="">Problems Ch7</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/problems-ch9/" class="">Problems Ch9</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-edf338bf880234e7aba93d04934ebde0" class="toggle"  />
+    <label for="section-edf338bf880234e7aba93d04934ebde0" class="flex justify-between">
+      <a  class="">MHD Theory</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/01-syllabus/" class="">Syllabus</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/02-plasma-models/" class="">Plasma Models</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/03-plasma-fluid-model/" class="">Plasma Fluid Model</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/04-two-fluid-plasma-model/" class="">Two-Fluid Plasma Model</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/05-mhd-model/" class="">Magnetohydrodynamic (MHD) Model</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/06-boundary-conditions/" class="">Boundary Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/" class="">Equilibrium for Fusion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/08-1d-equilibria/" class="">1-D Equilibria</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/09-2d-equilibria/" class="">2D Equilibria</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/10-equilibrium-of-3d-configurations/" class="">Equilibrium of 3D Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/11-mhd-stability/" class="">MHD Stability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/formulary/" class="">Formulary</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/Peppyhare/r" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://themes.gohugo.io/hugo-book/" target="_blank" rel="noopener">
+        Hugo Themes
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/r/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Ch5 2</strong>
+
+  <label for="toc-control">
+    
+    <img src="/r/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#52-the-biot-savart-law">5.2: The Biot-Savart Law</a>
+      <ul>
+        <li><a href="#521-steady-currents">5.2.1: Steady Currents</a></li>
+        <li><a href="#522-the-magnetic-field-of-a-steady-current">5.2.2: The Magnetic Field of a Steady Current</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="52-the-biot-savart-law">
+  5.2: The Biot-Savart Law
+  <a class="anchor" href="#52-the-biot-savart-law">#</a>
+</h1>
+<h2 id="521-steady-currents">
+  5.2.1: Steady Currents
+  <a class="anchor" href="#521-steady-currents">#</a>
+</h2>
+<p>Stationary charges produce electric fields that are constant in time; hence the term <strong>electrostatics</strong>. Steady currents produce magnetic fields that are constant in time; the theory of steady currents is called <strong>magnetostatics</strong>.</p>
+<p>By &ldquo;<strong>steady current</strong>&rdquo; I mean a continuous flow that has been going on forever, without change and without piling up anywhere (some people call them &ldquo;stationary currents&rdquo;; to my ear, that&rsquo;s a contradiction in terms). Formally, electro/magnetostatics is the regime</p>
+
+<link rel="stylesheet" href="/r/katex/katex.min.css" />
+<script defer src="/r/katex/katex.min.js"></script>
+<script defer src="/r/katex/auto-render.min.js" onload="loadKatex();"></script><span>
+  \[\pdv{\rho}{t} = 0, \quad \pdv{\vec{J}}{t} = 0 \tagl{5.32}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>at all places and all times. Of course, there&rsquo;s no such thing in practice as a truly steady current, any more than there is a <em>truly</em> stationary charge. In this sense, both electrostatics and magnetostatics describe artificial worlds that exist only in textbooks. However, they represent suitable approximations as long as the actual fluctuations are remote, or gradual - in fact, for most purposes magnetostatics applies very well to household currents, which alternate 120 times per second!</p>
+<p>Notice that a moving point charge cannot possibly constitute a steady current. If it&rsquo;s here one instant, it&rsquo;s gone the next. This may seem like a minor thing to you, but it&rsquo;s a major headache for me. I developed each topic in electrostatics by starting out with the simple case of a point charge at rest; then I generalized to an arbitrary charge distribution by invoking the superposition principle. This approach is not open to us in magnetostatics because a moving point charge does not produce a static field in the first place. We are forced to deal with extended current distributions right from the start, and, as a result, the arguments are bound to be more cumbersome.
+When a steady current flows in a wire, its magnitude I must be the same all along the line; otherwise, charge would be piling up somewhere, and it wouldn&rsquo;t be a steady current. More generally, since \( \partial \rho / \partial t = 0 \) in magnetostatics, the continuity equation (5.29) becomes</p>
+<span>
+  \[\grad \vec{J} = 0 \tagl{5.33}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<h2 id="522-the-magnetic-field-of-a-steady-current">
+  5.2.2: The Magnetic Field of a Steady Current
+  <a class="anchor" href="#522-the-magnetic-field-of-a-steady-current">#</a>
+</h2>
+<p>The magnetic field of a steady line current is given by the <strong>Biot-Savart law</strong>:</p>
+<span>
+  \[\vec{B}(r) = \frac{\mu_0}{4 \pi} \int \frac{\vec{I} \cross \vu{\gr}}{\gr ^2} \dd l&#39; = \frac{ \mu_0}{4 \pi } I \int \frac{\dd \vec{l&#39;} \cross \vu{\gr}}{\gr ^2} \tagl{5.34} \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>The integration is along the current path, in the direction of the flow; \( \dd \vec{l'} \) is an element of length along the wire, and \( \vu{\gr} \), as always, is the vector from the source to the point <strong>r</strong> (Fig 5.17). The constant \( \mu_0 \) is called the <strong>permeability of free space</strong>:</p>
+<span>
+  \[\mu_0 = 4 \pi \times 10^{-7} \text{N} / \text{A}^2 \tagl{5.35}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>This is an exact number, not an empirical constant. It serves to <em>define</em> the ampereThese units are such that <strong>B</strong> itself comes out in newtons per ampere-meter (as required by the Lorentz force law), or <strong>teslas</strong> (T):</p>
+<span>
+  \[1 \text{T} = 1 \text{N} / (\text{A} \cdot \text{m}) \tagl{5.36}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p align="center"> <img alt="Figure 5.17" src="/r/img/griffiths/5.17.png" /> </p>
+<p>As the starting point for magnetostatics, the Biot-Savart law plays a role analogous to Coulomb&rsquo;s law in electrostatics. Indeed, the \( 1/ \gr ^2 \) dependence is common to both laws</p>
+<h4 id="example-55">
+  Example 5.5
+  <a class="anchor" href="#example-55">#</a>
+</h4>
+<p>!!! question &ldquo;Find the magnetic field a distance <em>s</em> from a long straight wire carrying a steady current <em>I</em> (Fig 5.18).&rdquo;</p>
+<pre><code>&lt;p align=&quot;center&quot;&gt; &lt;img alt=&quot;Figure 5.18&quot; src=&quot;/r/img/griffiths/5.18.png&quot; /&gt; &lt;/p&gt;
+__Solution__
+In the diagram, \\( \dd \vec{l'} \cross \gr \\) points out of the page, and has the magnitude
+</code></pre>
+<span>
+  \[    \dd l&#39; \sin \alpha = \dd l&#39; \cos \theta
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>Also, \\( l' = s \tan \theta \\), so
+</code></pre>
+<span>
+  \[    \dd l&#39; = \frac{s}{ \cos ^2 \theta} \dd \theta
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>and \\( s = \gr \cos \theta \\), so
+</code></pre>
+<span>
+  \[    \frac{1}{\gr^2} = \frac{\cos ^2 \theta}{s^2} 
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>The Biot-Savart law gives the magnetic field as
+</code></pre>
+<span>
+  \[    \begin{aligned}
+    B &amp; = \frac{\mu_0 I}{4 \pi} \int _{\theta_1}^{\theta_2} \left( \frac{\cos ^2 \theta}{s^2}  \right) \left( \frac{s}{\cos ^2 \theta} \right) \cos \theta \dd \theta \\
+    &amp; = \frac{\mu_0}{4 \pi s} \int _{\theta_1}^{\theta_2} \cos \theta \dd \theta \\
+    &amp; = \frac{\mu_0 I}{4 \pi s} (\sin \theta_2 - \sin \theta_1) \tagl{5.37}
+    \end{aligned}
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>That is the field of any straight segment of wire, in terms of the initial and final angles \\( \theta_1 \\) and \\( \theta_2 \\) (Fig 5.19). Of course, a finite segment by itself could never support a steady current (where would the charge go when it got to the end?), but it might be a piece of some closed circuit, and \\( \eqref{5.37} \\) would then represent its contribution to the total field. In the case of an infinite wire, \\( \theta_1 = - \pi / 2 \\) and \\( \theta_2 = \pi / 2 \\) so we obtain
+</code></pre>
+<span>
+  \[    B = \frac{\mu_0 I}{2 \pi s} \tagl{5.38}
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>Notice that the field is inversely proportional to the distance from the wire - just like the electric field of an infinite line charge. In the region below the wire, __B__ points into the page, and in general, it &quot;circles around&quot; the wire, in accordance with the right-hand rule
+</code></pre>
+<span>
+  \[    \vec{B} = \frac{\mu_0 I}{2 \pi s} \vu{\phi} \tagl{5.39}
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>As an application, let's find the force of attraction between two long, parallel wires a distance _d_ apart, carrying currents \\( I_1 \\) and \\( I_2 \\) (Fig 5.20). The field at (2) due to (1) is
+</code></pre>
+<span>
+  \[    B = \frac{\mu_0 I_1}{2 \pi d}
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>and it points into the page. The Lorentz force law (in the form appropriate to line currents) predicts a force directed upwards (1), of magnitude
+</code></pre>
+<span>
+  \[    F = I_2 \left( \frac{\mu_0 I_1}{2 \pi d}  \right) \int \dd l
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>The total force, not surprisingly, is infinite, but the force per unit length is
+</code></pre>
+<span>
+  \[    f = \frac{ \mu_0}{2 \pi } \frac{I_1 I_2}{d} \tagl{5.40}
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>If the currents are antiparallel (one up, one down), the force is repulsive - consistent again with the qualitative observations of Sect 5.1.1.
+&lt;p align=&quot;center&quot;&gt; &lt;img alt=&quot;Figure 5.20&quot; src=&quot;/r/img/griffiths/5.20.png&quot; /&gt; &lt;/p&gt;
+</code></pre>
+<h4 id="example-56">
+  Example 5.6
+  <a class="anchor" href="#example-56">#</a>
+</h4>
+<p>!!! question &ldquo;Find the magnetic field a distance z above the center of a circular loop of radius <em>R</em>, which carries a steady current <em>I</em> (Fig 5.21)&rdquo;</p>
+<pre><code>&lt;p align=&quot;center&quot;&gt; &lt;img alt=&quot;Figure 5.21&quot; src=&quot;/r/img/griffiths/5.21.png&quot; /&gt; &lt;/p&gt;
+__Solution__
+
+The field \\( \dd \vec{B} \\) attributable to the segment \\( \dd \vec{l'} \\) points as shown. As we integrate \\( \dd \vec{l'} \\)  around the loop, \\( \dd \vec{B} \\) sweeps out a cone. The horizontal components cancel, and the vertical components combine, to give
+</code></pre>
+<span>
+  \[    B(z) = \frac{\mu_0 }{4 \pi} I \int \frac{\dd l&#39;}{\gr ^2} \cos \theta
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>(Notice that dl' and \\( \gr \\) are perpendicular, in this case; the factor of \\( \cos \theta \\) projects out the vertical component.) Now, \\( \cos \theta \\) and \\( \gr ^2 \\) are constants, and \\( \int dl' \\) is simply the circumference \\( 2 \pi R \\), so
+</code></pre>
+<span>
+  \[    B(z) = \frac{\mu_0 I}{4 \pi} \left( \frac{\cos \theta}{\gr ^2} \right) 2 \pi R = \frac{\mu_0 I}{2} \frac{R^2}{(R^2 &#43; z^2) ^{3/2}}  \tagl{5.41}
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>For surface and volume currents, the Biot-Savart law becomes</p>
+<span>
+  \[\vec{B}(r) = \frac{\mu_0}{4 \pi } \int \frac{\vec{K}(r&#39;) \times \vu{\gr}}{\gr ^2} \dd a&#39;\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>and</p>
+<span>
+  \[\vec{B}(r) = \frac{\mu_0}{4 \pi} \int \frac{\vec{J}(r&#39;) \times \vu{\gr}}{\gr ^2} \dd \tau&#39; \tagl{5.42}\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>respectively. You might be tempted to write down the corresponding formula for a moving point charge, using the &ldquo;dictionary&rdquo;</p>
+<span>
+  \[\vec{B}(r) = \frac{\mu_0}{4 \pi} \frac{q \vec{v} \times \vu{\gr}}{\gr ^2} \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<p>but this is simply <em>wrong</em>. As I mentioned earlier, a point charge does not constitute a steady current, and the Biot-Savart law, which only holds for steady currents, does <em>not</em> correctly determine its field.</p>
+<p>The superposition principle applies to magnetic fields just as it does to electric firlds: if you have a <em>collection</em> of source currents, the net field is the (vector) sum of the fields due to each of them taken separately.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+
+  
+
+  
+
+  
+
+
+
+<div class="book-languages" tabindex="0" aria-haspopup="true">
+  <ul>
+    <li class="flex align-center">
+      <img src="/r/svg/translate.svg" class="book-icon" alt="Languages" />
+      English
+    </li> 
+  </ul>
+
+  <ul class="book-languages-list">
+    
+    <li class="active">
+      <a href="https://peppyhare.github.io/r/" class="flex align-center">
+        <img src="/r/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="https://peppyhare.github.io/r/ru/" class="flex align-center">
+        <img src="/r/svg/translate.svg" class="book-icon" alt="Languages" />
+        Russian
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="https://peppyhare.github.io/r/zh/" class="flex align-center">
+        <img src="/r/svg/translate.svg" class="book-icon" alt="Languages" />
+        Chinese
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#52-the-biot-savart-law">5.2: The Biot-Savart Law</a>
+      <ul>
+        <li><a href="#521-steady-currents">5.2.1: Steady Currents</a></li>
+        <li><a href="#522-the-magnetic-field-of-a-steady-current">5.2.2: The Magnetic Field of a Steady Current</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

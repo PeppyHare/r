@@ -1,0 +1,2822 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Problem 3.24 #  !!! question &quot;&quot;
+__Solution__ Since we are in cylindrical coordinates, we will write Laplace&#39;s equation in cylindrical coordinates \\( (s, \phi, z) \\):    \[ \laplacian V = \frac{1}{s} \pdv{}{s} \left( s \pdv{V}{s} \right) &#43; \frac{1}{s^2} \frac{\partial ^2 V}{\partial \phi ^2} = 0 \]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="Problem 3.24 #  !!! question &quot;&quot;
+__Solution__ Since we are in cylindrical coordinates, we will write Laplace&#39;s equation in cylindrical coordinates \\( (s, \phi, z) \\):    \[ \laplacian V = \frac{1}{s} \pdv{}{s} \left( s \pdv{V}{s} \right) &#43; \frac{1}{s^2} \frac{\partial ^2 V}{\partial \phi ^2} = 0 \]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://peppyhare.github.io/r/notes/griffiths/problems-ch3/" />
+
+<title>Problems Ch3 | My Notes</title>
+<link rel="manifest" href="/r/manifest.json">
+<link rel="icon" href="/r/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/r/book.min.f0d8d89a3c8ce0924c15fd3abdb2eb561162f95dd0ce5d8e24fe8d5b9498a68c.css" integrity="sha256-8NjYmjyM4JJMFf06vbLrVhFi&#43;V3Qzl2OJP6NW5SYpow=">
+<script defer src="/r/en.search.min.1e3631a1a72f85459af4770e969c2f3a1dd8b19c7f8c3fbf98191f5c4a301820.js" integrity="sha256-HjYxoacvhUWa9HcOlpwvOh3YsZx/jD&#43;/mBkfXEowGCA="></script>
+
+<script defer src="/r/sw.min.7dd1b982abb2287010a43b99e3233ff99ced25fbe0e72dc2e6ad364145177485.js" integrity="sha256-fdG5gquyKHAQpDuZ4yM/&#43;ZztJfvg5y3C5q02QUUXdIU="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/r"><span>My Notes</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Notes</span>
+  
+
+          
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Working</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/working/crews2018/" class="">Crews (2018)</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ee5e070eb25b63f2c377d750d37f67ae" class="toggle" checked />
+    <label for="section-ee5e070eb25b63f2c377d750d37f67ae" class="flex justify-between">
+      <a href="https://peppyhare.github.io/r/notes/griffiths/" class="">Griffiths Introduction to Electrodynamics</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-1/" class="">Vector Algebra</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-2/" class="">Differential Calculus</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-3/" class="">Integral Calculus</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-4/" class="">Curvilinear Coordinates</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-5/" class="">Ch1 5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch1-6/" class="">Ch1 6</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch10-1/" class="">Ch10 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch10-2/" class="">Ch10 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch10-3/" class="">Ch10 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch11-1/" class="">Ch11 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-1/" class="">Ch2 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-2/" class="">Ch2 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-3/" class="">Ch2 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-4/" class="">Ch2 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch2-5/" class="">Ch2 5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch3-1/" class="">Ch3 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch3-2/" class="">Ch3 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch3-3/" class="">Ch3 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch3-4/" class="">Ch3 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch4-1/" class="">Ch4 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch4-2/" class="">Ch4 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch4-3/" class="">Ch4 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch4-4/" class="">Ch4 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch5-1/" class="">Ch5 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch5-2/" class="">Ch5 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch5-3/" class="">Ch5 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch5-4/" class="">Ch5 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch6-1/" class="">Ch6 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch6-2/" class="">Ch6 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch6-3/" class="">Ch6 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch6-4/" class="">Ch6 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch7-1/" class="">Ch7 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch7-2/" class="">Ch7 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch7-3/" class="">Ch7 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch8-0/" class="">Ch8 0</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch8-1/" class="">Ch8 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch8-2/" class="">Ch8 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-1/" class="">Ch9 1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-2/" class="">Ch9 2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-3/" class="">Ch9 3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-4/" class="">Ch9 4</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/ch9-5/" class="">Ch9 5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/problems-ch3/" class=" active">Problems Ch3</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/problems-ch5/" class="">Problems Ch5</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/problems-ch7/" class="">Problems Ch7</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/griffiths/problems-ch9/" class="">Problems Ch9</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-edf338bf880234e7aba93d04934ebde0" class="toggle"  />
+    <label for="section-edf338bf880234e7aba93d04934ebde0" class="flex justify-between">
+      <a  class="">MHD Theory</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/01-syllabus/" class="">Syllabus</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/02-plasma-models/" class="">Plasma Models</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/03-plasma-fluid-model/" class="">Plasma Fluid Model</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/04-two-fluid-plasma-model/" class="">Two-Fluid Plasma Model</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/05-mhd-model/" class="">Magnetohydrodynamic (MHD) Model</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/06-boundary-conditions/" class="">Boundary Conditions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/" class="">Equilibrium for Fusion</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/08-1d-equilibria/" class="">1-D Equilibria</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/09-2d-equilibria/" class="">2D Equilibria</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/10-equilibrium-of-3d-configurations/" class="">Equilibrium of 3D Configurations</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/11-mhd-stability/" class="">MHD Stability</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://peppyhare.github.io/r/notes/UWAA558/formulary/" class="">Formulary</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/Peppyhare/r" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://themes.gohugo.io/hugo-book/" target="_blank" rel="noopener">
+        Hugo Themes
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/r/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Problems Ch3</strong>
+
+  <label for="toc-control">
+    
+    <img src="/r/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h4 id="problem-324">
+  Problem 3.24
+  <a class="anchor" href="#problem-324">#</a>
+</h4>
+<p>!!! question &quot;&quot;</p>
+<pre><code>__Solution__
+Since we are in cylindrical coordinates, we will write Laplace's equation in cylindrical coordinates \\( (s, \phi, z) \\):
+</code></pre>
+
+<link rel="stylesheet" href="/r/katex/katex.min.css" />
+<script defer src="/r/katex/katex.min.js"></script>
+<script defer src="/r/katex/auto-render.min.js" onload="loadKatex();"></script><span>
+  \[    \laplacian V = \frac{1}{s} \pdv{}{s} \left( s \pdv{V}{s}  \right) &#43; \frac{1}{s^2} \frac{\partial ^2 V}{\partial \phi ^2} = 0 
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>We'll try the method of separation of variables on s and \\( \phi \\) by searching for solutions which are products of the form
+</code></pre>
+<span>
+  \[    V(s, \phi) = S(s) &#43; \Phi(\phi)
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<span>
+  \[    \frac{1}{s} \Phi \dv{}{s} \left( s \dv{S}{s} \right) &#43; \frac{1}{s^2} S \frac{d^2 \Phi}{d\phi ^2} = 0 
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>to separate the variables, we need to divide by V and multiply by \\( s^2 \\) 
+</code></pre>
+<span>
+  \[    \frac{s}{S} \dv{}{s} \left( s \dv{S}{s} \right) &#43; \frac{1}{\Phi} \frac{d^2 \Phi}{d \phi ^2}  = 0
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>We define 
+</code></pre>
+<span>
+  \[    f(s) = \frac{s}{S} \dv{}{s} \left( s \dv{S}{s} \right) 
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>and
+</code></pre>
+<span>
+  \[    g(\phi) = \frac{1}{\Phi} \frac{d^2 \Phi}{d \phi ^2} 
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>Since we have separated our independent variables and the sum is equal to zero, they must both be constant
+</code></pre>
+<span>
+  \[    f(s) = C_1 \qquad g(\phi) = C_2 \qquad C_1 &#43; C_2 = 0
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>Cylindrical symmetry implies that
+</code></pre>
+<span>
+  \[    \text{ when } \phi \rightarrow \phi &#43; 2 \pi : \qquad \Phi(\phi &#43; 2 \pi) = \Phi(\phi)
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>So \\( C_2 \\) must be the positive one, since we know that will give us the periodic solutions to Laplace's equation. We write our constant as \\( k^2 \\) so
+</code></pre>
+<span>
+  \[    \frac{d^2 \Phi}{d \phi ^2} = - k^2 \Phi \\
+     \rightarrow \Phi(\phi) = A \cos (k \phi) &#43; B \sin (k \phi), \quad k = 0, 1, 2, 3, \ldots
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>Back to the S part, we need a solution to 
+</code></pre>
+<span>
+  \[    s \dv{}{s} \left( s \dv{S}{s} \right) = k^2 S
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>A convenient solution would be a power function, \\( S(s) = s^n \\) if we choose the power _n_ appropriately
+</code></pre>
+<span>
+  \[    \begin{aligned}
+    s \dv{}{s} \left( s \dv{s^n}{s} \right) &amp; = s \dv{}{s} \left( s n s^{n-1} \right) \\
+     &amp; = s \dv{}{s} (n s^n) \\
+     &amp; = s n^2 s^{n-1} \\
+     &amp; = n^2 s^n \\
+     &amp; = k^2 S = k^2 s^n \\
+     &amp; \rightarrow n = \pm k
+    \end{aligned}
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>So, our general solution for S is
+</code></pre>
+<span>
+  \[    S(s) = C s^k &#43; D s^{-k}
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>And our general solution will be an infinite series over _k_. But we have to now be careful, because previously we've expressed our general solution in terms of strictly non-zero _k_, but here we have \\( k = 0 \\), which gives us a constant solution
+</code></pre>
+<span>
+  \[    k = 0: \qquad S(s) = C s^0 &#43; D s^0 = \text{const.}
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>But we should get _two_ solutions for a second-order ordinary differential equation. If we go back to the differential equation for S,
+</code></pre>
+<span>
+  \[    s \dv{}{s} \left( s \dv{S}{s} \right) = k^2 S \\
+    \rightarrow s \dv{S}{s} = \text{ const. } = C \\
+    \rightarrow \dv{S}{s} = \frac{c}{s} \\
+    \rightarrow \dd S = C \frac{ds}{s} \\
+    S(s) = C \ln s &#43; D 
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>This gives us our second solution for S for \\( k = 0 \\).
+
+Now what about for \\( \Phi \\)? Looking at the k = 0 case for the \\( \Phi \\) ODE,
+</code></pre>
+<span>
+  \[    \frac{d^2 \Phi}{d \phi ^2} = - k^2 \Phi = 0 \quad \text{ for } k = 0 \\
+    \frac{d \Phi}{d \phi} = \text{ const. } = B \\
+    \rightarrow \Phi(\phi) = B \phi &#43; A
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>But this doesn't meet our periodicity requirement! This isn't a physically acceptable solution. For k = 0, \\( \Phi = B \\) is the only 'physically acceptable' solution (we discard \\( B \phi + A \\) out of hand.)
+
+Finally, our general solution looks like
+</code></pre>
+<span>
+  \[    V(s, \phi) = a_0 &#43; b_0 \ln s &#43; \sum_{k=1} ^\infty \left[ s^k (a_k \cos k \phi &#43; b_k \sin k \phi) &#43; s^{-k} (a_k \cos k \phi &#43; b_k \sin k \phi) \right]
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>We've only been asked for the general solution in cylindrical coordinates (from which we can tell that our solution is independent of _a_), and we must be given boundary conditions in order to solve for the constants \\( a_k, b_k \\).
+</code></pre>
+<h4 id="problem-327">
+  Problem 3.27
+  <a class="anchor" href="#problem-327">#</a>
+</h4>
+<p>!!! question &ldquo;A sphere of radius R, centered at the origin, carries charge density \( \rho(r, \theta) = k \frac{R}{r^2} (R - 2r) \sin \theta \) where <em>k</em> is a constant, and \( r, \theta \) are the usual spherical coordinates. Find the approximate potential for points on the <em>z</em> axis, far from the sphere.&rdquo;</p>
+<pre><code>We are asked for the _approximate_ potential for points on the z-axis far from the charge distribution, so we'll calculate the terms of our potential from Eq 3.95, and stop when we find the first non-zero term, replacing \\( \theta \\) for \\( \alpha \\) and \\( z \\) for \\( r \\) as we go.
+</code></pre>
+<span>
+  \[    V(\vec{r}) = \frac{1}{4 \pi \epsilon_0} \sum_{n=0} ^\infty \frac{1}{r^{(n&#43;1)}} \int (r&#39;) P_n(\cos \alpha) \rho(\vec{r&#39;}) \dd{\tau&#39;}
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>Let's start with the monopole term. The integral we have to calculate is simply the charge density integrated over the charge distribution
+</code></pre>
+<span>
+  \[    \int \rho(r) \dd \tau = k R \int_0 ^R \int _0 ^{\pi} \int_{0} ^{2 \pi}  \frac{1}{r^2} (R - 2r) \sin \theta (r^2 \sin \theta ) \dd r \dd \theta \dd \phi \\
+    \int _{0} ^R (R - 2r) \dd r = \left.(R r - r^2)\right|_{0} ^R = 0
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>So the monopole term comes out to zero. Next, we try calculating the dipole term:
+</code></pre>
+<span>
+  \[    \int r \cos \theta \rho(r) \dd \tau = k R \iiint r \cos \theta \frac{1}{r^2} (R - 2r) \sin \theta (r^2 \sin \theta) \dd r \dd \theta \dd \phi
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>The \\( \theta \\) integral will come out to
+</code></pre>
+<span>
+  \[    \int_0 ^{\pi} \sin ^2 \cos \theta \dd \theta = \int _0 ^\pi \sin ^2 \theta \dd (\sin \theta) = \left. \frac{1}{3} \sin ^3 \theta \right|_0 ^\pi = 0
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>Well dangit, we still don't have the first non-zero term! On to the quadrupole term:
+</code></pre>
+<span>
+  \[    \begin{aligned}
+    &amp; \int r^2 \left( \frac{3}{2} \cos ^2 \theta - \frac{1}{2} \right) \rho \dd \tau \\
+    = &amp;  \iiint r^2 \left( \frac{3}{2} \cos ^2 \theta - \frac{1}{2} \right) \frac{kR}{r^2} (R - 2r) \sin \theta r^2 \sin \theta \dd r \dd \theta \dd \phi \\
+    = &amp; \frac{1}{2} kR \iiint r^2 (3 \cos ^2 \theta - 1)(R - 2r) \sin ^2 \theta \dd r \dd \theta \dd \phi 
+    \end{aligned}
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>Thankfully we don't have any cross-terms, so we can do the integrals separately. The integral in _r_ is
+</code></pre>
+<span>
+  \[    \int_0 ^R r^2 (R - 2r) \dd r = - \frac{R^4}{6} 
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>The integral in \\( \theta \\) is 
+</code></pre>
+<span>
+  \[    \int_0 ^\pi (3 \cos ^2 \theta - 1) \sin ^2 \theta \dd \theta = \int _0 ^\pi \left[ 3 (1 - \sin ^2 \theta) - 1 \right] \sin ^2 \theta \dd \theta = - \frac{\pi}{8} 
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>And we just get a \\( 2 \pi \\) from the \\( \phi \\) integral, so converting our _r_ to _z_ in our coordinate system, the whole quadrupole potential is
+</code></pre>
+<span>
+  \[    V(\vec{r}) \approx \frac{1}{4 \pi \epsilon_0} \frac{1}{z^3} \frac{1}{2} k R \left( - \frac{R^4}{6} \right) \left( - \frac{\pi}{8} \right) (2 \pi) \\
+    = \frac{1}{4 \pi \epsilon_0} \frac{k \pi ^2 R ^5}{48 z^3} \quad \text{(Quadrupole)}
+    \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>#### Problem 3.31
+
+!!! question &quot;In Ex. 3.9, we derived the exact potential for a spherical shell of radius _R_, which carries a surface charge \\( \sigma = k \cos \theta \\). a) Calculate the dipole moment of this charge distribution. b) Find the approximate potential, at points far from the sphere, and compare the exact answer (Eq 3.87). What can you conclude about the higher multipoles?&quot;
+
+    By the symmetry of the problem, __p__ is going to be in the z-direction: \\( \vec{p} = p \vu{z}; \, p = \int z \rho \dd \tau \rightarrow \int z \sigma \dd a \\).
+</code></pre>
+<span>
+  \[        \begin{aligned}
+        p &amp; = \int (R \cos \theta)(k \cos \theta) R^3 \sin \theta \dd \theta \dd \phi \\
+         &amp; = 2 \pi R^3 k \int _0 ^\pi \cos ^2 \theta \sin \theta \dd \theta \\
+         &amp; = 2 \pi R^3 k \left. \left( - \frac{\cos ^3 \theta}{3} \right) \right|_0 ^\pi \\
+         &amp; = \frac{2}{3} \pi R^3 k [ 1 - (-1) ] \\
+         &amp; = \frac{4 \pi R^3 k}{3} 
+        \end{aligned}
+        \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<span>
+  \[        \tag{a} \vec{p} = \frac{4 \pi R^3 k}{3} \vu{z}
+        \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<pre><code>    The associated dipole potential is just
+</code></pre>
+<span>
+  \[        V_{dip} \approx \frac{1}{4 \pi \epsilon_0} \frac{\vu{r} \cdot \vec{p}}{r^2} = \frac{k R^3}{3 \epsilon_0} \frac{\cos \theta}{r^2}  
+        \]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script>
+<h4 id="problem-333">
+  Problem 3.33
+  <a class="anchor" href="#problem-333">#</a>
+</h4>
+<p>!!! question &ldquo;Show that the electric field of a &lsquo;pure&rsquo; dipole can be written in the coordinate-free form
+<span>
+  \[ \vec{E_{dip}} = \frac{1}{4 \pi \epsilon_0} \frac{1}{r^3} [3 (\vec{p} \cdot \vu{r}) \vu{r} - \vec{p} ] 
+&lt;span&gt;
+  \[&amp;#34;
+    
+    We still assume the dipole is pointing in the z-direction and start with spherical coordinates, and then move to a coordinate-free system
+    
+&amp;lt;span&amp;gt;
+  \[    \vec{p} = p \vu{z}
+    \]
+&amp;lt;/span&amp;gt;
+&amp;lt;script&amp;gt;
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: &amp;#34;$$&amp;#34;, right: &amp;#34;$$&amp;#34;, display: true },
+        { left: &amp;#34;\\[&amp;#34;, right: &amp;#34;\\]&amp;#34;, display: true },
+        { left: &amp;#34;$&amp;#34;, right: &amp;#34;$&amp;#34;, display: false },
+        { left: &amp;#34;$`math&amp;#34;, right: &amp;#34;`$&amp;#34;, display: true },
+        { left: &amp;#34;\\(&amp;#34;, right: &amp;#34;\\)&amp;#34;, display: false }],
+      macros: {
+        
+        &amp;#34;\\lcm&amp;#34;: &amp;#34;\\mathop{\\mathrm{lcm}}&amp;#34;,
+        &amp;#34;\\sen&amp;#34;: &amp;#39;\\text{sen}\\,&amp;#39;,
+        
+        &amp;#34;\\dd&amp;#34;: &amp;#34;\\mathop{\\mathrm{d} #1}&amp;#34;,
+        &amp;#34;\\abs&amp;#34;: &amp;#34;\\lvert #1 \\rvert&amp;#34;,
+        
+        &amp;#34;\\dd&amp;#34;: &amp;#34;\\text{d}&amp;#34;,
+        &amp;#34;\\cross&amp;#34;: &amp;#34;\\times&amp;#34;,
+        &amp;#34;\\pdv&amp;#34;: &amp;#34;\\frac{\\partial #1}{\\partial #2}&amp;#34;,
+        &amp;#34;\\curl&amp;#34;: &amp;#34;\\nabla \\cross #1&amp;#34;,
+        &amp;#34;\\vu&amp;#34;: &amp;#34;\\mathbf{\\hat{#1}}&amp;#34;,
+        &amp;#34;\\vdot&amp;#34;: &amp;#34;\\dot&amp;#34;,
+        &amp;#34;\\div&amp;#34;: &amp;#34;\\nabla \\cdot #1&amp;#34;,
+        &amp;#34;\\grad&amp;#34;: &amp;#34;\\nabla&amp;#34;,
+        &amp;#34;\\dv&amp;#34;: &amp;#34;\\frac{d\\,#1}{d\\,#2}&amp;#34;,
+        &amp;#34;\\gr&amp;#34;: &amp;#34;\\gamma&amp;#34;,
+        &amp;#34;\\vec&amp;#34;: &amp;#34;\\mathbf{#1}&amp;#34;,
+        &amp;#34;\\tagl&amp;#34;: &amp;#34;\\tag{#1}&amp;#34;,
+        &amp;#34;\\eqref&amp;#34;: &amp;#34;(#1)&amp;#34;,
+        &amp;#34;\\laplacian&amp;#34;: &amp;#34;\\mathbf{\\nabla ^2}&amp;#34;,
+        &amp;#34;\\label&amp;#34;: &amp;#34;{}&amp;#34;,
+        &amp;#34;\\negadelta&amp;#34;: &amp;#34;\\nabla&amp;#34;,
+      }
+    });
+  };
+&amp;lt;/script&amp;gt;
+
+    
+&amp;lt;span&amp;gt;
+  \[    \vec{p} = p_r \vu{r} &amp;amp;#43; p_\theta \vu{\theta} &amp;amp;#43; p_{\phi} \vu{\phi}
+    \]
+&amp;lt;/span&amp;gt;
+&amp;lt;script&amp;gt;
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: &amp;#34;$$&amp;#34;, right: &amp;#34;$$&amp;#34;, display: true },
+        { left: &amp;#34;\\[&amp;#34;, right: &amp;#34;\\]&amp;#34;, display: true },
+        { left: &amp;#34;$&amp;#34;, right: &amp;#34;$&amp;#34;, display: false },
+        { left: &amp;#34;$`math&amp;#34;, right: &amp;#34;`$&amp;#34;, display: true },
+        { left: &amp;#34;\\(&amp;#34;, right: &amp;#34;\\)&amp;#34;, display: false }],
+      macros: {
+        
+        &amp;#34;\\lcm&amp;#34;: &amp;#34;\\mathop{\\mathrm{lcm}}&amp;#34;,
+        &amp;#34;\\sen&amp;#34;: &amp;#39;\\text{sen}\\,&amp;#39;,
+        
+        &amp;#34;\\dd&amp;#34;: &amp;#34;\\mathop{\\mathrm{d} #1}&amp;#34;,
+        &amp;#34;\\abs&amp;#34;: &amp;#34;\\lvert #1 \\rvert&amp;#34;,
+        
+        &amp;#34;\\dd&amp;#34;: &amp;#34;\\text{d}&amp;#34;,
+        &amp;#34;\\cross&amp;#34;: &amp;#34;\\times&amp;#34;,
+        &amp;#34;\\pdv&amp;#34;: &amp;#34;\\frac{\\partial #1}{\\partial #2}&amp;#34;,
+        &amp;#34;\\curl&amp;#34;: &amp;#34;\\nabla \\cross #1&amp;#34;,
+        &amp;#34;\\vu&amp;#34;: &amp;#34;\\mathbf{\\hat{#1}}&amp;#34;,
+        &amp;#34;\\vdot&amp;#34;: &amp;#34;\\dot&amp;#34;,
+        &amp;#34;\\div&amp;#34;: &amp;#34;\\nabla \\cdot #1&amp;#34;,
+        &amp;#34;\\grad&amp;#34;: &amp;#34;\\nabla&amp;#34;,
+        &amp;#34;\\dv&amp;#34;: &amp;#34;\\frac{d\\,#1}{d\\,#2}&amp;#34;,
+        &amp;#34;\\gr&amp;#34;: &amp;#34;\\gamma&amp;#34;,
+        &amp;#34;\\vec&amp;#34;: &amp;#34;\\mathbf{#1}&amp;#34;,
+        &amp;#34;\\tagl&amp;#34;: &amp;#34;\\tag{#1}&amp;#34;,
+        &amp;#34;\\eqref&amp;#34;: &amp;#34;(#1)&amp;#34;,
+        &amp;#34;\\laplacian&amp;#34;: &amp;#34;\\mathbf{\\nabla ^2}&amp;#34;,
+        &amp;#34;\\label&amp;#34;: &amp;#34;{}&amp;#34;,
+        &amp;#34;\\negadelta&amp;#34;: &amp;#34;\\nabla&amp;#34;,
+      }
+    });
+  };
+&amp;lt;/script&amp;gt;
+
+    Since __p__ is in the z-direction, we can safely say \\( p_\phi = 0 \\)
+    
+&amp;lt;span&amp;gt;
+  \[    p_r = \vec{p} \cdot \vu{r} = p \cos \theta \\
+    p_\theta = \vec{p} \cdot \vu{\theta} = - p \sin \theta \\
+    \vec{p} = p \cos \theta \vu{r} - p \sin \theta \vu{\theta}
+    \]
+&amp;lt;/span&amp;gt;
+&amp;lt;script&amp;gt;
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: &amp;#34;$$&amp;#34;, right: &amp;#34;$$&amp;#34;, display: true },
+        { left: &amp;#34;\\[&amp;#34;, right: &amp;#34;\\]&amp;#34;, display: true },
+        { left: &amp;#34;$&amp;#34;, right: &amp;#34;$&amp;#34;, display: false },
+        { left: &amp;#34;$`math&amp;#34;, right: &amp;#34;`$&amp;#34;, display: true },
+        { left: &amp;#34;\\(&amp;#34;, right: &amp;#34;\\)&amp;#34;, display: false }],
+      macros: {
+        
+        &amp;#34;\\lcm&amp;#34;: &amp;#34;\\mathop{\\mathrm{lcm}}&amp;#34;,
+        &amp;#34;\\sen&amp;#34;: &amp;#39;\\text{sen}\\,&amp;#39;,
+        
+        &amp;#34;\\dd&amp;#34;: &amp;#34;\\mathop{\\mathrm{d} #1}&amp;#34;,
+        &amp;#34;\\abs&amp;#34;: &amp;#34;\\lvert #1 \\rvert&amp;#34;,
+        
+        &amp;#34;\\dd&amp;#34;: &amp;#34;\\text{d}&amp;#34;,
+        &amp;#34;\\cross&amp;#34;: &amp;#34;\\times&amp;#34;,
+        &amp;#34;\\pdv&amp;#34;: &amp;#34;\\frac{\\partial #1}{\\partial #2}&amp;#34;,
+        &amp;#34;\\curl&amp;#34;: &amp;#34;\\nabla \\cross #1&amp;#34;,
+        &amp;#34;\\vu&amp;#34;: &amp;#34;\\mathbf{\\hat{#1}}&amp;#34;,
+        &amp;#34;\\vdot&amp;#34;: &amp;#34;\\dot&amp;#34;,
+        &amp;#34;\\div&amp;#34;: &amp;#34;\\nabla \\cdot #1&amp;#34;,
+        &amp;#34;\\grad&amp;#34;: &amp;#34;\\nabla&amp;#34;,
+        &amp;#34;\\dv&amp;#34;: &amp;#34;\\frac{d\\,#1}{d\\,#2}&amp;#34;,
+        &amp;#34;\\gr&amp;#34;: &amp;#34;\\gamma&amp;#34;,
+        &amp;#34;\\vec&amp;#34;: &amp;#34;\\mathbf{#1}&amp;#34;,
+        &amp;#34;\\tagl&amp;#34;: &amp;#34;\\tag{#1}&amp;#34;,
+        &amp;#34;\\eqref&amp;#34;: &amp;#34;(#1)&amp;#34;,
+        &amp;#34;\\laplacian&amp;#34;: &amp;#34;\\mathbf{\\nabla ^2}&amp;#34;,
+        &amp;#34;\\label&amp;#34;: &amp;#34;{}&amp;#34;,
+        &amp;#34;\\negadelta&amp;#34;: &amp;#34;\\nabla&amp;#34;,
+      }
+    });
+  };
+&amp;lt;/script&amp;gt;
+
+    So we can directly check this expression against the expression we got as Eqn 3.103 \\( (\vec{E_{dip}}(r, \theta) = \frac{p}{4 \pi \epsilon_0 r^3} (2 \cos \theta \vu{r} &amp;#43; \sin \theta \vu{\theta} ) \\):
+    
+&amp;lt;span&amp;gt;
+  \[    \begin{aligned}
+    3 ( \vec{p} \cdot \vu{r}) \vu{r} - \vec{p} = &amp;amp;amp; 3 p \cos \theta \vu{r} - p \cos \theta \vu{r} &amp;amp;#43; p \sin \theta \vu{\theta} \\
+    &amp;amp;amp; = 2 p \cos \theta \vu{r} &amp;amp;#43; p \sin \theta \vu{\theta} \\
+    \rightarrow \vec{E_{dip}} &amp;amp;amp; = \frac{1}{4 \pi \epsilon_0} \frac{1}{r^3} [3 (\vec{p} \cdot \vu{r}) \vu{r} - \vec{p} ]
+    \end{aligned}
+    \]
+&amp;lt;/span&amp;gt;
+&amp;lt;script&amp;gt;
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: &amp;#34;$$&amp;#34;, right: &amp;#34;$$&amp;#34;, display: true },
+        { left: &amp;#34;\\[&amp;#34;, right: &amp;#34;\\]&amp;#34;, display: true },
+        { left: &amp;#34;$&amp;#34;, right: &amp;#34;$&amp;#34;, display: false },
+        { left: &amp;#34;$`math&amp;#34;, right: &amp;#34;`$&amp;#34;, display: true },
+        { left: &amp;#34;\\(&amp;#34;, right: &amp;#34;\\)&amp;#34;, display: false }],
+      macros: {
+        
+        &amp;#34;\\lcm&amp;#34;: &amp;#34;\\mathop{\\mathrm{lcm}}&amp;#34;,
+        &amp;#34;\\sen&amp;#34;: &amp;#39;\\text{sen}\\,&amp;#39;,
+        
+        &amp;#34;\\dd&amp;#34;: &amp;#34;\\mathop{\\mathrm{d} #1}&amp;#34;,
+        &amp;#34;\\abs&amp;#34;: &amp;#34;\\lvert #1 \\rvert&amp;#34;,
+        
+        &amp;#34;\\dd&amp;#34;: &amp;#34;\\text{d}&amp;#34;,
+        &amp;#34;\\cross&amp;#34;: &amp;#34;\\times&amp;#34;,
+        &amp;#34;\\pdv&amp;#34;: &amp;#34;\\frac{\\partial #1}{\\partial #2}&amp;#34;,
+        &amp;#34;\\curl&amp;#34;: &amp;#34;\\nabla \\cross #1&amp;#34;,
+        &amp;#34;\\vu&amp;#34;: &amp;#34;\\mathbf{\\hat{#1}}&amp;#34;,
+        &amp;#34;\\vdot&amp;#34;: &amp;#34;\\dot&amp;#34;,
+        &amp;#34;\\div&amp;#34;: &amp;#34;\\nabla \\cdot #1&amp;#34;,
+        &amp;#34;\\grad&amp;#34;: &amp;#34;\\nabla&amp;#34;,
+        &amp;#34;\\dv&amp;#34;: &amp;#34;\\frac{d\\,#1}{d\\,#2}&amp;#34;,
+        &amp;#34;\\gr&amp;#34;: &amp;#34;\\gamma&amp;#34;,
+        &amp;#34;\\vec&amp;#34;: &amp;#34;\\mathbf{#1}&amp;#34;,
+        &amp;#34;\\tagl&amp;#34;: &amp;#34;\\tag{#1}&amp;#34;,
+        &amp;#34;\\eqref&amp;#34;: &amp;#34;(#1)&amp;#34;,
+        &amp;#34;\\laplacian&amp;#34;: &amp;#34;\\mathbf{\\nabla ^2}&amp;#34;,
+        &amp;#34;\\label&amp;#34;: &amp;#34;{}&amp;#34;,
+        &amp;#34;\\negadelta&amp;#34;: &amp;#34;\\nabla&amp;#34;,
+      }
+    });
+  };
+&amp;lt;/script&amp;gt;
+
+    So it all checks out.
+
+#### Problem 3.34
+
+!!! question &amp;#34;Three point charges are located as shown in Fig 3.38, each a distance _a_ from the origin. Find the approximate electric field at points far from the origin. Express your answer in spherical coordinates, and include the two lowest orders in the multipole expansion.&amp;#34;
+    
+    &amp;lt;p align=&amp;#34;center&amp;#34;&amp;gt; &amp;lt;img alt=&amp;#34;Figure 3.38&amp;#34; src=&amp;#34;/r/img/griffiths/3.38.png&amp;#34; /&amp;gt; &amp;lt;/p&amp;gt;
+    We&amp;#39;ll get to the electric field by writing down the multipole expansion of the potential, and then using the approximate potential to get the electric field. The total charge is -q, so the monopole term will be
+    
+&amp;lt;span&amp;gt;
+  \[    V_{mon} = \frac{1}{4 \pi \epsilon_0} \frac{1}{r} (-q)
+    \]
+&amp;lt;/span&amp;gt;
+&amp;lt;script&amp;gt;
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: &amp;#34;$$&amp;#34;, right: &amp;#34;$$&amp;#34;, display: true },
+        { left: &amp;#34;\\[&amp;#34;, right: &amp;#34;\\]&amp;#34;, display: true },
+        { left: &amp;#34;$&amp;#34;, right: &amp;#34;$&amp;#34;, display: false },
+        { left: &amp;#34;$`math&amp;#34;, right: &amp;#34;`$&amp;#34;, display: true },
+        { left: &amp;#34;\\(&amp;#34;, right: &amp;#34;\\)&amp;#34;, display: false }],
+      macros: {
+        
+        &amp;#34;\\lcm&amp;#34;: &amp;#34;\\mathop{\\mathrm{lcm}}&amp;#34;,
+        &amp;#34;\\sen&amp;#34;: &amp;#39;\\text{sen}\\,&amp;#39;,
+        
+        &amp;#34;\\dd&amp;#34;: &amp;#34;\\mathop{\\mathrm{d} #1}&amp;#34;,
+        &amp;#34;\\abs&amp;#34;: &amp;#34;\\lvert #1 \\rvert&amp;#34;,
+        
+        &amp;#34;\\dd&amp;#34;: &amp;#34;\\text{d}&amp;#34;,
+        &amp;#34;\\cross&amp;#34;: &amp;#34;\\times&amp;#34;,
+        &amp;#34;\\pdv&amp;#34;: &amp;#34;\\frac{\\partial #1}{\\partial #2}&amp;#34;,
+        &amp;#34;\\curl&amp;#34;: &amp;#34;\\nabla \\cross #1&amp;#34;,
+        &amp;#34;\\vu&amp;#34;: &amp;#34;\\mathbf{\\hat{#1}}&amp;#34;,
+        &amp;#34;\\vdot&amp;#34;: &amp;#34;\\dot&amp;#34;,
+        &amp;#34;\\div&amp;#34;: &amp;#34;\\nabla \\cdot #1&amp;#34;,
+        &amp;#34;\\grad&amp;#34;: &amp;#34;\\nabla&amp;#34;,
+        &amp;#34;\\dv&amp;#34;: &amp;#34;\\frac{d\\,#1}{d\\,#2}&amp;#34;,
+        &amp;#34;\\gr&amp;#34;: &amp;#34;\\gamma&amp;#34;,
+        &amp;#34;\\vec&amp;#34;: &amp;#34;\\mathbf{#1}&amp;#34;,
+        &amp;#34;\\tagl&amp;#34;: &amp;#34;\\tag{#1}&amp;#34;,
+        &amp;#34;\\eqref&amp;#34;: &amp;#34;(#1)&amp;#34;,
+        &amp;#34;\\laplacian&amp;#34;: &amp;#34;\\mathbf{\\nabla ^2}&amp;#34;,
+        &amp;#34;\\label&amp;#34;: &amp;#34;{}&amp;#34;,
+        &amp;#34;\\negadelta&amp;#34;: &amp;#34;\\nabla&amp;#34;,
+      }
+    });
+  };
+&amp;lt;/script&amp;gt;
+
+    The dipole moment is given by
+    
+&amp;lt;span&amp;gt;
+  \[    \begin{aligned}
+    \vec{p} &amp;amp;amp; = \sum_{i=1} ^3 q_i \vec{r_i} \\
+    &amp;amp;amp;  = (-q) a \vu{y} &amp;amp;#43; (-q) a (-\vu{y}) &amp;amp;#43; q a \vu{z} \\
+    &amp;amp;amp; = qa \vu{z} 
+    \end{aligned}
+    \]
+&amp;lt;/span&amp;gt;
+&amp;lt;script&amp;gt;
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: &amp;#34;$$&amp;#34;, right: &amp;#34;$$&amp;#34;, display: true },
+        { left: &amp;#34;\\[&amp;#34;, right: &amp;#34;\\]&amp;#34;, display: true },
+        { left: &amp;#34;$&amp;#34;, right: &amp;#34;$&amp;#34;, display: false },
+        { left: &amp;#34;$`math&amp;#34;, right: &amp;#34;`$&amp;#34;, display: true },
+        { left: &amp;#34;\\(&amp;#34;, right: &amp;#34;\\)&amp;#34;, display: false }],
+      macros: {
+        
+        &amp;#34;\\lcm&amp;#34;: &amp;#34;\\mathop{\\mathrm{lcm}}&amp;#34;,
+        &amp;#34;\\sen&amp;#34;: &amp;#39;\\text{sen}\\,&amp;#39;,
+        
+        &amp;#34;\\dd&amp;#34;: &amp;#34;\\mathop{\\mathrm{d} #1}&amp;#34;,
+        &amp;#34;\\abs&amp;#34;: &amp;#34;\\lvert #1 \\rvert&amp;#34;,
+        
+        &amp;#34;\\dd&amp;#34;: &amp;#34;\\text{d}&amp;#34;,
+        &amp;#34;\\cross&amp;#34;: &amp;#34;\\times&amp;#34;,
+        &amp;#34;\\pdv&amp;#34;: &amp;#34;\\frac{\\partial #1}{\\partial #2}&amp;#34;,
+        &amp;#34;\\curl&amp;#34;: &amp;#34;\\nabla \\cross #1&amp;#34;,
+        &amp;#34;\\vu&amp;#34;: &amp;#34;\\mathbf{\\hat{#1}}&amp;#34;,
+        &amp;#34;\\vdot&amp;#34;: &amp;#34;\\dot&amp;#34;,
+        &amp;#34;\\div&amp;#34;: &amp;#34;\\nabla \\cdot #1&amp;#34;,
+        &amp;#34;\\grad&amp;#34;: &amp;#34;\\nabla&amp;#34;,
+        &amp;#34;\\dv&amp;#34;: &amp;#34;\\frac{d\\,#1}{d\\,#2}&amp;#34;,
+        &amp;#34;\\gr&amp;#34;: &amp;#34;\\gamma&amp;#34;,
+        &amp;#34;\\vec&amp;#34;: &amp;#34;\\mathbf{#1}&amp;#34;,
+        &amp;#34;\\tagl&amp;#34;: &amp;#34;\\tag{#1}&amp;#34;,
+        &amp;#34;\\eqref&amp;#34;: &amp;#34;(#1)&amp;#34;,
+        &amp;#34;\\laplacian&amp;#34;: &amp;#34;\\mathbf{\\nabla ^2}&amp;#34;,
+        &amp;#34;\\label&amp;#34;: &amp;#34;{}&amp;#34;,
+        &amp;#34;\\negadelta&amp;#34;: &amp;#34;\\nabla&amp;#34;,
+      }
+    });
+  };
+&amp;lt;/script&amp;gt;
+
+    The dipole term in the multipole expansion of _V_ is then
+    
+&amp;lt;span&amp;gt;
+  \[    \begin{aligned}
+    V_{dip} &amp;amp;amp; = \frac{1}{4 \pi \epsilon_0} \frac{\vec{p} \cdot \vu{r}}{r^2} \\
+    &amp;amp;amp; = \frac{1}{4 \pi \epsilon_0} \frac{q a \vu{z} \cdot \vu{r}}{r^2} \\
+    &amp;amp;amp; = \frac{1}{4 \pi \epsilon_0} \frac{q a \cos \theta}{r^2} 
+    \end{aligned}
+    \]
+&amp;lt;/span&amp;gt;
+&amp;lt;script&amp;gt;
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: &amp;#34;$$&amp;#34;, right: &amp;#34;$$&amp;#34;, display: true },
+        { left: &amp;#34;\\[&amp;#34;, right: &amp;#34;\\]&amp;#34;, display: true },
+        { left: &amp;#34;$&amp;#34;, right: &amp;#34;$&amp;#34;, display: false },
+        { left: &amp;#34;$`math&amp;#34;, right: &amp;#34;`$&amp;#34;, display: true },
+        { left: &amp;#34;\\(&amp;#34;, right: &amp;#34;\\)&amp;#34;, display: false }],
+      macros: {
+        
+        &amp;#34;\\lcm&amp;#34;: &amp;#34;\\mathop{\\mathrm{lcm}}&amp;#34;,
+        &amp;#34;\\sen&amp;#34;: &amp;#39;\\text{sen}\\,&amp;#39;,
+        
+        &amp;#34;\\dd&amp;#34;: &amp;#34;\\mathop{\\mathrm{d} #1}&amp;#34;,
+        &amp;#34;\\abs&amp;#34;: &amp;#34;\\lvert #1 \\rvert&amp;#34;,
+        
+        &amp;#34;\\dd&amp;#34;: &amp;#34;\\text{d}&amp;#34;,
+        &amp;#34;\\cross&amp;#34;: &amp;#34;\\times&amp;#34;,
+        &amp;#34;\\pdv&amp;#34;: &amp;#34;\\frac{\\partial #1}{\\partial #2}&amp;#34;,
+        &amp;#34;\\curl&amp;#34;: &amp;#34;\\nabla \\cross #1&amp;#34;,
+        &amp;#34;\\vu&amp;#34;: &amp;#34;\\mathbf{\\hat{#1}}&amp;#34;,
+        &amp;#34;\\vdot&amp;#34;: &amp;#34;\\dot&amp;#34;,
+        &amp;#34;\\div&amp;#34;: &amp;#34;\\nabla \\cdot #1&amp;#34;,
+        &amp;#34;\\grad&amp;#34;: &amp;#34;\\nabla&amp;#34;,
+        &amp;#34;\\dv&amp;#34;: &amp;#34;\\frac{d\\,#1}{d\\,#2}&amp;#34;,
+        &amp;#34;\\gr&amp;#34;: &amp;#34;\\gamma&amp;#34;,
+        &amp;#34;\\vec&amp;#34;: &amp;#34;\\mathbf{#1}&amp;#34;,
+        &amp;#34;\\tagl&amp;#34;: &amp;#34;\\tag{#1}&amp;#34;,
+        &amp;#34;\\eqref&amp;#34;: &amp;#34;(#1)&amp;#34;,
+        &amp;#34;\\laplacian&amp;#34;: &amp;#34;\\mathbf{\\nabla ^2}&amp;#34;,
+        &amp;#34;\\label&amp;#34;: &amp;#34;{}&amp;#34;,
+        &amp;#34;\\negadelta&amp;#34;: &amp;#34;\\nabla&amp;#34;,
+      }
+    });
+  };
+&amp;lt;/script&amp;gt;
+
+    
+&amp;lt;span&amp;gt;
+  \[    V(r, \theta) \approx \frac{q}{4 \pi \epsilon_0 } \left( - \frac{1}{r} &amp;amp;#43; \frac{a \cos \theta}{r^2}  \right)
+    \]
+&amp;lt;/span&amp;gt;
+&amp;lt;script&amp;gt;
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: &amp;#34;$$&amp;#34;, right: &amp;#34;$$&amp;#34;, display: true },
+        { left: &amp;#34;\\[&amp;#34;, right: &amp;#34;\\]&amp;#34;, display: true },
+        { left: &amp;#34;$&amp;#34;, right: &amp;#34;$&amp;#34;, display: false },
+        { left: &amp;#34;$`math&amp;#34;, right: &amp;#34;`$&amp;#34;, display: true },
+        { left: &amp;#34;\\(&amp;#34;, right: &amp;#34;\\)&amp;#34;, display: false }],
+      macros: {
+        
+        &amp;#34;\\lcm&amp;#34;: &amp;#34;\\mathop{\\mathrm{lcm}}&amp;#34;,
+        &amp;#34;\\sen&amp;#34;: &amp;#39;\\text{sen}\\,&amp;#39;,
+        
+        &amp;#34;\\dd&amp;#34;: &amp;#34;\\mathop{\\mathrm{d} #1}&amp;#34;,
+        &amp;#34;\\abs&amp;#34;: &amp;#34;\\lvert #1 \\rvert&amp;#34;,
+        
+        &amp;#34;\\dd&amp;#34;: &amp;#34;\\text{d}&amp;#34;,
+        &amp;#34;\\cross&amp;#34;: &amp;#34;\\times&amp;#34;,
+        &amp;#34;\\pdv&amp;#34;: &amp;#34;\\frac{\\partial #1}{\\partial #2}&amp;#34;,
+        &amp;#34;\\curl&amp;#34;: &amp;#34;\\nabla \\cross #1&amp;#34;,
+        &amp;#34;\\vu&amp;#34;: &amp;#34;\\mathbf{\\hat{#1}}&amp;#34;,
+        &amp;#34;\\vdot&amp;#34;: &amp;#34;\\dot&amp;#34;,
+        &amp;#34;\\div&amp;#34;: &amp;#34;\\nabla \\cdot #1&amp;#34;,
+        &amp;#34;\\grad&amp;#34;: &amp;#34;\\nabla&amp;#34;,
+        &amp;#34;\\dv&amp;#34;: &amp;#34;\\frac{d\\,#1}{d\\,#2}&amp;#34;,
+        &amp;#34;\\gr&amp;#34;: &amp;#34;\\gamma&amp;#34;,
+        &amp;#34;\\vec&amp;#34;: &amp;#34;\\mathbf{#1}&amp;#34;,
+        &amp;#34;\\tagl&amp;#34;: &amp;#34;\\tag{#1}&amp;#34;,
+        &amp;#34;\\eqref&amp;#34;: &amp;#34;(#1)&amp;#34;,
+        &amp;#34;\\laplacian&amp;#34;: &amp;#34;\\mathbf{\\nabla ^2}&amp;#34;,
+        &amp;#34;\\label&amp;#34;: &amp;#34;{}&amp;#34;,
+        &amp;#34;\\negadelta&amp;#34;: &amp;#34;\\nabla&amp;#34;,
+      }
+    });
+  };
+&amp;lt;/script&amp;gt;
+
+    The field is given by 
+    
+&amp;lt;span&amp;gt;
+  \[    \vec{E} = - \grad V  \approx \frac{q}{4 \pi \epsilon_0} \left( - \frac{1}{r^2} \vu{r} &amp;amp;#43; \frac{2 a \cos \theta \vu{r}}{r^3} \vu{r} &amp;amp;#43; \frac{a}{r^3} \sin \theta \vu{\theta}  \right)
+    \]
+&amp;lt;/span&amp;gt;
+&amp;lt;script&amp;gt;
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: &amp;#34;$$&amp;#34;, right: &amp;#34;$$&amp;#34;, display: true },
+        { left: &amp;#34;\\[&amp;#34;, right: &amp;#34;\\]&amp;#34;, display: true },
+        { left: &amp;#34;$&amp;#34;, right: &amp;#34;$&amp;#34;, display: false },
+        { left: &amp;#34;$`math&amp;#34;, right: &amp;#34;`$&amp;#34;, display: true },
+        { left: &amp;#34;\\(&amp;#34;, right: &amp;#34;\\)&amp;#34;, display: false }],
+      macros: {
+        
+        &amp;#34;\\lcm&amp;#34;: &amp;#34;\\mathop{\\mathrm{lcm}}&amp;#34;,
+        &amp;#34;\\sen&amp;#34;: &amp;#39;\\text{sen}\\,&amp;#39;,
+        
+        &amp;#34;\\dd&amp;#34;: &amp;#34;\\mathop{\\mathrm{d} #1}&amp;#34;,
+        &amp;#34;\\abs&amp;#34;: &amp;#34;\\lvert #1 \\rvert&amp;#34;,
+        
+        &amp;#34;\\dd&amp;#34;: &amp;#34;\\text{d}&amp;#34;,
+        &amp;#34;\\cross&amp;#34;: &amp;#34;\\times&amp;#34;,
+        &amp;#34;\\pdv&amp;#34;: &amp;#34;\\frac{\\partial #1}{\\partial #2}&amp;#34;,
+        &amp;#34;\\curl&amp;#34;: &amp;#34;\\nabla \\cross #1&amp;#34;,
+        &amp;#34;\\vu&amp;#34;: &amp;#34;\\mathbf{\\hat{#1}}&amp;#34;,
+        &amp;#34;\\vdot&amp;#34;: &amp;#34;\\dot&amp;#34;,
+        &amp;#34;\\div&amp;#34;: &amp;#34;\\nabla \\cdot #1&amp;#34;,
+        &amp;#34;\\grad&amp;#34;: &amp;#34;\\nabla&amp;#34;,
+        &amp;#34;\\dv&amp;#34;: &amp;#34;\\frac{d\\,#1}{d\\,#2}&amp;#34;,
+        &amp;#34;\\gr&amp;#34;: &amp;#34;\\gamma&amp;#34;,
+        &amp;#34;\\vec&amp;#34;: &amp;#34;\\mathbf{#1}&amp;#34;,
+        &amp;#34;\\tagl&amp;#34;: &amp;#34;\\tag{#1}&amp;#34;,
+        &amp;#34;\\eqref&amp;#34;: &amp;#34;(#1)&amp;#34;,
+        &amp;#34;\\laplacian&amp;#34;: &amp;#34;\\mathbf{\\nabla ^2}&amp;#34;,
+        &amp;#34;\\label&amp;#34;: &amp;#34;{}&amp;#34;,
+        &amp;#34;\\negadelta&amp;#34;: &amp;#34;\\nabla&amp;#34;,
+      }
+    });
+  };
+&amp;lt;/script&amp;gt;\]
+&lt;/span&gt;
+&lt;script&gt;
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true },
+        { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true },
+        { left: &#34;$&#34;, right: &#34;$&#34;, display: false },
+        { left: &#34;$`math&#34;, right: &#34;`$&#34;, display: true },
+        { left: &#34;\\(&#34;, right: &#34;\\)&#34;, display: false }],
+      macros: {
+        
+        &#34;\\lcm&#34;: &#34;\\mathop{\\mathrm{lcm}}&#34;,
+        &#34;\\sen&#34;: &#39;\\text{sen}\\,&#39;,
+        
+        &#34;\\dd&#34;: &#34;\\mathop{\\mathrm{d} #1}&#34;,
+        &#34;\\abs&#34;: &#34;\\lvert #1 \\rvert&#34;,
+        
+        &#34;\\dd&#34;: &#34;\\text{d}&#34;,
+        &#34;\\cross&#34;: &#34;\\times&#34;,
+        &#34;\\pdv&#34;: &#34;\\frac{\\partial #1}{\\partial #2}&#34;,
+        &#34;\\curl&#34;: &#34;\\nabla \\cross #1&#34;,
+        &#34;\\vu&#34;: &#34;\\mathbf{\\hat{#1}}&#34;,
+        &#34;\\vdot&#34;: &#34;\\dot&#34;,
+        &#34;\\div&#34;: &#34;\\nabla \\cdot #1&#34;,
+        &#34;\\grad&#34;: &#34;\\nabla&#34;,
+        &#34;\\dv&#34;: &#34;\\frac{d\\,#1}{d\\,#2}&#34;,
+        &#34;\\gr&#34;: &#34;\\gamma&#34;,
+        &#34;\\vec&#34;: &#34;\\mathbf{#1}&#34;,
+        &#34;\\tagl&#34;: &#34;\\tag{#1}&#34;,
+        &#34;\\eqref&#34;: &#34;(#1)&#34;,
+        &#34;\\laplacian&#34;: &#34;\\mathbf{\\nabla ^2}&#34;,
+        &#34;\\label&#34;: &#34;{}&#34;,
+        &#34;\\negadelta&#34;: &#34;\\nabla&#34;,
+      }
+    });
+  };
+&lt;/script&gt;\]
+</span>
+<script>
+  function loadKatex() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "\\[", right: "\\]", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "$`math", right: "`$", display: true },
+        { left: "\\(", right: "\\)", display: false }],
+      macros: {
+        
+        "\\lcm": "\\mathop{\\mathrm{lcm}}",
+        "\\sen": '\\text{sen}\\,',
+        
+        "\\dd": "\\mathop{\\mathrm{d} #1}",
+        "\\abs": "\\lvert #1 \\rvert",
+        
+        "\\dd": "\\text{d}",
+        "\\cross": "\\times",
+        "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+        "\\curl": "\\nabla \\cross #1",
+        "\\vu": "\\mathbf{\\hat{#1}}",
+        "\\vdot": "\\dot",
+        "\\div": "\\nabla \\cdot #1",
+        "\\grad": "\\nabla",
+        "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+        "\\gr": "\\gamma",
+        "\\vec": "\\mathbf{#1}",
+        "\\tagl": "\\tag{#1}",
+        "\\eqref": "(#1)",
+        "\\laplacian": "\\mathbf{\\nabla ^2}",
+        "\\label": "{}",
+        "\\negadelta": "\\nabla",
+      }
+    });
+  };
+</script></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+  
+
+
+  
+
+  
+
+  
+
+
+
+<div class="book-languages" tabindex="0" aria-haspopup="true">
+  <ul>
+    <li class="flex align-center">
+      <img src="/r/svg/translate.svg" class="book-icon" alt="Languages" />
+      English
+    </li> 
+  </ul>
+
+  <ul class="book-languages-list">
+    
+    <li class="active">
+      <a href="https://peppyhare.github.io/r/" class="flex align-center">
+        <img src="/r/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="https://peppyhare.github.io/r/ru/" class="flex align-center">
+        <img src="/r/svg/translate.svg" class="book-icon" alt="Languages" />
+        Russian
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="https://peppyhare.github.io/r/zh/" class="flex align-center">
+        <img src="/r/svg/translate.svg" class="book-icon" alt="Languages" />
+        Chinese
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
