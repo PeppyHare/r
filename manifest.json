@@ -1,0 +1,15 @@
+{
+  "name": "My Notes",
+  "short_name": "My Notes",
+  "start_url": "/r/",
+  "scope": "/r/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/r/favicon.svg",
+      "sizes": "512x512"
+    }
+  ]
+}
