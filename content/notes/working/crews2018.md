@@ -60,3 +60,37 @@ and due to the flow's incompressibility
 \rightarrow \pdv{f}{t} + v \pdv{f}{x} + F(x) \pdv{f}{v} = 0
 {{< /katex >}}
 
+the probability density \\( f \\) satisfies a simple advection equation in the phase space.
+
+## Vlasov Equation
+
+Beginning from the probability density kinetic equation, one can arrive at the Boltzmann equation for the ensemble-averaged velocity distribution function \\( f(\vec x, \vec v, t) \\) of a gas or plasma
+
+{{< katex display >}}
+\pdv{f}{t} + \vec v \cdot \grad_x f + \frac{1}{m} \vec F \cdot \grad_v f = C(f)
+{{< /katex >}}
+
+where \\( C(f) \\) is in general an integral operator representing inter-particle correlations. We arrive at the Vlasov-Poisson system of equations if we entirely neglect correlations and only consider the electrostatic potential. Restricted to a single spatial dimension, it has the form
+
+{{< katex display >}}
+\pdv{f _ \alpha}{t} + v \pdv{f  _ \alpha}{x} - \frac{Z _ \alpha}{m _ \alpha} \pdv{\phi}{x} \pdv{f _ \alpha}{v} = 0 \\
+\dv{ ^2 \phi}{x^2} = - \frac{1}{\epsilon_0} \sum_\alpha Z_\alpha \int_{-\infty} ^\infty f _ \alpha(x, v, t) \dd v
+{{< /katex >}}
+
+The most striking difference between the dynamics of neutral fluids and a collisionless plasma is the appearance of non-equilibrium velocity distributions in plasma as a result of collective behavior. The collision operator enforces local thermodynamic equilibrium, driving the velocity distribution to Maxwellian.
+
+{{< katex display >}}
+f(x, v) = n(x) \sqrt{ \frac{1}{2 \pi v_{th} ^2 (x) }} \exp \left( - \frac{(v - u(x))^2}{2 v_{th}^2 (x)} \right)
+{{< /katex >}}
+
+where
+{{< katex display >}}
+n(x) = \int_{-\infty} ^\infty f(x, v, t) \\
+u(x) = \frac{1}{n(x)} \int_{-\infty} ^\infty v f(x, v, t) \dd v \\
+v_{th} ^2 (x) = \frac{1}{n(x)} \int_{-\infty} ^\infty (v - u(x))^2 f(x, v, t) \dd v
+{{< /katex >}}
+
+In absence of collisions, there is no driver for the velocity distribution to posess normal statistics. The structure of the distribution function within the phase space is generated through wave-particle resonance, where the waves with phase velocity \\( v_{ph} = \omega / k \\) resonate with particles traveling at the same velocity. This process is Landau resonance. 
+
+
+---
