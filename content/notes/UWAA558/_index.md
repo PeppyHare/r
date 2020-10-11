@@ -1,7 +1,8 @@
 ---
-bookFlatSection: false
+bookFlatSection: true
 bookCollapseSection: true
 title: MHD Theory
+weight: 10
 ---
 
 # MHD Theory

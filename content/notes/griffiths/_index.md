@@ -1,5 +1,5 @@
 ---
-bookFlatSection: false
+bookFlatSection: true
 bookCollapseSection: true
 title: Griffiths Introduction to Electrodynamics
 ---
@@ -73,4 +73,4 @@ Click around in the sidebar to find a chapter to read, or follow the links at th
 
 ### Internals
 
-All content is written in Markdown and rendered to a static site using [MkDocs](https://www.mkdocs.org/). The theme for the site is [Material for MkDocs](https://squidfunk.github.io/mkdocs-material). I use python-markdown-math to turn any LaTeX in my source into full-blown MathJax to be rendered in the browser (and in a mobile-friendly format!).
+All content is written in Markdown and rendered to a static site using [Hugo](https://gohugo.io/). The theme for the site is [hugo-book](https://themes.gohugo.io/hugo-book/). I use KaTeX to typeset any LaTeX in my source in the browser super fast (and in a mobile-friendly format!).

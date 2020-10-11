@@ -1,7 +1,8 @@
 ---
-bookFlatSection: false
+bookFlatSection: true
 bookCollapseSection: true
 title: Physics of Fusion Plasmas
+weight: 15
 ---
 
 # Physics of Fusion Plasmas

@@ -1,7 +1,8 @@
 ---
-bookFlatSection: false
+bookFlatSection: true
 bookCollapseSection: true
 title: Computational CFD
+weight: 20
 ---
 
 # Computational CFD
