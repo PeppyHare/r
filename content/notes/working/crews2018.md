@@ -92,5 +92,4 @@ v_{th} ^2 (x) = \frac{1}{n(x)} \int_{-\infty} ^\infty (v - u(x))^2 f(x, v, t) \d
 
 In absence of collisions, there is no driver for the velocity distribution to posess normal statistics. The structure of the distribution function within the phase space is generated through wave-particle resonance, where the waves with phase velocity \\( v_{ph} = \omega / k \\) resonate with particles traveling at the same velocity. This process is Landau resonance. 
 
-
 ---
