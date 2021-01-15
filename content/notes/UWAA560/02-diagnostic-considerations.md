@@ -1,6 +1,7 @@
 ---
 title: General Diagnostic Considerations
 weight: 20
+bookToc: false
 ---
 
 # General Diagnostic Considerations
@@ -112,4 +113,55 @@ Minimization of noise requires careful consideration of grounding and shielding.
 
 ## Data Sampling and Errors
 
-Given a continuous signal \\( y(t) \\) that is sampled at a fixed rate such that we have \\( y_n = y(t_n) \\), what is the sufficient sample rate to guarantee loss-less reconstruction of \\( y(t) \\)? The Nyquist-Shannon sampling theorem states that: If a signal \\( y(t) \\) contains no frequencies higher than \\( B \\) Hz, it is completely determined by giving its coordinates at a series of points spaced \\( 1/2B \\) seconds apart. An equivalent statement to define the bandlimit is "Define the bandlimit \\( B \\), such that \\( B < f_x ^N /2 \\), where \\( f_s ^N \\) is the sampling rate for perfect construction." The threshold established by \\( f_s^N/2 \\) is called the Nyquist frequency. \\( f_s ^N \\) is confusingly called the Nyquist rate, and is the rate at which you need to sample the signal.
+Given a continuous signal \\( y(t) \\) that is sampled at a fixed rate such that we have \\( y_n = y(t_n) \\), what is the sufficient sample rate to guarantee loss-less reconstruction of \\( y(t) \\)? The Nyquist-Shannon sampling theorem states that: If a signal \\( y(t) \\) contains no frequencies higher than \\( B \\) Hz, it is completely determined by giving its coordinates at a series of points spaced \\( 1/2B \\) seconds apart. An equivalent statement to define the bandlimit is "any frequency \\( B \\), such that \\( B < f_x ^N /2 \\), where \\( f_s ^N \\) is the sampling rate for perfect construction." The threshold established by \\( f_s^N/2 \\) is called the **Nyquist frequency**. \\( f_s ^N \\) is confusingly called the **Nyquist rate**, and is the rate at which you need to sample the signal.
+<p align="center"> <img alt="3.png" src="/r/img/560/3.png" /> </p>
+
+Signal components higher than the Nyquist frequency produce aliasing errors. Features like delta functions and step functions contain all frequencies. How do we prevent these from contaminating our signal, or how do we set the band limit maximum? It can be set by the detector response rate, or the detector circuit, or by introducing a low-pass filter:
+
+<p align="center"> <img alt="15.png" src="/r/img/560/15.png" /> </p>
+
+The response (Bode plot) of an RC low pass filter looks like the following, with a cutoff frequency given by \\( \omega_0 = \frac{1}{RC} \\)
+
+<p align="center"> <img alt="16.png" src="/r/img/560/16.png" /> </p>
+
+## Counting Errors
+
+When we are counting events (from photomultiplier tubes or spectoscopes, for example), rare events such as photon or neutron events are modeled by a Poisson distribution.
+
+{{< katex display >}}
+P(n) = \frac{m^n e^{-m}}{n!}
+{{< /katex >}}
+
+for an event expected to happen \\( m \\) times on average where \\( n \\) is the observed event count. \\( P(n) \\) is the probability of observing \\( n \\) counts. Earthquakes and flooding are similarly modeled. If you look at the mean value of a Poisson distribution, you get
+
+{{< katex display >}}
+\overline{n} = \sum_n n P(n) = m
+{{< /katex >}}
+
+The variance is
+
+{{< katex display >}}
+V(n) = \overline{(m - n)^2} = \sum_n (m - n)^2 P(n) = m
+{{< /katex >}}
+
+so \\( \sigma = \sqrt{m} \\)
+
+When you report the number of counts or observations, you need to include the counting error as \\( n = m \pm \sqrt m \\), or for large \\( n \\), \\( m \approx n \pm \sqrt n \\).
+
+# Categories of Plasma Diagnostics
+
+One may group diagnostics according to the plasma properties being measured. However, this can make diagnostic reporting difficult because many diagnostics measure multiple parameters, or a combination or convolution of various parameters. So instead, we will categorize them according to the plasma phenomenon that the diagnostic exploits:
+
+- Magnetic field
+- Electrostatic probes
+- Index of refraction
+- Self-emission from free electrons (broadband)
+- Self-emission from bound electrons (line radiation)
+- Laser scattering/interactions
+- Neutron measurements
+
+Some basic questions to keep in mind when thinking about how to make a measurement are:
+
+- What is being measured? How is the measured quantity related to the desired plasma property? Which assumptions are necessary to close that relationship? And how do those assumptions affect the confidence in the measurement? How accurate is the measurement?
+- What spatial and temporal resolution is needed and provided? For example, index of refraction measurements are chord-integrated, but could be time-resolved or spatially resolved. What are the trade-offs? What is the dynamic range of the measurement?
+- How does the diagnostic perturb the plasma?
