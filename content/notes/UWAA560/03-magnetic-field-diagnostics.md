@@ -77,7 +77,7 @@ V_O (s) = \omega_0 ^2 V_i (s) \left[ s^2 + s \left( \frac{R_C}{L_C} + \frac{1}{C
 \omega_0 ^2 = (L_C C_{eq} )^{-1}
 {{< /katex >}}
 
-If we assume a unit step waveform for the generator voltage (that is, \\( \dot B \\)), then \\( V_i(s) = \frac{1}{s} \\) and
+where \\( \omega_0  ^2 = (L_C C_{eq})^{-1} \\). If we assume a unit step waveform for the generator voltage (that is, \\( \dot B \\)), then \\( V_i(s) = \frac{1}{s} \\) and
 
 {{< katex display >}}
 V_O(s) = \frac{\omega_0 ^2}{s (s^2 + s \alpha + \omega_0 ^2 \beta)}
@@ -146,10 +146,6 @@ If we have some plasma current \\( j_z \\) producing a magnetic field \\( B_\the
 
 The key geometric property of the Rogowski coil is the constant inner coil radius (area).
 
-Fun fact: in the lab, we'll often make these coils by stripping the outer sheath and outer conductor from a length of RG58 coaxial cable. Then, we take a wire and solder it to the end of the inner conductor, then wrap the wire about the insulator of the RG58 back towards the un-stripped end. Finally, connect the wire to the outer conductor of the coaxial cable.
-
-<p align="center"> <img alt="14.png" src="/r/img/560/14.png" /> </p>
-
 The total magnetic flux, \\( \oint \vec B \cdot \dd \vec s \\), linked by the Rogowski coil is
 
 {{< katex display >}}
@@ -163,3 +159,24 @@ V_0 = - \dot \Phi = \mu_0 (N \int \dd S) \dot I
 {{< /katex >}}
 
 So the voltage we measure is related to the time rate of change of the current enclosed in the Rogowski coil. The signal \\( V_0 \\) is integrated in time to give the total current enclosed by the Rogowski coil, \\( I(t) \\). Just like the B-dot probes, instead of computing the geometry of the coil we calibrate the probe by driving current from a known source and measuring the response. They are easier to calibrate because the exact geometry does not matter, as long as the Rogowski coil encloses the current being measured.
+
+### Considerations
+
+- The signal is insensitive to the shape of the coil since \\( \oint \vec B \cdot \dd \vec l \\) is path independent. We do start to lose signal if we make the loop much larger than the source where the current source is, but as long as the coil is more or less snug about the current source the measurement error is minimal. However, the coil does need to form a complete loop.
+- Signals can be _very_ large, easily \\( \sim 1 kV \\). So adding an attenuator upstream of your measurement circuit is important.
+- The signal can be contaminated by unwanted \\( \dot{\vec B} \\), so the coils are counter-wound.
+<p align="center"> <img alt="18.png" src="/r/img/560/18.png" /> </p>
+In the lab, we'll often fabricate these coils by stripping the outer sheath and outer conductor from a length of RG58 coaxial cable. Then, we take a wire and solder it to the end of the inner conductor, then wrap the wire about the insulator of the RG58 back towards the un-stripped end. Finally, connect the wire to the outer conductor of the coaxial cable.
+<p align="center"> <img alt="14.png" src="/r/img/560/14.png" /> </p>
+
+# Hall Probe
+
+B-dot probes are not very useful for steady-state magnetic fields (it's right there in the name). For steady-state fields, we can exploit the Hall effect. Passing a known current through a conductor with an embedded magnetic field will generate a transverse potential:
+
+<p align="center"> <img alt="19.png" src="/r/img/560/19.png" /> </p>
+
+{{< katex display >}}
+\frac{ \vec j \cross \vec B}{nq} = - \vec E
+{{< /katex >}}
+
+A simultaneous measurement of the voltage drop and current gives a measurement of the embedded magnetic field. Such a device is usually called a Gaussmeter.
