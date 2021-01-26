@@ -210,3 +210,11 @@ If we think back to the distribution function for ions, anything to the right of
 In a real setup, we want to collect the ions at a specific bias voltage. First, we place a density filter to decrease the plasma density. This is necessary because the Debye length needs to be large compared to the grid spacing or the grid potential will be shielded. We need to repel the electrons, so a negatively charged grid is placed to repel them. The ions are gated at a high-voltage ion repeller, then collected at the collector. When ions strike the collector, there is a chance to liberate electrons which would increase the measured current. We place a secondary electron deflector to prevent this.
 
 <p align="center"> <img alt="32.png" src="/r/img/560/32.png" /> </p>
+
+<p align="center"> <img alt="33.png" src="/r/img/560/33.png" /> </p>
+
+## Considerations for GEA/RPA
+
+- We need very low densities for GEA analysis. Debye shielding must not filter the grid potential, so the grid spacing must be less than the Debye length. This usually means a density filter is applied upstream.
+- All electrons must be removed: this is the electron repeller grid.
+- Ions will strike the collector and liberate electrons from the surface, artificially increasing the measured current (secondary electrons). As far as our ammeter is concerned, electron leaving the collector has the same effect as an ion reaching the collector.
