@@ -107,3 +107,53 @@ n_e (r) = - \frac{1}{\pi} \int _r ^a \frac{\dd F}{\dd y} \frac{\dd y}{\sqrt{y^2 
 {{< /katex >}}
 
 With a sufficient number of chordal measurements, we can arrive at an accurate profile \\( n_e(r) \\), usually. There are some pathological cases where it is difficult to determine the profile, even when it is axisymmetric. The upcoming homework is mostly about this process and these odd cases.
+
+## Phase Ambiguity
+
+Photodetectors, e.g. photodiodes, measure incident optical power, not just the phase shift
+
+{{< katex display >}}
+E_t ^2 = E _r ^2 + E_s ^2 + 2 E_r E_s \cos \phi
+{{< /katex >}}
+
+At the points \\( \phi =0, \pi, 2\pi, \ldots \\) there is a phase ambiguity, because we cannot distinguish between \\( \phi + \Delta \phi \\) and \\( \phi - \Delta \phi \\). The incident optical power changes identically whether the phase increases or decreases. Adding a second interferometer with a different phase can resolve the ambiguity, since the points of ambiguity will be separated, but adding an additional interferometer is a lot of trouble. However, we can actually resolve the ambiguity with a single interferometer by modulating the phase (or frequency) of the reference beam. The scene beam of frequency \\( \omega_1 ^0 \\) will now interfere with the reference beam of frequency \\( \omega_2 ^0 \\) to create a beat frequency \\( \Delta \omega^0 = \omega_2 ^0 - \omega _1 ^0 \\).
+
+Even with no plasma present, the phase will change as \\( \phi(t) = \Delta \omega_0 t \\). The phase will always be propagating in time. A modulated interferometer like this is a Hetrodyne interferometer. With a plasma present, the phase is further altered from the scene beam.
+
+### Modulation techniques
+
+- Rotating wheel (for interferometers that use wavelengths in the far infrared). Physical wheel rotating at edge speed \\( v \\). Diffraction grating etched onto wheel to ensure reflection. The Doppler effect gives a frequency shift according to:
+
+{{< katex display >}}
+\frac{\omega_2}{\omega_1} = \frac{1 + v_i / c}{1 - v_r / c}
+{{< /katex >}}
+<p align="center"> <img alt="39.png" src="/r/img/560/39.png" /> </p>
+
+- Acousto-optic oscillators (Bragg cells). Used for lasers in the visible range (like HeNe). Composed of a crystal (quartz) attached to a vibrator/transducer, usually a piezoelectric crystal. The transducer sends compressive sound waves through the crystal to an absorber to reduce reflections. An incident laser at incident angle \\( \omega_1 \\) will pass through at \\( \omega_1 \\) (the zeroth-order beam), but there will also be a first-order Bragg reflection component which reflects off of the sound waves at frequency \\( \omega_2 = \omega_1 \pm \omega_{ao} \\) where \\( \omega_{ao} \\) is the frequency of the acousto-optic oscillator.
+<p align="center"> <img alt="40.png" src="/r/img/560/40.png" /> </p>
+
+The detector signal \\( f(t) \\) is combined with the local oscillator \\( \omega_{ao} \\) to output \\( \sin (\Delta \phi) \\) and \\( \cos (\Delta \phi) \\) in a mixer-splitter quadrature detector. Whenever setting up these interferometers, it is very useful to plot \\( \sin(\Delta \phi) \\) and \\( \cos (\Delta \phi) \\) to produce a circle called a Lissajous figure. A very well-aligned interferometer will have a very circular Lissajous figure with large radius, so it is a useful reference when aligning the interferometer.
+
+<p align="center"> <img alt="41.png" src="/r/img/560/41.png" /> </p>
+
+### Density Imaging
+
+As the plasma has an index of refraction change, the scene beam can refract (and change direction) as is passes through the plasma. This can cause the scene beam to become misaligned from the reference beam. This particularly happens when you go through a density gradient. When the wavefronts of the scene and reference beams are no longer co-planar, a new interference pattern appears at the detector which complicates the signal, and can even eliminate any modulation. We can actually take advantage of this problem if we have a sufficiently large beam:
+
+<p align="center"> <img alt="42.png" src="/r/img/560/42.png" /> </p>
+
+Intentional misalignment of an expanded beam produces an interference pattern that we can image. The signal measured at the detector now corresponds with the second derivative of the density gradient. 
+
+<p align="center"> <img alt="43.png" src="/r/img/560/43.png" /> </p>
+
+The detector will measure an interference pattern of horizontal fringes, spaced depending on the laser wavelength and \\( \theta \\). The fringe spacing can be small, depending on the wavelength and misalignment. In the before-times, you would generally use holographic glass plates at the detector, but nowadays consumer-grade SLR cameras have sufficient resolution to detect.
+
+With plasma present, the fringes are distorted. Encoded in the fringe pattern is the phase difference between the scene and reference beams. The image with plasma will contain deflections in the fringes. The deflection away from original horizontal fringe pattern gives \\( \Delta \phi \\).
+
+<p align="center"> <img alt="44.png" src="/r/img/560/44.png" /> </p>
+
+## Faraday Rotation
+
+The polarization angle of the laser changes as a result of the Faraday effect. The effect can be used to measure the magnetic field.
+
+TODO: Fill in section on March 4 during lecture on pulsed polarimetry.
