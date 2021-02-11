@@ -239,3 +239,185 @@ Questions:
 - Importance of spectral range of x-ray source? Source must be as monochromatic as possible. Quartz focusing crystal is used to achieve.
 - Is the intensity of the transition peak proportional to the abundance of each species? Answer: yes, the cross-section for the absorption is nearly identical for each of the species and the x-ray source frequency is chosen to avoid resonances. The relative abundance of each atomic species appears readily in the intensity ratio (but only for well-calibrated detector!). 
 - Since they make use of effects in bound electrons, when are XPS/Raman microscopy applicable to plasma experiments? Answer: Ex situ (off-site) measurements are used to investigate samples after the experiment. Examples like titanium oxidized by an O plasma, divertor components, etc. 
+
+
+# Infrared Imaging and Two Color Pyrometry - Brett
+
+Motivations for optical methods: Many of the methods of plasma diagnostics provide precise data on the composition of the plasma at the cost of directly influencing the state of the plasma
+  - Often sensors cannot withstand exposure to the extreme temperature
+  - Noise can be introduced to the system that is difficult to filter - need to isolate sensors electrically or extra post-processing
+  - Many sensors are required to adequately determine the temperature profile to a sufficient resolution (often interfering with the data you're trying to collect) - perturbative not great
+
+Optical method features:
+
+- Non-perturbing methods allow various plasma parameters to be directly measured without influencing the plasma.
+- IR imaging and two color pyroscopy allow for measurement of the plasma facing components
+- Qualitative observations that can predict failure modes
+
+Can be used to diagnose failures in fluid systems - leakage can be readily detected via thermal imaging. Correlation in thermal models to anchor structural models - helpful for determining stresses from CTE, material limits, fatigue, etc..
+
+Why do we care about the temperature in EP devices (such as Hall thrusters)? We care about the life-limiting factors
+  - cathode insert life is generally a function of temperature
+  - the anode is greatly impacted by erosion that will degrade thruster performance over time (and cause significant mission impact)
+  - magnetization will drop as the temperature of the magnet coils increase. Hall thrusters rely upon this magnetic field, will see a significant decrease in efficiency as the magnet coil temperatures rise
+
+## IR imaging theory
+
+What are we measuring? All objects at a temp greater than absolute zero emits photons in the IR range that can be detected.
+- Particle motion in warm objects result in charge acceleration or dipole oscillation which produce EM radiation
+- In general, the IR emissions from 3 sources will be detected
+  - produced by the object due to its temp - some is lost by finite medium transmissibility
+  - reflected by the target, sourced by other objects
+  - sourced from the medium between the target and camera - vacuum system helps
+
+Camera composition:
+  - Lens - focuses infrared light from target
+  - Detector - converts to electric impulse
+  - Processing electronics
+  - User interface
+
+Common detectors
+  - Short wavelength (SWIR): 0.9-1.7 \\( \mu m \\)
+    - InGaAs
+  - Medium wavelength
+    - Indium Antimonide
+  - Long wavelength
+    - SLS
+    - HgCdTe
+    - Microbolometer
+
+In the study of plasma carrying devices, it is best to use long wavelength detectors for signal clarity - minimize interference between the PFCs and plasma
+
+### Cooled Detectors
+
+- Utilize single photon counting detectors to create the requisite signal for processing. Higher sensitivity than un-cooled detectors
+- Cryogenic levels (-200 deg C) must be maintained to avoid blinding the sensor
+  - Self irradiance from unit can blind the sensors, making measurements useless
+  - Costly to procure and maintain
+  - Often significant downtime for maintenance
+- Relatively low noise equivalent differential temperature (NEDT)
+  - Lower NEDT corresponds to improved resolution
+  - Can often resolve 10 mK
+- Operating Principles
+  - Based on quantum principles. Photoelectric effect raises electrons from valence band to conduction band
+  - This changes the conductivity of the material
+  - The resulting photocurrent is proportional to the intensity
+  - It takes a minimum amount of energy for the photons impacting the detector to elevate the electron from the valence band
+  - Peak operating temperature (for camera) higher for shorter wavelength cameras
+
+### Un-cooled detectors
+
+- Photon "masses" required to create signal for imaging electronics
+  - Impingement upon resistor laid over large silicon element creates required signal
+  - Relies upon bulk change (i.e. temperature) for signal generation
+- Higher NEDT than cooled cameras - less sensitive, 30-200mK resolution
+- Often provide enough insight into plasma systems to be more useful than cooled systems
+
+<p align="center"> <img alt="52.png" src="/r/img/560/52.png" /> </p>
+
+### Theory
+
+
+IR imaging is based off classical equations of heat transfer and photo detection. Materials with non-zero emissivity produce infrared radiation that can be detected by an IR camera. Takes advantage of radiative exchange
+
+{{< katex display >}}
+M_{bb} = \epsilon(T) \sigma T^4
+{{< /katex >}}
+
+Need to define an emissivity to define the emission from a real target. Not constant for any material. In real applications, the rise in temp of the PFCs will alter the emissivity. In applications like EP thrusters, the shift can be measured and is usually small.
+
+The Stefan-Boltzmann equation makes a crucial assumption - that the emissivity over the whole spectral domain (\\( \lambda \\)) is taken into account.
+In IR cameras, only a short section of the spectral domain is detected, limiting the effectiveness of the Stefan Boltzmann equation. Instead, the classical definition of the emissivity must be used
+{{< katex display >}}
+\epsilon(\lambda, T) = \frac{M_\lambda(\lambda, T)}{M_T(\lambda, T)}
+{{< /katex >}}
+
+If we examine the surface of interest in order to determine the temperature, the radiation flux from a surface can be defined as
+
+{{< katex display >}}
+\dd Q = L \cos \theta \dd S \dd \Omega
+{{< /katex >}}
+
+If we make assumption that surface is Lambertian, radiance is identical in all spatial direction, the photonic flux density is just \\( \sin ^2 \theta \Omega \\). If we integrate the equations and alter the radiative power equation for a non-blackbody, we find
+
+{{< katex display >}}
+Q = M_\lambda (T) s = \overline{\epsilon} \sigma T^4 S
+{{< /katex >}}
+
+While true that this is a simplified case, it's not uncommon in aerospace grade materials. For example, ceramics found in Hall thrusters often are near Lambertian, and can utilized these assumptions.
+
+Over a short range of wavelengths, we can integrate the assumed blackbody photon flux over the spectral domain of interest and multiply by the average emissivity to generate a true photon flux for our measurements
+
+{{< katex display >}}
+M_{\Delta \lambda} (T) = \overline{\epsilon}(T) \int _{\Delta \lambda} M_\lambda ^{bb} (\lambda, T) \dd \lambda
+{{< /katex >}}
+
+In the case of average emissivity being independent of wavelength, we have what's called a gray body and we can simplify the calculations.
+
+### IR imaging assumptions
+
+- Assume emissivity is known
+- Assume a Lambertian material is being used (simplifying assumption)
+  - Non-Lambertian materials don't prevent measurements from being made, but researcher needs to be wary of curvature
+- Imaging device uses wavelength filter to only take in a certain band of spectral range
+
+### Limitations
+
+- Emissivity changes with temperature
+  - Can be mitigated by thorough understanding of material
+- Emissivity can change with erosion
+- Viewing window must be designed to not block IR radiaiton
+  - normal glass not compatible, materials such as sapphire glass must be used
+  - what other problems will we have even with "compatible" mediums? finite transmission coefficient
+  - solution: fiber optic to bypass viewing windows
+- Measurement is only as good as your view
+  - poor experiment design may prevent critical measurements
+- Limited ability to detect wavelengths (single input signal)
+- Emissivity can change dramatically with angle of emission - limits measurements of 3D extended bodies where we do not have a normal view of the surface. Really want to be looking at flat features for qualitative assessment. Depending on material properties, increasing angle of incidence may increase or decrease emissivity.
+- Emissivity of materials is highly wavelength dependent - depending on range you're looking at
+
+## Two Color Pyrometry
+
+Need to know the emissivity of the PFCs limit the application of IR imaging. In general, the emissivity of the PFCs will change over time. To overcome limitation, principle is similar to that of single wavelength IR imaging. Two separate signals are ratio'd together. 
+
+<p align="center"> <img alt="53.png" src="/r/img/560/53.png" /> </p>
+
+Planck's law describes the relationship between radiative intensity and wavelength/temperature. Gives \\( u(\lambda, T) \\). Simplifying Planck's law allows us to simplify the model. Assume \\( \exp(- C_2/T \lambda) \gg 1 \\). In the wavelengths and temps we are interested in, there is generally less than 1 degree difference in model using this simplification.
+
+Two color pyrometry allows us to understand absolute temperature without complete knowledge of the emissivity through all space and time
+
+{{< katex display >}}
+R_{12} = \sigma_{12} \frac{\epsilon_1 (T)}{\epsilon_2(T)} \left( \frac{\lambda_2}{\lambda_1} \right) ^2 \exp \left( \frac{C_2}{T} \left( \frac{1}{\lambda_2} - \frac{1}{\lambda_1} \right) \right)
+{{< /katex >}}
+
+where \\( \sigma_{12} \\) is a constant associated with assuming IR emission assuming black body source. It is assumed that the materials will act as a gray-body
+  - Emissivity is not a function of wavelength
+  - Deviations from this assumption will increase error
+
+Inverting gives a ratio temperature \\( T_r \\)
+
+{{< katex display >}}
+T_r = \left( \frac{ \ln | R_{12} | - \ln \left| \sigma_{12} \left( \frac{\lambda_2}{\lambda_1} \right) ^5 \right|}{C_2 \left( \frac{1}{\lambda_2} - \frac{1}{\lambda_1} \right)} \right)^{-1}
+{{< /katex >}}
+
+What this indicates is that a temperature can be extrapolated solely from the irradiance of the material being targeted while analyzed to the wavelengths of interest, independent of emissivity. Based on the ratio temperature, some might be wondering how accurate the ratio temperature is. Luckily, it's simple to extrapolate:
+
+{{< katex display >}}
+T = \left( \frac{1}{T_R} - \frac{\ln \left| \frac{\epsilon_1}{\epsilon_2} \right|}{C_2 \left( \frac{1}{\lambda_2} - \frac{1}{\lambda_1} \right)} \right) ^{-1}
+{{< /katex >}}
+
+and the temperature error is
+
+{{< katex display >}}
+\Delta T = \left| \frac{ \ln \frac{\epsilon_1}{\epsilon_2}}{C_2 \left( \frac{1}{\lambda_2}- \frac{1}{\lambda_1}\right)} \right|
+{{< /katex >}}
+
+Error will stem from the difference in wavelengths being measured. Enter multi-color pyrometry. By taking up to 4 colors allows for higher accuracy measurements to be taken. Higher levels of complexity to resolve additional input signals
+  - least squares methods common in determining temperature
+  - Error varies by the precise method being used
+  - Diminishing returns as the number of wavelengths being analyzed increases, 2 color is common, most don't go past 4 color
+
+
+Questions:
+
+- Emissivity measurement error bars are pretty wide (10 percent). What limits this measurement? Answer: Usual way you measure this is by putting your material in an oven and measuring emission with thermocouples, which can be difficult for an entire setup. Additionally, emissivity can change dramatically with angle of incidence, wavelength, etc. So a better way to reduce this error is by computing emissivity ratios by measuring multiple wavelengths (multi-color pyrometry).
