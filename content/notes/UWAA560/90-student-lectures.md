@@ -421,3 +421,76 @@ Error will stem from the difference in wavelengths being measured. Enter multi-c
 Questions:
 
 - Emissivity measurement error bars are pretty wide (10 percent). What limits this measurement? Answer: Usual way you measure this is by putting your material in an oven and measuring emission with thermocouples, which can be difficult for an entire setup. Additionally, emissivity can change dramatically with angle of incidence, wavelength, etc. So a better way to reduce this error is by computing emissivity ratios by measuring multiple wavelengths (multi-color pyrometry).
+
+
+# Coded Aperture Imaging - Matt
+
+Technique for imaging high energy x-rays and gamma rays.
+
+Motivated by the lack of a suitable image forming device for x-ray astronomy. By the 1960's, a pinhole camera was the device by which x-rays were imaged. The pinhole camera projects a 3D image into a 2D plane, with angular resolution determined by the length ratios between the image and source. For a fixed source, this leads to a trade-off between good angular resolution and signal to noise ratio.
+
+Ables and Dicke addressed the problem by introducing a large number of pinholes. The field of view can remain constant while increasing the SNR by having a larger open aperture area - scatter-hole camera.
+
+### Linear imaging system
+
+Linear imaging systems - to first order, let's consider the imaging system as a linear function from the sensor plane  to the detector plane.
+
+\\( E(x, y) = S[I(x, y)] \\)
+
+if the emitting system can be decomposed into a series of point sources
+
+{{< katex display >}}
+I(x_0, y_0) = \iint_{-\infty}^{\infty} I(x, y) \delta( x - x_0) \delta (y - y_0) \dd x \dd y
+{{< /katex >}}
+
+{{< katex display >}}
+ E_0 (x, y) = S\left[ \iint _{- \infty} ^{\infty} I(x, y) \delta (x - x_0) \delta (y - y_0) \dd x \dd y \right]
+{{< /katex >}}
+
+Rather than measuring the complete linear response, we define an instrument response function (IRF) which measures how the instrument independently responds to each point. We make an assumption that the instrument does indeed respond independently at each point. We also make an isoplantic assumption, assuming that the mapping does not vary over space. This turns the instrument response function into a point source function.
+
+### Noise in the system
+
+- Vignetting
+- Blurring
+- Distortions
+- Diffraction
+- Saturation
+
+Add these into a background noise term \\( N \\)
+
+{{< katex display >}}
+E = I \cdot PSF + N
+{{< /katex >}}
+
+{{< katex display >}}
+E(x, y) = \frac{1}{M^2} \iint _{- \infty} ^\infty I (\frac{x}{M} , \frac{y}{M}) PSF(x - x_0, y-y_0) \dd x_0 \dd y_0
+{{< /katex >}}
+
+
+So, what now? We can remove the correlation between the imaging system and the point source function by taking a Fourier transform. But doing so leads to the Fourier transform of the PSF in the denominator, which contains very small terms that increase the noise. Instead, we can introduce a new re-construction
+
+{{< katex display >}}
+\hat {O} = P \cdot G \\
+= RO \cdot (A \cdot G) + N \cdot G
+{{< /katex >}}
+
+If we can construct a post-processing correlation function \\( G \\) such that the correlation between \\( A \\) and \\( G \\) is approximately a delta function, then we can remove the correlation without major introduction of noise.
+
+{{< katex display >}}
+A \cdot G \approx \delta
+{{< /katex >}}
+
+The simplest answer is \\( G = A \\). This results in autocorrelation and a postprocessing array that is identical to the aperture. This is simple, but there are some problems
+
+  - Nonflat sidelobes
+  - High-frequency fluctuations
+  - Lack of signal-to-noise improvement
+
+For a coded aperture, we can have a very large (tens of thousands) of pinholes. This means an exact theory for the response of the system would require the response of tens of thousands of pinholes. Mechanically impossible, so use statistics instead.
+
+
+
+Questions:
+
+- How far apart are the spacings in the coded aperture in real devices? I assume they have to be much larger than the diffraction range for x-rays (tens of nm). Answer: The imaging grids are usually on the order of a few centimeters, so for a MURA grid with tens of thousands of apertures you'd get grid spacing in the 10-100 micrometer range.
