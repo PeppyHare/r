@@ -494,3 +494,117 @@ For a coded aperture, we can have a very large (tens of thousands) of pinholes. 
 Questions:
 
 - How far apart are the spacings in the coded aperture in real devices? I assume they have to be much larger than the diffraction range for x-rays (tens of nm). Answer: The imaging grids are usually on the order of a few centimeters, so for a MURA grid with tens of thousands of apertures you'd get grid spacing in the 10-100 micrometer range.
+
+
+# Laser-Induced Fluorescence and TALIF (Two-Photon Absorption) - Aqil
+
+## Motivation
+
+Many passive diagnostic methods measure the spectroscopy of plasma self-emission. Now, we induce the plasma excitations with a laser. Bound electrons undergo similar excitation and decay to lower states, and emit radiation. The detected radiation is measured and analysed to obtain certain characteristics of the plasma. The technique is known as Laser-Induced Fluorescence (LIF).
+
+- This can offer a very localized measurement through the crossing of the exciting and viewing beams.
+- Species-specific diagnostic; one can tune the laser energy for the desired transition.
+
+LIF has far reaching applications; tumor diagnosis, detection of biomolecules, palentology, and density and velocity measurements of neutral hydrogen in fusion experiments. Neutrals and impurities concentrate in the plasma edge, which is a region of interest especially with regards to PMI at the wall.
+
+### Physical Theory - LIF
+
+Decay from the excited state is on the order of 10ns, so LIF signal depends on the population of excited species. Considered non-perturbing due to short excitation lifetime.
+
+Can stay within this regime by pulsing the laser quickly or maintaining low intensities.
+
+Relationship becomes nonlinear when intensity is so high that ground state ion population is depleted.
+
+Fluorescence from ground state is preferred due to its greater population compared to existing excited states. This helps to avoid saturation.
+
+### Physical Theory - TALIF
+
+Transmitting UV radiation through windows can be problematic. Fortunately, we can use photons of lower energy and combine them to reach transition energy. Because the fluorescence energy is lower than the excitation, it can be transmitted back through the windows.
+
+In contrast to LIF, the signal is proportional to the square of the laser intensity. This increases the localization of the measurement at the focal point of the beam. Emission as a function of laser wavelength can be used to determine temperature, neutral density, and flow.
+
+Counter-propagation of beams can eliminate Doppler effects. A photon is supplied by each beam, and their Doppler shifts along the beam are equal and opposite.
+
+### Physical Theory - Broadening Effects
+
+Familiar techniques are used to extract temperatures from the observed spectra. Random thermal motion of the particles imparts Doppler shifts to the signal, resulting in Doppler broadening of the line radiation. Before calculating Doppler broadening, you need to take into account a few other effects
+
+- Saturation broadening occurs when the number of excitable particles in the emission volume is exceeded. Not an issue for hydrogen due to rapid decay, but more so in heavier calibration species. One way to expand the linear region is to increase the volume of interest, trade-off in localization.
+
+- Isotopic effects: Energy of atomic states is proportional to the reduced mass (nucleus and electron mass) resulting in a spectral shift. For small atoms, the shift is large and clearly distinguishes isotopes. For higher-mass species, the shift due to isotopic effects is small, but can contribute some artificial broadening.
+
+- Stark broadening: Usually negligible for weak or short-lived electric fields.
+
+- Zeeman splitting: in regions of high magnetic field
+- Laser linewidth: can also broaden the signal if it is too large, so the laser system is monitored.
+
+### Physical Theory - Signal Dependency
+
+For TALIF, relationship between emission signal and laser intensity
+
+{{< katex display >}}
+S(\lambda) = \frac{\Delta \Omega}{4 \pi} n(v) I^2 \sigma \alpha G
+{{< /katex >}}
+
+where 
+
+- \\( \Delta \Omega \\) is solid angle of emission collection 
+- \\( n(v) \\) is velocity space density
+- \\( \sigma \\) is absorption cross section for transition
+- \\( \alpha \\) is branching ratio and spectral efficiency of detector
+- \\( G \\) is PMT gain
+
+The wavelength of the laser is scanned to determine the spectral width of the emission.
+
+Omitting the constants and putting in terms of linewidths,
+
+{{< katex display >}}
+S(\nu) \sim \frac{I^2 n_0}{\sqrt{\Delta \nu _d ^2 + 2 \Delta \nu_l ^2}}
+{{< /katex >}}
+
+## Method
+
+Development of high energy, narrow spectrum lasers has allowed evolution of LIF to TALIF.
+
+- Dye lasers utilize an organic liquid lasing medium that allows for a wider range of possible wavelengths. Highly tunable, frequency doubling or tripling is possible.
+- Pump laser: Provides input energy to the tunable laser. Narrow spectrum to match absorption of lasing medium
+- Diode lasers also useful: ubiquitous, can be pumped with current.
+
+Use known pressure of a neutral gas for absolute calibration, e.g. krypton. Krypton is a particularly good choice for calibration because it has a transition very similar in energy to hydrogen and deuterium 
+
+<p align="center"> <img alt="55.png" src="/r/img/560/55.png" /> </p>
+
+## Applications
+
+### HIT-SI3 Experiment
+
+- TALIF used for absolute density and temperature measurements of deuterium neutrals
+- Frequency tripled dye laser and frequency doubled Nd:YAG laser
+- Confocal configuration: Location of measurement controlled by moving focusing lens
+- PMT collects emission through a band-pass filter.
+- Time resolution achieved through PMT gating.
+- Temp, density by fitting measured intensity as laser frequency is scanned.
+- Measuring a shift in the centroid of the broadened distribution indicates bulk flow.
+
+
+### MadHex Helicon Plasma Facility
+
+- LIF setup to diagnose a helicon plasma at Wisconsin using tunable diode laser
+- Ion energy distribution function obtained along laser path
+- Doppler shift and broadening gives ion velocity and temperature.
+
+Experimental setup showing alignment can look like this:
+
+<p align="center"> <img alt="56.png" src="/r/img/560/56.png" /> </p>
+
+
+### ITER Divertor
+
+- Planned LIF configuration for helium density
+- Characterization of helium ash removal
+- Use Nd:YAG optically pumped dye laser.
+
+Questions: 
+  - You mentioned TALIF measurements of neutral hydrogen in HIT-SI3. Do these LIF measurements have an upper temperature limit once hydrogen is completely ionized, limiting us to early start-up times, or is there still enough neutral hydrogen to fluoresce at operating temperature? Answer: There are still neutrals at the outer edge, but the density decreases as you go deeper into the plasma. In HIT-SI3, they are particularly interested in re-use of hydrogen by liberating neutrals from the wall. In that experiment the focusing lens targets an area very close to the wall in order use TALIF to monitor neutral density/temperature near the wall.
+
+
