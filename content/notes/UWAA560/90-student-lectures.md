@@ -607,4 +607,132 @@ Experimental setup showing alignment can look like this:
 Questions: 
   - You mentioned TALIF measurements of neutral hydrogen in HIT-SI3. Do these LIF measurements have an upper temperature limit once hydrogen is completely ionized, limiting us to early start-up times, or is there still enough neutral hydrogen to fluoresce at operating temperature? Answer: There are still neutrals at the outer edge, but the density decreases as you go deeper into the plasma. In HIT-SI3, they are particularly interested in re-use of hydrogen by liberating neutrals from the wall. In that experiment the focusing lens targets an area very close to the wall in order use TALIF to monitor neutral density/temperature near the wall.
 
+# VISAR - Sungyoung
 
+## Fundamentals of VISAR
+
+VISAR - Velocity Interferometer System for Any Reflector. It is a laser interferometer system for measuring the velocity of a fast-moving surface. Typically used to measure shock propagation or speed of projectiles.
+
+## Background of VISAR
+
+In a Michelson interferometer setup, light from a monochromatic source is split by a beam splitter and travels through two path lengths. If a mirror is moved a distance \\( d \\) and \\( m \\) fringes appear/disappear at the center, then \\( \lambda = 2 d / m \\). How can we use this to measure the speed of a surface? Use the material surface as a mirror for the Michelson interferometer, and count the number of fringes that pass a fixed point.
+
+- Requires a good surface finish for coherent reflection
+- Low range of speed measurement (up to a few \\( mm / \mu s \\))
+
+Another option is to reflect a laser source off the moving surface, causing doppler shifting depending on the velocity. Measuring the doppler shift (knowing the path initial difference) can deduce the velocity. Still requires a very good surface finish, diffusive light will lead to a large intensity difference between legs of the interferometer.
+
+### Limitations of Michelson interferometer
+
+- In practice, the input light is not perfectly collimated and is distributed over an angular range. 
+- As mirror separation is increased, the spot size (radius from the center to the first minima) decreases. This means that the detector needs to be smaller to properly detect fringes, but this reduces signal strength. Overcome this by a WAMI (Wide Angle Michelson Interferometer) setup.
+
+### WAMI
+
+Insert an etalon in one leg of a Michelson interferometer, allows the formation of a virtual mirror closer than the actual mirror. By tuning the apparent position to match the mirror position in the other leg, the detector can see the same image while having a path length difference. The fringe count depends on the amount of the doppler shifted wavelength. 
+
+<p align="center"> <img alt="57.png" src="/r/img/560/57.png" /> </p>
+
+Building on the strengths of WAMI, the VISAR adds:
+  - BIM (Beam Intensity Monitor) - normalizes the intensity variation of the input (reflected light)
+  - WP (Wave Plate) - Shifts the phase ofo one polarization by 1/8 wavelengths (total of 1/4 wavelength)
+  - PBS (Polarizing Beamsplitter) - Splits the output beam
+
+<p align="center"> <img alt="58.png" src="/r/img/560/58.png" /> </p>
+
+### Strengths of VISAR
+
+- Overcome intensity changes that affect resolution through both design and BIM
+- Does not require the surface to be specially treated for reflectivity.
+- Good sensitivity and range
+- Having two polarized signals with 90 degree phase difference prevents sensitivity loss near the peaks, and allows distinction between positive and negative movement.
+
+### Push-Pull VISAR
+
+A push-pull VISAR setup adds a second detector, utilizing the light lost through the beam splitter.
+
+- Stronger signal strength allows better noise performance, especially in the presence of weak or largely incoherent light.
+- Requires additional calibration and balancing.
+
+<p align="center"> <img alt="59.png" src="/r/img/560/59.png" /> </p>
+
+### Mach-Zehnder Interferometer version
+
+Exactly the same as Michelson VISAR, but instead of reflecting through etalon in one leg, the etalon is just inserted into one leg of the Mach-Zehnder interferometer.
+
+Instead of polarizing components, a streak camera is used to obtain a spatial and temporal fringe pattern.
+
+<p align="center"> <img alt="60.png" src="/r/img/560/60.png" /> </p>
+
+## Components of VISAR
+
+### Etalon
+
+- Fabry-Perot interferometer
+- Two partially reflective mirrors separated by a gap. Typically, if the gap is adjustable, it is called an interferometer, and if it is fixed it is called an etalon
+- Often used to create interference patterns, filter through certain wavelengths, etc.
+
+### Beam Splitter
+
+- Split beams through half-silvered mirrors of equivalent coating
+- Polarizing beam splitters can use birefringent materials, elongated nanoparticles, doped and stretched polymer sheets, Fresnel reflection, or wire gratings to achieve polarization.
+
+### Waveplate
+
+Birefringent (n depending on polarization) material delays a certain polarization state, shifting the phase. Typically made of quartz. Shift depends on material, wavelength, thickness, polarization. Calibrate based on the wavelength of laser you are using. In VISAR setup this can be an issue, since the source is doppler-shifted.
+
+## Data interpretation
+
+Returning to the conventional VISAR setup with two detectors split by 90 degree phase, the normalized components can be expressed as
+
+{{< katex display >}}
+D_x = \frac{D_1}{D_{BIM}} = x_0 + A_x (t ) \cos \phi (t) \\
+D_y = \frac{D_2}{D_{BIM}} = y_0 + A_y (t ) \sin (\phi (t) - \epsilon)
+{{< /katex >}}
+
+Because the two polarization states can have different coupling constants throughout the interferometer, we have \\( x_0 \\) and \\( y_0 \\). \\( \epsilon \\) is the phase shift error, or the error from not having an ideal 90 degree phase shift between the two polarization components, including the doppler shift and other various calibration issues.
+
+For \\( \phi \\) the phase associated with a fringe, we can express it in an elliptic form:
+
+{{< katex display >}}
+\tan \phi(t) = \tan \epsilon + \frac{ D_y (t) - y_0 }{D_x(t) - x_0 A_y(t)} \frac{A_x(t)}{A_y(t)} \sec \epsilon
+{{< /katex >}}
+
+Because we don't know all of these parameters, but only have a vague understanding of the possible range, we need to perform a fitting of these factors before we can determine velocity data from phase data (fit the ellipses). Usually use iterative numerical schemes to converge to a fitting.
+
+### Phase to Velocity
+
+Once we have the ellipse fitting to interpret the phase data, we need to convert it into velocity data.
+
+Fringe count is just the phase diff divided by \\( 2 \pi \\) (number of fringes).
+
+{{< katex display >}}
+F(t) = \frac{\phi(t) - \phi(t_0)}{2 \pi}
+{{< /katex >}}
+
+Use a VISAR approximation: that the timescale of the event is larger than the delay. Then the approximation can be used to relate the phase and velocity
+
+{{< katex display >}}
+v(t) \approx v_0 + \frac{\lambda_0}{2 (1 + \delta) \tau_0} F(t) + O(\tau_0 ^2)
+{{< /katex >}}
+
+### Corrections and Errors
+
+- Window corrections (including shocked windows). Typically the surface must be observed through a window.
+- Dispersive media (etalon, beamsplitters, etc)
+- Fringe uncertainty and ambiguity
+- VISAR approximation
+- Diffusive reflections
+- Multiphase interference
+
+## Applications
+
+Most applications involve high-energy studies.
+
+- Pressure and shock response of materials
+- (Hugoniot) Equation of state experiments
+- Measure projectile velocity
+- ICF: Lasers impinging against the wall of a hohlraum generate shockwaves that compress the deuterium fuel capsule.
+
+Questions:
+  - What wavelength range is typically used for VISAR? It would seem that there is a trade-off between the velocity resolution (wants longer wavelength) and error correction (wants shorter wavelength). Answer: VISAR setups usually use lasers like Nd:YAG in the visible range. They are readily available and have good signal/noise characteristics for VISAR.
