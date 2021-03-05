@@ -736,3 +736,162 @@ Most applications involve high-energy studies.
 
 Questions:
   - What wavelength range is typically used for VISAR? It would seem that there is a trade-off between the velocity resolution (wants longer wavelength) and error correction (wants shorter wavelength). Answer: VISAR setups usually use lasers like Nd:YAG in the visible range. They are readily available and have good signal/noise characteristics for VISAR.
+
+
+# Pulsed Polarimetry - Arvindh
+
+## What is it
+
+Pulsed polarimetry is
+
+- A LiDAR like approach to measure the magnetic field and electron density simultaneously.
+- A non-perturbative diagnostic best suited for plasmas with high \\( n_e \\)
+- Uses a combination of Thomson scattering and Faraday rotation: when light passes through a plasma, there is some rotation of the polarization 
+- LiDAR Thomson scattering + polarimetry (measuring the handedness of the polarization of laser light) = pulsed polarimetry
+- Used for measuring the parallel component of the magnetic field in a plasma
+
+### Principles of Operation
+
+Three main steps in determining \\( n_e \\) and \\( B_\parallel \\)
+
+1. Optical scattering of laser beam by electrons in the plasma (back-scattering). Provides position and number density of the scattering particles
+2. Rotation of the polarization azimuth of the probe beam due to \\( B_\parallel \\). 
+3. Measurement of time-of-flight and polarization azimuth of the returned laser pulse. The difference in polarization angles when comparing with the reference beam provides information about \\( B_\parallel \\).
+
+### Refresher on LiDAR (Light Detection and Ranging)
+
+- LiDAR uses laser pulses to detect positions of objects remotely
+- It is an active system that supplies energy in the form of laser light
+- The reflected light is collected, and the waveform provides useful information about the objects because reflections from more distant objects take longer to return.
+- For example, in a plasma, the time difference between peaks would indicate length scales of density variations. The amplitude of the peaks also gives interesting information. A density profile can be constructed from the temporal differences in peaks.
+
+### Refresher on polarization
+
+- Polarization describes the plane in which EM radiation oscillates. 
+- An EM wave is polarized when the plane of fluctuation of the electric field is well-defined (the plane of fluctuation is perpendicular to the direction of propagation)
+- Many natural sources of light are unpolarized
+- Laser light is also unpolarized: need polarizers to make it polarized.
+- There are 3 types of polarization:
+  1. Linear polarization: Electric field oscillates in one plane. Could be the vector sum of linearly polarized components with no phase difference.
+  2. Circular polarization: Special case of elliptic polarization where the phase difference is \\( \pi/2 \\) and the constituent amplitudes are equal. Comes in two flavors: right-handed and left-handed.
+  3. Elliptic polarization: Produced by the vector sum of E field components that have different amplitudes and possess arbitrary phase difference. Generic case of polarization.
+
+## Optical scattering in pulsed polarimetry
+
+- Laser pulses are directed through the plasma.
+- Electrons produce backscatter radiation through Thomson scattering
+  - Thomson scattering is elastic absorption and radiation of EM waves by charged particles.
+  - The particles are affected by E and B fields through Lorentz force and oscillate in sync with radiation.
+  - The acceleration of the charged particle produces radiation at the same frequency as incoming EM wave.
+  - Emitted radiation travels in all directions
+- In a range of solid angles around \\( \vec k \\), the scattering preserves polarization
+- LiDAR techniques along with Thomson scattering provide information "local" to the scattering region
+
+### Measuring of \\( T_e \\), \\( n_e \\), and \\( \langle v_e \rangle \\) from Thomson scattering
+
+- Spectrally-resolved scattering intensity is proportional to the electron number density.
+- Gaussian broadening provides information about the electron temperature and mean velocity.
+
+## Faraday Effect
+
+- Superposition of left- and right-handed circular polarizations in phas is linearly-polarized light
+- In the presence of a magnetic field along \\( \vec k \\), the right-hand wave propagates faster than the left-hand wave, introducing a phase difference proportional to the index of refraction difference.
+- The rotation is proportional to the product of \\( n_e B_\parallel \\). Also proportional to \\( \lambda ^2 \\).
+
+## Putting it all together
+
+- The plasma backscattering location is given by \\( x = ct / 2 \\) where \\( t \\) is the time of flight.
+- The total rotation of polarization azimuth will be twice \\( \alpha(I) \\) since the light beam travels twice through the plasma: \\( \alpha(I, T) = 2.63 \cdot 10^{13} \lambda ^2 \int _0 ^l (n_e B_\parallel) [s, t(s)]  \dd s \\).
+- Differentiating \\( \alpha \\) with respect to path length \\( n_e B_\parallel (l) = \left.\frac{1.9 \cdot  10^{12}}{\lambda ^2} \pdv{\alpha_{PP(s)}}{s} \right|_l \\)
+- In practice, \\( \alpha_{PP} \\) is plotted as a time series at discrete intervals of \\( \Delta T = 2 \Delta L / c \\).
+
+## Considerations - Laser Pulse Length
+
+- The spatial resolution depends on the laser pulse length and detection system time scales.
+- If detector response time is negligible, then \\( \Delta L \\) (spatial resolution possible) is 
+{{< katex display >}}
+\Delta L = c/2 \sqrt{ [ \tau_{det} ^2 + \tau_{digitizer} ^2 + (L _{pulse} / c)^2]}
+{{< /katex >}}
+- The scattering volume is given by \\( \Delta V = \pi r_{beam} ^2 \Delta L \\)
+- There is a potential trade-off here:
+  - To get good spatial resolution, we need \\( \Delta L \\) to be as small as possible
+  - But a short laser pulse might not carry enough energy to induce detectable backscatter or affect SNR
+  - Lowering \\( \Delta L \\) by lowering detector response time adversely affects SNR, since SNR scales roughly as inverse square root of detector band-width.
+
+## Considerations - Laser Wavelength
+
+- Recall that Faraday effect has a square dependence on wavelength of rotation.
+- The wavelength needs to be chosen to get detectable resolution of \\( \alpha(l, T) \\) for smaller path lengths \\( l \\).
+- At the same time, the total rotation through the entire plasma width must not exceed detection range.
+
+## Considerations - Time Scales
+
+- Pulsed polarimetry measures the rotation azimuth on the way to the backscattering location, and on the way back to the detector after scattering
+- For this to be true, the plasma conditions need to be "quasi-static" during the laser transit time: must be the same on the first pass as the second pass. In practice this is a very fast time scale and easily satisfied for most plasmas.
+
+## Other Considerations
+
+- The Cotton Mouton effect can be significant in plasmas with strong perpendicular B component.
+- The polarization acquires an ellipticity that increases with distance and is quadratic with the intensity of perpendicular B component.
+- This effect is due to difference in refractive indices of O- and X-waves.
+
+## Implementation
+
+There are 4 major components:
+
+1. Laser source with a spatially narrow, polarized pulse at a chosen wavelength
+2. A polarization-preserving collection optic to collimate backscatter from remote plasma locations within a certain solid angle.
+3. A directional coupler to redirect laser pulse from source along target optic axis. Don't want the laser to be looking directly into backscattered light.
+4. A polarimeter to detect polarization azimuth and intensity of collected light.
+
+<p align="center"> <img alt="61.png" src="/r/img/560/61.png" /> </p>
+
+### Components: Polarizers
+
+- Polarizers are used to polarize light in preferred directions
+- There are 3 main types: reflective, dichroic, and birefringent
+  - Reflective: Surface with a preferential electron direction of motion. Absorb light and reflect light with a well-defined polarization. wire-grid polarizers, Brewster angle polarizers
+  - Dichroic: Absorb specific polarization.
+  - Birefringent: Different polarizations have different refractive indices.
+
+### Components: Polarimeter
+
+- Polarimeters measure the Faraday rotation and/or electron density
+- In amplitude polarimetry, a beam splitter lets original polarization pass and reflects orthogonal component. The Faraday rotation induces the orthogonal component. The reflected beam is combined with a frequency-shifted reference beam. The amplitude of the heterodyne beat is proportional to the Faraday rotation.
+
+## Applications (proposed)
+
+- FRX-L plasma
+  - Experiment at LANL
+  - Uncompressed FRC
+  - 50 GW Nd:YAG laser suggested
+  - \\( L_{pulse}/c = 20 ps \\)
+  - 10 pulses at 100mJ/pulse
+- FRCHX plasma
+  - Experiment at Kirkland AFB device
+  - Compressed FRC
+  - 100 GW tripled Ti:sapphire laser
+  - \\( L_{pulse}/c = 1 ps \\)
+- ITER
+  - Challenging because of low electron density and magnetic field
+  - A far infrared laser source needed
+  - Pulsed polarimetry could provide real-time control to prevent MHD instabilities
+
+In-use application: University of Washington Pulsed Polarimeter was modified to sense magnetic field using a streak camera and fiber optic PP (Smith and Weber, 2016).
+
+## Advantages
+
+- Measures local magnetic field using a remote, non-perturbative method
+- Spatial resolution of millimeters on high energy density plasmas
+- Can simultaneously measure \\( T_e \\), \\( n_e \\), and \\( B \\) along line of sight.
+- Resilient to refractive effects and short measurement duration, so can be used to control instabilities.
+
+## Summary
+
+- Pulsed polarimetry is a LiDAR-like technique that incorporates Thomson scattering with Faraday rotation
+- It is proposed to be a peerless technique for remotely sensing magnetic field in plasmas
+- With the right choice of optical components and energy sources, it can aid in real-time control of experiments to address instabilities.
+- Technology is still nascent - lots of potential for future applications.
+
+Questions:
+- How are we able to get spatially-resolved information about the parallel magnetic field strength when the Faraday rotation is going to be line-integrated along the line of sight? A: The rotation is cumulative over the path of travel, so we get a cumulative distribution over the path. If we can compute the local \\( n_e \\) along the path, we can differentiate to recover the local magnetic field.
