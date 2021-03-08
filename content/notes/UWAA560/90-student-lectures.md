@@ -1,14 +1,14 @@
 ---
 title: Student Lectures
 weight: 900
-bookToc: false
+bookToc: true
 ---
 
 {{< katex display >}}
 
 {{< /katex >}}
 
-# Particle Diagnostics: Neutron diagnostics (Aria)
+# Particle Diagnostics: Neutron diagnostics (Aria Johansen)
 
 Start from the basics: what is a neutron? It's a spin \\( 1/2 \\) baryon which interacts with all forces. Primarily decays into usually an electron and an antielectron neutron as well as a proton. Another decay process with 1/1000 of intensity decays to gamma. Mass is \\( 939.6 MeV/c^2 \\), very comparable to proton.
 
@@ -171,7 +171,7 @@ Questions:
  - The scintillator needs to be very well isolated from external EM radiation, and needs to be highly internally reflective. Do we also need to worry about excluding charged particles? Answer: By far the biggest concern is isolating our scintillator from EM radiation. The background radiation is the biggest source of noise in the scintillator signal, so we first need to spend a lot of effort making sure that the detector is completely light-tight. If you can leave the detector collecting overnight with extremely low photo background, then you can start worrying about charged particles, etc.
 
 
-# Ex Situ: ESCA/XPS, Raman Microscopy, Profilometry (Reed)
+# Ex Situ: ESCA/XPS, Raman Microscopy, Profilometry (Reed Thompson)
 
 x-ray photoelectron spectroscopy. Ex situ basically just means off-site, so off site investigation of surface composition and structure
 
@@ -241,7 +241,7 @@ Questions:
 - Since they make use of effects in bound electrons, when are XPS/Raman microscopy applicable to plasma experiments? Answer: Ex situ (off-site) measurements are used to investigate samples after the experiment. Examples like titanium oxidized by an O plasma, divertor components, etc. 
 
 
-# Infrared Imaging and Two Color Pyrometry - Brett
+# Infrared Imaging and Two Color Pyrometry - Brett Biggs
 
 Motivations for optical methods: Many of the methods of plasma diagnostics provide precise data on the composition of the plasma at the cost of directly influencing the state of the plasma
   - Often sensors cannot withstand exposure to the extreme temperature
@@ -423,7 +423,7 @@ Questions:
 - Emissivity measurement error bars are pretty wide (10 percent). What limits this measurement? Answer: Usual way you measure this is by putting your material in an oven and measuring emission with thermocouples, which can be difficult for an entire setup. Additionally, emissivity can change dramatically with angle of incidence, wavelength, etc. So a better way to reduce this error is by computing emissivity ratios by measuring multiple wavelengths (multi-color pyrometry).
 
 
-# Coded Aperture Imaging - Matt
+# Coded Aperture Imaging - Matt Russell
 
 Technique for imaging high energy x-rays and gamma rays.
 
@@ -496,7 +496,7 @@ Questions:
 - How far apart are the spacings in the coded aperture in real devices? I assume they have to be much larger than the diffraction range for x-rays (tens of nm). Answer: The imaging grids are usually on the order of a few centimeters, so for a MURA grid with tens of thousands of apertures you'd get grid spacing in the 10-100 micrometer range.
 
 
-# Laser-Induced Fluorescence and TALIF (Two-Photon Absorption) - Aqil
+# Laser-Induced Fluorescence and TALIF (Two-Photon Absorption) - Aqil Khairi
 
 ## Motivation
 
@@ -607,7 +607,7 @@ Experimental setup showing alignment can look like this:
 Questions: 
   - You mentioned TALIF measurements of neutral hydrogen in HIT-SI3. Do these LIF measurements have an upper temperature limit once hydrogen is completely ionized, limiting us to early start-up times, or is there still enough neutral hydrogen to fluoresce at operating temperature? Answer: There are still neutrals at the outer edge, but the density decreases as you go deeper into the plasma. In HIT-SI3, they are particularly interested in re-use of hydrogen by liberating neutrals from the wall. In that experiment the focusing lens targets an area very close to the wall in order use TALIF to monitor neutral density/temperature near the wall.
 
-# VISAR - Sungyoung
+# VISAR - Sungyoung Ha
 
 ## Fundamentals of VISAR
 
@@ -738,7 +738,7 @@ Questions:
   - What wavelength range is typically used for VISAR? It would seem that there is a trade-off between the velocity resolution (wants longer wavelength) and error correction (wants shorter wavelength). Answer: VISAR setups usually use lasers like Nd:YAG in the visible range. They are readily available and have good signal/noise characteristics for VISAR.
 
 
-# Pulsed Polarimetry - Arvindh
+# Pulsed Polarimetry - Arvindh Sharma
 
 ## What is it
 
