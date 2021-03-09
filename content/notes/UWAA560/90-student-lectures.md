@@ -931,7 +931,7 @@ The cross-section is small, and for high spatial resolution the scattering volum
 - Bremsstrahlung: most unavoidable noise source
 
 {{< katex display >}}
-\frac{S}{N} = \left[ \frac{h c}{C 2 \sin (\theta / 2) \sin \theta}]^{1/2} r_2 ^2 N_i \left[ \frac{\omega_S L}{d D \Delta t}]^{1/2} \frac{T_e ^{1/4}}{Z_{eff}^{1/2}} Q^{1/2}
+\frac{S}{N} = \left[ \frac{h c}{C 2 \sin (\theta / 2) \sin \theta} \right]^{1/2} r_2 ^2 N_i \left[ \frac{\omega_S L}{d D \Delta t} \right]^{1/2} \frac{T_e ^{1/4}}{Z_{eff}^{1/2}} Q^{1/2}
 {{< /katex >}}
 
 For polarized laser, polarimetry can be used to reduce noise.
