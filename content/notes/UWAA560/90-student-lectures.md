@@ -895,3 +895,60 @@ In-use application: University of Washington Pulsed Polarimeter was modified to 
 
 Questions:
 - How are we able to get spatially-resolved information about the parallel magnetic field strength when the Faraday rotation is going to be line-integrated along the line of sight? A: The rotation is cumulative over the path of travel, so we get a cumulative distribution over the path. If we can compute the local \\( n_e \\) along the path, we can differentiate to recover the local magnetic field.
+
+# LIDAR Incoherent Thomson Scattering - Josh Perry
+
+Pulsed Thomson scattering is one of the essential elements of pulsed polarimetry. Used to determine temperature and density of electrons. There are limitations to other methods of getting these diagnostics:
+  - Langmuir probes: perturbative
+  - interferometry: line-integrated
+  - Spectroscopy of line radiation: indirect
+
+Thomson scattering is direct, weakly-perturbing, and localized
+
+## Overview
+
+Light from a laser source scatters off electrons in the plasma. Temperature is determined from the doppler broadening of scattered light. Density is determined from the absolute intensity of scattered light. Measurements are localized to the intersection of laser and viewing beams
+
+### Scattering Theory
+
+For \\( h \lambda \ll m_e V_e \\), quantum effects can be ignored. This is the difference between Compton scattering (quantum) and Thomson scattering (classical). The electron oscillates in the wave fields, giving off radiation from its acceleration. When the Debye length is much greater than \\( \lambda \\), incoherent scattering.
+
+Doppler shifting of scattered radiation is only in the \\( \vec k \\) direction. At high temperatures (1keV), relativistic effects shift towards blue, making temperature seem higher.
+
+Density determined from scattering cross-section
+
+{{< katex display >}}
+\pdv{P_s}{l} = P_i n_e \frac{8}{3} \pi r_e ^2
+{{< /katex >}}
+
+The cross-section is small, and for high spatial resolution the scattering volume is small, so very high intensity laser required. Calibration performed using a neutral gas.
+
+### Noise Sources
+
+- External sources: any stray light can be an important noise source, since the scattered intensity is low. Blocking sightlines, covering windows, and using viewing dump can help reduce external noise.
+- Stray laser radiation: self-absorption of laser source. Narrow bandwidth makes it easy to identify in spectrum. Use beam dump to reduce noise.
+- Line radiation from plasma. Avoid coincident lines by adjusting laser frequency if using tunable laser.
+- Bremsstrahlung: most unavoidable noise source
+
+{{< katex display >}}
+\frac{S}{N} = \left[ \frac{h c}{C 2 \sin (\theta / 2) \sin \theta}]^{1/2} r_2 ^2 N_i \left[ \frac{\omega_S L}{d D \Delta t}]^{1/2} \frac{T_e ^{1/4}}{Z_{eff}^{1/2}} Q^{1/2}
+{{< /katex >}}
+
+For polarized laser, polarimetry can be used to reduce noise.
+
+## Types of Thomson Scattering Setup
+
+### Perpendicular Thomson Scattering
+
+- Simplest and most common TS configuration. Viewing and laser beams are orthogonal, scattering volume limited to a relatively small region
+
+### TV Thomson Scattering
+
+Use a group of lenses to gather scattered light from multiple locations along one or more laser beams. Forms a 2D image at the spectrometer detector. High complexity due to many optical paths.
+
+### LIDAR Configuration
+
+Laser and detector optics are located on same port, measuring backscattered radiation. The time of flight depends on the plasma depth, allowing for spatial resolution along flight path. Requires extremely short laser pulse. LIDAR systems used in large tokamak experiments (ITER, JET). 
+
+Questions:
+- Do you know what limits the repeatability of LIDAR TS? 0.5 Hz doesn't give you very many data points in a single shot. In very high-intensity lasers, what tends to limit the repeatability is the process of the lasing medium de-exciting back to the ground state. This takes much longer than any other process in the collection setup.
