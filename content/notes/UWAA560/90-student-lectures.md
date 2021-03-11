@@ -952,3 +952,116 @@ Laser and detector optics are located on same port, measuring backscattered radi
 
 Questions:
 - Do you know what limits the repeatability of LIDAR TS? 0.5 Hz doesn't give you very many data points in a single shot. In very high-intensity lasers, what tends to limit the repeatability is the process of the lasing medium de-exciting back to the ground state. This takes much longer than any other process in the collection setup.
+
+# Coherent Thomson Scattering - Simon Fraser
+
+When Thomson scattering occurs in the limit that \\( k \lambda_D \ll 1 \\), collective effects become dominant and we all the phenomenon coherent Thomson scattering (CTS). CTS diagnostic is a non-perturbative measurement that provides information on the electron density, electron temperature, ion temperature, and flow velocity. CTS has very good spatial and temporal resolution and has been used in systems ranging from Hall thrusters to fusion confinement experiments.
+
+### What is Thomson scattering?
+
+Thomson scattering is elastic scattering of EM radiation by a free charged particle. It is also the low energy limit of Compton scattering. Ignores relativistic effects, applicable for \\( T_e < 1 keV \\)
+
+The process goes like this
+- EM radiation approaches a free particle
+- The particle moves in the electric and magnetic fields of the EM wave
+- The movement of the free particle creates an EM wave
+- Scattered in all directions; direction of interest determined by line of observation
+
+### What is coherent (collective) Thomson scattering?
+
+- Scattering calculations in a plasma involve electric field contributions from many electrons. In incoherent Thomson scattering, the collective effects of the plasma can be ignored and all contributions are assumed to be uncorrelated. Coherent Thomson scattering is the case where the contributions from separate particles _are_ correlated.
+- Recall that electrons shield each other on the order of the Debye length. If \\( k \lambda_D \gg 1 \\) then the phase difference between the scattering resulting from an electron or its shielding cloud is large. The scattered radiation is then incoherent.
+- If \\( k \lambda_D \ll 1 \\) then the phase difference is small, and the scattering off of an electron is balanced by the absence of scattering from its shielding cloud. Scattering from ions is negligible (factor of \\( m_e/m_i \\)).
+- Recall that \\( k \lambda_D \ll 1  \\) is equivalent to \\( 2 \pi \lambda_D \ll \lambda \\). Sometimes given in terms of a scattering parameter \\( \alpha = 1/k \lambda_D \\).
+
+## Use as a plasma diagnostic
+
+- Scattered field from a single electron
+
+{{< katex display >}}
+E_s(\vec x, t) = \frac{r_e}{R} \vec \Pi \cdot \vec E_i
+{{< /katex >}}
+
+with classical electron radius \\( r_e \\), tensor polarization operator \\( \vec \Pi \\), and distance to observer \\( R = x - \vu s \cdot \vec r \\) where \\( x \\) is position of observation. From a population of electrons,
+
+{{< katex display >}}
+E_s(\nu _s) = \frac{r_e e^{i \vec k _s \cdot \vec x}}{x} \iint F_e ' \kappa ' \vec \Pi ' \cdot \vec E_i e^{i (\omega _s t' - k_s \vec r ')} \dd t' \dd r' \dd \nu '
+{{< /katex >}}
+
+with Klimontovich point distribution function \\( F_e \\). For monochromatic incident light, the total scattered power is
+
+{{< katex display >}}
+P_S = \frac{P_0 r_0 ^2 L n_e \dd \Omega}{2 \pi} \left| \vu s \cross ( \vu s \cross \vu E_i) \right|^2 \int \dd \omega_s S(k_\alpha, \omega)
+{{< /katex >}}
+
+with \\( r_0 = e^2 / m_e c^2 \\) and \\( |\vu s \cross (\vu s \cross \vu E_i) = 1 - \sin ^2 \theta \cos ^2 \beta \\) where \\( \theta \\) is detection angle and \\( \beta \\) is the angle of the incident polarization vector relative to the scattering plane and \\( L \\) is the length of the Thomson scattering volume. Notably, incident polarization perpendicular to the scattering plane gives the strongest signal.
+
+Collective ion-acoustic features can be observed, as long as \\( Z T_e / T_i > k_a ^2 \lambda_D ^2 \\). This means that the electrons follow the motion of the ions. In this regime the scattering occurs from co- and counterpropagating ion-acoustic waves.
+
+The wavelength separation between the ion-acoustic features is
+
+{{< katex display >}}
+\Delta \lambda = \lambda_0 \frac{4}{c} \sin \frac{\theta}{2} \sqrt{ \frac{k_B T_e}{M} \left( \frac{Z}{1 + k^2 \lambda_D ^2} + \frac{3 T_i}{T_e} \right)}
+{{< /katex >}}
+
+\\( \Delta \lambda / \lambda_0 \\) is often very small.
+
+### Doppler shift
+
+The Doppler shift of the scattered radiation contains information about the bulk velocity.
+
+{{< katex display >}}
+\Delta \lambda = \vec k \cdot \vec v \lambda_0 ^2 2 \pi c
+{{< /katex >}}
+
+Note that charges parallel to the incident light get the maximum shift.
+
+### Diagnostic calculations
+
+Temperature of electrons and ions can be derived by fitting the observed spectrum to the appropriate form factor. 
+
+Electron density can be determined through the total scattered power, the frequency of the electron plasma wave, or two-color Thomson scattering. The two-color approach relies on the difference between the ion acoustic frequency at large and small k-vector values. The small k-vector fluctuations provide electron temperature while large k-vector fluctuations provide the density. This can be done with a single laser and different scattering angles.
+
+<p align="center"> <img alt="62.png" src="/r/img/560/62.png" /> </p>
+
+Note that \\( k \\) increases with both frequency and angle of incidence.
+
+Detection angle \\( \theta \\) considerations:
+
+- 90 degress is convenient: reduces stray light and gives best measurement localization
+- greater than 90 degrees is backscattering, less than 90 degrees is forward scattering
+- Detection angle affects whether the scattering observed is coherent or incoherent; behavior is more collective at small \\( \theta \\).
+
+Laser considerations:
+
+- Laser frequency must be greater than the plasma frequency to avoid heating
+- Laser pulse energy should also be tuned to avoid heating
+- Scattering signal is most intense for a laser polarized perpendicular to the plane of the laser beam and observation direction
+- Shorter pulses increase SNR and temporal resolution
+- Wave resonances need to be avoided to avoid heating
+
+Sources of error
+
+- Plasma self-emission
+- Stray light
+- Rayleigh scattering background
+- Broadening effects
+- A more powerful laser increases signal-to-noise ratio
+
+### Use in experiments
+
+- Diagnosing Hall Thruster instabilities (PRAXIS)
+  - Propulsion analysis experiment via infrared scattering
+  - Uses 10.6 \\( \mu m \\) \\( CO_2 \\) laser split into two beams, primary and local oscillator
+  - Local oscillator is a reference beam to get phase and amplitude information
+  - Local oscillator gets mixed with scattering signal
+  - Very highly localized measurement determined by interference between the two beams
+
+- ASDEX tokamak
+  - Uses CTS to measure ion velocity, ion temp, and ion composition
+  - Here, magnetic vector perpendicular to the wave vector, so can observe the effects of ion Bernstein wave
+  - Uses 2ms pulses
+
+Questions:
+
+- You mentioned experiments using both continuous and pulsed laser systems. Did you come across any configurations that used LiDAR-like ranging schemes for spatial resolution? Answer: Did not come across any configurations that used ranging schemes to spatially resolve. The time scale over which ion-acoustic affects occur may be too long compared to the time of flight to obtain meaningfully resolved ion temperature/density measurements.
