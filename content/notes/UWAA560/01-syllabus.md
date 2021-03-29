@@ -32,3 +32,5 @@ What makes plasma diagnostics particularly difficult is that we are measuring th
 Instruments inserted into the plasma (Langmuir probes, Mach probes, RPA's, etc.) can alter the plasma by creating perturbations which alter the local plasma properties. High-energy density plasmas can even destroy the instruments.
 
 Plasma diagnostics extract plasma properties by measuring nuanced interactions between EM fields and detailed velocity distribution functions for the various relevant species. These species might be electrons, bulk ions (\\( H^+, D^+, He^{++}, Ar^+ \\)), and impurity ions (\\( C^+, O^+ \\)). The field of plasma diagnostics is vast, and new techniques are currently being developed. Specialized journals and conferences are dedicated to the topic. The goal of this course is to develop a foundation to understand common diagnostics and to understand more advanced diagnostic techniques.
+
+
