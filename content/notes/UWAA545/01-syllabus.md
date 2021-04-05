@@ -1,6 +1,7 @@
 ---
 title: Syllabus
 weight: 10
+bookToc: false
 ---
 
 {{< katex display >}}
