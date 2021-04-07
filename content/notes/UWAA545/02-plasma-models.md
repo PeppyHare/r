@@ -293,3 +293,89 @@ However, the EM fields are computed by currents and charges localized to a spati
 By comparison to the kinetic model, kinetic models are derived by performing an ensemble average to transform from discrete space to a smooth, continuous space. The averaging process accounts for smoothly varying long-range forces, which is just what we've done by mapping our particles to a spatial grid. The short-range abrupt forces are encompassed in the collision operator in the same way. The same idea of separating the smooth long-range forces from the abrupt forces was the key Vlasov insight. As we arbitrarily crank up the spatial resolution, the PIC model converges not to the N-body model, but to the Vlasov kinetic model.
 
 PIC models are "particle ensemble averages," but not in a strict sense. They can be thought of as a sampling or discretization of the continuous phase space.
+
+## General Comments on Kinetic Models
+
+- The PIC method is a robust and efficient method for collisionless plasmas. Collisions are usually modeled using Monte Carlo methods.
+- PIC does not work well when the physics is dominated by a small population (small number of particles), because the sampling error becomes very significant.
+- PIC methods work well for handling vacuum boundaries, but physical boundaries are more difficult. This is the opposite of the case for fluid models.
+- PIC methods naturally resolve sharp features in phase space, e.g. a cold beam
+- Continuum kinetic methods can require more computational effort. PIC methods have been around since the 60's, but continuum models have only become computationally practical more recently. There are a couple of reasons for this. Dimensionality is a key component. Continuum distribution methods encompass a six-dimensional space, but particle methods can work in three-dimensional spaces. Additionally, solving the governing equations Boltzmann, Vlasov, Vlasov + Fokker-Planck, etc. are more complicated than the equation of motion for the PIC method.
+- Continuum methods better model tails of distributions, which is often where interesting physics happens. E.g ionization, fusion are driven by the high energy tail of the distribution, while the overall dynamics are determined by the bulk. If tails are not interesting, then computational effort is wasted on large unoccupied regions of phase space. Tails also constrain the numerical solution for continuum methods. High velocity and low density can lead to oscillations where the value of the distribution function is very small, leading to potentially negative values.
+- Continuum methods (more generally fluid methods) can introduce numerical diffusion and dispersion.
+  - Diffusion leads to a smoothing of sharp features over time.
+  - Dispersion leads to low/high wavenumber features propagating at the wrong speed.
+
+## Computational Methods for PIC
+
+- PIC can easily be extended to include relativistic effects, only requiring minimal changes to the equation of motion.
+- Collisions are often neglected in PIC methods, assuming a low density, collisionless plasma. As we try to apply PIC methods to collisional plasmas, the accuracy gets worse.
+
+Let's talk about how we go about solving the governing equations for a plasma. First, we divide the domain into a _uniform_ grid, \\( \Delta x = \Delta y = \Delta z = const. \\). We will have a distribution of particles throughout the domain with independent position and velocity \\( (\vec x, \vec v)_i \\).
+
+<p align="center"> <img alt="5.png" src="/r/img/545/5.png" /> </p>
+
+The geometry of the particles themselves depends on dimensionality.
+  - Particles have an infinite extent in unresolved dimensions. In 3D, this means that particles are spheres. In 2D they are cylindrical, and in 1D they are planar.
+
+The general procedure for solving the PIC method goes like this:
+
+1. Particles are weighted to the grid. The position of each particle \\( i \\) in phase space \\( (\vec x, \vec v)_i \\) is weighted to the grid to compute the electromagnetic source terms \\( (\rho_c, \vec j)_j \\) at each grid location \\( j \\).
+{{< katex display >}}
+\underbrace{(\vec x, \vec v)_i}_{\text{particles}} \rightarrow \underbrace{(\rho_c, \vec j)_j}_{\text{grid}} \qquad \text{(Particle weighting)}
+{{< /katex >}}
+2. Advance the electric and magnetic fields on the grid
+{{< katex display >}}
+\underbrace{(\rho_c, \vec j)_j}_{\text{grid}} \rightarrow \underbrace{(\vec E, \vec B)_j}_{\text{grid}} \qquad \text{(Field solve)}
+{{< /katex >}}
+3. Electromagnetic fields are weighted to particles
+{{< katex display >}}
+\underbrace{(\vec E, \vec B)_j}_{\text{grid}} \rightarrow \underbrace{\vec F_i}_{\text{particle}} \qquad \text{(Force weighting)}
+{{< /katex >}}
+4. Particles are advanced in time
+{{< katex display >}}
+\vec F_i \rightarrow \vec v_i \rightarrow \vec x_i
+{{< /katex >}}
+
+### Particle & Force Weighting
+
+As mentioned earlier, PIC uses finite size particles rather than point particles to avoid the issue of force singularities. This is particularly important in the 1-dimensional case, since infinitesimal particles would never be able to exchange positions. _The exact size and shape of the particles matter_. The charge density for a point particle is
+
+{{< katex display >}}
+\rho_c(\vec r) = q_i \delta (\vec r - \vec r_i)
+{{< /katex >}}
+
+For a finite-size particle,
+
+{{< katex display >}}
+\rho_c (\vec r) = q_i S(\vec r - \vec r_i)
+{{< /katex >}}
+
+where \\( S \\) is a particle shape factor. Conservation of charge requires
+{{< katex display >}}
+\int S(\vec r - \vec r_i) \dd \vec r = \int \delta ( \vec r - \vec r _i) \dd \vec r = 1
+{{< /katex >}}
+
+The Lorentz force must be weighted to the particles using the same shape factor in order to get consistent dynamics. For \\( \vec B = 0 \\),
+{{< katex display >}}
+\vec F_i = q_i \vec E (\vec r_i) = \overbrace{q_i \int \vec E(\vec r) \delta (\vec r - \vec r_i) \dd \vec r}^{\text{point particles}} \\
+= \underbrace{q_i \int \vec E(\vec r) S(\vec r - \vec r_i) \dd \vec r}_{\text{finite-size particles}}
+{{< /katex >}}
+
+Particles must have local support, meaning \\( S(\vec r - \vec r_i) \\) is spatially restricted to a small portion of the grid. The simplest weighting/shape is a uniform charge cloud. In 1D, this is
+
+{{< katex display >}}
+S(x) = \begin{cases}  1/a_0 &\qquad & \text{if} \quad |x| \leq a_0 /2 \\
+0 &\qquad & \text{otherwise}
+\end{cases}
+{{< /katex >}}
+
+This provides zeroth-order weighting to the nearest grid point (NGP). When we go to compute the fields from our source terms, the particle will only contribute to the closest single grid point.
+
+If the size of our particle is very small compared to the grid spacing \\( \Delta x > a_0 \\), what happens to \\( \rho_c \\) as the particle drifts through the grid? Because we compute the weighted density as \\( \rho_c (\vec r) = q_i S(\vec r - \vec r_i) \\), there will be some positions for which a particle will not contribute to any grid point. Likewise, if \\( \Delta x < a_0> \\), then the particle appears on multiple grid points, but only at some times, producing double-counting. Both of these cases violate conservation of charge:
+
+{{< katex display >}}
+\pdv{}{t} \int q_\alpha f_\alpha \dd \vec x \dd \vec v = 0
+{{< /katex >}}
+
+To conserve charge, **\\( \Delta x \\) must equal \\( a_0 \\)**. This is a limitation of zeroth-order weighting.
