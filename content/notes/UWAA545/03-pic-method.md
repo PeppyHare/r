@@ -299,8 +299,203 @@ This equation approximates the ODE for Langmuir oscillations
 \dv{^2 x}{t^2} + \omega_p ^2 x = 0
 {{< /katex >}}
 
-The solution is
+which has the solution
 
 {{< katex display >}}
 x(t) = C e^{\pm i \omega_p t}
 {{< /katex >}}
+
+That's the same finite difference we're using for our leap-frog particle push, which indicates that we're solving the same differential equation. We can assume an oscillating solution to our finite difference equation where
+
+{{< katex display >}}
+x^n = c e^{i \omega t^n}
+{{< /katex >}}
+
+where \\( t^n = n \Delta t \\). Substituting \\( x^n \\) into the finite difference expression,
+{{< katex display >}}
+e^{i \omega \Delta t} - 2 + e^{- i \omega \Delta t} = - \omega _p ^2 \Delta t^2
+{{< /katex >}}
+
+Some algebraic manipulation leads to
+
+{{< katex display >}}
+2\left( \frac{e^{i \omega \Delta t} + e^{- i \omega \Delta t}}{2} - 1 \right) = - \omega_p ^2 \Delta t^2 \\
+2 \left( \cos (\omega \Delta t) - 1 \right) = - \omega _p ^2 \Delta t^2\\
+\sin ^2 \left( \frac{\omega \Delta t}{2} \right) = \left( \frac{\omega _p \Delta t}{2} \right)^2
+{{< /katex >}}
+
+That's interesting. We should have a solution \\( \omega = \pm \omega_p \\), but instead we have this other solution. Plotting \\( (\omega \Delta t / 2) \\) vs \\( (\omega_p \Delta t / 2) \\), we get a plot like this:
+
+<p align="center"> <img alt="10.png" src="/r/img/545/10.png" /> </p>
+
+The deviation from \\( \omega = \omega_p \\) is what's called a phase error. Nominally, we can set \\( \Delta t \\) to whatever we want. Setting \\( \Delta t \\) further out gives an imaginary \\( \omega = \pm i \gamma \\), so
+
+{{< katex display >}}
+x = c e^{\gamma t}
+{{< /katex >}}
+
+which is an unstable solution. So, if \\( \Delta t \\) is small, the leap frog finite difference gives an accurate solution. Increasing \\( \Delta t \\) enters a region where phase errors become large. Going all the way up to \\( \Delta t = 2/\omega_p \\), we get imaginary solutions to the differential equation and the solution becomes unstable. This is the **Leap-frog instability.**
+
+## Electromagnetic Field Solver
+
+At the field solver step, we need to advance \\( \vec E \\) and \\( \vec B \\) according to Maxwell's equations based on particles' positions and velocities.
+
+In the **electrostatic** case, Faraday's law reduces to
+{{< katex display >}}
+\curl \vec E = 0 \rightarrow \vec E = - \grad \phi
+{{< /katex >}}
+
+Combined with Gauss's law, yields Poisson's equation
+
+{{< katex display >}}
+\div \vec E = \rho_c / \epsilon_0 \rightarrow \grad ^2 \phi = - \rho_c / \epsilon_0
+{{< /katex >}}
+
+Poisson's equation can be solved with finite differences. In 1D,
+
+{{< katex display >}}
+\frac{\phi _{j+1} - 2 \phi_j + \phi_{j-1}}{\Delta x^2} = - \frac{\rho_j}{\epsilon_0}
+{{< /katex >}}
+
+In matrix form, this yields a tridiagonal matrix equation.
+
+{{< katex display >}}
+\vec A \vec \phi = \vec b \rightarrow \vec \phi = \vec A ^{-1} \vec b
+{{< /katex >}}
+
+where
+
+{{< katex display >}}
+\vec \phi = \begin{bmatrix}
+\phi_1 \\
+\phi_2 \\
+\vdots \\
+\phi_J
+\end{bmatrix}
+{{< /katex >}}
+
+{{< katex display >}}
+\vec A = \frac{1}{\Delta x^2} \begin{bmatrix} \ldots & 1 & -2 & 1 & \ldots \end{bmatrix}
+{{< /katex >}}
+
+{{< katex display >}}
+\vec b = \begin{bmatrix} - \rho_{j-1} / \epsilon_0 \\
+- \rho_j / \epsilon_0 \\
+\rho_{j+1} / \epsilon_0 \\
+\ldots
+\end{bmatrix}
+{{< /katex >}}
+
+We can run into some trouble here with periodic domains. For a periodic boundary condition, \\( \vec A \\) looks like
+
+
+{{< katex display >}}
+\vec A \sim \begin{bmatrix}
+-2 & 1 & 0 & \\
+1 & -2 & 1 & \\
+\ldots & \ldots & \ldots & \ldots \\
+\ldots & 1 & -2 & 1 \\
+1 & \ldots & 1 & -2 \\
+\end{bmatrix}
+{{< /katex >}}
+
+which is singular. This problem arises from a lack of appropriate boundary conditions. Even with periodic boundary conditions, we know the solution \\( \phi \\) is lacking an appropriate gauge, e.g. \\( \phi_1 = 0 \\) or \\( \sum_j \phi_j = 0 \\). Setting \\( \phi_1 = 0 \\) modifies \\( \vec A \\):
+
+{{< katex display >}}
+\vec A \sim \begin{bmatrix}
+1 & 0 & 0 & \\
+1 & -2 & 1 & \\
+\ldots & \ldots & \ldots & \ldots \\
+\ldots & 1 & -2 & 1 \\
+1 & \ldots & 1 & -2 \\
+\end{bmatrix}
+{{< /katex >}}
+
+This is no longer singular, and we can invert it.
+
+With \\( \phi_j \\) in hand, we compute the electric field as
+
+{{< katex display >}}
+E_{x_{j}} = - \frac{\phi_{j+1} - \phi_{j-1}}{2 \Delta x}
+{{< /katex >}}
+
+and solve the Vlasov-Poisson system.
+
+### Periodic Domains - Fourier Series Expansion
+
+For periodic domains, an alternative approach to solving Poisson's equation has some unique advantages compared to the finite difference method. In this approach, we transform from a discrete physical space to Fourier wave space. In wave space, differential operators become multiplications.
+
+{{< katex display >}}
+\rho(x) \overbrace{\rightarrow}^{FT} \rho(k)
+{{< /katex >}}
+
+using the transformation kernel \\( e^{i k x} \\). Poisson's equation becomes
+
+{{< katex display >}}
+k ^2 \phi (k) = \rho(k) / \epsilon_0 \rightarrow \phi(k) = \frac{\rho(k)}{\epsilon_0 k^2}
+{{< /katex >}}
+
+With the potential, an inverse fourier transform gives \\( \phi(k) \rightarrow \phi(x) \\). We can get the field either by computing the gradient
+
+{{< katex display >}}
+- \grad \phi(x) = \vec E(x)
+{{< /katex >}}
+
+or by computing the gradient first in phase space
+
+{{< katex display >}}
+i k \phi(k) = \vec E(k) \rightarrow \vec E(x)
+{{< /katex >}}
+
+We have a finite number of locations on our grid, so likewise our Fourier series expansion is also truncated at a finite \\( k \\).
+
+{{< katex display >}}
+g(k) = \Delta x \sum_{j=0} ^{J-1} g(x_j) e^{-i k x_j}
+{{< /katex >}}
+
+The continuous inverse transform is
+
+{{< katex display >}}
+g(x_j) = \frac{1}{2\pi} \int_{- \pi / \Delta x} ^{\pi / \Delta x} g(k) e^{i k x_j} \dd k \qquad \text{(infinite k)}
+{{< /katex >}}
+
+but for a discrete number of modes \\( k \\),
+
+{{< katex display >}}
+g(x_j) = \frac{1}{L} \sum_{n=-J/2} ^{J/2 - 1} g(k) e^{i k x_j}
+{{< /katex >}}
+
+where \\( k = 2 \pi n / L \\).
+
+Finite Fourier transformations (FFT) are susceptible to **aliasing** errors. Higher wave numbers than we can resolve are aliased to lower frequencies.
+
+{{< katex display >}}
+E(k) = - i k \phi(k) \frac{\sin(k \Delta x)}{k \Delta x} = - i \kappa \phi(k)
+{{< /katex >}}
+
+{{< katex display >}}
+\phi(k) = \frac{\rho(k)}{\epsilon_0 k^2} \left[ \frac{k \Delta x}{\sin (k \Delta x)}\right]^2 = \frac{\rho(k)}{\epsilon_0 \kappa ^2}
+{{< /katex >}}
+
+The discrete effects vanish as \\( k \Delta x \rightarrow 0 \\) (infinite resolution). Aliasing occurs if \\( |k \Delta x| > \pi \\) which appears on the grid as lower values of \\( k \Delta x \\).
+
+
+## Full Electrostatic PIC Algorithm
+
+Now we've got everything we need to implement an electrostatic PIC model.
+
+- Particle weighting to the grid using shape function (\\( \vec j \\) is not needed for electrostatics)
+  {{< katex display >}}
+  x_i \rightarrow \rho_j
+  {{< /katex >}}
+- Electric field solve from Poisson's equation.
+  - Finite difference: \\( \grad ^2 \phi = - \rho / \epsilon_0 \rightarrow \vec E = - \grad \phi \\)
+  - FFT: \\( \rho(x_j) \overbrace{\rightarrow}^{FFT} \rho(k) \overbrace{\rightarrow}^{k^2} \phi(k) \overbrace{\rightarrow}^{k} \vec E(k) \overbrace{\rightarrow}^{IFFT} E(x_j) \\)
+- Force weighting to particles using shape function
+  {{< katex display >}}
+   \vec E_j \rightarrow \vec F_i
+  {{< /katex >}}
+- Leap frog advance to push the particles
+  {{< katex display >}}
+  \vec F_i \rightarrow \vec v_i \rightarrow \vec x_i
+  {{< /katex >}}
