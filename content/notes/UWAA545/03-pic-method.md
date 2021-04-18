@@ -1,7 +1,7 @@
 ---
 title: Particle in Cell Model
 weight: 30
-bookToc: false
+# bookToc: false
 ---
 
 # Particle-In-Cell Model (Particle model revisited)
@@ -489,8 +489,14 @@ Now we've got everything we need to implement an electrostatic PIC model.
   x_i \rightarrow \rho_j
   {{< /katex >}}
 - Electric field solve from Poisson's equation.
-  - Finite difference: \\( \grad ^2 \phi = - \rho / \epsilon_0 \rightarrow \vec E = - \grad \phi \\)
-  - FFT: \\( \rho(x_j) \overbrace{\rightarrow}^{FFT} \rho(k) \overbrace{\rightarrow}^{k^2} \phi(k) \overbrace{\rightarrow}^{k} \vec E(k) \overbrace{\rightarrow}^{IFFT} E(x_j) \\)
+  - Finite difference:
+  {{< katex display >}}
+  \grad ^2 \phi = - \rho / \epsilon_0 \rightarrow \vec E = - \grad \phi
+  {{< /katex >}}
+  - or FFT:
+  {{< katex display >}}
+  \rho(x_j) \overbrace{\rightarrow}^{FFT} \rho(k) \overbrace{\rightarrow}^{k^2} \phi(k) \overbrace{\rightarrow}^{k} \vec E(k) \overbrace{\rightarrow}^{IFFT} E(x_j)
+  {{< /katex >}}
 - Force weighting to particles using shape function
   {{< katex display >}}
    \vec E_j \rightarrow \vec F_i
