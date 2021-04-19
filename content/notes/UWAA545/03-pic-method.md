@@ -505,3 +505,176 @@ Now we've got everything we need to implement an electrostatic PIC model.
   {{< katex display >}}
   \vec F_i \rightarrow \vec v_i \rightarrow \vec x_i
   {{< /katex >}}
+
+## Magnetostatic PIC
+
+In the magnetostatic case, we introduce a constant magnitude magnetic field into the mix. The Lorentz force becomes
+
+{{< katex display >}}
+\vec F_i = q \vec E + q ( \vec v_i \cross \vec B)
+{{< /katex >}}
+
+The effect of the magnetic field is to rotate the particle's trajectory. To compute the force on the particle, both \\( \vec E \\) and \\( \vec B \\) must be known at \\( \vec x_i \\). This changes how we represent our phase space. The minimum relevant configuration is 1D-2V, e.g. \\( (x, v_x, v_y) \\) with
+
+{{< katex display >}}
+\vec E = E_x \vu x
+{{< /katex >}}
+{{< katex display >}}
+\vec B = B_0 \vu z
+{{< /katex >}}
+{{< katex display >}}
+\vec v = v_x \vu x + v_y \vu y
+{{< /katex >}}
+
+\\( \vec B \\) does not alter the magnitude \\( | \vec v | \\). \\( \vec E \\) can alter the magnitude of \\( | \vec v | \\).
+
+Both \\( \vec E \\) and \\( \vec B \\) must be centered in time relative to \\( \vec v \\). The Leap frog method advances \\( \vec v ^{n - 1/2} \\) to \\( \vec v^{n + 1/2} \\) using force and fields at time \\( n \\).
+
+\\( \vec v \\) is known at \\( n \pm \frac{1}{2} \\), but we need to compute \\( \vec B \\) at \\( n \\). One solution is to use Strang splitting to split the advance (acceleration \\( q \vec E \\)) with the rotation \\( q (\vec v \cross \vec B) = \omega_c (\vec v \cross \vec \vu z) \\). The way this works is we apply half of the acceleration, then we apply the rotation, then the other half of the acceleration.
+
+- Half acceleration
+{{< katex display >}}
+v' _x = v_x ^{n - 1/2} + \frac{\Delta t}{2} \frac{q}{m} E_x ^n
+{{< /katex >}}
+{{< katex display >}}
+v' _y = v_y ^{n - 1/2}
+{{< /katex >}}
+
+- Full Rotation
+{{< katex display >}}
+\begin{bmatrix}
+v_x '' \\
+v_y ''
+\end{bmatrix} = 
+\begin{bmatrix}
+\cos (\omega_c \Delta t) & \sin ( \omega_c \Delta t) \\
+- \sin ( \omega_c \Delta t) & \cos ( \omega_c \Delta t)
+\end{bmatrix}
+\begin{bmatrix}
+v_x ' \\
+v_y ' \end{bmatrix}
+{{< /katex >}}
+
+- Half acceleration
+{{< katex display >}}
+v_x ^{n + 1/2} = v_x '' + \frac{\Delta t}{2} \frac{q}{m} E_x ^n
+{{< /katex >}}
+{{< katex display >}}
+v_y ^{n + 1/2} = v_y ''
+{{< /katex >}}
+
+This Strang splitting method is similar to e.g. Runge-Kutta methods which calculate an intermediate value, then use that value to step all the way.
+
+Like all leap frog methods, we have to start magnetostatic PIC at \\( n = 0 \\). The initial conditions for magnetostatic PIC are the initial positions and velocities at \\( t = 0 \\), which give us the fields \\( \vec E \\) and \\( \vec B \\) at \\( t = 0 \\). We need \\( \vec v ^{ n - 1/2} \\), same as we did for the electrostatic case. We can start by applying a similar Strang splitting to integrate backwards in time by \\( \Delta t / 2 \\). We omit the first half-acceleration, and only perform an half rotation.
+
+- Rotate
+
+{{< katex display >}}
+\begin{bmatrix}
+v_x ' \\ v_y '
+\end{bmatrix} = \begin{bmatrix}
+\cos ( - \omega _c \Delta t / 2) & \sin ( - \omega _c \Delta t / 2) \\
+- \sin ( - \omega _c \Delta t / 2) & \cos ( - \omega_c \Delta t / 2)
+\end{bmatrix} \begin{bmatrix}
+v_x ^{n=0} \\
+v_y ^{n=0} \end{bmatrix}
+{{< /katex >}}
+
+- Accelerate
+{{< katex display >}}
+v_x ^{n = - 1/2} = v_x ' - \frac{\Delta t}{2} \frac{q}{m} E_x ^{n=0}
+{{< /katex >}}
+{{< katex display >}}
+v_y ^{n = - 1/2} = v_y '
+{{< /katex >}}
+
+From there, we can proceed with the leap frog algorithm.
+
+<p align="center"> <img alt="11.png" src="/r/img/545/11.png" /> </p>
+
+## Electrodynamic PIC
+
+Finally, we allow the magnetic field to change in time. We still limit our model to 1D-2V (\\( x, v_x, v_y \\)), but now \\( B_z \\) is not constant and electric field \\( E_y \\) and current density \\( j_y \\) in the \\( \vu y \\) direction are allowed.
+
+<p align="center"> <img alt="12.png" src="/r/img/545/12.png" /> </p>
+
+Physically, this means that waves can propagate, but only in the \\( \vu x \\) direction. To compute the fields from grid sources, we need to solve the full Maxwell's equations. We'll do so in Heaviside-Lorentz units:
+
+{{< katex display >}}
+\pdv{\vec E}{t} = c \curl \vec B - \vec j
+{{< /katex >}}
+{{< katex display >}}
+\pdv{\vec B}{t} = - c \curl \vec E
+{{< /katex >}}
+
+In the 1D-2V system, these become
+
+{{< katex display >}}
+\pdv{E_y}{t} = - c \pdv{B_z}{x} - j_y
+{{< /katex >}}
+{{< katex display >}}
+\pdv{B_z}{t} = - c \pdv{E_y}{x}
+{{< /katex >}}
+
+Let's define some new variables:
+
+{{< katex display >}}
+F^+ \equiv \frac{E_y + B_z}{2}
+{{< /katex >}}
+{{< katex display >}}
+F^{-} \equiv \frac{E_y - B_z}{2}
+{{< /katex >}}
+
+These mean that
+
+{{< katex display >}}
+E_y = F^+ + F^-
+{{< /katex >}}
+{{< katex display >}}
+B_z = F^+ - F^-
+{{< /katex >}}
+
+So Maxwell's equations become (in matrix form)
+
+{{< katex display >}}
+\pdv{}{t} \begin{bmatrix} F^+ \\ F^- \end{bmatrix} + c \pdv{}{x} \begin{bmatrix} F^+ \\ - F^- \end{bmatrix} = - \frac{1}{2} \vec j_y \begin{bmatrix} 1 \\ 1 \end{bmatrix}
+{{< /katex >}}
+
+We notice the form of a conservation law. Notice on the left-hand side, we have the total derivative in Lagrangian frame moving at velocity \\( \pm c \\). We can define some other relevant terms. The Poynting flux is then
+
+{{< katex display >}}
+P = c \left[ \overbrace{(F^+)^2}^{\text{+ direction}} - \overbrace{(F^-)^2}^{\text{- direction}} \right]
+{{< /katex >}}
+
+The energy density is \\( (F^+)^2 + (F^-)^2 \\). We can update the fields in the Lagrangian frame of reference
+
+{{< katex display >}}
+\frac{F^+( t + \Delta t, x + c \Delta t) - F^+(t, x)}{\Delta t} = - \frac{1}{2} j_y (t + \frac{\Delta t}{2}, x + c \frac{\Delta t}{2})
+{{< /katex >}}
+
+{{< katex display >}}
+\frac{F^-( t + \Delta t, x - c \Delta t) - F^-(t, x)}{\Delta t} = - \frac{1}{2} j_y (t + \frac{\Delta t}{2}, x - c \frac{\Delta t}{2})
+{{< /katex >}}
+
+To properly center the current density relative to \\( \vec E \\), \\( \vec B \\) it must be centered at time step \\( n + 1/2 \\). Velocity is already centered properly to give \\( j_y ^{n + 1/2} \\). The location is given at \\( x_i ^n \\) and \\( x_{i} ^{n+1} \\), and are used to center \\( j_y \\) to the grid.
+
+Considering the special case \\( \Delta x = c \Delta t \\), the method simplifies (though this is not a limitation of the method, just a simplified case):
+
+{{< katex display >}}
+{F_j^+}^{n+1} = {F_{j-1} ^+}^n - \frac{\Delta t}{4} \underbrace{\left({j_y}_j ^{n + 1/2} + {j_y}_{j - 1} ^{n + 1/2} \right)}_{2{j_y}_{j - 1/2}}
+{{< /katex >}}
+{{< katex display >}}
+{F_j^-}^{n+1} = {F_{j+1} ^-}^n - \frac{\Delta t}{4} \underbrace{\left({j_y}_j ^{n + 1/2} + {j_y}_{j + 1} ^{n + 1/2} \right)}_{2{j_y}_{j + 1/2}}
+{{< /katex >}}
+
+<p align="center"> <img alt="13.png" src="/r/img/545/13.png" /> </p>
+
+### Current Weighting
+
+For arbitrary values of \\( \Delta x \\), we interpolate the value of \\( j_y \\) using the shape functions. Current weighting is always required for electrodynamic PIC. We still need charge weighting to compute \\( E_x \\).
+
+Given the particle's position at \\( x_i ^n \\) and \\( x_i ^{n+1} \\), we use the shape function to distribute \\( v_i ^{n + 1/2} \\) across \\( j_{j - 1/2} ^{n + 1/2} \\) and \\( j_{j + 1/2} ^{n + 1/2} \\)
+
+{{< katex display >}}
+{j_y}_{j \pm 1/2} ^{n + 1/2} = \sum_i q_i v_i ^{n + 1/2} \left[ \frac{S(x_{j \pm 1} - x_i ^{n + 1}) + S(x_j - x_i ^n)}{2} \right]
+{{< /katex >}}
