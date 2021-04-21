@@ -4,6 +4,10 @@ weight: 30
 # bookToc: false
 ---
 
+{{< katex display >}}
+
+{{< /katex >}}
+
 # Particle-In-Cell Model (Particle model revisited)
 
 The order of magnitude issues with the N-body model prevent a direct application in even simple laboratory plasmas. In a plasma with \\( N = O(10^{21}) \\), we have interactions on the order of \\( O(10^{42}) \\) making direct computation completely impractical.
@@ -678,3 +682,140 @@ Given the particle's position at \\( x_i ^n \\) and \\( x_i ^{n+1} \\), we use t
 {{< katex display >}}
 {j_y}_{j \pm 1/2} ^{n + 1/2} = \sum_i q_i v_i ^{n + 1/2} \left[ \frac{S(x_{j \pm 1} - x_i ^{n + 1}) + S(x_j - x_i ^n)}{2} \right]
 {{< /katex >}}
+
+### Longitudinal Electric Field
+
+In electrodynamic PIC, the longitudinal electric field \\( E_x \\) is computed as we did in the electrostatic case
+
+{{< katex display >}}
+\div \vec E = \div ( E_x \vu x + E_y \vu y) = \pdv{}{x} E_x = \rho / \epsilon_0
+{{< /katex >}}
+
+This implies that the wave vector \\( \vec k \\) is only in the \\( \vu x \\) direction.
+
+### Electrodynamic PIC algorithm
+
+To advance electrodynamic PIC by a single time step.
+
+At time \\( n-1 \\), we already know:
+
+- \\( x^{n-1} \\)
+- \\( v^{n-3/2} \\)
+- \\( E_x ^{n-1} \\)
+- \\( E_y ^{n-1} \\)
+- \\( B_z ^{n-1} \\)
+
+<p align="center"> <img alt="15.png" src="/r/img/545/15.png" /> </p>
+
+1. At position \\( x^{n-1} \\), we compute the particle position
+{{< katex display >}}
+x^{n-1} \rightarrow \rho_c ^{n-1}
+{{< /katex >}}
+2. We solve Poisson's equation using the source terms at \\( n-1 \\)
+{{< katex display >}}
+\rho_c ^{n-1} \rightarrow E_x ^{n-1}
+{{< /katex >}}
+3. Weight the fields to the grid to get forces
+{{< katex display >}}
+E_x ^{n-1}, E_y ^{n-1}, B_z ^{n-1} \rightarrow F_x ^{n-1}, F_y ^{n-1}
+{{< /katex >}}
+4. Advance the velocities using the weighted forces
+{{< katex display >}}
+v^{n-3/2}, F_x ^{n-1}, F_y ^{n-1} \rightarrow v^{n-1/2}, j_y ^{n-1/2}
+{{< /katex >}}
+5. Advance the particle's position using the accelerated velocity
+{{< katex display >}}
+v^{n-1/2} \rightarrow x^n
+{{< /katex >}}
+6. Solve Maxwell's equation to advance the transverse fields
+{{< katex display >}}
+E_y ^{n-1}, B_z ^{n-1}, j_y ^{n-1/2} \rightarrow E_y ^n, B_z ^n
+{{< /katex >}}
+
+## Application of PIC - Two Stream Instability
+
+An early use of the PIC method was investigation of beam-beam fusion. The idea is that you could quite easily achieve fusion by colliding two cold, counter-streaming beams. Two ion beams at 100keV can fuse to produce 17.6 MeV, at a gain of about 200. Easy peasy, right? It turns out the two-stream instability prevents us from achieving this exact scenario.
+
+Initially, we can start with two cold beams. Uniform beams will exert no force on each other. But very quickly, we will see out of phase bunching. Any non-uniformity in the density will cause a perturbation in the velocity, along with a matching perturbation in the other beam. These perturbations travel in opposite directions, producing forces that mix the beams and thermalize the plasma. This converts kinetic into thermal energy, spreading the energy across a broad range of velocity. This means that the only ions that still have enough energy to fuse are those out at the tails of the distribution, so the gain goes to pot.
+
+### Dispersion Relation
+
+The dispersion relation for a cold plasma is:
+
+{{< katex display >}}
+\frac{\omega_p ^2}{\omega ^2} = 1
+{{< /katex >}}
+
+If the plasma has a uniform velocity, such that the plasma becomes a cold beam, then the frequency is Doppler shifted
+
+{{< katex display >}}
+\frac{\omega_p ^2}{(\omega - k v_0) ^2} = 1
+{{< /katex >}}
+
+And if we have two cold beams, then
+
+{{< katex display >}}
+\frac{{\omega_p}_1 ^2}{(\omega - k v_1)^2} +\frac{{\omega_p}_2 ^2}{(\omega - k v_2)^2} = 1
+{{< /katex >}}
+
+For identical, counter-streaming beams, \\( v_1 = - v_2 = v_0 \\):
+
+{{< katex display >}}
+\frac{\omega_p ^2}{(\omega - k v_0)^2} + \frac{\omega_p ^2}{(\omega + k v_0)^2} = 1
+{{< /katex >}}
+
+We can solve for \\( \omega \\) and plot \\( |\omega| / \omega_p \\) vs \\( k v_0 / \omega_p \\):
+
+<p align="center"> <img alt="16.png" src="/r/img/545/16.png" /> </p>
+
+The unstable range where we have imaginary solutions for \\( \omega \\) is the **two-stream instability**. We got here from a linear analysis, so we assume \\( v_1 \propto e^{-i \omega t} \\). That's why the unstable solution goes like \\( e^{\gamma t} \\). The dispersion relation is a linear result. As the instability grows over time, nonlinear effects (like trapped particles) and saturation determine the long-term solution.
+
+## Boundary Conditions for Finite Systems
+
+As with all PDEs, boundary conditions can critically affect the solution and require special numerical treatment. Let's consider some specific boundary conditions.
+
+- **Conducting Wall**. The wall will reflect EM fields:
+{{< katex display >}}
+\vu n \cross \vec E = 0 \qquad \rightarrow \qquad \vec E_{\parallel} = 0
+{{< /katex >}}
+
+Gauss's law tells us this leads to to the accumulation of a surface charge density
+
+{{< katex display >}}
+\vu n \cdot \vec E = \rho / \epsilon_0
+{{< /katex >}}
+{{< katex display >}}
+\rightarrow \vec E_n = \rho_s / \epsilon_0
+{{< /katex >}}
+where \\( \rho_s \\) is a surface charge density.
+
+{{< katex display >}}
+\vu n \cdot \vec B = 0 \qquad \rightarrow \qquad \vec B_n = 0
+{{< /katex >}}
+{{< katex display >}}
+\vu n \cdot \pdv{\vec B}{t} = 0 \rightarrow \vec B_n = \text{const.}
+{{< /katex >}}
+{{< katex display >}}
+\vu n \cross \vec B = \mu_0 \vec j_s \rightarrow \vec B_t = \mu_0 \vec j_s \cross \vu n
+{{< /katex >}}
+where \\( \vec j_x \\) is the surface current density.
+
+- **Insulating Wall**. The boundary conditions for an insulating wall will depend on the dielectric properties of the insulating wall. For a perfect insulator,
+
+{{< katex display >}}
+\pdv{\vec E}{\vu n} = 0 \quad (\rho_s = 0)
+{{< /katex >}}
+and
+{{< katex display >}}
+\pdv{\vec B}{\vu n} = 0 \quad (\vec j_s \cdot \vu n = 0)
+{{< /katex >}}
+
+So that's the fields taken care of. What about the particles? At a boundary, they can be reflected, absorbed, or emitted, depending on the material properties and the properties of the impacting/emitted particles. What happens when a particle hits a material boundary depends on:
+
+- The work function of the material
+- Secondary electron and ion emission coefficient
+- Applied or induced field/potential
+- Dielectric strength of material
+- Sputtering properties
+
+It is important to implement numerical boundary conditions that are consistent with the physics we're trying to model.
