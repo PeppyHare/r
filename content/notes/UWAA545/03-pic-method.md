@@ -819,3 +819,72 @@ So that's the fields taken care of. What about the particles? At a boundary, the
 - Sputtering properties
 
 It is important to implement numerical boundary conditions that are consistent with the physics we're trying to model.
+
+### Implementation - Reflected Particles
+
+For the reflection boundary condition, we want to generate a mirror image of the particle's trajectory. To view the scenario, let's look at a 1-dimensional particle traveling towards a reflecting boundary at \\( x=0 \\). We'll plot position along the horizontal axis and time along the vertical.
+
+<p align="center"> <img alt="17.png" src="/r/img/545/17.png" /> </p>
+
+We reflect the velocity when the particle crosses the boundary, such that \\( {v^{n + 3/2}}' \\) now takes us to the reflected position \\( {x^{n + 2}}' \\) instead of \\( x ^{n+2} \\). This eliminates the normal current, \\( \vec j _n = 0 \\)
+
+### Implementation - Absorbed/Emitted particles
+
+For an absorption boundary, when charges and currents reach the boundary, they are deposited on the boundary and build up, unless it is an open boundary.
+
+The inverse situation is emitting particles at the boundary. Charge and current from the boundary.
+
+Let's consider a configuration in which we have electrodes at both side of our boundary, with a driving external current \\( I(t) \\) flowing between them.
+
+<p align="center"> <img alt="18.png" src="/r/img/545/18.png" /> </p>
+
+The total current \\( I \\) is the sum of hte convective plasma current and the displacement current. The total current density is
+
+{{< katex display >}}
+\vec j_{total} = (\rho \vec v)_{plasma} + \pdv{}{t} \vec E _{bias}
+{{< /katex >}}
+
+where \\( \vec E_{bias} \\) is the electric field that will develop across the domain.
+
+To fit such a boundary within our leapfrog framework, all of the values must be properly centered for computing Maxwell's equations.
+
+{{< katex display >}}
+\vec j _{total} ^{n + 1/2} = \vec j _{plasma} ^{n + 1/2} + \frac{\vec E _{bias} ^{n+1} - \vec E _{bias} ^n}{\Delta t}
+{{< /katex >}}
+
+where
+
+{{< katex display >}}
+\vec j_{plasma} ^{n + 1/2} = \frac{1}{L} \sum _i q_i \vec v_i ^{n + 1/2}
+{{< /katex >}}
+
+and 
+
+{{< katex display >}}
+\vec E_{bias} ^n = - \frac{\phi _b ^n - \phi _a ^n}{L} \vu x
+{{< /katex >}}
+
+The current density is then used to solve Ampere's law for the local electric field at the boundary \\( \vec E_{local} \\).
+
+Particles are emitted from the electrode when the total electric field exceeds the threshold to pull particles from the surface (the work function). The process of pulling particles from the electrode when the field exceeds the work function is called **field emission**.
+
+{{< katex display >}}
+\vec E_{total} = \vec E_{bias} + \vec E_{local}
+{{< /katex >}}
+
+We typically emit particles at \\( x_j = \pm \Delta x / 2 \\) with a Maxwellian distribution at the wall temperature using Monte Carlo. We emit particles as long as the fied exceeds the work function.
+
+Absorption leads to material interactions. Absorbed particles deposit their energy into the surface. This can lead to effects like:
+- secondary electron and ion emission
+- sputtering
+- surface heating, which can lead to thermionic emission
+
+### Implementation - Open Boundaries
+
+In general, open boundaries can be difficult for PIC and Poisson solvers in general. This can be thought of as an impedance mismatch between the domain and the boundary. This scenario might occur when we're modeling plasmas in space, where we would like the boundary to be a perfect vacuum, and particles have no interaction with the boundary whatsoever. But with any impedance mismatch, we will get artificial reflections in the EM fields.
+
+A common treatment for PIC codes is to append a dissipative layer to damp outgoing EM waves that enter the layer. Schematically, we draw this as a ramp-up of the impedance at the boundary over a width \\( \delta \\).
+
+<p align="center"> <img alt="19.png" src="/r/img/545/19.png" /> </p>
+
+A damping layer like this which dissipates all EM fields is called a **Perfectly Matched Layer** (PML). To get a PML, \\( \delta \\) must be greater than the longest wavelength of fields in the system \\( \lambda_{longest} \\), or allow non-physical configurations \\( \div \vec B = 0 \\).

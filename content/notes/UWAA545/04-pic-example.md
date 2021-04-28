@@ -12,7 +12,7 @@ Notes and details for an electrostatic PIC implementation.
 
 # Dimensions and Normalizations
 
-To make the relevant physics as easy to model and visualize as possible, let's choose units such that .
+To make the relevant physics as easy to model and visualize as possible, let's choose units such that time is normalized by the plasma frequency and length scales of interest are of order unity. This will make things a _lot_ easier to plot and interpret in the long run, even though normalizations like \\( m = q /(q / m) \\) seem arcane.
 
 The fundamental quantities of interest are:
 
@@ -38,12 +38,11 @@ In SI units, we have:
 - \\( x_{max} \\): Equal to \\( L / 2 \\)
 - \\( v_i \\): Velocity (meters/s) of particle \\( i \\).
 
-In computation units, we have normalized counterparts:
+## Comparing results to theory
 
-- 
-
-
-# Electrostatic Field Solve
+Finding the distance between peaks in the field energy is a good way of measuring the frequency.
 
 
-# Particle Push
+## Notes for write-up
+
+When you read a paper, you typically read the title, abstract, introduction, conclusions, and _look at the figures and captions_. Then, if you want more details on something in particular, you dive into the larger sections. The figures are key to this. They should be clearly labelled and captions, and they should clearly convey a specific idea.
