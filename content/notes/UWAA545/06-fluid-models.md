@@ -102,7 +102,8 @@ where the scalar pressure is \\( P_{\alpha} = n_{\alpha} k T_{\alpha} \\)
 {{< katex display >}}
 n = 2: \quad \frac{1}{\gamma - q} n_{\alpha} \left( \pdv{T_{\alpha}}{t} + \vec v_{\alpha} \cdot \grad T_{\alpha} \right) + P_{\alpha} \div \vec v_{\alpha} = \dot{Q}_{\alpha}
 {{< /katex >}}
-where \\( \dot{Q} _{\alpha} \\) includes the thermal conduction (heat flux vector), collisional heating (Ohmic heating), radiation losses, external heating, and so on. In this way, we've used our equations of state (closures) to express the full equations of motion in terms of our 5N moments \\( (n, \vec v, T) _{\alpha} \\). The closure relations we've used for higher moment variables are
+
+where \\( \dot{Q} _ {\alpha} \\) includes the thermal conduction (heat flux vector), collisional heating (Ohmic heating), radiation losses, external heating, and so on. In this way, we've used our equations of state (closures) to express the full equations of motion in terms of our 5N moments \\( (n, \vec v, T) _ {\alpha} \\). The closure relations we've used for higher moment variables are
 {{< katex display >}}
 \overline{\vec \Pi}_{\alpha} = \nu _{\alpha} \grad \vec v_{\alpha}
 {{< /katex >}}
@@ -118,3 +119,336 @@ Equations of state are used in defining closure relations. For example, for isot
 Another assumption might be a force-free, cold assumption, so \\( T_{\alpha} = 0 \\) and therefore \\( P_{\alpha} = 0 \\).
 
 Adiabatic assumption gives \\( P_{\alpha} \propto n_{\alpha} ^\gamma \\) for adiabatic index \\( \gamma \\) (ratio of specific heats).
+
+
+## Equations of Motion
+
+The fields are governed by Maxwell's equations
+
+{{< katex display >}}
+\epsilon_0 \div \vec E = \sum _\alpha q_\alpha n_\alpha
+{{< /katex >}}
+{{< katex display >}}
+\div \vec B = 0
+{{< /katex >}}
+{{< katex display >}}
+\epsilon_0 \pdv{\vec E}{t} = \frac{1}{\mu_0} \curl \vec B - \sum_\alpha q_\alpha n_\alpha \vec v _\alpha
+{{< /katex >}}
+{{< katex display >}}
+\pdv{\vec B}{t} = - \curl \vec E
+{{< /katex >}}
+
+The thermal conductivity \\( \vec \kappa \\) and electrical resistivity \\( \vec \eta \\) are often functions of the magnetic field \\( \vec B \\).
+
+# Single-Fluid MHD Model
+
+To reduce the 5N fluid model even further, we work to combine the ions and electrons into a single fluid by applying some asymptotic approximations.
+
+{{< katex display >}}
+\epsilon_0 \rightarrow 0 (c \rightarrow \infty) \quad \text{and} \quad m_e \rightarrow 0
+{{< /katex >}}
+{{< katex display >}}
+n_e = Z n_i = n \quad \text{Quasineutrality}
+{{< /katex >}}
+{{< katex display >}}
+Z = 1, q = e \quad \text{Singly-charged}
+{{< /katex >}}
+
+We define our MHD variables as the center-of-mass values:
+
+The mass density \\( \rho \\) is approximately the ion density
+
+{{< katex display >}}
+\rho = n_i m_i + n_e m_e = n m_i \left( 1 + \frac{m_e}{m_i} \right) \approx n m_i
+{{< /katex >}}
+
+The center-of-mass velocity is approximately the ion velocity
+
+{{< katex display >}}
+\vec v = \frac{n_i m_i \vec v_i + n_e m_e \vec v_e}{n_i m_i + n_e m_e} = \frac{m_i \vec v_i + m_e \vec v_e}{m_i + m_e} \approx \vec v_i
+{{< /katex >}}
+
+The pressure is the sum of the species pressures
+
+{{< katex display >}}
+P = P_i + P_e
+{{< /katex >}}
+
+And the current density is approximately the electron current density
+
+{{< katex display >}}
+\vec j = n e (\vec v_i - \vec v_e) \approx - n e \vec v_e
+{{< /katex >}}
+
+We now write the MHD equations in terms of the center of mass quantities
+
+Continuity:
+
+{{< katex display >}}
+\pdv{\rho}{t} + \vec v \cdot \grad \rho = - \rho \div \vec v
+{{< /katex >}}
+
+Momentum:
+
+{{< katex display >}}
+\rho \left[ \pdv{\vec v}{t} + \frac{m_e \vec v_e \cdot \div \vec v_e}{m_i + m_e} + \frac{m_i \vec v_i \cdot \div \vec v_i}{m_i + m_e} \right] + \div P - \vec j \cross \vec B = 0
+{{< /katex >}}
+
+We'll want to revisit the negligible electron mass approximation. If we neglect the electron mass, then the \\( m_e \vec v_e \cdot \grad \vec v_e \\) term can not necessarily be dropped. However, if we neglect the electron inertia, then we can drop it. Doing so gives
+
+{{< katex display >}}
+\rho \left( \pdv{\vec v}{t} + \vec v \cdot \grad \vec v \right) + \grad P - \vec j \cross \vec B = 0
+{{< /katex >}}
+
+The generalized Ohm's law relates current density to the electric field
+
+{{< katex display >}}
+\begin{aligned}
+\pdv{\vec j}{t} + \div ( \vec v \vec j + \vec j \vec v) & = & n \left( \frac{e^2}{m_e} + \frac{e^2}{m_i} \right) ( \vec E + \vec v \cross \vec B) - \left( \frac{e m_i}{m_e} - \frac{e m_e}{m_i} \right) \\
+& & + \frac{\vec j \cross \vec B}{m_i + m_c}- \frac{e}{m_i} \grad P_i + \frac{e}{m_e} \grad P_e + \frac{e}{m_e} \vec R_{ei} - \frac{e}{m_i} \vec R_{ie}
+\end{aligned}
+{{< /katex >}}
+
+For \\( m_e \ll m_i \\) and \\( m_e v_e \ll m_i v_i \\), we get the single-fluid equation of motion:
+
+{{< katex display >}}
+\frac{1}{\epsilon_0 \omega_{p, e} ^2} \pdv{\vec j}{t} = \vec E + \vec v \cross \vec B - \underbrace{\frac{1}{en} \vec j \cross \vec B}_{\text{Hall}} + \underbrace{\frac{1}{en} \div P_e} _ {\text{diamagnetic}} + \underbrace{\frac{1}{en} \vec R_{ei}}_{\text{collisions}}
+{{< /katex >}}
+
+### Assumptions / Asymptotic Approximations
+
+Let's be specific about our assumptions, and provide justifications.
+
+The negligible electron mass \\( m_e \ll m_i \\) is okay since
+{{< katex display >}}
+\frac{m_e}{m_i} < \frac{1}{1836} \approx 0.05 \%
+{{< /katex >}}
+
+Quasineutrality \\( n_i = n_e \\) is accurate down to some scale. If we have a globally neutral plasma \\( N_i = N_e \\), then scale is the Debye length \\( L \gg \lambda_D \\).
+
+The negligible electron inertia \\( m_e v_e \ll m_i v_i \\) is not always justified
+
+{{< katex display >}}
+j = n e (v_i - v_e) = n e v_i \left( 1 - \frac{v_e}{v_i} \right)
+{{< /katex >}}
+{{< katex display >}}
+\frac{m_e v_e}{m_i v_i} = \frac{m_e}{m_i} \left( 1 - \frac{1}{M} \frac{j}{n e v_{th}} \right)
+{{< /katex >}}
+
+where the Mach number \\( M \\) is \\( v_i / v_{th} \\).
+
+Let's see how well this approximation checks out in a laboratory plasma. In the ZaP experiment,
+
+{{< katex display >}}
+I = 10^5A \qquad n = 10^{22} m^{-3} \qquad v_{th} = 10^5 m/s
+{{< /katex >}}
+{{< katex display >}}
+M = 1 \qquad a = 0.01m
+{{< /katex >}}
+Plugging everything in, we get
+{{< katex display >}}
+\frac{m_e v_e}{m_i v_i} = 0.3\%
+{{< /katex >}}
+
+So, not a bad assumption. In contrast, in the HIT-SI3 experiment, we have
+
+{{< katex display >}}
+I = 10^4 \qquad n = 10^{19} m^{-3} \qquad v_{th} = 10^4 m/s \\ M = 0.1 \qquad a = 0.1 m
+{{< /katex >}}
+In this case,
+{{< katex display >}}
+\frac{m_e v_e}{m_i v_i} = 10\%
+{{< /katex >}}
+so the single-fluid approximation does not necessarily apply well there. We might think that moving to larger and larger scale lengths inevitably breaks this assumption, but in a really big tokamak (ITER) we do a pretty good job
+
+{{< katex display >}}
+I = 10^6 A \qquad n = 10^{20} m^{-3} \qquad v_{th} = 10^6 m/s \\
+M =0.1 \qquad a = 1 m
+{{< /katex >}}
+{{< katex display >}}
+\frac{m_e v_e}{m_i v_i} = 0.2 \%
+{{< /katex >}}
+
+Ultimately, most of our assumptions boil down to a low frequency assumption, since large spatial scales and slow evolution, such that \\( c \rightarrow \infty \\) imply low frequency evolution, and the quasineutral condition \\( L \gg \lambda_D \\) leads to a large frequency \\( \omega_p = v_{th} / \lambda_D \\). For \\( \omega \ll \omega_p \\), we can drop the left-hand side of the generalized Ohm's law
+
+{{< katex display >}}
+\cancel{\pdv{\vec j}{t} + \div ( \vec v \vec j + \vec j \vec v)} = n \left( \frac{e^2}{m_e} + \frac{e^2}{m_i} \right) ( \vec E + \vec v \cross \vec B) - \left( \frac{e m_i}{m_e} - \frac{e m_e}{m_i} \right) \\
++ \frac{\vec j \cross \vec B}{m_i + m_c}- \frac{e}{m_i} \grad P_i + \frac{e}{m_e} \grad P_e + \frac{e}{m_e} \vec R_{ei} - \frac{e}{m_i} \vec R_{ie} = 0
+
+{{< /katex >}}
+
+For quasineutrality, we can also drop the displacement current from Ampere's law
+
+{{< katex display >}}
+\mu_0 \epsilon_0 \pdv{\vec E}{t} \approx 0 = \curl \vec B - \mu_0 \vec j
+{{< /katex >}}
+{{< katex display >}}
+c^2 \rightarrow \infty, \quad \mu_0 \epsilon_0 = 1/c^2 \rightarrow 0
+{{< /katex >}}
+{{< katex display >}}
+\epsilon_0 \div \vec E = \rho_c \rightarrow 0
+{{< /katex >}}
+
+Taken together, this is the Hall-MHD plasma model, which is the most complete single-fluid MHD model available.
+
+If the Hall and diamagnetic terms are negligible, we have well magnetized ions with small Larmor radius \\( r_{L, i} \\):
+
+{{< katex display >}}
+\frac{r_{L, i}}{L} \ll 1
+{{< /katex >}}
+
+then the generalized Ohm's law becomes
+
+{{< katex display >}}
+0 = \vec E + \vec v \cross \vec B - \eta \vec j
+{{< /katex >}}
+
+This is the Resistive MHD model. If we remove collisions entirely (\\( \eta \rightarrow 0 \\)), then we have the Ideal MHD Model.
+
+The energy equation is still:
+
+{{< katex display >}}
+\pdv{P}{t} + \vec v \cdot \grad P = - \gamma P \div \vec v
+{{< /katex >}}
+
+For all of these assumptions, the single-fluid MHD model is widely applicable to many plasmas.
+
+# Numerical Solution of Fluid Models
+
+The equations of the plasma fluid models result in different characteristics of the dynamics, depending on the model and the physics that are captured by that model. We can get an idea of what those characteristics are by analyzing the governing equation type, which dictates the appropriate numerical algorithm.
+
+## Equation Types
+
+In general, PDEs and systems of PDEs can be classified as elliptic, parabolic, or hyperbolic.
+
+Consider a general second-order ordinary scalar PDE given by
+
+{{< katex display >}}
+a \pdv{^2 \psi}{x^2} + b \frac{\partial ^2 \psi}{\partial x \partial y} + c \pdv{^2 \psi}{y^2} + d \pdv{\psi}{x} + e \pdv{\psi}{y} + f \psi = g
+{{< /katex >}}
+
+The canonical equation for this PDE in canonical form is
+
+{{< katex display >}}
+a \left( \dv{y}{x} \right)^2 - b \left( \dv{y}{x} \right) + c = 0
+{{< /katex >}}
+
+The PDE is
+
+- elliptic if \\( b ^2 < 4 a c \\)
+- paraboolic if \\( b^2 = 4 a c \\)
+- hyperbolic if \\( b^2 > 4 a c \\)
+
+For example, Poisson's equation is an elliptic equation
+
+{{< katex display >}}
+\pdv{^2 \phi}{x^2} + \pdv{^2 \phi}{y^2} = - \rho / \epsilon_0
+{{< /katex >}}
+{{< katex display >}}
+b = 0 \quad 4ac = 4 \rightarrow b^2 - 4 a c < 0
+{{< /katex >}}
+
+The equation for magnetic diffusion is a parabolic equation
+
+{{< katex display >}}
+\pdv{B_z}{t} = \frac{\eta}{\mu_0} \pdv{^2 B_z}{x^2}
+{{< /katex >}}
+{{< katex display >}}
+b = 0 \quad 4 a c = 0 \rightarrow b^2 - 4 ac = 0
+{{< /katex >}}
+
+Maxwell's equations in a vacuum are hyperbolic:
+
+{{< katex display >}}
+\pdv{\vec E}{t} = c \curl \vec B
+{{< /katex >}}
+{{< katex display >}}
+\pdv{\vec B}{t} = - c \curl \vec E
+{{< /katex >}}
+{{< katex display >}}
+\pdv{^2 \vec B}{t^2} = - c \curl \left( \pdv{\vec E}{t} \right) = c^2 \nabla ^2 \vec B
+{{< /katex >}}
+
+In 1D,
+{{< katex display >}}
+\pdv{^2 B_z}{t^2} = c^2 \pdv{^2 B_z}{x^2}
+{{< /katex >}}
+{{< katex display >}}
+b = 0 \quad 4 a c = - 4 c^2 \rightarrow b^2 - 4 a c > 0
+{{< /katex >}}
+
+### Hyperbolic Equations
+
+For hyperbolic PDEs, the solution at any point depends on a subset of the domain (domain of dependence), and it influences a subset of the domain (domain of influence). This is the same concept as a light cone, where only portions of the domain less than \\( \pm c t \\) away from the current time can affect the current state.
+
+<p align="center"> <img alt="30.png" src="/r/img/545/30.png" /> </p>
+
+The slope of the curves that define the domains of influence/dependence are the characteristics of the equation. They are velocities; typically hyperbolic PDEs describe wave-like behavior, where the characteristic is the speed of the wave. The solution at a point does not necessarily depend on the boundary conditions; it will only do so when the domain of dependence intersects the boundary.
+
+### Parabolic Equations
+
+Parabolic PDEs have solutions that depend on the entire domain, but only at previous times. The domain of dependence includes the boundary conditions, and the initial condition.
+
+<p align="center"> <img alt="31.png" src="/r/img/545/31.png" /> </p>
+
+Parabolic PDEs are generally associated with diffusion-like behavior. The heat equation, viscous flow are parabolic equations.
+
+### Elliptic Equations
+
+For elliptic PDEs, the solution depends on and influences every other point in the domain. The boundary conditions and initial conditions determine the solution at every point in the domain.
+
+<p align="center"> <img alt="32.png" src="/r/img/545/32.png" /> </p>
+
+These equations are associated with steady-state and eigenvalue problems.
+
+We've done this analysis assuming that the constants \\( a \\), \\( b \\), \\( c \\), ... are just that, constant. If they depend on \\( x \\), \\( y \\), or the solution \\( \psi \\) itself, then the equation type can change.
+
+## Systems of Equations
+
+As we've written it, the MHD model is not a scalar equation, but rather a system of equations. To deal with systems of PDEs, we typically write the system as a vector equation in conservation form, then examine the eigenvalues:
+
+{{< katex display >}}
+\pdv{\vec Q}{t} + \pdv{\vec F}{\vec x} = 0
+{{< /katex >}}
+
+where \\( \vec Q \\) is the vector of variables, and \\( \vec F \\) is the vector of fluxes. We can define the flux Jacobian \\( \overline \vec A \equiv \pdv{\vec F}{\vec Q} \\) and rewrite the governing system as an eigenvalue problem
+
+{{< katex display >}}
+\pdv{\vec Q}{t} + \overline \vec A \pdv{\vec Q}{\vec x} = 0
+{{< /katex >}}
+
+The equation type is given by the characteristics of the flux Jacobian:
+
+- Elliptic if the eigenvalues of \\( \overline \vec A \\) are imaginary.
+- Parabolic if eigenvalues of \\( \overline \vec A \\) are repeated and the eigenvectors are not unique.
+- Hyperbolic if the eigenvalues of \\( \overline \vec A \\) are real and the eigenvectors are unique.
+
+### Equation type of Ideal MHD Model
+
+Let's apply this analysis to our ideal MHD model.
+
+{{< katex display >}}
+\pdv{\vec Q}{t} + \div \overline \vec T = 0
+{{< /katex >}}
+where the vector of variables is
+
+{{< katex display >}}
+\vec Q = \begin{bmatrix} \rho \\ \rho \vec v \\ \vec B \\ e\end{bmatrix} \qquad e = \frac{P}{\gamma - 1} + \frac{\rho v^2}{2} + \frac{B^2}{2 \mu_0}
+{{< /katex >}}
+
+and the flux tensor is 
+
+{{< katex display >}}
+\overline \vec T = \begin{bmatrix}
+\rho \vec v \\
+\rho \vec v \vec v - \frac{ \vec B \vec B}{\mu_0} + \left( P + \frac{B^2}{2 \mu_0} \right) \overline \vec 1 \\
+\vec v \vec B - \vec B \vec v \\
+\left( e + P + \frac{B^2}{2 \mu_0} \right) \vec v - \frac{\vec B \cdot \vec v}{\mu_0} \vec B
+ \end{bmatrix}
+{{< /katex >}}
+
+Note that the vector of variables expands out to all of the various components of the vectors we've written:
+
+{{< katex display >}}
+\vec Q = [ \rho, \rho v_x, \rho v_y, \rho v_z, B_x, B_y, B_z, e]
+{{< /katex >}}
