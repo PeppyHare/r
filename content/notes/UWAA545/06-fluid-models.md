@@ -452,3 +452,92 @@ Note that the vector of variables expands out to all of the various components o
 {{< katex display >}}
 \vec Q = [ \rho, \rho v_x, \rho v_y, \rho v_z, B_x, B_y, B_z, e]
 {{< /katex >}}
+
+We call a system of equations "conservative" if the time derivative of a conserved quantity can be written as a divergence of a flux. The divergence theorem makes this clear
+
+{{< katex display >}}
+\pdv{}{t} \int Q \dd V + \oint \dd \vec S \cdot \overline{\vec T} = 0
+{{< /katex >}}
+
+Splitting \\( \overline{\vec T} \\) into components along the \\( x \\), \\( y \\), \\( z \\) directions,
+
+{{< katex display >}}
+\pdv{\vec Q}{t} + \pdv{\vec F}{x} + \pdv{\vec G}{y} + \pdv{\vec H}{z} = 0
+{{< /katex >}}
+
+where
+{{< katex display >}}
+\vec F = \begin{bmatrix}
+\rho u \\
+\rho u^2 - B_x ^2 / \mu_0 + p + B^2 / 2 \mu_0 \\
+\rho u v - B_x B_y / \mu_0 \\
+\rho u w - B_x B_z / \mu_0 \\
+0 \\
+u B_y - B_x v \\
+u B_z - B_x w \\
+\left( e + p + \frac{B^2}{2 \mu_0} \right) u - \frac{\vec B \cdot \vec v}{\mu_0} B_x
+\end{bmatrix}
+{{< /katex >}}
+
+and similar for \\( \vec G \\), \\( \vec H \\). To determine the equation type of our system in 1 dimension, we want to calculate the eigenvalues of the flux Jacobian of \\( \vec F \\)
+
+{{< katex display >}}
+\pdv{\vec Q}{t} + \pdv{\vec F}{x} = 0
+{{< /katex >}}
+{{< katex display >}}
+\pdv{\vec Q}{t} + \underbrace{\pdv{\vec F}{\vec Q}}_{\vec A} \pdv{\vec Q}{x} = 0
+{{< /katex >}}
+where
+{{< katex display >}}
+\vec A = \begin{bmatrix}
+\left. \pdv{F_1}{Q_1} \right|_{Q_i} & \left. \pdv{F_1}{Q_2} \right|_{Q_i} & \ldots \\
+\left. \pdv{F_2}{Q_1} \right|_{Q_i} & \ldots  & \ldots \\
+\ldots & \ldots & \ldots
+\end{bmatrix}
+{{< /katex >}}
+
+When we compute these derivatives, we need to be careful to keep our other conserved quantities constant. For example,
+
+{{< katex display >}}
+\pdv{F_1}{\rho} = \pdv{}{\rho} (\rho u) = 0
+{{< /katex >}}
+
+because \\( (\rho u) \\) is one of the conserved quantities. For \\( F_2 \\),
+
+{{< katex display >}}
+F_2 = \frac{(\rho u)^2}{\rho} - \frac{B_x ^2}{2 \mu_0} + \frac{B_y ^2}{2 \mu_0} + \frac{B_z ^2}{2 \mu_0} + p
+{{< /katex >}}
+
+{{< katex display >}}
+\pdv{F_2}{Q_1} = - \frac{(\rho u )^2}{\rho ^2} + \pdv{p}{Q_1} = - u^2 + \pdv{p}{\rho}
+{{< /katex >}}
+
+where we can write the pressure in terms of the conserved quantities as
+
+{{< katex display >}}
+p = (\gamma - 1) \left[ e - \frac{(\rho u )^2 + (\rho v)^2 + (\rho w)^2}{2 \rho} - \frac{B_x ^2 + B_y ^2 + B_z ^2}{2 \mu_0} \right]
+{{< /katex >}}
+{{< katex display >}}
+\pdv{p}{Q_1} = (\gamma - 1) \left[ \frac{(\rho u )^2 + (\rho v )^2 + (\rho w )^2}{2 \rho ^2} \right] = (\gamma - 1) \frac{u^2 + v^2 + w^2}{2}
+{{< /katex >}}
+{{< katex display >}}
+\pdv{F_2}{Q_2} = 2 \frac{(\rho u)}{\rho} + \pdv{p}{Q_2} = 2 (2 - \gamma) u
+{{< /katex >}}
+{{< katex display >}}
+\pdv{F_2}{Q_3} = \pdv{p}{Q_3} = 2(1 - \gamma) v
+{{< /katex >}}
+
+And so on and so forth for the other elements of \\( \vec A \\). Once we've got the flux Jacobian, we can compute the eigenvalues and eigenvectors of \\( \vec A \\). These will all be real-valued, which tells us that the **ideal MHD equations are hyperbolic**.
+
+The Resistive MHD model can be written as
+
+{{< katex display >}}
+\pdv{\vec Q}{t} + \div \overline{\vec T} + \frac{1}{R_m} \div \overline{\vec T_P} = 0
+{{< /katex >}}
+
+We know that
+{{< katex display >}}
+\pdv{\vec Q}{t} + \frac{1}{R_m} \div \overline{\vec T_p} = 0
+{{< /katex >}}
+
+If we go through the same process for \\( \overline{\vec T_p} \\), we'll find a parabolic system of equations, which is what we would expect from something with "resistive" in its name. So what sort of system *is* resistive MHD. The answer is, of course, "it depends." Depending on the type of phenomena we expect to see in a particular configuration, we'll have a dominant character associated with either wave phenomena or diffusive phenomena. The dominant character determines the appropriate algorithm to use when solving resistive MHD. For example, a large Reynolds number makes the system more hyperbolic.
