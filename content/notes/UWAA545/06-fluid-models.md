@@ -311,6 +311,30 @@ The energy equation is still:
 \pdv{P}{t} + \vec v \cdot \grad P = - \gamma P \div \vec v
 {{< /katex >}}
 
+If we use the definition of energy
+
+{{< katex display >}}
+e = \frac{p}{\gamma - 1} + \frac{1}{2} \rho v^2 + \frac{B^2}{2 \mu_0}
+{{< /katex >}}
+
+If we take the time derivative of this,
+
+{{< katex display >}}
+\pdv{e}{t} = \frac{1}{\gamma - 1} \pdv{p}{t} + \pdv{}{t} \left( \frac{1}{2} \rho v^2 \right) + \pdv{}{t} \left( \frac{B^2}{2 \mu_0} \right)
+{{< /katex >}}
+
+To get the second term, it helps to dot \\( \vec v \\) with \\( v \\):
+
+{{< katex display >}}
+\vec v \cdot \pdv{(\rho \vec v)}{t} + \ldots \rightarrow \pdv{}{t} \left( \frac{1}{2} \rho v^2 \right)
+{{< /katex >}}
+
+and similarly, taking the dot product of \\( \vec B \\) with the induction equation helps to get the third term
+
+{{< katex display >}}
+\vec B \cdot \pdv{\vec B}{t} + \ldots  \rightarrow \pdv{}{t} \left( \frac{B^2}{2 \mu_0} \right)
+{{< /katex >}}
+
 For all of these assumptions, the single-fluid MHD model is widely applicable to many plasmas.
 
 # Numerical Solution of Fluid Models

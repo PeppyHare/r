@@ -192,3 +192,253 @@ In the limit of \\( \Delta x \rightarrow 0 \\) goes to zero, the diffusion term 
 ### Lax-Wendroff Algorithm
 
 Another algorithm known as the Lax-Wendroff algorithm can be less diffusive and is better behaved. It's also derived from a more mathematically rigorous method than the Lax method. We get it through a process called a Cauchy-Kowalevskaya method. 
+
+We can derive Lax-Wendroff as a 2-step method:
+
+1. Use the Lax algorithm to advance the solution from \\( t \\) to \\( t + \Delta t / 2 \\)
+2. Use the leapfrog algorithm to advance from \\( t \\) to \\( t + \Delta t \\)
+
+{{< katex display >}}
+u_{j + 1/2} ^{n + 1/2} = \frac{u_{j+1} ^n + u_j ^n}{2} - \frac{a \Delta t}{2 \Delta x} \left( u_{j + 1} ^n - u_j ^n \right) \quad \text{(Lax advance)}
+{{< /katex >}}
+
+{{< katex display >}}
+u_j ^{n+1} = u_j ^n - \frac{a \Delta t}{\Delta x} \left(u _{j + 1/2} ^{n + 1/2} - u _{j - 1/2} ^{n + 1/2} \right) \quad \text{(Leapfrog advance)}
+{{< /katex >}}
+
+If we write out the stencil for Lax-Wendroff, we see that the algorithm is properly centered
+
+<p align="center"> <img alt="37.png" src="/r/img/545/37.png" /> </p>
+
+For linear equations, the two steps can be combined, and we can see that it's nothing but the combination of FTCS with a diffusion term
+
+{{< katex display >}}
+u_j ^{n+1} = u_j ^n - \underbrace{\frac{a \Delta t}{2 \Delta x} \left( u_{j + 1} ^n - u_{j - 1} \right)}_ {\text{FTCS}} + \underbrace{\frac{a^2 \Delta t^2}{2 \Delta x ^2} \left( u_{j+1} ^n - 2 u_j ^n + u_{j - 1} ^n \right)} _{\text{Diffusion}}
+{{< /katex >}}
+
+which approximates the PDE
+
+{{< katex display >}}
+\pdv{u}{t} + a \pdv{u}{x} = \frac{a^2 \Delta t}{2} \pdv{^2 u}{x ^2}
+{{< /katex >}}
+
+Lax-Wendroff has an accuracy of \\( \mathcal{O}(\Delta t ^2, \Delta x^2) \\). Because of this, it's a very useful algorithm.
+
+If the system is non-linear, then we do apply Lax-Wendroff as a 2-step process. For instance, if we look at the form of the MHD equations,
+
+{{< katex display >}}
+\pdv{\vec Q}{t} + \pdv{\vec F}{x} = 0
+{{< /katex >}}
+
+The first Lax advance will be
+
+{{< katex display >}}
+Q_{j + 1/2} ^{n + 1/2} = \frac{Q_{j + 1} ^n + Q_j ^n}{2} - \frac{\Delta t}{2 \Delta x} \left( F_{j + 1} ^n - F_j ^n \right)
+{{< /katex >}}
+
+and the leapfrog advance is
+
+{{< katex display >}}
+Q_j ^{n + 1} = Q_j ^n - \frac{\Delta t}{\Delta x} \left( F_{j + 1/2} ^{n + 1/2} - F_{j - 1/2} ^{n + 1/2} \right)
+{{< /katex >}}
+
+There is a way to generalize the Lax-Wendroff procedure, which produces the class of Lax-Wendroff-type algorithms. To step from \\( n \\) to \\( n + 1 \\), we first compute the solution at an intermediate step \\( n + \alpha \\) at some intermediate grid points \\( j + \beta \\). These algorithms are described by the stencil:
+
+<p align="center"> <img alt="38.png" src="/r/img/545/38.png" /> </p>
+
+For \\( \alpha = \beta = \frac{1}{2} \\), we get the Lax-Wendroff algorithm we just described. There's another useful algorithm known as the MacCormack algorithm, for which \\( \alpha = 1, \beta = 0 \\):
+
+{{< katex display >}}
+\overline{Q}_j = Q _j ^n - \frac{\Delta t}{\Delta x} \left( F_{j + 1} ^n - F_{j} ^n \right) \quad \text{(predictor step)}
+{{< /katex >}}
+{{< katex display >}}
+\overline{\overline{Q}}_j = Q_j ^n - \frac{\Delta t}{\Delta x} \left( \overline{F}_j - \overline{F} _{j - 1} \right) \quad \text{(corrector step)}
+{{< /katex >}}
+{{< katex display >}}
+Q_j ^{n + 1} = \frac{\overline{Q}_j + \overline{\overline{Q}}_j}{2} = \frac{\overline{Q}_j + Q_j ^n}{2} - \frac{\Delta t}{2 \Delta x} \left( \overline{F}_j - \overline{F}_{j - 1} \right)
+{{< /katex >}}
+where \\( \overline{F}_j = F(\overline{Q}_j) \\). The MacCormack algorithm is also \\( \mathcal{O}(\Delta t ^2, \Delta x ^2) \\). In some cases it can be better (more stable) for multi-dimensional problems.
+
+We've written these algorithms out in 1D. In 3D MHD, we can write out our system of equations as:
+
+{{< katex display >}}
+\pdv{\vec Q}{t} + \pdv{\vec F}{x} + \pdv{\vec G}{y} + \pdv{\vec H}{z} = 0
+{{< /katex >}}
+
+We can write the predictor step as
+
+{{< katex display >}}
+\overline{Q} _{i,j,k} = Q^n _{i,j,k} - \frac{\Delta t}{\Delta x} \left( F _{i+1, j, k} - F _{i, j, k} ^n \right) - \frac{\Delta t}{\Delta y} \left( F _{i, j+1, k} - F _{i, j, k} ^n \right) - \frac{\Delta t}{\Delta z} \left( F _{i, j, k+1} - F _{i, j, k} ^n \right)
+{{< /katex >}}
+
+and the corrector step as
+
+{{< katex display >}}
+\begin{aligned}
+\overline{\overline{Q}}_{i, j, k} & = & Q _{i, j, k} ^n - \frac{\Delta t}{\Delta x} \left( \overline{F}_{i, j, k} - \overline{F}_{i-1, j, k} \right)  - \frac{\Delta t}{\Delta y} \left( \overline{F}_{i, j, k} - \overline{F}_{i, j-1, k} \right) \\ & &  - \frac{\Delta t}{\Delta z} \left( \overline{F}_{i, j, k} - \overline{F}_{i, j, k-1} \right)
+\end{aligned}
+{{< /katex >}}
+
+{{< katex display >}}
+Q_{ijk} ^{n + 1} = \frac{\overline{Q} + \overline{\overline{Q}}}{2} 
+{{< /katex >}}
+
+To ensure stability, the domain of dependence must be contained in the numerical domain of dependence. If we plot out the slope of the zone of dependence, the physical domain has a slope \\( |1 / \lambda_{max}| \\), while the numerical domain has a slope \\( |\Delta t / \Delta x| \\):
+
+<p align="center"> <img alt="39.png" src="/r/img/545/39.png" /> </p>
+
+which gives us the stability condition:
+{{< katex display >}}
+\frac{\Delta t}{\Delta x} \left| \lambda _{max} \right| \leq 1
+{{< /katex >}}
+
+where \\( \lambda_{max} \\) is the maximum eigenvalue of the flux Jacobian \\( \pdv{\vec F}{\vec Q} \\). In 2D, we have
+
+{{< katex display >}}
+\frac{\Delta t}{\Delta x} \left| \lambda _{A, max} \right| + \frac{\Delta t}{\Delta y} \left| \lambda _{B, max} \right| \leq 1
+{{< /katex >}}
+
+where \\( \vec A = \pdv{\vec F}{\vec Q} \\) and \\( \vec B = \pdv{\vec G}{\vec Q} \\).
+
+In standard gas dynamics, where the situation is much simpler, the eigenvalues are \\( \lambda_A = (u, u + v_s, u - v_s) \\), where \\( v_s \\) is the sound speed. The stability condition is then:
+
+{{< katex display >}}
+\Delta t \leq \left( \frac{|u| + v_s}{\Delta x} + \frac{|v| + v_s}{\Delta y} \right)
+{{< /katex >}}
+
+For high speed flows, which have \\( v > \lambda \\) for any of the characteristic speeds, sometimes additional diffusion is necessary:
+
+{{< katex display >}}
+\pdv{\vec Q}{t} + \pdv{\vec F}{x} + \pdv{\vec G}{y} + \pdv{\vec H}{z} = \sigma \grad ^2 \vec Q
+{{< /katex >}}
+
+This diffusivity can be added after we perform an update. For example, for the 2D MacCormack algorithm we can write
+
+{{< katex display >}}
+\left( Q_{i, j} ^{n + 1} \right)' = Q_{ij} ^{n + 1} + \Delta t \sigma \left[ \frac{\left( Q_{i + 1, j} ^{n + 1} - 2 Q_{i, j} ^{n + 1} + Q_{i-1, j} ^{n + 1}\right)}{\Delta x^2} + \frac{\left( Q_{i, j+1} ^{n + 1} - 2 Q_{i, j} ^{n + 1} + Q_{i, j-1} ^{n + 1}\right)}{\Delta y^2}\right]
+{{< /katex >}}
+
+This helps to smooth out the oscillations that can result from a steep change in \\( Q \\):
+
+<p align="center"> <img alt="40.png" src="/r/img/545/40.png" /> </p>
+
+We can set \\( \sigma \\) to a constant everywhere, and a typical value might be
+
+{{< katex display >}}
+\frac{\sigma \Delta t}{\Delta x^2} < 0.25
+{{< /katex >}}
+
+You can also make \\( \sigma \propto \div \vec v \\), so that we only add diffusion in the region of shocks or supersonic flows.
+
+### Method 2: Upwind Difference Flux
+
+Going back to our model equation can write the advection equation as
+
+{{< katex display >}}
+\pdv{u}{t} + a \pdv{u}{x} = 0
+{{< /katex >}}
+{{< katex display >}}
+\pdv{u}{t} + \pdv{f}{x}  = 0 \qquad (f = au)
+{{< /katex >}}
+
+The simple upwind difference is expressed as
+
+{{< katex display >}}
+u_j ^{n+1} = u_j ^n - \frac{a \Delta t}{\Delta x} \begin{cases} (u_j ^n - u_{j-1} ^n) \quad &\text{if}& a \geq 0 \\
+(u_{j+1} ^n - u_{j} ^n) \quad &\text{if}& a \geq 0 \end{cases}
+{{< /katex >}}
+
+<p align="center"> <img alt="41.png" src="/r/img/545/41.png" /> </p>
+
+This works easily enough for the advection equation, but it does not work in general for systems of equations, because we can characteristics which are both positive and negative. We can not, for example, write
+
+{{< katex display >}}
+Q_j ^{n+1} = Q_j ^n - \frac{\Delta t}{\Delta x} \begin{cases} (F_j ^n - F_{j-1} ^n) \quad &\text{if} \quad  \lambda \geq 0 \\ (F_{j+1} ^n - F_{j} ^n) \quad &\text{if} \quad \lambda < 0 \end{cases}
+{{< /katex >}}
+
+Because in general \\( \lambda_i \\) will take both positive and negative values. In gas dynamics, \\( \lambda = (v, v + v_s, v - v_s) \\). In ideal MHD, we have seven waves:
+
+{{< katex display >}}
+\lambda = v, v \pm v_A, v \pm v_{\text{fast}}, v \pm v_{\text{slow}}
+{{< /katex >}}
+
+From a point \\( Q_j ^n \\), waves of each of the characteristics propagate within their own domains:
+
+<p align="center"> <img alt="42.png" src="/r/img/545/42.png" /> </p>
+
+In regions \\( (1) \\) and \\( (2) \\), no information can propagate faster than the fastest characteristic \\( (v \pm v_f) \\). At any point in time, we can draw a horizontal line to see the extent of each domain. At any point in time, some eigenvalues are positive and some are negative. As drawn, \\( v - v_f \\) and \\( v - v_A \\) are negative, and the rest are positive.
+
+To apply an upwind difference, we must split the flux into right- and left-going components
+
+{{< katex display >}}
+F = F^+ + F^-
+{{< /katex >}}
+
+Re-writing our original PDE:
+
+{{< katex display >}}
+\pdv{Q}{t} + \pdv{F}{x} = 0
+{{< /katex >}}
+{{< katex display >}}
+\pdv{Q}{t} + \pdv{F^+}{x} + \pdv{F^-}{x} = 0
+{{< /katex >}}
+
+we can now apply upwind differencing
+
+{{< katex display >}}
+\frac{Q_j ^{n+1} - Q_j ^n}{\Delta t} + \frac{F_j ^+ - F_{j - 1} ^+}{\Delta x} + \frac{F_{j+1} ^- - F_j ^- }{\Delta x} = 0
+{{< /katex >}}
+
+To split \\( F \\) into \\( F^+ \\) and \\( F^- \\), we manipulate the original PDE using the flux Jacobian.
+
+{{< katex display >}}
+\pdv{Q}{t} + \pdv{F}{Q} \pdv{Q}{x} = 0
+{{< /katex >}}
+{{< katex display >}}
+\rightarrow \pdv{Q}{t} + A^+ \pdv{Q}{x} + A^- \pdv{Q}{x} = 0
+{{< /katex >}}
+
+where now \\( A^+ \\) and \\( A^- \\) are the flux Jacobians of \\( F^+ \\) and \\( F^- \\). The eigenvalue decomposition of \\( A \\) is
+
+{{< katex display >}}
+A X = X \Lambda
+{{< /katex >}}
+
+where \\( \Lambda \\) is the diagonal matrix of eigenvalues and \\( X \\) is the matrix of eigenvectors. This means we can write \\( A \\) as
+
+{{< katex display >}}
+A = X \Lambda X^{-1}
+{{< /katex >}}
+
+We can split our PDE into right- and left-going components as:
+
+{{< katex display >}}
+\pdv{Q}{t} + X \Lambda X^{-1} \pdv{Q}{x} = 0
+{{< /katex >}}
+{{< katex display >}}
+\pdv{Q}{t} + X \Lambda ^+ X^{-1} \pdv{Q}{x} + X \Lambda ^- X^{-1} \pdv{Q}{x} = 0
+{{< /katex >}}
+
+where \\( \Lambda ^+ \\) is the diagonal matrix of only right-going eigenvalues, and \\( \Lambda^- \\) is a diagonal matrix of only right-going eigenvalues.
+
+For gas dynamics, the eigenvalues are \\( v, v \pm v_s \\) with \\( 0 < v < v_s \\)
+
+{{< katex display >}}
+\Lambda = \begin{bmatrix} v & 0 & 0 \\ 0 & v + v_s & 0 \\ 0 & 0 & v - v_s \end{bmatrix} \\ = \Lambda ^+ + \Lambda ^-
+{{< /katex >}}
+{{< katex display >}}
+\Lambda ^+ = \begin{bmatrix} v & 0 & 0 \\ 0 & v + v_s & 0 \\ 0 & 0 & 0 \end{bmatrix}
+{{< /katex >}}
+{{< katex display >}}
+\Lambda ^- = \begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & v - v_s \end{bmatrix}
+{{< /katex >}}
+
+Now we can properly upwind difference the flux by defining the flux at grid midpoints, computing \\( F^+ \\) based on \\( F_j \\), and computing \\( F^- \\) based on \\( F_{j+1} \\).
+
+<p align="center"> <img alt="43.png" src="/r/img/545/43.png" /> </p>
+
+{{< katex display >}}
+Q_j ^{n+1} = Q_j ^n - \frac{\Delta t}{\Delta x} \left( F_{j + 1/2} ^n - F_{j - 1/2} ^n \right)
+{{< /katex >}}
+
+By defining the numerical flux at the grid midpoints, this naturally leads to a finite volume implementation
