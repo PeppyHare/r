@@ -441,4 +441,129 @@ Now we can properly upwind difference the flux by defining the flux at grid midp
 Q_j ^{n+1} = Q_j ^n - \frac{\Delta t}{\Delta x} \left( F_{j + 1/2} ^n - F_{j - 1/2} ^n \right)
 {{< /katex >}}
 
-By defining the numerical flux at the grid midpoints, this naturally leads to a finite volume implementation
+By defining the numerical flux at the grid midpoints, this naturally leads to a finite volume implementation.
+
+## Finite Volume Method
+
+Finite volume methods differ from finite difference methods in the quantity which we store at each grid point. If we consider a volume centered at grid point \\( j + 1/2 \\), we can integrate over the cell volume to get the average value of the function over the volume.
+
+{{< katex display >}}
+\pdv{}{t} \underbrace{\int _\Omega  \vec Q \dd \vec V} _ {\int _\Omega \rho \dd \vec V = m _\Omega} + \underbrace{\int _ \Omega \div \vec F \dd \vec V = 0} _{\oint \dd \vec S \cdot \vec F \rightarrow \sum_{\text{sides}} \vec S _j \cdot \vec F _j }
+{{< /katex >}}
+
+<p align="center"> <img alt="44.png" src="/r/img/545/44.png" /> </p>
+
+Because the integral is determined by the fluxes, which are defined along the cell edges rather than the grid points, this sort of method is no longer constrained to evenly-spaced quadrilateral grids. Much more complicated polygons are possible, allowing us to avoid the stair-stepping issues at the boundary of uniform grids.
+
+Fluxes are computed using the upwind method
+
+{{< katex display >}}
+F_{j + 1/2} = F^- _{j + 1} + F_j ^+ = \vec X \vec \Lambda ^- \vec X ^{-1} Q_{j+1} + \vec X \vec \Lambda^+ \vec X^{-1} Q_j
+{{< /katex >}}
+
+Manipulating this a bit, we can get a more convenient form for evaluating the fluxes.
+{{< katex display >}}
+F_{j + 1/2} = \vec X \underbrace{\left( \frac{ \vec \Lambda - |\vec \Lambda|}{2} \right)}_{\text{negative components}} \vec X^{-1} Q_{j+1} + \vec X \underbrace{\left( \frac{\vec \Lambda + |\vec \Lambda| }{2} \right)}_{\text{positive components}} \vec X^{-1} Q_j \\
+= \frac{1}{2} \left( \vec X \vec \Lambda \vec X^{-1} Q_{j+1} + \vec X \vec \Lambda \vec X^{-1} Q_j \right) - \frac{1}{2} \vec X | \vec \Lambda| \vec X^{-1} (Q_{j+1} - Q_j) \\
+= \underbrace{\frac{F_j + F_{j+1}}{2}}_{\text{Centered flux}} - \underbrace{\frac{1}{2} \left( \vec X |\vec \Lambda| \vec X ^{-1} \right) _{j + 1/2} (Q_{j+1} - Q_j)}_{\text{Flux correction}}
+{{< /katex >}}
+
+To calculate \\( \vec X |\vec \Lambda | \vec X^{-1} \\) at grid point \\( j + 1/2 \\), we need to perform some sort of average between \\( Q_j \\) and \\( Q_{j+1} \\). The simplest is just:
+
+{{< katex display >}}
+Q_{j+1/2} = \frac{Q_j + Q_{j+1}}{2}
+{{< /katex >}}
+
+which isn't conservative, but works pretty well. There are other averaging methods, like the Roe average, that attempt to preserve conservative properties by propagating a density average through \\( Q \\).
+
+This is called an Approximate Riemann Solver. It's composed of two separate steps, a centered flux (unstable FTCS), and a flux correction based on the characteristics of the PDE (stable).
+
+# Equilibrium Calculations
+
+From physical expectations, elliptic equations result from equilibrium calculations and eigenvalue systems. In general, we can write elliptic equations as
+{{< katex display >}}
+\vec A \vec x = \vec b
+{{< /katex >}}
+where \\( \vec A \\) may be a nonlinear function of \\( \vec x \\). For example, if we think of Poisson's equation in 1D,
+{{< katex display >}}
+\dv{^2 \phi}{x^2} = - \rho_c
+{{< /katex >}}
+and apply finite differencing,
+{{< katex display >}}
+\frac{\phi_{j+1} - 2 \phi_j + \phi_{j-1}}{\Delta x^2} = - \rho_j
+{{< /katex >}}
+we get a matrix system
+{{< katex display >}}
+\vec A \vec x = \frac{1}{\Delta x^2} \begin{bmatrix} -2 & 1 & 0 & \ldots \\ 1 & -2 & 1 & \ldots \\ \ldots & \ldots & \ldots & \ldots \end{bmatrix} \begin{bmatrix} \phi_1 \\ \phi_2 \\ \ldots \end{bmatrix} = \vec b = - \begin{bmatrix} \rho_1 \\ \rho_2 \\ \ldots \end{bmatrix}
+{{< /katex >}}
+where \\( \vec A \\) is a J by J matrix. In equilibrium calculations, this comes up when solving the Grad-Shafranov equation
+
+{{< katex display >}}
+\Delta ^\star \psi = I I' - \mu_0 r^2 p'
+{{< /katex >}}
+where
+{{< katex display >}}
+I' = \pdv{I}{\psi} \qquad p' = \pdv{p}{\psi}
+{{< /katex >}}
+and
+{{< katex display >}}
+\Delta ^\star \equiv r \pdv{}{r} \frac{r}{r} \pdv{}{r} + \pdv{^2}{z^2}
+{{< /katex >}}
+
+The Grad-Shafranov equation is a nonlinear equation, and we often assume a power series expansion of the current density and pressure
+{{< katex display >}}
+I(\psi) = I_0 + I_1 \psi + I_2 \psi^2 + \ldots
+{{< /katex >}}
+{{< katex display >}}
+p(\psi) = p_0 + p_1 \psi + p_2 \psi^2 + \ldots
+{{< /katex >}}
+
+For a force-free equilibrium (\\( p = 0 \\)) with a linear current profile 
+{{< katex display >}}
+I I' = I_0 I_1 + I_1 ^2 \psi
+{{< /katex >}}
+
+this makes the Grad-Shafranov equation a linear system.
+{{< katex display >}}
+\vec A = \Delta ^\star _{\text{FD}} + I_1 ^2
+{{< /katex >}}
+{{< katex display >}}
+\vec x = \psi_{ij} \qquad \vec b = (I_0 I_1) _{ij}
+{{< /katex >}}
+where \\( \Delta ^\star _{\text{FD}} \\) is a finite difference representation of the \\( \Delta ^\star \\) operator. For a given geometry and poloidal current profile, \\( I_0 \\) and \\( I_1 \\), we can solve \\( \vec A \vec x = \vec b \\) to give \\( \psi(r, z) \\).
+
+Solving \\( \vec A \vec x = \vec b \\) can be done using either direct or indirect (iterative) methods. Direct decomposition methods (like Kramer's rule, Gaussian decomposition) require \\( \mathcal{O}(N^3) \\) operations, where \\( N \\) is the size of the matrix. They also require full matrix storage, even though \\( \vec A \\) is a sparse (tridiagonal) matrix.
+
+Iterative methods help solve this problem. We begin with a solution which is improved upon until we get convergence. If this converges in fewer operations than a full decomposition, then we've saved some time and a lot of in-memory storage space.
+
+{{< katex display >}}
+x^0 \rightarrow x^1 \rightarrow x^2 \rightarrow \ldots
+{{< /katex >}}
+{{< katex display >}}
+\vec x^{n+1} = \vec x^n + \vec B^{-1} (\vec b - \vec A \vec x^n) \\
+= \vec x^n + \vec B^{-1} \vec r^n
+{{< /katex >}}
+
+The technique boils down to a clever choice of \\( \vec B \\). We want to choose an approximation matrix \\( \vec B \\) which is very close to \\( \vec A \\), but is much easier to invert.
+{{< katex display >}}
+\vec B \approx \vec A
+{{< /katex >}}
+For this kind of iterative method, each iteration requires \\( \mathcal{O}(N) \\) operations, and converges in fewer than \\( N \\) iterations. The best iterative methods can converge in \\( \mathcal{O}(N \ln N) \\) total operations.
+
+# Linear Stability
+
+When we studied plasma waves at the beginning of this course, we performed a linearization of the Vlasov equation about an equilibrium state. This is how we got dispersion relations for waves. We assumed an equilibrium of a uniform plasma, with at most static magnetic fields. For more interesting equilibria with nonzero gradients, we follow the same procedure.
+
+First, we linearize the ideal MHD equations about a static equilibrium (\\( \vec v_0 = 0 \\))
+{{< katex display >}}
+\pdv{\rho_1}{t} = - \div (\rho_0 \vec v_1)
+{{< /katex >}}
+{{< katex display >}}
+\pdv{p_1}{t} = - \div (p_0 \vec v_1) + (1 - \Gamma) p_0 \div \vec v_1
+{{< /katex >}}
+{{< katex display >}}
+\pdv{\vec B_1}{t} = \curl (\vec v_1 \cross \vec B_0)
+{{< /katex >}}
+{{< katex display >}}
+\rho _0 \pdv{\vec v_1}{t} + \frac{1}{\mu_0} \left[(\curl \vec B_1) \cross \vec B_0 + (\curl \vec B_0) \cross \vec B_1 \right]
+{{< /katex >}}
