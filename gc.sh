@@ -1,7 +1,7 @@
 #!/bin/bash -ex
 
 git add .
-git reset layouts/partials/docs/inject/content-after.html
+# git reset layouts/partials/docs/inject/content-after.html
 git commit -m "$1"
 git push
 hugo --minify
