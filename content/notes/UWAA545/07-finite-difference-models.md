@@ -268,7 +268,7 @@ We've written these algorithms out in 1D. In 3D MHD, we can write out our system
 We can write the predictor step as
 
 {{< katex display >}}
-\overline{Q} _{i,j,k} = Q^n _{i,j,k} - \frac{\Delta t}{\Delta x} \left( F _{i+1, j, k} - F _{i, j, k} ^n \right) - \frac{\Delta t}{\Delta y} \left( F _{i, j+1, k} - F _{i, j, k} ^n \right) - \frac{\Delta t}{\Delta z} \left( F _{i, j, k+1} - F _{i, j, k} ^n \right)
+\overline{Q} _{i,j,k} = Q^n _{i,j,k} - \frac{\Delta t}{\Delta x} \left( F _{i+1, j, k} - F _{i, j, k} ^n \right) - \frac{\Delta t}{\Delta y} \left( G _{i, j+1, k} - G _{i, j, k} ^n \right) - \frac{\Delta t}{\Delta z} \left( H _{i, j, k+1} - H _{i, j, k} ^n \right)
 {{< /katex >}}
 
 and the corrector step as

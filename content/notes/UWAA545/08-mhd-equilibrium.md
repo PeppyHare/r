@@ -91,7 +91,7 @@ First, we linearize the ideal MHD equations about a static equilibrium (\\( \vec
 \pdv{\vec B_1}{t} = \curl (\vec v_1 \cross \vec B_0)
 {{< /katex >}}
 {{< katex display >}}
-\rho _0 \pdv{\vec v_1}{t} + \frac{1}{\mu_0} \left[(\curl \vec B_1) \cross \vec B_0 + (\curl \vec B_0) \cross \vec B_1 \right]
+\rho _0 \pdv{\vec v_1}{t} = \grad p_1  + \frac{1}{\mu_0} \left[(\curl \vec B_1) \cross \vec B_0 + (\curl \vec B_0) \cross \vec B_1 \right]
 {{< /katex >}}
 
 Given an equilibrium (\\( \rho_0 \\), \\( p_0 \\), \\( \vec B_0 \\)), the linearized MHD equations can be integrated in time to evolve \\( \rho_1 \\), \\( p_1 \\), \\( \vec B_1 \\), \\( \vec v_1 \\). If we do this and \\( \vec v_1 \\) grows in time, then the plasma is unstable.
@@ -134,8 +134,8 @@ To align the \\( r \\) axes, we need to flip this upside-down before we can put 
 The assumed form is implemented in the linear equations. Noting:
 
 {{< katex display >}}
-\pdv{}{\theta} g_1 = \text{Im} \vu g_1 (r, z, t) e^{i m \theta} \\
- = \text{Im} g_1
+\pdv{}{\theta} g_1 = i m \vu g_1 (r, z, t) e^{i m \theta} \\
+ = i m g_1
 {{< /katex >}}
 
 The remaining terms are approximated with finite differences.
