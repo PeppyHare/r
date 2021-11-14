@@ -21,14 +21,12 @@
         { left: "$", right: "$", display: false },
         { left: "\\(", right: "\\)", display: false }],
       throwOnError: false,
+      trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
       macros: {
-        // Algebra-Precal
         "\\lcm": "\\mathop{\\mathrm{lcm}}",
         "\\sen": '\\text{sen}\\,',
-        // Calculus
         "\\dd": "\\mathop{\\mathrm{d} #1}",
         "\\abs": "\\lvert #1 \\rvert",
-        // Physics
         "\\dd": "\\text{d}",
         "\\cross": "\\times",
         "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
@@ -45,6 +43,9 @@
         "\\laplacian": "\\mathbf{\\nabla ^2}",
         "\\label": "{}",
         "\\negadelta": "\\nabla",
+        "\\eqref": "\\href{###1}{(\\text{#1})}",
+        "\\ref": "\\href{###1}{\\text{#1}}",
+        "\\label": "\\htmlId{#1}{}",
       }
     });
   };
