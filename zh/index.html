@@ -4,7 +4,8 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content>
-<meta name=theme-color content="#FFFFFF"><meta property="og:title" content="My Notes">
+<meta name=theme-color content="#FFFFFF">
+<meta name=color-scheme content="light dark"><meta property="og:title" content="My Notes">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://peppyhare.github.io/r/zh/">
@@ -13,7 +14,7 @@
 <link rel=icon href=/r/favicon.png type=image/x-icon>
 <link rel=alternate hreflang=en href=https://peppyhare.github.io/r/ title=Introduction>
 <link rel=alternate hreflang=ru href=https://peppyhare.github.io/r/ru/ title="My Notes">
-<link rel=stylesheet href=/r/book.min.0c766a254e418441a9a6040b003c1dc3437b0e31c396aa0075dc269e14348f4c.css integrity="sha256-DHZqJU5BhEGppgQLADwdw0N7DjHDlqoAddwmnhQ0j0w=" crossorigin=anonymous>
+<link rel=stylesheet href=/r/book.min.9147818aedab74eaa31aefa0f050408d23f07b3e5995e19f4de91bb20216bd40.css integrity="sha256-kUeBiu2rdOqjGu+g8FBAjSPwez5ZleGfTekbsgIWvUA=" crossorigin=anonymous>
 <script defer src=/r/flexsearch.min.js></script>
 <script defer src=/r/zh.search.min.b5ce89e44c8326be2b70540eace0ab41973c3c63b45a3797660c6b60fee35791.js integrity="sha256-tc6J5EyDJr4rcFQOrOCrQZc8PGO0WjeXZgxrYP7jV5E=" crossorigin=anonymous></script>
 <script defer src=/r/sw.min.9e3a83f0b071ebe0141a16a33db93faadb2bdf712473a218febeed35ed243c08.js integrity="sha256-njqD8LBx6+AUGhajPbk/qtsr33Ekc6IY/r7tNe0kPAg=" crossorigin=anonymous></script>
@@ -35,7 +36,7 @@
 <div class=book-menu-content>
 <nav>
 <h2 class=book-brand>
-<a href=/r/><span>My Notes</span>
+<a class="flex align-center" href=/r/><span>My Notes</span>
 </a>
 </h2>
 <div class=book-search>
@@ -43,6 +44,29 @@
 <div class="book-search-spinner hidden"></div>
 <ul id=book-search-results></ul>
 </div>
+<ul class=book-languages>
+<li>
+<input type=checkbox id=languages class=toggle>
+<label for=languages class="flex justify-between">
+<a role=button class="flex align-center">
+<img src=/r/svg/translate.svg class=book-icon alt=Languages>
+Chinese
+</a>
+</label>
+<ul>
+<li>
+<a href=https://peppyhare.github.io/r/>
+English
+</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/ru/>
+Russian
+</a>
+</li>
+</ul>
+</li>
+</ul>
 <ul>
 </ul>
 <ul>
@@ -78,34 +102,6 @@ Hugo Themes
 <article class=markdown></article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
-<div class=book-languages tabindex=0 aria-haspopup=true>
-<ul>
-<li class="flex align-center">
-<img src=/r/svg/translate.svg class=book-icon alt=Languages>
-Chinese
-</li>
-</ul>
-<ul class=book-languages-list>
-<li>
-<a href=https://peppyhare.github.io/r/ class="flex align-center">
-<img src=/r/svg/translate.svg class=book-icon alt=Languages>
-English
-</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/ru/ class="flex align-center">
-<img src=/r/svg/translate.svg class=book-icon alt=Languages>
-Russian
-</a>
-</li>
-<li class=active>
-<a href=https://peppyhare.github.io/r/zh/ class="flex align-center">
-<img src=/r/svg/translate.svg class=book-icon alt=Languages>
-Chinese
-</a>
-</li>
-</ul>
-</div>
 </div>
 <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
 </footer>
