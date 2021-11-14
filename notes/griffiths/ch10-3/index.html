@@ -1,41 +1,586 @@
-<!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="10.3 Point Charges #  10.3.1 Moving Point Charges: Lienard-Wiechert Potentials #  Suppose we have a point charge moving on some trajectory \( \vec w(t) \). If we naively read off the retarded potential
-  \[V(\vec r, t) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\vec r', t_r)}{\gr} \dd \tau'\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;"><meta name=theme-color content="#FFFFFF"><meta property="og:title" content="Point Charges"><meta property="og:description" content="10.3 Point Charges #  10.3.1 Moving Point Charges: Lienard-Wiechert Potentials #  Suppose we have a point charge moving on some trajectory \( \vec w(t) \). If we naively read off the retarded potential
-  \[V(\vec r, t) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\vec r', t_r)}{\gr} \dd \tau'\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;"><meta property="og:type" content="article"><meta property="og:url" content="https://peppyhare.github.io/r/notes/griffiths/ch10-3/"><meta property="article:modified_time" content="2020-10-10T14:54:05-07:00"><title>Point Charges | My Notes</title><link rel=manifest href=/r/manifest.json><link rel=icon href=/r/favicon.png type=image/x-icon><link rel=stylesheet href=/r/book.min.b5acfab5895f64bd14769fac98c8e12ae0bb6f5735b6604c6fabaca02eefa4a8.css integrity="sha256-taz6tYlfZL0Udp+smMjhKuC7b1c1tmBMb6usoC7vpKg="><script defer src=/r/en.search.min.478b6ef39c153e0acb0d97cd2be58eec8c4f81d0040a631853171332602f0866.js integrity="sha256-R4tu85wVPgrLDZfNK+WO7IxPgdAECmMYUxcTMmAvCGY="></script><script defer src=/r/sw.min.7dd1b982abb2287010a43b99e3233ff99ced25fbe0e72dc2e6ad364145177485.js integrity="sha256-fdG5gquyKHAQpDuZ4yM/+ZztJfvg5y3C5q02QUUXdIU="></script><link rel=preload href=/r/katex/fonts/KaTeX_Main-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Main-Bold.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Main-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Math-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Size2-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Size3-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/fonts/roboto-v19-latin-regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/fonts/roboto-v19-latin-700.woff2 as=font type=font/woff2 crossorigin=anonymous></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a href=/r><span>My Notes</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><span>Notes</span><ul><li class=book-section-flat><input type=checkbox id=section-3c2351b6c36eb8737d2b3aab84ebe41a class=toggle>
-<label for=section-3c2351b6c36eb8737d2b3aab84ebe41a class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/UWAA545/>Computational Methods For Plasmas</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/UWAA545/01-syllabus/>Syllabus</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/02-plasma-models/>Plasma Models</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/03-pic-method/>Particle in Cell Model</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/04-pic-example/>PIC - Example Implementation</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/05-electrodynamic-pic/>Multidimensional Electrodynamic PIC</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/06-fluid-models/>Fluid Models for Plasmas</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/07-finite-difference-models/>Finite Difference Methods for MHD</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/08-mhd-equilibrium/>MHD Equilibria</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/formulary/>Formulary</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-6349dd4237c5b36ce5c3738b93bc5885 class=toggle>
-<label for=section-6349dd4237c5b36ce5c3738b93bc5885 class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/UWAA560/>Plasma Diagnostics</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/UWAA560/01-syllabus/>Syllabus</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/02-diagnostic-considerations/>General Diagnostic Considerations</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/03-magnetic-field-diagnostics/>Magnetic Field Diagnostics</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/04-electrostatic-diagnostics/>Electrostatic Diagnostics</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/05-index-of-refraction-measurements/>Index of Refraction Measurements</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/06-spectroscopic-measurements/>Spectroscopic Measurements</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/90-student-lectures/>Student Lectures</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/91-zeeman-spectroscopy/>My class lecture</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/formulary/>Formulary</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-edf338bf880234e7aba93d04934ebde0 class=toggle>
-<label for=section-edf338bf880234e7aba93d04934ebde0 class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/UWAA558/>MHD Theory</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/UWAA558/01-syllabus/>Syllabus</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/02-plasma-models/>Plasma Models</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/03-plasma-fluid-model/>Plasma Fluid Model</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/04-two-fluid-plasma-model/>Two-Fluid Plasma Model</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/05-mhd-model/>Magnetohydrodynamic (MHD) Model</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/06-boundary-conditions/>Boundary Conditions</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/>Equilibrium for Fusion</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/08-1d-equilibria/>1-D Equilibria</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/09-2d-equilibria/>2D Equilibria</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/10-equilibrium-of-3d-configurations/>Equilibrium of 3D Configurations</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/11-mhd-stability/>MHD Stability</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/formulary/>Formulary</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-413f74fd9b5926250a41b61f37ddacc6 class=toggle>
-<label for=section-413f74fd9b5926250a41b61f37ddacc6 class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/UWAA557/>Physics of Fusion Plasmas</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-0/>Rules of thumb</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-1/>Statistical Mechanics</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-2/>Review of E&M</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-3/>Lagrange Multipliers</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-1/>Wall-supported Plasma</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-2/>Collisions</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-3/>Oscillations</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-f5aa9ed14dd55f47a51954bafbe42c68 class=toggle>
-<label for=section-f5aa9ed14dd55f47a51954bafbe42c68 class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/UWAA543/>Computational CFD</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-1/>Introduction to Computational CFD</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-2/>Governing Equations</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-3/>Reduced Models</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-4/>Equation Types</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-5/>Panel Method</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-1/>Finite Difference Algorithms</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-2/>Explicit Finite Difference Algorithms</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-3/>Finite Difference and Finite Volume Methods</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-4/>Implicit Algorithms</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-5/>Numerical Boundary Conditions</a></li></ul></li><li class=book-section-flat><span>Working</span><ul><li><a href=https://peppyhare.github.io/r/notes/working/crews2018/>Crews (2018)</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-ee5e070eb25b63f2c377d750d37f67ae class=toggle checked>
-<label for=section-ee5e070eb25b63f2c377d750d37f67ae class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/griffiths/>Griffiths Introduction to Electrodynamics</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-1/>Vector Algebra</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-2/>Differential Calculus</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-3/>Integral Calculus</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-4/>Curvilinear Coordinates</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-5/>The Dirac Delta Function</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-6/>The Theory of Vector Fields</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch2-1/>The Electric Field</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch2-2/>Divergence and Curl of Electrostatic Fields</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch2-3/>Electric Potential</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch2-4/>Work and Energy in Electrostatics</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch2-5/>Conductors</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch3-1/>Laplace's Equation</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch3-2/>The Method of Images</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch3-3/>Separation of Variables</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch3-4/>Multipole Expansion</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch4-1/>Polarization</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch4-2/>The Field of a Polarized Object</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch4-3/>The Electric Displacement</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch4-4/>The Linear Dielectrics</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch5-1/>The Lorentz Force Law</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch5-2/>The Biot-Savart Law</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch5-3/>The Divergence and Curl of B</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch5-4/>Magnetic Vector Potential</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch6-1/>Magnetization</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch6-2/>The Field of a Magnetized Object</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch6-3/>The Auxiliary Field H</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch6-4/>Linear and Nonlinear Media</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch7-1/>Electromotive Force</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch7-2/>Electromagnetic Induction</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch7-3/>Maxwell's Equations</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch8-0/>Phys 544 Introduction</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch8-1/>Charge and Energy</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch8-2/>Momentum</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch9-1/>Electromagnetic Waves in One Dimension</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch9-2/>Wave Equation for E and B</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch9-3/>Electromagnetic Waves in Matter</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch9-4/>Electromagnetic Waves in Conductors</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch9-5/>Guided Waves</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch10-1/>Scalar and Vector Potentials</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch10-2/>Retarded Potentials</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch10-3/ class=active>Point Charges</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch11-1/>Dipole Radiation</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch3/>Solved Problems Ch3</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch5/>Solved Problems Ch5</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch7/>Solved Problems Ch7</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch9/>Solved Problems Ch9</a></li></ul></li></ul></li></ul><ul><li><a href=https://github.com/Peppyhare/r target=_blank rel=noopener>Github</a></li><li><a href=https://themes.gohugo.io/hugo-book/ target=_blank rel=noopener>Hugo Themes</a></li></ul></nav><script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/r/svg/menu.svg class=book-icon alt=Menu></label>
+<!doctype html><html lang=en dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="10.3 Point Charges #  10.3.1 Moving Point Charges: Lienard-Wiechert Potentials #  Suppose we have a point charge moving on some trajectory \( \vec w(t) \). If we naively read off the retarded potential
+  \[V(\vec r, t) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\vec r', t_r)}{\gr} \dd \tau'\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;">
+<meta name=theme-color content="#FFFFFF"><meta property="og:title" content="Point Charges">
+<meta property="og:description" content="10.3 Point Charges #  10.3.1 Moving Point Charges: Lienard-Wiechert Potentials #  Suppose we have a point charge moving on some trajectory \( \vec w(t) \). If we naively read off the retarded potential
+  \[V(\vec r, t) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\vec r', t_r)}{\gr} \dd \tau'\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://peppyhare.github.io/r/notes/griffiths/ch10-3/"><meta property="article:section" content="notes">
+<meta property="article:modified_time" content="2020-10-10T14:54:05-07:00">
+<title>Point Charges | My Notes</title>
+<link rel=manifest href=/r/manifest.json>
+<link rel=icon href=/r/favicon.png type=image/x-icon>
+<link rel=stylesheet href=/r/book.min.0c766a254e418441a9a6040b003c1dc3437b0e31c396aa0075dc269e14348f4c.css integrity="sha256-DHZqJU5BhEGppgQLADwdw0N7DjHDlqoAddwmnhQ0j0w=" crossorigin=anonymous>
+<script defer src=/r/flexsearch.min.js></script>
+<script defer src=/r/en.search.min.a496f3b2243e59103bd55301c877754d0df8ababaf33a536c01da9dce836018e.js integrity="sha256-pJbzsiQ+WRA71VMByHd1TQ34q6uvM6U2wB2p3Og2AY4=" crossorigin=anonymous></script>
+<script defer src=/r/sw.min.9e3a83f0b071ebe0141a16a33db93faadb2bdf712473a218febeed35ed243c08.js integrity="sha256-njqD8LBx6+AUGhajPbk/qtsr33Ekc6IY/r7tNe0kPAg=" crossorigin=anonymous></script>
+<link rel=preload href=/r/katex/fonts/KaTeX_Main-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=/r/katex/fonts/KaTeX_Main-Bold.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=/r/katex/fonts/KaTeX_Main-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=/r/katex/fonts/KaTeX_Math-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=/r/katex/fonts/KaTeX_Size2-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=/r/katex/fonts/KaTeX_Size3-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=/r/fonts/roboto-v19-latin-regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=/r/fonts/roboto-v19-latin-700.woff2 as=font type=font/woff2 crossorigin=anonymous>
+</head>
+<body dir=ltr>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<div class=book-menu-content>
+<nav>
+<h2 class=book-brand>
+<a href=/r/><span>My Notes</span>
+</a>
+</h2>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
+</div>
+<ul>
+<li class=book-section-flat>
+<span>Notes</span>
+<ul>
+<li class=book-section-flat>
+<input type=checkbox id=section-3c2351b6c36eb8737d2b3aab84ebe41a class=toggle>
+<label for=section-3c2351b6c36eb8737d2b3aab84ebe41a class="flex justify-between">
+<a href=https://peppyhare.github.io/r/notes/UWAA545/>Computational Methods For Plasmas</a>
+</label>
+<ul>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/01-syllabus/>Syllabus</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/02-plasma-models/>Plasma Models</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/03-pic-method/>Particle in Cell Model</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/04-pic-example/>PIC - Example Implementation</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/05-electrodynamic-pic/>Multidimensional Electrodynamic PIC</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/06-fluid-models/>Fluid Models for Plasmas</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/07-finite-difference-models/>Finite Difference Methods for MHD</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/08-mhd-equilibrium/>MHD Equilibria</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/formulary/>Formulary</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<input type=checkbox id=section-6349dd4237c5b36ce5c3738b93bc5885 class=toggle>
+<label for=section-6349dd4237c5b36ce5c3738b93bc5885 class="flex justify-between">
+<a href=https://peppyhare.github.io/r/notes/UWAA560/>Plasma Diagnostics</a>
+</label>
+<ul>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/01-syllabus/>Syllabus</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/02-diagnostic-considerations/>General Diagnostic Considerations</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/03-magnetic-field-diagnostics/>Magnetic Field Diagnostics</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/04-electrostatic-diagnostics/>Electrostatic Diagnostics</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/05-index-of-refraction-measurements/>Index of Refraction Measurements</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/06-spectroscopic-measurements/>Spectroscopic Measurements</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/90-student-lectures/>Student Lectures</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/91-zeeman-spectroscopy/>My class lecture</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/formulary/>Formulary</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<input type=checkbox id=section-edf338bf880234e7aba93d04934ebde0 class=toggle>
+<label for=section-edf338bf880234e7aba93d04934ebde0 class="flex justify-between">
+<a href=https://peppyhare.github.io/r/notes/UWAA558/>MHD Theory</a>
+</label>
+<ul>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/01-syllabus/>Syllabus</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/02-plasma-models/>Plasma Models</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/03-plasma-fluid-model/>Plasma Fluid Model</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/04-two-fluid-plasma-model/>Two-Fluid Plasma Model</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/05-mhd-model/>Magnetohydrodynamic (MHD) Model</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/06-boundary-conditions/>Boundary Conditions</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/>Equilibrium for Fusion</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/08-1d-equilibria/>1-D Equilibria</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/09-2d-equilibria/>2D Equilibria</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/10-equilibrium-of-3d-configurations/>Equilibrium of 3D Configurations</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/11-mhd-stability/>MHD Stability</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/formulary/>Formulary</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<input type=checkbox id=section-413f74fd9b5926250a41b61f37ddacc6 class=toggle>
+<label for=section-413f74fd9b5926250a41b61f37ddacc6 class="flex justify-between">
+<a href=https://peppyhare.github.io/r/notes/UWAA557/>Physics of Fusion Plasmas</a>
+</label>
+<ul>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-0/>Rules of thumb</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-1/>Statistical Mechanics</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-2/>Review of E&M</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-3/>Lagrange Multipliers</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-1/>Wall-supported Plasma</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-2/>Collisions</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-3/>Oscillations</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<input type=checkbox id=section-f5aa9ed14dd55f47a51954bafbe42c68 class=toggle>
+<label for=section-f5aa9ed14dd55f47a51954bafbe42c68 class="flex justify-between">
+<a href=https://peppyhare.github.io/r/notes/UWAA543/>Computational CFD</a>
+</label>
+<ul>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-1/>Introduction to Computational CFD</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-2/>Governing Equations</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-3/>Reduced Models</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-4/>Equation Types</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-5/>Panel Method</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-1/>Finite Difference Algorithms</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-2/>Explicit Finite Difference Algorithms</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-3/>Finite Difference and Finite Volume Methods</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-4/>Implicit Algorithms</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-5/>Numerical Boundary Conditions</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<span>Working</span>
+<ul>
+<li>
+<a href=https://peppyhare.github.io/r/notes/working/crews2018/>Crews (2018)</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<input type=checkbox id=section-ee5e070eb25b63f2c377d750d37f67ae class=toggle checked>
+<label for=section-ee5e070eb25b63f2c377d750d37f67ae class="flex justify-between">
+<a href=https://peppyhare.github.io/r/notes/griffiths/>Griffiths Introduction to Electrodynamics</a>
+</label>
+<ul>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-1/>Vector Algebra</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-2/>Differential Calculus</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-3/>Integral Calculus</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-4/>Curvilinear Coordinates</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-5/>The Dirac Delta Function</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-6/>The Theory of Vector Fields</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch2-1/>The Electric Field</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch2-2/>Divergence and Curl of Electrostatic Fields</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch2-3/>Electric Potential</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch2-4/>Work and Energy in Electrostatics</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch2-5/>Conductors</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch3-1/>Laplace's Equation</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch3-2/>The Method of Images</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch3-3/>Separation of Variables</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch3-4/>Multipole Expansion</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch4-1/>Polarization</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch4-2/>The Field of a Polarized Object</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch4-3/>The Electric Displacement</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch4-4/>The Linear Dielectrics</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch5-1/>The Lorentz Force Law</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch5-2/>The Biot-Savart Law</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch5-3/>The Divergence and Curl of B</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch5-4/>Magnetic Vector Potential</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch6-1/>Magnetization</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch6-2/>The Field of a Magnetized Object</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch6-3/>The Auxiliary Field H</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch6-4/>Linear and Nonlinear Media</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch7-1/>Electromotive Force</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch7-2/>Electromagnetic Induction</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch7-3/>Maxwell's Equations</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch8-0/>Phys 544 Introduction</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch8-1/>Charge and Energy</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch8-2/>Momentum</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch9-1/>Electromagnetic Waves in One Dimension</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch9-2/>Wave Equation for E and B</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch9-3/>Electromagnetic Waves in Matter</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch9-4/>Electromagnetic Waves in Conductors</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch9-5/>Guided Waves</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch10-1/>Scalar and Vector Potentials</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch10-2/>Retarded Potentials</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch10-3/ class=active>Point Charges</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch11-1/>Dipole Radiation</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch3/>Solved Problems Ch3</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch5/>Solved Problems Ch5</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch7/>Solved Problems Ch7</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch9/>Solved Problems Ch9</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<a href=https://github.com/Peppyhare/r target=_blank rel=noopener>
+Github
+</a>
+</li>
+<li>
+<a href=https://themes.gohugo.io/hugo-book/ target=_blank rel=noopener>
+Hugo Themes
+</a>
+</li>
+</ul>
+</nav>
+<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=/r/svg/menu.svg class=book-icon alt=Menu>
+</label>
 <strong>Point Charges</strong>
-<label for=toc-control><img src=/r/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#103-point-charges>10.3 Point Charges</a><ul><li><a href=#1031-moving-point-charges-lienard-wiechert-potentials>10.3.1 Moving Point Charges: Lienard-Wiechert Potentials</a></li><li><a href=#1032-the-fields-of-a-moving-point-charge>10.3.2: The Fields of a Moving Point Charge</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=103-point-charges>10.3 Point Charges
-<a class=anchor href=#103-point-charges>#</a></h1><h2 id=1031-moving-point-charges-lienard-wiechert-potentials>10.3.1 Moving Point Charges: Lienard-Wiechert Potentials
-<a class=anchor href=#1031-moving-point-charges-lienard-wiechert-potentials>#</a></h2><p>Suppose we have a point charge moving on some trajectory \( \vec w(t) \). If we naively read off the retarded potential</p><link rel=stylesheet href=/r/katex/katex.min.css><script defer src=/r/katex/katex.min.js></script><script defer src=/r/katex/auto-render.min.js onload=loadKatex();></script><span>\[V(\vec r, t) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\vec r', t_r)}{\gr} \dd \tau'\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>might suggest that the potential is just</p><span>\[\frac{1}{4 \pi \epsilon_0} \frac{q}{\gr}\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>But that&rsquo;s wrong for a subtle reason: It is true that for a point source \( \gr \) comes outside the integral, but the remainder</p><span>\[\int \rho(\vec r', t_r) \dd \tau'\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>is not equal to the charge of the particle, and depends on the location of the point \( \vec r \). To calculate the total charge of a configuration, you must integrate \( \rho \) over the entire distribution at one instant of time, but here the retardation \( t_r = t - \gr / c \), obliges us to evaluate \( \rho \) at different times for different parts of the configuration. If the source is moving, this will give a distorted picture of the total charge. You might think that this problem would disappear for point charges, but it doesn&rsquo;t. In Maxwell&rsquo;s electrodynamics, formulated as it is in terms of charge and current densities, a point charge must be regarded as the limit of an extended charge, when the size goes to zero. And for an extended particle, no matter how small, the retardation throws a factor \( (1 - \vu \gr \cdot \vec v / c)^{-1} \) where \( \vec v \) is the velocity of the charge at the retarded time</p><span>\[\int \rho ( \vec r ', t_r) \dd \tau' = \frac{q}{1 - \vu \gr \cdot \vec v / c}\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><blockquote class="book-hint info"><p><strong>Theorem:</strong> \( \int \rho ( \vec r ', t_r) \dd \tau' = \frac{q}{1 - \vu \gr \cdot \vec v / c} \)</p><p>This is a purely geometrical effect, and it may help to tell the story in a less abstract context. You will not have noticed it, for obvious reasons, the the fact is that a train coming towards you looks a little longer than it really is, because the light you receive from the caboose left earlier than the light you receive simultaneously from the engine, and at that earlier time the train was farther away (Fig 10.6). In the interval it takes light from the caboose to travel the extra distance \( L' \), the train itself moves a distance \( L' - L \)</p><span>\[\frac{L'}{c} = \frac{L' - L}{v} \quad \text{or} \quad L' = \frac{L}{1-v/c} \]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{<pre><code>&quot;\\lcm&quot;:&quot;\\mathop{\\mathrm{lcm}}&quot;,&quot;\\sen&quot;:'\\text{sen}\\,',&quot;\\dd&quot;:&quot;\\mathop{\\mathrm{d}#1}&quot;,&quot;\\abs&quot;:&quot;\\lvert#1\\rvert&quot;,&quot;\\dd&quot;:&quot;\\text{d}&quot;,&quot;\\cross&quot;:&quot;\\times&quot;,&quot;\\pdv&quot;:&quot;\\frac{\\partial#1}{\\partial#2}&quot;,&quot;\\curl&quot;:&quot;\\nabla\\cross#1&quot;,&quot;\\vu&quot;:&quot;\\mathbf{\\hat{#1}}&quot;,&quot;\\vdot&quot;:&quot;\\dot&quot;,&quot;\\div&quot;:&quot;\\nabla\\cdot#1&quot;,&quot;\\grad&quot;:&quot;\\nabla&quot;,&quot;\\dv&quot;:&quot;\\frac{d\\,#1}{d\\,#2}&quot;,&quot;\\gr&quot;:&quot;\\gamma&quot;,&quot;\\vec&quot;:&quot;\\mathbf{#1}&quot;,&quot;\\tagl&quot;:&quot;\\tag{#1}&quot;,&quot;\\eqref&quot;:&quot;(#1)&quot;,&quot;\\laplacian&quot;:&quot;\\mathbf{\\nabla^2}&quot;,&quot;\\label&quot;:&quot;{}&quot;,&quot;\\negadelta&quot;:&quot;\\nabla&quot;,}});</code></pre><p>};</script></p><p align=center><img alt="Figure 10.6" src=/r/img/griffiths/10.6.png></p><p>So approaching trains appear longer, by a factor \( (1 - v/c)^{-1} \). By contrast, a train going away from you looks shorter, by a factor \( (1 + v/c)^{-1} \). In general, if the train&rsquo;s velocity makes an angle \( \theta \) with your line of sight, the extra distance light from the caboose must cover is \( L' \cos \theta \). In the time \( L' \cos \theta / c \), then, the train moves a distance \( (L' - L) \)</p><span>\[\frac{L' \cos \theta}{c} = \frac{L' - L}{v} \quad \text{or} \quad L' = \frac{L}{1 - v \cos \theta / c} \]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{<pre><code>&quot;\\lcm&quot;:&quot;\\mathop{\\mathrm{lcm}}&quot;,&quot;\\sen&quot;:'\\text{sen}\\,',&quot;\\dd&quot;:&quot;\\mathop{\\mathrm{d}#1}&quot;,&quot;\\abs&quot;:&quot;\\lvert#1\\rvert&quot;,&quot;\\dd&quot;:&quot;\\text{d}&quot;,&quot;\\cross&quot;:&quot;\\times&quot;,&quot;\\pdv&quot;:&quot;\\frac{\\partial#1}{\\partial#2}&quot;,&quot;\\curl&quot;:&quot;\\nabla\\cross#1&quot;,&quot;\\vu&quot;:&quot;\\mathbf{\\hat{#1}}&quot;,&quot;\\vdot&quot;:&quot;\\dot&quot;,&quot;\\div&quot;:&quot;\\nabla\\cdot#1&quot;,&quot;\\grad&quot;:&quot;\\nabla&quot;,&quot;\\dv&quot;:&quot;\\frac{d\\,#1}{d\\,#2}&quot;,&quot;\\gr&quot;:&quot;\\gamma&quot;,&quot;\\vec&quot;:&quot;\\mathbf{#1}&quot;,&quot;\\tagl&quot;:&quot;\\tag{#1}&quot;,&quot;\\eqref&quot;:&quot;(#1)&quot;,&quot;\\laplacian&quot;:&quot;\\mathbf{\\nabla^2}&quot;,&quot;\\label&quot;:&quot;{}&quot;,&quot;\\negadelta&quot;:&quot;\\nabla&quot;,}});</code></pre><p>};</script></p><p>Since the effect does not distort the dimensions perpendicular to the motion, we can easily move to 3D as</p><span>\[L' = \frac{l}{1 - \vu \gr \cdot \vec v / c} \]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{<pre><code>&quot;\\lcm&quot;:&quot;\\mathop{\\mathrm{lcm}}&quot;,&quot;\\sen&quot;:'\\text{sen}\\,',&quot;\\dd&quot;:&quot;\\mathop{\\mathrm{d}#1}&quot;,&quot;\\abs&quot;:&quot;\\lvert#1\\rvert&quot;,&quot;\\dd&quot;:&quot;\\text{d}&quot;,&quot;\\cross&quot;:&quot;\\times&quot;,&quot;\\pdv&quot;:&quot;\\frac{\\partial#1}{\\partial#2}&quot;,&quot;\\curl&quot;:&quot;\\nabla\\cross#1&quot;,&quot;\\vu&quot;:&quot;\\mathbf{\\hat{#1}}&quot;,&quot;\\vdot&quot;:&quot;\\dot&quot;,&quot;\\div&quot;:&quot;\\nabla\\cdot#1&quot;,&quot;\\grad&quot;:&quot;\\nabla&quot;,&quot;\\dv&quot;:&quot;\\frac{d\\,#1}{d\\,#2}&quot;,&quot;\\gr&quot;:&quot;\\gamma&quot;,&quot;\\vec&quot;:&quot;\\mathbf{#1}&quot;,&quot;\\tagl&quot;:&quot;\\tag{#1}&quot;,&quot;\\eqref&quot;:&quot;(#1)&quot;,&quot;\\laplacian&quot;:&quot;\\mathbf{\\nabla^2}&quot;,&quot;\\label&quot;:&quot;{}&quot;,&quot;\\negadelta&quot;:&quot;\\nabla&quot;,}});</code></pre><p>};</script></p><p>and the apparent volume of the train \( \tau' \) of the train is then related to the actual volume by</p><span>\[\tau' = \frac{\tau}{1 - \vu \gr \cdot \vec v / c} \]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{<pre><code>&quot;\\lcm&quot;:&quot;\\mathop{\\mathrm{lcm}}&quot;,&quot;\\sen&quot;:'\\text{sen}\\,',&quot;\\dd&quot;:&quot;\\mathop{\\mathrm{d}#1}&quot;,&quot;\\abs&quot;:&quot;\\lvert#1\\rvert&quot;,&quot;\\dd&quot;:&quot;\\text{d}&quot;,&quot;\\cross&quot;:&quot;\\times&quot;,&quot;\\pdv&quot;:&quot;\\frac{\\partial#1}{\\partial#2}&quot;,&quot;\\curl&quot;:&quot;\\nabla\\cross#1&quot;,&quot;\\vu&quot;:&quot;\\mathbf{\\hat{#1}}&quot;,&quot;\\vdot&quot;:&quot;\\dot&quot;,&quot;\\div&quot;:&quot;\\nabla\\cdot#1&quot;,&quot;\\grad&quot;:&quot;\\nabla&quot;,&quot;\\dv&quot;:&quot;\\frac{d\\,#1}{d\\,#2}&quot;,&quot;\\gr&quot;:&quot;\\gamma&quot;,&quot;\\vec&quot;:&quot;\\mathbf{#1}&quot;,&quot;\\tagl&quot;:&quot;\\tag{#1}&quot;,&quot;\\eqref&quot;:&quot;(#1)&quot;,&quot;\\laplacian&quot;:&quot;\\mathbf{\\nabla^2}&quot;,&quot;\\label&quot;:&quot;{}&quot;,&quot;\\negadelta&quot;:&quot;\\nabla&quot;,}});</code></pre><p>};</script></p><p>where \( \vu \gr \) is a unit vector from the train to the observer.</p></blockquote><p>Back to our moving point charge, the retarded time is determined implicitly by</p><span>\[| \vec r - \vec w(t_r)| = c(t - t_r)\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><span>\[\vec \gr = \vec r - \vec w(t_r)\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>It follows that</p><span>\[V( \vec r, t) = \frac{1}{4 \pi \epsilon_0} \frac{qc}{(\gr c - \vec \gr \cdot \vec v)}\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>where \( \vec v \) is the velocity of the charge at the retarded time, and \( \vec \gr \) is the vector from the retarded position to the field point \( \vec r \). Moreover, since the current density is \( \rho \vec v \), the vector potential is</p><span>\[\begin{aligned}
+<label for=toc-control>
+<img src=/r/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
+</div>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#103-point-charges>10.3 Point Charges</a>
+<ul>
+<li><a href=#1031-moving-point-charges-lienard-wiechert-potentials>10.3.1 Moving Point Charges: Lienard-Wiechert Potentials</a></li>
+<li><a href=#1032-the-fields-of-a-moving-point-charge>10.3.2: The Fields of a Moving Point Charge</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</aside>
+</header>
+<article class=markdown><h1 id=103-point-charges>
+10.3 Point Charges
+<a class=anchor href=#103-point-charges>#</a>
+</h1>
+<h2 id=1031-moving-point-charges-lienard-wiechert-potentials>
+10.3.1 Moving Point Charges: Lienard-Wiechert Potentials
+<a class=anchor href=#1031-moving-point-charges-lienard-wiechert-potentials>#</a>
+</h2>
+<p>Suppose we have a point charge moving on some trajectory \( \vec w(t) \). If we naively read off the retarded potential</p>
+<link rel=stylesheet href=/r/katex/katex.min.css>
+<script defer src=/r/katex/katex.min.js></script>
+<script defer src=/r/katex/auto-render.min.js onload=loadKatex()></script><span>
+\[V(\vec r, t) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\vec r', t_r)}{\gr} \dd \tau'\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>might suggest that the potential is just</p>
+<span>
+\[\frac{1}{4 \pi \epsilon_0} \frac{q}{\gr}\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>But that&rsquo;s wrong for a subtle reason: It is true that for a point source \( \gr \) comes outside the integral, but the remainder</p>
+<span>
+\[\int \rho(\vec r', t_r) \dd \tau'\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>is not equal to the charge of the particle, and depends on the location of the point \( \vec r \). To calculate the total charge of a configuration, you must integrate \( \rho \) over the entire distribution at one instant of time, but here the retardation \( t_r = t - \gr / c \), obliges us to evaluate \( \rho \) at different times for different parts of the configuration. If the source is moving, this will give a distorted picture of the total charge. You might think that this problem would disappear for point charges, but it doesn&rsquo;t. In Maxwell&rsquo;s electrodynamics, formulated as it is in terms of charge and current densities, a point charge must be regarded as the limit of an extended charge, when the size goes to zero. And for an extended particle, no matter how small, the retardation throws a factor \( (1 - \vu \gr \cdot \vec v / c)^{-1} \) where \( \vec v \) is the velocity of the charge at the retarded time</p>
+<span>
+\[\int \rho ( \vec r ', t_r) \dd \tau' = \frac{q}{1 - \vu \gr \cdot \vec v / c}\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<blockquote class="book-hint info">
+<p><strong>Theorem:</strong> \( \int \rho ( \vec r ', t_r) \dd \tau' = \frac{q}{1 - \vu \gr \cdot \vec v / c} \)</p>
+<p>This is a purely geometrical effect, and it may help to tell the story in a less abstract context. You will not have noticed it, for obvious reasons, the the fact is that a train coming towards you looks a little longer than it really is, because the light you receive from the caboose left earlier than the light you receive simultaneously from the engine, and at that earlier time the train was farther away (Fig 10.6). In the interval it takes light from the caboose to travel the extra distance \( L' \), the train itself moves a distance \( L' - L \)</p>
+<span>
+\[\frac{L'}{c} = \frac{L' - L}{v} \quad \text{or} \quad L' = \frac{L}{1-v/c} \]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p align=center> <img alt="Figure 10.6" src=/r/img/griffiths/10.6.png> </p>
+<p>So approaching trains appear longer, by a factor \( (1 - v/c)^{-1} \). By contrast, a train going away from you looks shorter, by a factor \( (1 + v/c)^{-1} \). In general, if the train&rsquo;s velocity makes an angle \( \theta \) with your line of sight, the extra distance light from the caboose must cover is \( L' \cos \theta \). In the time \( L' \cos \theta / c \), then, the train moves a distance \( (L' - L) \)</p>
+<span>
+\[\frac{L' \cos \theta}{c} = \frac{L' - L}{v} \quad \text{or} \quad L' = \frac{L}{1 - v \cos \theta / c} \]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>Since the effect does not distort the dimensions perpendicular to the motion, we can easily move to 3D as</p>
+<span>
+\[L' = \frac{l}{1 - \vu \gr \cdot \vec v / c} \]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>and the apparent volume of the train \( \tau' \) of the train is then related to the actual volume by</p>
+<span>
+\[\tau' = \frac{\tau}{1 - \vu \gr \cdot \vec v / c} \]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>where \( \vu \gr \) is a unit vector from the train to the observer.</p>
+</blockquote>
+<p>Back to our moving point charge, the retarded time is determined implicitly by</p>
+<span>
+\[| \vec r - \vec w(t_r)| = c(t - t_r)\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<span>
+\[\vec \gr = \vec r - \vec w(t_r)\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>It follows that</p>
+<span>
+\[V( \vec r, t) = \frac{1}{4 \pi \epsilon_0} \frac{qc}{(\gr c - \vec \gr \cdot \vec v)}\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>where \( \vec v \) is the velocity of the charge at the retarded time, and \( \vec \gr \) is the vector from the retarded position to the field point \( \vec r \). Moreover, since the current density is \( \rho \vec v \), the vector potential is</p>
+<span>
+\[\begin{aligned}
 \vec A ( \vec r, t) & = & \frac{\mu_0}{4 \pi} \int \frac{\rho(\vec r', t_r) \vec v(t_r)}{\gr} \dd \tau' \\
 & = & \frac{\mu_0}{4 \pi} \frac{\vec v}{\gr} \int \rho(\vec r', t_r) \dd \tau' \\
 & = & \frac{\mu_0}{4 \pi} \frac{qc \vec v}{(\gr c - \vec \gr \cdot \vec v)} \\
 & = & \frac{\vec v}{c^2} V(\vec r, t)
-\end{aligned}\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>These are the <strong>Lienard-Wiechert potentials</strong> for a moving point charge.</p><h2 id=1032-the-fields-of-a-moving-point-charge>10.3.2: The Fields of a Moving Point Charge
-<a class=anchor href=#1032-the-fields-of-a-moving-point-charge>#</a></h2><p>After a great deal of vector calculus, starting from the Lienard-Wiechert potentials for a moving point charge, you can work out the fields</p><span>\[\vec E = - \grad V - \pdv{\vec{A}}{t} \qquad \vec B = \curl \vec A\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>Because of all the various dependencies on \( \vec r, \vec r', \vec \gr \), the integration is tricky, but eventually the result is</p><span>\[\vec E(\vec r, t) = \frac{q}{4 \pi \epsilon_0} \frac{ \gr}{(\vec \gr \cdot \vec u)^3} \left[ (c^2 - v^2) \vec u + \gr \cross ( \vec u \cross \vec a) \right]\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>where we introduce the vector</p><span>\[\vec u \equiv c \vu \gr - \vec v\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>and \( \vec a = \pdv{\vec v}{t} \) is the acceleration of the particle at the retarded time.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div class=book-languages tabindex=0 aria-haspopup=true><ul><li class="flex align-center"><img src=/r/svg/translate.svg class=book-icon alt=Languages>
-English</li></ul><ul class=book-languages-list><li class=active><a href=https://peppyhare.github.io/r/ class="flex align-center"><img src=/r/svg/translate.svg class=book-icon alt=Languages>
-English</a></li><li><a href=https://peppyhare.github.io/r/ru/ class="flex align-center"><img src=/r/svg/translate.svg class=book-icon alt=Languages>
-Russian</a></li><li><a href=https://peppyhare.github.io/r/zh/ class="flex align-center"><img src=/r/svg/translate.svg class=book-icon alt=Languages>
-Chinese</a></li></ul></div><div><a class="flex align-center" href=https://github.com/Peppyhare/r/commit/8c3258d2fcca7f2e34db954c9477d2c9de77bd94 title="Last modified by Evan Bluhm | October 10, 2020" target=_blank rel=noopener><img src=/r/svg/calendar.svg class=book-icon alt=Calendar>
-<span>October 10, 2020</span></a></div></div><script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#103-point-charges>10.3 Point Charges</a><ul><li><a href=#1031-moving-point-charges-lienard-wiechert-potentials>10.3.1 Moving Point Charges: Lienard-Wiechert Potentials</a></li><li><a href=#1032-the-fields-of-a-moving-point-charge>10.3.2: The Fields of a Moving Point Charge</a></li></ul></li></ul></nav></div></aside></main></body></html>
+\end{aligned}\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>These are the <strong>Lienard-Wiechert potentials</strong> for a moving point charge.</p>
+<h2 id=1032-the-fields-of-a-moving-point-charge>
+10.3.2: The Fields of a Moving Point Charge
+<a class=anchor href=#1032-the-fields-of-a-moving-point-charge>#</a>
+</h2>
+<p>After a great deal of vector calculus, starting from the Lienard-Wiechert potentials for a moving point charge, you can work out the fields</p>
+<span>
+\[\vec E = - \grad V - \pdv{\vec{A}}{t} \qquad \vec B = \curl \vec A\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>Because of all the various dependencies on \( \vec r, \vec r', \vec \gr \), the integration is tricky, but eventually the result is</p>
+<span>
+\[\vec E(\vec r, t) = \frac{q}{4 \pi \epsilon_0} \frac{ \gr}{(\vec \gr \cdot \vec u)^3} \left[ (c^2 - v^2) \vec u + \gr \cross ( \vec u \cross \vec a) \right]\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>where we introduce the vector</p>
+<span>
+\[\vec u \equiv c \vu \gr - \vec v\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>and \( \vec a = \pdv{\vec v}{t} \) is the acceleration of the particle at the retarded time.</p>
+</article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
+<div class=book-languages tabindex=0 aria-haspopup=true>
+<ul>
+<li class="flex align-center">
+<img src=/r/svg/translate.svg class=book-icon alt=Languages>
+English
+</li>
+</ul>
+<ul class=book-languages-list>
+<li class=active>
+<a href=https://peppyhare.github.io/r/ class="flex align-center">
+<img src=/r/svg/translate.svg class=book-icon alt=Languages>
+English
+</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/ru/ class="flex align-center">
+<img src=/r/svg/translate.svg class=book-icon alt=Languages>
+Russian
+</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/zh/ class="flex align-center">
+<img src=/r/svg/translate.svg class=book-icon alt=Languages>
+Chinese
+</a>
+</li>
+</ul>
+</div>
+<div><a class="flex align-center" href=https://github.com/Peppyhare/r/commit/8c3258d2fcca7f2e34db954c9477d2c9de77bd94 title="Last modified by Evan Bluhm | October 10, 2020" target=_blank rel=noopener>
+<img src=/r/svg/calendar.svg class=book-icon alt=Calendar>
+<span>October 10, 2020</span>
+</a>
+</div>
+</div>
+<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+</footer>
+<div class=book-comments>
+</div>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<div class=book-toc-content>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#103-point-charges>10.3 Point Charges</a>
+<ul>
+<li><a href=#1031-moving-point-charges-lienard-wiechert-potentials>10.3.1 Moving Point Charges: Lienard-Wiechert Potentials</a></li>
+<li><a href=#1032-the-fields-of-a-moving-point-charge>10.3.2: The Fields of a Moving Point Charge</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+</main>
+</body>
+</html>

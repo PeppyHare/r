@@ -1,58 +1,667 @@
-<!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="2.4: Work and Energy in Electrostatics #  2.4.1: The Work it Takes to Move a Charge #  Suppose you have a stationary configuration of source charges, and you want to move a test charge Q from point a to point b (Fig. 2.39). Question: how much work will you have to do? At any point along the path, the electric force on Q is \( \vec{F} = Q \vec{E} \); the force you must exert, in opposition to the electric force, is \( -Q\vec{E} \)."><meta name=theme-color content="#FFFFFF"><meta property="og:title" content="Work and Energy in Electrostatics"><meta property="og:description" content="2.4: Work and Energy in Electrostatics #  2.4.1: The Work it Takes to Move a Charge #  Suppose you have a stationary configuration of source charges, and you want to move a test charge Q from point a to point b (Fig. 2.39). Question: how much work will you have to do? At any point along the path, the electric force on Q is \( \vec{F} = Q \vec{E} \); the force you must exert, in opposition to the electric force, is \( -Q\vec{E} \)."><meta property="og:type" content="article"><meta property="og:url" content="https://peppyhare.github.io/r/notes/griffiths/ch2-4/"><meta property="article:modified_time" content="2020-10-10T14:54:05-07:00"><title>Work and Energy in Electrostatics | My Notes</title><link rel=manifest href=/r/manifest.json><link rel=icon href=/r/favicon.png type=image/x-icon><link rel=stylesheet href=/r/book.min.b5acfab5895f64bd14769fac98c8e12ae0bb6f5735b6604c6fabaca02eefa4a8.css integrity="sha256-taz6tYlfZL0Udp+smMjhKuC7b1c1tmBMb6usoC7vpKg="><script defer src=/r/en.search.min.478b6ef39c153e0acb0d97cd2be58eec8c4f81d0040a631853171332602f0866.js integrity="sha256-R4tu85wVPgrLDZfNK+WO7IxPgdAECmMYUxcTMmAvCGY="></script><script defer src=/r/sw.min.7dd1b982abb2287010a43b99e3233ff99ced25fbe0e72dc2e6ad364145177485.js integrity="sha256-fdG5gquyKHAQpDuZ4yM/+ZztJfvg5y3C5q02QUUXdIU="></script><link rel=preload href=/r/katex/fonts/KaTeX_Main-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Main-Bold.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Main-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Math-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Size2-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Size3-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/fonts/roboto-v19-latin-regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/fonts/roboto-v19-latin-700.woff2 as=font type=font/woff2 crossorigin=anonymous></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a href=/r><span>My Notes</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><span>Notes</span><ul><li class=book-section-flat><input type=checkbox id=section-3c2351b6c36eb8737d2b3aab84ebe41a class=toggle>
-<label for=section-3c2351b6c36eb8737d2b3aab84ebe41a class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/UWAA545/>Computational Methods For Plasmas</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/UWAA545/01-syllabus/>Syllabus</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/02-plasma-models/>Plasma Models</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/03-pic-method/>Particle in Cell Model</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/04-pic-example/>PIC - Example Implementation</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/05-electrodynamic-pic/>Multidimensional Electrodynamic PIC</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/06-fluid-models/>Fluid Models for Plasmas</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/07-finite-difference-models/>Finite Difference Methods for MHD</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/08-mhd-equilibrium/>MHD Equilibria</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/formulary/>Formulary</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-6349dd4237c5b36ce5c3738b93bc5885 class=toggle>
-<label for=section-6349dd4237c5b36ce5c3738b93bc5885 class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/UWAA560/>Plasma Diagnostics</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/UWAA560/01-syllabus/>Syllabus</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/02-diagnostic-considerations/>General Diagnostic Considerations</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/03-magnetic-field-diagnostics/>Magnetic Field Diagnostics</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/04-electrostatic-diagnostics/>Electrostatic Diagnostics</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/05-index-of-refraction-measurements/>Index of Refraction Measurements</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/06-spectroscopic-measurements/>Spectroscopic Measurements</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/90-student-lectures/>Student Lectures</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/91-zeeman-spectroscopy/>My class lecture</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/formulary/>Formulary</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-edf338bf880234e7aba93d04934ebde0 class=toggle>
-<label for=section-edf338bf880234e7aba93d04934ebde0 class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/UWAA558/>MHD Theory</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/UWAA558/01-syllabus/>Syllabus</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/02-plasma-models/>Plasma Models</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/03-plasma-fluid-model/>Plasma Fluid Model</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/04-two-fluid-plasma-model/>Two-Fluid Plasma Model</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/05-mhd-model/>Magnetohydrodynamic (MHD) Model</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/06-boundary-conditions/>Boundary Conditions</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/>Equilibrium for Fusion</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/08-1d-equilibria/>1-D Equilibria</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/09-2d-equilibria/>2D Equilibria</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/10-equilibrium-of-3d-configurations/>Equilibrium of 3D Configurations</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/11-mhd-stability/>MHD Stability</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/formulary/>Formulary</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-413f74fd9b5926250a41b61f37ddacc6 class=toggle>
-<label for=section-413f74fd9b5926250a41b61f37ddacc6 class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/UWAA557/>Physics of Fusion Plasmas</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-0/>Rules of thumb</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-1/>Statistical Mechanics</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-2/>Review of E&M</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-3/>Lagrange Multipliers</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-1/>Wall-supported Plasma</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-2/>Collisions</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-3/>Oscillations</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-f5aa9ed14dd55f47a51954bafbe42c68 class=toggle>
-<label for=section-f5aa9ed14dd55f47a51954bafbe42c68 class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/UWAA543/>Computational CFD</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-1/>Introduction to Computational CFD</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-2/>Governing Equations</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-3/>Reduced Models</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-4/>Equation Types</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-5/>Panel Method</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-1/>Finite Difference Algorithms</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-2/>Explicit Finite Difference Algorithms</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-3/>Finite Difference and Finite Volume Methods</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-4/>Implicit Algorithms</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-5/>Numerical Boundary Conditions</a></li></ul></li><li class=book-section-flat><span>Working</span><ul><li><a href=https://peppyhare.github.io/r/notes/working/crews2018/>Crews (2018)</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-ee5e070eb25b63f2c377d750d37f67ae class=toggle checked>
-<label for=section-ee5e070eb25b63f2c377d750d37f67ae class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/griffiths/>Griffiths Introduction to Electrodynamics</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-1/>Vector Algebra</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-2/>Differential Calculus</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-3/>Integral Calculus</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-4/>Curvilinear Coordinates</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-5/>The Dirac Delta Function</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-6/>The Theory of Vector Fields</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch2-1/>The Electric Field</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch2-2/>Divergence and Curl of Electrostatic Fields</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch2-3/>Electric Potential</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch2-4/ class=active>Work and Energy in Electrostatics</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch2-5/>Conductors</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch3-1/>Laplace's Equation</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch3-2/>The Method of Images</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch3-3/>Separation of Variables</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch3-4/>Multipole Expansion</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch4-1/>Polarization</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch4-2/>The Field of a Polarized Object</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch4-3/>The Electric Displacement</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch4-4/>The Linear Dielectrics</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch5-1/>The Lorentz Force Law</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch5-2/>The Biot-Savart Law</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch5-3/>The Divergence and Curl of B</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch5-4/>Magnetic Vector Potential</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch6-1/>Magnetization</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch6-2/>The Field of a Magnetized Object</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch6-3/>The Auxiliary Field H</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch6-4/>Linear and Nonlinear Media</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch7-1/>Electromotive Force</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch7-2/>Electromagnetic Induction</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch7-3/>Maxwell's Equations</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch8-0/>Phys 544 Introduction</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch8-1/>Charge and Energy</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch8-2/>Momentum</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch9-1/>Electromagnetic Waves in One Dimension</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch9-2/>Wave Equation for E and B</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch9-3/>Electromagnetic Waves in Matter</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch9-4/>Electromagnetic Waves in Conductors</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch9-5/>Guided Waves</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch10-1/>Scalar and Vector Potentials</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch10-2/>Retarded Potentials</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch10-3/>Point Charges</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch11-1/>Dipole Radiation</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch3/>Solved Problems Ch3</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch5/>Solved Problems Ch5</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch7/>Solved Problems Ch7</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch9/>Solved Problems Ch9</a></li></ul></li></ul></li></ul><ul><li><a href=https://github.com/Peppyhare/r target=_blank rel=noopener>Github</a></li><li><a href=https://themes.gohugo.io/hugo-book/ target=_blank rel=noopener>Hugo Themes</a></li></ul></nav><script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/r/svg/menu.svg class=book-icon alt=Menu></label>
+<!doctype html><html lang=en dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="2.4: Work and Energy in Electrostatics #  2.4.1: The Work it Takes to Move a Charge #  Suppose you have a stationary configuration of source charges, and you want to move a test charge Q from point a to point b (Fig. 2.39). Question: how much work will you have to do? At any point along the path, the electric force on Q is \( \vec{F} = Q \vec{E} \); the force you must exert, in opposition to the electric force, is \( -Q\vec{E} \).">
+<meta name=theme-color content="#FFFFFF"><meta property="og:title" content="Work and Energy in Electrostatics">
+<meta property="og:description" content="2.4: Work and Energy in Electrostatics #  2.4.1: The Work it Takes to Move a Charge #  Suppose you have a stationary configuration of source charges, and you want to move a test charge Q from point a to point b (Fig. 2.39). Question: how much work will you have to do? At any point along the path, the electric force on Q is \( \vec{F} = Q \vec{E} \); the force you must exert, in opposition to the electric force, is \( -Q\vec{E} \).">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://peppyhare.github.io/r/notes/griffiths/ch2-4/"><meta property="article:section" content="notes">
+<meta property="article:modified_time" content="2020-10-10T14:54:05-07:00">
+<title>Work and Energy in Electrostatics | My Notes</title>
+<link rel=manifest href=/r/manifest.json>
+<link rel=icon href=/r/favicon.png type=image/x-icon>
+<link rel=stylesheet href=/r/book.min.0c766a254e418441a9a6040b003c1dc3437b0e31c396aa0075dc269e14348f4c.css integrity="sha256-DHZqJU5BhEGppgQLADwdw0N7DjHDlqoAddwmnhQ0j0w=" crossorigin=anonymous>
+<script defer src=/r/flexsearch.min.js></script>
+<script defer src=/r/en.search.min.a496f3b2243e59103bd55301c877754d0df8ababaf33a536c01da9dce836018e.js integrity="sha256-pJbzsiQ+WRA71VMByHd1TQ34q6uvM6U2wB2p3Og2AY4=" crossorigin=anonymous></script>
+<script defer src=/r/sw.min.9e3a83f0b071ebe0141a16a33db93faadb2bdf712473a218febeed35ed243c08.js integrity="sha256-njqD8LBx6+AUGhajPbk/qtsr33Ekc6IY/r7tNe0kPAg=" crossorigin=anonymous></script>
+<link rel=preload href=/r/katex/fonts/KaTeX_Main-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=/r/katex/fonts/KaTeX_Main-Bold.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=/r/katex/fonts/KaTeX_Main-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=/r/katex/fonts/KaTeX_Math-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=/r/katex/fonts/KaTeX_Size2-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=/r/katex/fonts/KaTeX_Size3-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=/r/fonts/roboto-v19-latin-regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=/r/fonts/roboto-v19-latin-700.woff2 as=font type=font/woff2 crossorigin=anonymous>
+</head>
+<body dir=ltr>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<div class=book-menu-content>
+<nav>
+<h2 class=book-brand>
+<a href=/r/><span>My Notes</span>
+</a>
+</h2>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
+</div>
+<ul>
+<li class=book-section-flat>
+<span>Notes</span>
+<ul>
+<li class=book-section-flat>
+<input type=checkbox id=section-3c2351b6c36eb8737d2b3aab84ebe41a class=toggle>
+<label for=section-3c2351b6c36eb8737d2b3aab84ebe41a class="flex justify-between">
+<a href=https://peppyhare.github.io/r/notes/UWAA545/>Computational Methods For Plasmas</a>
+</label>
+<ul>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/01-syllabus/>Syllabus</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/02-plasma-models/>Plasma Models</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/03-pic-method/>Particle in Cell Model</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/04-pic-example/>PIC - Example Implementation</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/05-electrodynamic-pic/>Multidimensional Electrodynamic PIC</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/06-fluid-models/>Fluid Models for Plasmas</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/07-finite-difference-models/>Finite Difference Methods for MHD</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/08-mhd-equilibrium/>MHD Equilibria</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/formulary/>Formulary</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<input type=checkbox id=section-6349dd4237c5b36ce5c3738b93bc5885 class=toggle>
+<label for=section-6349dd4237c5b36ce5c3738b93bc5885 class="flex justify-between">
+<a href=https://peppyhare.github.io/r/notes/UWAA560/>Plasma Diagnostics</a>
+</label>
+<ul>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/01-syllabus/>Syllabus</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/02-diagnostic-considerations/>General Diagnostic Considerations</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/03-magnetic-field-diagnostics/>Magnetic Field Diagnostics</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/04-electrostatic-diagnostics/>Electrostatic Diagnostics</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/05-index-of-refraction-measurements/>Index of Refraction Measurements</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/06-spectroscopic-measurements/>Spectroscopic Measurements</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/90-student-lectures/>Student Lectures</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/91-zeeman-spectroscopy/>My class lecture</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/formulary/>Formulary</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<input type=checkbox id=section-edf338bf880234e7aba93d04934ebde0 class=toggle>
+<label for=section-edf338bf880234e7aba93d04934ebde0 class="flex justify-between">
+<a href=https://peppyhare.github.io/r/notes/UWAA558/>MHD Theory</a>
+</label>
+<ul>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/01-syllabus/>Syllabus</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/02-plasma-models/>Plasma Models</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/03-plasma-fluid-model/>Plasma Fluid Model</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/04-two-fluid-plasma-model/>Two-Fluid Plasma Model</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/05-mhd-model/>Magnetohydrodynamic (MHD) Model</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/06-boundary-conditions/>Boundary Conditions</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/>Equilibrium for Fusion</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/08-1d-equilibria/>1-D Equilibria</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/09-2d-equilibria/>2D Equilibria</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/10-equilibrium-of-3d-configurations/>Equilibrium of 3D Configurations</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/11-mhd-stability/>MHD Stability</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/formulary/>Formulary</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<input type=checkbox id=section-413f74fd9b5926250a41b61f37ddacc6 class=toggle>
+<label for=section-413f74fd9b5926250a41b61f37ddacc6 class="flex justify-between">
+<a href=https://peppyhare.github.io/r/notes/UWAA557/>Physics of Fusion Plasmas</a>
+</label>
+<ul>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-0/>Rules of thumb</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-1/>Statistical Mechanics</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-2/>Review of E&M</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-3/>Lagrange Multipliers</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-1/>Wall-supported Plasma</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-2/>Collisions</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-3/>Oscillations</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<input type=checkbox id=section-f5aa9ed14dd55f47a51954bafbe42c68 class=toggle>
+<label for=section-f5aa9ed14dd55f47a51954bafbe42c68 class="flex justify-between">
+<a href=https://peppyhare.github.io/r/notes/UWAA543/>Computational CFD</a>
+</label>
+<ul>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-1/>Introduction to Computational CFD</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-2/>Governing Equations</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-3/>Reduced Models</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-4/>Equation Types</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-5/>Panel Method</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-1/>Finite Difference Algorithms</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-2/>Explicit Finite Difference Algorithms</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-3/>Finite Difference and Finite Volume Methods</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-4/>Implicit Algorithms</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-5/>Numerical Boundary Conditions</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<span>Working</span>
+<ul>
+<li>
+<a href=https://peppyhare.github.io/r/notes/working/crews2018/>Crews (2018)</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<input type=checkbox id=section-ee5e070eb25b63f2c377d750d37f67ae class=toggle checked>
+<label for=section-ee5e070eb25b63f2c377d750d37f67ae class="flex justify-between">
+<a href=https://peppyhare.github.io/r/notes/griffiths/>Griffiths Introduction to Electrodynamics</a>
+</label>
+<ul>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-1/>Vector Algebra</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-2/>Differential Calculus</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-3/>Integral Calculus</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-4/>Curvilinear Coordinates</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-5/>The Dirac Delta Function</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-6/>The Theory of Vector Fields</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch2-1/>The Electric Field</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch2-2/>Divergence and Curl of Electrostatic Fields</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch2-3/>Electric Potential</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch2-4/ class=active>Work and Energy in Electrostatics</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch2-5/>Conductors</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch3-1/>Laplace's Equation</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch3-2/>The Method of Images</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch3-3/>Separation of Variables</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch3-4/>Multipole Expansion</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch4-1/>Polarization</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch4-2/>The Field of a Polarized Object</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch4-3/>The Electric Displacement</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch4-4/>The Linear Dielectrics</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch5-1/>The Lorentz Force Law</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch5-2/>The Biot-Savart Law</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch5-3/>The Divergence and Curl of B</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch5-4/>Magnetic Vector Potential</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch6-1/>Magnetization</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch6-2/>The Field of a Magnetized Object</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch6-3/>The Auxiliary Field H</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch6-4/>Linear and Nonlinear Media</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch7-1/>Electromotive Force</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch7-2/>Electromagnetic Induction</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch7-3/>Maxwell's Equations</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch8-0/>Phys 544 Introduction</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch8-1/>Charge and Energy</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch8-2/>Momentum</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch9-1/>Electromagnetic Waves in One Dimension</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch9-2/>Wave Equation for E and B</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch9-3/>Electromagnetic Waves in Matter</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch9-4/>Electromagnetic Waves in Conductors</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch9-5/>Guided Waves</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch10-1/>Scalar and Vector Potentials</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch10-2/>Retarded Potentials</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch10-3/>Point Charges</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch11-1/>Dipole Radiation</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch3/>Solved Problems Ch3</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch5/>Solved Problems Ch5</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch7/>Solved Problems Ch7</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch9/>Solved Problems Ch9</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<a href=https://github.com/Peppyhare/r target=_blank rel=noopener>
+Github
+</a>
+</li>
+<li>
+<a href=https://themes.gohugo.io/hugo-book/ target=_blank rel=noopener>
+Hugo Themes
+</a>
+</li>
+</ul>
+</nav>
+<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=/r/svg/menu.svg class=book-icon alt=Menu>
+</label>
 <strong>Work and Energy in Electrostatics</strong>
-<label for=toc-control><img src=/r/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#24-work-and-energy-in-electrostatics>2.4: Work and Energy in Electrostatics</a><ul><li><a href=#241-the-work-it-takes-to-move-a-charge>2.4.1: The Work it Takes to Move a Charge</a></li><li><a href=#242-the-energy-of-a-point-charge-distribution>2.4.2: The Energy of a Point Charge Distribution</a></li><li><a href=#243-the-energy-of-a-continuous-charge-distribution>2.4.3: The Energy of a Continuous Charge Distribution</a><ul><li></li></ul></li><li><a href=#244-comments-on-electrostatic-energy>2.4.4: Comments on Electrostatic Energy</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=24-work-and-energy-in-electrostatics>2.4: Work and Energy in Electrostatics
-<a class=anchor href=#24-work-and-energy-in-electrostatics>#</a></h1><h2 id=241-the-work-it-takes-to-move-a-charge>2.4.1: The Work it Takes to Move a Charge
-<a class=anchor href=#241-the-work-it-takes-to-move-a-charge>#</a></h2><p>Suppose you have a stationary configuration of source charges, and you want to move a test charge Q from point a to point b (Fig. 2.39). <em>Question</em>: how much work will you have to do? At any point along the path, the electric force on Q is \( \vec{F} = Q \vec{E} \); the force you must exert, in opposition to the electric force, is \( -Q\vec{E} \). The work you do is therefore</p><link rel=stylesheet href=/r/katex/katex.min.css><script defer src=/r/katex/katex.min.js></script><script defer src=/r/katex/auto-render.min.js onload=loadKatex();></script><span>\[W = \int_{a}^{b} \vec{F} \cdot \dd{\vec{l}} \\
+<label for=toc-control>
+<img src=/r/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
+</div>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#24-work-and-energy-in-electrostatics>2.4: Work and Energy in Electrostatics</a>
+<ul>
+<li><a href=#241-the-work-it-takes-to-move-a-charge>2.4.1: The Work it Takes to Move a Charge</a></li>
+<li><a href=#242-the-energy-of-a-point-charge-distribution>2.4.2: The Energy of a Point Charge Distribution</a></li>
+<li><a href=#243-the-energy-of-a-continuous-charge-distribution>2.4.3: The Energy of a Continuous Charge Distribution</a>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><a href=#244-comments-on-electrostatic-energy>2.4.4: Comments on Electrostatic Energy</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</aside>
+</header>
+<article class=markdown><h1 id=24-work-and-energy-in-electrostatics>
+2.4: Work and Energy in Electrostatics
+<a class=anchor href=#24-work-and-energy-in-electrostatics>#</a>
+</h1>
+<h2 id=241-the-work-it-takes-to-move-a-charge>
+2.4.1: The Work it Takes to Move a Charge
+<a class=anchor href=#241-the-work-it-takes-to-move-a-charge>#</a>
+</h2>
+<p>Suppose you have a stationary configuration of source charges, and you want to move a test charge Q from point a to point b (Fig. 2.39). <em>Question</em>: how much work will you have to do? At any point along the path, the electric force on Q is \( \vec{F} = Q \vec{E} \); the force you must exert, in opposition to the electric force, is \( -Q\vec{E} \). The work you do is therefore</p>
+<link rel=stylesheet href=/r/katex/katex.min.css>
+<script defer src=/r/katex/katex.min.js></script>
+<script defer src=/r/katex/auto-render.min.js onload=loadKatex()></script><span>
+\[W = \int_{a}^{b} \vec{F} \cdot \dd{\vec{l}} \\
 = - Q \int_{a}^{b} \vec{E} \cdot \dd{\vec{l}} \\
-= - Q[V(b) - V(a)]\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p align=center><img alt="Figure 2.39" src=/r/img/griffiths/2.39.png></p><p>Notice that the answer is independent of the path you take from a to b; in mechanics, then, we would call the electrostatic force &ldquo;conservative.&rdquo; Dividing through by Q, we have</p><span>\[V(b) - V(a) = \frac{W}{Q} \]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>In words, the potential difference between points a and b is equal to the work per unit charge required to carry a particle from a to b. In particular, if you want to bring Q in from far away and stick it at point r, the work you must do is</p><span>\[W = Q[V(\vec{r}) - V(\infty)],\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>so if you have set the reference point at infinity,</p><span>\[W = Q V(\vec{r}) \label{2.39} \tag{2.39}\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>In this sense, potential is potential <em>energy</em> (the work it takes to create a system) <em>per unit charge</em> (just as the field is force per unit charge).</p><h2 id=242-the-energy-of-a-point-charge-distribution>2.4.2: The Energy of a Point Charge Distribution
-<a class=anchor href=#242-the-energy-of-a-point-charge-distribution>#</a></h2><p>How much work would it take to assemble an entire collection of point charges? Imagine bringing in the charges, one by one, from far away (Fig 2.40). The first charge \( q_1 \) takes <em>no</em> work, since there is no field to fight against. Now bring in \( q_2 \). According to \( \eqref{2.39} \) this will cost you \( q_2 V_1(\vec{r}_2) \), where \( V_1 \) is the potential due to \( q_1 \) , and \( \vec{r}_2 \) is the place we&rsquo;re putting \( q_2 \):</p><span>\[W_2 = \frac{1}{4 \pi \epsilon_0} q_2 \left( \frac{q_1}{\gr_{12}} \right)\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>(\( \gr_{12} \) is the distance between \( q_1 \) and \( q_2 \), once they are in position). As you bring in each charge, nail it down in its final location, so it doesn&rsquo;t move when you bring in the next charge. Now bring in \( q_3 \). This requires work \( q_3 V_{1,2}(\vec{r}_3) \), where \( V_{1,2} \) is the potential due to charges \( q_1 \) and \( q_2 \), namely \( (1 / 4 \pi \epsilon_0) (q_1 / \gr_{13} + q_2 / \gr_{23} ) \). Thus</p><span>\[W_3 = \frac{1}{4 \pi \epsilon_0} q_3 \left( \frac{q_1}{\gr_{13}} + \frac{q_2}{\gr_{23}} \right)\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>Similarly, the extra work to bring in \( q_4 \) will be</p><span>\[W_4 = \frac{1}{4 \pi \epsilon_0} q_4 \left( \frac{q_1}{\gr_{14}} + \frac{q_2}{\gr_{24}} + \frac{q_3}{\gr_{34}} \right)\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>The <em>total</em> work necessary to assemble the first four charges, then, is</p><span>\[W = \frac{1}{4 \pi \epsilon_0} \left( \frac{q_1 q_2}{\gr_{12}} + \frac{q_1 q_3}{\gr_{13}} + \frac{q_1 q_4}{\gr_{14}} + \frac{q_2 q_3}{\gr_{23}} + \frac{q_2 q_4}{\gr_{24}} + \frac{q_3 q_4}{\gr_{34}} \right)\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>You see the general rule: Take the product of each pair of charges, divide by their separation distance, and add it all up:</p><span>\[W = \frac{1}{4 \pi \epsilon_0} \sum_{i = 1} ^{n} \sum_{j > i} ^n \frac{q_i q_j}{\gr_{ij}} \]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>The stipulation \( j > i \) is to remind you not to count the same pair twice. A nicer way to accomplish this is <em>intentionally</em> to count each pair twice, and then divide by 2:</p><span>\[W = \frac{1}{8 \pi \epsilon_0} \sum_{i = 1} ^n \sum_{j \neq i} \frac{q_i q_j}{\gr_{ij}} \]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>(we must still avoid \( i = j \), of course). Notice that in this form the answer plainly does not depend on the <em>order</em> in which you assemble the charges, since every pair occurs in the sum.</p><p>Finally, let&rsquo;s pull out the factor \( q_i \):</p><span>\[W = \frac{1}{2} \sum_{i = 1}^n q_i \left( \sum_{j \neq i} ^n \frac{1}{4 \pi \epsilon_0} \frac{q_j}{\gr_{ij}} \right)\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>The term in parentheses is the potential at point \( \vec{r_i} \) (the position of \( q_i \) ) due to all the <em>other</em> charges - all of them, now, not just the ones that were present at some stage during the assembly. Thus,</p><span>\[W = \frac{1}{2} \sum_{i = 1} ^n q_i V(\vec{r_i}) \label{2.42} \tag{2.42}\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>That&rsquo;s how much work it takes to assemble a configuration of point charges; it&rsquo;s also the amount of work you&rsquo;d get back if you dismantled the system. In the meantime, it represents energy stored in the configuration (&ldquo;potential&rdquo; energy, if you insist, though for obvious reasons I prefer to avoid that word in this context).</p><h2 id=243-the-energy-of-a-continuous-charge-distribution>2.4.3: The Energy of a Continuous Charge Distribution
-<a class=anchor href=#243-the-energy-of-a-continuous-charge-distribution>#</a></h2><p>For a volume charge density \( \rho \), \( \eqref{2.42} \) becomes</p><span>\[W = \frac{1}{2} \int \rho V \dd{\tau} \label{2.43} \tag{2.43}\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>There is a lovely way to write this result, in which \( \rho \) and \( V \) are eliminated in favor of \( \vec{E} \). First, use Gauss&rsquo;s law to express \( \rho \) in terms of \( \vec{E} \)</p><span>\[\rho = \epsilon_0 \div{\vec{E}} \qquad \text{so,} \qquad W = \frac{\epsilon_0}{2} \int (\div{\vec{E}}) V \dd{\tau}\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>Now, use integration by parts to transfer the derivative from \( \vec{E} \) to \( V \):</p><span>\[W = \frac{\epsilon_0}{2} \left[ - \int \vec{E} \cdot (\grad{V}) \dd{\tau} + \oint V \vec{E} \cdot \dd{\vec{a}} \right]\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>But \( \grad{V} = - \vec{E} \), so</p><span>\[ W = \frac{\epsilon_0}{2} \left( \int_{\mathscr{V}} E^2 \dd{\tau} + \oint V \vec{E} \cdot \dd{\vec{a}} \right) \label{2.44} \tag{2.44}
-\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>But what volume is this we&rsquo;re integrating over? Let&rsquo;s go back to the formula we started with, \( \eqref{2.43} \). From its derivation, it is clear that we should integrate over the region where the charge is located. But actually, any larger volume would do just as well: The &ldquo;extra&rdquo; territory we throw in will contribute nothing to the integral, since \( \rho = 0 \) out there. With this in mind, we return to \( \eqref{2.44} \). What happens here, as we enlarge the volume beyond the minimum necessary to trap all the charge? Well, the integral of \( E^2 \) can only increase (the integrand being positive); evidently the surface integral must decrease accordingly to leave the sum intact. (In fact, at large distances from the charge, \( E \) goes like \( 1 / r^2 \) and \( V \) like \( 1/r \), while the surface area grows like \( r^2 \); roughly speaking, then, the surface integral goes down like \( 1/r \). Please understand: \( \eqref{2.44} \) gives you the correct energy W, whatever volume you use (as long as it encloses all the charge), but the contribution of the volume integral goes up, and that of the surface integral goes down, as you take larger and larger volumes. In particular, why not integrate over <em>all</em> space? Then the surface integral goes to zero, and we are left with</p><span>\[W = \frac{\epsilon_0}{2} \int E^2 \dd{\tau} \quad \text{(all space)} \label{2.45} \tag{2.45}\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><h4 id=example-29>Example 2.9
-<a class=anchor href=#example-29>#</a></h4><div class=book-tabs><input type=radio class=toggle name=tabs-ex2.9 id=tabs-ex2.9-0 checked>
-<label for=tabs-ex2.9-0>Q</label><div class="book-tabs-content markdown-inner">Find the energy of a uniformly charged spherical shell of total charge \( q \) and radius \( R \)</div><input type=radio class=toggle name=tabs-ex2.9 id=tabs-ex2.9-1>
-<label for=tabs-ex2.9-1>A</label><div class="book-tabs-content markdown-inner"><p>Use \( \eqref{2.43} \) in the version appropriate to surface charges</p><span>\[W = \frac{1}{2} \sigma V \dd{a}\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{<pre><code>&quot;\\lcm&quot;:&quot;\\mathop{\\mathrm{lcm}}&quot;,&quot;\\sen&quot;:'\\text{sen}\\,',&quot;\\dd&quot;:&quot;\\mathop{\\mathrm{d}#1}&quot;,&quot;\\abs&quot;:&quot;\\lvert#1\\rvert&quot;,&quot;\\dd&quot;:&quot;\\text{d}&quot;,&quot;\\cross&quot;:&quot;\\times&quot;,&quot;\\pdv&quot;:&quot;\\frac{\\partial#1}{\\partial#2}&quot;,&quot;\\curl&quot;:&quot;\\nabla\\cross#1&quot;,&quot;\\vu&quot;:&quot;\\mathbf{\\hat{#1}}&quot;,&quot;\\vdot&quot;:&quot;\\dot&quot;,&quot;\\div&quot;:&quot;\\nabla\\cdot#1&quot;,&quot;\\grad&quot;:&quot;\\nabla&quot;,&quot;\\dv&quot;:&quot;\\frac{d\\,#1}{d\\,#2}&quot;,&quot;\\gr&quot;:&quot;\\gamma&quot;,&quot;\\vec&quot;:&quot;\\mathbf{#1}&quot;,&quot;\\tagl&quot;:&quot;\\tag{#1}&quot;,&quot;\\eqref&quot;:&quot;(#1)&quot;,&quot;\\laplacian&quot;:&quot;\\mathbf{\\nabla^2}&quot;,&quot;\\label&quot;:&quot;{}&quot;,&quot;\\negadelta&quot;:&quot;\\nabla&quot;,}});</code></pre><p>};</script></p><p>Now, the potential at the surface of this sphere is \( (1/4 \pi \epsilon_0)q/R \) (a constant), so</p><span>\[W = \frac{1}{8\pi \epsilon_0} \frac{q}{R} \int \sigma \dd{a} = \frac{1}{8 \pi \epsilon_0} \frac{q^2}{R} \]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{<pre><code>&quot;\\lcm&quot;:&quot;\\mathop{\\mathrm{lcm}}&quot;,&quot;\\sen&quot;:'\\text{sen}\\,',&quot;\\dd&quot;:&quot;\\mathop{\\mathrm{d}#1}&quot;,&quot;\\abs&quot;:&quot;\\lvert#1\\rvert&quot;,&quot;\\dd&quot;:&quot;\\text{d}&quot;,&quot;\\cross&quot;:&quot;\\times&quot;,&quot;\\pdv&quot;:&quot;\\frac{\\partial#1}{\\partial#2}&quot;,&quot;\\curl&quot;:&quot;\\nabla\\cross#1&quot;,&quot;\\vu&quot;:&quot;\\mathbf{\\hat{#1}}&quot;,&quot;\\vdot&quot;:&quot;\\dot&quot;,&quot;\\div&quot;:&quot;\\nabla\\cdot#1&quot;,&quot;\\grad&quot;:&quot;\\nabla&quot;,&quot;\\dv&quot;:&quot;\\frac{d\\,#1}{d\\,#2}&quot;,&quot;\\gr&quot;:&quot;\\gamma&quot;,&quot;\\vec&quot;:&quot;\\mathbf{#1}&quot;,&quot;\\tagl&quot;:&quot;\\tag{#1}&quot;,&quot;\\eqref&quot;:&quot;(#1)&quot;,&quot;\\laplacian&quot;:&quot;\\mathbf{\\nabla^2}&quot;,&quot;\\label&quot;:&quot;{}&quot;,&quot;\\negadelta&quot;:&quot;\\nabla&quot;,}});</code></pre><p>};</script></p><p><strong>Solution 2</strong>
-Use \( \eqref{2.45} \). Inside the sphere, \( \vec{E} = 0 \); outside:</p><span>\[\vec{E} = \frac{1}{4\pi \epsilon_0} \frac{q}{r^2} \vu{r} \quad \text{so} \quad E^2 = \frac{q^2}{(4 \pi \epsilon_0)^2 r^4} \]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{<pre><code>&quot;\\lcm&quot;:&quot;\\mathop{\\mathrm{lcm}}&quot;,&quot;\\sen&quot;:'\\text{sen}\\,',&quot;\\dd&quot;:&quot;\\mathop{\\mathrm{d}#1}&quot;,&quot;\\abs&quot;:&quot;\\lvert#1\\rvert&quot;,&quot;\\dd&quot;:&quot;\\text{d}&quot;,&quot;\\cross&quot;:&quot;\\times&quot;,&quot;\\pdv&quot;:&quot;\\frac{\\partial#1}{\\partial#2}&quot;,&quot;\\curl&quot;:&quot;\\nabla\\cross#1&quot;,&quot;\\vu&quot;:&quot;\\mathbf{\\hat{#1}}&quot;,&quot;\\vdot&quot;:&quot;\\dot&quot;,&quot;\\div&quot;:&quot;\\nabla\\cdot#1&quot;,&quot;\\grad&quot;:&quot;\\nabla&quot;,&quot;\\dv&quot;:&quot;\\frac{d\\,#1}{d\\,#2}&quot;,&quot;\\gr&quot;:&quot;\\gamma&quot;,&quot;\\vec&quot;:&quot;\\mathbf{#1}&quot;,&quot;\\tagl&quot;:&quot;\\tag{#1}&quot;,&quot;\\eqref&quot;:&quot;(#1)&quot;,&quot;\\laplacian&quot;:&quot;\\mathbf{\\nabla^2}&quot;,&quot;\\label&quot;:&quot;{}&quot;,&quot;\\negadelta&quot;:&quot;\\nabla&quot;,}});</code></pre><p>};</script></p><p>Therefore,</p><span>\[W_{tot} = \frac{\epsilon_0}{2 (4 \pi \epsilon_0)^2}\int \left( \frac{q^2}{r^4} \right) (r^2 \sin \theta \dd{r} \dd{\theta} \dd{\phi}) \\
-= \frac{1}{32 \pi ^2 \epsilon_0} q^2 4 \pi \int_{R} ^{\infty} \frac{1}{r^2} \dd{r} = \frac{1}{8 \pi \epsilon_0} \frac{q^2}{R} \]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{<pre><code>&quot;\\lcm&quot;:&quot;\\mathop{\\mathrm{lcm}}&quot;,&quot;\\sen&quot;:'\\text{sen}\\,',&quot;\\dd&quot;:&quot;\\mathop{\\mathrm{d}#1}&quot;,&quot;\\abs&quot;:&quot;\\lvert#1\\rvert&quot;,&quot;\\dd&quot;:&quot;\\text{d}&quot;,&quot;\\cross&quot;:&quot;\\times&quot;,&quot;\\pdv&quot;:&quot;\\frac{\\partial#1}{\\partial#2}&quot;,&quot;\\curl&quot;:&quot;\\nabla\\cross#1&quot;,&quot;\\vu&quot;:&quot;\\mathbf{\\hat{#1}}&quot;,&quot;\\vdot&quot;:&quot;\\dot&quot;,&quot;\\div&quot;:&quot;\\nabla\\cdot#1&quot;,&quot;\\grad&quot;:&quot;\\nabla&quot;,&quot;\\dv&quot;:&quot;\\frac{d\\,#1}{d\\,#2}&quot;,&quot;\\gr&quot;:&quot;\\gamma&quot;,&quot;\\vec&quot;:&quot;\\mathbf{#1}&quot;,&quot;\\tagl&quot;:&quot;\\tag{#1}&quot;,&quot;\\eqref&quot;:&quot;(#1)&quot;,&quot;\\laplacian&quot;:&quot;\\mathbf{\\nabla^2}&quot;,&quot;\\label&quot;:&quot;{}&quot;,&quot;\\negadelta&quot;:&quot;\\nabla&quot;,}});</code></pre><p>};</script></p></div></div><h2 id=244-comments-on-electrostatic-energy>2.4.4: Comments on Electrostatic Energy
-<a class=anchor href=#244-comments-on-electrostatic-energy>#</a></h2><p><strong>A perplexing &ldquo;inconsistency&rdquo;</strong></p><p>Equation \( \eqref{2.45} \) clearly implies that the energy of a stationary charge distribution is always positive. On the other hand, \( \eqref{2.42} \) (from which \( \eqref{2.45} \) was in fact derived), can be positive or negative. For instance, according to \( \eqref{2.42} \) the energy of two equal but opposite charges a distance \( \gr \) apart is \( -(1/4 \pi \epsilon_0) (q^2/\gr) \). What&rsquo;s gone wrong? Which equation is correct?</p><p>The answer is that <em>both</em> are correct, but they speak to slightly different questions. Equation \( \eqref{2.42} \) does not take into account the work necessary to make the point charges in the first place; we started with point charges and simply found the work required to bring them together. This is wise strategy, since \( \eqref{2.45} \) indicates that the energy of a point charge is in fact <em>infinite</em></p><span>\[ W = \frac{\epsilon_0}{2(4 \pi \epsilon_0)^2} \int \left( \frac{q^2}{r^4} \right) (r^2 \sin \theta \dd{r} \dd{\theta} \dd{\phi}) = \frac{q^2}{8 \pi \epsilon_0} \int_{0} ^{\infty} \frac{1}{r^2} \dd{r} = \infty
-\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>Equation \( \eqref{2.45} \) is more <em>complete</em>, in the sense that it tells you the <em>total</em> energy stored in a charge configuration, but \( \eqref{2.42} \) is more appropriate when you&rsquo;re dealing with point charges, because we prefer (for good reason!) to leave out that portion of the total energy that is attributable to the fabrication of the point charges themselves. In practice, after all, the point charges (electrons, say) are <em>given</em> to us ready-made; all we do is move them around. Since we did not put them together, and we cannot take them apart, it is immaterial how much work the process would involve. (Still, the infinite energy of a point charge is a recurring source of embarrassment for electromagnetic theory, afflicting the quantum version as well as the classical. We shall return to the problem in Chapter 11).</p><p>Now, you may wonder where the inconsistency crept into an apparently water-tight derivation. The &ldquo;flaw&rdquo; lies between \( \eqref{2.42} \) and \( \eqref{2.43} \): in the former, \( V(\vec{r_i}) \) represents the potential due to all the other charges, <em>but not</em> \( q_i \), whereas in the latter, \( V(\vec{r}) \) is the full potential. For a continuous distribution, there is no distinction, since the amount of charge right at the point \( \vec{r} \) is vanishingly small, and its contribution to the potential is zero. But in the presence of point charges you&rsquo;d better stick with \( \eqref{2.42} \).</p><p><strong>Where is the energy stored?</strong> Equations \( \eqref{2.43} \) and \( \eqref{2.45} \) offer two different ways of calculating the same thing. The first is an integral over the charge distribution, the second is an integral over the field. These can involve completely different regions. For instance, in the case of a spherical shell, the charge is confined to the surface, whereas the electric field is everywhere <em>outside</em> this surface. Where <em>is</em> the energy, then? Is it stored in the field, as \( \eqref{2.45} \) seems to suggest, or is it stored in the charge, as \( \eqref{2.43} \) implies? At the present stage this is simply an unanswerable question: I can tell you what the total energy is, and I can provide you with several different ways to compute it, but it is impertinent to worry about where the energy is located. In the context of radiation theory (Chapter 11) it is useful (and in general relativity it is essential) to regard the energy as stored in the field, with a density</p><span>\[\frac{\epsilon_0}{2} E^2 = \text{ energy per unit volume} \label{2.46} \tag{2.46}\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>But in electrostatics one could just as well say it is stored in the charge, with a density \( \frac{1}{2} \rho V \). The difference is purely a matter of bookkeeping.</p><p><strong>The superposition principle</strong>. Because electrostatic energy is <em>quadratic</em> in the fields, it does not obey a superposition principle. The energy of a compound system is <em>not</em> the sum of the energies of its parts considered separately - there are also &ldquo;cross terms&rdquo;:</p><span>\[\begin{aligned}
+= - Q[V(b) - V(a)]\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p align=center> <img alt="Figure 2.39" src=/r/img/griffiths/2.39.png> </p>
+<p>Notice that the answer is independent of the path you take from a to b; in mechanics, then, we would call the electrostatic force &ldquo;conservative.&rdquo; Dividing through by Q, we have</p>
+<span>
+\[V(b) - V(a) = \frac{W}{Q} \]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>In words, the potential difference between points a and b is equal to the work per unit charge required to carry a particle from a to b. In particular, if you want to bring Q in from far away and stick it at point r, the work you must do is</p>
+<span>
+\[W = Q[V(\vec{r}) - V(\infty)],\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>so if you have set the reference point at infinity,</p>
+<span>
+\[W = Q V(\vec{r}) \label{2.39} \tag{2.39}\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>In this sense, potential is potential <em>energy</em> (the work it takes to create a system) <em>per unit charge</em> (just as the field is force per unit charge).</p>
+<h2 id=242-the-energy-of-a-point-charge-distribution>
+2.4.2: The Energy of a Point Charge Distribution
+<a class=anchor href=#242-the-energy-of-a-point-charge-distribution>#</a>
+</h2>
+<p>How much work would it take to assemble an entire collection of point charges? Imagine bringing in the charges, one by one, from far away (Fig 2.40). The first charge \( q_1 \) takes <em>no</em> work, since there is no field to fight against. Now bring in \( q_2 \). According to \( \eqref{2.39} \) this will cost you \( q_2 V_1(\vec{r}_2) \), where \( V_1 \) is the potential due to \( q_1 \) , and \( \vec{r}_2 \) is the place we&rsquo;re putting \( q_2 \):</p>
+<span>
+\[W_2 = \frac{1}{4 \pi \epsilon_0} q_2 \left( \frac{q_1}{\gr_{12}} \right)\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>(\( \gr_{12} \) is the distance between \( q_1 \) and \( q_2 \), once they are in position). As you bring in each charge, nail it down in its final location, so it doesn&rsquo;t move when you bring in the next charge. Now bring in \( q_3 \). This requires work \( q_3 V_{1,2}(\vec{r}<em>3) \), where \( V</em>{1,2} \) is the potential due to charges \( q_1 \) and \( q_2 \), namely \( (1 / 4 \pi \epsilon_0) (q_1 / \gr_{13} + q_2 / \gr_{23} ) \). Thus</p>
+<span>
+\[W_3 = \frac{1}{4 \pi \epsilon_0} q_3 \left( \frac{q_1}{\gr_{13}} + \frac{q_2}{\gr_{23}} \right)\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>Similarly, the extra work to bring in \( q_4 \) will be</p>
+<span>
+\[W_4 = \frac{1}{4 \pi \epsilon_0} q_4 \left( \frac{q_1}{\gr_{14}} + \frac{q_2}{\gr_{24}} + \frac{q_3}{\gr_{34}} \right)\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>The <em>total</em> work necessary to assemble the first four charges, then, is</p>
+<span>
+\[W = \frac{1}{4 \pi \epsilon_0} \left( \frac{q_1 q_2}{\gr_{12}} + \frac{q_1 q_3}{\gr_{13}} + \frac{q_1 q_4}{\gr_{14}} + \frac{q_2 q_3}{\gr_{23}} + \frac{q_2 q_4}{\gr_{24}} + \frac{q_3 q_4}{\gr_{34}} \right)\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>You see the general rule: Take the product of each pair of charges, divide by their separation distance, and add it all up:</p>
+<span>
+\[W = \frac{1}{4 \pi \epsilon_0} \sum_{i = 1} ^{n} \sum_{j > i} ^n \frac{q_i q_j}{\gr_{ij}} \]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>The stipulation \( j > i \) is to remind you not to count the same pair twice. A nicer way to accomplish this is <em>intentionally</em> to count each pair twice, and then divide by 2:</p>
+<span>
+\[W = \frac{1}{8 \pi \epsilon_0} \sum_{i = 1} ^n \sum_{j \neq i} \frac{q_i q_j}{\gr_{ij}} \]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>(we must still avoid \( i = j \), of course). Notice that in this form the answer plainly does not depend on the <em>order</em> in which you assemble the charges, since every pair occurs in the sum.</p>
+<p>Finally, let&rsquo;s pull out the factor \( q_i \):</p>
+<span>
+\[W = \frac{1}{2} \sum_{i = 1}^n q_i \left( \sum_{j \neq i} ^n \frac{1}{4 \pi \epsilon_0} \frac{q_j}{\gr_{ij}} \right)\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>The term in parentheses is the potential at point \( \vec{r_i} \) (the position of \( q_i \) ) due to all the <em>other</em> charges - all of them, now, not just the ones that were present at some stage during the assembly. Thus,</p>
+<span>
+\[W = \frac{1}{2} \sum_{i = 1} ^n q_i V(\vec{r_i}) \label{2.42} \tag{2.42}\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>That&rsquo;s how much work it takes to assemble a configuration of point charges; it&rsquo;s also the amount of work you&rsquo;d get back if you dismantled the system. In the meantime, it represents energy stored in the configuration (&ldquo;potential&rdquo; energy, if you insist, though for obvious reasons I prefer to avoid that word in this context).</p>
+<h2 id=243-the-energy-of-a-continuous-charge-distribution>
+2.4.3: The Energy of a Continuous Charge Distribution
+<a class=anchor href=#243-the-energy-of-a-continuous-charge-distribution>#</a>
+</h2>
+<p>For a volume charge density \( \rho \), \( \eqref{2.42} \) becomes</p>
+<span>
+\[W = \frac{1}{2} \int \rho V \dd{\tau} \label{2.43} \tag{2.43}\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>There is a lovely way to write this result, in which \( \rho \) and \( V \) are eliminated in favor of \( \vec{E} \). First, use Gauss&rsquo;s law to express \( \rho \) in terms of \( \vec{E} \)</p>
+<span>
+\[\rho = \epsilon_0 \div{\vec{E}} \qquad \text{so,} \qquad W = \frac{\epsilon_0}{2} \int (\div{\vec{E}}) V \dd{\tau}\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>Now, use integration by parts to transfer the derivative from \( \vec{E} \) to \( V \):</p>
+<span>
+\[W = \frac{\epsilon_0}{2} \left[ - \int \vec{E} \cdot (\grad{V}) \dd{\tau} + \oint V \vec{E} \cdot \dd{\vec{a}} \right]\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>But \( \grad{V} = - \vec{E} \), so</p>
+<span>
+\[ W = \frac{\epsilon_0}{2} \left( \int_{\mathscr{V}} E^2 \dd{\tau} + \oint V \vec{E} \cdot \dd{\vec{a}} \right) \label{2.44} \tag{2.44}
+\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>But what volume is this we&rsquo;re integrating over? Let&rsquo;s go back to the formula we started with, \( \eqref{2.43} \). From its derivation, it is clear that we should integrate over the region where the charge is located. But actually, any larger volume would do just as well: The &ldquo;extra&rdquo; territory we throw in will contribute nothing to the integral, since \( \rho = 0 \) out there. With this in mind, we return to \( \eqref{2.44} \). What happens here, as we enlarge the volume beyond the minimum necessary to trap all the charge? Well, the integral of \( E^2 \) can only increase (the integrand being positive); evidently the surface integral must decrease accordingly to leave the sum intact. (In fact, at large distances from the charge, \( E \) goes like \( 1 / r^2 \) and \( V \) like \( 1/r \), while the surface area grows like \( r^2 \); roughly speaking, then, the surface integral goes down like \( 1/r \). Please understand: \( \eqref{2.44} \) gives you the correct energy W, whatever volume you use (as long as it encloses all the charge), but the contribution of the volume integral goes up, and that of the surface integral goes down, as you take larger and larger volumes. In particular, why not integrate over <em>all</em> space? Then the surface integral goes to zero, and we are left with</p>
+<span>
+\[W = \frac{\epsilon_0}{2} \int E^2 \dd{\tau} \quad \text{(all space)} \label{2.45} \tag{2.45}\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<h4 id=example-29>
+Example 2.9
+<a class=anchor href=#example-29>#</a>
+</h4>
+<div class=book-tabs><input type=radio class=toggle name=tabs-ex2.9 id=tabs-ex2.9-0 checked>
+<label for=tabs-ex2.9-0>Q</label>
+<div class="book-tabs-content markdown-inner">Find the energy of a uniformly charged spherical shell of total charge \( q \) and radius \( R \)</div><input type=radio class=toggle name=tabs-ex2.9 id=tabs-ex2.9-1>
+<label for=tabs-ex2.9-1>A</label>
+<div class="book-tabs-content markdown-inner"><p>Use \( \eqref{2.43} \) in the version appropriate to surface charges</p>
+<span>
+\[W = \frac{1}{2} \sigma V \dd{a}\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>Now, the potential at the surface of this sphere is \( (1/4 \pi \epsilon_0)q/R \) (a constant), so</p>
+<span>
+\[W = \frac{1}{8\pi \epsilon_0} \frac{q}{R} \int \sigma \dd{a} = \frac{1}{8 \pi \epsilon_0} \frac{q^2}{R} \]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p><strong>Solution 2</strong>
+Use \( \eqref{2.45} \). Inside the sphere, \( \vec{E} = 0 \); outside:</p>
+<span>
+\[\vec{E} = \frac{1}{4\pi \epsilon_0} \frac{q}{r^2} \vu{r} \quad \text{so} \quad E^2 = \frac{q^2}{(4 \pi \epsilon_0)^2 r^4} \]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>Therefore,</p>
+<span>
+\[W_{tot} = \frac{\epsilon_0}{2 (4 \pi \epsilon_0)^2}\int \left( \frac{q^2}{r^4} \right) (r^2 \sin \theta \dd{r} \dd{\theta} \dd{\phi}) \\
+= \frac{1}{32 \pi ^2 \epsilon_0} q^2 4 \pi \int_{R} ^{\infty} \frac{1}{r^2} \dd{r} = \frac{1}{8 \pi \epsilon_0} \frac{q^2}{R} \]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+</div></div>
+<h2 id=244-comments-on-electrostatic-energy>
+2.4.4: Comments on Electrostatic Energy
+<a class=anchor href=#244-comments-on-electrostatic-energy>#</a>
+</h2>
+<p><strong>A perplexing &ldquo;inconsistency&rdquo;</strong></p>
+<p>Equation \( \eqref{2.45} \) clearly implies that the energy of a stationary charge distribution is always positive. On the other hand, \( \eqref{2.42} \) (from which \( \eqref{2.45} \) was in fact derived), can be positive or negative. For instance, according to \( \eqref{2.42} \) the energy of two equal but opposite charges a distance \( \gr \) apart is \( -(1/4 \pi \epsilon_0) (q^2/\gr) \). What&rsquo;s gone wrong? Which equation is correct?</p>
+<p>The answer is that <em>both</em> are correct, but they speak to slightly different questions. Equation \( \eqref{2.42} \) does not take into account the work necessary to make the point charges in the first place; we started with point charges and simply found the work required to bring them together. This is wise strategy, since \( \eqref{2.45} \) indicates that the energy of a point charge is in fact <em>infinite</em></p>
+<span>
+\[ W = \frac{\epsilon_0}{2(4 \pi \epsilon_0)^2} \int \left( \frac{q^2}{r^4} \right) (r^2 \sin \theta \dd{r} \dd{\theta} \dd{\phi}) = \frac{q^2}{8 \pi \epsilon_0} \int_{0} ^{\infty} \frac{1}{r^2} \dd{r} = \infty
+\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>Equation \( \eqref{2.45} \) is more <em>complete</em>, in the sense that it tells you the <em>total</em> energy stored in a charge configuration, but \( \eqref{2.42} \) is more appropriate when you&rsquo;re dealing with point charges, because we prefer (for good reason!) to leave out that portion of the total energy that is attributable to the fabrication of the point charges themselves. In practice, after all, the point charges (electrons, say) are <em>given</em> to us ready-made; all we do is move them around. Since we did not put them together, and we cannot take them apart, it is immaterial how much work the process would involve. (Still, the infinite energy of a point charge is a recurring source of embarrassment for electromagnetic theory, afflicting the quantum version as well as the classical. We shall return to the problem in Chapter 11).</p>
+<p>Now, you may wonder where the inconsistency crept into an apparently water-tight derivation. The &ldquo;flaw&rdquo; lies between \( \eqref{2.42} \) and \( \eqref{2.43} \): in the former, \( V(\vec{r_i}) \) represents the potential due to all the other charges, <em>but not</em> \( q_i \), whereas in the latter, \( V(\vec{r}) \) is the full potential. For a continuous distribution, there is no distinction, since the amount of charge right at the point \( \vec{r} \) is vanishingly small, and its contribution to the potential is zero. But in the presence of point charges you&rsquo;d better stick with \( \eqref{2.42} \).</p>
+<p><strong>Where is the energy stored?</strong> Equations \( \eqref{2.43} \) and \( \eqref{2.45} \) offer two different ways of calculating the same thing. The first is an integral over the charge distribution, the second is an integral over the field. These can involve completely different regions. For instance, in the case of a spherical shell, the charge is confined to the surface, whereas the electric field is everywhere <em>outside</em> this surface. Where <em>is</em> the energy, then? Is it stored in the field, as \( \eqref{2.45} \) seems to suggest, or is it stored in the charge, as \( \eqref{2.43} \) implies? At the present stage this is simply an unanswerable question: I can tell you what the total energy is, and I can provide you with several different ways to compute it, but it is impertinent to worry about where the energy is located. In the context of radiation theory (Chapter 11) it is useful (and in general relativity it is essential) to regard the energy as stored in the field, with a density</p>
+<span>
+\[\frac{\epsilon_0}{2} E^2 = \text{ energy per unit volume} \label{2.46} \tag{2.46}\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>But in electrostatics one could just as well say it is stored in the charge, with a density \( \frac{1}{2} \rho V \). The difference is purely a matter of bookkeeping.</p>
+<p><strong>The superposition principle</strong>. Because electrostatic energy is <em>quadratic</em> in the fields, it does not obey a superposition principle. The energy of a compound system is <em>not</em> the sum of the energies of its parts considered separately - there are also &ldquo;cross terms&rdquo;:</p>
+<span>
+\[\begin{aligned}
 W_{tot} & = & \frac{\epsilon_0}{2} \int E^2 \dd{\tau} = \frac{\epsilon_0}{2} \int (\vec{E_1} + \vec{E_2})^2 \dd{\tau} \\
 & = & \frac{\epsilon_0}{2} \int (E_1 ^2 + E_2 ^2 + 2 \vec{E_1} \cdot \vec{E_2}) \dd{\tau} \\
 & = & W_1 + W_2 + \epsilon_0 \int \vec{E_1} \cdot \vec{E_2} \dd{\tau}
-\end{aligned}\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>For example, if you double the charge everywhere, you <em>quadruple</em> the total energy.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div class=book-languages tabindex=0 aria-haspopup=true><ul><li class="flex align-center"><img src=/r/svg/translate.svg class=book-icon alt=Languages>
-English</li></ul><ul class=book-languages-list><li class=active><a href=https://peppyhare.github.io/r/ class="flex align-center"><img src=/r/svg/translate.svg class=book-icon alt=Languages>
-English</a></li><li><a href=https://peppyhare.github.io/r/ru/ class="flex align-center"><img src=/r/svg/translate.svg class=book-icon alt=Languages>
-Russian</a></li><li><a href=https://peppyhare.github.io/r/zh/ class="flex align-center"><img src=/r/svg/translate.svg class=book-icon alt=Languages>
-Chinese</a></li></ul></div><div><a class="flex align-center" href=https://github.com/Peppyhare/r/commit/8c3258d2fcca7f2e34db954c9477d2c9de77bd94 title="Last modified by Evan Bluhm | October 10, 2020" target=_blank rel=noopener><img src=/r/svg/calendar.svg class=book-icon alt=Calendar>
-<span>October 10, 2020</span></a></div></div><script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#24-work-and-energy-in-electrostatics>2.4: Work and Energy in Electrostatics</a><ul><li><a href=#241-the-work-it-takes-to-move-a-charge>2.4.1: The Work it Takes to Move a Charge</a></li><li><a href=#242-the-energy-of-a-point-charge-distribution>2.4.2: The Energy of a Point Charge Distribution</a></li><li><a href=#243-the-energy-of-a-continuous-charge-distribution>2.4.3: The Energy of a Continuous Charge Distribution</a><ul><li></li></ul></li><li><a href=#244-comments-on-electrostatic-energy>2.4.4: Comments on Electrostatic Energy</a></li></ul></li></ul></nav></div></aside></main></body></html>
+\end{aligned}\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>For example, if you double the charge everywhere, you <em>quadruple</em> the total energy.</p>
+</article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
+<div class=book-languages tabindex=0 aria-haspopup=true>
+<ul>
+<li class="flex align-center">
+<img src=/r/svg/translate.svg class=book-icon alt=Languages>
+English
+</li>
+</ul>
+<ul class=book-languages-list>
+<li class=active>
+<a href=https://peppyhare.github.io/r/ class="flex align-center">
+<img src=/r/svg/translate.svg class=book-icon alt=Languages>
+English
+</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/ru/ class="flex align-center">
+<img src=/r/svg/translate.svg class=book-icon alt=Languages>
+Russian
+</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/zh/ class="flex align-center">
+<img src=/r/svg/translate.svg class=book-icon alt=Languages>
+Chinese
+</a>
+</li>
+</ul>
+</div>
+<div><a class="flex align-center" href=https://github.com/Peppyhare/r/commit/8c3258d2fcca7f2e34db954c9477d2c9de77bd94 title="Last modified by Evan Bluhm | October 10, 2020" target=_blank rel=noopener>
+<img src=/r/svg/calendar.svg class=book-icon alt=Calendar>
+<span>October 10, 2020</span>
+</a>
+</div>
+</div>
+<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+</footer>
+<div class=book-comments>
+</div>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<div class=book-toc-content>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#24-work-and-energy-in-electrostatics>2.4: Work and Energy in Electrostatics</a>
+<ul>
+<li><a href=#241-the-work-it-takes-to-move-a-charge>2.4.1: The Work it Takes to Move a Charge</a></li>
+<li><a href=#242-the-energy-of-a-point-charge-distribution>2.4.2: The Energy of a Point Charge Distribution</a></li>
+<li><a href=#243-the-energy-of-a-continuous-charge-distribution>2.4.3: The Energy of a Continuous Charge Distribution</a>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><a href=#244-comments-on-electrostatic-energy>2.4.4: Comments on Electrostatic Energy</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+</main>
+</body>
+</html>

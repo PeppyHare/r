@@ -1,48 +1,612 @@
-<!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="B-dot Probe Diagnostics #  Faraday&rsquo;s law is the basis for magnetic field coils:
-  \[\int \pdv{\vec B}{t} \cdot \dd \vec S = - \oint \vec E \cdot \dd \vec l = - V_{emf}\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;"><meta name=theme-color content="#FFFFFF"><meta property="og:title" content="Magnetic Field Diagnostics"><meta property="og:description" content="B-dot Probe Diagnostics #  Faraday&rsquo;s law is the basis for magnetic field coils:
-  \[\int \pdv{\vec B}{t} \cdot \dd \vec S = - \oint \vec E \cdot \dd \vec l = - V_{emf}\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;"><meta property="og:type" content="article"><meta property="og:url" content="https://peppyhare.github.io/r/notes/UWAA560/03-magnetic-field-diagnostics/"><meta property="article:modified_time" content="2021-01-19T18:57:47-08:00"><title>Magnetic Field Diagnostics | My Notes</title><link rel=manifest href=/r/manifest.json><link rel=icon href=/r/favicon.png type=image/x-icon><link rel=stylesheet href=/r/book.min.b5acfab5895f64bd14769fac98c8e12ae0bb6f5735b6604c6fabaca02eefa4a8.css integrity="sha256-taz6tYlfZL0Udp+smMjhKuC7b1c1tmBMb6usoC7vpKg="><script defer src=/r/en.search.min.478b6ef39c153e0acb0d97cd2be58eec8c4f81d0040a631853171332602f0866.js integrity="sha256-R4tu85wVPgrLDZfNK+WO7IxPgdAECmMYUxcTMmAvCGY="></script><script defer src=/r/sw.min.7dd1b982abb2287010a43b99e3233ff99ced25fbe0e72dc2e6ad364145177485.js integrity="sha256-fdG5gquyKHAQpDuZ4yM/+ZztJfvg5y3C5q02QUUXdIU="></script><link rel=preload href=/r/katex/fonts/KaTeX_Main-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Main-Bold.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Main-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Math-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Size2-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Size3-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/fonts/roboto-v19-latin-regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/fonts/roboto-v19-latin-700.woff2 as=font type=font/woff2 crossorigin=anonymous></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a href=/r><span>My Notes</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><span>Notes</span><ul><li class=book-section-flat><input type=checkbox id=section-3c2351b6c36eb8737d2b3aab84ebe41a class=toggle>
-<label for=section-3c2351b6c36eb8737d2b3aab84ebe41a class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/UWAA545/>Computational Methods For Plasmas</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/UWAA545/01-syllabus/>Syllabus</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/02-plasma-models/>Plasma Models</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/03-pic-method/>Particle in Cell Model</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/04-pic-example/>PIC - Example Implementation</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/05-electrodynamic-pic/>Multidimensional Electrodynamic PIC</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/06-fluid-models/>Fluid Models for Plasmas</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/07-finite-difference-models/>Finite Difference Methods for MHD</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/08-mhd-equilibrium/>MHD Equilibria</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/formulary/>Formulary</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-6349dd4237c5b36ce5c3738b93bc5885 class=toggle checked>
-<label for=section-6349dd4237c5b36ce5c3738b93bc5885 class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/UWAA560/>Plasma Diagnostics</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/UWAA560/01-syllabus/>Syllabus</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/02-diagnostic-considerations/>General Diagnostic Considerations</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/03-magnetic-field-diagnostics/ class=active>Magnetic Field Diagnostics</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/04-electrostatic-diagnostics/>Electrostatic Diagnostics</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/05-index-of-refraction-measurements/>Index of Refraction Measurements</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/06-spectroscopic-measurements/>Spectroscopic Measurements</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/90-student-lectures/>Student Lectures</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/91-zeeman-spectroscopy/>My class lecture</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/formulary/>Formulary</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-edf338bf880234e7aba93d04934ebde0 class=toggle>
-<label for=section-edf338bf880234e7aba93d04934ebde0 class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/UWAA558/>MHD Theory</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/UWAA558/01-syllabus/>Syllabus</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/02-plasma-models/>Plasma Models</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/03-plasma-fluid-model/>Plasma Fluid Model</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/04-two-fluid-plasma-model/>Two-Fluid Plasma Model</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/05-mhd-model/>Magnetohydrodynamic (MHD) Model</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/06-boundary-conditions/>Boundary Conditions</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/>Equilibrium for Fusion</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/08-1d-equilibria/>1-D Equilibria</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/09-2d-equilibria/>2D Equilibria</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/10-equilibrium-of-3d-configurations/>Equilibrium of 3D Configurations</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/11-mhd-stability/>MHD Stability</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/formulary/>Formulary</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-413f74fd9b5926250a41b61f37ddacc6 class=toggle>
-<label for=section-413f74fd9b5926250a41b61f37ddacc6 class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/UWAA557/>Physics of Fusion Plasmas</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-0/>Rules of thumb</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-1/>Statistical Mechanics</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-2/>Review of E&M</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-3/>Lagrange Multipliers</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-1/>Wall-supported Plasma</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-2/>Collisions</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-3/>Oscillations</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-f5aa9ed14dd55f47a51954bafbe42c68 class=toggle>
-<label for=section-f5aa9ed14dd55f47a51954bafbe42c68 class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/UWAA543/>Computational CFD</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-1/>Introduction to Computational CFD</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-2/>Governing Equations</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-3/>Reduced Models</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-4/>Equation Types</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-5/>Panel Method</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-1/>Finite Difference Algorithms</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-2/>Explicit Finite Difference Algorithms</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-3/>Finite Difference and Finite Volume Methods</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-4/>Implicit Algorithms</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-5/>Numerical Boundary Conditions</a></li></ul></li><li class=book-section-flat><span>Working</span><ul><li><a href=https://peppyhare.github.io/r/notes/working/crews2018/>Crews (2018)</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-ee5e070eb25b63f2c377d750d37f67ae class=toggle>
-<label for=section-ee5e070eb25b63f2c377d750d37f67ae class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/griffiths/>Griffiths Introduction to Electrodynamics</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-1/>Vector Algebra</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-2/>Differential Calculus</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-3/>Integral Calculus</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-4/>Curvilinear Coordinates</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-5/>The Dirac Delta Function</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-6/>The Theory of Vector Fields</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch2-1/>The Electric Field</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch2-2/>Divergence and Curl of Electrostatic Fields</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch2-3/>Electric Potential</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch2-4/>Work and Energy in Electrostatics</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch2-5/>Conductors</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch3-1/>Laplace's Equation</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch3-2/>The Method of Images</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch3-3/>Separation of Variables</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch3-4/>Multipole Expansion</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch4-1/>Polarization</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch4-2/>The Field of a Polarized Object</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch4-3/>The Electric Displacement</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch4-4/>The Linear Dielectrics</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch5-1/>The Lorentz Force Law</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch5-2/>The Biot-Savart Law</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch5-3/>The Divergence and Curl of B</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch5-4/>Magnetic Vector Potential</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch6-1/>Magnetization</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch6-2/>The Field of a Magnetized Object</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch6-3/>The Auxiliary Field H</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch6-4/>Linear and Nonlinear Media</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch7-1/>Electromotive Force</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch7-2/>Electromagnetic Induction</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch7-3/>Maxwell's Equations</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch8-0/>Phys 544 Introduction</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch8-1/>Charge and Energy</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch8-2/>Momentum</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch9-1/>Electromagnetic Waves in One Dimension</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch9-2/>Wave Equation for E and B</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch9-3/>Electromagnetic Waves in Matter</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch9-4/>Electromagnetic Waves in Conductors</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch9-5/>Guided Waves</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch10-1/>Scalar and Vector Potentials</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch10-2/>Retarded Potentials</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch10-3/>Point Charges</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch11-1/>Dipole Radiation</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch3/>Solved Problems Ch3</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch5/>Solved Problems Ch5</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch7/>Solved Problems Ch7</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch9/>Solved Problems Ch9</a></li></ul></li></ul></li></ul><ul><li><a href=https://github.com/Peppyhare/r target=_blank rel=noopener>Github</a></li><li><a href=https://themes.gohugo.io/hugo-book/ target=_blank rel=noopener>Hugo Themes</a></li></ul></nav><script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/r/svg/menu.svg class=book-icon alt=Menu></label>
+<!doctype html><html lang=en dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="B-dot Probe Diagnostics #  Faraday&rsquo;s law is the basis for magnetic field coils:
+  \[\int \pdv{\vec B}{t} \cdot \dd \vec S = - \oint \vec E \cdot \dd \vec l = - V_{emf}\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;">
+<meta name=theme-color content="#FFFFFF"><meta property="og:title" content="Magnetic Field Diagnostics">
+<meta property="og:description" content="B-dot Probe Diagnostics #  Faraday&rsquo;s law is the basis for magnetic field coils:
+  \[\int \pdv{\vec B}{t} \cdot \dd \vec S = - \oint \vec E \cdot \dd \vec l = - V_{emf}\]   function loadKatex() { renderMathInElement(document.body, { delimiters: [ { left: &#34;$$&#34;, right: &#34;$$&#34;, display: true }, { left: &#34;\\[&#34;, right: &#34;\\]&#34;, display: true }, { left: &#34;$&#34;, right: &#34;$&#34;, display: false }, { left: &#34;">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://peppyhare.github.io/r/notes/UWAA560/03-magnetic-field-diagnostics/"><meta property="article:section" content="notes">
+<meta property="article:modified_time" content="2021-01-19T18:57:47-08:00">
+<title>Magnetic Field Diagnostics | My Notes</title>
+<link rel=manifest href=/r/manifest.json>
+<link rel=icon href=/r/favicon.png type=image/x-icon>
+<link rel=stylesheet href=/r/book.min.0c766a254e418441a9a6040b003c1dc3437b0e31c396aa0075dc269e14348f4c.css integrity="sha256-DHZqJU5BhEGppgQLADwdw0N7DjHDlqoAddwmnhQ0j0w=" crossorigin=anonymous>
+<script defer src=/r/flexsearch.min.js></script>
+<script defer src=/r/en.search.min.a496f3b2243e59103bd55301c877754d0df8ababaf33a536c01da9dce836018e.js integrity="sha256-pJbzsiQ+WRA71VMByHd1TQ34q6uvM6U2wB2p3Og2AY4=" crossorigin=anonymous></script>
+<script defer src=/r/sw.min.9e3a83f0b071ebe0141a16a33db93faadb2bdf712473a218febeed35ed243c08.js integrity="sha256-njqD8LBx6+AUGhajPbk/qtsr33Ekc6IY/r7tNe0kPAg=" crossorigin=anonymous></script>
+<link rel=preload href=/r/katex/fonts/KaTeX_Main-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=/r/katex/fonts/KaTeX_Main-Bold.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=/r/katex/fonts/KaTeX_Main-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=/r/katex/fonts/KaTeX_Math-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=/r/katex/fonts/KaTeX_Size2-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=/r/katex/fonts/KaTeX_Size3-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=/r/fonts/roboto-v19-latin-regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
+<link rel=preload href=/r/fonts/roboto-v19-latin-700.woff2 as=font type=font/woff2 crossorigin=anonymous>
+</head>
+<body dir=ltr>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<div class=book-menu-content>
+<nav>
+<h2 class=book-brand>
+<a href=/r/><span>My Notes</span>
+</a>
+</h2>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
+</div>
+<ul>
+<li class=book-section-flat>
+<span>Notes</span>
+<ul>
+<li class=book-section-flat>
+<input type=checkbox id=section-3c2351b6c36eb8737d2b3aab84ebe41a class=toggle>
+<label for=section-3c2351b6c36eb8737d2b3aab84ebe41a class="flex justify-between">
+<a href=https://peppyhare.github.io/r/notes/UWAA545/>Computational Methods For Plasmas</a>
+</label>
+<ul>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/01-syllabus/>Syllabus</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/02-plasma-models/>Plasma Models</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/03-pic-method/>Particle in Cell Model</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/04-pic-example/>PIC - Example Implementation</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/05-electrodynamic-pic/>Multidimensional Electrodynamic PIC</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/06-fluid-models/>Fluid Models for Plasmas</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/07-finite-difference-models/>Finite Difference Methods for MHD</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/08-mhd-equilibrium/>MHD Equilibria</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA545/formulary/>Formulary</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<input type=checkbox id=section-6349dd4237c5b36ce5c3738b93bc5885 class=toggle checked>
+<label for=section-6349dd4237c5b36ce5c3738b93bc5885 class="flex justify-between">
+<a href=https://peppyhare.github.io/r/notes/UWAA560/>Plasma Diagnostics</a>
+</label>
+<ul>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/01-syllabus/>Syllabus</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/02-diagnostic-considerations/>General Diagnostic Considerations</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/03-magnetic-field-diagnostics/ class=active>Magnetic Field Diagnostics</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/04-electrostatic-diagnostics/>Electrostatic Diagnostics</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/05-index-of-refraction-measurements/>Index of Refraction Measurements</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/06-spectroscopic-measurements/>Spectroscopic Measurements</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/90-student-lectures/>Student Lectures</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/91-zeeman-spectroscopy/>My class lecture</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA560/formulary/>Formulary</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<input type=checkbox id=section-edf338bf880234e7aba93d04934ebde0 class=toggle>
+<label for=section-edf338bf880234e7aba93d04934ebde0 class="flex justify-between">
+<a href=https://peppyhare.github.io/r/notes/UWAA558/>MHD Theory</a>
+</label>
+<ul>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/01-syllabus/>Syllabus</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/02-plasma-models/>Plasma Models</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/03-plasma-fluid-model/>Plasma Fluid Model</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/04-two-fluid-plasma-model/>Two-Fluid Plasma Model</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/05-mhd-model/>Magnetohydrodynamic (MHD) Model</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/06-boundary-conditions/>Boundary Conditions</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/>Equilibrium for Fusion</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/08-1d-equilibria/>1-D Equilibria</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/09-2d-equilibria/>2D Equilibria</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/10-equilibrium-of-3d-configurations/>Equilibrium of 3D Configurations</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/11-mhd-stability/>MHD Stability</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA558/formulary/>Formulary</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<input type=checkbox id=section-413f74fd9b5926250a41b61f37ddacc6 class=toggle>
+<label for=section-413f74fd9b5926250a41b61f37ddacc6 class="flex justify-between">
+<a href=https://peppyhare.github.io/r/notes/UWAA557/>Physics of Fusion Plasmas</a>
+</label>
+<ul>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-0/>Rules of thumb</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-1/>Statistical Mechanics</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-2/>Review of E&M</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-3/>Lagrange Multipliers</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-1/>Wall-supported Plasma</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-2/>Collisions</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-3/>Oscillations</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<input type=checkbox id=section-f5aa9ed14dd55f47a51954bafbe42c68 class=toggle>
+<label for=section-f5aa9ed14dd55f47a51954bafbe42c68 class="flex justify-between">
+<a href=https://peppyhare.github.io/r/notes/UWAA543/>Computational CFD</a>
+</label>
+<ul>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-1/>Introduction to Computational CFD</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-2/>Governing Equations</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-3/>Reduced Models</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-4/>Equation Types</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-5/>Panel Method</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-1/>Finite Difference Algorithms</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-2/>Explicit Finite Difference Algorithms</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-3/>Finite Difference and Finite Volume Methods</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-4/>Implicit Algorithms</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-5/>Numerical Boundary Conditions</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<span>Working</span>
+<ul>
+<li>
+<a href=https://peppyhare.github.io/r/notes/working/crews2018/>Crews (2018)</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<input type=checkbox id=section-ee5e070eb25b63f2c377d750d37f67ae class=toggle>
+<label for=section-ee5e070eb25b63f2c377d750d37f67ae class="flex justify-between">
+<a href=https://peppyhare.github.io/r/notes/griffiths/>Griffiths Introduction to Electrodynamics</a>
+</label>
+<ul>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-1/>Vector Algebra</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-2/>Differential Calculus</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-3/>Integral Calculus</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-4/>Curvilinear Coordinates</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-5/>The Dirac Delta Function</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-6/>The Theory of Vector Fields</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch2-1/>The Electric Field</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch2-2/>Divergence and Curl of Electrostatic Fields</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch2-3/>Electric Potential</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch2-4/>Work and Energy in Electrostatics</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch2-5/>Conductors</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch3-1/>Laplace's Equation</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch3-2/>The Method of Images</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch3-3/>Separation of Variables</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch3-4/>Multipole Expansion</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch4-1/>Polarization</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch4-2/>The Field of a Polarized Object</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch4-3/>The Electric Displacement</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch4-4/>The Linear Dielectrics</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch5-1/>The Lorentz Force Law</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch5-2/>The Biot-Savart Law</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch5-3/>The Divergence and Curl of B</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch5-4/>Magnetic Vector Potential</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch6-1/>Magnetization</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch6-2/>The Field of a Magnetized Object</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch6-3/>The Auxiliary Field H</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch6-4/>Linear and Nonlinear Media</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch7-1/>Electromotive Force</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch7-2/>Electromagnetic Induction</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch7-3/>Maxwell's Equations</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch8-0/>Phys 544 Introduction</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch8-1/>Charge and Energy</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch8-2/>Momentum</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch9-1/>Electromagnetic Waves in One Dimension</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch9-2/>Wave Equation for E and B</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch9-3/>Electromagnetic Waves in Matter</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch9-4/>Electromagnetic Waves in Conductors</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch9-5/>Guided Waves</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch10-1/>Scalar and Vector Potentials</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch10-2/>Retarded Potentials</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch10-3/>Point Charges</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/ch11-1/>Dipole Radiation</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch3/>Solved Problems Ch3</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch5/>Solved Problems Ch5</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch7/>Solved Problems Ch7</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch9/>Solved Problems Ch9</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<a href=https://github.com/Peppyhare/r target=_blank rel=noopener>
+Github
+</a>
+</li>
+<li>
+<a href=https://themes.gohugo.io/hugo-book/ target=_blank rel=noopener>
+Hugo Themes
+</a>
+</li>
+</ul>
+</nav>
+<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=/r/svg/menu.svg class=book-icon alt=Menu>
+</label>
 <strong>Magnetic Field Diagnostics</strong>
-<label for=toc-control></label></div></header><article class=markdown><h1 id=b-dot-probe-diagnostics>B-dot Probe Diagnostics
-<a class=anchor href=#b-dot-probe-diagnostics>#</a></h1><p>Faraday&rsquo;s law is the basis for magnetic field coils:</p><link rel=stylesheet href=/r/katex/katex.min.css><script defer src=/r/katex/katex.min.js></script><script defer src=/r/katex/auto-render.min.js onload=loadKatex();></script><span>\[\int \pdv{\vec B}{t} \cdot \dd \vec S = - \oint \vec E \cdot \dd \vec l = - V_{emf}\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>For a rigid, perfectly conducting loop of N turns in the presence of a changing magnetic field,</p><span>\[V_i = \oint \vec E \cdot \dd \vec l = - \pdv{\Phi}{t} = - \pdv{}{t} \int \vec B \cdot \dd \vec s = - N A \frac{\int \pdv{\vec B}{t} \cdot \dd \vec s}{\int \dd \vec s} \\
-\rightarrow V_i \propto \dot{B_{avg}}\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>where \( B_{avg} \) is the area-averaged magnetic field aligned to loop. The signal \( V_i \) increases with loop area, but the spatial resolution decreases. Multiple turns of coil increase the signal (effective loop area). The signal must be integrated in time to obtain the local magnetic field strength.</p><span>\[B_{avg}(t) = - \frac{1}{NA} \int_0 ^t V_i \dd t'\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>Typical probes are small for spatial resolution, and feature windings in 3 orthogonal directions. Mount the probes on insulating material to avoid perturbing local magnetic field.</p><h2 id=b-dot-probe-calibration>B-dot Probe Calibration
-<a class=anchor href=#b-dot-probe-calibration>#</a></h2><p>Before using a B-dot probe for diagnostics, a calibration must be performed, which involves applying a known time-varying magnetic field and recording the probe response. Consider the following experimental setup for the calibration of a B-dot probe:</p><p align=center><img alt=5.png src=/r/img/560/5.png></p><p>Our coil is mounted in place and connected via RG 58 to an oscilloscope. Nearby the probe, the magnetic field source is a current-carrying wire connected to a switched charging/discharge circuit as shown. When we perform the experiment, we are able to see a very clean source \( I_s(t) \)</p><p align=center><img alt=6.png src=/r/img/560/6.png></p><p>but we measure a very noisy \( V_0 (t) \) at the oscilloscope.</p><p align=center><img alt=7.png src=/r/img/560/7.png></p><p>The problem is that the finite impedance of the various components of our diagnostic circuit (containing the probe itself) gives rise to resonance. We can see this by analyzing the equivalent impedance circuit. In this calibration, the following components were used:</p><span>\[L_C = 374 \mu H \\
+<label for=toc-control>
+</label>
+</div>
+</header>
+<article class=markdown><h1 id=b-dot-probe-diagnostics>
+B-dot Probe Diagnostics
+<a class=anchor href=#b-dot-probe-diagnostics>#</a>
+</h1>
+<p>Faraday&rsquo;s law is the basis for magnetic field coils:</p>
+<link rel=stylesheet href=/r/katex/katex.min.css>
+<script defer src=/r/katex/katex.min.js></script>
+<script defer src=/r/katex/auto-render.min.js onload=loadKatex()></script><span>
+\[\int \pdv{\vec B}{t} \cdot \dd \vec S = - \oint \vec E \cdot \dd \vec l = - V_{emf}\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>For a rigid, perfectly conducting loop of N turns in the presence of a changing magnetic field,</p>
+<span>
+\[V_i = \oint \vec E \cdot \dd \vec l = - \pdv{\Phi}{t} = - \pdv{}{t} \int \vec B \cdot \dd \vec s = - N A \frac{\int \pdv{\vec B}{t} \cdot \dd \vec s}{\int \dd \vec s} \\
+\rightarrow V_i \propto \dot{B_{avg}}\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>where \( B_{avg} \) is the area-averaged magnetic field aligned to loop. The signal \( V_i \) increases with loop area, but the spatial resolution decreases. Multiple turns of coil increase the signal (effective loop area). The signal must be integrated in time to obtain the local magnetic field strength.</p>
+<span>
+\[B_{avg}(t) = - \frac{1}{NA} \int_0 ^t V_i \dd t'\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>Typical probes are small for spatial resolution, and feature windings in 3 orthogonal directions. Mount the probes on insulating material to avoid perturbing local magnetic field.</p>
+<h2 id=b-dot-probe-calibration>
+B-dot Probe Calibration
+<a class=anchor href=#b-dot-probe-calibration>#</a>
+</h2>
+<p>Before using a B-dot probe for diagnostics, a calibration must be performed, which involves applying a known time-varying magnetic field and recording the probe response. Consider the following experimental setup for the calibration of a B-dot probe:</p>
+<p align=center> <img alt=5.png src=/r/img/560/5.png> </p>
+<p>Our coil is mounted in place and connected via RG 58 to an oscilloscope. Nearby the probe, the magnetic field source is a current-carrying wire connected to a switched charging/discharge circuit as shown. When we perform the experiment, we are able to see a very clean source \( I_s(t) \)</p>
+<p align=center> <img alt=6.png src=/r/img/560/6.png> </p>
+<p>but we measure a very noisy \( V_0 (t) \) at the oscilloscope.</p>
+<p align=center> <img alt=7.png src=/r/img/560/7.png> </p>
+<p>The problem is that the finite impedance of the various components of our diagnostic circuit (containing the probe itself) gives rise to resonance. We can see this by analyzing the equivalent impedance circuit. In this calibration, the following components were used:</p>
+<span>
+\[L_C = 374 \mu H \\
 R_C = 3.2 \Omega \\
 C_C = 2 pF \\
 C_{tp} = 12 oF \\
 L_{coax} = 0.2 \mu H \\
 C_{coax} = 70 pF \\
 C_O = 20 pF \\
-R_i = 1 M \Omega\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p align=center><img alt=8.png src=/r/img/560/8.png></p><p>With these values, the simplified LRC equivalent circuit is:</p><p align=center><img alt=9.png src=/r/img/560/9.png></p><p>We analyze the circuit response by the method of Laplace transforms:</p><p align=center><img alt=10.png src=/r/img/560/10.png></p><p>The equivalent circuit impedance to the generator voltage is then</p><span>\[Z(s) = s L_C + R_C + \frac{R_i}{1 + s C_{eq} R_i}\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>which gives a current \( I(s) = V_i(s) / Z(s) \). The output voltage is then (with some algebraic manipulation)</p><span>\[V_O (s) = \omega_0 ^2 V_i (s) \left[ s^2 + s \left( \frac{R_C}{L_C} + \frac{1}{C_{eq} R_i} \right) + \omega_0 ^2 \left( \frac{R_C}{R_i} + 1 \right) \right]^{-1} \\
-\omega_0 ^2 = (L_C C_{eq} )^{-1}\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>where \( \omega_0 ^2 = (L_C C_{eq})^{-1} \). If we assume a unit step waveform for the generator voltage (that is, \( \dot B \)), then \( V_i(s) = \frac{1}{s} \) and</p><span>\[V_O(s) = \frac{\omega_0 ^2}{s (s^2 + s \alpha + \omega_0 ^2 \beta)}\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>where \( \alpha \) and \( \beta \) are the coefficients above. Taking the inverse Laplace transform (after some algebra), we arrive at</p><span>\[V_O(t) = \frac{1}{\beta} \left[ 1 - e^{- \alpha t / 2} \left( \cosh (m t) + \frac{\alpha}{2m } \sinh (m t) \right) \right]\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>where
-<span>\[m^2 = \frac{\alpha^2}{4} - \omega_0 ^2 \beta\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script></p><p>There are thus three possible situations:</p><ul><li>Critically damped: \( m^2 = 0 \)</li><li>Under-damped: \( m^2 &lt; 0 \)</li><li>Over-damped: \( m^2 > 0 \)</li></ul><p>If we plug in the values for our experimental setup, we find \( m^2 &lt; 0 \) and \( \frac{m}{2 \pi i} = 818 kHz \). This is the frequency of the noisy oscillations we picked up on our scope. To reduce the noise, we would like to achieve \( m^2 = 0 \), which corresponds with an input impedance of \( 950 \Omega \). Typically oscilloscopes have a high-impedance setting of \( \sim 1 M\Omega \) and a low-impedance setting of \( \sim 50\Omega \). We can leave the scope at the high-impedance setting and add a shunt resistor in parallel with the oscilloscope to adjust the input impedance to our liking.</p><p>For a realistic signal, the rise time will be finite (not a perfect step function). To track a more realistic impulse and reduce noise further, we can analyze the circuit assuming an input voltage profile that better matches the expected rise time. By doing so and carefully choosing the impedance to minimize oscillations, the voltage reported by our diagnostic circuit better represents the source, which is the magnetic field we are trying to measure!. In general, you want to set the input impedance as high as possible without generating oscillations.</p><p>If we go back to our setup and measure the probe response with different input impedances \( R_i \), we see the following:</p><p align=center><img alt=12.png src=/r/img/560/12.png></p><p>An low input impedance results in overd-amping and a smeared-out signal. At \( R_i = 4.7 k\Omega \) we see several oscillations. At \( R_i = 2.4 k\Omega \) we see a signal that closely resembles the \( \dot B \) we expect.</p><p>A similar decrease in oscillations can also be achieved using a series resistance, but this approach is susceptible to noise. Using a lower impedance is generally the preferred approach, but not always! We will see in our analysis of Rogowski coils later that impedance matching in series can be useful.</p><p>Finally, to recover the field strength \( B \) we are trying to measure, we need to integrate our signal. This can be achieved numerically from the digitization recorded by our scope. However, a digitizer is only able to record a finite bit depth, often as little as 8-bits, and a lack of precise sampling will result in drift and imprecise measurement. Typically, it is better to electronically integrate the signal by adding a passive integrator:</p><p align=center><img alt=17.png src=/r/img/560/17.png></p><p>Note: the passive integrator here is a low-pass filter. After adding the integrator, we must repeat the circuit analysis with a realistic magnetic field, e.g. a triangular wave (such that \( \dot B \) becomes a square wave):</p><span>\[\mathscr{L}(\text{square}(t/a)) = \frac{\tanh(as/2)}{s}\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>and a triangular wave is defined as</p><span>\[\text{trw}(t) = \int _0 ^t \text{square}(t') \dd t'\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><h2 id=further-b-dot-probe-considerations>Further B-dot probe considerations
-<a class=anchor href=#further-b-dot-probe-considerations>#</a></h2><ul><li>Small coils better localize the measurement. Since you&rsquo;re averaging the magnetic field over the cross-sectional area of the probe, you can better localize the field. Small coils also limit the perturbation of the plasma. However, the downside is that they are more difficult to make. They are typically wound by hand (by some poor graduate student) and can be very tedious to construct (especially 3D coils with many turns). Small coils also produce smaller signals, so they require additional windings to make up for the signal loss.</li><li>Some labs have used surface-mounted inductors to make miniature B-dot probes. Surface-mounted components have many advantages in size and inductance values, and can be used as very small pickup coils for magnetic field measurements.</li><li>Additional windings increase the inductance, and this can affect the frequency response of the coil. You can always make up for the frequency response by adjusting the input impedance, but often this will decrease the signal amplitude and may cause the signal-to-noise ratio to decrease.</li><li>Active integrators can improve the bandwidth response of the probe and automatically eliminate droop and drift.</li></ul><h1 id=rogowski-coils>Rogowski Coils
-<a class=anchor href=#rogowski-coils>#</a></h1><p>Rogowski coils are also fundamentally magnetic field probes, but instead of measuring the local magnetic field averaged over the coil area as B-dot probes, Rogowski coils measure the line integral of the magnetic field, which is related by Ampere&rsquo;s law to the enclosed current.</p><p>If we have some plasma current \( j_z \) producing a magnetic field \( B_\theta \), then a Rogowski coil is a solenoidal coil that goes around the plasma as shown to produce a voltage \( V_0 \).</p><p align=center><img alt=13.png src=/r/img/560/13.png></p><p>The key geometric property of the Rogowski coil is the constant inner coil radius (area).</p><p>The total magnetic flux, \( \oint \vec B \cdot \dd \vec s \), linked by the Rogowski coil is</p><span>\[\Phi = N \int \dd S \oint \vec B \cdot \dd \vec l = \mu_0 (N \int \dd S) I\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>From Faraday&rsquo;s law,</p><span>\[V_0 = - \dot \Phi = \mu_0 (N \int \dd S) \dot I\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>So the voltage we measure is related to the time rate of change of the current enclosed in the Rogowski coil. The signal \( V_0 \) is integrated in time to give the total current enclosed by the Rogowski coil, \( I(t) \). Just like the B-dot probes, instead of computing the geometry of the coil we calibrate the probe by driving current from a known source and measuring the response. They are easier to calibrate because the exact geometry does not matter, as long as the Rogowski coil encloses the current being measured.</p><h3 id=considerations>Considerations
-<a class=anchor href=#considerations>#</a></h3><ul><li>The signal is insensitive to the shape of the coil since \( \oint \vec B \cdot \dd \vec l \) is path independent. We do start to lose signal if we make the loop much larger than the source where the current source is, but as long as the coil is more or less snug about the current source the measurement error is minimal. However, the coil does need to form a complete loop.</li><li>Signals can be <em>very</em> large, easily \( \sim 1 kV \). So adding an attenuator upstream of your measurement circuit is important.</li><li>The signal can be contaminated by unwanted \( \dot{\vec B} \), so the coils are counter-wound.</li></ul><p align=center><img alt=18.png src=/r/img/560/18.png></p>In the lab, we'll often fabricate these coils by stripping the outer sheath and outer conductor from a length of RG58 coaxial cable. Then, we take a wire and solder it to the end of the inner conductor, then wrap the wire about the insulator of the RG58 back towards the un-stripped end. Finally, connect the wire to the outer conductor of the coaxial cable.<p align=center><img alt=14.png src=/r/img/560/14.png></p><h1 id=hall-probe>Hall Probe
-<a class=anchor href=#hall-probe>#</a></h1><p>B-dot probes are not very useful for steady-state magnetic fields (it&rsquo;s right there in the name). For steady-state fields, we can exploit the Hall effect. Passing a known current through a conductor with an embedded magnetic field will generate a transverse potential:</p><p align=center><img alt=19.png src=/r/img/560/19.png></p><span>\[\frac{ \vec j \cross \vec B}{nq} = - \vec E\]</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"\\[",right:"\\]",display:true},{left:"$",right:"$",display:false},{left:"\\(",right:"\\)",display:false}],throwOnError:false,macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla",}});};</script><p>A simultaneous measurement of the voltage drop and current gives a measurement of the embedded magnetic field. Such a device is usually called a Gaussmeter.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div class=book-languages tabindex=0 aria-haspopup=true><ul><li class="flex align-center"><img src=/r/svg/translate.svg class=book-icon alt=Languages>
-English</li></ul><ul class=book-languages-list><li class=active><a href=https://peppyhare.github.io/r/ class="flex align-center"><img src=/r/svg/translate.svg class=book-icon alt=Languages>
-English</a></li><li><a href=https://peppyhare.github.io/r/ru/ class="flex align-center"><img src=/r/svg/translate.svg class=book-icon alt=Languages>
-Russian</a></li><li><a href=https://peppyhare.github.io/r/zh/ class="flex align-center"><img src=/r/svg/translate.svg class=book-icon alt=Languages>
-Chinese</a></li></ul></div><div><a class="flex align-center" href=https://github.com/Peppyhare/r/commit/f170e29bdc17c89559c31ed2d9d2a95851eb7dee title="Last modified by Evan Bluhm | January 19, 2021" target=_blank rel=noopener><img src=/r/svg/calendar.svg class=book-icon alt=Calendar>
-<span>January 19, 2021</span></a></div></div><script>(function(){function select(element){const selection=window.getSelection();const range=document.createRange();range.selectNodeContents(element);selection.removeAllRanges();selection.addRange(range);}
-document.querySelectorAll("pre code").forEach(code=>{code.addEventListener("click",function(event){select(code.parentElement);if(navigator.clipboard){navigator.clipboard.writeText(code.parentElement.textContent);}});});})();</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div></main></body></html>
+R_i = 1 M \Omega\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p align=center> <img alt=8.png src=/r/img/560/8.png> </p>
+<p>With these values, the simplified LRC equivalent circuit is:</p>
+<p align=center> <img alt=9.png src=/r/img/560/9.png> </p>
+<p>We analyze the circuit response by the method of Laplace transforms:</p>
+<p align=center> <img alt=10.png src=/r/img/560/10.png> </p>
+<p>The equivalent circuit impedance to the generator voltage is then</p>
+<span>
+\[Z(s) = s L_C + R_C + \frac{R_i}{1 + s C_{eq} R_i}\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>which gives a current \( I(s) = V_i(s) / Z(s) \). The output voltage is then (with some algebraic manipulation)</p>
+<span>
+\[V_O (s) = \omega_0 ^2 V_i (s) \left[ s^2 + s \left( \frac{R_C}{L_C} + \frac{1}{C_{eq} R_i} \right) + \omega_0 ^2 \left( \frac{R_C}{R_i} + 1 \right) \right]^{-1} \\
+\omega_0 ^2 = (L_C C_{eq} )^{-1}\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>where \( \omega_0 ^2 = (L_C C_{eq})^{-1} \). If we assume a unit step waveform for the generator voltage (that is, \( \dot B \)), then \( V_i(s) = \frac{1}{s} \) and</p>
+<span>
+\[V_O(s) = \frac{\omega_0 ^2}{s (s^2 + s \alpha + \omega_0 ^2 \beta)}\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>where \( \alpha \) and \( \beta \) are the coefficients above. Taking the inverse Laplace transform (after some algebra), we arrive at</p>
+<span>
+\[V_O(t) = \frac{1}{\beta} \left[ 1 - e^{- \alpha t / 2} \left( \cosh (m t) + \frac{\alpha}{2m } \sinh (m t) \right) \right]\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>where
+<span>
+\[m^2 = \frac{\alpha^2}{4} - \omega_0 ^2 \beta\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+</p>
+<p>There are thus three possible situations:</p>
+<ul>
+<li>Critically damped: \( m^2 = 0 \)</li>
+<li>Under-damped: \( m^2 &lt; 0 \)</li>
+<li>Over-damped: \( m^2 > 0 \)</li>
+</ul>
+<p>If we plug in the values for our experimental setup, we find \( m^2 &lt; 0 \) and \( \frac{m}{2 \pi i} = 818 kHz \). This is the frequency of the noisy oscillations we picked up on our scope. To reduce the noise, we would like to achieve \( m^2 = 0 \), which corresponds with an input impedance of \( 950 \Omega \). Typically oscilloscopes have a high-impedance setting of \( \sim 1 M\Omega \) and a low-impedance setting of \( \sim 50\Omega \). We can leave the scope at the high-impedance setting and add a shunt resistor in parallel with the oscilloscope to adjust the input impedance to our liking.</p>
+<p>For a realistic signal, the rise time will be finite (not a perfect step function). To track a more realistic impulse and reduce noise further, we can analyze the circuit assuming an input voltage profile that better matches the expected rise time. By doing so and carefully choosing the impedance to minimize oscillations, the voltage reported by our diagnostic circuit better represents the source, which is the magnetic field we are trying to measure!. In general, you want to set the input impedance as high as possible without generating oscillations.</p>
+<p>If we go back to our setup and measure the probe response with different input impedances \( R_i \), we see the following:</p>
+<p align=center> <img alt=12.png src=/r/img/560/12.png> </p>
+<p>An low input impedance results in overd-amping and a smeared-out signal. At \( R_i = 4.7 k\Omega \) we see several oscillations. At \( R_i = 2.4 k\Omega \) we see a signal that closely resembles the \( \dot B \) we expect.</p>
+<p>A similar decrease in oscillations can also be achieved using a series resistance, but this approach is susceptible to noise. Using a lower impedance is generally the preferred approach, but not always! We will see in our analysis of Rogowski coils later that impedance matching in series can be useful.</p>
+<p>Finally, to recover the field strength \( B \) we are trying to measure, we need to integrate our signal. This can be achieved numerically from the digitization recorded by our scope. However, a digitizer is only able to record a finite bit depth, often as little as 8-bits, and a lack of precise sampling will result in drift and imprecise measurement. Typically, it is better to electronically integrate the signal by adding a passive integrator:</p>
+<p align=center> <img alt=17.png src=/r/img/560/17.png> </p>
+<p>Note: the passive integrator here is a low-pass filter. After adding the integrator, we must repeat the circuit analysis with a realistic magnetic field, e.g. a triangular wave (such that \( \dot B \) becomes a square wave):</p>
+<span>
+\[\mathscr{L}(\text{square}(t/a)) = \frac{\tanh(as/2)}{s}\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>and a triangular wave is defined as</p>
+<span>
+\[\text{trw}(t) = \int _0 ^t \text{square}(t') \dd t'\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<h2 id=further-b-dot-probe-considerations>
+Further B-dot probe considerations
+<a class=anchor href=#further-b-dot-probe-considerations>#</a>
+</h2>
+<ul>
+<li>Small coils better localize the measurement. Since you&rsquo;re averaging the magnetic field over the cross-sectional area of the probe, you can better localize the field. Small coils also limit the perturbation of the plasma. However, the downside is that they are more difficult to make. They are typically wound by hand (by some poor graduate student) and can be very tedious to construct (especially 3D coils with many turns). Small coils also produce smaller signals, so they require additional windings to make up for the signal loss.</li>
+<li>Some labs have used surface-mounted inductors to make miniature B-dot probes. Surface-mounted components have many advantages in size and inductance values, and can be used as very small pickup coils for magnetic field measurements.</li>
+<li>Additional windings increase the inductance, and this can affect the frequency response of the coil. You can always make up for the frequency response by adjusting the input impedance, but often this will decrease the signal amplitude and may cause the signal-to-noise ratio to decrease.</li>
+<li>Active integrators can improve the bandwidth response of the probe and automatically eliminate droop and drift.</li>
+</ul>
+<h1 id=rogowski-coils>
+Rogowski Coils
+<a class=anchor href=#rogowski-coils>#</a>
+</h1>
+<p>Rogowski coils are also fundamentally magnetic field probes, but instead of measuring the local magnetic field averaged over the coil area as B-dot probes, Rogowski coils measure the line integral of the magnetic field, which is related by Ampere&rsquo;s law to the enclosed current.</p>
+<p>If we have some plasma current \( j_z \) producing a magnetic field \( B_\theta \), then a Rogowski coil is a solenoidal coil that goes around the plasma as shown to produce a voltage \( V_0 \).</p>
+<p align=center> <img alt=13.png src=/r/img/560/13.png> </p>
+<p>The key geometric property of the Rogowski coil is the constant inner coil radius (area).</p>
+<p>The total magnetic flux, \( \oint \vec B \cdot \dd \vec s \), linked by the Rogowski coil is</p>
+<span>
+\[\Phi = N \int \dd S \oint \vec B \cdot \dd \vec l = \mu_0 (N \int \dd S) I\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>From Faraday&rsquo;s law,</p>
+<span>
+\[V_0 = - \dot \Phi = \mu_0 (N \int \dd S) \dot I\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>So the voltage we measure is related to the time rate of change of the current enclosed in the Rogowski coil. The signal \( V_0 \) is integrated in time to give the total current enclosed by the Rogowski coil, \( I(t) \). Just like the B-dot probes, instead of computing the geometry of the coil we calibrate the probe by driving current from a known source and measuring the response. They are easier to calibrate because the exact geometry does not matter, as long as the Rogowski coil encloses the current being measured.</p>
+<h3 id=considerations>
+Considerations
+<a class=anchor href=#considerations>#</a>
+</h3>
+<ul>
+<li>The signal is insensitive to the shape of the coil since \( \oint \vec B \cdot \dd \vec l \) is path independent. We do start to lose signal if we make the loop much larger than the source where the current source is, but as long as the coil is more or less snug about the current source the measurement error is minimal. However, the coil does need to form a complete loop.</li>
+<li>Signals can be <em>very</em> large, easily \( \sim 1 kV \). So adding an attenuator upstream of your measurement circuit is important.</li>
+<li>The signal can be contaminated by unwanted \( \dot{\vec B} \), so the coils are counter-wound.</li>
+</ul>
+<p align=center> <img alt=18.png src=/r/img/560/18.png> </p>
+In the lab, we'll often fabricate these coils by stripping the outer sheath and outer conductor from a length of RG58 coaxial cable. Then, we take a wire and solder it to the end of the inner conductor, then wrap the wire about the insulator of the RG58 back towards the un-stripped end. Finally, connect the wire to the outer conductor of the coaxial cable.
+<p align=center> <img alt=14.png src=/r/img/560/14.png> </p>
+<h1 id=hall-probe>
+Hall Probe
+<a class=anchor href=#hall-probe>#</a>
+</h1>
+<p>B-dot probes are not very useful for steady-state magnetic fields (it&rsquo;s right there in the name). For steady-state fields, we can exploit the Hall effect. Passing a known current through a conductor with an embedded magnetic field will generate a transverse potential:</p>
+<p align=center> <img alt=19.png src=/r/img/560/19.png> </p>
+<span>
+\[\frac{ \vec j \cross \vec B}{nq} = - \vec E\]
+</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
+<p>A simultaneous measurement of the voltage drop and current gives a measurement of the embedded magnetic field. Such a device is usually called a Gaussmeter.</p>
+</article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
+<div class=book-languages tabindex=0 aria-haspopup=true>
+<ul>
+<li class="flex align-center">
+<img src=/r/svg/translate.svg class=book-icon alt=Languages>
+English
+</li>
+</ul>
+<ul class=book-languages-list>
+<li class=active>
+<a href=https://peppyhare.github.io/r/ class="flex align-center">
+<img src=/r/svg/translate.svg class=book-icon alt=Languages>
+English
+</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/ru/ class="flex align-center">
+<img src=/r/svg/translate.svg class=book-icon alt=Languages>
+Russian
+</a>
+</li>
+<li>
+<a href=https://peppyhare.github.io/r/zh/ class="flex align-center">
+<img src=/r/svg/translate.svg class=book-icon alt=Languages>
+Chinese
+</a>
+</li>
+</ul>
+</div>
+<div><a class="flex align-center" href=https://github.com/Peppyhare/r/commit/f170e29bdc17c89559c31ed2d9d2a95851eb7dee title="Last modified by Evan Bluhm | January 20, 2021" target=_blank rel=noopener>
+<img src=/r/svg/calendar.svg class=book-icon alt=Calendar>
+<span>January 20, 2021</span>
+</a>
+</div>
+</div>
+<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+</footer>
+<div class=book-comments>
+</div>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+</main>
+</body>
+</html>

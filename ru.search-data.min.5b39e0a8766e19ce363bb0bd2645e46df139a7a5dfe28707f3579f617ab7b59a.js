@@ -1,1 +1,0 @@
-'use strict';(function(){const indexCfg={split:/[^a-zа-яё0-9\w]/gi};indexCfg.doc={id:'id',field:['title','content'],store:['title','href','section'],};const index=FlexSearch.create('balance',indexCfg);window.bookSearchIndex=index;})();
