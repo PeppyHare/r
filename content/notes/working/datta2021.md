@@ -59,9 +59,7 @@ We take velocity-space moments of the Boltzmann equation to yield conservation l
 ##### Continuity equation
 
 {{< katex display >}}
-\begin{equation}
-\pdv{\rho_\alpha}{t} + \pdv{(\rho v_{\alpha i})}{x_i} = 0 \label{continuity equation}
-\end{equation}
+\pdv{\rho _{\alpha}}{t} + \pdv{(\rho v_{\alpha i})}{x_i} = 0
 {{< /katex >}}
 
 ##### Momentum equation
