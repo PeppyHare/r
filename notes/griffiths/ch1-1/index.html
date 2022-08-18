@@ -1,795 +1,105 @@
-<!doctype html><html lang=en dir=ltr>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="1.1 Vector Algebra #  1.1.1 Vector Operations #  If you walk 4 miles due north and then 3 miles due east (Fig. 1.1), you will have gone a total of 7 miles, but you&rsquo;re not 7 miles from where you set out-you&rsquo;re only 5. We need an arithmetic to describe quantities like this, which evidently do not add in the ordinary way. The reason they don&rsquo;t, of course, is that displacements (straight line segments going from one point to another) have direction as well as magnitude (length), and it is essential to take both into account when you combine them.">
-<meta name=theme-color content="#FFFFFF">
-<meta name=color-scheme content="light dark"><meta property="og:title" content="Vector Algebra">
-<meta property="og:description" content="1.1 Vector Algebra #  1.1.1 Vector Operations #  If you walk 4 miles due north and then 3 miles due east (Fig. 1.1), you will have gone a total of 7 miles, but you&rsquo;re not 7 miles from where you set out-you&rsquo;re only 5. We need an arithmetic to describe quantities like this, which evidently do not add in the ordinary way. The reason they don&rsquo;t, of course, is that displacements (straight line segments going from one point to another) have direction as well as magnitude (length), and it is essential to take both into account when you combine them.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://peppyhare.github.io/r/notes/griffiths/ch1-1/"><meta property="article:section" content="notes">
-<meta property="article:modified_time" content="2020-10-10T00:31:51-07:00">
-<title>Vector Algebra | My Notes</title>
-<link rel=manifest href=/r/manifest.json>
-<link rel=icon href=/r/favicon.png type=image/x-icon>
-<link rel=stylesheet href=/r/book.min.9147818aedab74eaa31aefa0f050408d23f07b3e5995e19f4de91bb20216bd40.css integrity="sha256-kUeBiu2rdOqjGu+g8FBAjSPwez5ZleGfTekbsgIWvUA=" crossorigin=anonymous>
-<script defer src=/r/flexsearch.min.js></script>
-<script defer src=/r/en.search.min.f40802f6963f7f5cfabc52615d9547a36a51c6beea7a9586e4d1d437822f94ca.js integrity="sha256-9AgC9pY/f1z6vFJhXZVHo2pRxr7qepWG5NHUN4IvlMo=" crossorigin=anonymous></script>
-<script defer src=/r/sw.min.9e3a83f0b071ebe0141a16a33db93faadb2bdf712473a218febeed35ed243c08.js integrity="sha256-njqD8LBx6+AUGhajPbk/qtsr33Ekc6IY/r7tNe0kPAg=" crossorigin=anonymous></script>
-<link rel=preload href=/r/katex/fonts/KaTeX_Main-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<link rel=preload href=/r/katex/fonts/KaTeX_Main-Bold.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<link rel=preload href=/r/katex/fonts/KaTeX_Main-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<link rel=preload href=/r/katex/fonts/KaTeX_Math-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<link rel=preload href=/r/katex/fonts/KaTeX_Size2-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<link rel=preload href=/r/katex/fonts/KaTeX_Size3-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<link rel=preload href=/r/fonts/roboto-v19-latin-regular.woff2 as=font type=font/woff2 crossorigin=anonymous>
-<link rel=preload href=/r/fonts/roboto-v19-latin-700.woff2 as=font type=font/woff2 crossorigin=anonymous>
-</head>
-<body dir=ltr>
-<input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control>
-<main class="container flex">
-<aside class=book-menu>
-<div class=book-menu-content>
-<nav>
-<h2 class=book-brand>
-<a class="flex align-center" href=/r/><span>My Notes</span>
-</a>
-</h2>
-<div class=book-search>
-<input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
-<div class="book-search-spinner hidden"></div>
-<ul id=book-search-results></ul>
-</div>
-<ul class=book-languages>
-<li>
-<input type=checkbox id=languages class=toggle>
-<label for=languages class="flex justify-between">
-<a role=button class="flex align-center">
-<img src=/r/svg/translate.svg class=book-icon alt=Languages>
-English
-</a>
-</label>
-<ul>
-<li>
-<a href=https://peppyhare.github.io/r/ru/>
-Russian
-</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/zh/>
-Chinese
-</a>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li class=book-section-flat>
-<span>Notes</span>
-<ul>
-<li class=book-section-flat>
-<input type=checkbox id=section-3c2351b6c36eb8737d2b3aab84ebe41a class=toggle>
-<label for=section-3c2351b6c36eb8737d2b3aab84ebe41a class="flex justify-between">
-<a href=https://peppyhare.github.io/r/notes/UWAA545/>Computational Methods For Plasmas</a>
-</label>
-<ul>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA545/01-syllabus/>Syllabus</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA545/02-plasma-models/>Plasma Models</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA545/03-pic-method/>Particle in Cell Model</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA545/04-pic-example/>PIC - Example Implementation</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA545/05-electrodynamic-pic/>Multidimensional Electrodynamic PIC</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA545/06-fluid-models/>Fluid Models for Plasmas</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA545/07-finite-difference-models/>Finite Difference Methods for MHD</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA545/08-mhd-equilibrium/>MHD Equilibria</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA545/formulary/>Formulary</a>
-</li>
-</ul>
-</li>
-<li class=book-section-flat>
-<input type=checkbox id=section-6349dd4237c5b36ce5c3738b93bc5885 class=toggle>
-<label for=section-6349dd4237c5b36ce5c3738b93bc5885 class="flex justify-between">
-<a href=https://peppyhare.github.io/r/notes/UWAA560/>Plasma Diagnostics</a>
-</label>
-<ul>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA560/01-syllabus/>Syllabus</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA560/02-diagnostic-considerations/>General Diagnostic Considerations</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA560/03-magnetic-field-diagnostics/>Magnetic Field Diagnostics</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA560/04-electrostatic-diagnostics/>Electrostatic Diagnostics</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA560/05-index-of-refraction-measurements/>Index of Refraction Measurements</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA560/06-spectroscopic-measurements/>Spectroscopic Measurements</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA560/90-student-lectures/>Student Lectures</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA560/91-zeeman-spectroscopy/>My class lecture</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA560/formulary/>Formulary</a>
-</li>
-</ul>
-</li>
-<li class=book-section-flat>
-<input type=checkbox id=section-edf338bf880234e7aba93d04934ebde0 class=toggle>
-<label for=section-edf338bf880234e7aba93d04934ebde0 class="flex justify-between">
-<a href=https://peppyhare.github.io/r/notes/UWAA558/>MHD Theory</a>
-</label>
-<ul>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA558/01-syllabus/>Syllabus</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA558/02-plasma-models/>Plasma Models</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA558/03-plasma-fluid-model/>Plasma Fluid Model</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA558/04-two-fluid-plasma-model/>Two-Fluid Plasma Model</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA558/05-mhd-model/>Magnetohydrodynamic (MHD) Model</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA558/06-boundary-conditions/>Boundary Conditions</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/>Equilibrium for Fusion</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA558/08-1d-equilibria/>1-D Equilibria</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA558/09-2d-equilibria/>2D Equilibria</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA558/10-equilibrium-of-3d-configurations/>Equilibrium of 3D Configurations</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA558/11-mhd-stability/>MHD Stability</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA558/formulary/>Formulary</a>
-</li>
-</ul>
-</li>
-<li class=book-section-flat>
-<input type=checkbox id=section-413f74fd9b5926250a41b61f37ddacc6 class=toggle>
-<label for=section-413f74fd9b5926250a41b61f37ddacc6 class="flex justify-between">
-<a href=https://peppyhare.github.io/r/notes/UWAA557/>Physics of Fusion Plasmas</a>
-</label>
-<ul>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-0/>Rules of thumb</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-1/>Statistical Mechanics</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-2/>Review of E&M</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-3/>Lagrange Multipliers</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-1/>Wall-supported Plasma</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-2/>Collisions</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-3/>Oscillations</a>
-</li>
-</ul>
-</li>
-<li class=book-section-flat>
-<input type=checkbox id=section-f5aa9ed14dd55f47a51954bafbe42c68 class=toggle>
-<label for=section-f5aa9ed14dd55f47a51954bafbe42c68 class="flex justify-between">
-<a href=https://peppyhare.github.io/r/notes/UWAA543/>Computational CFD</a>
-</label>
-<ul>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-1/>Introduction to Computational CFD</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-2/>Governing Equations</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-3/>Reduced Models</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-4/>Equation Types</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-5/>Panel Method</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-1/>Finite Difference Algorithms</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-2/>Explicit Finite Difference Algorithms</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-3/>Finite Difference and Finite Volume Methods</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-4/>Implicit Algorithms</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-5/>Numerical Boundary Conditions</a>
-</li>
-</ul>
-</li>
-<li class=book-section-flat>
-<span>Working</span>
-<ul>
-<li>
-<a href=https://peppyhare.github.io/r/notes/working/crews2018/>Crews (2018)</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/working/datta2021/>Datta (2021)</a>
-</li>
-</ul>
-</li>
-<li class=book-section-flat>
-<input type=checkbox id=section-ee5e070eb25b63f2c377d750d37f67ae class=toggle checked>
-<label for=section-ee5e070eb25b63f2c377d750d37f67ae class="flex justify-between">
-<a href=https://peppyhare.github.io/r/notes/griffiths/>Griffiths Introduction to Electrodynamics</a>
-</label>
-<ul>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-1/ class=active>Vector Algebra</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-2/>Differential Calculus</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-3/>Integral Calculus</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-4/>Curvilinear Coordinates</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-5/>The Dirac Delta Function</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch1-6/>The Theory of Vector Fields</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch2-1/>The Electric Field</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch2-2/>Divergence and Curl of Electrostatic Fields</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch2-3/>Electric Potential</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch2-4/>Work and Energy in Electrostatics</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch2-5/>Conductors</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch3-1/>Laplace's Equation</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch3-2/>The Method of Images</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch3-3/>Separation of Variables</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch3-4/>Multipole Expansion</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch4-1/>Polarization</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch4-2/>The Field of a Polarized Object</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch4-3/>The Electric Displacement</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch4-4/>The Linear Dielectrics</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch5-1/>The Lorentz Force Law</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch5-2/>The Biot-Savart Law</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch5-3/>The Divergence and Curl of B</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch5-4/>Magnetic Vector Potential</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch6-1/>Magnetization</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch6-2/>The Field of a Magnetized Object</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch6-3/>The Auxiliary Field H</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch6-4/>Linear and Nonlinear Media</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch7-1/>Electromotive Force</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch7-2/>Electromagnetic Induction</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch7-3/>Maxwell's Equations</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch8-0/>Phys 544 Introduction</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch8-1/>Charge and Energy</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch8-2/>Momentum</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch9-1/>Electromagnetic Waves in One Dimension</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch9-2/>Wave Equation for E and B</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch9-3/>Electromagnetic Waves in Matter</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch9-4/>Electromagnetic Waves in Conductors</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch9-5/>Guided Waves</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch10-1/>Scalar and Vector Potentials</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch10-2/>Retarded Potentials</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch10-3/>Point Charges</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/ch11-1/>Dipole Radiation</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch3/>Solved Problems Ch3</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch5/>Solved Problems Ch5</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch7/>Solved Problems Ch7</a>
-</li>
-<li>
-<a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch9/>Solved Problems Ch9</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>
-<a href=https://github.com/Peppyhare/r target=_blank rel=noopener>
-Github
-</a>
-</li>
-<li>
-<a href=https://themes.gohugo.io/hugo-book/ target=_blank rel=noopener>
-Hugo Themes
-</a>
-</li>
-</ul>
-</nav>
-<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
-</div>
-</aside>
-<div class=book-page>
-<header class=book-header>
-<div class="flex align-center justify-between">
-<label for=menu-control>
-<img src=/r/svg/menu.svg class=book-icon alt=Menu>
-</label>
+<!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="1.1 Vector Algebra # 1.1.1 Vector Operations # If you walk 4 miles due north and then 3 miles due east (Fig. 1.1), you will have gone a total of 7 miles, but you&rsquo;re not 7 miles from where you set out-you&rsquo;re only 5. We need an arithmetic to describe quantities like this, which evidently do not add in the ordinary way. The reason they don&rsquo;t, of course, is that displacements (straight line segments going from one point to another) have direction as well as magnitude (length), and it is essential to take both into account when you combine them."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content="Vector Algebra"><meta property="og:description" content="1.1 Vector Algebra # 1.1.1 Vector Operations # If you walk 4 miles due north and then 3 miles due east (Fig. 1.1), you will have gone a total of 7 miles, but you&rsquo;re not 7 miles from where you set out-you&rsquo;re only 5. We need an arithmetic to describe quantities like this, which evidently do not add in the ordinary way. The reason they don&rsquo;t, of course, is that displacements (straight line segments going from one point to another) have direction as well as magnitude (length), and it is essential to take both into account when you combine them."><meta property="og:type" content="article"><meta property="og:url" content="https://peppyhare.github.io/r/notes/griffiths/ch1-1/"><meta property="article:section" content="notes"><meta property="article:modified_time" content="2020-10-10T00:31:51-07:00"><title>Vector Algebra | My Notes</title><link rel=manifest href=/r/manifest.json><link rel=icon href=/r/favicon.png type=image/x-icon><link rel=stylesheet href=/r/book.min.9147818aedab74eaa31aefa0f050408d23f07b3e5995e19f4de91bb20216bd40.css integrity="sha256-kUeBiu2rdOqjGu+g8FBAjSPwez5ZleGfTekbsgIWvUA=" crossorigin=anonymous><script defer src=/r/flexsearch.min.js></script>
+<script defer src=/r/en.search.min.d5713f1bb9527d1f227fdffc616dc1bdc8ec39e747afbb9454a0ccb9f93431af.js integrity="sha256-1XE/G7lSfR8if9/8YW3BvcjsOedHr7uUVKDMufk0Ma8=" crossorigin=anonymous></script>
+<script defer src=/r/sw.min.f5f2ac1e0f41238533582731f52270f83de9f9fedc13dd7557d420d80e2d2b4b.js integrity="sha256-9fKsHg9BI4UzWCcx9SJw+D3p+f7cE911V9Qg2A4tK0s=" crossorigin=anonymous></script>
+<link rel=preload href=/r/katex/fonts/KaTeX_Main-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Main-Bold.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Main-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Math-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Size2-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Size3-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/fonts/roboto-v19-latin-regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/fonts/roboto-v19-latin-700.woff2 as=font type=font/woff2 crossorigin=anonymous></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/r/><span>My Notes</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul class=book-languages><li><input type=checkbox id=languages class=toggle>
+<label for=languages class="flex justify-between"><a role=button class="flex align-center"><img src=/r/svg/translate.svg class=book-icon alt=Languages>
+English</a></label><ul><li><a href=https://peppyhare.github.io/r/ru/>Russian</a></li><li><a href=https://peppyhare.github.io/r/zh/>Chinese</a></li></ul></li></ul><ul><li class=book-section-flat><span>Notes</span><ul><li class=book-section-flat><input type=checkbox id=section-3c2351b6c36eb8737d2b3aab84ebe41a class=toggle>
+<label for=section-3c2351b6c36eb8737d2b3aab84ebe41a class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/UWAA545/>Computational Methods For Plasmas</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/UWAA545/01-syllabus/>Syllabus</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/02-plasma-models/>Plasma Models</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/03-pic-method/>Particle in Cell Model</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/04-pic-example/>PIC - Example Implementation</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/05-electrodynamic-pic/>Multidimensional Electrodynamic PIC</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/06-fluid-models/>Fluid Models for Plasmas</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/07-finite-difference-models/>Finite Difference Methods for MHD</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/08-mhd-equilibrium/>MHD Equilibria</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA545/formulary/>Formulary</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-6349dd4237c5b36ce5c3738b93bc5885 class=toggle>
+<label for=section-6349dd4237c5b36ce5c3738b93bc5885 class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/UWAA560/>Plasma Diagnostics</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/UWAA560/01-syllabus/>Syllabus</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/02-diagnostic-considerations/>General Diagnostic Considerations</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/03-magnetic-field-diagnostics/>Magnetic Field Diagnostics</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/04-electrostatic-diagnostics/>Electrostatic Diagnostics</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/05-index-of-refraction-measurements/>Index of Refraction Measurements</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/06-spectroscopic-measurements/>Spectroscopic Measurements</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/90-student-lectures/>Student Lectures</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/91-zeeman-spectroscopy/>My class lecture</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA560/formulary/>Formulary</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-edf338bf880234e7aba93d04934ebde0 class=toggle>
+<label for=section-edf338bf880234e7aba93d04934ebde0 class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/UWAA558/>MHD Theory</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/UWAA558/01-syllabus/>Syllabus</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/02-plasma-models/>Plasma Models</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/03-plasma-fluid-model/>Plasma Fluid Model</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/04-two-fluid-plasma-model/>Two-Fluid Plasma Model</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/05-mhd-model/>Magnetohydrodynamic (MHD) Model</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/06-boundary-conditions/>Boundary Conditions</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/>Equilibrium for Fusion</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/08-1d-equilibria/>1-D Equilibria</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/09-2d-equilibria/>2D Equilibria</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/10-equilibrium-of-3d-configurations/>Equilibrium of 3D Configurations</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/11-mhd-stability/>MHD Stability</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA558/formulary/>Formulary</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-413f74fd9b5926250a41b61f37ddacc6 class=toggle>
+<label for=section-413f74fd9b5926250a41b61f37ddacc6 class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/UWAA557/>Physics of Fusion Plasmas</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-0/>Rules of thumb</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-1/>Statistical Mechanics</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-2/>Review of E&M</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch10-3/>Lagrange Multipliers</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-1/>Wall-supported Plasma</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-2/>Collisions</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA557/ch11-3/>Oscillations</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-f5aa9ed14dd55f47a51954bafbe42c68 class=toggle>
+<label for=section-f5aa9ed14dd55f47a51954bafbe42c68 class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/UWAA543/>Computational CFD</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-1/>Introduction to Computational CFD</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-2/>Governing Equations</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-3/>Reduced Models</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-4/>Equation Types</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch20-5/>Panel Method</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-1/>Finite Difference Algorithms</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-2/>Explicit Finite Difference Algorithms</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-3/>Finite Difference and Finite Volume Methods</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-4/>Implicit Algorithms</a></li><li><a href=https://peppyhare.github.io/r/notes/UWAA543/ch21-5/>Numerical Boundary Conditions</a></li></ul></li><li class=book-section-flat><span>Working</span><ul><li><a href=https://peppyhare.github.io/r/notes/working/crews2018/>Crews (2018)</a></li><li><a href=https://peppyhare.github.io/r/notes/working/datta2021/>Datta (2021)</a></li><li><a href=https://peppyhare.github.io/r/notes/working/goedbloed/>Goedbloed (2019)</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-ee5e070eb25b63f2c377d750d37f67ae class=toggle checked>
+<label for=section-ee5e070eb25b63f2c377d750d37f67ae class="flex justify-between"><a href=https://peppyhare.github.io/r/notes/griffiths/>Griffiths Introduction to Electrodynamics</a></label><ul><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-1/ class=active>Vector Algebra</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-2/>Differential Calculus</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-3/>Integral Calculus</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-4/>Curvilinear Coordinates</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-5/>The Dirac Delta Function</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch1-6/>The Theory of Vector Fields</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch2-1/>The Electric Field</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch2-2/>Divergence and Curl of Electrostatic Fields</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch2-3/>Electric Potential</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch2-4/>Work and Energy in Electrostatics</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch2-5/>Conductors</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch3-1/>Laplace's Equation</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch3-2/>The Method of Images</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch3-3/>Separation of Variables</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch3-4/>Multipole Expansion</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch4-1/>Polarization</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch4-2/>The Field of a Polarized Object</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch4-3/>The Electric Displacement</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch4-4/>The Linear Dielectrics</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch5-1/>The Lorentz Force Law</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch5-2/>The Biot-Savart Law</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch5-3/>The Divergence and Curl of B</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch5-4/>Magnetic Vector Potential</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch6-1/>Magnetization</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch6-2/>The Field of a Magnetized Object</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch6-3/>The Auxiliary Field H</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch6-4/>Linear and Nonlinear Media</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch7-1/>Electromotive Force</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch7-2/>Electromagnetic Induction</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch7-3/>Maxwell's Equations</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch8-0/>Phys 544 Introduction</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch8-1/>Charge and Energy</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch8-2/>Momentum</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch9-1/>Electromagnetic Waves in One Dimension</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch9-2/>Wave Equation for E and B</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch9-3/>Electromagnetic Waves in Matter</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch9-4/>Electromagnetic Waves in Conductors</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch9-5/>Guided Waves</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch10-1/>Scalar and Vector Potentials</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch10-2/>Retarded Potentials</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch10-3/>Point Charges</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/ch11-1/>Dipole Radiation</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch3/>Solved Problems Ch3</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch5/>Solved Problems Ch5</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch7/>Solved Problems Ch7</a></li><li><a href=https://peppyhare.github.io/r/notes/griffiths/problems-ch9/>Solved Problems Ch9</a></li></ul></li></ul></li></ul><ul><li><a href=https://github.com/Peppyhare/r target=_blank rel=noopener>Github</a></li><li><a href=https://themes.gohugo.io/hugo-book/ target=_blank rel=noopener>Hugo Themes</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/r/svg/menu.svg class=book-icon alt=Menu></label>
 <strong>Vector Algebra</strong>
-<label for=toc-control>
-<img src=/r/svg/toc.svg class=book-icon alt="Table of Contents">
-</label>
-</div>
-<aside class="hidden clearfix">
-<nav id=TableOfContents>
-<ul>
-<li><a href=#_11_-vector-algebra><em>1.1</em> Vector Algebra</a>
-<ul>
-<li><a href=#_111_-vector-operations><em>1.1.1</em> Vector Operations</a>
-<ul>
-<li></li>
-</ul>
-</li>
-<li><a href=#112-vector-algebra-component-form>1.1.2: Vector Algebra: Component Form</a>
-<ul>
-<li></li>
-</ul>
-</li>
-<li><a href=#113-triple-products>1.1.3: Triple Products</a></li>
-<li><a href=#114-position-displacement-and-separation-vectors>1.1.4: Position, Displacement, and Separation Vectors</a></li>
-<li><a href=#115-how-vectors-transform>1.1.5: How Vectors Transform</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</aside>
-</header>
-<article class=markdown><h1 id=_11_-vector-algebra>
-<em>1.1</em> Vector Algebra
-<a class=anchor href=#_11_-vector-algebra>#</a>
-</h1>
-<h2 id=_111_-vector-operations>
-<em>1.1.1</em> Vector Operations
-<a class=anchor href=#_111_-vector-operations>#</a>
-</h2>
-<p>If you walk 4 miles due north and then 3 miles due east (Fig. 1.1), you will have gone a total of 7 miles, but you&rsquo;re <em>not</em> 7 miles from where you set out-you&rsquo;re only 5. We need an arithmetic to describe quantities like this, which evidently do not add in the ordinary way. The reason they don&rsquo;t, of course, is that <strong>displacements</strong> (straight line segments going from one point to another) have <em>direction</em> as well as <em>magnitude</em> (length), and it is essential to take both into account when you combine them. Such objects are called vectors: velocity, acceleration, force and momentum are other examples. By contrast, quantities that have magnitude but no direction are called scalars: examples include mass, charge, density, and temperature.</p>
-<p>I shall use boldface (\( \vec{A} \) , \( \vec{B} \) , and so on) for vectors and ordinary type for scalars. The magnitude of a vector \( \vec{A} \) is written \( |\vec{A}| \) or, more simply, \( A \) . In diagrams, vectors are denoted by arrows: the length of the arrow is proportional to the magnitude of the vector, and the arrowhead indicates its direction. Minus \( \vec{A} \) (\( - \vec{A} \) ) is a vector with the same magnitude as A but of opposite direction (Fig. 1.2). Note that vectors have magnitude and direction but not location: a displacement of 4 miles due north from Washington is represented by the same vector as a displacement 4 miles north from Baltimore (neglecting, of course, the curvature of the earth). On a diagram, therefore, you can slide the arrow around at will, as long as you don&rsquo;t change its length or direction.</p>
-<p align=center> <img alt="Figure 1.1" src=/r/img/griffiths/1.1.png> </p>
-<p>We define four vector operations: addition and three kinds of multiplication.</p>
-<p><strong>(i) Addition of two vectors.</strong>. Place the tail of \( \vec{B} \) at the head of \( \vec{A} \); the sum, \( \vec{A} + \vec{B} \), is the vector from the tail of \( \vec{A} \) to the head of \( \vec{B} \) (Fig 1.3). This rule generalizes the obvious procedure for combining two displacements. Addition is <em>commutative</em>:</p>
-<link rel=stylesheet href=/r/katex/katex.min.css>
-<script defer src=/r/katex/katex.min.js></script>
+<label for=toc-control><img src=/r/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#_11_-vector-algebra><em>1.1</em> Vector Algebra</a><ul><li><a href=#_111_-vector-operations><em>1.1.1</em> Vector Operations</a><ul><li></li></ul></li><li><a href=#112-vector-algebra-component-form>1.1.2: Vector Algebra: Component Form</a><ul><li></li></ul></li><li><a href=#113-triple-products>1.1.3: Triple Products</a></li><li><a href=#114-position-displacement-and-separation-vectors>1.1.4: Position, Displacement, and Separation Vectors</a></li><li><a href=#115-how-vectors-transform>1.1.5: How Vectors Transform</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=_11_-vector-algebra><em>1.1</em> Vector Algebra
+<a class=anchor href=#_11_-vector-algebra>#</a></h1><h2 id=_111_-vector-operations><em>1.1.1</em> Vector Operations
+<a class=anchor href=#_111_-vector-operations>#</a></h2><p>If you walk 4 miles due north and then 3 miles due east (Fig. 1.1), you will have gone a total of 7 miles, but you&rsquo;re <em>not</em> 7 miles from where you set out-you&rsquo;re only 5. We need an arithmetic to describe quantities like this, which evidently do not add in the ordinary way. The reason they don&rsquo;t, of course, is that <strong>displacements</strong> (straight line segments going from one point to another) have <em>direction</em> as well as <em>magnitude</em> (length), and it is essential to take both into account when you combine them. Such objects are called vectors: velocity, acceleration, force and momentum are other examples. By contrast, quantities that have magnitude but no direction are called scalars: examples include mass, charge, density, and temperature.</p><p>I shall use boldface (\( \vec{A} \) , \( \vec{B} \) , and so on) for vectors and ordinary type for scalars. The magnitude of a vector \( \vec{A} \) is written \( |\vec{A}| \) or, more simply, \( A \) . In diagrams, vectors are denoted by arrows: the length of the arrow is proportional to the magnitude of the vector, and the arrowhead indicates its direction. Minus \( \vec{A} \) (\( - \vec{A} \) ) is a vector with the same magnitude as A but of opposite direction (Fig. 1.2). Note that vectors have magnitude and direction but not location: a displacement of 4 miles due north from Washington is represented by the same vector as a displacement 4 miles north from Baltimore (neglecting, of course, the curvature of the earth). On a diagram, therefore, you can slide the arrow around at will, as long as you don&rsquo;t change its length or direction.</p><p align=center><img alt="Figure 1.1" src=/r/img/griffiths/1.1.png></p><p>We define four vector operations: addition and three kinds of multiplication.</p><p><strong>(i) Addition of two vectors.</strong>. Place the tail of \( \vec{B} \) at the head of \( \vec{A} \); the sum, \( \vec{A} + \vec{B} \), is the vector from the tail of \( \vec{A} \) to the head of \( \vec{B} \) (Fig 1.3). This rule generalizes the obvious procedure for combining two displacements. Addition is <em>commutative</em>:</p><link rel=stylesheet href=/r/katex/katex.min.css><script defer src=/r/katex/katex.min.js></script>
 <script defer src=/r/katex/auto-render.min.js onload=loadKatex()></script><span>
-\[\vec{A} + \vec{B} = \vec{B} + \vec{A}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>3 miles east followed by 4 miles north gets you to the same place as 4 miles north followed by 3 miles east. Addition is also associative:</p>
-<span>
-\[(\vec{A} + \vec{B}) + \vec{C} = \vec{A} + (\vec{B} + \vec{C})\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>To subtract a vector, add its opposite (Fig. 1.4):</p>
-<span>
-\[\vec{A} - \vec{B} = \vec{A} + (- \vec{B})\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p align=center> <img alt="Figure 1.3" src=/r/img/griffiths/1.3.png> </p>
-<p><strong>(ii) Multiplication by a scalar.</strong> Multiplication of a vector by a positive scalar a multiplies the magnitude but leaves the direction unchanged (Fig. 1.5). (If a is negative, the direction is reversed.) Scalar multiplication is distributive:</p>
-<span>
-\[a(\vec{A} + \vec{B}) = a \vec{A} + a \vec{B}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p><strong>(iii) Dot product of two vectors.</strong> The dot product of two vectors is defined by</p>
-<span>
-\[\vec{A} \cdot \vec{B} = A B \cos \theta \tag{1.1}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>where \( \theta \) is the angle they form when placed tail-to-tail (Fig. 1.6). Note that \( \vec{A} \cdot \vec{B} \) is itself a scalar (hence the alternative name <em>scalar product</em>). The dot product is commutative,</p>
-<span>
-\[\vec{A} \cdot \vec{B} = \vec{B} \cdot \vec{A}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>and distributive</p>
-<span>
-\[\vec{A} \cdot (\vec{B} + \vec{C}) = \vec{A} \cdot \vec{B} + \vec{A} \cdot \vec{C} \tag{1.2}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>Geometrically, \( \vec{A} \cdot \vec{B} \) is the product of A times the projection of B along A (or the product of B times the projection of A along B). If the two vectors are parallel, then \( \vec{A} \cdot \vec{B} = AB \). In particular, for any vector A</p>
-<span>
-\[\vec{A} \cdot \vec{A} = A^2 \tag{1.3}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>If A and B are perpendicular, then \( \vec{A} \cdot \vec{B} = 0 \)</p>
-<p align=center> <img alt="Figure 1.5" src=/r/img/griffiths/1.5.png> </p>
-<hr>
-<h4 id=example-11>
-Example 1.1
-<a class=anchor href=#example-11>#</a>
-</h4>
-<div class=book-tabs><input type=radio class=toggle name=tabs-example1.1 id=tabs-example1.1-0 checked>
-<label for=tabs-example1.1-0>Q</label>
-<div class="book-tabs-content markdown-inner">Let \( \vec{C} = \vec{A} - \vec{B} \) (Fig 1.7), and calculate the dot product of \( \vec{C} \) with itself.</div><input type=radio class=toggle name=tabs-example1.1 id=tabs-example1.1-1>
-<label for=tabs-example1.1-1>A</label>
-<div class="book-tabs-content markdown-inner"><span>
-\[\vec{C} \cdot \vec{C} = ( \vec{A} - \vec{B} ) \cdot (\vec{A} - \vec{B}) = \vec{A} \cdot \vec{A} - \vec{A} \cdot \vec{B} - \vec{B} \cdot \vec{A} + \vec{B} \cdot \vec{B}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>or</p>
-<span>
-\[C^2 = A^2 + B^2 - 2AB\cos \theta\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>This is the law of cosines.</p>
-</div></div>
-<p><strong>(iv) Cross product of two vectors.</strong> The cross product of two vectors is defined by</p>
-<span>
-\[\vec{A} \cross \vec{B} = AB \sin \theta \vu{n} \tag{1.4}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>where \( \vu{n} \) is a unit vector (vector of magnitude 1) pointing perpendicular to the plane of A and B. (I shall use a hat \( \vu{} \) to denote unit vectors.) Of course, there are two directions perpendicular to any plane: &ldquo;in&rdquo; and &ldquo;out.&rdquo; The ambiguity is resolved by the right-hand rule: let your fingers point in the direction of the first vector and curl around (via the smaller angle) toward the second; then your thumb indicates the direction of \( \vu{n} \). (In Fig. 1.8, \( \vec{A} \cross \vec{B} \) points into the page; \( \vec{B} \cross \vec{A} \) points out of the page.) Note that \( \vec{A} \cross \vec{B} \) is itself a vector (hence the alternative name
-vector product). The cross product is distributive</p>
-<span>
-\[\vec{A} \cross ( \vec{B} + \vec{C}) = ( \vec{A} \cross \vec{B}) + (\vec{A} \cross \vec{C})\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>but not <em>commutative</em>. In fact,</p>
-<span>
-\[(\vec{B} \cross \vec{A}) = - (\vec{A} \cross \vec{B}) \tagl{1.6}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>Geometrically, \( | \vec{A} \cross \vec{B} | \) is the area of the parallelogram generated by \( \vec{A} \) and \( \vec{B} \) (Fig 1.8). If two vectors are parallel, their cross product is zero. In particular,</p>
-<span>
-\[ \vec{A} \cross \vec{A} = 0
-\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>for any vector A.</p>
-<h2 id=112-vector-algebra-component-form>
-1.1.2: Vector Algebra: Component Form
-<a class=anchor href=#112-vector-algebra-component-form>#</a>
-</h2>
-<p>In the previous section, I defined the four vector operations (addition, scalar multiplication, dot product, and cross product) in &ldquo;abstract&rdquo; form-that is, without reference to any particular coordinate system. In practice, it is often easier to set up Cartesian coordinates x, y, z and work with vector components. Let \( \vu{x} \), \( \vu{y} \) , and \( \vu{z} \) be unit vectors parallel to the x, y, and z axes, respectively (Fig. 1.9(a)). An arbitrary vector A can be expanded in terms ofthese basis vectors (Fig. 1.9(b)):</p>
-<span>
-\[\vec{A} = A_x \vu{x} + A_y \vu{y} + A_z \vu{z}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>The numbers \( A_x \), \( A_y \), and \( A_z \) are the &ldquo;components&rdquo; of A; geometrically, they are the projections of A along the three coordinate axes (\( A_x = \vec{A} \cdot \vu{x}, A_y = \vec{A} \cdot \vu{y}, A_z = \vec{A} \cdot \vu{z} \) ). We can now reformulate each of the four vector operations as a rule for manipulating components:</p>
-<span>
-\[\vec{A} + \vec{B} = (A_x \vu{x} + A_y \vu{y} + A_z \vu{z}) + (B_x \vu{x} + B_y \vu{y} + B_z \vu{z}) \\
-= (A_x + B_x) \vu{x} + (A_y + B_y) \vu{y} + (A_z + B_z) \vu{z} \tag{1.7}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p><strong>Rule (i):</strong> To add vectors, add like components.</p>
-<span>
-\[a\vec{A} = (a A_x) \vu{x} + (a A_y) \vu{y} + (a A_z)\vu{z} \tag{1.8}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p><strong>Rule (ii):</strong> To multiply by a scalar, multiply each component.</p>
-<p>Because \( \vu{x}, \vu{y} \), and \( \vu{z} \) are mutually perpendicular unit vectors</p>
-<span>
-\[\vu{x} \cdot \vu{x} = \vu{y} \cdot \vu{y} = \vu{z} \cdot \vu{z} = 1; \qquad \vu{x} \cdot \vu{y} = \vu{x} \cdot \vu{z} = \vu{y} \cdot \vu{z} = 0 \tag{1.9}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>Accordingly,</p>
-<span>
-\[\vec{A} \cdot \vec{B} = (A_x \vu{x} + A_y \vu{y} + A_z \vu{z}) \cdot (B_x \vu{x} + B_y \vu{y} + B_z \vu{z}) \\
-= A_x B_x + A_y B_y + A_z B_z \tag{1.10}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p><strong>Rule (iii):</strong> To calculate the dot product, multiply like components and add. In particular,</p>
-<span>
-\[\vec{A} \cdot \vec{A} = A_x ^2 + A_y ^2 + A_z ^2\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>so</p>
-<span>
-\[A = \sqrt{A_x ^2 + A_y ^2 + A_z ^2} \tag{1.11}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>Similarly,</p>
-<span>
-\[\begin{aligned}
+\[\vec{A} + \vec{B} = \vec{B} + \vec{A}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>3 miles east followed by 4 miles north gets you to the same place as 4 miles north followed by 3 miles east. Addition is also associative:</p><span>\[(\vec{A} + \vec{B}) + \vec{C} = \vec{A} + (\vec{B} + \vec{C})\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>To subtract a vector, add its opposite (Fig. 1.4):</p><span>\[\vec{A} - \vec{B} = \vec{A} + (- \vec{B})\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p align=center><img alt="Figure 1.3" src=/r/img/griffiths/1.3.png></p><p><strong>(ii) Multiplication by a scalar.</strong> Multiplication of a vector by a positive scalar a multiplies the magnitude but leaves the direction unchanged (Fig. 1.5). (If a is negative, the direction is reversed.) Scalar multiplication is distributive:</p><span>\[a(\vec{A} + \vec{B}) = a \vec{A} + a \vec{B}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p><strong>(iii) Dot product of two vectors.</strong> The dot product of two vectors is defined by</p><span>\[\vec{A} \cdot \vec{B} = A B \cos \theta \tag{1.1}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>where \( \theta \) is the angle they form when placed tail-to-tail (Fig. 1.6). Note that \( \vec{A} \cdot \vec{B} \) is itself a scalar (hence the alternative name <em>scalar product</em>). The dot product is commutative,</p><span>\[\vec{A} \cdot \vec{B} = \vec{B} \cdot \vec{A}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>and distributive</p><span>\[\vec{A} \cdot (\vec{B} + \vec{C}) = \vec{A} \cdot \vec{B} + \vec{A} \cdot \vec{C} \tag{1.2}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>Geometrically, \( \vec{A} \cdot \vec{B} \) is the product of A times the projection of B along A (or the product of B times the projection of A along B). If the two vectors are parallel, then \( \vec{A} \cdot \vec{B} = AB \). In particular, for any vector A</p><span>\[\vec{A} \cdot \vec{A} = A^2 \tag{1.3}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>If A and B are perpendicular, then \( \vec{A} \cdot \vec{B} = 0 \)</p><p align=center><img alt="Figure 1.5" src=/r/img/griffiths/1.5.png></p><hr><h4 id=example-11>Example 1.1
+<a class=anchor href=#example-11>#</a></h4><div class=book-tabs><input type=radio class=toggle name=tabs-example1.1 id=tabs-example1.1-0 checked>
+<label for=tabs-example1.1-0>Q</label><div class="book-tabs-content markdown-inner">Let \( \vec{C} = \vec{A} - \vec{B} \) (Fig 1.7), and calculate the dot product of \( \vec{C} \) with itself.</div><input type=radio class=toggle name=tabs-example1.1 id=tabs-example1.1-1>
+<label for=tabs-example1.1-1>A</label><div class="book-tabs-content markdown-inner"><span>\[\vec{C} \cdot \vec{C} = ( \vec{A} - \vec{B} ) \cdot (\vec{A} - \vec{B}) = \vec{A} \cdot \vec{A} - \vec{A} \cdot \vec{B} - \vec{B} \cdot \vec{A} + \vec{B} \cdot \vec{B}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>or</p><span>\[C^2 = A^2 + B^2 - 2AB\cos \theta\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>This is the law of cosines.</p></div></div><p><strong>(iv) Cross product of two vectors.</strong> The cross product of two vectors is defined by</p><span>\[\vec{A} \cross \vec{B} = AB \sin \theta \vu{n} \tag{1.4}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>where \( \vu{n} \) is a unit vector (vector of magnitude 1) pointing perpendicular to the plane of A and B. (I shall use a hat \( \vu{} \) to denote unit vectors.) Of course, there are two directions perpendicular to any plane: &ldquo;in&rdquo; and &ldquo;out.&rdquo; The ambiguity is resolved by the right-hand rule: let your fingers point in the direction of the first vector and curl around (via the smaller angle) toward the second; then your thumb indicates the direction of \( \vu{n} \). (In Fig. 1.8, \( \vec{A} \cross \vec{B} \) points into the page; \( \vec{B} \cross \vec{A} \) points out of the page.) Note that \( \vec{A} \cross \vec{B} \) is itself a vector (hence the alternative name
+vector product). The cross product is distributive</p><span>\[\vec{A} \cross ( \vec{B} + \vec{C}) = ( \vec{A} \cross \vec{B}) + (\vec{A} \cross \vec{C})\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>but not <em>commutative</em>. In fact,</p><span>\[(\vec{B} \cross \vec{A}) = - (\vec{A} \cross \vec{B}) \tagl{1.6}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>Geometrically, \( | \vec{A} \cross \vec{B} | \) is the area of the parallelogram generated by \( \vec{A} \) and \( \vec{B} \) (Fig 1.8). If two vectors are parallel, their cross product is zero. In particular,</p><span>\[ \vec{A} \cross \vec{A} = 0
+\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>for any vector A.</p><h2 id=112-vector-algebra-component-form>1.1.2: Vector Algebra: Component Form
+<a class=anchor href=#112-vector-algebra-component-form>#</a></h2><p>In the previous section, I defined the four vector operations (addition, scalar multiplication, dot product, and cross product) in &ldquo;abstract&rdquo; form-that is, without reference to any particular coordinate system. In practice, it is often easier to set up Cartesian coordinates x, y, z and work with vector components. Let \( \vu{x} \), \( \vu{y} \) , and \( \vu{z} \) be unit vectors parallel to the x, y, and z axes, respectively (Fig. 1.9(a)). An arbitrary vector A can be expanded in terms ofthese basis vectors (Fig. 1.9(b)):</p><span>\[\vec{A} = A_x \vu{x} + A_y \vu{y} + A_z \vu{z}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>The numbers \( A_x \), \( A_y \), and \( A_z \) are the &ldquo;components&rdquo; of A; geometrically, they are the projections of A along the three coordinate axes (\( A_x = \vec{A} \cdot \vu{x}, A_y = \vec{A} \cdot \vu{y}, A_z = \vec{A} \cdot \vu{z} \) ). We can now reformulate each of the four vector operations as a rule for manipulating components:</p><span>\[\vec{A} + \vec{B} = (A_x \vu{x} + A_y \vu{y} + A_z \vu{z}) + (B_x \vu{x} + B_y \vu{y} + B_z \vu{z}) \\
+= (A_x + B_x) \vu{x} + (A_y + B_y) \vu{y} + (A_z + B_z) \vu{z} \tag{1.7}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p><strong>Rule (i):</strong> To add vectors, add like components.</p><span>\[a\vec{A} = (a A_x) \vu{x} + (a A_y) \vu{y} + (a A_z)\vu{z} \tag{1.8}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p><strong>Rule (ii):</strong> To multiply by a scalar, multiply each component.</p><p>Because \( \vu{x}, \vu{y} \), and \( \vu{z} \) are mutually perpendicular unit vectors</p><span>\[\vu{x} \cdot \vu{x} = \vu{y} \cdot \vu{y} = \vu{z} \cdot \vu{z} = 1; \qquad \vu{x} \cdot \vu{y} = \vu{x} \cdot \vu{z} = \vu{y} \cdot \vu{z} = 0 \tag{1.9}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>Accordingly,</p><span>\[\vec{A} \cdot \vec{B} = (A_x \vu{x} + A_y \vu{y} + A_z \vu{z}) \cdot (B_x \vu{x} + B_y \vu{y} + B_z \vu{z}) \\
+= A_x B_x + A_y B_y + A_z B_z \tag{1.10}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p><strong>Rule (iii):</strong> To calculate the dot product, multiply like components and add. In particular,</p><span>\[\vec{A} \cdot \vec{A} = A_x ^2 + A_y ^2 + A_z ^2\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>so</p><span>\[A = \sqrt{A_x ^2 + A_y ^2 + A_z ^2} \tag{1.11}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>Similarly,</p><span>\[\begin{aligned}
 \vu{x} \cross \vu{x} & = & \vu{y} \cross \vu{y} & = & \vu{z} \cross \vu{z} = 0 \\
 \vu{x} \cross \vu{y} & = & - \vu{y} \cross \vu{x} & = & \vu{z} \\
 \vu{y} \cross \vu{z} & = & - \vu{z} \cross \vu{y} & = & \vu{x} \\
 \vu{z} \cross \vu{x} & = & - \vu{x} \cross \vu{z} & = & \vu{y}
-\end{aligned}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>Therefore,</p>
-<span>
-\[\vec{A} \cross \vec{B} = (A_x \vu{x} + A_y \vu{y} + A_z \vu{z}) \cross (B_x \vu{x} + B_y \vu{y} + B_z \vu{z}) \\
-= (A_y B_z - A_z B_y) \vu{x} + (A_z B_x - A_x B_z)\vu{y} + (A_x B_y - A_y B_x) \vu{z} \tag{1.13}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>This cumbersome expression can be written more neatly as a determinant:</p>
-<span>
-\[\vec{A} \cross \vec{B} = \begin{vmatrix}
+\end{aligned}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>Therefore,</p><span>\[\vec{A} \cross \vec{B} = (A_x \vu{x} + A_y \vu{y} + A_z \vu{z}) \cross (B_x \vu{x} + B_y \vu{y} + B_z \vu{z}) \\
+= (A_y B_z - A_z B_y) \vu{x} + (A_z B_x - A_x B_z)\vu{y} + (A_x B_y - A_y B_x) \vu{z} \tag{1.13}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>This cumbersome expression can be written more neatly as a determinant:</p><span>\[\vec{A} \cross \vec{B} = \begin{vmatrix}
 \vu{x} & \vu{y} & \vu{z} \\
 A_x & A_y & A_z \\
 B_x & B_y & B_z
-\end{vmatrix}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p><strong>Rule (iv):</strong> To calculate the cross product, form the determinant whose first row is \( \vu{x}, \vu{y}, \vu{z} \), whose second row is A, and whose third row is B.</p>
-<h4 id=example-12>
-Example 1.2
-<a class=anchor href=#example-12>#</a>
-</h4>
-<div class=book-tabs><input type=radio class=toggle name=tabs-ex1.2 id=tabs-ex1.2-0 checked>
-<label for=tabs-ex1.2-0>Q</label>
-<div class="book-tabs-content markdown-inner">Find the angle between the face diagonals of a cube.</div><input type=radio class=toggle name=tabs-ex1.2 id=tabs-ex1.2-1>
-<label for=tabs-ex1.2-1>A</label>
-<div class="book-tabs-content markdown-inner"><p><strong>Solution</strong>
-We might as well use a cube of side 1, and place it as shown in Fig 1.10, with one corner at the origin. The face diagonals \( \vec{A} \) and \( \vec{B} \) are</p>
-<span>
-\[\vec{A} = 1 \vu{x} + 0 \vu{y} + 1 \vu{z}; \qquad \vec{B} = 0 \vu{x} + 1 \vu{y} + 1 \vu{z}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p align=center> <img alt="Figure 1.10" src=/r/img/griffiths/1.10.png> </p>
-So, in component form,
-<span>
-\[\vec{A} \cdot \vec{B} = 1 \cdot 0 + 0 \cdot 1 + 1 \cdot 1 = 1\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>On the other hand, in &ldquo;abstract&rdquo; form,</p>
-<span>
-\[\vec{A} \cdot \vec{B} = AB \cos \theta = \sqrt{2} \sqrt{2} \cos \theta = 2 \cos \theta\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>Therefore,</p>
-<span>
-\[\cos \theta = 1/2 \quad \text{ or } \quad \theta = 60^{\circ}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>Of course, you can get the answer more easily by drawing in a diagonal across the top of the cube, completing the equilateral triangle. But in cases where the geometry is not so simple, this device of comparing the abstract and component forms of the dot product can be a very efficient means of finding angles.</p>
-</div></div>
-<h2 id=113-triple-products>
-1.1.3: Triple Products
-<a class=anchor href=#113-triple-products>#</a>
-</h2>
-<p>Since the cross product of two vectors is itself a vector, it can be dotted or crossed with a third vector to form a triple product.</p>
-<p><strong>(i) Scalar triple product:</strong> \( \vec{A} \cdot (\vec{B} \cross \vec{C}) \). Geometrically, \( |\vec{A} \cdot (\vec{B} \cross \vec{C}) | \) is the volume of the parallelpiped generated by <strong>A</strong>, <strong>B</strong>, and <strong>C</strong>, since \( |\vec{B} \cross \vec{C}| \) is the area of the base, and \( | \vec{A} \cos \theta | \) is the altitude (Fig. 1.12). Evidently,</p>
-<span>
-\[\vec{A} \cdot(\vec{B} \cross \vec{C}) = \vec{B} \cdot (\vec{C} \cross \vec{A}) = \vec{C} \cdot (\vec{A} \cross \vec{B}) \tagl{1.15}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>for they all correspond to the same figure. Note that &ldquo;alphabetical&rdquo; order is preserved - in view of \( \eqref{1.6} \), the &ldquo;nonalphabetical&rdquo; triple products</p>
-<span>
-\[\vec{A} \cdot(\vec{C} \cross \vec{B}) = \vec{B} \cdot (\vec{A} \cross \vec{C}) = \vec{C} \cdot (\vec{B} \cross \vec{A}) \]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>have the opposite sign. In component form,</p>
-<span>
-\[\vec{A} \cdot (\vec{B} \cross \vec{C}) = \begin{vmatrix}
+\end{vmatrix}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p><strong>Rule (iv):</strong> To calculate the cross product, form the determinant whose first row is \( \vu{x}, \vu{y}, \vu{z} \), whose second row is A, and whose third row is B.</p><h4 id=example-12>Example 1.2
+<a class=anchor href=#example-12>#</a></h4><div class=book-tabs><input type=radio class=toggle name=tabs-ex1.2 id=tabs-ex1.2-0 checked>
+<label for=tabs-ex1.2-0>Q</label><div class="book-tabs-content markdown-inner">Find the angle between the face diagonals of a cube.</div><input type=radio class=toggle name=tabs-ex1.2 id=tabs-ex1.2-1>
+<label for=tabs-ex1.2-1>A</label><div class="book-tabs-content markdown-inner"><p><strong>Solution</strong>
+We might as well use a cube of side 1, and place it as shown in Fig 1.10, with one corner at the origin. The face diagonals \( \vec{A} \) and \( \vec{B} \) are</p><span>\[\vec{A} = 1 \vu{x} + 0 \vu{y} + 1 \vu{z}; \qquad \vec{B} = 0 \vu{x} + 1 \vu{y} + 1 \vu{z}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p align=center><img alt="Figure 1.10" src=/r/img/griffiths/1.10.png></p>So, in component form,
+<span>\[\vec{A} \cdot \vec{B} = 1 \cdot 0 + 0 \cdot 1 + 1 \cdot 1 = 1\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>On the other hand, in &ldquo;abstract&rdquo; form,</p><span>\[\vec{A} \cdot \vec{B} = AB \cos \theta = \sqrt{2} \sqrt{2} \cos \theta = 2 \cos \theta\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>Therefore,</p><span>\[\cos \theta = 1/2 \quad \text{ or } \quad \theta = 60^{\circ}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>Of course, you can get the answer more easily by drawing in a diagonal across the top of the cube, completing the equilateral triangle. But in cases where the geometry is not so simple, this device of comparing the abstract and component forms of the dot product can be a very efficient means of finding angles.</p></div></div><h2 id=113-triple-products>1.1.3: Triple Products
+<a class=anchor href=#113-triple-products>#</a></h2><p>Since the cross product of two vectors is itself a vector, it can be dotted or crossed with a third vector to form a triple product.</p><p><strong>(i) Scalar triple product:</strong> \( \vec{A} \cdot (\vec{B} \cross \vec{C}) \). Geometrically, \( |\vec{A} \cdot (\vec{B} \cross \vec{C}) | \) is the volume of the parallelpiped generated by <strong>A</strong>, <strong>B</strong>, and <strong>C</strong>, since \( |\vec{B} \cross \vec{C}| \) is the area of the base, and \( | \vec{A} \cos \theta | \) is the altitude (Fig. 1.12). Evidently,</p><span>\[\vec{A} \cdot(\vec{B} \cross \vec{C}) = \vec{B} \cdot (\vec{C} \cross \vec{A}) = \vec{C} \cdot (\vec{A} \cross \vec{B}) \tagl{1.15}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>for they all correspond to the same figure. Note that &ldquo;alphabetical&rdquo; order is preserved - in view of \( \eqref{1.6} \), the &ldquo;nonalphabetical&rdquo; triple products</p><span>\[\vec{A} \cdot(\vec{C} \cross \vec{B}) = \vec{B} \cdot (\vec{A} \cross \vec{C}) = \vec{C} \cdot (\vec{B} \cross \vec{A}) \]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>have the opposite sign. In component form,</p><span>\[\vec{A} \cdot (\vec{B} \cross \vec{C}) = \begin{vmatrix}
 A_x & A_y & A_z \\
 B_x & B_y & B_z \\
 C_x & C_y & C_z
-\end{vmatrix} \tagl{1.16}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>Note that the dot and cross can be interchanged:</p>
-<span>
-\[\vec{A} \cdot (\vec{B} \cross \vec{C}) = (\vec{A} \cross \vec{B}) \cdot \vec{C}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>(this follows immediately from Eq. 1.15); however, the placement of the parentheses is critical: \( (\vec{A} \cdot \vec{B}) \cdot \vec{C} \) is a meaningless expression - you can&rsquo;t make a cross product from a scalar and a vector.</p>
-<p align=center> <img alt="Figure 1.11" src=/r/img/griffiths/1.11.png> </p>
-<p><strong>(ii) Vector triple product:</strong> \( \vec{A} \cross (\vec{B} \cross \vec{C}) \). The vector triple product can be simplified by the so-called <strong>BAC-CAB</strong> rule:</p>
-<span>
-\[\vec{A} \cross (\vec{B} \cross \vec{C}) = \vec{B}(\vec{A} \cdot \vec{C}) - \vec{C} (\vec{A} \cdot \vec{B}) \tagl{1.17}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>Notice that</p>
-<span>
-\[(\vec{A} \cross \vec{B}) \cross \vec{C} = - \vec{C} \cross (\vec{A} \cross \vec{B}) = -\vec{A}(\vec{B} \cdot \vec{C}) + \vec{B}(\vec{A} \cdot \vec{C})\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>is an entirely different vector (cross-products are not associative). All higher vector products can be similarly reduced, often by repeated application of \( \eqref{1.17} \), so it is never necessary for an expression to contain more than one cross product in any term. For instance,</p>
-<span>
-\[(\vec{A} \cross \vec{B}) \cdot (\vec{C} \cross \vec{D}) = (\vec{A} \cdot \vec{C})(\vec{B} \cdot \vec{D}) - (\vec{A} \cdot \vec{D}) (\vec{B} \cdot \vec{C})\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<span>
-\[\vec{A} \cross [\vec{B} \cross (\vec{C} \cross \vec{D})] = \vec{B}[ \vec{A} \cdot (\vec{C} \cross \vec{D})] - (\vec{A} \cdot \vec{B})(\vec{C} \cross \vec{D}) \tagl{1.18}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<h2 id=114-position-displacement-and-separation-vectors>
-1.1.4: Position, Displacement, and Separation Vectors
-<a class=anchor href=#114-position-displacement-and-separation-vectors>#</a>
-</h2>
-<p>The location of a point in three dimensions can be described by listing its Cartesian coordinates (x, y, z). The vector to that point from the origin (\( \mathscr{O} \)) is called the <em>position vector</em> (Fig 1.13):</p>
-<span>
-\[\vec{r} \equiv x \vu{x} + y \vu{y} + z \vu{z} \tagl{1.19}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p align=center> <img alt="Figure 1.13" src=/r/img/griffiths/1.13.png> </p>
-<p>I will reserve the letter \( \vec{r} \) for this purpose. Its magnitude,</p>
-<span>
-\[r = \sqrt{x^2 + y^2 + z^2} \tagl{1.20}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>is the distance from the origin, and</p>
-<span>
-\[\vu{r} = \frac{\vec{r}}{r} = \frac{x \vu{x} + y \vu{y} + z \vu{z}}{ \sqrt{x^2 + y^2 + z^2}} \tagl{1.21}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>is a unit vector pointing radially outward. The infinitesimal displacement vector from \( (x, y, z) \) to \( x + \dd{x}, y + \dd{y}, z + \dd{z} \) is</p>
-<span>
-\[\dd{\vec{l}} = \dd{x} \vu{x} + \dd{y} \vu{y} + \dd{z} \vu{z} \tagl{1.22}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>(We could call this \( \dd{\vec{r}} \), since that&rsquo;s what it is, but it is useful to have a special notation for infinitesimal displacements.)</p>
-<p>In electrodynamics, one frequently encounters problems involving <em>two</em> points - typically a <strong>source point</strong>, \( \vec{r'} \), where an electric charge is located, and a <strong>field point</strong> \( \vec{r} \) at which you are calculating the electric or magnetic field (Fig 1.14). It pays to adopt right from the start some short-hand notation for the <strong>separation vector</strong> from the source point to the field point. I shall use for this purpose the letter \( \gr \):</p>
-<span>
-\[\vec{\gr} \equiv \vec{r} - \vec{r'} \tagl{1.23}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>Its magnitude is</p>
-<span>
-\[|\gr| = | \vu{r} - \vu{r'} | \tagl{1.24}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>and a unit vector in the direction from \( \vec{r'} \) to \( \vec{r} \) is</p>
-<span>
-\[\vu{\gr} = \frac{\gr}{|\gr|} = \frac{\vec{r} - \vec{r'}}{|\vec{r} - \vec{r'}|} \tagl{1.25} \]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>In Cartesian coordinates,</p>
-<span>
-\[\gr = (x - x') \vu{x} + (y-y') \vu{y} + (z-z') \vu{z} \tagl{1.26}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<span>
-\[|\gr| = \sqrt{(x - x')^2 + (y-y')^2 + (z-z')^2 } \tagl{1.27}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<span>
-\[\vu{\gr} = \frac{(x - x') \vu{x} + (y-y') \vu{y} + (z-z') \vu{z}}{\sqrt{(x - x')^2 + (y-y')^2 + (z-z')^2 }} \]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>(from which you can appreciate the economy of the \( \gr \) notation).</p>
-<h2 id=115-how-vectors-transform>
-1.1.5: How Vectors Transform
-<a class=anchor href=#115-how-vectors-transform>#</a>
-</h2>
-<p>The definition of a vector as &ldquo;a quantity with a magnitude and direction&rdquo; is not altogether satisfactory: What precisely does &ldquo;direction&rdquo; mean? This may seem a pedantic question, but we shall soon encounter a species of derivative that looks rather like a vector, and we&rsquo;ll want to know for sure whether it is one.</p>
-<p>You might be inclined to say that a vector is anything that has three components that combine properly under addition. Well, how about this: We have a barrel of fruit that contains \( N_x \) pears, \( N_y \) apples, and \( N_z \) bananas. Is \( \vec{N} = N_x \vu{x} + N_y \vu{y} + N_z \vu{z} \) a vector? It has three components, and when you add another barrel with \( M_x \) pears, \( M_y \) apples, and \( M_z \) bananas the result is \( N_x + M_x \) pears, \( N_y + M_y \) apples, \( N_z + M_z \) bananas. So it does add like a vector. Yet it&rsquo;s obviously not a vector, in the physicist&rsquo;s sense of the word, because it doesn&rsquo;t really have a direction. What exactly is wrong with it?</p>
-<p>The answer is that \( \vec{N} \) <em>does not transform properly when you change coordinates</em>. The coordinate frame we use to describe positions in space is of course entirely arbitrary, but there is a specific geometrical transformation law for converting vector components from one frame to another. Suppose, for instance, the \( \overline{x}, \overline{y}, \overline{z} \) system is rotated by angle \( \phi \), relative to \( x, y, z \), about the common \( x = \overline{x} \) axes. From Fig. 1.15,</p>
-<span>
-\[A_y = A \cos \theta, \qquad A_z = A \sin \theta\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>while</p>
-<span>
-\[\begin{aligned}
+\end{vmatrix} \tagl{1.16}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>Note that the dot and cross can be interchanged:</p><span>\[\vec{A} \cdot (\vec{B} \cross \vec{C}) = (\vec{A} \cross \vec{B}) \cdot \vec{C}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>(this follows immediately from Eq. 1.15); however, the placement of the parentheses is critical: \( (\vec{A} \cdot \vec{B}) \cdot \vec{C} \) is a meaningless expression - you can&rsquo;t make a cross product from a scalar and a vector.</p><p align=center><img alt="Figure 1.11" src=/r/img/griffiths/1.11.png></p><p><strong>(ii) Vector triple product:</strong> \( \vec{A} \cross (\vec{B} \cross \vec{C}) \). The vector triple product can be simplified by the so-called <strong>BAC-CAB</strong> rule:</p><span>\[\vec{A} \cross (\vec{B} \cross \vec{C}) = \vec{B}(\vec{A} \cdot \vec{C}) - \vec{C} (\vec{A} \cdot \vec{B}) \tagl{1.17}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>Notice that</p><span>\[(\vec{A} \cross \vec{B}) \cross \vec{C} = - \vec{C} \cross (\vec{A} \cross \vec{B}) = -\vec{A}(\vec{B} \cdot \vec{C}) + \vec{B}(\vec{A} \cdot \vec{C})\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>is an entirely different vector (cross-products are not associative). All higher vector products can be similarly reduced, often by repeated application of \( \eqref{1.17} \), so it is never necessary for an expression to contain more than one cross product in any term. For instance,</p><span>\[(\vec{A} \cross \vec{B}) \cdot (\vec{C} \cross \vec{D}) = (\vec{A} \cdot \vec{C})(\vec{B} \cdot \vec{D}) - (\vec{A} \cdot \vec{D}) (\vec{B} \cdot \vec{C})\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><span>\[\vec{A} \cross [\vec{B} \cross (\vec{C} \cross \vec{D})] = \vec{B}[ \vec{A} \cdot (\vec{C} \cross \vec{D})] - (\vec{A} \cdot \vec{B})(\vec{C} \cross \vec{D}) \tagl{1.18}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><h2 id=114-position-displacement-and-separation-vectors>1.1.4: Position, Displacement, and Separation Vectors
+<a class=anchor href=#114-position-displacement-and-separation-vectors>#</a></h2><p>The location of a point in three dimensions can be described by listing its Cartesian coordinates (x, y, z). The vector to that point from the origin (\( \mathscr{O} \)) is called the <em>position vector</em> (Fig 1.13):</p><span>\[\vec{r} \equiv x \vu{x} + y \vu{y} + z \vu{z} \tagl{1.19}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p align=center><img alt="Figure 1.13" src=/r/img/griffiths/1.13.png></p><p>I will reserve the letter \( \vec{r} \) for this purpose. Its magnitude,</p><span>\[r = \sqrt{x^2 + y^2 + z^2} \tagl{1.20}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>is the distance from the origin, and</p><span>\[\vu{r} = \frac{\vec{r}}{r} = \frac{x \vu{x} + y \vu{y} + z \vu{z}}{ \sqrt{x^2 + y^2 + z^2}} \tagl{1.21}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>is a unit vector pointing radially outward. The infinitesimal displacement vector from \( (x, y, z) \) to \( x + \dd{x}, y + \dd{y}, z + \dd{z} \) is</p><span>\[\dd{\vec{l}} = \dd{x} \vu{x} + \dd{y} \vu{y} + \dd{z} \vu{z} \tagl{1.22}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>(We could call this \( \dd{\vec{r}} \), since that&rsquo;s what it is, but it is useful to have a special notation for infinitesimal displacements.)</p><p>In electrodynamics, one frequently encounters problems involving <em>two</em> points - typically a <strong>source point</strong>, \( \vec{r&rsquo;} \), where an electric charge is located, and a <strong>field point</strong> \( \vec{r} \) at which you are calculating the electric or magnetic field (Fig 1.14). It pays to adopt right from the start some short-hand notation for the <strong>separation vector</strong> from the source point to the field point. I shall use for this purpose the letter \( \gr \):</p><span>\[\vec{\gr} \equiv \vec{r} - \vec{r'} \tagl{1.23}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>Its magnitude is</p><span>\[|\gr| = | \vu{r} - \vu{r'} | \tagl{1.24}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>and a unit vector in the direction from \( \vec{r&rsquo;} \) to \( \vec{r} \) is</p><span>\[\vu{\gr} = \frac{\gr}{|\gr|} = \frac{\vec{r} - \vec{r'}}{|\vec{r} - \vec{r'}|} \tagl{1.25} \]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>In Cartesian coordinates,</p><span>\[\gr = (x - x') \vu{x} + (y-y') \vu{y} + (z-z') \vu{z} \tagl{1.26}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><span>\[|\gr| = \sqrt{(x - x')^2 + (y-y')^2 + (z-z')^2 } \tagl{1.27}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><span>\[\vu{\gr} = \frac{(x - x') \vu{x} + (y-y') \vu{y} + (z-z') \vu{z}}{\sqrt{(x - x')^2 + (y-y')^2 + (z-z')^2 }} \]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>(from which you can appreciate the economy of the \( \gr \) notation).</p><h2 id=115-how-vectors-transform>1.1.5: How Vectors Transform
+<a class=anchor href=#115-how-vectors-transform>#</a></h2><p>The definition of a vector as &ldquo;a quantity with a magnitude and direction&rdquo; is not altogether satisfactory: What precisely does &ldquo;direction&rdquo; mean? This may seem a pedantic question, but we shall soon encounter a species of derivative that looks rather like a vector, and we&rsquo;ll want to know for sure whether it is one.</p><p>You might be inclined to say that a vector is anything that has three components that combine properly under addition. Well, how about this: We have a barrel of fruit that contains \( N_x \) pears, \( N_y \) apples, and \( N_z \) bananas. Is \( \vec{N} = N_x \vu{x} + N_y \vu{y} + N_z \vu{z} \) a vector? It has three components, and when you add another barrel with \( M_x \) pears, \( M_y \) apples, and \( M_z \) bananas the result is \( N_x + M_x \) pears, \( N_y + M_y \) apples, \( N_z + M_z \) bananas. So it does add like a vector. Yet it&rsquo;s obviously not a vector, in the physicist&rsquo;s sense of the word, because it doesn&rsquo;t really have a direction. What exactly is wrong with it?</p><p>The answer is that \( \vec{N} \) <em>does not transform properly when you change coordinates</em>. The coordinate frame we use to describe positions in space is of course entirely arbitrary, but there is a specific geometrical transformation law for converting vector components from one frame to another. Suppose, for instance, the \( \overline{x}, \overline{y}, \overline{z} \) system is rotated by angle \( \phi \), relative to \( x, y, z \), about the common \( x = \overline{x} \) axes. From Fig. 1.15,</p><span>\[A_y = A \cos \theta, \qquad A_z = A \sin \theta\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>while</p><span>\[\begin{aligned}
 \overline{A_y} & = A \cos \overline{\theta} = A \cos (\theta - \phi) = A (\cos \theta \cos \phi + \sin \theta \sin \phi) \\
 & = \cos \phi A_y + \sin \phi A_z \\
 \overline{A_z} & = A \sin \overline{\theta} = A \sin (\theta - \phi) = A (\sin \theta \cos \phi - \cos \theta \sin \phi) \\
 & = - \sin \phi A_y + \cos \phi A_z
-\end{aligned}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p align=center> <img alt="Figure 1.15" src=/r/img/griffiths/1.15.png> </p>
-<p>We might express this conclusion in matrix notation:</p>
-<span>
-\[\begin{pmatrix}
+\end{aligned}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p align=center><img alt="Figure 1.15" src=/r/img/griffiths/1.15.png></p><p>We might express this conclusion in matrix notation:</p><span>\[\begin{pmatrix}
 \overline{A_y} \\
 \overline{A_z}
 \end{pmatrix} =
@@ -800,12 +110,8 @@ C_x & C_y & C_z
 \begin{pmatrix}
 A_y \\
 A_z
-\end{pmatrix} \tagl{1.29}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>More generally, for rotation about an <em>arbitrary</em> axis in three dimensions, the transformation law takes the form</p>
-<span>
-\[\begin{pmatrix}
+\end{pmatrix} \tagl{1.29}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>More generally, for rotation about an <em>arbitrary</em> axis in three dimensions, the transformation law takes the form</p><span>\[\begin{pmatrix}
 \overline{A_x} \\
 \overline{A_y} \\
 \overline{A_z}
@@ -819,71 +125,14 @@ R_{zx} & R_{zy} & R_{zz}
 A_x \\
 A_y \\
 A_z
-\end{pmatrix} \tagl{1.30}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>or, more compactly,</p>
-<span>
-\[\overline{A_i} = \sum_{j=1}^3 R_{ij} A_j \tagl{1.31}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>where index 1 stands for x, 2 for y, and 3 for z. The elements of the matrix R can be ascertained, for a given rotation, by the same sort of trigonometric arguments as we used for a rotation about the x axis.
-Now: Do the components of \( \vec{N} \) transform this way? Of course not - it doesn&rsquo;t matter what coordinates you use to represent positions in space; there are still just as many apples in the barrel. You can&rsquo;t convert a pear into a banana by choosing a different set of axes, but you can turn in \( A_x \) into \( \overline{A_y} \). Formally, then, <em>a vector is any set of three components that transforms in the same manner as a displacement when you change coordinates</em>. As always, displacement is the <em>model</em> for the behavior of vectors.</p>
-<p>By the way, a (second-rank) <strong>tensor</strong> is a quantity with nine components, \( T_{xx}, T_{xy}, T_{xz}, T_{yx}, \ldots T_{zz} \) which transform with two factors of \( R \):</p>
-<span>
-\[\begin{aligned}
+\end{pmatrix} \tagl{1.30}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>or, more compactly,</p><span>\[\overline{A_i} = \sum_{j=1}^3 R_{ij} A_j \tagl{1.31}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>where index 1 stands for x, 2 for y, and 3 for z. The elements of the matrix R can be ascertained, for a given rotation, by the same sort of trigonometric arguments as we used for a rotation about the x axis.
+Now: Do the components of \( \vec{N} \) transform this way? Of course not - it doesn&rsquo;t matter what coordinates you use to represent positions in space; there are still just as many apples in the barrel. You can&rsquo;t convert a pear into a banana by choosing a different set of axes, but you can turn in \( A_x \) into \( \overline{A_y} \). Formally, then, <em>a vector is any set of three components that transforms in the same manner as a displacement when you change coordinates</em>. As always, displacement is the <em>model</em> for the behavior of vectors.</p><p>By the way, a (second-rank) <strong>tensor</strong> is a quantity with nine components, \( T_{xx}, T_{xy}, T_{xz}, T_{yx}, \ldots T_{zz} \) which transform with two factors of \( R \):</p><span>\[\begin{aligned}
 \overline{T}_{xx} & = R_{xx}(R_{xx} T_{xx} + R_{xy} T_{xy} + R_{xz} T_{xz}) \\
 & + R_{xy}(R_{xx} T_{yx} + R_{xy} T_{yy} + R_{xz} T_{yz}) \\
 & + R_{xz}(R_{xx} T_{zx} + R_{xy} T_{zy} + R_{xz} T_{zz}), \ldots
-\end{aligned}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>or, more compactly,</p>
-<span>
-\[\overline{T}_{ij} = \sum_{k=1}^3 \sum_{l=1} ^3 R_{ik} R_{jl} T_{kl} \tagl{1.32}\]
-</span>
-<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:a=>['\\htmlId','\\href'].includes(a.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":'\\text{sen}\\,',"\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":"\\lvert #1 \\rvert","\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":"\\nabla \\cross #1","\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":"\\nabla \\cdot #1","\\grad":"\\nabla","\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":"\\mathbf{\\nabla ^2}","\\label":"{}","\\negadelta":"\\nabla","\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script>
-<p>In general, an n-th rank tensor has \( n \) indices and \( 3^n \) components, and transforms with \( n \) factors of \( R \). In this hierarchy, a vector is a tensor of rank 1, and a scalar is a tensor of rank zero.</p>
-</article>
-<footer class=book-footer>
-<div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://github.com/Peppyhare/r/commit/edf43b9edaa7c85f064136625a27e8f2c20f9b18 title="Last modified by Evan Bluhm | October 10, 2020" target=_blank rel=noopener>
-<img src=/r/svg/calendar.svg class=book-icon alt=Calendar>
-<span>October 10, 2020</span>
-</a>
-</div>
-</div>
-<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
-</footer>
-<div class=book-comments>
-</div>
-<label for=menu-control class="hidden book-menu-overlay"></label>
-</div>
-<aside class=book-toc>
-<div class=book-toc-content>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#_11_-vector-algebra><em>1.1</em> Vector Algebra</a>
-<ul>
-<li><a href=#_111_-vector-operations><em>1.1.1</em> Vector Operations</a>
-<ul>
-<li></li>
-</ul>
-</li>
-<li><a href=#112-vector-algebra-component-form>1.1.2: Vector Algebra: Component Form</a>
-<ul>
-<li></li>
-</ul>
-</li>
-<li><a href=#113-triple-products>1.1.3: Triple Products</a></li>
-<li><a href=#114-position-displacement-and-separation-vectors>1.1.4: Position, Displacement, and Separation Vectors</a></li>
-<li><a href=#115-how-vectors-transform>1.1.5: How Vectors Transform</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-</aside>
-</main>
-</body>
-</html>
+\end{aligned}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>or, more compactly,</p><span>\[\overline{T}_{ij} = \sum_{k=1}^3 \sum_{l=1} ^3 R_{ik} R_{jl} T_{kl} \tagl{1.32}\]</span>
+<script>function loadKatex(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"\\[",right:"\\]",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1}],throwOnError:!1,trust:e=>["\\htmlId","\\href"].includes(e.command),macros:{"\\lcm":"\\mathop{\\mathrm{lcm}}","\\sen":"\\text{sen}\\,","\\dd":"\\mathop{\\mathrm{d} #1}","\\abs":`\\lvert #1 \\rvert`,"\\dd":"\\text{d}","\\cross":"\\times","\\pdv":"\\frac{\\partial #1}{\\partial #2}","\\curl":`\\nabla \\cross #1`,"\\vu":"\\mathbf{\\hat{#1}}","\\vdot":"\\dot","\\div":`\\nabla \\cdot #1`,"\\grad":`\\nabla`,"\\dv":"\\frac{d\\,#1}{d\\,#2}","\\gr":"\\gamma","\\vec":"\\mathbf{#1}","\\tagl":"\\tag{#1}","\\eqref":"(#1)","\\laplacian":`\\mathbf{\\nabla ^2}`,"\\label":"{}","\\negadelta":`\\nabla`,"\\eqref":"\\href{###1}{(\\text{#1})}","\\ref":"\\href{###1}{\\text{#1}}","\\label":"\\htmlId{#1}{}"}})}</script><p>In general, an n-th rank tensor has \( n \) indices and \( 3^n \) components, and transforms with \( n \) factors of \( R \). In this hierarchy, a vector is a tensor of rank 1, and a scalar is a tensor of rank zero.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/Peppyhare/r/commit/edf43b9edaa7c85f064136625a27e8f2c20f9b18 title='Last modified by Evan Bluhm | October 10, 2020' target=_blank rel=noopener><img src=/r/svg/calendar.svg class=book-icon alt=Calendar>
+<span>October 10, 2020</span></a></div></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#_11_-vector-algebra><em>1.1</em> Vector Algebra</a><ul><li><a href=#_111_-vector-operations><em>1.1.1</em> Vector Operations</a><ul><li></li></ul></li><li><a href=#112-vector-algebra-component-form>1.1.2: Vector Algebra: Component Form</a><ul><li></li></ul></li><li><a href=#113-triple-products>1.1.3: Triple Products</a></li><li><a href=#114-position-displacement-and-separation-vectors>1.1.4: Position, Displacement, and Separation Vectors</a></li><li><a href=#115-how-vectors-transform>1.1.5: How Vectors Transform</a></li></ul></li></ul></nav></div></aside></main></body></html>
