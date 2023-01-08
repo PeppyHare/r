@@ -10,4 +10,4 @@ weight: 35
 Course notes from AA556 at the University of Washington, Seattle
 
   - Review
-      - [Collisional and collisionless plasma physics](ch01-1.md)
+      - [Mathematical Review: Fourier Analysis and Diffusion](ch01-1.md)
