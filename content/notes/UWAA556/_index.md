@@ -14,3 +14,4 @@ Course notes from AA556 at the University of Washington, Seattle
   - Plasma Waves
       - [Plasma Waves in General Dielectric Media](ch02-1.md)
       - [Wave Properties in Cold Unmagnetized Plasma](ch02-2.md)
+      - [Cold Magnetized Plasma Waves](ch02-3.md)
