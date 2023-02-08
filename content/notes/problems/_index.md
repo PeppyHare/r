@@ -10,5 +10,5 @@ weight: 45
 Worked solutions to problems from various textbooks
 
   - Gurnett and Battacharjee - Introduction to Plasma Physics
-      - [Characteristic Parameters of a Plasma](GB-ch02.md)
+      - [Characteristic Parameters of a Plasma](gurnett/ch02.md)
   
