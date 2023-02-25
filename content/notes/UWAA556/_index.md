@@ -18,3 +18,4 @@ Course notes from AA556 at the University of Washington, Seattle
       - [The CMA Diagram](ch02-4.md)
   - Kinetic Theory
       - [Introduction to Kinetic Theory](ch03-1.md)
+      - [Landau Damping](ch03-2.md)
