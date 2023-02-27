@@ -1,5 +1,5 @@
 // Increase the maximum size of the entire container to make use of larger screens
-$container-max-width: 90%;
+$container-max-width: 110rem;
 // Convert to mobile-style single-pane view once page body becomes 40rem
 $mobile-breakpoint: $menu-width + $body-min-width * 2 + $toc-width;
 // Increase width of nav column
