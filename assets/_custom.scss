@@ -9,7 +9,7 @@
 @import "plugins/scrollbars";
 
 img {
-    width: 80%;
+    width: 60%;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,4 +19,42 @@ img {
     img {
         filter: invert(87.0%);
     }
+}
+
+// Interactive indication when hovering over navbar buttons
+nav {
+    .navbutton:hover {
+        background-color: var(--gray-100);
+        color: var(--body-font-color);
+    }
+}
+
+// Reduce the padding around all book-section elements
+.book-section-flat {
+  margin: $padding-1 * 2 0;
+}
+
+// Reduce the margins around navbar buttons
+aside nav ul li {
+    margin: $padding-1;
+}
+
+// Formatting for navbar buttons
+.navbutton {
+  border: none;
+  padding: $padding-8 $padding-8;
+  text-align: center;
+  text-decoration: none;
+  margin: $padding-1;
+  cursor: pointer;
+}
+
+// Allow section names to expand to fill the toggle width
+.book-collapse-section{
+    flex: 1;
+}
+
+// Margins around external link section
+.book-menu-hugo {
+    margin-top: $padding-16;
 }
