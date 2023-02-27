@@ -1,11 +1,11 @@
 ---
 bookFlatSection: true
 bookCollapseSection: true
-title: Space And Laboratory Plasma Physics
+title: Plasma Waves
 weight: 35
 ---
 
-# Space And Laboratory Plasma Physics
+# Plasma Waves
 
 Course notes from AA556 at the University of Washington, Seattle
 
@@ -19,3 +19,4 @@ Course notes from AA556 at the University of Washington, Seattle
   - Kinetic Theory
       - [Introduction to Kinetic Theory](ch03-1.md)
       - [Landau Damping](ch03-2.md)
+      - [Waves in Hot Magnetized Plasma](ch03-3.md)
