@@ -4,7 +4,7 @@ weight: 70
 # bookToc: false
 ---
 
-# Finite Differencing
+# Finite Difference Methods for MHD
 
 So for 1D MHD, we want to derive algorithms to advance the governing equations in time that have the form
 

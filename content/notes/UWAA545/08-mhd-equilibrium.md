@@ -1,10 +1,10 @@
 ---
-title: MHD Equilibria
+title: MHD Equilibrium Calculations
 weight: 80
 # bookToc: false
 ---
 
-# Equilibrium Calculations
+# MHD Equilibrium Calculations
 
 From physical expectations, elliptic equations result from equilibrium calculations and eigenvalue systems. In general, we can write elliptic equations as
 {{< katex display >}}

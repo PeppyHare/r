@@ -8,6 +8,8 @@ weight: 60
 
 {{< /katex >}}
 
+# Fluid Models for Plasmas
+
 ## Motivation for Fluid Models
 
 Up to this point, we've been discussing particle models, and in particular, kinetic descriptions in which we've sampled the distribution function at particular locations to get our particles. We retained detailed information about the distribution function by tracking the positions and velocities of these representative super-particles, which should continue to "represent" the sampled distribution function at all points in time. Tracking this detailed information is computationally expensive, so PIC is limited to small spatial scale or short time scale phenomena. Non-linear waves and wave-plasma interactions are good examples of PIC use cases.
