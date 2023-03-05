@@ -20,3 +20,5 @@ Course notes from AA556 at the University of Washington, Seattle
       - [Introduction to Kinetic Theory](ch03-1.md)
       - [Landau Damping](ch03-2.md)
       - [Waves in Hot Magnetized Plasma](ch03-3.md)
+  - Fluid Theory
+      - [Fluid Theory](ch04-1.md)

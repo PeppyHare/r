@@ -1,3 +1,7 @@
+---
+title: "Drawing Diagrams"
+bookToc: false
+---
 
 ### Graphics
 
