@@ -22,3 +22,4 @@ Course notes from AA556 at the University of Washington, Seattle
       - [Waves in Hot Magnetized Plasma](ch03-3.md)
   - Fluid Theory
       - [Fluid Theory](ch04-1.md)
+  - [Diffusion and Resistivity](ch05-1.md)
