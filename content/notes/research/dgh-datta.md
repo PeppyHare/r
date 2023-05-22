@@ -456,4 +456,4 @@ Did we find a root? Maybe! We think there is a root at:
 w = 1.03461 + 0.28968i
 ```
 
-Hmm, that is much further off than I would like. 
+Hmm, that is much further off than I would like. Decreasing the tolerance for the QuadGK integrals does not change the result, and increasing the number of Gauss-Legendre quadrature points also makes no difference.
