@@ -9,7 +9,7 @@ bookToc: false
 Pretty much entirely based on this paper: [Electromagnetic extension of the Dory– Guest–Harris instability as a benchmark for Vlasov–Maxwell continuum kinetic simulations of magnetized plasmas](https://doi.org/10.1063/5.0057230)
 # Closed Integral Form of Dispersion Relation
 
-Iman's done a great job deriving a closed-form integral representation of the dispersion relation for the Dory-Guest-Harris instability. The trick to computing solutions to the dispersion relation is in getting all of the the normalization correct and computing the correct quadrature across both integrals (later).
+Iman's done a great job deriving a closed-form integral representation of the dispersion relation for the Dory-Guest-Harris instability. The trick to computing solutions to the dispersion relation is in getting all of the the normalization correct and computing the correct quadrature across both integrals (over $v_\perp$ and $\theta$).
 
 The DGH dispersion relation is derived by perturbing Vlasov-Maxwell system about a spatially uniform equilibrium state \\( f_s ^0 (v) \\) in a uniform magnetic field \\( B^0 \\), leading to equilibrium cyclotron motion. We linearize the Vlasov-Maxwell system and analyze the equilibrium response.
 
@@ -457,3 +457,72 @@ w = 1.03461 + 0.28968i
 ```
 
 Hmm, that is much further off than I would like. Decreasing the tolerance for the QuadGK integrals does not change the result, and increasing the number of Gauss-Legendre quadrature points also makes no difference.
+
+How about we try doing the v integrals by quadrature as well?
+
+No quadrature, two contour plots with 400pts each: 16.7 sec
+Quadrature, two contour plots with 400pts each: 6.1 sec!
+
+Back to the original attempt code, evaluating with 1600pts each and threading I get 30.7s with QuadGK, and 6.3s with my own quadrature! Let's definitely use that instead:
+
+```julia
+function solve_em_dispersion(; knorm, j, width, wpwc, w_array)
+  # All normalization parameters
+  Ze = -1.0  # Charge ratio for species
+  Ae = 1.0  # Mass ratio for species
+  wptau = 1.0  # Time normalization
+  wctau = 1.0 / wpwc  # omega_c * tau
+  Omega = Ze / Ae / wpwc  # Species-dependent cyclotron frequency
+  B0z = 1.0  # Magnetic field magnitude
+  vp0 = sqrt(2.0)  # Ring distribution peak velocity
+  k = knorm / vp0 / wpwc  # Normalized k
+  ne = 1.0  # Species density
+  wce = Ze / Ae * B0z  # Normalized cyclotron frequency
+  wp2 = Ze^2 * ne / Ae  # Normalized plasma frequency squared
+
+  beta = @. k * v_perp / wce / wctau
+  f0prime = @. 2 * v_perp / (pi * width^4 * factorial(j)) * exp(-v_perp^2 / width^2) * (v_perp^2 / width^2)^(j - 1) * (j - (v_perp^2 / width^2))
+
+  Q = similar(beta, ComplexF64)  # Initialize empty Q
+  Qprime = similar(beta, ComplexF64)  # Initialize empty Q'
+  jprime_ma_jprime_pa = similar(beta, ComplexF64)  # Initialize empty J'_-a(b)*J'_+a(b)
+  D = similar(w_array, ComplexF64)  # Output array for each input w
+
+  for (idx, w) in enumerate(w_array)
+    alpha = w / wce / wctau  
+    sine_factor = pi * alpha / sin(pi * alpha)
+    cos_2_a_theta = @. cos(2 * alpha * theta)
+
+    for ii in 1:length(beta)
+      two_beta_cos_theta = (2.0 * beta[ii]) .* cos_theta
+      Q[ii] = sine_factor * 2.0 / pi * sum(theta_weights .* (besselj0.(two_beta_cos_theta) .* cos_2_a_theta))
+      Qprime[ii] = sine_factor * -4.0 / pi * sum(theta_weights .* (besselj1.(two_beta_cos_theta) .* cos_theta .* cos_2_a_theta))
+      jprime_ma_jprime_pa[ii] = 1.0 / pi * (sum(theta_weights .* (cos_2_a_theta .* (besselj.(2, two_beta_cos_theta) .- besselj0.(two_beta_cos_theta) .* cos_2_theta))) - alpha .* sin.(pi .* alpha)/ beta[ii]^2)
+    end
+
+    v_integrand_11 = @. - f0prime * (alpha / beta^2 * (1.0 - Q)) * v_perp^2
+    v_integrand_12 = @. f0prime * (im / 2.0 / beta * Qprime) * v_perp^2
+    v_integrand_22 = @. f0prime * (sine_factor / alpha * jprime_ma_jprime_pa + alpha / beta^2) * v_perp^2
+    coeff = wptau^2 / wctau * 2.0 * pi * wp2 / w / wce
+    chi_xx = coeff * sum(v_weights .* v_integrand_11)
+    chi_xy = coeff * sum(v_weights .* v_integrand_12)
+    chi_yy = coeff * sum(v_weights .* v_integrand_22)
+    K_xx = 1.0 + chi_xx
+    K_xy = chi_xy
+    K_yx = - K_xy
+    K_yy = 1.0 + chi_yy
+
+    D[idx] = K_xx * (K_yy - wptau^2 / w^2 / wctau^2 * k^2) - K_xy * K_yx
+  end
+  return D
+end
+```
+
+We've got to use some `for` loops instead of straight broadcasting to do the double integral properly, but now we get the same results as the paper!
+
+|  Electromagnetic  | Electrostatic |
+| -- | -- |
+| <p align="center"> <img alt="img/research/dgh/julia-dgh-caseA-contour-em.png" src="/r/img/research/dgh/julia-dgh-caseA-contour-em.png" style="width:100%"/> </p> | <p align="center"> <img alt="img/research/dgh/julia-dgh-caseA-contour-es.png" src="/r/img/research/dgh/julia-dgh-caseA-contour-es.png" style="width:100%"/> </p> |
+| <p align="center"> <img alt="img/research/dgh/julia-dgh-caseB-contour-em.png" src="/r/img/research/dgh/julia-dgh-caseB-contour-em.png" style="width:100%"/> </p> | <p align="center"> <img alt="img/research/dgh/julia-dgh-caseB-contour-es.png" src="/r/img/research/dgh/julia-dgh-caseB-contour-es.png" style="width:100%"/> </p> |
+| <p align="center"> <img alt="img/research/dgh/julia-dgh-caseC-contour-em.png" src="/r/img/research/dgh/julia-dgh-caseC-contour-em.png" style="width:100%"/> </p> | <p align="center"> <img alt="img/research/dgh/julia-dgh-caseC-contour-es.png" src="/r/img/research/dgh/julia-dgh-caseC-contour-es.png" style="width:100%"/> </p> |
+| <p align="center"> <img alt="img/research/dgh/julia-dgh-caseD-contour-em.png" src="/r/img/research/dgh/julia-dgh-caseD-contour-em.png" style="width:100%"/> </p> | <p align="center"> <img alt="img/research/dgh/julia-dgh-caseD-contour-es.png" src="/r/img/research/dgh/julia-dgh-caseD-contour-es.png" style="width:100%"/> </p> |
