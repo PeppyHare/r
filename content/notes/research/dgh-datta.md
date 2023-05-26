@@ -518,7 +518,55 @@ function solve_em_dispersion(; knorm, j, width, wpwc, w_array)
 end
 ```
 
-We've got to use some `for` loops instead of straight broadcasting to do the double integral properly, but now we get the same results as the paper!
+We've got to use some `for` loops instead of straight broadcasting to do the double integral properly, but now we get the same results as the paper! Similarly, we should be able to compute the electrostatic version using either the simplified single-species version from Tartaronis or the full multi-species version from Vogman. We'll use the latter:
+
+{{< katex display >}}
+D(\omega, k_\perp) = 1 + \sum_s M_s \frac{\omega_p ^2}{\omega_c ^2} \int_0 ^\pi \frac{\sin(\omega \tau / \Omega_{cs})}{\sin(\omega \pi / \Omega_{cs})} \sin (\tau) F_0 (\tau + \pi) \dd \tau = 0
+{{< /katex >}}
+where
+{{< katex display >}}
+F_0 (\tau) = \int_0 ^\infty f_{s, 0} (v_\perp) J_0 \left( 2 \frac{k_\perp v_\perp}{\Omega_{cs}} \sin(\frac{\tau}{2})\right) 2 \pi v_\perp \dd v_\perp
+{{< /katex >}}
+{{< katex display >}}
+\Omega_{cs} \equiv \frac{Z_s \omega_c}{M_s \omega_p}
+{{< /katex >}}
+
+```julia
+function solve_es_dispersion(; knorm, j, width, wpwc, w_array)
+  # All normalization parameters
+  Ze = -1.0  # Charge ratio for species
+  Ae = 1.0  # Mass ratio for species
+  wptau = 1.0  # Time normalization
+  wctau = 1.0 / wpwc  # omega_c * tau
+  Omega = Ze / Ae / wpwc  # Species-dependent cyclotron frequency
+  B0z = 1.0  # Magnetic field magnitude
+  vp0 = sqrt(2.0)  # Ring distribution peak velocity
+  k = knorm / vp0 / wpwc  # Normalized k
+  ne = 1.0  # Species density
+  wce = Ze / Ae * B0z  # Normalized cyclotron frequency
+  wp2 = Ze^2 * ne / Ae  # Normalized plasma frequency squared
+  
+  # Initial distribution
+  vp_alpha = v_perp ./ width
+  f0 = @. ne / (pi * width^2 * factorial(j)) * (vp_alpha)^(2*j) * exp(- vp_alpha ^2)
+
+  z = @. k * v_perp / Omega / B0z
+  D = similar(w_array, ComplexF64)
+  for (idx, w) in enumerate(w_array)
+    w_alpha = w / Omega / B0z
+    tau_int = similar(z, ComplexF64)
+    for ii in 1:length(z)
+      # tau = range(0.0, pi, 100)
+      tau_integrand = @. sin(w_alpha * tau) / sin(w_alpha * pi) * sin(tau) * besselj0(2 * z[ii] * sin((tau + pi)/2))
+      # tau_int[ii] = trapz(tau, tau_integrand)
+      tau_int[ii] = sum(tau_weights .* tau_integrand)
+    end
+    v_integrand = @. f0 * tau_int * v_perp
+    D[idx] = 1.0 + 2.0 * pi * Ze^2 / Ae / Omega^2 * sum(v_weights .* v_integrand)
+  end
+  return D
+end
+```
 
 |  Electromagnetic  | Electrostatic |
 | -- | -- |
