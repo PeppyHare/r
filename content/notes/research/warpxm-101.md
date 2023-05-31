@@ -43,7 +43,7 @@ pip install numpy matplotlib h5py
 
 ## Build - VSCode
 
-I like to use [VS Code](https://code.visualstudio.com/) as my development environment. The C++ and CMake extensions can help make building and debugging `warpxm` much easier.
+I like to use [VS Code](https://code.visualstudio.com/) as my development environment, since it is cross-platform, has a very large feature set, and adequate performance. The C++ and CMake extensions can help make building and debugging `warpxm` much easier.
 
 - Install the [ms-vscode.cpptools extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 - Install the [ms-vscode.cmake-tools extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools)
