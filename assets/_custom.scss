@@ -58,3 +58,8 @@ aside nav ul li {
 .book-menu-hugo {
     margin-top: $padding-16;
 }
+
+// Scrollable katex equations
+.katex-display{
+  overflow: auto hidden;
+}
