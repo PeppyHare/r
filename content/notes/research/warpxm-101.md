@@ -5,7 +5,7 @@ bookToc: false
 
 # What is WARPXM
 
-WARPXM is a _framework_ for solving hyperbolic PDE systems. Here "framework" means that it is not a single tool for solving a particular type of system, but rather it contains a large number of applications, solvers, and other tools which can be combined to simulate a wide variety of systems.
+WARPXM is a _framework_ for solving hyperbolic PDE systems. By "framework" we mean that it is not a single tool for solving a particular type of system, but rather it contains a number of applications, solvers, and other tools which can be combined to model a wide variety of systems.
 
 # Installation
 
@@ -21,13 +21,13 @@ Building the `warpxm` executable itself is the most important part. It is a C++ 
 {{< hint info >}}
 **Mac OS**
 
-In my experience, the simplest way to install the required dependencies is to simply use the pre-packaged [Homebrew](https://brew.sh/) formulas:
+In my experience, the simplest way to install the required dependencies (especially on the newer M1/M2 Apple architecture) is to simply use the pre-packaged [Homebrew](https://brew.sh/) formulas:
 
 ```
 brew install petsc hdf5-mpi cmake gcc metis openblas scalapack
 ```
 
-> If installing C++ compilers for the first time on a new Mac, need to run `xcode-select --install` to accept the XCode license and enable installing compilers provided by Apple. One of the above homebrew formulae will probably prompt you do to so when it is installed.
+> (If installing C++ compilers for the first time on a new Mac, need to run `xcode-select --install` to accept the Xcode license and enable installing compilers provided by Apple. One of the above homebrew formulae will probably prompt you do to so when it is installed.)
 
 This should install all of the libraries required to build the project.
 
@@ -35,7 +35,7 @@ This should install all of the libraries required to build the project.
 
 ## Prerequisites: Warpy
 
-The `warpy` Python module under `tools/warpy` contains helpful classes and functions that can be used to build and run input files for `warpxm`. You need to install a few additional Python modules to make use of `warpy`:
+The `warpy` Python module under `tools/warpy` contains helpful classes and functions that can be used to build and run input files for `warpxm`. You need to install a few additional Python modules to make full use of the plotting and diagnostic modules in `warpy`:
 
 ```
 pip install numpy matplotlib h5py
@@ -98,8 +98,139 @@ This system has been implemented as a WARPXM application within `src/apps/simple
 REGISTER_CREATOR("advection", wxm::apps::advection_t, WmApplication);
 ```
 
-The `advection` warpy application class in `tools/warpy/apps/simple.py` allows us to set up 
+The `advection` warpy application class in `tools/warpy/apps/simple.py` lets us set up a warpy simulation to model the advection system. First, we need to define the fluid variable `q`, which in our case will be the density \\( \rho \\). We'll use basis elements with third-order spatial convergence for the spatial mesh:
 
+```python
+import warpy
+
+# Use second-order polynomial basis elements
+sorder = 'thirdOrder'
+# Create a variable for the fluid
+fluid = warpy.variable(name='fluid', components=['rho'], basis_array_set=sorder)
+# Set up the advection application operating on the fluid variable
+apps = [warpy.apps.advection(name='advection', variable=fluid, velocity=velocity)]
+```
+
+We then need boundary conditions and an initial condition. Let's set a step-function initial condition. The initial condition is a variable adjuster host action which is applied just before the first time step:
+
+```python
+fluid_ic = warpy.apps.functions.arbitrary.heaviside(name='fluid_ic',
+                                                    variable=fluid,
+                                                    left=0.1,
+                                                    right=0.6)
+ic_va = warpy.variable_adjusters.function_evaluation.function_evaluator(
+    name='ic_va',
+    priority=0,
+    spatial_order=sorder,
+    on_subdomains=['all'],
+    applications=[fluid_ic])
+ic_ha = warpy.host_actions.va_runner(name='ic_ha', variable_adjusters=[ic_va])
+```
+
+To set up our temporal solver, we first specify that we want to use the discontinuous Galerkin spatial solver operating on our advection application:
+
+```python
+spatial_solver = warpy.spatial_solvers.dg(name="dg",
+                                          spatial_order=sorder,
+                                          applications=apps,
+                                          on_subdomains=['all'])
+```
+
+The temporal solver will be the third-order explicit Runge Kutta time stepper, and we will use a fixed time step:
+
+```python
+temporal_solver = warpy.host_actions.erk(name='rk',
+                                         scheme='SSPRK3',
+                                         spatial_solvers=[spatial_solver],
+                                         variable_adjusters=[])
+dt = 1e-4
+dt_final = 2.0
+dt_controller = warpy.dt_calc.fixed_dt(dt)
+```
+
+Periodic boundary conditions are the default, so we do not need to explicitly specify any boundary conditions. If we wanted different boundary conditions, such as Dirichlet conditions on \\( \rho \\), we could specify them as additional variable adjusters like this:
+
+```python
+dirichlet_bc_app = warpy.apps.simple.bc_dirichlet(name='bc_dirichlet_rho',
+                                                  values=[1.0],
+                                                  on_boundaries=['Left', 'Right'],
+                                                  variable=fluid,
+                                                  components=['rho'])
+dirichlet_bc_va = warpy.variable_adjusters.boundary_conditions(name='bcs',
+                                                               priority=1,
+                                                               spatial_order=sorder,
+                                                               applications=bc_apps)
+temporal_solver = warpy.host_actions.erk(name='rk',
+                                         scheme='SSPRK3',
+                                         spatial_solvers=[spatial_solver],
+                                         variable_adjusters=[dirichlet_bc_va])
+```
+
+We need to specify our spatial domain as a mesh:
+
+```python
+# Generate a 1-D mesh with 128 mesh points
+mesh = warpy.mesh.block(Bounds=[-0.5, 0.5],
+                        NumCells=[128],
+                        NodeSets=['Left', 'Right'],
+                        NumLayers=1,
+                        PeriodicBoundaries=['Left', 'Right'],
+                        basis_array_set=sorder)
+```
+
+And finally, we will want to define variable writers to periodically write variables to disk. We'll define a basic writer which just dumps the current fluid variables, as well as an integrator to check for mass conservation:
+
+```python
+# Basic variable writer
+writer = warpy.host_actions.writer(name='writer', ReadVars=[fluid])
+# Diagnostic mass conservation integrator
+integrator = warpy.host_actions.integrator(name='mass_integrator',
+                                           time_integrator=temporal_solver,
+                                           patch_process_integrators=[
+                                               warpy.integrators.dg_integrator(
+                                                   name='integrator',
+                                                   spatial_order=sorder,
+                                                   applications=[
+                                                       warpy.apps.integrate.int_q_dv(
+                                                           name='int_q_dv',
+                                                           variables=fluid,
+                                                           stage=0,
+                                                           variables_components=['rho'])
+                                                   ])
+                                           ])
+diag_writer = warpy.host_actions.diagnostics_writer(
+    name='diagnostics',
+    write_interval=1e-3,
+    diagnostics={integrator: ['integral_rho']},
+    output_file='diagnostics.csv')
+writers = [writer, diag_writer]
+```
+
+Now we finally have everything we need to set up our simulation!
+
+```python
+write_steps = 100
+group_name = 'examples'
+sim_name = 'advection'
+sim = warpy.dg_sim(name=sim_name,
+                   meshes=[mesh],
+                   initial_conditions=[ic_ha],
+                   temporal_solvers=[temporal_solver],
+                   writers=writers,
+                   time=[0, dt_final],
+                   dt_controller=dt_controller,
+                   flexible_writeout=False,
+                   write_steps=write_steps,
+                   verbosity='info')
+```
+
+We can write the resulting WARPXM input file to disk by calling `sim.write`:
+
+```
+sim.write(f="/path/to/input/file.inp)
+```
+
+The resulting WARPXM input file (which we are very glad we did not have to craft by hand!) looks like this:
 
 ```xml
 <warpxm>
@@ -185,45 +316,6 @@ The `advection` warpy application class in `tools/warpy/apps/simple.py` allows u
         </integrator>
       </mass_integrator>
     </diagnostics>
-    <rk>
-      Type = WmHostAction
-      Kind = explicit_runge_kutta
-      Scheme = SSPRK3
-      QOld = [fluid.rho]
-      QStorage0 = [fluid_1.rho]
-      QStorage1 = [fluid_2.rho]
-      QStorage2 = [fluid_3.rho]
-      <dg>
-        Process = spatial_solver.dg
-        Type = WmHostAction
-        Kind = patchProcessor
-        BasisArraySet = thirdOrder
-        SourceQuadratureStyle = LGL
-        OnSubdomains = [all]
-        <advection>
-          Type = application
-          Kind = advection
-          Velocity = [1.0, 0.0, 0.0]
-          Density = [0]
-        </advection>
-      </dg>
-    </rk>
-    <gsync>
-      Type = WmHostAction
-      Kind = synchronizer
-      WriteVars = [fluid]
-    </gsync>
-    <swapper>
-      Type = WmHostAction
-      Kind = variableSwapper
-      WriteVars = [fluid, fluid_3]
-    </swapper>
-    <vloader>
-      Type = WmHostAction
-      Kind = variableLoader
-      SourceFilePrefix = data/advection
-      WriteVars = [fluid]
-    </vloader>
     <writer>
       Type = WmHostAction
       Kind = writeOut
@@ -250,6 +342,50 @@ The `advection` warpy application class in `tools/warpy/apps/simple.py` allows u
         </fluid_ic>
       </ic_va>
     </ic_ha>
+    <rk>
+      Type = WmHostAction
+      Kind = explicit_runge_kutta
+      Scheme = SSPRK3
+      QOld = [fluid.rho]
+      QStorage0 = [fluid_1.rho]
+      QStorage1 = [fluid_2.rho]
+      QStorage2 = [fluid_3.rho]
+      <dg>
+        Process = spatial_solver.dg
+        Type = WmHostAction
+        Kind = patchProcessor
+        BasisArraySet = thirdOrder
+        SourceQuadratureStyle = LGL
+        OnSubdomains = [all]
+        <advection>
+          Type = application
+          Kind = advection
+          Velocity = [1.0, 0.0, 0.0]
+          Density = [0]
+        </advection>
+      </dg>
+    </rk>
+    <vloader>
+      Type = WmHostAction
+      Kind = variableLoader
+      SourceFilePrefix = data/advection
+      WriteVars = [fluid]
+    </vloader>
+    <gsync>
+      Type = WmHostAction
+      Kind = synchronizer
+      WriteVars = [fluid]
+    </gsync>
+    <swapper>
+      Type = WmHostAction
+      Kind = variableSwapper
+      WriteVars = [fluid, fluid_3]
+    </swapper>
+    <perstep_group>
+      Type = WmSequencedGroup
+      Kind = hostSequencedGroup
+      HostActions = [rk]
+    </perstep_group>
     <start_only_group>
       Type = WmSequencedGroup
       Kind = hostSequencedGroup
@@ -260,21 +396,16 @@ The `advection` warpy application class in `tools/warpy/apps/simple.py` allows u
       Kind = hostSequencedGroup
       HostActions = [writer, diagnostics]
     </write_group>
-    <swap_group>
-      Type = WmSequencedGroup
-      Kind = hostSequencedGroup
-      HostActions = [swapper]
-    </swap_group>
     <vload_group>
       Type = WmSequencedGroup
       Kind = hostSequencedGroup
       HostActions = [vloader, gsync]
     </vload_group>
-    <perstep_group>
+    <swap_group>
       Type = WmSequencedGroup
       Kind = hostSequencedGroup
-      HostActions = [rk]
-    </perstep_group>
+      HostActions = [swapper]
+    </swap_group>
     <SolverSequence>
       Type = WmSolverSequence
       StartOnly = [start_only_group]
@@ -285,4 +416,201 @@ The `advection` warpy application class in `tools/warpy/apps/simple.py` allows u
     </SolverSequence>
   </sim>
 </warpxm>
+```
+
+We can use `sim.run()` to immediately run `warpxm` with the generated input:
+
+```python
+sim.run(category=group_name)
+```
+
+```
+$ python examples/advection_1d.py
+Execution command is:  /warpxm/build/bin/warpxm -i /warpxm/build/user_runs/evan_bluhm/examples/advection/advection.inp
+Process id:38684 is 1 of 1 processes
+Simulation started at time Thu Jun  1 10:19:04 2023
+
+Advancing solution starting at time 0 to 0.02...
+Advanced from frame 0 to 1 in 0.137 seconds,
+with dt = 0.0001
+
+Advancing solution starting at time 0.02 to 0.04...
+Advanced from frame 1 to 2 in 0.105 seconds,
+with dt = 0.0001
+
+Advancing solution starting at time 0.04 to 0.06...
+Advanced from frame 2 to 3 in 0.104 seconds,
+with dt = 0.0001
+
+Advancing solution starting at time 0.06 to 0.08...
+Advanced from frame 3 to 4 in 0.104 seconds,
+with dt = 0.0001
+
+...
+
+Advancing solution starting at time 1.96 to 1.98...
+Advanced from frame 98 to 99 in 0.105 seconds,
+with dt = 0.0001
+
+Advancing solution starting at time 1.98 to 2...
+Advanced from frame 99 to 100 in 0.106 seconds,
+with dt = 0.0001
+
+Simulation finished at time Thu Jun  1 10:19:14 2023
+```
+
+## Debugging
+
+Debugging is an inevitable fact of life when it comes to numerical codes (or any software for that matter). There are many different methods for debugging both C++ and Python projects, and the methods you choose mostly come down to what is most comfortable to your own development process. Here are some methods I have been using to debug WARPXM simulations:
+
+### Excessive stdout
+
+Simply printing loads of information to the console is a pretty basic method, but it's very often the quickest way to figure out what might be going wrong.
+
+When working within the C++ `warpxm` code, you there are specific logger streams set up to allow printing information to the console at different logging levels. The two logging levels you will generally use are the "info" and "debug" streams:
+
+```c++
+WxLogger* log = WxLogger::get("warpx-root.console");
+WxLogStream infStrm = log->getInfoStream();
+WxLogStream debStrm = log->getDebugStream();
+infStrm << "This log will appear in stdout with verbosity set to 'info'\n";
+debStrm << "This log will appear in stdout with verbosity set to 'debug'\n";
+```
+
+The log verbosity can be set as the `verbosity` parameter to a `warpy.simulation`, or directly within the .inp file.
+
+When working with warpy modules in Python, you can just use the built-in `print` method to write to stdout at any point in your script. [Python f-strings](https://docs.python.org/3/tutorial/inputoutput.html) are a convenient way to format strings containing multiple variables:
+
+```python
+print("This line will be printed to the console")
+print(f"The time-stepping order is {torder} and the DG polynomial basis order is {sorder}")
+```
+
+### Attaching Debugger: C++ in VS Code with `gdb` or `lldb`
+
+It is possible to configure VS Code to work as a fully-featured C++ debugger, using the [ms-vscode.cpptools extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) and a supported C++ debugger (either `gdb` or `lldb`).
+
+1. Prepare a WARPXM input file using `warpy.simulation.write()`.
+2. Set up a debugging configuration within your workspace's `launch.json`. If there is no `launch.json` in your workspace yet, you can simply create a new file named `$(/path/to/warpxm/repo).vscode/launch.json`. Add a `cppdb` configuration to the file:
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "lldb warpxm",
+            "type": "cppdbg",
+            "request": "launch",
+            // This is the path to the warpxm executable, automatically resolved by CMake Tools:
+            "program": "${command:cmake.launchTargetPath}",
+            // Path to the WARPXM input file you want to run
+            "args": ["-i", "/warpxm/build/user_runs/evan_bluhm/examples/advection/advection.inp"],
+            "stopAtEntry": false,
+            // Set the current working directly when launching warpxm to the same folder as the input file
+            "cwd": "${workspaceFolder}/build/user_runs/evan_bluhm/examples/advection",
+            "environment": [
+                {
+                    // add the directory where our target was built to the PATHs
+                    // it gets resolved by CMake Tools:
+                    "name": "PATH",
+                    "value": "${env:PATH}:${command:cmake.getLaunchTargetDirectory}"
+                }
+            ],
+            "MIMode": "lldb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for lldb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
+```
+
+3. Make sure to build the `Debug` variant of the project. You can switch the CMake variant using the `CMake: Select Variant` command. Make sure to re-build after switching between variants!
+4. Set a breakpoint anywhere in the code by clicking just to the left of the line numbers in the gutter.
+5. Press F5 or go to the "Run and Debug" menu to launch the new `lldb warpxm` target. It will immediately launch `warpxm`. When the running executable hits your breakpoint, it should immediately take your editor to the breakpoint, giving you the ability to view all local variables, step forwards through the code, and set additional breakpoints.
+
+<p align="center"> <img alt="img/research/warpxm/warpxm-debug-1.png" src="/r/img/research/warpxm/warpxm-debug-1.png" /> </p>
+
+You can use the "Debug console" to evaluate gdb/lldb commands while paused at a breakpoint.
+
+### Attaching Debugger: C++ with `gdb`
+
+TODO!
+
+### Attaching Debugger: Python in VS Code with `debugpy`
+
+Similar to using the C++ extension to use VS Code as a C++ debugger, you can use the built-in Python extension to do the same for warpy modules.
+
+1. Set up a debugging configuration within your workspace's `launch.json`. If there is no `launch.json` in your workspace yet, you can simply create a new file named `$(/path/to/warpxm/repo).vscode/launch.json`. Add a `cppdb` configuration to the file:
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug python file",
+            "type": "python",
+            "request": "launch",
+            // Path to the warpy script you want to launch and debug
+            "program": "build/user_runs/evan_bluhm/examples/advection_1d.py",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+    ]
+}
+```
+
+2. Set a breakpoint anywhere in the code by clicking just to the left of the line numbers in the gutter.
+3. Press F5 or go to the "Run and Debug" menu to launch the new "Debug python file" target. It will immediately run the warpy script in the integrated terminal. When the running executable hits your breakpoint, it should immediately take your editor to the breakpoint, giving you the ability to view all local variables, step forwards through the code, and set additional breakpoints.
+
+<p align="center"> <img alt="img/research/warpxm/warpy-debug-1.png" src="/r/img/research/warpxm/warpy-debug-1.png" /> </p>
+
+You can use the "Debug console" to evaluate arbitrary expressions while paused at a breakpoint.
+
+### Attaching Debugger: `pdb`
+
+The built-in command-line Python debugger module `pdb` can be used to debug Python scripts at the command-line. Simply insert this line wherever you would like to break execution:
+
+```python
+import pdb; pdb.set_trace()
+```
+
+and launch your script. Execution will pause at the breakpoint:
+
+```
+python examples/advection_1d.py
+> /Users/evan/GitHub/warpxm/build/user_runs/evan_bluhm/examples/advection_1d.py(149)<module>()
+-> if run_sim:
+(Pdb)
+```
+
+You can now run `pdb` commands. Type `?` to see a list of available commands:
+
+```
+(Pdb) ?
+
+Documented commands (type help <topic>):
+========================================
+EOF    c          d        h         list      q        rv       undisplay
+a      cl         debug    help      ll        quit     s        unt
+alias  clear      disable  ignore    longlist  r        source   until
+args   commands   display  interact  n         restart  step     up
+b      condition  down     j         next      return   tbreak   w
+break  cont       enable   jump      p         retval   u        whatis
+bt     continue   exit     l         pp        run      unalias  where
+
+Miscellaneous help topics:
+==========================
+exec  pdb
+```
+
+You can view the current value of any variable by typing its name, or using the `print()` function:
+
+```
+(Pdb) write_steps
+100
 ```
