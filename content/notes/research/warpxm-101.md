@@ -1,6 +1,6 @@
 ---
 title: "Getting Started with WARPXM"
-bookToc: false
+bookToc: true
 ---
 
 # What is WARPXM
@@ -543,11 +543,11 @@ with dt = 0.0001
 Simulation finished at time Thu Jun  1 10:19:14 2023
 ```
 
-## Debugging
+# Debugging
 
 Debugging is an inevitable fact of life when it comes to numerical codes (or any software for that matter). There are many different methods for debugging both C++ and Python projects, and the methods you choose mostly come down to what is most comfortable to your own development process. Here are some methods I have been using to debug WARPXM simulations:
 
-### Excessive stdout
+## Excessive stdout
 
 Simply printing loads of information to the console is a pretty basic method, but it's very often the quickest way to figure out what might be going wrong.
 
@@ -570,7 +570,7 @@ print("This line will be printed to the console")
 print(f"The time-stepping order is {torder} and the DG polynomial basis order is {sorder}")
 ```
 
-### Attaching Debugger: C++ in VS Code with `gdb` or `lldb`
+## Attaching Debugger: C++ in VS Code with `gdb` or `lldb`
 
 It is possible to configure VS Code to work as a fully-featured C++ debugger, using the [ms-vscode.cpptools extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) and a supported C++ debugger (either `gdb` or `lldb`).
 
@@ -621,11 +621,11 @@ It is possible to configure VS Code to work as a fully-featured C++ debugger, us
 
 You can use the "Debug console" to evaluate gdb/lldb commands while paused at a breakpoint.
 
-### Attaching Debugger: C++ with `gdb`
+## Attaching Debugger: C++ with `gdb`
 
 TODO!
 
-### Attaching Debugger: Python in VS Code with `debugpy`
+## Attaching Debugger: Python in VS Code with `debugpy`
 
 Similar to using the C++ extension to use VS Code as a C++ debugger, you can use the built-in Python extension to do the same for warpy modules.
 
@@ -655,7 +655,7 @@ Similar to using the C++ extension to use VS Code as a C++ debugger, you can use
 
 You can use the "Debug console" to evaluate arbitrary expressions while paused at a breakpoint.
 
-### Attaching Debugger: `pdb`
+## Attaching Debugger: `pdb`
 
 The built-in command-line Python debugger module `pdb` can be used to debug Python scripts at the command-line. Simply insert this line wherever you would like to break execution:
 
