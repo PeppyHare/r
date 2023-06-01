@@ -63,15 +63,27 @@ The [install instructions on the wiki](http://faculty.washington.edu/shumlak/WAR
 
 What do we need to define a valid discontinuous Galerkin simulation? Check the `dg_sim` warpy class definition!
 
-| Parameter | Required? | Description |
+| Parameter | Optional? | Description |
 | --- | --- | --- |
-| `name` | :check_mark_button: | Descriptor for the particular simulation, used as a filename prefix for storing data. |
-| `meshes` | :check_mark_button:  | List of one or more mesh objects which define the spatial extent of the simulation. |  
-| `initial_conditions` | :check_mark_button: | List of one or more variable adjusters which are applied before the first time step. | 
-| `temporal_solvers` | :check_mark_button: | List of one or more host actions   |
-| `writers` | :no_entry:  |   |
-| `dt_controller` |   |   |
-| `time` |   |   |
+| `name` | :no_entry: | Descriptor for the particular simulation, used as a filename prefix for storing data. |
+| `meshes` | :no_entry:  | List of one or more mesh objects which define the spatial extent of the simulation. |  
+| `initial_conditions` | :no_entry: | List of one or more variable adjusters which are applied before the first time step. | 
+| `temporal_solvers` | :no_entry: | List of one or more time integrator host actions which move the state forward in time. |
+| `dt_controller` | :no_entry:  | Determines the length of each time step. Can be a simple constant `dt`, or can make use of adaptive time steppers to progress more quickly when possible. |
+| `time` | :no_entry: | The start and end of the time interval to integrate. |
+| `writers` | :check_mark_button: | One or more "writer" host actions which are called upon to export snapshot data to disk. These can be simple writers that just export the current value of some variables, or they can be diagnostic writers which e.g. integrate variables across the domain before writing. Very useful for evaluating numerical stability and evaluating instability growth rates. |
+| `write_steps` | :check_mark_button: | Number of times during the simulation the provided `writers` should write data out to disk. |
+| `cfl_max` | :check_mark_button: | Maximum allowable Courant–Friedrichs–Lewy number. Defaults to 1 |
+| `flexible_writeout` | :check_mark_button:  |  |
+| `verbosity`  | :check_mark_button:  | Defaults to "info" |
+| `global_verbosity`  | :check_mark_button:  | Defaults to "info"  |
+| `num_partitions` | :check_mark_button: | Defaults to 1 |
+| `enable_fpe`  | :check_mark_button: | Defaults to True |
+| `extra_start_host_actions`  | :check_mark_button:  |  |
+| `pre_ti_host_actions`  | :check_mark_button:  |  |
+| `post_ti_host_actions`  | :check_mark_button:  |  |
+| `extra_end_host_actions`  | :check_mark_button: | |
+
 
 The most basic example provided in the repo solves the 1-dimensional linear advection system:
 
