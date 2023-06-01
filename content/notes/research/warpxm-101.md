@@ -45,23 +45,32 @@ That's it, all of the C++/CMake dependencies are now installed at the system lev
 {{< hint info >}}
 **Ubuntu Linux**
 
-## System-wide Installation
+There are two general types of installation you can try:
+
+- Install PETSc and some external packages in a user-specific location. This prevents conflicts with any other installations of e.g. metis or openmpi that you already have installed, but requires you to update your `PATH`/`LD_LIBRARY_PATH`/`PKG_CONFIG_PATH` environment variables accordingly to make use of the local installation.
+- Install all of the WARPXM dependencies as system-level packages (including PETSc). This means that the versions installed for WARPXM will be used everywhere on the system. You do not have to update your `PATH`/`LD_LIBRARY_PATH`/`PKG_CONFIG_PATH` environment variables.
+
+### System-wide Installation
+
+{{< details title="Install steps" open=false >}}
 
 If you run into issues with user-specific PETSc configuration, or are running into conflicts between system-level METIS/libblas/open-mpi packages and the PETSc dependencies, then it may help to use PETSc itself to install all of the dependencies at the system level. This avoids the need to set any `PATH`/`LD_LIBRARY_PATH`/`PKG_CONFIG_PATH` environment variables, as all of the required libraries will be installed in the default locations.
 
 > Note: This can take a long time to finish! You are essentially building openmpi, hdf5, hypre, superlu, metis, parmetis, fblaslapack, and cmake all from source with compiler optimizations enabled, so there is some real work to be done, but the end result should be a stable, performant installation.
 
-1. Install compilers and other basic tools from apt repositories:
+1. Install compilers, openmpi, and other basic tools from apt repositories:
 
 ```
 sudo apt-get update
 sudo apt-get install -y --no-install-recommends \
   build-essential \
-  curl \
   ca-certificates \
+  curl \
   g++ \
   gfortran \
   git \
+  libopenmpi-dev \
+  openmpi-bin \
   pkg-config \
   python3-pip \
   sudo \
@@ -86,7 +95,6 @@ sudo ./configure \
   --download-parmetis \
   --download-hdf5 \
   --download-fblaslapack \
-  --download-openmpi \
   --download-cmake \
   --with-debugging=0 \
   --prefix=/usr/local
@@ -95,9 +103,15 @@ make PETSC_DIR="$PETSC_DIR" PETSC_ARCH=arch-linux-c-opt all check
 sudo make PETSC_DIR="$PETSC_DIR" PETSC_ARCH=arch-linux-c-opt install
 ```
 
-## User Installation
+{{< /details >}}
+
+### User Installation
+
+{{< details title="Install steps" open=false >}}
 
 You can follow the [Pre-install setup for Ubuntu Linux desktop instructions for on the wiki](http://faculty.washington.edu/shumlak/WARPX/html/install.html) to install `openmpi`, `cmake`, and `libblas` from the apt package repositories, then get PETSc to download and install the rest to your own home directory, using the `--prefix=$HOME/usr` flag when configuring PETSc.
+
+{{< /details >}}
 
 {{< /hint >}}
 
