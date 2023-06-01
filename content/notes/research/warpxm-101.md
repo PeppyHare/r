@@ -77,7 +77,7 @@ sudo apt-get install -y --no-install-recommends \
   wget
 ```
 
-2. Install PETSc and dependencies from source
+2. Install PETSc and dependencies from source. The `--prefix=/usr/local` flag means that all headers and libraries will be installed to `/usr/local`, which is in the default search path for all users on nearly all Debian-based linux distributions.
 
 ```
 export PETSC_DIR="$HOME"/tools/petsc
