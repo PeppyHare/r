@@ -21,15 +21,83 @@ Building the `warpxm` executable itself is the most important part. It is a C++ 
 {{< hint info >}}
 **Mac OS**
 
-In my experience, the simplest way to install the required dependencies (especially on the newer M1/M2 Apple architecture) is to simply use the pre-packaged [Homebrew](https://brew.sh/) formulas:
+In my experience, the simplest way to install the required dependencies (especially on the newer M1/M2 Apple architecture) is to simply use the pre-packaged [Homebrew](https://brew.sh/) formulas to install the required dependencies at the system level:
 
 ```
 brew install petsc hdf5-mpi cmake gcc metis openblas scalapack
 ```
 
-> (If installing C++ compilers for the first time on a new Mac, need to run `xcode-select --install` to accept the Xcode license and enable installing compilers provided by Apple. One of the above homebrew formulae will probably prompt you do to so when it is installed.)
+That's it, all of the C++/CMake dependencies are now installed at the system level! No need to modify any `PATH`/`LD_LIBRARY_PATH`/`PKG_CONFIG_PATH` environment variables.
 
-This should install all of the libraries required to build the project.
+{{< details title="Debugging steps" open=false >}}
+
+- If installing C++ compilers for the first time on a new Mac, need to run `xcode-select --install` to accept the Xcode license and enable installing compilers provided by Apple. One of the above homebrew formulae will probably prompt you do to so when it is installed.
+- `brew install petsc` may implicitly install the `hdf5` formlua, which is not compatible with WARPXM. If you get an error message along the lines of "HDF5 was not compiled with MPI", try removing the non-mpi version and re-installing the mpi version of hdf5:
+    ```
+    brew uninstall --ignore-dependencies hdf5 hdf5-mpi
+    brew install hdf5-mpi
+    ```
+
+{{< /details >}}
+
+{{< /hint >}}
+
+{{< hint info >}}
+**Ubuntu Linux**
+
+## System-wide Installation
+
+If you run into issues with user-specific PETSc configuration, or are running into conflicts between system-level METIS/libblas/open-mpi packages and the PETSc dependencies, then it may help to use PETSc itself to install all of the dependencies at the system level. This avoids the need to set any `PATH`/`LD_LIBRARY_PATH`/`PKG_CONFIG_PATH` environment variables, as all of the required libraries will be installed in the default locations.
+
+> Note: This can take a long time to finish! You are essentially building openmpi, hdf5, hypre, superlu, metis, parmetis, fblaslapack, and cmake all from source with compiler optimizations enabled, so there is some real work to be done, but the end result should be a stable, performant installation.
+
+1. Install compilers and other basic tools from apt repositories:
+
+```
+sudo apt-get update
+sudo apt-get install -y --no-install-recommends \
+  build-essential \
+  curl \
+  ca-certificates \
+  g++ \
+  gfortran \
+  git \
+  pkg-config \
+  python3-pip \
+  sudo \
+  wget
+```
+
+2. Install PETSc and dependencies from source
+
+```
+export PETSC_DIR="$HOME"/tools/petsc
+mkdir -p "$HOME"/tools
+git clone https://gitlab.com/petsc/petsc.git --depth=1 --branch=release "$PETSC_DIR"
+cd "$PETSC_DIR"
+git checkout release
+sudo ./configure \
+  --COPTFLAGS="-O3" \
+  --CXXOPTFLAGS="-O3" \
+  --FOPTFLAGS="-O3" \
+  --download-hypre \
+  --download-superlu_dist \
+  --download-metis \
+  --download-parmetis \
+  --download-hdf5 \
+  --download-fblaslapack \
+  --download-openmpi \
+  --download-cmake \
+  --with-debugging=0 \
+  --prefix=/usr/local
+sudo chown -R "$USER":"$USER" "$PETSC_DIR"
+make PETSC_DIR="$PETSC_DIR" PETSC_ARCH=arch-linux-c-opt all check
+sudo make PETSC_DIR="$PETSC_DIR" PETSC_ARCH=arch-linux-c-opt install
+```
+
+## User Installation
+
+You can follow the [Pre-install setup for Ubuntu Linux desktop instructions for on the wiki](http://faculty.washington.edu/shumlak/WARPX/html/install.html) to install `openmpi`, `cmake`, and `libblas` from the apt package repositories, then get PETSc to download and install the rest to your own home directory, using the `--prefix=$HOME/usr` flag when configuring PETSc.
 
 {{< /hint >}}
 
