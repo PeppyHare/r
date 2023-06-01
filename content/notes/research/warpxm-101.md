@@ -37,6 +37,7 @@ That's it, all of the C++/CMake dependencies are now installed at the system lev
     brew uninstall --ignore-dependencies hdf5 hdf5-mpi
     brew install hdf5-mpi
     ```
+- If you have already tried to build WARPXM and needed to re-install some `brew` formula, you should get rid of any CMake caches that were created when you last tried to build. The easiest way to do this is to delete the whole build folder, then run `cmake /path/to/warpxm` again. This will force CMake to attempt to locate the dependencies in their new location, rather than trying to re-use an installation that you have already removed.
 
 {{< /details >}}
 
