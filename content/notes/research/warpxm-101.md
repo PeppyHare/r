@@ -5,7 +5,7 @@ bookToc: false
 
 # What is WARPXM
 
-WARPXM is a _framework_ for solving hyperbolic systems. Here "framework" means that it is not a single tool for solving a particular system, but rather it contains a large number of applications, solvers, and other tools which can be combined to simulate a wide variety of systems.
+WARPXM is a _framework_ for solving hyperbolic PDE systems. Here "framework" means that it is not a single tool for solving a particular type of system, but rather it contains a large number of applications, solvers, and other tools which can be combined to simulate a wide variety of systems.
 
 # Installation
 
@@ -61,7 +61,32 @@ The [install instructions on the wiki](http://faculty.washington.edu/shumlak/WAR
 
 # Basic Example
 
-The most basic example provided in the repo solves the 1-dimensional advection 
+What do we need to define a valid discontinuous Galerkin simulation? Check the `dg_sim` warpy class definition!
+
+| Parameter | Required? | Description |
+| --- | --- | --- |
+| `name` | :check_mark_button: | Descriptor for the particular simulation, used as a filename prefix for storing data. |
+| `meshes` | :check_mark_button:  | List of one or more mesh objects which define the spatial extent of the simulation. |  
+| `initial_conditions` | :check_mark_button: | List of one or more variable adjusters which are applied before the first time step. | 
+| `temporal_solvers` | :check_mark_button: | List of one or more host actions   |
+| `writers` | :no_entry:  |   |
+| `dt_controller` |   |   |
+| `time` |   |   |
+
+The most basic example provided in the repo solves the 1-dimensional linear advection system:
+
+{{< katex display >}}
+\pdv{q}{t} + \div (\vec c q) = 0
+{{< /katex >}}
+
+This system has been implemented as a WARPXM application within `src/apps/simple/advection.cc` and registered with the type ID "advection":
+
+```c++
+#include "lib/wxcreator.h"
+REGISTER_CREATOR("advection", wxm::apps::advection_t, WmApplication);
+```
+
+The `advection` warpy application class in `tools/warpy/apps/simple.py` allows us to set up 
 
 
 ```xml
