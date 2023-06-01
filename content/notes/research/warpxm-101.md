@@ -65,6 +65,7 @@ sudo apt-get update
 sudo apt-get install -y --no-install-recommends \
   build-essential \
   ca-certificates \
+  cmake \
   curl \
   g++ \
   gfortran \
@@ -549,7 +550,7 @@ Debugging is an inevitable fact of life when it comes to numerical codes (or any
 
 Simply printing loads of information to the console is a pretty basic method, but it's very often the quickest way to figure out what might be going wrong.
 
-When working within the C++ `warpxm` code, you there are specific logger streams set up to allow printing information to the console at different logging levels. The two logging levels you will generally use are the "info" and "debug" streams:
+When working within the C++ `warpxm` code, there are logger streams set up which allow printing information to the console at different logging levels. The two logging levels you will generally use are the "info" and "debug" streams:
 
 ```c++
 WxLogger* log = WxLogger::get("warpx-root.console");
