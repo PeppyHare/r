@@ -543,6 +543,7 @@ with dt = 0.0001
 Simulation finished at time Thu Jun  1 10:19:14 2023
 ```
 
+
 # Debugging
 
 Debugging is an inevitable fact of life when it comes to numerical codes (or any software for that matter). There are many different methods for debugging both C++ and Python projects, and the methods you choose mostly come down to what is most comfortable to your own development process. Here are some methods I have been using to debug WARPXM simulations:
@@ -613,7 +614,7 @@ It is possible to configure VS Code to work as a fully-featured C++ debugger, us
 }
 ```
 
-3. Make sure to build the `Debug` variant of the project. You can switch the CMake variant using the `CMake: Select Variant` command. Make sure to re-build after switching between variants!
+3. Make sure to select either the `Debug` or `RelWithDebInfo` variant of the project. You can switch the CMake variant using the `CMake: Select Variant` command. Make sure to re-build after switching between variants!
 4. Set a breakpoint anywhere in the code by clicking just to the left of the line numbers in the gutter.
 5. Press F5 or go to the "Run and Debug" menu to launch the new `lldb warpxm` target. It will immediately launch `warpxm`. When the running executable hits your breakpoint, it should immediately take your editor to the breakpoint, giving you the ability to view all local variables, step forwards through the code, and set additional breakpoints.
 
