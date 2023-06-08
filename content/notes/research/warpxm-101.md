@@ -125,6 +125,25 @@ The `warpy` Python module under `tools/warpy` contains helpful classes and funct
 pip install numpy matplotlib h5py
 ```
 
+We also need to make sure that Python knows where to find the `warpy` module by adding it to our `PYTHONPATH` environment variable:
+
+- If you are using `bash` for your shell, open `$HOME/.bash_profile` and add the following at the end:
+
+    ```
+    export PYTHONPATH="/path/to/your/warpxm/build/tools/":$PYTHONPATH
+    ```
+- If you are using `zsh` for your shell, open `$HOME/.zshrc` and add the following at the end:
+
+    ```
+    export PYTHONPATH="/path/to/your/warpxm/build/tools/":$PYTHONPATH
+    ```
+
+- If you are using `fish` for your shell, open `$HOME/.config/fish.config` and add the following at the end:
+
+    ```
+    set -gx PYTHONPATH "/path/to/your/warpxm/build/tools/":$PYTHONPATH
+    ```
+
 ## Build - VSCode
 
 I like to use [VS Code](https://code.visualstudio.com/) as my development environment, since it is cross-platform, has a very large feature set, and adequate performance. The C++ and CMake extensions can help make building and debugging `warpxm` much easier.
