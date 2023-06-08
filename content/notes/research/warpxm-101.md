@@ -35,7 +35,7 @@ Building the `warpxm` executable itself is the most important part. It is a C++ 
 In my experience, the simplest way to install the required dependencies (especially on the newer M1/M2 Apple architecture) is to simply use the pre-packaged [Homebrew](https://brew.sh/) formulas to install the required dependencies at the system level:
 
 ```
-brew install petsc hdf5-mpi cmake gcc metis openblas scalapack
+brew install petsc hdf5-mpi cmake gcc metis openblas scalapack pkg-config
 ```
 
 That's it, all of the C++/CMake dependencies are now installed at the system level! No need to modify any `PATH`/`LD_LIBRARY_PATH`/`PKG_CONFIG_PATH` environment variables.
