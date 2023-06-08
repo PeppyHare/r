@@ -9,6 +9,17 @@ WARPXM is a _framework_ for solving hyperbolic PDE systems. By "framework" we me
 
 # Installation
 
+## Source
+
+To use WARPXM for running simulations, you must first gain access the WARPXM source code. The code is currently hosted on GitLab: https://gitlab.com/warpxm/warpxm. Obtaining access generally involves being added as a collaborator to the repository by one of the existing owners.
+
+Once you have access, clone the repository to wherever you would like to work on your local machine:
+
+```
+cd /path/to/your/workspace
+git clone git@gitlab.com:warpxm/warpxm.git
+```
+
 ## Prerequisites: WARPXM
 
 Building the `warpxm` executable itself is the most important part. It is a C++ project which uses CMake as the build system. The main dependencies required to build `warpxm` are:
@@ -130,18 +141,18 @@ We also need to make sure that Python knows where to find the `warpy` module by 
 - If you are using `bash` for your shell, open `$HOME/.bash_profile` and add the following at the end:
 
     ```
-    export PYTHONPATH="/path/to/your/warpxm/build/tools/":$PYTHONPATH
+    export PYTHONPATH="/path/to/your/workspace/warpxm/build/tools/":$PYTHONPATH
     ```
 - If you are using `zsh` for your shell, open `$HOME/.zshrc` and add the following at the end:
 
     ```
-    export PYTHONPATH="/path/to/your/warpxm/build/tools/":$PYTHONPATH
+    export PYTHONPATH="/path/to/your/workspace/warpxm/build/tools/":$PYTHONPATH
     ```
 
 - If you are using `fish` for your shell, open `$HOME/.config/fish.config` and add the following at the end:
 
     ```
-    set -gx PYTHONPATH "/path/to/your/warpxm/build/tools/":$PYTHONPATH
+    set -gx PYTHONPATH "/path/to/your/workspace/warpxm/build/tools/":$PYTHONPATH
     ```
 
 ## Build - VSCode
