@@ -9,7 +9,7 @@
 @import "plugins/scrollbars";
 
 img {
-    width: 60%;
+    min-width: 60%;
 }
 
 @media (prefers-color-scheme: dark) {

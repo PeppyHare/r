@@ -1,29 +1,30 @@
 ---
-title: "Getting Started with WARPXM"
+title: "WARPXM 101 - Getting Started"
 bookToc: true
 ---
 
 # What is WARPXM
 
-WARPXM is a _framework_ for solving hyperbolic PDE systems. By "framework" we mean that it is not a single tool for solving a particular type of system, but rather it contains a number of applications, solvers, and other tools which can be combined to model a wide variety of systems.
+WARPXM is an _extensible_ _framework_ for solving hyperbolic PDE systems. By "framework" we mean that it is not a single tool for solving a particular type of system, but rather it contains a number of applications, solvers, and other tools which can be combined to create a wide variety of models. By "extensible," we mean the framework allows for defining additional components which can be mixed in with the existing solvers and applications.
 
 # Installation
 
 ## Source
 
-To use WARPXM for running simulations, you must first gain access the WARPXM source code. The code is currently hosted on GitLab: https://gitlab.com/warpxm/warpxm. Obtaining access generally involves being added as a collaborator to the repository by one of the existing owners.
+To use WARPXM for running simulations, you must first gain access the WARPXM source code. The code is currently hosted on GitHub: https://github.com/UW-Computational-Plasma-Group/warpxm. Obtaining access generally involves being added as a collaborator to the repository by one of the existing owners.
 
 Once you have access, clone the repository to wherever you would like to work on your local machine:
 
 ```
 cd /path/to/your/workspace
-git clone git@gitlab.com:warpxm/warpxm.git
+git clone https://github.com/UW-Computational-Plasma-Group/warpxm
 ```
 
 ## Prerequisites: WARPXM
 
 Building the `warpxm` executable itself is the most important part. It is a C++ project which uses CMake as the build system. The main dependencies required to build `warpxm` are:
 
+- CMake: A general-purpose tool for building complex C++ projects.
 - PETSc: A sort of toolkit / package manager for scientific computing packages. It is the underlying framework which `warpxm` is built on top of. It can also be used to install compatible versions of most of the other dependencies, like OpenMPI, METIS, HDF5, BLAS/LAPACK, and CMake.
 - OpenMPI: Message-passing interface used to parallelize simulations across independent compute cores.
 - HDF5: Library used to read & write HDF5-formatted simulation data to disk.
@@ -42,7 +43,7 @@ That's it, all of the C++/CMake dependencies are now installed at the system lev
 
 {{< details title="Debugging steps" open=false >}}
 
-- If installing C++ compilers for the first time on a new Mac, need to run `xcode-select --install` to accept the Xcode license and enable installing compilers provided by Apple. One of the above homebrew formulae will probably prompt you do to so when it is installed.
+- If installing C++ compilers for the first time on a new Mac, you probably need to run `xcode-select --install` to accept the Xcode license and enable installing compilers provided by Apple. One of the above homebrew formulae will probably prompt you do to so when it is installed.
 - `brew install petsc` may implicitly install the `hdf5` formlua, which is not compatible with WARPXM. If you get an error message along the lines of "HDF5 was not compiled with MPI", try removing the non-mpi version and re-installing the mpi version of hdf5:
     ```
     brew uninstall --ignore-dependencies hdf5 hdf5-mpi
@@ -185,18 +186,18 @@ What do we need to define a valid discontinuous Galerkin simulation? Check the `
 | `temporal_solvers` | :no_entry: | List of one or more time integrator host actions which move the state forward in time. |
 | `dt_controller` | :no_entry:  | Determines the length of each time step. Can be a simple constant `dt`, or can make use of adaptive time steppers to progress more quickly when possible. |
 | `time` | :no_entry: | The start and end of the time interval to integrate. |
-| `writers` | :check_mark_button: | One or more "writer" host actions which are called upon to export snapshot data to disk. These can be simple writers that just export the current value of some variables, or they can be diagnostic writers which e.g. integrate variables across the domain before writing. Very useful for evaluating numerical stability and evaluating instability growth rates. |
-| `write_steps` | :check_mark_button: | Number of times during the simulation the provided `writers` should write data out to disk. |
-| `cfl_max` | :check_mark_button: | Maximum allowable Courant–Friedrichs–Lewy number. Defaults to 1 |
-| `flexible_writeout` | :check_mark_button:  |  |
-| `verbosity`  | :check_mark_button:  | Defaults to "info" |
-| `global_verbosity`  | :check_mark_button:  | Defaults to "info"  |
-| `num_partitions` | :check_mark_button: | Defaults to 1 |
-| `enable_fpe`  | :check_mark_button: | Defaults to True |
-| `extra_start_host_actions`  | :check_mark_button:  |  |
-| `pre_ti_host_actions`  | :check_mark_button:  |  |
-| `post_ti_host_actions`  | :check_mark_button:  |  |
-| `extra_end_host_actions`  | :check_mark_button: | |
+| `writers` | :white_check_mark: | One or more "writer" host actions which are called upon to export snapshot data to disk. These can be simple writers that just export the current value of some variables, or they can be diagnostic writers which e.g. integrate variables across the domain before writing. Very useful for evaluating numerical stability and evaluating instability growth rates. |
+| `write_steps` | :white_check_mark: | Number of times during the simulation the provided `writers` should write data out to disk. |
+| `cfl_max` | :white_check_mark: | Maximum allowable Courant–Friedrichs–Lewy number. Defaults to 1 |
+| `flexible_writeout` | :white_check_mark:  |  |
+| `verbosity`  | :white_check_mark:  | Defaults to "info" |
+| `global_verbosity`  | :white_check_mark:  | Defaults to "info"  |
+| `num_partitions` | :white_check_mark: | Defaults to 1 |
+| `enable_fpe`  | :white_check_mark: | Defaults to True |
+| `extra_start_host_actions`  | :white_check_mark:  |  |
+| `pre_ti_host_actions`  | :white_check_mark:  |  |
+| `post_ti_host_actions`  | :white_check_mark:  |  |
+| `extra_end_host_actions`  | :white_check_mark: | |
 
 
 The most basic example provided in the repo solves the 1-dimensional linear advection system:
@@ -576,7 +577,7 @@ Simulation finished at time Thu Jun  1 10:19:14 2023
 
 # Debugging
 
-Debugging is an inevitable fact of life when it comes to numerical codes (or any software for that matter). There are many different methods for debugging both C++ and Python projects, and the methods you choose mostly come down to what is most comfortable to your own development process. Here are some methods I have been using to debug WARPXM simulations:
+Debugging is an inevitable fact of life when it comes to developing numerical codes (or any other software!). There are many different methods for debugging both C++ and Python projects, and the best method to choose is generally whichever is most comfortable to your own development process. Here are some methods I have been using to debug WARPXM simulations:
 
 ## Excessive stdout
 
@@ -651,6 +652,88 @@ It is possible to configure VS Code to work as a fully-featured C++ debugger, us
 <p align="center"> <img alt="img/research/warpxm/warpxm-debug-1.png" src="/r/img/research/warpxm/warpxm-debug-1.png" /> </p>
 
 You can use the "Debug console" to evaluate gdb/lldb commands while paused at a breakpoint.
+
+## Attaching Debugger: C++ with Xcode
+
+[Xcode](https://developer.apple.com/xcode/) is the development environment provided by Apple for developing system language applications on a Mac. In my opinion, it is the most user-friendly and performant among the free development environments available for Mac users. It is also very opinionated, and may feel strange if you are used to something like Visual Studio.
+
+CMake is able to generate an Xcode workspace automatically if we pass the `-G Xcode` generator flag:
+
+```bash
+mkdir xcode-project
+cd xcode-project
+cmake -G Xcode /path/to/warpxm/git/repository
+```
+
+We should see some output like this while CMake locates the dependencies on our system and crafts an Xcode workspace for us:
+
+```
+-- The C compiler identification is AppleClang 14.0.3.14030022
+-- The CXX compiler identification is AppleClang 14.0.3.14030022
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- compiler: AppleClang
+-- Setting build type to 'Release' as none was specified.
+-- Found MPI_C: /opt/homebrew/Cellar/open-mpi/5.0.0/lib/libmpi.dylib (found version "3.1")
+-- Found MPI_CXX: /opt/homebrew/Cellar/open-mpi/5.0.0/lib/libmpi.dylib (found version "3.1")
+-- Found MPI: TRUE (found version "3.1")
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Metis library dir: /opt/homebrew/lib
+-- Metis include dir: /opt/homebrew/include
+-- Using mpiexec by default : /opt/homebrew/bin/mpiexec
+-- Found HDF5: /opt/homebrew/Cellar/hdf5-mpi/1.14.3/lib/libhdf5.dylib;/opt/homebrew/opt/libaec/lib/libsz.dylib;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libz.tbd;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libdl.tbd;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libm.tbd (found version "1.14.3")
+-- Found PkgConfig: /opt/homebrew/bin/pkg-config (found version "0.29.2")
+-- Checking for module 'PETSc'
+--   Found PETSc, version 3.20.2
+-- Linking with /opt/homebrew/Cellar/hdf5-mpi/1.14.3/lib/libhdf5.dylib;/opt/homebrew/opt/libaec/lib/libsz.dylib;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libz.tbd;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libdl.tbd;/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/lib/libm.tbd;metis;petsc;/opt/homebrew/Cellar/open-mpi/5.0.0/lib/libmpi.dylib;/opt/homebrew/Cellar/open-mpi/5.0.0/lib/libmpi.dylib
+-- Found Python: /opt/homebrew/Frameworks/Python.framework/Versions/3.12/bin/python3.12 (found version "3.12.1") found components: Interpreter
+-- LCOV_PATH not found
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE)
+-- Generating symbolic links
+-- Configuring done (23.7s)
+-- Generating done (0.2s)
+-- Build files have been written to: /Users/evan/GitHub/warpxm/xcode-demo
+```
+
+If we open up Xcode (after installing it through the App Store, if not already installed), we are presented with the option to open an existing project:
+
+<p align="center"> <img alt="img/research/warpxm/xcode-startup-splash.png" src="/r/img/research/warpxm/xcode-startup-splash.png" width="300" /> </p>
+
+Navigate to the `WARPXM.xcodeproj` that CMake has created in the `xcode-demo` directory for us and open the project. We can use Xcode to build WARPXM as well as attach a debugger, so let's go ahead and do that. After opening the project, click on the build target in the top navigation bar (or press Control + 0) and select `warpxm` as the build target.
+
+<p align="center"> <img alt="img/research/warpxm/xcode-select-target.png" src="/r/img/research/warpxm/xcode-select-target.png" /> </p>
+
+Then click the play triangle in the top-left navigation panel (or press Command + B) to build the project. You can view the build output by clicking on the report navigator panel (or pressing Command + 9):
+
+<p align="center"> <img alt="img/research/warpxm/xcode-build-output.png" src="/r/img/research/warpxm/xcode-build-output.png" /> </p>
+
+Once the build is complete, we can set breakpoints anywhere we choose, then point the freshly built `warpxm` at an input file and let it run. To specify an input file and working directory, use the Product -> Schemes -> Edit Scheme menu option (or press Command + <):
+
+<p align="center"> <img alt="img/research/warpxm/xcode-edit-scheme.png" src="/r/img/research/warpxm/xcode-edit-scheme.png" /> </p>
+
+Under the Options panel, set the working directory to the same folder that your `.inp` input file is in. This will ensure that warpxm can find the meshes and other data associated with the sim when it runs.
+
+<p align="center"> <img alt="img/research/warpxm/xcode-set-working-directory.png" src="/r/img/research/warpxm/xcode-set-working-directory.png" /> </p>
+
+Then, in the Arguments panel, add the arguments to pass to the `warpxm`: `-i` for the first argument, and the name of your input file for the second argument
+
+<p align="center"> <img alt="img/research/warpxm/xcode-set-arguments.png" src="/r/img/research/warpxm/xcode-set-arguments.png" /> </p>
+
+Close the menu. You can immediately begin debugging by pressing the play triangle in the top-left (or press Command + R) and Xcode will pause and break into the debugger if `warpxm` encounters an exception. Or, you can set a breakpoint by opening a source file (Command + Shift + O is the quickest way to do this) and clicking on the line number to set a breakpoint. Execution will pause when the statement is reached and you can view the current stack, the current value of each variable, and evaluate arbitrary `lldb` expressions. For example, if I use the advection example above and set a breakpoint within the `numerical_flux` function defined in `src/apps/simple/advection.cc`, I can view the value of the state variables in the debug area. Xcode also provides shortcuts for some common debugging expressions, in particular `p` is a shortcut for `expr --`, which takes any arguments, compiles them as though they were a source code expression written in the context of the current frame, executes the results, and prints the result:
+
+<p align="center"> <img alt="img/research/warpxm/xcode-debug-window.png" src="/r/img/research/warpxm/xcode-debug-window.png" width="1200" /> </p>
+
+Use the Debug menu to check out the hotkeys for stepping over, stepping into, and stepping out of expressions. Simply stepping through the code one statement at a time is great way to convince yourself that what you think should be happening is really happening!
 
 ## Attaching Debugger: C++ with `gdb`
 
