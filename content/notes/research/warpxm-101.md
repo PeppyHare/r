@@ -709,7 +709,7 @@ If we open up Xcode (after installing it through the App Store, if not already i
 
 <p align="center"> <img alt="img/research/warpxm/xcode-startup-splash.png" src="/r/img/research/warpxm/xcode-startup-splash.png" width="300" /> </p>
 
-Navigate to the `WARPXM.xcodeproj` that CMake has created in the `xcode-demo` directory for us and open the project. We can use Xcode to build WARPXM as well as attach a debugger, so let's go ahead and do that. After opening the project, click on the build target in the top navigation bar (or press Control + 0) and select `warpxm` as the build target.
+Navigate to the `WARPXM.xcodeproj` that CMake has created in the `xcode-demo` directory for us and open the project. We can use Xcode to build WARPXM as well as attach a debugger, so let's go ahead and do that. After opening the project, click on the build target in the top navigation bar (or press Control + 0, that's a zero not the letter O) and select `warpxm` as the build target.
 
 <p align="center"> <img alt="img/research/warpxm/xcode-select-target.png" src="/r/img/research/warpxm/xcode-select-target.png" /> </p>
 
@@ -729,15 +729,74 @@ Then, in the Arguments panel, add the arguments to pass to the `warpxm`: `-i` fo
 
 <p align="center"> <img alt="img/research/warpxm/xcode-set-arguments.png" src="/r/img/research/warpxm/xcode-set-arguments.png" /> </p>
 
-Close the menu. You can immediately begin debugging by pressing the play triangle in the top-left (or press Command + R) and Xcode will pause and break into the debugger if `warpxm` encounters an exception. Or, you can set a breakpoint by opening a source file (Command + Shift + O is the quickest way to do this) and clicking on the line number to set a breakpoint. Execution will pause when the statement is reached and you can view the current stack, the current value of each variable, and evaluate arbitrary `lldb` expressions. For example, if I use the advection example above and set a breakpoint within the `numerical_flux` function defined in `src/apps/simple/advection.cc`, I can view the value of the state variables in the debug area. Xcode also provides shortcuts for some common debugging expressions, in particular `p` is a shortcut for `expr --`, which takes any arguments, compiles them as though they were a source code expression written in the context of the current frame, executes the results, and prints the result:
+Close the menu. You can immediately begin debugging by pressing the play triangle in the top-left (or press Command + R) and Xcode will pause and break into the debugger if `warpxm` encounters an exception. Or, you can set a breakpoint by opening a source file (Command + Shift + O is the quickest way to do this, that's the letter O not a zero) and clicking on the line number to set a breakpoint. Execution will pause when the statement is reached and you can view the current stack, the current value of each variable, and evaluate arbitrary `lldb` expressions. For example, if I use the advection example above and set a breakpoint within the `numerical_flux` function defined in `src/apps/simple/advection.cc`, I can view the value of the state variables in the debug area. Xcode also provides shortcuts for some common debugging expressions, in particular `p` is a shortcut for `expr --`, which takes any arguments, compiles them as though they were a source code expression written in the context of the current frame, executes the results, and prints the result:
 
 <p align="center"> <img alt="img/research/warpxm/xcode-debug-window.png" src="/r/img/research/warpxm/xcode-debug-window.png" width="1200" /> </p>
 
 Use the Debug menu to check out the hotkeys for stepping over, stepping into, and stepping out of expressions. Simply stepping through the code one statement at a time is great way to convince yourself that what you think should be happening is really happening!
 
-## Attaching Debugger: C++ with `gdb`
+## Attaching Debugger: C++ with `gdb` or `lldb`
 
-TODO!
+If you prefer command-line utilities, or need to debug WARPXM running in an environment like Hyak where a graphical user interface is not available, `gdb` and `lldb` are the standard, reliable C++ debuggers to go for. I don't have an x86 CPU on my machine, so I can't use `gdb`, but there is a [fairly straightforward mapping between `gdb` and `lldb` commands and capabilities, and they are largely interchangeable.](https://lldb.llvm.org/use/map.html)
+
+WARPXM has some basic suport for pausing execution to allow for setting breakpoints before actually running a simulation. Passing the `-debug` flag to WARPXM will pause execution before any setup has finished, allowing you to attach a debugger at your leisure before continuing
+
+1. Launch WARPXM process with debug flag
+  - In your warpy input file, add `-debug` to the list of arguments to pass to `warpxm` when you call `sim.run()`:
+    ```python
+    sim.run('example', (...more_arguments), wxm_args=['-debug'])
+    ```
+  - Or, if you want to run `warpxm` directly from the command line, simply add `-debug` to the list of arguments
+    ```shell
+    '/path/to/build/bin/warpxm' -in 'input_file.inp' -debug
+    ```
+  - Either way, you will end up with a warpxm process that waits for the debugger to attach and also lets you know the process ID (PID) to attach to:
+    ```
+    Execution command is:  /path/to/build/bin/warpxm -debug -i /path/to/example/input_file.inp
+    Process id:74639 is 1 of 1 processes
+    waiting for debugger...
+    ```
+  - In a separate command window, attach your debugger to the PID of the warpxm process. For `lldb`, the syntax to attach to the running process is:
+    ```
+    $ lldb -p 74639
+    (lldb) process attach --pid 74639
+    Process 74639 stopped
+    * thread #1, queue = 'com.apple.main-thread', stop reason = signal SIGSTOP
+        frame #0: 0x00000001048efe08 warpxm`WmSimulation::parseCmdLine(this=0x000000016b7ecee0) at wmsimulation.cc:366:24
+      363 	                // wait for debugger
+      364 	                volatile bool wait = true;
+      365 	                std::clog << "waiting for debugger..." << std::endl;
+    -> 366 	                while (wait)
+      367 	                {
+      368 	                    // attach a debugger to desired processes, then on rank 0 set the
+      369 	                    // variable wait to false in gdb, this is: `set wait=false`
+    Target 0: (warpxm) stopped.
+    Executable module set to "/Users/evan/GitHub/warpxm/build/bin/warpxm".
+    Architecture set to: arm64-apple-macosx-.
+    (lldb)
+    ```
+  - Set a breakpoint at the location you want to halt execution. For example, to halt when the function `WmSimulation::simulate` begins, say
+    ```
+    (lldb) breakpoint set --name simulate
+    Breakpoint 1: where = warpxm`WmSimulation::simulate() + 24 [inlined] std::__new_allocator<char>::__new_allocator() at new_allocator.h:88:49, address = 0x00000001048ef290
+    ```
+  - Continue execution by setting the value `wait=false`, as suggested in the comment
+    ```
+    (lldb) expr wait=false
+    (volatile bool) $0 = false
+    (lldb) process continue
+    Process 74639 resuming
+    Process 74639 stopped
+    * thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+        frame #0: 0x00000001048ef298 warpxm`WmSimulation::simulate(this=0x000000016b7ecee0) at wmsimulation.cc:231:79
+      228
+      229 	void WmSimulation::simulate()
+      230 	{
+    -> 231 	    WxLogStream debStrm = WxLogger::get("warpx-root.console")->getDebugStream();
+      232 	    WxLogStream infStrm = WxLogger::get("warpx-root.console")->getInfoStream();
+      233 	    debStrm << "Running simulation...\n";
+      234
+    ```
 
 ## Attaching Debugger: Python in VS Code with `debugpy`
 
