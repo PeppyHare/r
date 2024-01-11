@@ -406,7 +406,9 @@ void WmSolver::presolve()
 
 ### Main Loop
 
-- In the main loop, we try to advance the solution from the current frame (0 at the start) to the next frame until we reach the end of the time interval by repeatedly calling `WmSolver::advance()`.
+- In the main loop, we try to advance the solution from the current frame (0 at the start) to the next frame until we reach the end of the time interval (the last frame). The total number of frames we need to advance is the total number of write-out steps specified in the input file. For example, if our input file has `Time = [0, 10.0]` and `Out = 100` in the top-level `<sim>` block, we will have 100 frames that correspond with `t = [0.0, 0.1, 0.2, ..., 10.0]`. Each pass of the `for (size_t i = getCurrentFrame(); i < _nout; ++i)` loop calls `WmSolver::advance()` to advance to the next frame.
+- In between each frame, we write out informational log messages (that show the amount of actual time we took to advance to the next frame and the value of the most restrictive timestep) to provide some feedback while the sim is running.
+
   {{< details title="`wmsolver.cc: TimestepConstraint WmSolver::advance()`" open=false >}}
 ```c++
 
@@ -469,10 +471,12 @@ TimestepConstraint WmSolver::advance(real tend)
 
 ```
   {{< /details >}}
-  - On the first step, the solver attempts to advance time by the `dt_controller`'s initial `dt`. Subsequent steps may try to advance by a larger or smaller `dt` if the `dt_controller` provided in the input file is not a `time_stepper.fixed_dt`.
-  - For each host action in the per-step group, we tick forward with `host_action->step()`
-    - We can peek at `tools/warpy/dg_sim.py` to see what host actions should be the per-step group for a DG sim. With some abbreviation, we see:
-      {{< details title="`tools/warpy/dg_sim.py: dg_sim.__init__()`" open=false >}}
+
+- Note that within `advance()`, we have a `while (getCurrentTime() < limit_t)` loop to increment forwards in time. We continue stepping until we have reached the next frame, which could require many many individual `dt` timesteps.
+- On the first step, the solver attempts to advance time by the `dt_controller`'s initial `dt`. Subsequent steps may try to advance by a larger or smaller `dt` if the `dt_controller` provided in the input file is not a `time_stepper.fixed_dt`.
+- For each host action in the per-step group, we tick forward with `host_action->step()`
+  - We can peek at `tools/warpy/dg_sim.py` to see what host actions should be the per-step group for a DG sim. With some abbreviation, we see:
+    {{< details title="`tools/warpy/dg_sim.py: dg_sim.__init__()`" open=false >}}
       
 ```python
 # w_group is the group of writer host actions provided in the warpy input file
@@ -575,7 +579,7 @@ WxStepperStatus WmTemporalSolver_RK::step()
 ```
 {{< /details >}}
 
-The Runge-Kutta temporal solver has multiple stages, depending on the temporal order specified in the input file. For each stage:
+The Runge-Kutta temporal solver has multiple "stages", depending on the temporal order specified in the input file. These stages are the standard Runge-Kutta intermediate approximations of the solution in between `t` and `t + dt` which are combined in a weighted average to advance the solution. For each stage:
 - Run any variable adjusters associated with the temporal solver. In the case of the `advection.py` example, we use a shock-capturing limiter (`warpy.variable_adjusters.limiters.dg_moe_rossmanith`) which enforces local bounds on variables by damping the high-order corrections.
 - The DG spatial solver comes next, and this is where the really heavy lifting happens. The actual flux calculations are up to the `WmApplication`(s) that we've defined in our input file. To express the physics of the problem in the language of DG, an application can define:
     - `numerical_flux()`: Compute boundary flux over the surface of a DG element
@@ -584,14 +588,14 @@ The Runge-Kutta temporal solver has multiple stages, depending on the temporal o
     - `bc_q()`: Set the value of "ghost" nodes on the domain boundary
     - `bcNumericalFlux()`: Conpute boundary flux for element faces on the domain boundary
 
-I don't pretend to fully understand the DG implementation in WARPXM just yet, so I may get some things slightly wrong here. As far as I can tell, the calculation of $\pdv{q}{t}$ has been intentionally broken up into a few phases: `in_kernel`, `ex_kernel`, and `rhs_kernel`
+I don't pretend to fully understand the DG implementation in WARPXM just yet, so I may get some things slightly wrong here. As far as I can tell, the calculation of $\pdv{q}{t}$ has been intentionally broken up into three separate "kernel" methods: `in_kernel`, `ex_kernel`, and `rhs_kernel`. In this case, use of the word "[kernel](https://en.wikipedia.org/wiki/Compute_kernel)" is meant to indicate that these are the inner-most methods where the real number crunching happens.
 1. `in_kernel`: Compute the internal flux within each DG element
     - If there are apps with sources that require computing Gaussian quadrature, we compute those quadrature points and call `app->source()` to allow the app to do its thing and compute the source flux on the element.
     - After loading the variables and node geometry for the current patch, the internal flux computation is all up to the application when we call `app->internal_flux()` for each app to compute the internal flux on the element.
 2. `ex_kernel`: Compute the flux across each face of the element. For each app we call `app->numerical_flux()` to get the flux for each element face. Then, for the boundary conditions, we collect the set of boundary faces in the patch and for each one we find applications that supply a `bcNumericalFlux()` function and call it, summing up the results.
-3. `rhs_kernel`: This is basically just combining the individual terms together into the right-hand-side of eq. 3.3.21 from Iman's dissertation:
+3. `rhs_kernel`: This is basically just combining the individual terms together into the right-hand-side of eq. 3.3.21 from [Iman's dissertation](https://www.proquest.com/dissertations-theses/domain-hybridized-plasma-model-using/docview/2594528326/se-2?accountid=14784):
 {{< katex display >}}
-\pdv{}{t} q_{ij} ^ \lambda = J_{ml} ^\lambda \Upsilon _{jlk} f^ \lambda _{imk} - \sum_{\gamma \in \tilde{\Gamma} _\lambda} G_{\lambda \gamma} \Xi _{jk} ^{\lambda \gamma} F_{ik} ^{\lambda \gamma} + \Psi _{jk} s_{ik} ^{\lambda}
+\underbrace{\pdv{}{t} q_{ij} ^ \lambda}_{\text{rhs\_kernel}} = \underbrace{J_ {ml} ^\lambda \Upsilon _{jlk} f^ \lambda _{imk}}_{\text{in\_kernel}} - \underbrace{\sum_{\gamma \in \tilde{\Gamma} _\lambda} G_{\lambda \gamma} \Xi _{jk} ^{\lambda \gamma} F_{ik} ^{\lambda \gamma} + \Psi _{jk} s_{ik} ^{\lambda}}_{\text{ex\_kernel}}
 {{< /katex >}}
 where $f^\lambda _{imk}$ is the internal flux computed above, $F _{ik} ^{\lambda \gamma}$ is the external flux computed above, $s _ {ik} ^{\lambda}$ is the source flux, and $ J _ {ml} ^\lambda \Upsilon _ {jlk} $, $ G _ {\lambda \gamma} \Xi _ {jk} ^{\lambda \gamma}$, and $\Psi _ {jk}$ are computed directly from the geometry and nodal basis for each element.
 
