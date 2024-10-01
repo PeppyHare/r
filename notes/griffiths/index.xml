@@ -1,36 +1,1286 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Griffiths Introduction to Electrodynamics on My Notes</title><link>https://peppyhare.github.io/r/notes/griffiths/</link><description>Recent content in Griffiths Introduction to Electrodynamics on My Notes</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://peppyhare.github.io/r/notes/griffiths/index.xml" rel="self" type="application/rss+xml"/><item><title>Vector Algebra</title><link>https://peppyhare.github.io/r/notes/griffiths/ch1-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch1-1/</guid><description>1.1 Vector Algebra # 1.1.1 Vector Operations # If you walk 4 miles due north and then 3 miles due east (Fig. 1.1), you will have gone a total of 7 miles, but you&amp;rsquo;re not 7 miles from where you set out-you&amp;rsquo;re only 5. We need an arithmetic to describe quantities like this, which evidently do not add in the ordinary way. The reason they don&amp;rsquo;t, of course, is that displacements (straight line segments going from one point to another) have direction as well as magnitude (length), and it is essential to take both into account when you combine them.</description></item><item><title>Differential Calculus</title><link>https://peppyhare.github.io/r/notes/griffiths/ch1-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch1-2/</guid><description>1.2: Differential Calculus # 1.2.1: &amp;ldquo;Ordinary&amp;rdquo; Derivatives # Suppose we have a function of one variable, \( f(x) \). Question: what does the derivative \( \dv{f}{x} \) do for us? Answer: It tells us how rapidly the function \( f(x) \) varies when we change the argument x by a tiny amount, \( \dd{x} \)
-\[\dd{f} = \left( \dv{f}{x} \right) \dd{x} \tagl{1.33}\] In words: If we increment x by an infinitesimal amount \( \dd{x} \), then \( f \) changes by an amount \( \dd{f} \); the derivative is the proportionality factor.</description></item><item><title>Integral Calculus</title><link>https://peppyhare.github.io/r/notes/griffiths/ch1-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch1-3/</guid><description>1.3: Integral Calculus # 1.3.1: Line, Surface, and Volume Integrals # In electrodynamics, we encounter several different kinds of integrals, among which the most important are line (or path) integrals, surface integrals, and volume integrals.
-Line Integrals # A line integral is an expression of the form
-\[\int_a ^b \vec{v} \cdot \dd{\vec{l}} \tagl{1.48}\] where v is a vector function, \( \dd \vec{l} \) is the infinitesimal displacement vector and the integral is to be carried out along a prescribed path P from point a to point b.</description></item><item><title>Curvilinear Coordinates</title><link>https://peppyhare.github.io/r/notes/griffiths/ch1-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch1-4/</guid><description>1.4: Curvilinear Coordinates # 1.4.1: Spherical Coordinates # You can label a point P by its Cartesian coordinates (x, y, z), but sometimes it is more convenient to use spherical coordinates \( (r, \theta, \phi) \); \( r \) is the distance from the origin (the magnitude of the position vector r), \( \theta \) (the angle down from the z axis) is called the polar angle, and \( \phi \) (the angle around from the x axis) is the azimuthal angle.</description></item><item><title>The Dirac Delta Function</title><link>https://peppyhare.github.io/r/notes/griffiths/ch1-5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch1-5/</guid><description>1.5: The Dirac Delta Function # 1.5.1: The Divergence of \( \vu{r} / r^2 \) # Consider the vector function
-\[\vec{v} = \frac{1}{r^2} \vu{r} \tagl{1.83}\] At every location, v is directed radially outward (Fig. 1.44); if ever there was a function that ought to have a large positive divergence, this is it. And yet, when you actually calculate the divergence (using Eq. 1.71), you get precisely zero:
-\[\div \vec{v} = \frac{1}{r^2} \pdv{}{r} \left( r^2 \frac{1}{r^2} \right) = \frac{1}{r^2} \pdv{}{r} (1) = 0 \tagl{1.</description></item><item><title>The Theory of Vector Fields</title><link>https://peppyhare.github.io/r/notes/griffiths/ch1-6/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch1-6/</guid><description>1.6: The Theory of Vector Fields # 1.6.1: The Helmholtz Theorem # Ever since Faraday, the laws of electricity and magnetism have been expressed in terms of electric and magnetic fields, E and B. Like many physical laws, these are most compactly expressed as differential equations. Since E and B are vectors, the differential equations naturally involve vector derivatives: divergence and curl. Indeed, Maxwell reduced the entire theory to four equations, specifying respectively the divergence and the curl of E and B.</description></item><item><title>The Electric Field</title><link>https://peppyhare.github.io/r/notes/griffiths/ch2-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch2-1/</guid><description>2.1: The Electric Field # 2.1.1: Introduction # The fundamental problem electrodynamics hopes to solve is this (Fig 2.1): We have some electric charges \( q_1, q_2, q_3, \ldots \) (call them source charges); what force do they exert on another charge, \( Q \) (call it the test charge)? The positions of the source charges are given (as functions of time); the trajectory of the test particle is to be calculated.</description></item><item><title>Divergence and Curl of Electrostatic Fields</title><link>https://peppyhare.github.io/r/notes/griffiths/ch2-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch2-2/</guid><description>2.2: Divergence and Curl of Electrostatic Fields # 2.2.1 Field Lines, Flux, and Gauss&amp;rsquo; Law # In principle, we are done with the subject of electrostatics. Eq. 2.8 tells us how to compute the field of a charge distribution, and Eq. 2.3 tells us what the force on a charge Q placed in this field will be. Unfortunately, as you may have discovered, the integrals involved in computing E can be formidable, even for reasonably simple charge distributions.</description></item><item><title>Electric Potential</title><link>https://peppyhare.github.io/r/notes/griffiths/ch2-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch2-3/</guid><description>2.3: Electric Potential # 2.3.1: Introduction to Potential # The electric field E is not just any old vector function. It is a very special kind of vector function: one whose curl id zero. \( \vec{E} = y \vu{x} \) , for example, could not possibly be an electrostatic field; no set of charges, regardless of their sizes and positions, could ever produce such a field. We&amp;rsquo;re going to exploit this special property of electric fields to reduce a vector problem (finding E) to a much simpler scalar problem.</description></item><item><title>Work and Energy in Electrostatics</title><link>https://peppyhare.github.io/r/notes/griffiths/ch2-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch2-4/</guid><description>2.4: Work and Energy in Electrostatics # 2.4.1: The Work it Takes to Move a Charge # Suppose you have a stationary configuration of source charges, and you want to move a test charge Q from point a to point b (Fig. 2.39). Question: how much work will you have to do? At any point along the path, the electric force on Q is \( \vec{F} = Q \vec{E} \); the force you must exert, in opposition to the electric force, is \( -Q\vec{E} \).</description></item><item><title>Conductors</title><link>https://peppyhare.github.io/r/notes/griffiths/ch2-5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch2-5/</guid><description>2.5: Conductors # 2.5.1: Basic Properties # In an insulator, such as glass or rubber, each electron is on a short leash, attached to a particular atom. In a metallic conductor, by contrast, one or more electrons per atom are free to roam. (In liquid conductors such as salt water, it is ions that do the moving). A perfect conductor would contain an unlimited supply of free charges. In real life there are no perfect conductors, but metals come pretty close, for most purposes.</description></item><item><title>Laplace's Equation</title><link>https://peppyhare.github.io/r/notes/griffiths/ch3-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch3-1/</guid><description>3.1: Laplace&amp;rsquo;s Equation # 3.1.1: Introduction # The primary task of electrostatics is to find the electric field of a given stationary charge distribution. In principle, this purpose is accomplished by Coulomb&amp;rsquo;s law, in the form of
-\[\vec{E}(\vec{r}) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\vec{r&amp;#39;})}{\gr ^2} \vu{\gr} \dd{\tau&amp;#39;} \label{3.1}\] Unfortunately, integrals of this type can be difficult to calculate for any but the simplest charge configurations. Occasionally we can get around this by exploiting symmetry and using Gauss&amp;rsquo;s law, but ordinarily the best strategy is first to calculate the potential, V, which is given by the somewhat more tractable</description></item><item><title>The Method of Images</title><link>https://peppyhare.github.io/r/notes/griffiths/ch3-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch3-2/</guid><description>3.2: The Method of Images # 3.1.1: The Classic Image Problem # Suppose a point charge q is held a distance d above an infinite grounded conducting plane (Fig. 3.10). Question: what is the potential in the region above the plane? It&amp;rsquo;s not just \( (1/4 \pi \epsilon_0) q / \gr \), for q will induce a certain amount of negative charge on the nearby surface of the conductor; the total potential is due in part to q directly, and in part to this induced charge.</description></item><item><title>Separation of Variables</title><link>https://peppyhare.github.io/r/notes/griffiths/ch3-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch3-3/</guid><description>3.3: Separation of Variables # In this section we shall attack Laplace&amp;rsquo;s equation directly, using the method of separation of variables, which is the physicist&amp;rsquo;s favorite tool for solving partial differential equations. The method is applicable in circumstances where the potential \( (V) \) or the charge density \( (\sigma) \) is specified on the boundaries of some region, and we are asked to find the potential in the interior.</description></item><item><title>Multipole Expansion</title><link>https://peppyhare.github.io/r/notes/griffiths/ch3-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch3-4/</guid><description>3.4: Multipole Expansion # 3.4.1: Approximate Potentials at Large Distances # If you are very far away from a localized charge distribution, it &amp;ldquo;looks&amp;rdquo; like a point charge, and the potential is - to good approximation - \( (1/4 \pi \epsilon_0) Q/r \), where \( Q \) is the total charge. We have often used this as a check on formulas for V. But what if \( Q \) is zero?</description></item><item><title>Polarization</title><link>https://peppyhare.github.io/r/notes/griffiths/ch4-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch4-1/</guid><description>4.1: Polarization # 4.1.1: Dielectrics # This chapter is all about what happens to an electric field when you take matter into account. Matter, of course, comes in many varieties - phase, composition, state, etc. - and depending upon which type of matter we&amp;rsquo;re dealing with, the electrostatic field response can be very different. Nevertheless, most everyday objects belong (at least, to good approximation) to one of two large classes: conductors and insulators (or dielectrics).</description></item><item><title>The Field of a Polarized Object</title><link>https://peppyhare.github.io/r/notes/griffiths/ch4-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch4-2/</guid><description>4.2: The Field of a Polarized Object # 4.2.1: Bound Charges # Suppose we have a piece of polarized material - that is, an object containing a lot of microscopic dipoles lined up. The dipole moment per unit volume P is given. Question: What is the field produced by this object (not the field that may have caused the polarization, but the field the polarization itself causes)? Well, we know what the field of an individual dipole looks like, so why not chop the material up into infinitesimal dipoles and integrate to get the total?</description></item><item><title>The Electric Displacement</title><link>https://peppyhare.github.io/r/notes/griffiths/ch4-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch4-3/</guid><description>4.3: The Electric Displacement # 4.3.1: Gauss&amp;rsquo;s Law in the Presence of Dielectrics # In Section 4.2 we found that the effect of polarization is to produce accumulations of (bound) charge, \( \rho_b = - \div \vec{P} \) within the dielectric and \( \sigma_b = \vec{P} \cdot \vu{n} \) on the surface. The field due to polarization of the medium is just the field of this bound charge. We are now ready to put it all together: the field attributable to bound charge plus the field due to everything else (which, for want of a better term, we call free charge, \( \rho_f \)).</description></item><item><title>The Linear Dielectrics</title><link>https://peppyhare.github.io/r/notes/griffiths/ch4-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch4-4/</guid><description>4.4: Linear Dielectrics # 4.4.1: Susceptibility, Permittivity, Dielectric Constant # In the first few sections of this chapter we did not commit ourselves as to the cause of P; we dealt only with the effects of polarization. From the qualitative essence of 4.1, though, we know that the polarization of a dielectric ordinarily results from an electric field, which lines up the atomic or molecular dipoles. For many substances, in fact, the polarization is proportional to the field, provided E is not too strong:</description></item><item><title>The Lorentz Force Law</title><link>https://peppyhare.github.io/r/notes/griffiths/ch5-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch5-1/</guid><description>5.1: The Lorentz Force Law # 5.1.1: Magnetic Fields # Remember the basic problem of classical electrodynamics: We have a collection of charges \( q_1, q_2, q_3, \ldots \) (the &amp;ldquo;source&amp;rdquo; charges), and we want to calculate the force they exert on some other charge Q (the &amp;ldquo;test&amp;rdquo; charge). According to the principle of superposition, it is sufficient to find the force of a single source charge - the total is then the vector sum of all the individual forces.</description></item><item><title>The Biot-Savart Law</title><link>https://peppyhare.github.io/r/notes/griffiths/ch5-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch5-2/</guid><description>5.2: The Biot-Savart Law # 5.2.1: Steady Currents # Stationary charges produce electric fields that are constant in time; hence the term electrostatics. Steady currents produce magnetic fields that are constant in time; the theory of steady currents is called magnetostatics.
-By &amp;ldquo;steady current&amp;rdquo; I mean a continuous flow that has been going on forever, without change and without piling up anywhere (some people call them &amp;ldquo;stationary currents&amp;rdquo;; to my ear, that&amp;rsquo;s a contradiction in terms).</description></item><item><title>The Divergence and Curl of B</title><link>https://peppyhare.github.io/r/notes/griffiths/ch5-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch5-3/</guid><description>5.3: The Divergence and Curl of B # 5.3.1: Straight-Line Currents # The magnetic field of an infinite straight wire is shown in Fig 5.27 (the current is coming out of the page). At a glance, it is clear that this field has a nonzero curl (something you&amp;rsquo;ll never see in an electrostatic field); let&amp;rsquo;s calculate it.
-According to Eq. 5.38, the integral of B around a circular path of radius s, centered at the wire, is</description></item><item><title>Magnetic Vector Potential</title><link>https://peppyhare.github.io/r/notes/griffiths/ch5-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch5-4/</guid><description>5.4: Magnetic Vector Potential # 5.4.1: The Vector Potential # Just as \( \curl \vec{E} = 0 \) permitted us to introduce a scalar potential (V) in electrostatics,
-\[\vec{E} = - \grad \vec{V}\] so \( \div \vec{B} = 0 \) invites the introduction of a vector potential A in magnetostatics
-\[\vec{B} = \curl \vec{A} \tagl{5.61}\] We were allowed to define these potentials based on our extended proof of the Helmholtz theorem (back in Section 1.</description></item><item><title>Magnetization</title><link>https://peppyhare.github.io/r/notes/griffiths/ch6-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch6-1/</guid><description>6.1: Magnetization # 6.1.1: Diamagnets, Paramagnets, Ferromagnets # If you ask the average person what &amp;ldquo;magnetism&amp;rdquo; is, you will probably be told about refrigerator decorations, compass needles, and the North Pole - none of which has any obvious connection with moving charges or current-carrying wires. Yet all magnetic phenomena are due to electric charges in motion, and in fact, if you could examine a piece of magnetic material on an atomic scale you would find tiny currents: electrons orbiting around nuclei and spinning about their axes.</description></item><item><title>The Field of a Magnetized Object</title><link>https://peppyhare.github.io/r/notes/griffiths/ch6-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch6-2/</guid><description>6.2: The Field of a Magnetized Object # 6.2.1: Bound Currents # Suppose we have a piece of magnetized material; the magnetic dipole moment per unit volume, M, is given. What field does this object produce? Well, the vector potential of a single dipole m is given by Eq. 5.85
-\[\vec{A}_{dip} (r) = \frac{\mu_0}{4 \pi} \frac{\vec{m} \cross \vu{r}}{r^2}\] In the magnetized object, each volume element \( \dd \tau&amp;rsquo; \) carries a dipole moment \( M \dd \tau&amp;rsquo; \), so the total vector potential is (Fig 6.</description></item><item><title>The Auxiliary Field H</title><link>https://peppyhare.github.io/r/notes/griffiths/ch6-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch6-3/</guid><description>6.3: The Auxiliary Field H # 6.3.1: Ampere&amp;rsquo;s Law in Magnetized Materials # In Section 6.2, we found that the effect of magnetization is to establish bound currents \( \vec{J_b} = \curl \vec{M} \) within the material and \( \vec{K_b} = \vec{M} \cross \vu{n} \) on the surface. The field due to magnetization of the medium is just the field produced by these bound currents. We are now ready to put everything together: the field attributable to bound currents, plus the field due to everything else - which I will call the free current.</description></item><item><title>Linear and Nonlinear Media</title><link>https://peppyhare.github.io/r/notes/griffiths/ch6-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch6-4/</guid><description>6.4: Linear and Nonlinear Media # 6.4.1: Magnetic Susceptibility and Permeability # In paramagnetic and diamagnetic materials, the magnetization is sustained by the field; when B is removed, M disappears. In fact, for most substances the magnetization is proportional to the field, provided the field is not too strong. For notational consistency with the electrical case (Eq. 4.30), I should express the proportionality thus
-\[\vec{M} = \frac{1}{\mu_0} \chi_m \vec{B} \tagl{6.</description></item><item><title>Electromotive Force</title><link>https://peppyhare.github.io/r/notes/griffiths/ch7-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch7-1/</guid><description>7.1 Electromotive Force # 7.1.1: Ohm&amp;rsquo;s Law # To make a current flow, you have to push on the charges. How fast they move, in response to a given push, depends on the nature of the material. For most sub- stances, the current density \( \vec{J} \) is proportional to the force per unit charge, \( \vec{f} \):
-\[\vec{J} = \sigma \vec{f} \tagl{7.1}\] The proportionality factor \( \sigma \) (not to be confused with surface charge) is an empirical constant that varies from one material to another; it&amp;rsquo;s called the conductivity of the medium.</description></item><item><title>Electromagnetic Induction</title><link>https://peppyhare.github.io/r/notes/griffiths/ch7-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch7-2/</guid><description>7.2: Electromagnetic Induction # 7.2.1: Faraday&amp;rsquo;s Law # In 1831 Michael Faraday reported on a series of experiments, including three that (with some violence to history) can be characterized as follows:
-Experiment 1:. He pulled a loop of wire to the right through a magnetic field (Fig 7.21a). A current flowed in the loop.
-Experiment 2: He moved the magnet to the left, holding the loop still (Fig 7.21b). Again, a current flowed in the loop.</description></item><item><title>Maxwell's Equations</title><link>https://peppyhare.github.io/r/notes/griffiths/ch7-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch7-3/</guid><description>7.3: Maxwell&amp;rsquo;s Equations # 7.3.1: Electrodynamics Before Maxwell # So far, we have encountered the following laws, specifying the divergence and curl of electric and magnetic fields
-\[\begin{aligned} (\text{i}) &amp;amp; \quad \div \vec{E} = \frac{1}{\epsilon_0 } \rho \quad \text{(Gauss&amp;#39;s law)} \\ (\text{ii}) &amp;amp; \quad \div \vec{B} = 0 \quad \text{(Ng&amp;#39;s Law)} \\ (\text{iii}) &amp;amp; \quad \curl \vec{E} = - \pdv{\vec{B}}{t} \quad \text{(Faraday&amp;#39;s Law}) \\ (\text{iv}) &amp;amp; \quad \curl \vec{B} = \mu_0 \vec{J} \quad \text{(Ampere&amp;#39;s Law)} \end{aligned}\] These equations represent the state of electromagnetic theory in the mid-nineteenth century, when Maxwell began his work.</description></item><item><title>Phys 544 Introduction</title><link>https://peppyhare.github.io/r/notes/griffiths/ch8-0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch8-0/</guid><description>8.0: Phys 544 Introduction # Author Notes # From here on out, the text will be based on the lecture content, not on the Griffiths textbook. The class will follow the 4th edition pretty closely, but there will definitely be some differences. Hope I don&amp;rsquo;t get too much wrong!
-Course Structure # We&amp;rsquo;ve got some real homework this time!
-33% Homework, more or less weekly 33% Midterm. 1 hour, closed-book 33% Final + presentation.</description></item><item><title>Charge and Energy</title><link>https://peppyhare.github.io/r/notes/griffiths/ch8-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch8-1/</guid><description>8.1: Charge and Energy # As far as particles go, we&amp;rsquo;re familiar with the momentum and energy of charges. With fields, we have a similar situation. The fields determine what the particles do, and together with the energy/momentum of the particles themselves, the energy/momentum of the fields form a set of conservation laws
-Conservation of Charge # We know that charge is conserved. You can&amp;rsquo;t create or destroy charge by itself - you must compensate by destroying or creating some other charge.</description></item><item><title>Momentum</title><link>https://peppyhare.github.io/r/notes/griffiths/ch8-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch8-2/</guid><description>8.2: Momentum # In this chapter we talk about:
-Electromagnetic momentum Maxwell stress tensor Conservation of electromagnetic momentum Angular momentum in EM fields 8.2.1: Electromagnetic Momentum # As it turns out, if you disregard the momentum associated with electromagnetic fields, Newton&amp;rsquo;s laws appear not to work out! Consider a basic system in cartesian coordinates of two moving point charges:
-What happens between the two charges? Well, the magnetic field of \( q_1 \) points into the page at \( q_2 \), so the magnetic force on \( q_2 \) is to the right, and the magnetic field of \( q_2 \) is out of the page at \( q_1 \) , so the magnetic force on \( q_1 \) is upward.</description></item><item><title>Electromagnetic Waves in One Dimension</title><link>https://peppyhare.github.io/r/notes/griffiths/ch9-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch9-1/</guid><description>9.1: Electromagnetic Waves in One Dimension # 9.1.1 THE WAVE EQUATION # Before we start writing down how electromagnetic energy propagates in space as radiation, we&amp;rsquo;ll dust off our mathematical background on waves. Thanks to Fourier analysis, we know that sinusoidal waves form a complete basis for all periodic functions, so we restrict our investigation to sinusoidal variations.
-Suppose some quantity &amp;ldquo;\( f \)&amp;rdquo; is propagating with speed \( v \) in the \( +z \) direction, and we focus on sinusoidal &amp;ldquo;disturbances.</description></item><item><title>Wave Equation for E and B</title><link>https://peppyhare.github.io/r/notes/griffiths/ch9-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch9-2/</guid><description>9.2.1 Wave Equation for E and B # Recall Maxwell&amp;rsquo;s equations
-\[\begin{aligned} (\text{i}) &amp;amp; \quad \div \vec{D} = \rho_f \quad \text{(Gauss&amp;#39;s law)} \\ (\text{ii}) &amp;amp; \quad \div \vec{B} = 0 \quad \text{(Ng&amp;#39;s Law)} \\ (\text{iii}) &amp;amp; \quad \curl \vec{E} = - \pdv{\vec{B}}{t} \quad \text{(Faraday&amp;#39;s Law}) \\ (\text{iv}) &amp;amp; \quad \curl \vec{H} = \vec{J}_f &amp;#43; \pdv{\vec{D}}{t} \quad \text{(Ampere&amp;#39;s Law)} \end{aligned}\] To get to a wave equation from these, we start with a curl of curl and use a standard vector identity</description></item><item><title>Electromagnetic Waves in Matter</title><link>https://peppyhare.github.io/r/notes/griffiths/ch9-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch9-3/</guid><description>9.3: Electromagnetic Waves in Matter # 9.3.1: Propagation in Linear Media and Non-conductors # Maxwell&amp;rsquo;s equations in linear media are
-\[\begin{aligned} (\text{i}) &amp;amp; \quad \div \vec{D} = \rho_f \quad \text{(Gauss&amp;#39;s law)} \\ (\text{ii}) &amp;amp; \quad \div \vec{B} = 0 \quad \text{(Ng&amp;#39;s Law)} \\ (\text{iii}) &amp;amp; \quad \curl \vec{E} = - \pdv{\vec{B}}{t} \quad \text{(Faraday&amp;#39;s Law}) \\ (\text{iv}) &amp;amp; \quad \curl \vec{H} = \vec{J}_f &amp;#43; \pdv{\vec{D}}{t} \quad \text{(Ampere&amp;#39;s Law)} \end{aligned}\] In linear media, our constitutive relations are</description></item><item><title>Electromagnetic Waves in Conductors</title><link>https://peppyhare.github.io/r/notes/griffiths/ch9-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch9-4/</guid><description>9.4.1 Electromagnetic Waves in Conductors # When we formulated our description of how electromagnetic waves move through linear media, we relied on the stipulation that the free charge density \( \rho_f \) and free current density \( \vec J _f \) were zero. In the case of conductors, we&amp;rsquo;re going to need to re-visit that assumption.
-As a refresher, when we last took a good look at conductors we had just moved beyond the electrostatic picture.</description></item><item><title>Guided Waves</title><link>https://peppyhare.github.io/r/notes/griffiths/ch9-5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch9-5/</guid><description>9.5.1 Guided Waves # Moving beyond plane waves with infinite extent, now we consider waves confined to the interior to some sort of pipe, or wave guide. To make things simple, the overall geometry of the pipe should be large compared with the wavelength, and we&amp;rsquo;ll assume it&amp;rsquo;s made of a perfect conductor so there&amp;rsquo;s no loss (perfect reflection).
-Monochromatic plane wave solutions will look like
-\[\vec E(x, y, z, t) = \vec{E_0} (x, y) e^{i(kz - \omega t)}\] \[\vec B(x, y, z, t) = \vec{B_0} (x, y) e^{i(kz - \omega t)}\] The (source-free) boundary conditions within the waveguide are</description></item><item><title>Scalar and Vector Potentials</title><link>https://peppyhare.github.io/r/notes/griffiths/ch10-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch10-1/</guid><description>10.0.1 Presentation/Paper notes # A few words about the paper/presentation
-It&amp;rsquo;s supposed to be on a topic related to the class (classical electromagnetism) The topic can be wide-ranging. Some sample topics will be put it. It should be thematically related to what we&amp;rsquo;ve been talking about, and you should be making connections to things we&amp;rsquo;ve been talking about (waveguides, waves, generation of waves, etc.) There will be two class periods in the last week which are reserved for presentations of about 15 minutes each.</description></item><item><title>Retarded Potentials</title><link>https://peppyhare.github.io/r/notes/griffiths/ch10-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch10-2/</guid><description>10.2.1 Retarded Potentials # In the Lorenz gauge, we want to find the potentials by solving
-\[\laplacian \vec A - \mu_0 \epsilon_0 \pdv{^2 \vec A}{t^2} = - \mu_0 \vec J\] Back in the static case, this reduces to Poisson&amp;rsquo;s equation
-\[\laplacian V = - \frac{1}{\epsilon_0} \rho\] \[\laplacian \vec A = - \mu_0 \vec J\] and we know how to solve these
-\[V(\vec r) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\vec r&amp;#39;)}{\gr} \dd \tau&amp;#39; \] \[\vec A(r) = \frac{\mu_0}{4 \pi} \int \frac{\vec J (\vec r&amp;#39;)}{\gr} \dd \tau&amp;#39; \] We know that electromagnetic disturbances travel at the speed of light (at least in vacuum).</description></item><item><title>Point Charges</title><link>https://peppyhare.github.io/r/notes/griffiths/ch10-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch10-3/</guid><description>10.3 Point Charges # 10.3.1 Moving Point Charges: Lienard-Wiechert Potentials # Suppose we have a point charge moving on some trajectory \( \vec w(t) \). If we naively read off the retarded potential
-\[V(\vec r, t) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\vec r&amp;#39;, t_r)}{\gr} \dd \tau&amp;#39;\] might suggest that the potential is just
-\[\frac{1}{4 \pi \epsilon_0} \frac{q}{\gr}\] But that&amp;rsquo;s wrong for a subtle reason: It is true that for a point source \( \gr \) comes outside the integral, but the remainder</description></item><item><title>Dipole Radiation</title><link>https://peppyhare.github.io/r/notes/griffiths/ch11-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch11-1/</guid><description>11.1 Dipole Radiation # 11.1.1 Electric Dipole Radiation # Consider a dipole which is &amp;ldquo;oscillating&amp;rdquo; at some particular frequency. This looks like two metal spheres separated by distance \( d \) and connected by a small wire; at time \( t \) the charge on the upper sphere is \( q(t) \) and the charge on the lower sphere is \( -q(t) \). We drive the charge back and forth through the wire from one sphere to the other at an angular frequency \( \omega \)</description></item><item><title>Solved Problems Ch3</title><link>https://peppyhare.github.io/r/notes/griffiths/problems-ch3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/problems-ch3/</guid><description>Chapter 3 Solved Problems # \[\] Problem 3.24 # Q Solve Laplace&amp;rsquo;s equation by separation of variables in cylindrical coordinates, assuming there is no dependence on \( z \) (cylindrical symmetry). Make sure you find all solutions to the radial equation; in particular, your result must accomodate the case of an infinite line charge, for which we already know the answer. A Since we are in cylindrical coordinates, we will write Laplace&amp;rsquo;s equation in cylindrical coordinates \( (s, \phi, z) \):</description></item><item><title>Solved Problems Ch5</title><link>https://peppyhare.github.io/r/notes/griffiths/problems-ch5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/problems-ch5/</guid><description>Chapter 5 Solved Problems # \[\] Problem 5.5 # Q A current I flows down a wire of radius a. (a) If it is uniformly distributed over the surface, what is the surface current density K? (b) If it is distributed in such a way that the volume current density is inversely proportional to the distance from the axis, what is J(s)? A K is the current per unit width \( \perp \) to the direction of the flow.</description></item><item><title>Solved Problems Ch7</title><link>https://peppyhare.github.io/r/notes/griffiths/problems-ch7/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/problems-ch7/</guid><description>Chapter 7 Solved Problems # \[\] Problem 7.7 # Q A metal bar of mass m slides frictionlessly on two parallel conducting rails a distance l apart. A resistor R is connected across the rails, and a uniform magnetic field B pointing into the page fills the region.
-(a) If the bar moves to the right at speed v, what is the current in the resistor?
-(b) What is the magnetic force on the bar?</description></item><item><title>Solved Problems Ch9</title><link>https://peppyhare.github.io/r/notes/griffiths/problems-ch9/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/problems-ch9/</guid><description>Chapter 9 Solved Problems # \[\] Review Problem 1 # Q Current-carrying wire with gap. A large diameter wire of cross-section area \( A \) carries current uniformly over its cross-section. There is a narrow gap of width \( d \), forming a parallel-plate capacitor. The current is zero for times \( t &amp;lt; 0 \) and the current is \( I \) at times \( t &amp;gt; 0 \).</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Griffiths Introduction to Electrodynamics on My Notes</title><link>https://peppyhare.github.io/r/notes/griffiths/</link><description>Recent content in Griffiths Introduction to Electrodynamics on My Notes</description><generator>Hugo</generator><language>en</language><atom:link href="https://peppyhare.github.io/r/notes/griffiths/index.xml" rel="self" type="application/rss+xml"/><item><title>Vector Algebra</title><link>https://peppyhare.github.io/r/notes/griffiths/ch1-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch1-1/</guid><description>&lt;h1 id="_11_-vector-algebra">
+ &lt;em>1.1&lt;/em> Vector Algebra
+ &lt;a class="anchor" href="#_11_-vector-algebra">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="_111_-vector-operations">
+ &lt;em>1.1.1&lt;/em> Vector Operations
+ &lt;a class="anchor" href="#_111_-vector-operations">#&lt;/a>
+&lt;/h2>
+&lt;p>If you walk 4 miles due north and then 3 miles due east (Fig. 1.1), you will have gone a total of 7 miles, but you&amp;rsquo;re &lt;em>not&lt;/em> 7 miles from where you set out-you&amp;rsquo;re only 5. We need an arithmetic to describe quantities like this, which evidently do not add in the ordinary way. The reason they don&amp;rsquo;t, of course, is that &lt;strong>displacements&lt;/strong> (straight line segments going from one point to another) have &lt;em>direction&lt;/em> as well as &lt;em>magnitude&lt;/em> (length), and it is essential to take both into account when you combine them. Such objects are called vectors: velocity, acceleration, force and momentum are other examples. By contrast, quantities that have magnitude but no direction are called scalars: examples include mass, charge, density, and temperature.&lt;/p></description></item><item><title>Differential Calculus</title><link>https://peppyhare.github.io/r/notes/griffiths/ch1-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch1-2/</guid><description>&lt;h1 id="12-differential-calculus">
+ 1.2: Differential Calculus
+ &lt;a class="anchor" href="#12-differential-calculus">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="121-ordinary-derivatives">
+ 1.2.1: &amp;ldquo;Ordinary&amp;rdquo; Derivatives
+ &lt;a class="anchor" href="#121-ordinary-derivatives">#&lt;/a>
+&lt;/h2>
+&lt;p>Suppose we have a function of one variable, \( f(x) \). &lt;em>Question&lt;/em>: what does the derivative \( \dv{f}{x} \) do for us? &lt;em>Answer&lt;/em>: It tells us how rapidly the function \( f(x) \) varies when we change the argument x by a tiny amount, \( \dd{x} \)&lt;/p>
+
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\dd{f} = \left( \dv{f}{x} \right) \dd{x} \tagl{1.33}\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;p>In words: If we increment &lt;em>x&lt;/em> by an infinitesimal amount \( \dd{x} \), then \( f \) changes by an amount \( \dd{f} \); the derivative is the proportionality factor. Foe example, in Fig. 1.17(a), the function varies slowly with &lt;em>x&lt;/em>, and the derivative is correspondingly small. In Fig 1.17(b), &lt;em>f&lt;/em> increases rapidly with &lt;em>x&lt;/em>, and the derivative is large as you move away from \( x = 0 \).
+&lt;em>Geometrical interpretation&lt;/em>: The derivative \( \dv{f}{x} \) is the slope of the graph of &lt;em>f&lt;/em> versus &lt;em>x&lt;/em>.&lt;/p></description></item><item><title>Integral Calculus</title><link>https://peppyhare.github.io/r/notes/griffiths/ch1-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch1-3/</guid><description>&lt;h1 id="13-integral-calculus">
+ 1.3: Integral Calculus
+ &lt;a class="anchor" href="#13-integral-calculus">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="131-line-surface-and-volume-integrals">
+ 1.3.1: Line, Surface, and Volume Integrals
+ &lt;a class="anchor" href="#131-line-surface-and-volume-integrals">#&lt;/a>
+&lt;/h2>
+&lt;p>In electrodynamics, we encounter several different kinds of integrals, among which the most important are &lt;strong>line (or path) integrals&lt;/strong>, &lt;strong>surface integrals&lt;/strong>, and &lt;strong>volume integrals&lt;/strong>.&lt;/p>
+&lt;h3 id="line-integrals">
+ Line Integrals
+ &lt;a class="anchor" href="#line-integrals">#&lt;/a>
+&lt;/h3>
+&lt;p>A line integral is an expression of the form&lt;/p>
+
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\int_a ^b \vec{v} \cdot \dd{\vec{l}} \tagl{1.48}\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;p>where &lt;strong>v&lt;/strong> is a vector function, \( \dd \vec{l} \) is the infinitesimal displacement vector and the integral is to be carried out along a prescribed path P from point &lt;strong>a&lt;/strong> to point &lt;strong>b&lt;/strong>. If the path in question forms a closed loop (that is, if \( \vec{b} = \vec{a} \), then put a circle on the integral sign:&lt;/p></description></item><item><title>Curvilinear Coordinates</title><link>https://peppyhare.github.io/r/notes/griffiths/ch1-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch1-4/</guid><description>&lt;h1 id="14-curvilinear-coordinates">
+ 1.4: Curvilinear Coordinates
+ &lt;a class="anchor" href="#14-curvilinear-coordinates">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="141-spherical-coordinates">
+ 1.4.1: Spherical Coordinates
+ &lt;a class="anchor" href="#141-spherical-coordinates">#&lt;/a>
+&lt;/h2>
+&lt;p>You can label a point P by its Cartesian coordinates (x, y, z), but sometimes it is more convenient to use &lt;strong>spherical&lt;/strong> coordinates \( (r, \theta, \phi) \); \( r \) is the distance from the origin (the magnitude of the position vector &lt;strong>r&lt;/strong>), \( \theta \) (the angle down from the z axis) is called the &lt;strong>polar angle&lt;/strong>, and \( \phi \) (the angle around from the x axis) is the &lt;strong>azimuthal angle&lt;/strong>. Their relation to Cartesian coordinates can be read trigonometrically from Fig 1.36:&lt;/p></description></item><item><title>The Dirac Delta Function</title><link>https://peppyhare.github.io/r/notes/griffiths/ch1-5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch1-5/</guid><description>&lt;h1 id="15-the-dirac-delta-function">
+ 1.5: The Dirac Delta Function
+ &lt;a class="anchor" href="#15-the-dirac-delta-function">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="151-the-divergence-of--vur--r2-">
+ 1.5.1: The Divergence of \( \vu{r} / r^2 \)
+ &lt;a class="anchor" href="#151-the-divergence-of--vur--r2-">#&lt;/a>
+&lt;/h2>
+&lt;p>Consider the vector function&lt;/p>
+
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\vec{v} = \frac{1}{r^2} \vu{r} \tagl{1.83}\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;p align="center"> &lt;img alt="Figure 1.44" src="https://peppyhare.github.io/r/r/img/griffiths/1.44.png" /> &lt;/p></description></item><item><title>The Theory of Vector Fields</title><link>https://peppyhare.github.io/r/notes/griffiths/ch1-6/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch1-6/</guid><description>&lt;h1 id="16-the-theory-of-vector-fields">
+ 1.6: The Theory of Vector Fields
+ &lt;a class="anchor" href="#16-the-theory-of-vector-fields">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="161-the-helmholtz-theorem">
+ 1.6.1: The Helmholtz Theorem
+ &lt;a class="anchor" href="#161-the-helmholtz-theorem">#&lt;/a>
+&lt;/h2>
+&lt;p>Ever since Faraday, the laws of electricity and magnetism have been expressed in terms of &lt;em>electric&lt;/em> and &lt;em>magnetic&lt;/em> fields, &lt;strong>E&lt;/strong> and &lt;strong>B&lt;/strong>. Like many physical laws, these are most compactly expressed as differential equations. Since &lt;strong>E&lt;/strong> and &lt;strong>B&lt;/strong> are vectors, the differential equations naturally involve vector derivatives: divergence and curl. Indeed, Maxwell reduced the entire theory to four equations, specifying respectively the divergence and the curl of &lt;strong>E&lt;/strong> and &lt;strong>B&lt;/strong>.&lt;/p></description></item><item><title>The Electric Field</title><link>https://peppyhare.github.io/r/notes/griffiths/ch2-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch2-1/</guid><description>&lt;h1 id="21-the-electric-field">
+ 2.1: The Electric Field
+ &lt;a class="anchor" href="#21-the-electric-field">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="211-introduction">
+ 2.1.1: Introduction
+ &lt;a class="anchor" href="#211-introduction">#&lt;/a>
+&lt;/h2>
+&lt;p>The fundamental problem electrodynamics hopes to solve is this (Fig 2.1): We have some electric charges \( q_1, q_2, q_3, \ldots \) (call them &lt;em>source charges&lt;/em>); what force do they exert on another charge, \( Q \) (call it the &lt;em>test charge&lt;/em>)? The positions of the source charges are given (as functions of time); the trajectory of the test particle is to be calculated. In general, both the source charges and the test charge are in motion.&lt;/p></description></item><item><title>Divergence and Curl of Electrostatic Fields</title><link>https://peppyhare.github.io/r/notes/griffiths/ch2-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch2-2/</guid><description>&lt;h1 id="22-divergence-and-curl-of-electrostatic-fields">
+ 2.2: Divergence and Curl of Electrostatic Fields
+ &lt;a class="anchor" href="#22-divergence-and-curl-of-electrostatic-fields">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="221-field-lines-flux-and-gauss-law">
+ 2.2.1 Field Lines, Flux, and Gauss&amp;rsquo; Law
+ &lt;a class="anchor" href="#221-field-lines-flux-and-gauss-law">#&lt;/a>
+&lt;/h2>
+&lt;p>In principle, we are &lt;em>done&lt;/em> with the subject of electrostatics. Eq. 2.8 tells us how to compute the field of a charge distribution, and Eq. 2.3 tells us what the force on a charge Q placed in this field will be. Unfortunately, as you may have discovered, the integrals involved in computing E can be formidable, even for reasonably simple charge distributions. Much of the rest of electrostatics is devoted to assembling a bag of tools and tricks for avoiding these integrals. It all begins with the divergence and curl of &lt;strong>E&lt;/strong>. I shall calculate the divergence of &lt;strong>E&lt;/strong> directly from Eq. 2.8 in section 2.2.2, but first I want to show you a more qualitative, and perhaps more illuminating, intuitive approach.&lt;/p></description></item><item><title>Electric Potential</title><link>https://peppyhare.github.io/r/notes/griffiths/ch2-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch2-3/</guid><description>&lt;h1 id="23-electric-potential">
+ 2.3: Electric Potential
+ &lt;a class="anchor" href="#23-electric-potential">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="231-introduction-to-potential">
+ 2.3.1: Introduction to Potential
+ &lt;a class="anchor" href="#231-introduction-to-potential">#&lt;/a>
+&lt;/h2>
+&lt;p>The electric field &lt;strong>E&lt;/strong> is not just &lt;em>any&lt;/em> old vector function. It is a very special &lt;em>kind&lt;/em> of vector function: one whose curl id zero. \( \vec{E} = y \vu{x} \) , for example, could not possibly be an electrostatic field; &lt;em>no&lt;/em> set of charges, regardless of their sizes and positions, could ever produce such a field. We&amp;rsquo;re going to exploit this special property of electric fields to reduce a &lt;em>vector&lt;/em> problem (finding &lt;strong>E&lt;/strong>) to a much simpler &lt;em>scalar&lt;/em> problem. The first theorem in Sect 1.6.2 asserts that any vector whose curl is zero is equal to the gradient of some scalar. What I&amp;rsquo;m going to do now amounts to a proof of that claim, in the context of electrostatics.&lt;/p></description></item><item><title>Work and Energy in Electrostatics</title><link>https://peppyhare.github.io/r/notes/griffiths/ch2-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch2-4/</guid><description>&lt;h1 id="24-work-and-energy-in-electrostatics">
+ 2.4: Work and Energy in Electrostatics
+ &lt;a class="anchor" href="#24-work-and-energy-in-electrostatics">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="241-the-work-it-takes-to-move-a-charge">
+ 2.4.1: The Work it Takes to Move a Charge
+ &lt;a class="anchor" href="#241-the-work-it-takes-to-move-a-charge">#&lt;/a>
+&lt;/h2>
+&lt;p>Suppose you have a stationary configuration of source charges, and you want to move a test charge Q from point a to point b (Fig. 2.39). &lt;em>Question&lt;/em>: how much work will you have to do? At any point along the path, the electric force on Q is \( \vec{F} = Q \vec{E} \); the force you must exert, in opposition to the electric force, is \( -Q\vec{E} \). The work you do is therefore&lt;/p></description></item><item><title>Conductors</title><link>https://peppyhare.github.io/r/notes/griffiths/ch2-5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch2-5/</guid><description>&lt;h1 id="25-conductors">
+ 2.5: Conductors
+ &lt;a class="anchor" href="#25-conductors">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="251-basic-properties">
+ 2.5.1: Basic Properties
+ &lt;a class="anchor" href="#251-basic-properties">#&lt;/a>
+&lt;/h2>
+&lt;p>In an &lt;em>insulator&lt;/em>, such as glass or rubber, each electron is on a short leash, attached to a particular atom. In a metallic &lt;em>conductor&lt;/em>, by contrast, one or more electrons per atom are free to roam. (In liquid conductors such as salt water, it is ions that do the moving). A &lt;em>perfect&lt;/em> conductor would contain an unlimited supply of free charges. In real life there are no perfect conductors, but metals come pretty close, for most purposes.&lt;/p></description></item><item><title>Laplace's Equation</title><link>https://peppyhare.github.io/r/notes/griffiths/ch3-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch3-1/</guid><description>&lt;h1 id="31-laplaces-equation">
+ 3.1: Laplace&amp;rsquo;s Equation
+ &lt;a class="anchor" href="#31-laplaces-equation">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="311-introduction">
+ 3.1.1: Introduction
+ &lt;a class="anchor" href="#311-introduction">#&lt;/a>
+&lt;/h2>
+&lt;p>The primary task of electrostatics is to find the electric field of a given stationary charge distribution. In principle, this purpose is accomplished by Coulomb&amp;rsquo;s law, in the form of&lt;/p>
+
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\vec{E}(\vec{r}) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\vec{r&amp;#39;})}{\gr ^2} \vu{\gr} \dd{\tau&amp;#39;} \label{3.1}\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;p>Unfortunately, integrals of this type can be difficult to calculate for any but the simplest charge configurations. Occasionally we can get around this by exploiting symmetry and using Gauss&amp;rsquo;s law, but ordinarily the best strategy is first to calculate the &lt;em>potential&lt;/em>, V, which is given by the somewhat more tractable&lt;/p></description></item><item><title>The Method of Images</title><link>https://peppyhare.github.io/r/notes/griffiths/ch3-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch3-2/</guid><description>&lt;h1 id="32-the-method-of-images">
+ 3.2: The Method of Images
+ &lt;a class="anchor" href="#32-the-method-of-images">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="311-the-classic-image-problem">
+ 3.1.1: The Classic Image Problem
+ &lt;a class="anchor" href="#311-the-classic-image-problem">#&lt;/a>
+&lt;/h2>
+&lt;p>Suppose a point charge &lt;em>q&lt;/em> is held a distance &lt;em>d&lt;/em> above an infinite grounded conducting plane (Fig. 3.10). &lt;em>Question&lt;/em>: what is the potential in the region above the plane? It&amp;rsquo;s not just \( (1/4 \pi \epsilon_0) q / \gr \), for &lt;em>q&lt;/em> will induce a certain amount of negative charge on the nearby surface of the conductor; the total potential is due in part to &lt;em>q&lt;/em> directly, and in part to this induced charge. But how can we possibly calculate the potential, when we don&amp;rsquo;t know how much charge is induced or how it is distributed?&lt;/p></description></item><item><title>Separation of Variables</title><link>https://peppyhare.github.io/r/notes/griffiths/ch3-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch3-3/</guid><description>&lt;h1 id="33-separation-of-variables">
+ 3.3: Separation of Variables
+ &lt;a class="anchor" href="#33-separation-of-variables">#&lt;/a>
+&lt;/h1>
+&lt;p>In this section we shall attack Laplace&amp;rsquo;s equation directly, using the method of &lt;strong>separation of variables&lt;/strong>, which is the physicist&amp;rsquo;s favorite tool for solving partial differential equations. The method is applicable in circumstances where the potential \( (V) \) or the charge density \( (\sigma) \) is specified on the boundaries of some region, and we are asked to find the potential in the interior. The basic strategy is very simple: We look for solutions that are products of functions, each of which depends on only one of the coordinates. The algebraic details, however, can be formidable, so I&amp;rsquo;m going to develop the method through a sequence of examples. We&amp;rsquo;ll start with Cartesian coordinates and then do spherical coordinates (I&amp;rsquo;ll leave the cylindrical case for you to tackle on your own, in Prob 3.24).&lt;/p></description></item><item><title>Multipole Expansion</title><link>https://peppyhare.github.io/r/notes/griffiths/ch3-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch3-4/</guid><description>&lt;h1 id="34-multipole-expansion">
+ 3.4: Multipole Expansion
+ &lt;a class="anchor" href="#34-multipole-expansion">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="341-approximate-potentials-at-large-distances">
+ 3.4.1: Approximate Potentials at Large Distances
+ &lt;a class="anchor" href="#341-approximate-potentials-at-large-distances">#&lt;/a>
+&lt;/h2>
+&lt;p>If you are very far away from a localized charge distribution, it &amp;ldquo;looks&amp;rdquo; like a point charge, and the potential is - to good approximation - \( (1/4 \pi \epsilon_0) Q/r \), where \( Q \) is the total charge. We have often used this as a check on formulas for &lt;em>V&lt;/em>. But what if \( Q \) is zero? You might reply that the potential is then approximately zero, and of course, you&amp;rsquo;re right in a sense (indeed, the potential at large &lt;em>r&lt;/em> is pretty small even if &lt;em>Q&lt;/em> is not zero). But we&amp;rsquo;re looking for something a bit more informative than that.&lt;/p></description></item><item><title>Polarization</title><link>https://peppyhare.github.io/r/notes/griffiths/ch4-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch4-1/</guid><description>&lt;h1 id="41-polarization">
+ 4.1: Polarization
+ &lt;a class="anchor" href="#41-polarization">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="411-dielectrics">
+ 4.1.1: Dielectrics
+ &lt;a class="anchor" href="#411-dielectrics">#&lt;/a>
+&lt;/h2>
+&lt;p>This chapter is all about what happens to an electric field when you take matter into account. Matter, of course, comes in many varieties - phase, composition, state, etc. - and depending upon which type of matter we&amp;rsquo;re dealing with, the electrostatic field response can be very different. Nevertheless, most everyday objects belong (at least, to good approximation) to one of two large classes: &lt;strong>conductors&lt;/strong> and &lt;strong>insulators&lt;/strong> (or &lt;strong>dielectrics&lt;/strong>). We have already gone over what happens to an electrostatic field in a conductor; the &amp;ldquo;unlimited&amp;rdquo; free charges within a conductor distribute themselves through the material so as to form an equipotential. In practice, this usually means that many electrons (one or two per atom, in a typical metal) are not associated with a particular nucleus, but roam around at will. In dielectrics, by contrast, &lt;em>all charges are attached to specific atoms or molecules&lt;/em> - they cannot escape their leash, and can only move a bit &lt;em>within&lt;/em> the atom or molecule. Such microscopic displacements are not as dramatic as the wholesale rearrangement of charge in a conductor, but their cumulative effects account for the characteristic behavior of dielectric materials. There are actually &lt;em>two&lt;/em> principal mechanisms by which electric fields can distort the charge distribution of a dielectric atom or molecule: stretching and rotating. In the next two sections I&amp;rsquo;ll discuss these processes.&lt;/p></description></item><item><title>The Field of a Polarized Object</title><link>https://peppyhare.github.io/r/notes/griffiths/ch4-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch4-2/</guid><description>&lt;h1 id="42-the-field-of-a-polarized-object">
+ 4.2: The Field of a Polarized Object
+ &lt;a class="anchor" href="#42-the-field-of-a-polarized-object">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="421-bound-charges">
+ 4.2.1: Bound Charges
+ &lt;a class="anchor" href="#421-bound-charges">#&lt;/a>
+&lt;/h2>
+&lt;p>Suppose we have a piece of polarized material - that is, an object containing a lot of microscopic dipoles lined up. The dipole moment per unit volume &lt;strong>P&lt;/strong> is given. &lt;em>Question&lt;/em>: What is the field produced by this object (not the field that may have caused the polarization, but the field the polarization itself causes)? Well, we know what the field of an individual dipole looks like, so why not chop the material up into infinitesimal dipoles and integrate to get the total? As usual, it&amp;rsquo;s easier to work with the potential. For a single dipole &lt;strong>p&lt;/strong> (Eq. 3.99)&lt;/p></description></item><item><title>The Electric Displacement</title><link>https://peppyhare.github.io/r/notes/griffiths/ch4-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch4-3/</guid><description>&lt;h1 id="43-the-electric-displacement">
+ 4.3: The Electric Displacement
+ &lt;a class="anchor" href="#43-the-electric-displacement">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="431-gausss-law-in-the-presence-of-dielectrics">
+ 4.3.1: Gauss&amp;rsquo;s Law in the Presence of Dielectrics
+ &lt;a class="anchor" href="#431-gausss-law-in-the-presence-of-dielectrics">#&lt;/a>
+&lt;/h2>
+&lt;p>In Section 4.2 we found that the effect of polarization is to produce accumulations of (bound) charge, \( \rho_b = - \div \vec{P} \) within the dielectric and \( \sigma_b = \vec{P} \cdot \vu{n} \) on the surface. The field due to polarization of the medium is just the field of this bound charge. We are now ready to put it all together: the field attributable to bound charge plus the field due to everything &lt;em>else&lt;/em> (which, for want of a better term, we call &lt;strong>free charge&lt;/strong>, \( \rho_f \)). The free charge might consist of electrons on a conductor or ions embedded in the dielectric material or whatever; any charge, in other words, that is &lt;em>not&lt;/em> a result of polarization. Within the dielectric, the total charge density can be written&lt;/p></description></item><item><title>The Linear Dielectrics</title><link>https://peppyhare.github.io/r/notes/griffiths/ch4-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch4-4/</guid><description>&lt;h1 id="44-linear-dielectrics">
+ 4.4: Linear Dielectrics
+ &lt;a class="anchor" href="#44-linear-dielectrics">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="441-susceptibility-permittivity-dielectric-constant">
+ 4.4.1: Susceptibility, Permittivity, Dielectric Constant
+ &lt;a class="anchor" href="#441-susceptibility-permittivity-dielectric-constant">#&lt;/a>
+&lt;/h2>
+&lt;p>In the first few sections of this chapter we did not commit ourselves as to the &lt;em>cause&lt;/em> of &lt;strong>P&lt;/strong>; we dealt only with the effects of polarization. From the qualitative essence of 4.1, though, we know that the polarization of a dielectric ordinarily results from an electric field, which lines up the atomic or molecular dipoles. For many substances, in fact, the polarization is proportional to the field, provided &lt;strong>E&lt;/strong> is not too strong:&lt;/p></description></item><item><title>The Lorentz Force Law</title><link>https://peppyhare.github.io/r/notes/griffiths/ch5-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch5-1/</guid><description>&lt;h1 id="51-the-lorentz-force-law">
+ 5.1: The Lorentz Force Law
+ &lt;a class="anchor" href="#51-the-lorentz-force-law">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="511-magnetic-fields">
+ 5.1.1: Magnetic Fields
+ &lt;a class="anchor" href="#511-magnetic-fields">#&lt;/a>
+&lt;/h2>
+&lt;p>Remember the basic problem of classical electrodynamics: We have a collection of charges \( q_1, q_2, q_3, \ldots \) (the &amp;ldquo;source&amp;rdquo; charges), and we want to calculate the force they exert on some other charge &lt;em>Q&lt;/em> (the &amp;ldquo;test&amp;rdquo; charge). According to the principle of superposition, it is sufficient to find the force of a single source charge - the total is then the vector sum of all the individual forces. Up to now, we have confined our attention to the simplest case, electrostatics, in which the source charge is at rest (though the test charge need not be). The time has come to consider the forces between charges in motion.&lt;/p></description></item><item><title>The Biot-Savart Law</title><link>https://peppyhare.github.io/r/notes/griffiths/ch5-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch5-2/</guid><description>&lt;h1 id="52-the-biot-savart-law">
+ 5.2: The Biot-Savart Law
+ &lt;a class="anchor" href="#52-the-biot-savart-law">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="521-steady-currents">
+ 5.2.1: Steady Currents
+ &lt;a class="anchor" href="#521-steady-currents">#&lt;/a>
+&lt;/h2>
+&lt;p>Stationary charges produce electric fields that are constant in time; hence the term &lt;strong>electrostatics&lt;/strong>. Steady currents produce magnetic fields that are constant in time; the theory of steady currents is called &lt;strong>magnetostatics&lt;/strong>.&lt;/p>
+&lt;p>By &amp;ldquo;&lt;strong>steady current&lt;/strong>&amp;rdquo; I mean a continuous flow that has been going on forever, without change and without piling up anywhere (some people call them &amp;ldquo;stationary currents&amp;rdquo;; to my ear, that&amp;rsquo;s a contradiction in terms). Formally, electro/magnetostatics is the regime&lt;/p></description></item><item><title>The Divergence and Curl of B</title><link>https://peppyhare.github.io/r/notes/griffiths/ch5-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch5-3/</guid><description>&lt;h1 id="53-the-divergence-and-curl-of-b">
+ 5.3: The Divergence and Curl of B
+ &lt;a class="anchor" href="#53-the-divergence-and-curl-of-b">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="531-straight-line-currents">
+ 5.3.1: Straight-Line Currents
+ &lt;a class="anchor" href="#531-straight-line-currents">#&lt;/a>
+&lt;/h2>
+&lt;p>The magnetic field of an infinite straight wire is shown in Fig 5.27 (the current is coming out of the page). At a glance, it is clear that this field has a nonzero curl (something you&amp;rsquo;ll never see in an electrostatic field); let&amp;rsquo;s calculate it.&lt;/p>
+&lt;p align="center"> &lt;img alt="Figure 5.27" src="https://peppyhare.github.io/r/r/img/griffiths/5.27.png" /> &lt;/p>
+&lt;p>According to Eq. 5.38, the integral of &lt;strong>B&lt;/strong> around a circular path of radius &lt;em>s&lt;/em>, centered at the wire, is&lt;/p></description></item><item><title>Magnetic Vector Potential</title><link>https://peppyhare.github.io/r/notes/griffiths/ch5-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch5-4/</guid><description>&lt;h1 id="54-magnetic-vector-potential">
+ 5.4: Magnetic Vector Potential
+ &lt;a class="anchor" href="#54-magnetic-vector-potential">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="541-the-vector-potential">
+ 5.4.1: The Vector Potential
+ &lt;a class="anchor" href="#541-the-vector-potential">#&lt;/a>
+&lt;/h2>
+&lt;p>Just as \( \curl \vec{E} = 0 \) permitted us to introduce a scalar potential (V) in electrostatics,&lt;/p>
+
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\vec{E} = - \grad \vec{V}\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;p>so \( \div \vec{B} = 0 \) invites the introduction of a vector potential &lt;strong>A&lt;/strong> in magnetostatics&lt;/p></description></item><item><title>Magnetization</title><link>https://peppyhare.github.io/r/notes/griffiths/ch6-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch6-1/</guid><description>&lt;h1 id="61-magnetization">
+ 6.1: Magnetization
+ &lt;a class="anchor" href="#61-magnetization">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="611-diamagnets-paramagnets-ferromagnets">
+ 6.1.1: Diamagnets, Paramagnets, Ferromagnets
+ &lt;a class="anchor" href="#611-diamagnets-paramagnets-ferromagnets">#&lt;/a>
+&lt;/h2>
+&lt;p>If you ask the average person what &amp;ldquo;magnetism&amp;rdquo; is, you will probably be told about refrigerator decorations, compass needles, and the North Pole - none of which has any obvious connection with moving charges or current-carrying wires. Yet all magnetic phenomena are due to electric charges in motion, and in fact, if you could examine a piece of magnetic material on an atomic scale you would find tiny currents: electrons orbiting around nuclei and spinning about their axes. For macroscopic purposes, these current loops are so small that we may treat them as magnetic dipoles. Ordinarily, they cancel each other out because of the random orientation of the atoms. But when a magnetic field is applied, a net alignment of these magnetic dipoles occurs, and the medium becomes magnetically polarized, or magnetized.&lt;/p></description></item><item><title>The Field of a Magnetized Object</title><link>https://peppyhare.github.io/r/notes/griffiths/ch6-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch6-2/</guid><description>&lt;h1 id="62-the-field-of-a-magnetized-object">
+ 6.2: The Field of a Magnetized Object
+ &lt;a class="anchor" href="#62-the-field-of-a-magnetized-object">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="621-bound-currents">
+ 6.2.1: Bound Currents
+ &lt;a class="anchor" href="#621-bound-currents">#&lt;/a>
+&lt;/h2>
+&lt;p>Suppose we have a piece of magnetized material; the magnetic dipole moment per unit volume, &lt;strong>M&lt;/strong>, is given. What field does this object produce? Well, the vector potential of a single dipole &lt;strong>m&lt;/strong> is given by Eq. 5.85&lt;/p>
+
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\vec{A}_{dip} (r) = \frac{\mu_0}{4 \pi} \frac{\vec{m} \cross \vu{r}}{r^2}\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;p>In the magnetized object, each volume element \( \dd \tau&amp;rsquo; \) carries a dipole moment \( M \dd \tau&amp;rsquo; \), so the total vector potential is (Fig 6.11)&lt;/p></description></item><item><title>The Auxiliary Field H</title><link>https://peppyhare.github.io/r/notes/griffiths/ch6-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch6-3/</guid><description>&lt;h1 id="63-the-auxiliary-field-h">
+ 6.3: The Auxiliary Field H
+ &lt;a class="anchor" href="#63-the-auxiliary-field-h">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="631-amperes-law-in-magnetized-materials">
+ 6.3.1: Ampere&amp;rsquo;s Law in Magnetized Materials
+ &lt;a class="anchor" href="#631-amperes-law-in-magnetized-materials">#&lt;/a>
+&lt;/h2>
+&lt;p>In Section 6.2, we found that the effect of magnetization is to establish bound currents \( \vec{J_b} = \curl \vec{M} \) within the material and \( \vec{K_b} = \vec{M} \cross \vu{n} \) on the surface. The field due to magnetization of the medium is just the field produced by these bound currents. We are now ready to put everything together: the field attributable to bound currents, plus the field due to everything else - which I will call the &lt;strong>free current&lt;/strong>. The free current might flow through wires embedded in the magnetized substance or, if the latter is a conductor, through the material itself. In any event, the total current can be written as&lt;/p></description></item><item><title>Linear and Nonlinear Media</title><link>https://peppyhare.github.io/r/notes/griffiths/ch6-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch6-4/</guid><description>&lt;h1 id="64-linear-and-nonlinear-media">
+ 6.4: Linear and Nonlinear Media
+ &lt;a class="anchor" href="#64-linear-and-nonlinear-media">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="641-magnetic-susceptibility-and-permeability">
+ 6.4.1: Magnetic Susceptibility and Permeability
+ &lt;a class="anchor" href="#641-magnetic-susceptibility-and-permeability">#&lt;/a>
+&lt;/h2>
+&lt;p>In paramagnetic and diamagnetic materials, the magnetization is sustained by the field; when &lt;strong>B&lt;/strong> is removed, &lt;strong>M&lt;/strong> disappears. In fact, for most substances the magnetization is proportional to the field, provided the field is not too strong. For notational consistency with the electrical case (Eq. 4.30), I should express the proportionality thus&lt;/p>
+
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\vec{M} = \frac{1}{\mu_0} \chi_m \vec{B} \tagl{6.28} \]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;p>but custom dictates that it be written in terms of &lt;strong>H&lt;/strong>, instead of &lt;strong>B&lt;/strong>:&lt;/p></description></item><item><title>Electromotive Force</title><link>https://peppyhare.github.io/r/notes/griffiths/ch7-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch7-1/</guid><description>&lt;h1 id="71-electromotive-force">
+ 7.1 Electromotive Force
+ &lt;a class="anchor" href="#71-electromotive-force">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="711-ohms-law">
+ 7.1.1: Ohm&amp;rsquo;s Law
+ &lt;a class="anchor" href="#711-ohms-law">#&lt;/a>
+&lt;/h2>
+&lt;p>To make a current flow, you have to push on the charges. How fast they move, in response to a given push, depends on the nature of the material. For most sub- stances, the current density \( \vec{J} \) is proportional to the force per unit charge, \( \vec{f} \):&lt;/p>
+
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\vec{J} = \sigma \vec{f} \tagl{7.1}\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;p>The proportionality factor \( \sigma \) (not to be confused with surface charge) is an empirical constant that varies from one material to another; it&amp;rsquo;s called the conductivity of the medium. Actually, the handbooks usually list the reciprocal of \( \sigma \), called the resistivity: \( \rho = 1 / \sigma \) (not to be confused with charge density - I&amp;rsquo;m sorry, but we&amp;rsquo;re running out of Greek letters, and this is the standard notation). Some typical values are listed in Table 7.1. Notice that even insulators conduct slightly, though the conductivity of a metal is astronomically greater; in fact, for most purposes metals can be regarded as perfect conductors, with \( \sigma = \infty \) , while for insulators we can pretend \( \sigma = 0 \).&lt;/p></description></item><item><title>Electromagnetic Induction</title><link>https://peppyhare.github.io/r/notes/griffiths/ch7-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch7-2/</guid><description>&lt;h1 id="72-electromagnetic-induction">
+ 7.2: Electromagnetic Induction
+ &lt;a class="anchor" href="#72-electromagnetic-induction">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="721-faradays-law">
+ 7.2.1: Faraday&amp;rsquo;s Law
+ &lt;a class="anchor" href="#721-faradays-law">#&lt;/a>
+&lt;/h2>
+&lt;p>In 1831 Michael Faraday reported on a series of experiments, including three that (with some violence to history) can be characterized as follows:&lt;/p>
+&lt;p>&lt;strong>Experiment 1:&lt;/strong>. He pulled a loop of wire to the right through a magnetic field (Fig 7.21a). A current flowed in the loop.&lt;/p>
+&lt;p>&lt;strong>Experiment 2:&lt;/strong> He moved the magnet to the left, holding the loop still (Fig 7.21b). Again, a current flowed in the loop.&lt;/p></description></item><item><title>Maxwell's Equations</title><link>https://peppyhare.github.io/r/notes/griffiths/ch7-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch7-3/</guid><description>&lt;h1 id="73-maxwells-equations">
+ 7.3: Maxwell&amp;rsquo;s Equations
+ &lt;a class="anchor" href="#73-maxwells-equations">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="731-electrodynamics-before-maxwell">
+ 7.3.1: Electrodynamics Before Maxwell
+ &lt;a class="anchor" href="#731-electrodynamics-before-maxwell">#&lt;/a>
+&lt;/h2>
+&lt;p>So far, we have encountered the following laws, specifying the divergence and curl of electric and magnetic fields&lt;/p>
+
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\begin{aligned}
+(\text{i}) &amp;amp; \quad \div \vec{E} = \frac{1}{\epsilon_0 } \rho \quad \text{(Gauss&amp;#39;s law)} \\
+(\text{ii}) &amp;amp; \quad \div \vec{B} = 0 \quad \text{(Ng&amp;#39;s Law)} \\
+(\text{iii}) &amp;amp; \quad \curl \vec{E} = - \pdv{\vec{B}}{t} \quad \text{(Faraday&amp;#39;s Law}) \\
+(\text{iv}) &amp;amp; \quad \curl \vec{B} = \mu_0 \vec{J} \quad \text{(Ampere&amp;#39;s Law)}
+\end{aligned}\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;p>These equations represent the state of electromagnetic theory in the mid-nineteenth century, when Maxwell began his work. They were not written in so compact a form, in those days, but their physical content was familiar. Now, it happens that there is a fatal inconsistency in these formulas. It has to do with the old rule that divergence of curl is always zero. If you apply the divergence to number (iii), everything works out:&lt;/p></description></item><item><title>Phys 544 Introduction</title><link>https://peppyhare.github.io/r/notes/griffiths/ch8-0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch8-0/</guid><description>&lt;h1 id="80-phys-544-introduction">
+ 8.0: Phys 544 Introduction
+ &lt;a class="anchor" href="#80-phys-544-introduction">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="author-notes">
+ Author Notes
+ &lt;a class="anchor" href="#author-notes">#&lt;/a>
+&lt;/h2>
+&lt;p>From here on out, the text will be based on the lecture content, not on the Griffiths textbook. The class will follow the 4th edition pretty closely, but there will definitely be some differences. Hope I don&amp;rsquo;t get too much wrong!&lt;/p>
+&lt;h2 id="course-structure">
+ Course Structure
+ &lt;a class="anchor" href="#course-structure">#&lt;/a>
+&lt;/h2>
+&lt;p>We&amp;rsquo;ve got some real homework this time!&lt;/p>
+&lt;ul>
+&lt;li>33% Homework, more or less weekly&lt;/li>
+&lt;li>33% Midterm. 1 hour, closed-book&lt;/li>
+&lt;li>33% Final + presentation. Topic should be related to EM radiation applications. It&amp;rsquo;ll be a ~10 minute presentation and a 4-page paper.&lt;/li>
+&lt;/ul>
+&lt;p>For homework, either email it by Thursday 5pm, or preferably just hand it in on Wednesday evening during class.&lt;/p></description></item><item><title>Charge and Energy</title><link>https://peppyhare.github.io/r/notes/griffiths/ch8-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch8-1/</guid><description>&lt;h1 id="81-charge-and-energy">
+ 8.1: Charge and Energy
+ &lt;a class="anchor" href="#81-charge-and-energy">#&lt;/a>
+&lt;/h1>
+&lt;p>As far as particles go, we&amp;rsquo;re familiar with the momentum and energy of charges. With fields, we have a similar situation. The fields determine what the particles do, and together with the energy/momentum of the particles themselves, the energy/momentum of the fields form a set of conservation laws&lt;/p>
+&lt;h2 id="conservation-of-charge">
+ Conservation of Charge
+ &lt;a class="anchor" href="#conservation-of-charge">#&lt;/a>
+&lt;/h2>
+&lt;p>We know that charge is conserved. You can&amp;rsquo;t create or destroy charge by itself - you must compensate by destroying or creating some other charge. It&amp;rsquo;s captured in the equation of continuity, which relates charge to the divergence of current. In laymen&amp;rsquo;s terms, it says &amp;ldquo;if a charge was here, it must still be here or it must flow away.&amp;rdquo; You can relate the amount of charge that&amp;rsquo;s missing from a given region of space to the amount of charge that flows away from that element of space. This is a statement of conservation of local charge, not just global charge, which is a much stronger statement.&lt;/p></description></item><item><title>Momentum</title><link>https://peppyhare.github.io/r/notes/griffiths/ch8-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch8-2/</guid><description>&lt;h1 id="82-momentum">
+ 8.2: Momentum
+ &lt;a class="anchor" href="#82-momentum">#&lt;/a>
+&lt;/h1>
+&lt;p>In this chapter we talk about:&lt;/p>
+&lt;ul>
+&lt;li>Electromagnetic momentum&lt;/li>
+&lt;li>Maxwell stress tensor&lt;/li>
+&lt;li>Conservation of electromagnetic momentum&lt;/li>
+&lt;li>Angular momentum in EM fields&lt;/li>
+&lt;/ul>
+&lt;h2 id="821-electromagnetic-momentum">
+ 8.2.1: Electromagnetic Momentum
+ &lt;a class="anchor" href="#821-electromagnetic-momentum">#&lt;/a>
+&lt;/h2>
+&lt;p>As it turns out, if you disregard the momentum associated with electromagnetic fields, Newton&amp;rsquo;s laws appear not to work out! Consider a basic system in cartesian coordinates of two moving point charges:&lt;/p>
+&lt;p align="center"> &lt;img alt="Figure 8.3" src="https://peppyhare.github.io/r/r/img/griffiths/8.3.png" /> &lt;/p>
+&lt;p>What happens between the two charges? Well, the magnetic field of \( q_1 \) points into the page at \( q_2 \), so the magnetic force on \( q_2 \) is to the right, and the magnetic field of \( q_2 \) is out of the page at \( q_1 \) , so the magnetic force on \( q_1 \) is upward. The net electric force between the two charges is repulsive and opposite, but the magnetic forces aren&amp;rsquo;t, so &lt;em>the electromagnetic force on \( q_1 \) on \( q_2 \) is equal but not opposite to the force of \( q_2 \) on \( q_1 \), in violation of Newton&amp;rsquo;s third law!&lt;/em> We&amp;rsquo;ve got a problem, and we&amp;rsquo;re going to solve it by invoking the momentum of the EM field.&lt;/p></description></item><item><title>Electromagnetic Waves in One Dimension</title><link>https://peppyhare.github.io/r/notes/griffiths/ch9-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch9-1/</guid><description>&lt;h1 id="91-electromagnetic-waves-in-one-dimension">
+ 9.1: Electromagnetic Waves in One Dimension
+ &lt;a class="anchor" href="#91-electromagnetic-waves-in-one-dimension">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="911-the-wave-equation">
+ 9.1.1 THE WAVE EQUATION
+ &lt;a class="anchor" href="#911-the-wave-equation">#&lt;/a>
+&lt;/h2>
+&lt;p>Before we start writing down how electromagnetic energy propagates in space as radiation, we&amp;rsquo;ll dust off our mathematical background on waves. Thanks to Fourier analysis, we know that sinusoidal waves form a complete basis for all periodic functions, so we restrict our investigation to sinusoidal variations.&lt;/p>
+&lt;p>Suppose some quantity &amp;ldquo;\( f \)&amp;rdquo; is propagating with speed \( v \) in the \( +z \) direction, and we focus on sinusoidal &amp;ldquo;disturbances.&amp;rdquo; At \( t = 0 \),&lt;/p></description></item><item><title>Wave Equation for E and B</title><link>https://peppyhare.github.io/r/notes/griffiths/ch9-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch9-2/</guid><description>&lt;h3 id="921-wave-equation-for-__e__-and-__b__">
+ 9.2.1 Wave Equation for &lt;strong>E&lt;/strong> and &lt;strong>B&lt;/strong>
+ &lt;a class="anchor" href="#921-wave-equation-for-__e__-and-__b__">#&lt;/a>
+&lt;/h3>
+&lt;p>Recall Maxwell&amp;rsquo;s equations&lt;/p>
+
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\begin{aligned} (\text{i}) &amp;amp; \quad \div \vec{D} = \rho_f \quad \text{(Gauss&amp;#39;s law)} \\ (\text{ii}) &amp;amp; \quad \div \vec{B} = 0 \quad \text{(Ng&amp;#39;s Law)} \\ (\text{iii}) &amp;amp; \quad \curl \vec{E} = - \pdv{\vec{B}}{t} \quad \text{(Faraday&amp;#39;s Law}) \\ (\text{iv}) &amp;amp; \quad \curl \vec{H} = \vec{J}_f &amp;#43; \pdv{\vec{D}}{t} \quad \text{(Ampere&amp;#39;s Law)} \end{aligned}\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;p>To get to a wave equation from these, we start with a curl of curl and use a standard vector identity&lt;/p></description></item><item><title>Electromagnetic Waves in Matter</title><link>https://peppyhare.github.io/r/notes/griffiths/ch9-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch9-3/</guid><description>&lt;h2 id="93-electromagnetic-waves-in-matter">
+ 9.3: Electromagnetic Waves in Matter
+ &lt;a class="anchor" href="#93-electromagnetic-waves-in-matter">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="931-propagation-in-linear-media-and-non-conductors">
+ 9.3.1: Propagation in Linear Media and Non-conductors
+ &lt;a class="anchor" href="#931-propagation-in-linear-media-and-non-conductors">#&lt;/a>
+&lt;/h3>
+&lt;p>Maxwell&amp;rsquo;s equations in linear media are&lt;/p>
+
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\begin{aligned} (\text{i}) &amp;amp; \quad \div \vec{D} = \rho_f \quad \text{(Gauss&amp;#39;s law)} \\ (\text{ii}) &amp;amp; \quad \div \vec{B} = 0 \quad \text{(Ng&amp;#39;s Law)} \\ (\text{iii}) &amp;amp; \quad \curl \vec{E} = - \pdv{\vec{B}}{t} \quad \text{(Faraday&amp;#39;s Law}) \\ (\text{iv}) &amp;amp; \quad \curl \vec{H} = \vec{J}_f &amp;#43; \pdv{\vec{D}}{t} \quad \text{(Ampere&amp;#39;s Law)} \end{aligned}\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;p>In &lt;em>linear&lt;/em> media, our constitutive relations are&lt;/p></description></item><item><title>Electromagnetic Waves in Conductors</title><link>https://peppyhare.github.io/r/notes/griffiths/ch9-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch9-4/</guid><description>&lt;h2 id="941-electromagnetic-waves-in-conductors">
+ 9.4.1 Electromagnetic Waves in Conductors
+ &lt;a class="anchor" href="#941-electromagnetic-waves-in-conductors">#&lt;/a>
+&lt;/h2>
+&lt;p>When we formulated our description of how electromagnetic waves move through linear media, we relied on the stipulation that the free charge density \( \rho_f \) and free current density \( \vec J _f \) were zero. In the case of conductors, we&amp;rsquo;re going to need to re-visit that assumption.&lt;/p>
+&lt;p>As a refresher, when we last took a good look at conductors we had just moved beyond the electrostatic picture. In statics, we could assume that the field within a conductor is always zero, because any field would eventually (quickly) cause the free changes to arrange in such a way as to cancel the field. Now, we want to see how the conductor responds when we have a varying electric field.&lt;/p></description></item><item><title>Guided Waves</title><link>https://peppyhare.github.io/r/notes/griffiths/ch9-5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch9-5/</guid><description>&lt;h2 id="951-guided-waves">
+ 9.5.1 Guided Waves
+ &lt;a class="anchor" href="#951-guided-waves">#&lt;/a>
+&lt;/h2>
+&lt;p>Moving beyond plane waves with infinite extent, now we consider waves confined to the interior to some sort of pipe, or wave guide. To make things simple, the overall geometry of the pipe should be large compared with the wavelength, and we&amp;rsquo;ll assume it&amp;rsquo;s made of a perfect conductor so there&amp;rsquo;s no loss (perfect reflection).&lt;/p>
+&lt;p align="center"> &lt;img alt="Figure 9.23" src="https://peppyhare.github.io/r/r/img/griffiths/9.23.png" /> &lt;/p>
+&lt;p>Monochromatic plane wave solutions will look like&lt;/p>
+
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\vec E(x, y, z, t) = \vec{E_0} (x, y) e^{i(kz - \omega t)}\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;span>
+ \[\vec B(x, y, z, t) = \vec{B_0} (x, y) e^{i(kz - \omega t)}\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;p>The (source-free) boundary conditions within the waveguide are&lt;/p></description></item><item><title>Scalar and Vector Potentials</title><link>https://peppyhare.github.io/r/notes/griffiths/ch10-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch10-1/</guid><description>&lt;h2 id="1001-presentationpaper-notes">
+ 10.0.1 Presentation/Paper notes
+ &lt;a class="anchor" href="#1001-presentationpaper-notes">#&lt;/a>
+&lt;/h2>
+&lt;p>A few words about the paper/presentation&lt;/p>
+&lt;ul>
+&lt;li>It&amp;rsquo;s supposed to be on a topic related to the class (classical electromagnetism)&lt;/li>
+&lt;li>The topic can be wide-ranging. Some sample topics will be put it. It should be thematically related to what we&amp;rsquo;ve been talking about, and you should be making connections to things we&amp;rsquo;ve been talking about (waveguides, waves, generation of waves, etc.)&lt;/li>
+&lt;li>There will be two class periods in the last week which are reserved for presentations of about 15 minutes each.&lt;/li>
+&lt;/ul>
+&lt;p>Examples of possible topics:&lt;/p></description></item><item><title>Retarded Potentials</title><link>https://peppyhare.github.io/r/notes/griffiths/ch10-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch10-2/</guid><description>&lt;h2 id="1021-retarded-potentials">
+ 10.2.1 Retarded Potentials
+ &lt;a class="anchor" href="#1021-retarded-potentials">#&lt;/a>
+&lt;/h2>
+&lt;p>In the Lorenz gauge, we want to find the potentials by solving&lt;/p>
+
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\laplacian \vec A - \mu_0 \epsilon_0 \pdv{^2 \vec A}{t^2} = - \mu_0 \vec J\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;p>Back in the static case, this reduces to Poisson&amp;rsquo;s equation&lt;/p></description></item><item><title>Point Charges</title><link>https://peppyhare.github.io/r/notes/griffiths/ch10-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch10-3/</guid><description>&lt;h1 id="103-point-charges">
+ 10.3 Point Charges
+ &lt;a class="anchor" href="#103-point-charges">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="1031-moving-point-charges-lienard-wiechert-potentials">
+ 10.3.1 Moving Point Charges: Lienard-Wiechert Potentials
+ &lt;a class="anchor" href="#1031-moving-point-charges-lienard-wiechert-potentials">#&lt;/a>
+&lt;/h2>
+&lt;p>Suppose we have a point charge moving on some trajectory \( \vec w(t) \). If we naively read off the retarded potential&lt;/p>
+
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[V(\vec r, t) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\vec r&amp;#39;, t_r)}{\gr} \dd \tau&amp;#39;\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;p>might suggest that the potential is just&lt;/p></description></item><item><title>Dipole Radiation</title><link>https://peppyhare.github.io/r/notes/griffiths/ch11-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch11-1/</guid><description>&lt;h1 id="111-dipole-radiation">
+ 11.1 Dipole Radiation
+ &lt;a class="anchor" href="#111-dipole-radiation">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="1111-electric-dipole-radiation">
+ 11.1.1 Electric Dipole Radiation
+ &lt;a class="anchor" href="#1111-electric-dipole-radiation">#&lt;/a>
+&lt;/h2>
+&lt;p>Consider a dipole which is &amp;ldquo;oscillating&amp;rdquo; at some particular frequency. This looks like two metal spheres separated by distance \( d \) and connected by a small wire; at time \( t \) the charge on the upper sphere is \( q(t) \) and the charge on the lower sphere is \( -q(t) \). We drive the charge back and forth through the wire from one sphere to the other at an angular frequency \( \omega \)&lt;/p></description></item><item><title>Solved Problems Ch3</title><link>https://peppyhare.github.io/r/notes/griffiths/problems-ch3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/problems-ch3/</guid><description>&lt;h2 id="chapter-3-solved-problems">
+ Chapter 3 Solved Problems
+ &lt;a class="anchor" href="#chapter-3-solved-problems">#&lt;/a>
+&lt;/h2>
+
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;h3 id="problem-324">
+ Problem 3.24
+ &lt;a class="anchor" href="#problem-324">#&lt;/a>
+&lt;/h3>
+
+
+
+
+&lt;div class="book-tabs">&lt;input type="radio" class="toggle" name="tabs-p3.24" id="tabs-p3.24-0" checked="checked" />
+ &lt;label for="tabs-p3.24-0">Q&lt;/label>
+ &lt;div class="book-tabs-content markdown-inner">Solve Laplace&amp;rsquo;s equation by separation of variables in cylindrical coordinates, assuming there is no dependence on \( z \) (cylindrical symmetry). Make sure you find all solutions to the radial equation; in particular, your result must accomodate the case of an infinite line charge, for which we already know the answer.&lt;/div>&lt;input type="radio" class="toggle" name="tabs-p3.24" id="tabs-p3.24-1" />
+ &lt;label for="tabs-p3.24-1">A&lt;/label>
+ &lt;div class="book-tabs-content markdown-inner">&lt;p>Since we are in cylindrical coordinates, we will write Laplace&amp;rsquo;s equation in cylindrical coordinates \( (s, \phi, z) \):&lt;/p></description></item><item><title>Solved Problems Ch5</title><link>https://peppyhare.github.io/r/notes/griffiths/problems-ch5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/problems-ch5/</guid><description>&lt;h2 id="chapter-5-solved-problems">
+ Chapter 5 Solved Problems
+ &lt;a class="anchor" href="#chapter-5-solved-problems">#&lt;/a>
+&lt;/h2>
+
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;h3 id="problem-55">
+ Problem 5.5
+ &lt;a class="anchor" href="#problem-55">#&lt;/a>
+&lt;/h3>
+
+
+
+
+&lt;div class="book-tabs">&lt;input type="radio" class="toggle" name="tabs-5.5" id="tabs-5.5-0" checked="checked" />
+ &lt;label for="tabs-5.5-0">Q&lt;/label>
+ &lt;div class="book-tabs-content markdown-inner">A current I flows down a wire of radius a. (a) If it is uniformly distributed over the surface, what is the surface current density K? (b) If it is distributed in such a way that the volume current density is inversely proportional to the distance from the axis, what is J(s)?&lt;/div>&lt;input type="radio" class="toggle" name="tabs-5.5" id="tabs-5.5-1" />
+ &lt;label for="tabs-5.5-1">A&lt;/label>
+ &lt;div class="book-tabs-content markdown-inner">&lt;p>K is the current per unit width \( \perp \) to the direction of the flow.&lt;/p></description></item><item><title>Solved Problems Ch7</title><link>https://peppyhare.github.io/r/notes/griffiths/problems-ch7/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/problems-ch7/</guid><description>&lt;h2 id="chapter-7-solved-problems">
+ Chapter 7 Solved Problems
+ &lt;a class="anchor" href="#chapter-7-solved-problems">#&lt;/a>
+&lt;/h2>
+
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;h3 id="problem-77">
+ Problem 7.7
+ &lt;a class="anchor" href="#problem-77">#&lt;/a>
+&lt;/h3>
+
+
+
+
+&lt;div class="book-tabs">&lt;input type="radio" class="toggle" name="tabs-7.7" id="tabs-7.7-0" checked="checked" />
+ &lt;label for="tabs-7.7-0">Q&lt;/label>
+ &lt;div class="book-tabs-content markdown-inner">&lt;p>A metal bar of mass &lt;em>m&lt;/em> slides frictionlessly on two parallel conducting rails a distance &lt;em>l&lt;/em> apart. A resistor R is connected across the rails, and a uniform magnetic field &lt;strong>B&lt;/strong> pointing into the page fills the region.&lt;/p></description></item><item><title>Solved Problems Ch9</title><link>https://peppyhare.github.io/r/notes/griffiths/problems-ch9/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/problems-ch9/</guid><description>&lt;h2 id="chapter-9-solved-problems">
+ Chapter 9 Solved Problems
+ &lt;a class="anchor" href="#chapter-9-solved-problems">#&lt;/a>
+&lt;/h2>
+
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;h2 id="review-problem-1">
+ Review Problem 1
+ &lt;a class="anchor" href="#review-problem-1">#&lt;/a>
+&lt;/h2>
+
+
+
+
+&lt;div class="book-tabs">&lt;input type="radio" class="toggle" name="tabs-1" id="tabs-1-0" checked="checked" />
+ &lt;label for="tabs-1-0">Q&lt;/label>
+ &lt;div class="book-tabs-content markdown-inner">&lt;p>Current-carrying wire with gap. A large diameter wire of cross-section area \( A \) carries current uniformly over its cross-section. There is a narrow gap of width \( d \), forming a parallel-plate capacitor. The current is zero for times \( t &amp;lt; 0 \) and the current is \( I \) at times \( t &amp;gt; 0 \). The charge on the capacitor is zero at \( t = 0 \). Neglect fringe fields.&lt;/p></description></item></channel></rss>

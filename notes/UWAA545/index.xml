@@ -1,7 +1,663 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Computational Methods For Plasmas on My Notes</title><link>https://peppyhare.github.io/r/notes/UWAA545/</link><description>Recent content in Computational Methods For Plasmas on My Notes</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://peppyhare.github.io/r/notes/UWAA545/index.xml" rel="self" type="application/rss+xml"/><item><title>Syllabus</title><link>https://peppyhare.github.io/r/notes/UWAA545/01-syllabus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA545/01-syllabus/</guid><description>\[\] Syllabus # Learn the basis of common computational methods used for plasma physics, specifically, methods applied to magnetic confinement, plasma thrusters, and astrophysics. Learn the regions of applicability of the various computational methods. Implement a computational method to simulate plasma kinetics using an electrostatic PIC approach. Simulate plasma dynamics using a PIC code and an MHD code. Motivation # As a motivation for studying computational methods for plasmas, consider the task of analytical methods for arriving at closed-form expressions of the plasma properties.</description></item><item><title>Plasma Models</title><link>https://peppyhare.github.io/r/notes/UWAA545/02-plasma-models/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA545/02-plasma-models/</guid><description>Plasma Models # \[\] First, let&amp;rsquo;s get a working definition of &amp;ldquo;plasma&amp;rdquo;: &amp;ldquo;a quasi-neutral gas of charged and neutral particles that exhibit collective behavior.&amp;rdquo; Many of the approaches we will describe will also apply to non-neutral plasmas. Plasmas are composed of particles (electrons, ions, neutrals) which interact through electric and magnetic fields and through collisions. Therefore, the plasma can be modeled as individual particles.
-Plasmas exhibit collective behavior due to the long-range forces from EM field interactions.</description></item><item><title>Particle in Cell Model</title><link>https://peppyhare.github.io/r/notes/UWAA545/03-pic-method/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA545/03-pic-method/</guid><description>\[\] Particle-In-Cell Model (Particle model revisited) # The order of magnitude issues with the N-body model prevent a direct application in even simple laboratory plasmas. In a plasma with \( N = O(10^{21}) \), we have interactions on the order of \( O(10^{42}) \) making direct computation completely impractical.
-We can instead use representative particles with the same charge to mass ratio, but fewer (\( N = 10^3 \sim 10^7 \)) particles.</description></item><item><title>PIC - Example Implementation</title><link>https://peppyhare.github.io/r/notes/UWAA545/04-pic-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA545/04-pic-example/</guid><description>\[\] Notes and details for an electrostatic PIC implementation.
-Dimensions and Normalizations # To make the relevant physics as easy to model and visualize as possible, let&amp;rsquo;s choose units such that time is normalized by the plasma frequency and length scales of interest are of order unity. This will make things a lot easier to plot and interpret in the long run, even though normalizations like \( m = q /(q / m) \) seem arcane.</description></item><item><title>Multidimensional Electrodynamic PIC</title><link>https://peppyhare.github.io/r/notes/UWAA545/05-electrodynamic-pic/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA545/05-electrodynamic-pic/</guid><description>\[\] Multidimensional Electrodynamic PIC # Now that we&amp;rsquo;ve touched on each of the components of a 1-dimensional electrodynamic PIC method, let&amp;rsquo;s try to move our model into a full multidimensional one. The main difficulty in moving from 1D to 2D/3D is the increased variety of waves present in the solution.
-Field Equations # The EM fields must be solved for the full Maxwell&amp;rsquo;s equations, not just Poisson&amp;rsquo;s equation, in order to capture the full dynamics.</description></item><item><title>Fluid Models for Plasmas</title><link>https://peppyhare.github.io/r/notes/UWAA545/06-fluid-models/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA545/06-fluid-models/</guid><description>\[\] Fluid Models for Plasmas # Motivation for Fluid Models # Up to this point, we&amp;rsquo;ve been discussing particle models, and in particular, kinetic descriptions in which we&amp;rsquo;ve sampled the distribution function at particular locations to get our particles. We retained detailed information about the distribution function by tracking the positions and velocities of these representative super-particles, which should continue to &amp;ldquo;represent&amp;rdquo; the sampled distribution function at all points in time.</description></item><item><title>Finite Difference Methods for MHD</title><link>https://peppyhare.github.io/r/notes/UWAA545/07-finite-difference-models/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA545/07-finite-difference-models/</guid><description>Finite Difference Methods for MHD # So for 1D MHD, we want to derive algorithms to advance the governing equations in time that have the form
-\[\pdv{\vec Q}{t} &amp;#43; \pdv{\vec F}{x} = 0\] We can use the advection equation as a model equation: \[\pdv{u}{t} &amp;#43; a \pdv{u}{x} = 0\] which has the general solution \[u(x - at) = \text{const.} = u(x, t=0)\] If we apply a forward Euler finite difference operators to our PDE,</description></item><item><title>MHD Equilibrium Calculations</title><link>https://peppyhare.github.io/r/notes/UWAA545/08-mhd-equilibrium/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA545/08-mhd-equilibrium/</guid><description>MHD Equilibrium Calculations # From physical expectations, elliptic equations result from equilibrium calculations and eigenvalue systems. In general, we can write elliptic equations as \[\vec A \vec x = \vec b\] where \( \vec A \) may be a nonlinear function of \( \vec x \). For example, if we think of Poisson&amp;rsquo;s equation in 1D, \[\dv{^2 \phi}{x^2} = - \rho_c\] and apply finite differencing, \[\frac{\phi_{j&amp;#43;1} - 2 \phi_j &amp;#43; \phi_{j-1}}{\Delta x^2} = - \rho_j\] we get a matrix system \[\vec A \vec x = \frac{1}{\Delta x^2} \begin{bmatrix} -2 &amp;amp; 1 &amp;amp; 0 &amp;amp; \ldots \\ 1 &amp;amp; -2 &amp;amp; 1 &amp;amp; \ldots \\ \ldots &amp;amp; \ldots &amp;amp; \ldots &amp;amp; \ldots \end{bmatrix} \begin{bmatrix} \phi_1 \\ \phi_2 \\ \ldots \end{bmatrix} = \vec b = - \begin{bmatrix} \rho_1 \\ \rho_2 \\ \ldots \end{bmatrix}\] where \( \vec A \) is a J by J matrix.</description></item><item><title>Formulary</title><link>https://peppyhare.github.io/r/notes/UWAA545/formulary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA545/formulary/</guid><description>\( \) Formulary # Kinetic Description
-\[\dv{\vec v}{t} = \frac{q_i}{m_i} (\vec E &amp;#43; \vec v_i \cross \vec B) &amp;#43; \sum_{j \neq i} \left[ \left. \dv{\vec v_{ij}}{t} \right|_{coll} \delta(\vec r_i - \vec r_j) \right]\] \[\pdv{\vec B}{t} = - \curl \vec E\] \[\frac{1}{c^2} \pdv{\vec E}{t} = \curl \vec B - \mu_0 \sum_i q_i \vec v_i \delta (\vec r - \vec r_i)\] \[\div \vec{B} = 0\] \[\div \vec E = \frac{1}{\epsilon_0} \sum_i q_i \delta (\vec r - \vec r_i)\] Klimontovich equation:</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Computational Methods For Plasmas on My Notes</title><link>https://peppyhare.github.io/r/notes/UWAA545/</link><description>Recent content in Computational Methods For Plasmas on My Notes</description><generator>Hugo</generator><language>en</language><atom:link href="https://peppyhare.github.io/r/notes/UWAA545/index.xml" rel="self" type="application/rss+xml"/><item><title>Syllabus</title><link>https://peppyhare.github.io/r/notes/UWAA545/01-syllabus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA545/01-syllabus/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;h2 id="syllabus">
+ Syllabus
+ &lt;a class="anchor" href="#syllabus">#&lt;/a>
+&lt;/h2>
+&lt;ul>
+&lt;li>Learn the basis of common computational methods used for plasma physics, specifically, methods applied to magnetic confinement, plasma thrusters, and astrophysics.&lt;/li>
+&lt;li>Learn the regions of applicability of the various computational methods.&lt;/li>
+&lt;li>Implement a computational method to simulate plasma kinetics using an electrostatic PIC approach.&lt;/li>
+&lt;li>Simulate plasma dynamics using a PIC code and an MHD code.&lt;/li>
+&lt;/ul>
+&lt;h2 id="motivation">
+ Motivation
+ &lt;a class="anchor" href="#motivation">#&lt;/a>
+&lt;/h2>
+&lt;p>As a motivation for studying computational methods for plasmas, consider the task of analytical methods for arriving at closed-form expressions of the plasma properties. The physical computations of plasmas generally limit analytical methods to very simple configurations and dynamics; it&amp;rsquo;s rather exciting to encounter such a situation, because they occur so infrequently. For example, 1-dimensional, axisymmetric, equilibrium configurations limited to linear stability. To model more complicated, realistic situations, we take a complementary approach using &lt;strong>computational&lt;/strong> and &lt;strong>experimental&lt;/strong> methods.&lt;/p></description></item><item><title>Plasma Models</title><link>https://peppyhare.github.io/r/notes/UWAA545/02-plasma-models/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA545/02-plasma-models/</guid><description>&lt;h1 id="plasma-models">
+ Plasma Models
+ &lt;a class="anchor" href="#plasma-models">#&lt;/a>
+&lt;/h1>
+
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;p>First, let&amp;rsquo;s get a working definition of &amp;ldquo;plasma&amp;rdquo;: &amp;ldquo;a quasi-neutral gas of charged and neutral particles that exhibit collective behavior.&amp;rdquo; Many of the approaches we will describe will also apply to non-neutral plasmas. Plasmas are composed of particles (electrons, ions, neutrals) which interact through electric and magnetic fields and through collisions. Therefore, the plasma &lt;em>can&lt;/em> be modeled as individual particles.&lt;/p></description></item><item><title>Particle in Cell Model</title><link>https://peppyhare.github.io/r/notes/UWAA545/03-pic-method/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA545/03-pic-method/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;h1 id="particle-in-cell-model-particle-model-revisited">
+ Particle-In-Cell Model (Particle model revisited)
+ &lt;a class="anchor" href="#particle-in-cell-model-particle-model-revisited">#&lt;/a>
+&lt;/h1>
+&lt;p>The order of magnitude issues with the N-body model prevent a direct application in even simple laboratory plasmas. In a plasma with \( N = O(10^{21}) \), we have interactions on the order of \( O(10^{42}) \) making direct computation completely impractical.&lt;/p></description></item><item><title>PIC - Example Implementation</title><link>https://peppyhare.github.io/r/notes/UWAA545/04-pic-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA545/04-pic-example/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;p>Notes and details for an electrostatic PIC implementation.&lt;/p></description></item><item><title>Multidimensional Electrodynamic PIC</title><link>https://peppyhare.github.io/r/notes/UWAA545/05-electrodynamic-pic/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA545/05-electrodynamic-pic/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;h1 id="multidimensional-electrodynamic-pic">
+ Multidimensional Electrodynamic PIC
+ &lt;a class="anchor" href="#multidimensional-electrodynamic-pic">#&lt;/a>
+&lt;/h1>
+&lt;p>Now that we&amp;rsquo;ve touched on each of the components of a 1-dimensional electrodynamic PIC method, let&amp;rsquo;s try to move our model into a full multidimensional one. The main difficulty in moving from 1D to 2D/3D is the increased variety of waves present in the solution.&lt;/p></description></item><item><title>Fluid Models for Plasmas</title><link>https://peppyhare.github.io/r/notes/UWAA545/06-fluid-models/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA545/06-fluid-models/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;h1 id="fluid-models-for-plasmas">
+ Fluid Models for Plasmas
+ &lt;a class="anchor" href="#fluid-models-for-plasmas">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="motivation-for-fluid-models">
+ Motivation for Fluid Models
+ &lt;a class="anchor" href="#motivation-for-fluid-models">#&lt;/a>
+&lt;/h2>
+&lt;p>Up to this point, we&amp;rsquo;ve been discussing particle models, and in particular, kinetic descriptions in which we&amp;rsquo;ve sampled the distribution function at particular locations to get our particles. We retained detailed information about the distribution function by tracking the positions and velocities of these representative super-particles, which should continue to &amp;ldquo;represent&amp;rdquo; the sampled distribution function at all points in time. Tracking this detailed information is computationally expensive, so PIC is limited to small spatial scale or short time scale phenomena. Non-linear waves and wave-plasma interactions are good examples of PIC use cases.&lt;/p></description></item><item><title>Finite Difference Methods for MHD</title><link>https://peppyhare.github.io/r/notes/UWAA545/07-finite-difference-models/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA545/07-finite-difference-models/</guid><description>&lt;h1 id="finite-difference-methods-for-mhd">
+ Finite Difference Methods for MHD
+ &lt;a class="anchor" href="#finite-difference-methods-for-mhd">#&lt;/a>
+&lt;/h1>
+&lt;p>So for 1D MHD, we want to derive algorithms to advance the governing equations in time that have the form&lt;/p>
+
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\pdv{\vec Q}{t} &amp;#43; \pdv{\vec F}{x} = 0\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;p>We can use the advection equation as a model equation:
+&lt;span>
+ \[\pdv{u}{t} &amp;#43; a \pdv{u}{x} = 0\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+which has the general solution
+&lt;span>
+ \[u(x - at) = \text{const.} = u(x, t=0)\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+&lt;/p></description></item><item><title>MHD Equilibrium Calculations</title><link>https://peppyhare.github.io/r/notes/UWAA545/08-mhd-equilibrium/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA545/08-mhd-equilibrium/</guid><description>&lt;h1 id="mhd-equilibrium-calculations">
+ MHD Equilibrium Calculations
+ &lt;a class="anchor" href="#mhd-equilibrium-calculations">#&lt;/a>
+&lt;/h1>
+&lt;p>From physical expectations, elliptic equations result from equilibrium calculations and eigenvalue systems. In general, we can write elliptic equations as
+
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\vec A \vec x = \vec b\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+where \( \vec A \) may be a nonlinear function of \( \vec x \). For example, if we think of Poisson&amp;rsquo;s equation in 1D,
+&lt;span>
+ \[\dv{^2 \phi}{x^2} = - \rho_c\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+and apply finite differencing,
+&lt;span>
+ \[\frac{\phi_{j&amp;#43;1} - 2 \phi_j &amp;#43; \phi_{j-1}}{\Delta x^2} = - \rho_j\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+we get a matrix system
+&lt;span>
+ \[\vec A \vec x = \frac{1}{\Delta x^2} \begin{bmatrix} -2 &amp;amp; 1 &amp;amp; 0 &amp;amp; \ldots \\ 1 &amp;amp; -2 &amp;amp; 1 &amp;amp; \ldots \\ \ldots &amp;amp; \ldots &amp;amp; \ldots &amp;amp; \ldots \end{bmatrix} \begin{bmatrix} \phi_1 \\ \phi_2 \\ \ldots \end{bmatrix} = \vec b = - \begin{bmatrix} \rho_1 \\ \rho_2 \\ \ldots \end{bmatrix}\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+where \( \vec A \) is a J by J matrix. In equilibrium calculations, this comes up when solving the Grad-Shafranov equation&lt;/p></description></item><item><title>Formulary</title><link>https://peppyhare.github.io/r/notes/UWAA545/formulary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA545/formulary/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \( \)
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;h1 id="formulary">
+ Formulary
+ &lt;a class="anchor" href="#formulary">#&lt;/a>
+&lt;/h1>
+&lt;blockquote class="book-hint info">
+ &lt;p>&lt;strong>Kinetic Description&lt;/strong>&lt;/p></description></item></channel></rss>

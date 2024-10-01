@@ -1,2 +1,45 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Worked Problems on My Notes</title><link>https://peppyhare.github.io/r/notes/problems/</link><description>Recent content in Worked Problems on My Notes</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://peppyhare.github.io/r/notes/problems/index.xml" rel="self" type="application/rss+xml"/><item><title>Characteristic Parameters of a Plasma</title><link>https://peppyhare.github.io/r/notes/problems/gurnett/ch02/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/problems/gurnett/ch02/</guid><description>\[\] Problems from chapter 2 of Gurnett and Battacharjee - Introduction to Plasma Physics
-2.1 # Q Consider a plasma consisting of electrons and ions of equal number densities, \( n = n_e = n_i \), and temperatures \( T_e \) and \( T_i \). Assume that the electron density is determined by a term of a form \( e^{e \Phi / k T_e} \) and that the ion density is determined by a term of the form \( e^{- e \Phi / kT_i} \).</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Worked Problems on My Notes</title><link>https://peppyhare.github.io/r/notes/problems/</link><description>Recent content in Worked Problems on My Notes</description><generator>Hugo</generator><language>en</language><atom:link href="https://peppyhare.github.io/r/notes/problems/index.xml" rel="self" type="application/rss+xml"/><item><title>Characteristic Parameters of a Plasma</title><link>https://peppyhare.github.io/r/notes/problems/gurnett/ch02/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/problems/gurnett/ch02/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;p>Problems from chapter 2 of Gurnett and Battacharjee - Introduction to Plasma Physics&lt;/p></description></item></channel></rss>
