@@ -4,6 +4,7 @@ words = [
     "bessels",
     "bmatrix",
     "cachegrind",
+    "callgrind",
     "codebook",
     "dgh",
     "doi",
