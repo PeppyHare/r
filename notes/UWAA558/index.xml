@@ -470,7 +470,7 @@
  Perfectly Conducting Wall
  &lt;a class="anchor" href="#perfectly-conducting-wall">#&lt;/a>
 &lt;/h3>
-&lt;p>For the case where the plasma extends out to a perfectly conducting (impermeable) wall. Perfectly conducting walls do not support tangential electric field:&lt;/p></description></item><item><title>Equilibrium for Fusion</title><link>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</guid><description>&lt;h1 id="equilibrium-for-fusion-hahahugoshortcode110s0hbhb">
+&lt;p>For the case where the plasma extends out to a perfectly conducting (impermeable) wall. Perfectly conducting walls do not support tangential electric field:&lt;/p></description></item><item><title>Equilibrium for Fusion</title><link>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</guid><description>&lt;h1 id="equilibrium-for-fusion-hahahugoshortcode109s0hbhb">
  Equilibrium for Fusion (
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
@@ -516,7 +516,7 @@
  };
 &lt;/script>
 )
- &lt;a class="anchor" href="#equilibrium-for-fusion-hahahugoshortcode110s0hbhb">#&lt;/a>
+ &lt;a class="anchor" href="#equilibrium-for-fusion-hahahugoshortcode109s0hbhb">#&lt;/a>
 &lt;/h1>
 &lt;p>For a fusion device we would like to determine a magnetic configuration that confines plasma while it fuses. At fusion temperatures, the power required to maintain the equilibrium will be substantial. For a device to be useful, the power required to sustain the equilibrium must be less than the power released from fusion. Important loss terms for a confined plasma are transport (thermal conduction primarily) and radiation terms. The scaling factors are &lt;span>
  \( P_{Brem} \sim n^2 T^{1/2} \)
@@ -645,7 +645,7 @@
  1-Dimensional Equilibria
  &lt;a class="anchor" href="#1-dimensional-equilibria">#&lt;/a>
 &lt;/h1>
-&lt;h2 id="the-hahahugoshortcode111s0hbhb-pinch">
+&lt;h2 id="the-hahahugoshortcode110s0hbhb-pinch">
  The 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
@@ -691,7 +691,7 @@
  };
 &lt;/script>
 -pinch
- &lt;a class="anchor" href="#the-hahahugoshortcode111s0hbhb-pinch">#&lt;/a>
+ &lt;a class="anchor" href="#the-hahahugoshortcode110s0hbhb-pinch">#&lt;/a>
 &lt;/h2>
 &lt;p>In a &lt;span>
  \( \theta \)
