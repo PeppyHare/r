@@ -2443,7 +2443,7 @@ We define \( \vec \omega_{c, \alpha} \) to be the vector gyrofrequency
  1.6.1: The Helmholtz Theorem
  &lt;a class="anchor" href="#161-the-helmholtz-theorem">#&lt;/a>
 &lt;/h2>
-&lt;p>Ever since Faraday, the laws of electricity and magnetism have been expressed in terms of &lt;em>electric&lt;/em> and &lt;em>magnetic&lt;/em> fields, &lt;strong>E&lt;/strong> and &lt;strong>B&lt;/strong>. Like many physical laws, these are most compactly expressed as differential equations. Since &lt;strong>E&lt;/strong> and &lt;strong>B&lt;/strong> are vectors, the differential equations naturally involve vector derivatives: divergence and curl. Indeed, Maxwell reduced the entire theory to four equations, specifying respectively the divergence and the curl of &lt;strong>E&lt;/strong> and &lt;strong>B&lt;/strong>.&lt;/p></description></item><item><title>Equilibrium for Fusion</title><link>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</guid><description>&lt;h1 id="equilibrium-for-fusion-hahahugoshortcode109s0hbhb">
+&lt;p>Ever since Faraday, the laws of electricity and magnetism have been expressed in terms of &lt;em>electric&lt;/em> and &lt;em>magnetic&lt;/em> fields, &lt;strong>E&lt;/strong> and &lt;strong>B&lt;/strong>. Like many physical laws, these are most compactly expressed as differential equations. Since &lt;strong>E&lt;/strong> and &lt;strong>B&lt;/strong> are vectors, the differential equations naturally involve vector derivatives: divergence and curl. Indeed, Maxwell reduced the entire theory to four equations, specifying respectively the divergence and the curl of &lt;strong>E&lt;/strong> and &lt;strong>B&lt;/strong>.&lt;/p></description></item><item><title>Equilibrium for Fusion</title><link>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</guid><description>&lt;h1 id="equilibrium-for-fusion-hahahugoshortcode115s0hbhb">
  Equilibrium for Fusion (
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
@@ -2489,7 +2489,7 @@ We define \( \vec \omega_{c, \alpha} \) to be the vector gyrofrequency
  };
 &lt;/script>
 )
- &lt;a class="anchor" href="#equilibrium-for-fusion-hahahugoshortcode109s0hbhb">#&lt;/a>
+ &lt;a class="anchor" href="#equilibrium-for-fusion-hahahugoshortcode115s0hbhb">#&lt;/a>
 &lt;/h1>
 &lt;p>For a fusion device we would like to determine a magnetic configuration that confines plasma while it fuses. At fusion temperatures, the power required to maintain the equilibrium will be substantial. For a device to be useful, the power required to sustain the equilibrium must be less than the power released from fusion. Important loss terms for a confined plasma are transport (thermal conduction primarily) and radiation terms. The scaling factors are &lt;span>
  \( P_{Brem} \sim n^2 T^{1/2} \)
@@ -2874,7 +2874,7 @@ which has the general solution
  1-Dimensional Equilibria
  &lt;a class="anchor" href="#1-dimensional-equilibria">#&lt;/a>
 &lt;/h1>
-&lt;h2 id="the-hahahugoshortcode110s0hbhb-pinch">
+&lt;h2 id="the-hahahugoshortcode112s0hbhb-pinch">
  The 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
@@ -2920,7 +2920,7 @@ which has the general solution
  };
 &lt;/script>
 -pinch
- &lt;a class="anchor" href="#the-hahahugoshortcode110s0hbhb-pinch">#&lt;/a>
+ &lt;a class="anchor" href="#the-hahahugoshortcode112s0hbhb-pinch">#&lt;/a>
 &lt;/h2>
 &lt;p>In a &lt;span>
  \( \theta \)
@@ -20869,7 +20869,56 @@ Assuming there are no other resonances, then exactly at resonance \\( n(\omega_0
  Thermonuclear fusion and plasma confinement
  &lt;a class="anchor" href="#thermonuclear-fusion-and-plasma-confinement">#&lt;/a>
 &lt;/h2>
-&lt;p>Nuclear reactions release net energy if there is a mass defect, i.e. if&lt;/p></description></item><item><title>WARPXM 101 - Getting Started</title><link>https://peppyhare.github.io/r/notes/research/warpxm-101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/warpxm-101/</guid><description>&lt;h1 id="what-is-warpxm">
+&lt;p>Nuclear reactions release net energy if there is a mass defect, i.e. if&lt;/p></description></item><item><title>Valgrind</title><link>https://peppyhare.github.io/r/notes/research/valgrind/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/valgrind/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ \[\]
+&lt;/span>
+&lt;script>
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script>
+
+&lt;h1 id="valgrind">
+ Valgrind
+ &lt;a class="anchor" href="#valgrind">#&lt;/a>
+&lt;/h1>
+&lt;p>
+ &lt;a href="https://valgrind.org/">Valgrind&lt;/a> is an instrumentation framework which supplies several very useful debugging and profiling tools. Among these are the popular &lt;code>memcheck&lt;/code>, which thoroughly checks for incorrect memory access, and &lt;code>cachegrind&lt;/code>, which profiles the CPU usage of a program. I have found this to be a really well-designed, useful tool to measure the performance of a WARPXM run, without the need to add any custom instrumentation to the code.&lt;/p></description></item><item><title>WARPXM 101 - Getting Started</title><link>https://peppyhare.github.io/r/notes/research/warpxm-101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/warpxm-101/</guid><description>&lt;h1 id="what-is-warpxm">
  What is WARPXM
  &lt;a class="anchor" href="#what-is-warpxm">#&lt;/a>
 &lt;/h1>
