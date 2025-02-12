@@ -3,9 +3,9 @@
  &lt;a class="anchor" href="#rules-of-thumb">#&lt;/a>
 &lt;/h1>
 
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[\]
 &lt;/span>
 &lt;script>
@@ -71,9 +71,9 @@
 &lt;/h2>
 &lt;p>The Maxwell stress tensor encompasses the way that electromagnetic fields an exert forces/stresses in 3D space:&lt;/p>
 
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[\vec p = \text{ momentum }\]
 &lt;/span>
 &lt;script>
@@ -121,9 +121,9 @@
 &lt;/h2>
 &lt;p>When we have a problem of variation where one function is maximized or minimized subject to a constraint imposed by another function&lt;/p>
 
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[f(x_1, \ldots x_n) \rightarrow \text{ function }\]
 &lt;/span>
 &lt;script>
@@ -213,9 +213,9 @@
 &lt;/h1>
 &lt;p>Consider a &amp;ldquo;hot&amp;rdquo; plasma surrounded by a &amp;ldquo;cold&amp;rdquo; wall. What are the properties of the plasma (both electrons and ions) at the wall? The speed of a particle headed towards the wall is&lt;/p>
 
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[\frac{1}{2} m v_{th} ^2 \approx \frac{1}{2} kT \rightarrow v_{th} \approx \sqrt{ \frac{kT}{m}}\]
 &lt;/span>
 &lt;script>
@@ -263,9 +263,9 @@
 &lt;/h1>
 &lt;p>If \( \Lambda \) is large, then small-angle scattering dominates.&lt;/p>
 
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[\nu = \frac{n}{2 \pi \epsilon_0 ^2} \frac{ e^4}{m^2 v_0 ^3} \ln \Alpha \propto \frac{n}{T^{3/2} m^{1/2}}\]
 &lt;/span>
 &lt;script>
@@ -321,5 +321,5 @@
 &lt;/h2>
 &lt;p>Gases have three degrees of freedom to oscillate, but plasmas have four: the electron fluid adds an additional parameter.&lt;/p>
 &lt;p>One way to see how the electron fluid oscillates, take a region of plasma and displace the electrons by a distance \( x \) and release. Then, watch how the electrons oscillate.&lt;/p>
-&lt;p align="center"> &lt;img alt="Figure 11.1" src="https://peppyhare.github.io/r/r/img/11.1.png" /> &lt;/p>
+&lt;p align="center"> &lt;img alt="Figure 11.1" src="https://peppyhare.github.io/r/img/11.1.png" /> &lt;/p>
 &lt;p>Gauss&amp;rsquo;s law gives the resulting electric field (same as a parallel-plate capacitor.&lt;/p></description></item></channel></rss>

@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Plasma Waves on My Notes</title><link>https://peppyhare.github.io/r/notes/UWAA556/</link><description>Recent content in Plasma Waves on My Notes</description><generator>Hugo</generator><language>en</language><atom:link href="https://peppyhare.github.io/r/notes/UWAA556/index.xml" rel="self" type="application/rss+xml"/><item><title>Mathematical review</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch01-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch01-1/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Plasma Waves on My Notes</title><link>https://peppyhare.github.io/r/notes/UWAA556/</link><description>Recent content in Plasma Waves on My Notes</description><generator>Hugo</generator><language>en</language><atom:link href="https://peppyhare.github.io/r/notes/UWAA556/index.xml" rel="self" type="application/rss+xml"/><item><title>Mathematical review</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch01-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch01-1/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[\]
 &lt;/span>
 &lt;script>
@@ -46,9 +46,9 @@
  Mathematical review
  &lt;a class="anchor" href="#mathematical-review">#&lt;/a>
 &lt;/h1>
-&lt;p>We&amp;rsquo;re starting off with some mathematical foundation to ensure we&amp;rsquo;re all on the same page before we start talking about waves and collisions.&lt;/p></description></item><item><title>Plasma Waves in General Dielectric Media</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch02-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch02-1/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+&lt;p>We&amp;rsquo;re starting off with some mathematical foundation to ensure we&amp;rsquo;re all on the same page before we start talking about waves and collisions.&lt;/p></description></item><item><title>Plasma Waves in General Dielectric Media</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch02-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch02-1/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[\]
 &lt;/span>
 &lt;script>
@@ -94,9 +94,9 @@
  Plasma Waves in General Dielectric Media
  &lt;a class="anchor" href="#plasma-waves-in-general-dielectric-media">#&lt;/a>
 &lt;/h1>
-&lt;p>We&amp;rsquo;re going to start by discussing the transition from the microscopic Maxwell formulation to the macro. To do that we&amp;rsquo;ll need to discuss&lt;/p></description></item><item><title>Wave Properties in Cold Unmagnetized Plasma</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch02-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch02-2/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+&lt;p>We&amp;rsquo;re going to start by discussing the transition from the microscopic Maxwell formulation to the macro. To do that we&amp;rsquo;ll need to discuss&lt;/p></description></item><item><title>Wave Properties in Cold Unmagnetized Plasma</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch02-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch02-2/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[\]
 &lt;/span>
 &lt;script>
@@ -142,9 +142,9 @@
  Wave Properties in Cold Unmagnetized Plasma
  &lt;a class="anchor" href="#wave-properties-in-cold-unmagnetized-plasma">#&lt;/a>
 &lt;/h1>
-&lt;p>Before we can get to the wave properties, we first need to be specific about what we mean by a &amp;ldquo;cold&amp;rdquo; plasma. In the fluid formulation, we have a few central equations:&lt;/p></description></item><item><title>Cold Magnetized Plasma Dispersion Relation</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch02-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch02-3/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+&lt;p>Before we can get to the wave properties, we first need to be specific about what we mean by a &amp;ldquo;cold&amp;rdquo; plasma. In the fluid formulation, we have a few central equations:&lt;/p></description></item><item><title>Cold Magnetized Plasma Dispersion Relation</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch02-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch02-3/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[\]
 &lt;/span>
 &lt;script>
@@ -317,9 +317,9 @@ We define \( \vec \omega_{c, \alpha} \) to be the vector gyrofrequency
  });
  };
 &lt;/script>
-&lt;/p></description></item><item><title>The CMA Diagram</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch02-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch02-4/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+&lt;/p></description></item><item><title>The CMA Diagram</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch02-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch02-4/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[\]
 &lt;/span>
 &lt;script>
@@ -365,9 +365,9 @@ We define \( \vec \omega_{c, \alpha} \) to be the vector gyrofrequency
  The CMA Diagram
  &lt;a class="anchor" href="#the-cma-diagram">#&lt;/a>
 &lt;/h1>
-&lt;p>In the previous section, we derived the dispersion relation for a cold uniform magnetized plasma:&lt;/p></description></item><item><title>Introduction to Kinetic Theory</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch03-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch03-1/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+&lt;p>In the previous section, we derived the dispersion relation for a cold uniform magnetized plasma:&lt;/p></description></item><item><title>Introduction to Kinetic Theory</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch03-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch03-1/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[\]
 &lt;/span>
 &lt;script>
@@ -413,9 +413,9 @@ We define \( \vec \omega_{c, \alpha} \) to be the vector gyrofrequency
  Timescale Hierarchy
  &lt;a class="anchor" href="#timescale-hierarchy">#&lt;/a>
 &lt;/h2>
-&lt;p>What happens to a perturbation in a plasma comprised of \( N \) particles, each with independent \( \vec x \) and \( \vec v \)? The timescales that define the statistical equilibria define some different regimes.&lt;/p></description></item><item><title>Landau Damping</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch03-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch03-2/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+&lt;p>What happens to a perturbation in a plasma comprised of \( N \) particles, each with independent \( \vec x \) and \( \vec v \)? The timescales that define the statistical equilibria define some different regimes.&lt;/p></description></item><item><title>Landau Damping</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch03-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch03-2/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[\]
 &lt;/span>
 &lt;script>
@@ -461,9 +461,9 @@ We define \( \vec \omega_{c, \alpha} \) to be the vector gyrofrequency
  Landau Damping
  &lt;a class="anchor" href="#landau-damping">#&lt;/a>
 &lt;/h1>
-&lt;p>The electrostatic dispersion relation for a plasma with a non-zero temperature leads to additional terms beyond the \( \omega^2 - \omega_p ^2 = 0 \) relation we got before.&lt;/p></description></item><item><title>Waves in Hot Magnetized Plasma</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch03-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch03-3/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+&lt;p>The electrostatic dispersion relation for a plasma with a non-zero temperature leads to additional terms beyond the \( \omega^2 - \omega_p ^2 = 0 \) relation we got before.&lt;/p></description></item><item><title>Waves in Hot Magnetized Plasma</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch03-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch03-3/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[\]
 &lt;/span>
 &lt;script>
@@ -509,9 +509,9 @@ We define \( \vec \omega_{c, \alpha} \) to be the vector gyrofrequency
  Waves in Hot Magnetized Plasma
  &lt;a class="anchor" href="#waves-in-hot-magnetized-plasma">#&lt;/a>
 &lt;/h1>
-&lt;p>Just like in the cold plasma dispersion relation, finding the dielectric tensor helps with the dispersion relation. The process involves multiple steps. We will only look at the overview here.&lt;/p></description></item><item><title>Fluid stuff</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch04-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch04-1/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+&lt;p>Just like in the cold plasma dispersion relation, finding the dielectric tensor helps with the dispersion relation. The process involves multiple steps. We will only look at the overview here.&lt;/p></description></item><item><title>Fluid stuff</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch04-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch04-1/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[\]
 &lt;/span>
 &lt;script>
@@ -557,9 +557,9 @@ We define \( \vec \omega_{c, \alpha} \) to be the vector gyrofrequency
  Fluid Theory
  &lt;a class="anchor" href="#fluid-theory">#&lt;/a>
 &lt;/h1>
-&lt;p>Recall that cold plasma theory assumed no finite temperature effects. We then added individual particle contributions to find quantities like currents.&lt;/p></description></item><item><title>Quasi-Linear Theory</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch04-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch04-2/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+&lt;p>Recall that cold plasma theory assumed no finite temperature effects. We then added individual particle contributions to find quantities like currents.&lt;/p></description></item><item><title>Quasi-Linear Theory</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch04-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch04-2/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[\]
 &lt;/span>
 &lt;script>
@@ -605,9 +605,9 @@ We define \( \vec \omega_{c, \alpha} \) to be the vector gyrofrequency
  Quasi-Linear Theory
  &lt;a class="anchor" href="#quasi-linear-theory">#&lt;/a>
 &lt;/h1>
-&lt;p>(Goldston and Rutherford, Chapter 25 is a good reference)&lt;/p></description></item><item><title>Diffusion and Resistivity</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch05-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch05-1/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+&lt;p>(Goldston and Rutherford, Chapter 25 is a good reference)&lt;/p></description></item><item><title>Diffusion and Resistivity</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch05-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch05-1/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[\]
 &lt;/span>
 &lt;script>

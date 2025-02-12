@@ -4,16 +4,16 @@
 &lt;/h1>
 &lt;!-- Eric Meier -->
 &lt;p>&lt;strong>What is computational fluid dynamics?&lt;/strong> Put simply, it&amp;rsquo;s the use of computers to obtain a numerical solution to the governing equations of fluid dynamics. As always, the numerical solution is an approximation to the real solution to the equations, but additionally those equations are themselves only an approximation of the real physics.&lt;/p>
-&lt;p align="center"> &lt;img alt="Figure 20.1" src="https://peppyhare.github.io/r/r/img/20.1.png" /> &lt;/p>
+&lt;p align="center"> &lt;img alt="Figure 20.1" src="https://peppyhare.github.io/r/img/20.1.png" /> &lt;/p>
 &lt;p>We will be interested in speeds much less than \( c \) (\( 3 \cdot 10^8 m/s) \) and distances much greater than the atomic radius \( \alpha_{bohr} = 5 \cdot 10^{-11} m \).&lt;/p></description></item><item><title>Governing Equations</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch20-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch20-2/</guid><description>&lt;h1 id="governing-equations">
  &lt;strong>Governing Equations&lt;/strong>
  &lt;a class="anchor" href="#governing-equations">#&lt;/a>
 &lt;/h1>
 &lt;p>Continuity&lt;/p>
 
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[\pdv{\rho}{t} &amp;#43; v \cdot \grad \rho = - \rho \grad \cdot v\]
 &lt;/span>
 &lt;script>
@@ -78,9 +78,9 @@
 &lt;/h2>
 &lt;p>All of the scalar equations in fluid dynamics can be written in canonical form as the following 2nd order PDE.&lt;/p>
 
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[a \phi_{xx} &amp;#43; b \phi_{xy} &amp;#43; c \phi_{yy} &amp;#43; d \phi_x &amp;#43; e \phi_y &amp;#43; f \phi = g\]
 &lt;/span>
 &lt;script>
@@ -129,9 +129,9 @@
 &lt;p>Panel methods are a classical approach to solving flow problems that is still very useful today when finding solutions to even very complicated geometries. You represent a body as a series of panels.&lt;/p>
 &lt;p>A few definitions first: we say a &lt;strong>source panel&lt;/strong> of strength \( \lambda \) (units m/s) is defined by:&lt;/p>
 
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[\phi_p = \frac{1}{2 \pi} \int \lambda \ln (r) \dd s\]
 &lt;/span>
 &lt;script>
@@ -257,7 +257,7 @@
  };
 &lt;/script>
 
-&lt;p align="center"> &lt;img alt="Figure 20.2" src="https://peppyhare.github.io/r/r/img/20.2.png" /> &lt;/p></description></item><item><title>Finite Difference Algorithms</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch21-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch21-1/</guid><description>&lt;h1 id="211-finite-difference-algorithms">
+&lt;p align="center"> &lt;img alt="Figure 20.2" src="https://peppyhare.github.io/r/img/20.2.png" /> &lt;/p></description></item><item><title>Finite Difference Algorithms</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch21-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch21-1/</guid><description>&lt;h1 id="211-finite-difference-algorithms">
  21.1 Finite Difference Algorithms
  &lt;a class="anchor" href="#211-finite-difference-algorithms">#&lt;/a>
 &lt;/h1>
@@ -274,9 +274,9 @@
 &lt;li>&lt;strong>Explicit&lt;/strong> algorithms: Use data that is already known at the present time to advance the solution to the next time step. They are easier and faster to implement, but they introduce stability constraints.&lt;/li>
 &lt;/ul>
 
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[ u_j ^{n&amp;#43;1} = f(u_j ^n, u_{j&amp;#43;1} ^n , u_{j&amp;#43;2} ^n \ldots)
  \]
 &lt;/span>
@@ -383,9 +383,9 @@
 n --------|--------*--------*--------
  j-1 j j+1
 &lt;/code>&lt;/pre>
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[u_j ^{n&amp;#43;1} = u_j ^n - \frac{a \Delta t}{\Delta x} (u_{j&amp;#43;1} ^n - u_j ^n)\]
 &lt;/span>
 &lt;script>
@@ -437,9 +437,9 @@ n --------|--------*--------*--------
 &lt;/h1>
 &lt;p>Stability conditions are often related to the CFL number, and stability analysis of explicit algorithms usually require us to set a limit to small CFL&lt;/p>
 
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[\left| \frac{a \Delta x}{\Delta t} \right| \leq 1\]
 &lt;/span>
 &lt;script>
@@ -487,9 +487,9 @@ n --------|--------*--------*--------
 &lt;/h1>
 &lt;p>The linear advection equation is&lt;/p>
 
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[\pdv{u}{t} &amp;#43; a \pdv{u}{x} = 0\]
 &lt;/span>
 &lt;script>

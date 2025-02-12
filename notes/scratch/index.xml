@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My Notes</title><link>https://peppyhare.github.io/r/notes/scratch/</link><description>Recent content on My Notes</description><generator>Hugo</generator><language>en</language><atom:link href="https://peppyhare.github.io/r/notes/scratch/index.xml" rel="self" type="application/rss+xml"/><item><title>Adding Color</title><link>https://peppyhare.github.io/r/notes/scratch/colors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/scratch/colors/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>My Notes</title><link>https://peppyhare.github.io/r/notes/scratch/</link><description>Recent content on My Notes</description><generator>Hugo</generator><language>en</language><atom:link href="https://peppyhare.github.io/r/notes/scratch/index.xml" rel="self" type="application/rss+xml"/><item><title>Adding Color</title><link>https://peppyhare.github.io/r/notes/scratch/colors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/scratch/colors/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[\]
 &lt;/span>
 &lt;script>
@@ -49,9 +49,9 @@
 &lt;/h1>
 &lt;p>Shielded potential of a test electron:&lt;/p>
 
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[\phi(r) = \frac{-e}{4 \pi \epsilon_0 r} e ^{- r / \lambda_D}\]
 &lt;/span>
 &lt;script>
@@ -134,9 +134,9 @@
  });
  };
 &lt;/script>
-. The mean free path between large-angle collisions is estimated as&lt;/p></description></item><item><title>Datta (2021)</title><link>https://peppyhare.github.io/r/notes/scratch/datta2021/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/scratch/datta2021/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+. The mean free path between large-angle collisions is estimated as&lt;/p></description></item><item><title>Datta (2021)</title><link>https://peppyhare.github.io/r/notes/scratch/datta2021/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/scratch/datta2021/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[\]
 &lt;/span>
 &lt;script>
@@ -919,9 +919,9 @@
  &lt;a class="anchor" href="#file-tree">#&lt;/a>
 &lt;/h3>
 &lt;p>Created from 
- &lt;a href="https://arthursonzogni.com/Diagon/#Tree">https://arthursonzogni.com/Diagon/#Tree&lt;/a>&lt;/p></description></item><item><title>Goedbloed (2019)</title><link>https://peppyhare.github.io/r/notes/scratch/goedbloed/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/scratch/goedbloed/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
+ &lt;a href="https://arthursonzogni.com/Diagon/#Tree">https://arthursonzogni.com/Diagon/#Tree&lt;/a>&lt;/p></description></item><item><title>Goedbloed (2019)</title><link>https://peppyhare.github.io/r/notes/scratch/goedbloed/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/scratch/goedbloed/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
  \[\]
 &lt;/span>
 &lt;script>
