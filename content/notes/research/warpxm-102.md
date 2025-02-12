@@ -259,7 +259,7 @@ A lot of things going on in `WmSimulation::setup`!
     - If the sim is being restarted, look for the appropriate mesh `.h5` file in the working directory, and error if not found
     - Generate the appropriate type of mesh. This is usually a block mesh (`block_mesh`) which just contains equally-spaced cells, but can also be an arbitrary mesh.
     - Write the generated mesh definition to a file, e.g. `block_mesh_abd3712ea51f965c.inp`
-    - Break the mesh up into `WmUnstructuredPatch` patches so that it can be distributed across however many MPI processes we have. 
+    - Break the mesh up into `WmUnstructuredPatch` patches so that it can be distributed across however many MPI processes we have.
     - Generate the appropriate geometry for each patch. For any local patches (patches which should be managed by the current MPI process), we generate the full mesh geometry as a `WmUnstructuredGeometry`, which is the basic structure we use to represent the geometric nodes for the mesh. Once the mesh is generated, we dump the mesh for each patch as an h5 file (`restartMesh...`) so that we may restart the simulation at a later time without needing to re-generate the geometry.
     - We use DG basis elements to represent the mesh, so we also export the basis decomposition for the patch domain as an h5 file (`plotMesh...`), so that it is possible to reconstruct the physical geometry for later plotting and analysis
 
@@ -271,7 +271,7 @@ A lot of things going on in `WmSimulation::setup`!
 
 ### Host Action Initialization
 
-- Each host action (`Type = WmHostAction|host_action|subsolver`) gets setup and inserted into the hostActions map. Different types of host action have different setup steps and effects. There are [a lot](/r/img/research/warpxm/classdiagram-hostaction.png) of different types that directly extend `WmHostAction` in WARPXM, but the top-level ones relevant to most sims are:
+- Each host action (`Type = WmHostAction|host_action|subsolver`) gets setup and inserted into the hostActions map. Different types of host action have different setup steps and effects. There are <a href="/r/img/research/warpxm/classdiagram-hostaction.png">a lot</a> of different types that directly extend `WmHostAction` in WARPXM, but the top-level ones relevant to most sims are:
   - **Time Integrator**: The time integrator that moves the state forward in time. This will almost always be the explicit Runge-Kutta temporal solver.
   - **Patch Processors**: This coordinates patch processes across the domain. Patch processes are any process which can be evaluated locally within a single patch. For example, the spatial solver is a patch process which is called by the time integrator host action to compute \\( \pdv{q}{t} \\) (by implementing the nodal discontinuous Galerkin method). Variable adjusters which set/modify the value of variables across the domain are another common example, and are used to set initial conditions as we'll see later.
   - **Writers**: Two types of writer: frame writers and diagnostic writers. A frame writer dumps the current variables to disk in HDF5 format each frame. The frame writer only needs to write the current data for the local patch, as opposed to diagnostic writers which are typically used to integrate variables across the global domain. Diagnostics can be `Probe`s (simply retrieve the current value of variables) or `WmIntegrator`s (integrate an expression over the domain or a subdomain). At pre-defined time intervals, the diagnostics writer evaluates each defined diagnostic and writes the result to a CSV file.
@@ -443,7 +443,7 @@ TimestepConstraint WmSolver::advance(real tend)
         // Instantiate new iterations total and timestep constraint
         int iters;
         std::shared_ptr<TimestepConstraint> tc;
-        
+
         // Take time step
         auto tmp = step_dt(dt, limit_dt);
         iters = tmp.first;
@@ -477,14 +477,14 @@ TimestepConstraint WmSolver::advance(real tend)
 - For each host action in the per-step group, we tick forward with `host_action->step()`
   - We can peek at `tools/warpy/dg_sim.py` to see what host actions should be the per-step group for a DG sim. With some abbreviation, we see:
     {{< details title="`tools/warpy/dg_sim.py: dg_sim.__init__()`" open=false >}}
-      
+
 ```python
 # w_group is the group of writer host actions provided in the warpy input file
 w_group = solver_sequence.sequence_group(name='write_group', actions=writers)
 # ps_group contains the temporal solvers provided in the warpy input file,
 # sandwiched between any optional pre- or post-time-integration actions
 ps_group = solver_sequence.sequence_group(
-  name='perstep_group', 
+  name='perstep_group',
   actions=pre_ti_host_actions + temporal_solvers + post_ti_host_actions
 )
 # swap_group
@@ -554,10 +554,10 @@ WxStepperStatus WmTemporalSolver_RK::step()
         for (auto& ss : spatial_solvers_)
         {
 			std::shared_ptr<TimestepConstraint> tc = ss->solve(current_time, q_n, q_p);
-            // Comparing spatial_solver's suggested time step with current minimum suggested time step. 
+            // Comparing spatial_solver's suggested time step with current minimum suggested time step.
             // Updating sugg_tc if new minimum
             *sugg_tc = TimestepConstraint::minDt(*sugg_tc, *tc);
-            
+
             ss->Barrier(getMsg(), current_time, q_p);
         }
         // rhs is now in q_p; need to accumulate with previous q's to get actual q_p
@@ -570,7 +570,7 @@ WxStepperStatus WmTemporalSolver_RK::step()
         finish_sync(rk_stage + 1);
         wxm::timer::TIMER.stop();
     }
-    
+
     wxm::timer::TIMER.stop(); // for "rk_solver/step"
 
     // TODO: how to get time step limit to take into account sources/diffusion/advection?
