@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Griffiths Introduction to Electrodynamics on My Notes</title><link>https://peppyhare.github.io/r/notes/griffiths/</link><description>Recent content in Griffiths Introduction to Electrodynamics on My Notes</description><generator>Hugo</generator><language>en</language><atom:link href="https://peppyhare.github.io/r/notes/griffiths/index.xml" rel="self" type="application/rss+xml"/><item><title>Vector Algebra</title><link>https://peppyhare.github.io/r/notes/griffiths/ch1-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch1-1/</guid><description>&lt;h1 id="_11_-vector-algebra">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Griffiths Introduction to Electrodynamics on My Notes</title><link>https://peppyhare.github.io/r/notes/griffiths/</link><description>Recent content in Griffiths Introduction to Electrodynamics on My Notes</description><generator>Hugo</generator><language>en</language><atom:link href="https://peppyhare.github.io/r/notes/griffiths/index.xml" rel="self" type="application/rss+xml"/><item><title>Vector Algebra</title><link>https://peppyhare.github.io/r/notes/griffiths/ch1-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch1-1/</guid><description>&lt;h1 id="11-vector-algebra">
  &lt;em>1.1&lt;/em> Vector Algebra
- &lt;a class="anchor" href="#_11_-vector-algebra">#&lt;/a>
+ &lt;a class="anchor" href="#11-vector-algebra">#&lt;/a>
 &lt;/h1>
-&lt;h2 id="_111_-vector-operations">
+&lt;h2 id="111-vector-operations">
  &lt;em>1.1.1&lt;/em> Vector Operations
- &lt;a class="anchor" href="#_111_-vector-operations">#&lt;/a>
+ &lt;a class="anchor" href="#111-vector-operations">#&lt;/a>
 &lt;/h2>
 &lt;p>If you walk 4 miles due north and then 3 miles due east (Fig. 1.1), you will have gone a total of 7 miles, but you&amp;rsquo;re &lt;em>not&lt;/em> 7 miles from where you set out-you&amp;rsquo;re only 5. We need an arithmetic to describe quantities like this, which evidently do not add in the ordinary way. The reason they don&amp;rsquo;t, of course, is that &lt;strong>displacements&lt;/strong> (straight line segments going from one point to another) have &lt;em>direction&lt;/em> as well as &lt;em>magnitude&lt;/em> (length), and it is essential to take both into account when you combine them. Such objects are called vectors: velocity, acceleration, force and momentum are other examples. By contrast, quantities that have magnitude but no direction are called scalars: examples include mass, charge, density, and temperature.&lt;/p></description></item><item><title>Differential Calculus</title><link>https://peppyhare.github.io/r/notes/griffiths/ch1-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch1-2/</guid><description>&lt;h1 id="12-differential-calculus">
  1.2: Differential Calculus
@@ -18,9 +18,8 @@
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\dd{f} = \left( \dv{f}{x} \right) \dd{x} \tagl{1.33}\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -58,7 +57,9 @@
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\dd{f} = \left( \dv{f}{x} \right) \dd{x} \tagl{1.33}\]
+&lt;/span>
 
 &lt;p>In words: If we increment &lt;em>x&lt;/em> by an infinitesimal amount \( \dd{x} \), then \( f \) changes by an amount \( \dd{f} \); the derivative is the proportionality factor. Foe example, in Fig. 1.17(a), the function varies slowly with &lt;em>x&lt;/em>, and the derivative is correspondingly small. In Fig 1.17(b), &lt;em>f&lt;/em> increases rapidly with &lt;em>x&lt;/em>, and the derivative is large as you move away from \( x = 0 \).
 &lt;em>Geometrical interpretation&lt;/em>: The derivative \( \dv{f}{x} \) is the slope of the graph of &lt;em>f&lt;/em> versus &lt;em>x&lt;/em>.&lt;/p></description></item><item><title>Integral Calculus</title><link>https://peppyhare.github.io/r/notes/griffiths/ch1-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch1-3/</guid><description>&lt;h1 id="13-integral-calculus">
@@ -78,9 +79,8 @@
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\int_a ^b \vec{v} \cdot \dd{\vec{l}} \tagl{1.48}\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -118,7 +118,9 @@
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\int_a ^b \vec{v} \cdot \dd{\vec{l}} \tagl{1.48}\]
+&lt;/span>
 
 &lt;p>where &lt;strong>v&lt;/strong> is a vector function, \( \dd \vec{l} \) is the infinitesimal displacement vector and the integral is to be carried out along a prescribed path P from point &lt;strong>a&lt;/strong> to point &lt;strong>b&lt;/strong>. If the path in question forms a closed loop (that is, if \( \vec{b} = \vec{a} \), then put a circle on the integral sign:&lt;/p></description></item><item><title>Curvilinear Coordinates</title><link>https://peppyhare.github.io/r/notes/griffiths/ch1-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch1-4/</guid><description>&lt;h1 id="14-curvilinear-coordinates">
  1.4: Curvilinear Coordinates
@@ -140,9 +142,8 @@
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\vec{v} = \frac{1}{r^2} \vu{r} \tagl{1.83}\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -180,7 +181,9 @@
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\vec{v} = \frac{1}{r^2} \vu{r} \tagl{1.83}\]
+&lt;/span>
 
 &lt;p align="center"> &lt;img alt="Figure 1.44" src="https://peppyhare.github.io/r/img/griffiths/1.44.png" /> &lt;/p></description></item><item><title>The Theory of Vector Fields</title><link>https://peppyhare.github.io/r/notes/griffiths/ch1-6/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch1-6/</guid><description>&lt;h1 id="16-the-theory-of-vector-fields">
  1.6: The Theory of Vector Fields
@@ -242,9 +245,8 @@
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\vec{E}(\vec{r}) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\vec{r&amp;#39;})}{\gr ^2} \vu{\gr} \dd{\tau&amp;#39;} \label{3.1}\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -282,7 +284,9 @@
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\vec{E}(\vec{r}) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\vec{r&amp;#39;})}{\gr ^2} \vu{\gr} \dd{\tau&amp;#39;} \label{3.1}\]
+&lt;/span>
 
 &lt;p>Unfortunately, integrals of this type can be difficult to calculate for any but the simplest charge configurations. Occasionally we can get around this by exploiting symmetry and using Gauss&amp;rsquo;s law, but ordinarily the best strategy is first to calculate the &lt;em>potential&lt;/em>, V, which is given by the somewhat more tractable&lt;/p></description></item><item><title>The Method of Images</title><link>https://peppyhare.github.io/r/notes/griffiths/ch3-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch3-2/</guid><description>&lt;h1 id="32-the-method-of-images">
  3.2: The Method of Images
@@ -375,9 +379,8 @@
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\vec{E} = - \grad \vec{V}\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -415,7 +418,9 @@
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\vec{E} = - \grad \vec{V}\]
+&lt;/span>
 
 &lt;p>so \( \div \vec{B} = 0 \) invites the introduction of a vector potential &lt;strong>A&lt;/strong> in magnetostatics&lt;/p></description></item><item><title>Magnetization</title><link>https://peppyhare.github.io/r/notes/griffiths/ch6-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch6-1/</guid><description>&lt;h1 id="61-magnetization">
  6.1: Magnetization
@@ -437,9 +442,8 @@
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\vec{A}_{dip} (r) = \frac{\mu_0}{4 \pi} \frac{\vec{m} \cross \vu{r}}{r^2}\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -477,7 +481,9 @@
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\vec{A}_{dip} (r) = \frac{\mu_0}{4 \pi} \frac{\vec{m} \cross \vu{r}}{r^2}\]
+&lt;/span>
 
 &lt;p>In the magnetized object, each volume element \( \dd \tau&amp;rsquo; \) carries a dipole moment \( M \dd \tau&amp;rsquo; \), so the total vector potential is (Fig 6.11)&lt;/p></description></item><item><title>The Auxiliary Field H</title><link>https://peppyhare.github.io/r/notes/griffiths/ch6-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch6-3/</guid><description>&lt;h1 id="63-the-auxiliary-field-h">
  6.3: The Auxiliary Field H
@@ -499,9 +505,8 @@
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\vec{M} = \frac{1}{\mu_0} \chi_m \vec{B} \tagl{6.28} \]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -539,7 +544,9 @@
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\vec{M} = \frac{1}{\mu_0} \chi_m \vec{B} \tagl{6.28} \]
+&lt;/span>
 
 &lt;p>but custom dictates that it be written in terms of &lt;strong>H&lt;/strong>, instead of &lt;strong>B&lt;/strong>:&lt;/p></description></item><item><title>Electromotive Force</title><link>https://peppyhare.github.io/r/notes/griffiths/ch7-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch7-1/</guid><description>&lt;h1 id="71-electromotive-force">
  7.1 Electromotive Force
@@ -553,9 +560,8 @@
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\vec{J} = \sigma \vec{f} \tagl{7.1}\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -593,7 +599,9 @@
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\vec{J} = \sigma \vec{f} \tagl{7.1}\]
+&lt;/span>
 
 &lt;p>The proportionality factor \( \sigma \) (not to be confused with surface charge) is an empirical constant that varies from one material to another; it&amp;rsquo;s called the conductivity of the medium. Actually, the handbooks usually list the reciprocal of \( \sigma \), called the resistivity: \( \rho = 1 / \sigma \) (not to be confused with charge density - I&amp;rsquo;m sorry, but we&amp;rsquo;re running out of Greek letters, and this is the standard notation). Some typical values are listed in Table 7.1. Notice that even insulators conduct slightly, though the conductivity of a metal is astronomically greater; in fact, for most purposes metals can be regarded as perfect conductors, with \( \sigma = \infty \) , while for insulators we can pretend \( \sigma = 0 \).&lt;/p></description></item><item><title>Electromagnetic Induction</title><link>https://peppyhare.github.io/r/notes/griffiths/ch7-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch7-2/</guid><description>&lt;h1 id="72-electromagnetic-induction">
  7.2: Electromagnetic Induction
@@ -617,14 +625,8 @@
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\begin{aligned}
-(\text{i}) &amp;amp; \quad \div \vec{E} = \frac{1}{\epsilon_0 } \rho \quad \text{(Gauss&amp;#39;s law)} \\
-(\text{ii}) &amp;amp; \quad \div \vec{B} = 0 \quad \text{(Ng&amp;#39;s Law)} \\
-(\text{iii}) &amp;amp; \quad \curl \vec{E} = - \pdv{\vec{B}}{t} \quad \text{(Faraday&amp;#39;s Law}) \\
-(\text{iv}) &amp;amp; \quad \curl \vec{B} = \mu_0 \vec{J} \quad \text{(Ampere&amp;#39;s Law)}
-\end{aligned}\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -662,7 +664,14 @@
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\begin{aligned}
+(\text{i}) &amp;amp; \quad \div \vec{E} = \frac{1}{\epsilon_0 } \rho \quad \text{(Gauss&amp;#39;s law)} \\
+(\text{ii}) &amp;amp; \quad \div \vec{B} = 0 \quad \text{(Ng&amp;#39;s Law)} \\
+(\text{iii}) &amp;amp; \quad \curl \vec{E} = - \pdv{\vec{B}}{t} \quad \text{(Faraday&amp;#39;s Law}) \\
+(\text{iv}) &amp;amp; \quad \curl \vec{B} = \mu_0 \vec{J} \quad \text{(Ampere&amp;#39;s Law)}
+\end{aligned}\]
+&lt;/span>
 
 &lt;p>These equations represent the state of electromagnetic theory in the mid-nineteenth century, when Maxwell began his work. They were not written in so compact a form, in those days, but their physical content was familiar. Now, it happens that there is a fatal inconsistency in these formulas. It has to do with the old rule that divergence of curl is always zero. If you apply the divergence to number (iii), everything works out:&lt;/p></description></item><item><title>Phys 544 Introduction</title><link>https://peppyhare.github.io/r/notes/griffiths/ch8-0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch8-0/</guid><description>&lt;h1 id="80-phys-544-introduction">
  8.0: Phys 544 Introduction
@@ -718,17 +727,16 @@
  &lt;a class="anchor" href="#911-the-wave-equation">#&lt;/a>
 &lt;/h2>
 &lt;p>Before we start writing down how electromagnetic energy propagates in space as radiation, we&amp;rsquo;ll dust off our mathematical background on waves. Thanks to Fourier analysis, we know that sinusoidal waves form a complete basis for all periodic functions, so we restrict our investigation to sinusoidal variations.&lt;/p>
-&lt;p>Suppose some quantity &amp;ldquo;\( f \)&amp;rdquo; is propagating with speed \( v \) in the \( +z \) direction, and we focus on sinusoidal &amp;ldquo;disturbances.&amp;rdquo; At \( t = 0 \),&lt;/p></description></item><item><title>Wave Equation for E and B</title><link>https://peppyhare.github.io/r/notes/griffiths/ch9-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch9-2/</guid><description>&lt;h3 id="921-wave-equation-for-__e__-and-__b__">
+&lt;p>Suppose some quantity &amp;ldquo;\( f \)&amp;rdquo; is propagating with speed \( v \) in the \( +z \) direction, and we focus on sinusoidal &amp;ldquo;disturbances.&amp;rdquo; At \( t = 0 \),&lt;/p></description></item><item><title>Wave Equation for E and B</title><link>https://peppyhare.github.io/r/notes/griffiths/ch9-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch9-2/</guid><description>&lt;h3 id="921-wave-equation-for-e-and-b">
  9.2.1 Wave Equation for &lt;strong>E&lt;/strong> and &lt;strong>B&lt;/strong>
- &lt;a class="anchor" href="#921-wave-equation-for-__e__-and-__b__">#&lt;/a>
+ &lt;a class="anchor" href="#921-wave-equation-for-e-and-b">#&lt;/a>
 &lt;/h3>
 &lt;p>Recall Maxwell&amp;rsquo;s equations&lt;/p>
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\begin{aligned} (\text{i}) &amp;amp; \quad \div \vec{D} = \rho_f \quad \text{(Gauss&amp;#39;s law)} \\ (\text{ii}) &amp;amp; \quad \div \vec{B} = 0 \quad \text{(Ng&amp;#39;s Law)} \\ (\text{iii}) &amp;amp; \quad \curl \vec{E} = - \pdv{\vec{B}}{t} \quad \text{(Faraday&amp;#39;s Law}) \\ (\text{iv}) &amp;amp; \quad \curl \vec{H} = \vec{J}_f &amp;#43; \pdv{\vec{D}}{t} \quad \text{(Ampere&amp;#39;s Law)} \end{aligned}\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -766,7 +774,9 @@
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\begin{aligned} (\text{i}) &amp;amp; \quad \div \vec{D} = \rho_f \quad \text{(Gauss&amp;#39;s law)} \\ (\text{ii}) &amp;amp; \quad \div \vec{B} = 0 \quad \text{(Ng&amp;#39;s Law)} \\ (\text{iii}) &amp;amp; \quad \curl \vec{E} = - \pdv{\vec{B}}{t} \quad \text{(Faraday&amp;#39;s Law}) \\ (\text{iv}) &amp;amp; \quad \curl \vec{H} = \vec{J}_f &amp;#43; \pdv{\vec{D}}{t} \quad \text{(Ampere&amp;#39;s Law)} \end{aligned}\]
+&lt;/span>
 
 &lt;p>To get to a wave equation from these, we start with a curl of curl and use a standard vector identity&lt;/p></description></item><item><title>Electromagnetic Waves in Matter</title><link>https://peppyhare.github.io/r/notes/griffiths/ch9-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch9-3/</guid><description>&lt;h2 id="93-electromagnetic-waves-in-matter">
  9.3: Electromagnetic Waves in Matter
@@ -780,9 +790,8 @@
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\begin{aligned} (\text{i}) &amp;amp; \quad \div \vec{D} = \rho_f \quad \text{(Gauss&amp;#39;s law)} \\ (\text{ii}) &amp;amp; \quad \div \vec{B} = 0 \quad \text{(Ng&amp;#39;s Law)} \\ (\text{iii}) &amp;amp; \quad \curl \vec{E} = - \pdv{\vec{B}}{t} \quad \text{(Faraday&amp;#39;s Law}) \\ (\text{iv}) &amp;amp; \quad \curl \vec{H} = \vec{J}_f &amp;#43; \pdv{\vec{D}}{t} \quad \text{(Ampere&amp;#39;s Law)} \end{aligned}\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -820,7 +829,9 @@
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\begin{aligned} (\text{i}) &amp;amp; \quad \div \vec{D} = \rho_f \quad \text{(Gauss&amp;#39;s law)} \\ (\text{ii}) &amp;amp; \quad \div \vec{B} = 0 \quad \text{(Ng&amp;#39;s Law)} \\ (\text{iii}) &amp;amp; \quad \curl \vec{E} = - \pdv{\vec{B}}{t} \quad \text{(Faraday&amp;#39;s Law}) \\ (\text{iv}) &amp;amp; \quad \curl \vec{H} = \vec{J}_f &amp;#43; \pdv{\vec{D}}{t} \quad \text{(Ampere&amp;#39;s Law)} \end{aligned}\]
+&lt;/span>
 
 &lt;p>In &lt;em>linear&lt;/em> media, our constitutive relations are&lt;/p></description></item><item><title>Electromagnetic Waves in Conductors</title><link>https://peppyhare.github.io/r/notes/griffiths/ch9-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch9-4/</guid><description>&lt;h2 id="941-electromagnetic-waves-in-conductors">
  9.4.1 Electromagnetic Waves in Conductors
@@ -837,9 +848,8 @@
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\vec E(x, y, z, t) = \vec{E_0} (x, y) e^{i(kz - \omega t)}\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -877,49 +887,13 @@
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\vec E(x, y, z, t) = \vec{E_0} (x, y) e^{i(kz - \omega t)}\]
+&lt;/span>
 
 &lt;span>
  \[\vec B(x, y, z, t) = \vec{B_0} (x, y) e^{i(kz - \omega t)}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 &lt;p>The (source-free) boundary conditions within the waveguide are&lt;/p></description></item><item><title>Scalar and Vector Potentials</title><link>https://peppyhare.github.io/r/notes/griffiths/ch10-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch10-1/</guid><description>&lt;h2 id="1001-presentationpaper-notes">
  10.0.1 Presentation/Paper notes
@@ -939,9 +913,8 @@
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\laplacian \vec A - \mu_0 \epsilon_0 \pdv{^2 \vec A}{t^2} = - \mu_0 \vec J\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -979,7 +952,9 @@
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\laplacian \vec A - \mu_0 \epsilon_0 \pdv{^2 \vec A}{t^2} = - \mu_0 \vec J\]
+&lt;/span>
 
 &lt;p>Back in the static case, this reduces to Poisson&amp;rsquo;s equation&lt;/p></description></item><item><title>Point Charges</title><link>https://peppyhare.github.io/r/notes/griffiths/ch10-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch10-3/</guid><description>&lt;h1 id="103-point-charges">
  10.3 Point Charges
@@ -993,9 +968,8 @@
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[V(\vec r, t) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\vec r&amp;#39;, t_r)}{\gr} \dd \tau&amp;#39;\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -1033,7 +1007,9 @@
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[V(\vec r, t) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\vec r&amp;#39;, t_r)}{\gr} \dd \tau&amp;#39;\]
+&lt;/span>
 
 &lt;p>might suggest that the potential is just&lt;/p></description></item><item><title>Dipole Radiation</title><link>https://peppyhare.github.io/r/notes/griffiths/ch11-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch11-1/</guid><description>&lt;h1 id="111-dipole-radiation">
  11.1 Dipole Radiation
@@ -1050,9 +1026,8 @@
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -1090,7 +1065,9 @@
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\]
+&lt;/span>
 
 &lt;h3 id="problem-324">
  Problem 3.24
@@ -1118,44 +1095,6 @@ Since we are in cylindrical coordinates, we will write Laplace's equation in cyl
 &lt;span>
  \[\laplacian V = \frac{1}{s} \pdv{}{s} \left( s \pdv{V}{s} \right) &amp;#43; \frac{1}{s^2} \frac{\partial ^2 V}{\partial \phi ^2} = 0 \]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 We'll try the method of separation of variables on s and \\( \phi \\) by searching for solutions which are products of the form
@@ -1163,88 +1102,12 @@ We'll try the method of separation of variables on s and \\( \phi \\) by searchi
 &lt;span>
  \[V(s, \phi) = S(s) &amp;#43; \Phi(\phi)\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
 &lt;span>
  \[\frac{1}{s} \Phi \dv{}{s} \left( s \dv{S}{s} \right) &amp;#43; \frac{1}{s^2} S \frac{d^2 \Phi}{d\phi ^2} = 0 \]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 to separate the variables, we need to divide by V and multiply by \\( s^2 \\) 
@@ -1252,44 +1115,6 @@ to separate the variables, we need to divide by V and multiply by \\( s^2 \\)
 &lt;span>
  \[\frac{s}{S} \dv{}{s} \left( s \dv{S}{s} \right) &amp;#43; \frac{1}{\Phi} \frac{d^2 \Phi}{d \phi ^2} = 0\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 We define 
@@ -1297,44 +1122,6 @@ We define
 &lt;span>
  \[f(s) = \frac{s}{S} \dv{}{s} \left( s \dv{S}{s} \right) \]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 and
@@ -1342,44 +1129,6 @@ and
 &lt;span>
  \[g(\phi) = \frac{1}{\Phi} \frac{d^2 \Phi}{d \phi ^2} \]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 Since we have separated our independent variables and the sum is equal to zero, they must both be constant
@@ -1387,44 +1136,6 @@ Since we have separated our independent variables and the sum is equal to zero, 
 &lt;span>
  \[f(s) = C_1 \qquad g(\phi) = C_2 \qquad C_1 &amp;#43; C_2 = 0\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 Cylindrical symmetry implies that
@@ -1432,44 +1143,6 @@ Cylindrical symmetry implies that
 &lt;span>
  \[\text{ when } \phi \rightarrow \phi &amp;#43; 2 \pi : \qquad \Phi(\phi &amp;#43; 2 \pi) = \Phi(\phi)\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 So \\( C_2 \\) must be the positive one, since we know that will give us the periodic solutions to Laplace's equation. We write our constant as \\( k^2 \\) so
@@ -1478,44 +1151,6 @@ So \\( C_2 \\) must be the positive one, since we know that will give us the per
  \[\frac{d^2 \Phi}{d \phi ^2} = - k^2 \Phi \\
 \rightarrow \Phi(\phi) = A \cos (k \phi) &amp;#43; B \sin (k \phi), \quad k = 0, 1, 2, 3, \ldots\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 Back to the S part, we need a solution to 
@@ -1523,44 +1158,6 @@ Back to the S part, we need a solution to
 &lt;span>
  \[s \dv{}{s} \left( s \dv{S}{s} \right) = k^2 S\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 A convenient solution would be a power function, \\( S(s) = s^n \\) if we choose the power _n_ appropriately
@@ -1575,44 +1172,6 @@ s \dv{}{s} \left( s \dv{s^n}{s} \right) &amp;amp; = s \dv{}{s} \left( s n s^{n-1
 &amp;amp; \rightarrow n = \pm k
 \end{aligned}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 So, our general solution for S is
@@ -1620,44 +1179,6 @@ So, our general solution for S is
 &lt;span>
  \[S(s) = C s^k &amp;#43; D s^{-k}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 And our general solution will be an infinite series over _k_. But we have to now be careful, because previously we've expressed our general solution in terms of strictly non-zero _k_, but here we have \\( k = 0 \\), which gives us a constant solution
@@ -1665,44 +1186,6 @@ And our general solution will be an infinite series over _k_. But we have to now
 &lt;span>
  \[k = 0: \qquad S(s) = C s^0 &amp;#43; D s^0 = \text{const.}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 But we should get _two_ solutions for a second-order ordinary differential equation. If we go back to the differential equation for S,
@@ -1714,44 +1197,6 @@ But we should get _two_ solutions for a second-order ordinary differential equat
 \rightarrow \dd S = C \frac{ds}{s} \\
 S(s) = C \ln s &amp;#43; D \]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 This gives us our second solution for S for \\( k = 0 \\).
@@ -1763,44 +1208,6 @@ Now what about for \\( \Phi \\)? Looking at the k = 0 case for the \\( \Phi \\) 
 \frac{d \Phi}{d \phi} = \text{ const. } = B \\
 \rightarrow \Phi(\phi) = B \phi &amp;#43; A\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 But this doesn't meet our periodicity requirement! This isn't a physically acceptable solution. For k = 0, \\( \Phi = B \\) is the only 'physically acceptable' solution (we discard \\( B \phi + A \\) out of hand.)
@@ -1810,44 +1217,6 @@ Finally, our general solution looks like
 &lt;span>
  \[V(s, \phi) = a_0 &amp;#43; b_0 \ln s &amp;#43; \sum_{k=1} ^\infty \left[ s^k (a_k \cos k \phi &amp;#43; b_k \sin k \phi) &amp;#43; s^{-k} (a_k \cos k \phi &amp;#43; b_k \sin k \phi) \right]\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 We've only been asked for the general solution in cylindrical coordinates (from which we can tell that our solution is independent of _a_), and we must be given boundary conditions in order to solve for the constants \\( a_k, b_k \\).
@@ -1873,44 +1242,6 @@ A sphere of radius R, centered at the origin, carries charge density
 &lt;span>
  \[\rho(r, \theta) = k \frac{R}{r^2} (R - 2r) \sin \theta\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 where _k_ is a constant, and \\( r, \theta \\) are the usual spherical coordinates. Find the approximate potential for points on the _z_ axis, far from the sphere.
@@ -1927,44 +1258,6 @@ We are asked for the _approximate_ potential for points on the z-axis far from t
 &lt;span>
  \[V(\vec{r}) = \frac{1}{4 \pi \epsilon_0} \sum_{n=0} ^\infty \frac{1}{r^{(n&amp;#43;1)}} \int (r&amp;#39;) P_n(\cos \alpha) \rho(\vec{r&amp;#39;}) \dd{\tau&amp;#39;}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 Let's start with the monopole term. The integral we have to calculate is simply the charge density integrated over the charge distribution
@@ -1973,44 +1266,6 @@ Let's start with the monopole term. The integral we have to calculate is simply 
  \[\int \rho(r) \dd \tau = k R \int_0 ^R \int _0 ^{\pi} \int_{0} ^{2 \pi} \frac{1}{r^2} (R - 2r) \sin \theta (r^2 \sin \theta ) \dd r \dd \theta \dd \phi \\
 \int _{0} ^R (R - 2r) \dd r = \left.(R r - r^2)\right|_{0} ^R = 0\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 So the monopole term comes out to zero. Next, we try calculating the dipole term:
@@ -2018,44 +1273,6 @@ So the monopole term comes out to zero. Next, we try calculating the dipole term
 &lt;span>
  \[\int r \cos \theta \rho(r) \dd \tau = k R \iiint r \cos \theta \frac{1}{r^2} (R - 2r) \sin \theta (r^2 \sin \theta) \dd r \dd \theta \dd \phi\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 The \\( \theta \\) integral will come out to
@@ -2063,44 +1280,6 @@ The \\( \theta \\) integral will come out to
 &lt;span>
  \[\int_0 ^{\pi} \sin ^2 \cos \theta \dd \theta = \int _0 ^\pi \sin ^2 \theta \dd (\sin \theta) = \left. \frac{1}{3} \sin ^3 \theta \right|_0 ^\pi = 0\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 Well dangit, we still don't have the first non-zero term! On to the quadrupole term:
@@ -2112,44 +1291,6 @@ Well dangit, we still don't have the first non-zero term! On to the quadrupole t
 = &amp;amp; \frac{1}{2} kR \iiint r^2 (3 \cos ^2 \theta - 1)(R - 2r) \sin ^2 \theta \dd r \dd \theta \dd \phi 
 \end{aligned}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 Thankfully we don't have any cross-terms, so we can do the integrals separately. The integral in _r_ is
@@ -2157,44 +1298,6 @@ Thankfully we don't have any cross-terms, so we can do the integrals separately.
 &lt;span>
  \[\int_0 ^R r^2 (R - 2r) \dd r = - \frac{R^4}{6} \]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 The integral in \\( \theta \\) is 
@@ -2202,44 +1305,6 @@ The integral in \\( \theta \\) is
 &lt;span>
  \[\int_0 ^\pi (3 \cos ^2 \theta - 1) \sin ^2 \theta \dd \theta = \int _0 ^\pi \left[ 3 (1 - \sin ^2 \theta) - 1 \right] \sin ^2 \theta \dd \theta = - \frac{\pi}{8} \]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 And we just get a \\( 2 \pi \\) from the \\( \phi \\) integral, so converting our _r_ to _z_ in our coordinate system, the whole quadrupole potential is
@@ -2248,44 +1313,6 @@ And we just get a \\( 2 \pi \\) from the \\( \phi \\) integral, so converting ou
  \[V(\vec{r}) \approx \frac{1}{4 \pi \epsilon_0} \frac{1}{z^3} \frac{1}{2} k R \left( - \frac{R^4}{6} \right) \left( - \frac{\pi}{8} \right) (2 \pi) \\
 = \frac{1}{4 \pi \epsilon_0} \frac{k \pi ^2 R ^5}{48 z^3} \quad \text{(Quadrupole)}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 &lt;/div>
@@ -2309,44 +1336,6 @@ In Ex. 3.9, we derived the exact potential for a spherical shell of radius _R_, 
 &lt;span>
  \[\sigma = k \cos \theta\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 a) Calculate the dipole moment of this charge distribution.
@@ -2372,88 +1361,12 @@ p &amp;amp; = \int (R \cos \theta)(k \cos \theta) R^3 \sin \theta \dd \theta \dd
 &amp;amp; = \frac{4 \pi R^3 k}{3} 
 \end{aligned}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
 &lt;span>
  \[\tag{a} \vec{p} = \frac{4 \pi R^3 k}{3} \vu{z}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 The associated dipole potential is just
@@ -2461,44 +1374,6 @@ The associated dipole potential is just
 &lt;span>
  \[V_{dip} \approx \frac{1}{4 \pi \epsilon_0} \frac{\vu{r} \cdot \vec{p}}{r^2} = \frac{k R^3}{3 \epsilon_0} \frac{\cos \theta}{r^2} \]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
@@ -2523,44 +1398,6 @@ Show that the electric field of a 'pure' dipole can be written in the coordinate
 &lt;span>
  \[\vec{E_{dip}} = \frac{1}{4 \pi \epsilon_0} \frac{1}{r^3} [3 (\vec{p} \cdot \vu{r}) \vu{r} - \vec{p} ]\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 &lt;/div>
@@ -2575,88 +1412,12 @@ We still assume the dipole is pointing in the z-direction and start with spheric
 &lt;span>
  \[\vec{p} = p \vu{z}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
 &lt;span>
  \[\vec{p} = p_r \vu{r} &amp;#43; p_\theta \vu{\theta} &amp;#43; p_{\phi} \vu{\phi}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 Since __p__ is in the z-direction, we can safely say \\( p_\phi = 0 \\)
@@ -2666,44 +1427,6 @@ Since __p__ is in the z-direction, we can safely say \\( p_\phi = 0 \\)
 p_\theta = \vec{p} \cdot \vu{\theta} = - p \sin \theta \\
 \vec{p} = p \cos \theta \vu{r} - p \sin \theta \vu{\theta}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 So we can directly check this expression against the expression we got as Eqn 3.103 \\( (\vec{E_{dip}}(r, \theta) = \frac{p}{4 \pi \epsilon_0 r^3} (2 \cos \theta \vu{r} + \sin \theta \vu{\theta} ) \\):
@@ -2715,44 +1438,6 @@ So we can directly check this expression against the expression we got as Eqn 3.
 \rightarrow \vec{E_{dip}} &amp;amp; = \frac{1}{4 \pi \epsilon_0} \frac{1}{r^3} [3 (\vec{p} \cdot \vu{r}) \vu{r} - \vec{p} ]
 \end{aligned}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 So it all checks out.
@@ -2782,9 +1467,8 @@ Three point charges are located as shown in Fig 3.38, each a distance _a_ from t
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -2822,7 +1506,9 @@ Three point charges are located as shown in Fig 3.38, each a distance _a_ from t
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\]
+&lt;/span>
 
 &lt;h3 id="problem-55">
  Problem 5.5
@@ -2849,44 +1535,6 @@ K is the current per unit width \\( \perp \\) to the direction of the flow.
 &lt;span>
  \[K = \frac{I}{2 \pi a} \]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 Suppose instead the current is distributed somehow throughout the volume of the wire such that the current density is inversely proportional to the distance from the axis. Then
@@ -2894,44 +1542,6 @@ Suppose instead the current is distributed somehow throughout the volume of the 
 &lt;span>
  \[j = \frac{\text{current}}{\text{unit area } \perp \text{ flow}} = \frac{d I}{da_{\perp}} \]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 We suppose that _j_ has the form
@@ -2939,44 +1549,6 @@ We suppose that _j_ has the form
 &lt;span>
  \[j = \frac{\text{const.}}{s} = \frac{c}{s} \]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
@@ -2987,44 +1559,6 @@ I &amp;amp; = \int j \dd a_{\perp} \\
 &amp;amp; = 2 \pi c a
 \end{aligned}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 so
@@ -3032,44 +1566,6 @@ so
 &lt;span>
  \[c = \frac{I}{2 \pi a} \]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 and
@@ -3077,44 +1573,6 @@ and
 &lt;span>
  \[j = \frac{I}{2 \pi a s} \]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
@@ -3143,9 +1601,8 @@ Find the magnetic field at point P on the axis of a tightly wound solenoid (heli
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -3183,7 +1640,9 @@ Find the magnetic field at point P on the axis of a tightly wound solenoid (heli
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\]
+&lt;/span>
 
 &lt;h3 id="problem-77">
  Problem 7.7
@@ -3219,44 +1678,6 @@ A metal bar of mass _m_ slides frictionlessly on two parallel conducting rails a
  \[\Phi_B = B l x \\
 emf = - \pdv{\Phi}{t} = - Blv\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 We can always use good old Ohm's law
@@ -3264,44 +1685,6 @@ We can always use good old Ohm's law
 &lt;span>
  \[I = V / R = -Blv / R\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 The induced magnetic flux opposes the change in flux, so the current flows down through the resistor.
@@ -3311,44 +1694,6 @@ The induced magnetic flux opposes the change in flux, so the current flows down 
 &lt;span>
  \[F = I \int \dd \vec{l} \cross \vec{B} = - \frac{B^2 l^2 v}{R}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 The direction opposes _x_ (force is to the left).
@@ -3363,44 +1708,6 @@ F = m \dv{v}{t} = - \frac{B^2 l^2}{R} v \\
 \ln \frac{v}{v_0} = - \frac{B^2 l^2 }{m R } t \\
 v = v_0 e^{-\frac{B^2 l^2 }{m R } t}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
@@ -3409,44 +1716,6 @@ v = v_0 e^{-\frac{B^2 l^2 }{m R } t}\]
 &lt;span>
  \[P = I^2 R \]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 So energy delivered is
@@ -3457,44 +1726,6 @@ So energy delivered is
 = - \frac{B^2 l^2}{R} v_0 ^2 \frac{m R}{2 B^2 l^2} [ 0 - 1 ] \\
 = \frac{1}{2} m v_0 ^2\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 Hooray!
@@ -3530,44 +1761,6 @@ Within the wire, you can draw an Amperian loop to find B within the wire with
 &lt;span>
  \[\int B \cdot \dd l = \mu_0 I_{enc}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 Within the gap, we need the Ampere's correction term
@@ -3576,44 +1769,6 @@ Within the gap, we need the Ampere's correction term
  \[\curl \vec{B} = \mu_0 \vec{J} &amp;#43; \mu_0 \epsilon_0 \pdv{\vec{E}}{t} \\
 \oint B \cdot \dd l = \mu_0 \epsilon_0 \int \pdv{\vec{E}}{t} \cdot \dd l\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 Current is flowing to the end of the wire with nowhere to go, so it must build up there. We've got a parallel plate capacitor within the gap
@@ -3621,88 +1776,12 @@ Current is flowing to the end of the wire with nowhere to go, so it must build u
 &lt;span>
  \[B(s) \cdot 2 \pi s = \mu_0 \epsilon_0 \dv{}{t} \int \frac{\sigma (t) }{\epsilon_0} \dd a\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
 &lt;span>
  \[B(s) = \frac{\mu_0}{2} s \pdv{\sigma}{t} = \frac{\mu_0 s}{2} \frac{I}{\pi a^2}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 where \\( \pdv{\sigma}{t} = \dv{A}{t} \frac{1}{\pi a^2} \\) 
@@ -3710,44 +1789,6 @@ where \\( \pdv{\sigma}{t} = \dv{A}{t} \frac{1}{\pi a^2} \\)
 &lt;span>
  \[B(s) = \frac{\mu_0 I}{2 \pi a^2} s \hat{\phi}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
@@ -3762,9 +1803,8 @@ where \\( \pdv{\sigma}{t} = \dv{A}{t} \frac{1}{\pi a^2} \\)
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -3802,7 +1842,9 @@ where \\( \pdv{\sigma}{t} = \dv{A}{t} \frac{1}{\pi a^2} \\)
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\]
+&lt;/span>
 
 &lt;h2 id="review-problem-1">
  Review Problem 1
@@ -3835,44 +1877,6 @@ With the normal Gauss' law approach to capacitors
 &lt;span>
  \[\vec E = \frac{I t}{\epsilon_0 A} \vu z\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
@@ -3883,132 +1887,18 @@ Faraday's law here
 &lt;span>
  \[\int ( \curl \vec B) = \int \mu_0 \epsilon _0 \pdv{ \vec E}{t} \cdot \dd \vec{a}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
 &lt;span>
  \[\rightarrow \oint \vec B \cdot \dd \vec l = \mu_0 \epsilon_0 \frac{I}{\epsilon_0 A} \pi r^2\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
 &lt;span>
  \[B \cdot 2 \pi r = \mu_0 \frac{I \pi r^2}{A} \rightarrow \vec B = \frac{\mu_0 I r}{2 A} \vu \phi\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
@@ -4048,44 +1938,6 @@ To get the magnitude of the Poynting vector, we need to realize that the intensi
 &lt;span>
  \[\langle \vec s \rangle = I = \frac{20 \cdot 10^{9}}{\pi (1\text{mm} / 2)^2} \approx 2.5 \cdot 10^{16} \text{W} / \text{m}^2\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 As for the direction of the Poynting vector, it's always orthogonal to both \\( \vec E \\) and \\( \vec B \\), in the direction of the laser beam (\\( \vu k \\))
@@ -4095,132 +1947,18 @@ To get the peak values of \\( \vec E \\) and \\( \vec B \\), recall that for mon
 &lt;span>
  \[\langle \vec S \rangle = \frac{1}{2} c \epsilon _0 E_0 ^2 \vu {z}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
 &lt;span>
  \[\rightarrow E_0 \approx 4.3 \cdot 10^9 \text{V} / \text{m} \]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
 &lt;span>
  \[B_0 = \frac{E_0}{c} \approx 14.3\text{Teslas}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
@@ -4231,132 +1969,18 @@ Within the linear medium, we just replace \\( c \\) with \\( v \\) and \\( \epsi
 &lt;span>
  \[\langle \vec S \rangle = \frac{1}{2} v \epsilon (E_0 &amp;#39;) ^2\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
 &lt;span>
  \[\rightarrow E_0 &amp;#39; = \sqrt{\frac{2In}{c \epsilon } } = \frac{E_0}{\sqrt{n}}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
 &lt;span>
  \[B_0 = \frac{E_0 &amp;#39;}{v} = \frac{E_0 / \sqrt{n}}{c / n} = B_0 \sqrt{n}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
@@ -4401,88 +2025,12 @@ To get the skin depth, we want \\( d = 1 / \kappa \\). For a good conductor, we 
 &lt;span>
  \[\kappa = k = \sqrt{\frac{\omega \sigma \mu_0}{2}}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
 &lt;span>
  \[\rightarrow d = \sqrt{\frac{2}{\omega \sigma \mu_0}} \approx 65 \mu\text{m}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
@@ -4491,44 +2039,6 @@ What wavelength does a 1MHz wave have in vacuum?
 &lt;span>
  \[\lambda = \frac{c}{f} = \frac{2 \pi c}{\omega} \approx 300 \text{m}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
@@ -4537,44 +2047,6 @@ Now that we're in copper, what is the wavelength?
 &lt;span>
  \[\lambda = \frac{2 \pi}{\text{Re}[k]} = 2 \pi d = 2 \pi \sqrt{ \frac{2}{\omega \sigma \mu_0}} \approx 0.4 \text{mm}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 So the wavelength has shrunk by a huge factor. The speed of the wave will have dropped significantly in the conductor, while the frequency must match, so it makes sense that the wavelength must also shrink.
@@ -4584,44 +2056,6 @@ The phase velocity in vacuum is simply \\( c = \omega / k \\) = \\( 3 \cdot 10^8
 &lt;span>
  \[v = \frac{\omega}{k} = \omega d \approx 400 \text{m}/\text{s}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
@@ -4661,88 +2095,12 @@ To recall, for a dilute medium
 &lt;span>
  \[n = \tilde{n} = 1 &amp;#43; \frac{Nq^2}{2m\epsilon_0} \sum_j \frac{f_j}{(\omega _j ^2 - \omega_0 ^2 ) - i \gamma_j \omega}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 
 &lt;span>
  \[\alpha = 2 \kappa \approx \frac{N q^2 \omega^2}{m \epsilon_0 c} \sum_j \frac{ f_j \gamma _j}{(\omega_j ^2 - \omega ^2 ) ^2 &amp;#43; \gamma _j ^2 \omega ^2}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 If the field drops by a factor of 2 over 10 meters, and the dissipation goes as \\( E \propto e^{-\kappa z} \\), so
@@ -4750,44 +2108,6 @@ If the field drops by a factor of 2 over 10 meters, and the dissipation goes as 
 &lt;span>
  \[e^{-\kappa (10m)} = \frac{1}{2} \rightarrow \alpha = 2 \kappa \approx 0.14 m^{-1}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 To arrange the propagation velocities, we need to remember what the propagation velocity looks like:
@@ -4795,44 +2115,6 @@ To arrange the propagation velocities, we need to remember what the propagation 
 &lt;span>
  \[v = \frac{\omega}{k} = \frac{c}{n}\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 recalling that \\( \dv{n}{\omega} &lt; 0 \\) within the resonance linewidth,
@@ -4840,44 +2122,6 @@ recalling that \\( \dv{n}{\omega} &lt; 0 \\) within the resonance linewidth,
 &lt;span>
  \[v( \omega_0 - \Delta \omega / 10 ) &amp;lt; v(\omega_0) &amp;lt; v( \omega_0 &amp;#43; \Delta \omega / 10 ) \]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 
 

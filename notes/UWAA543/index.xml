@@ -13,9 +13,8 @@
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\pdv{\rho}{t} &amp;#43; v \cdot \grad \rho = - \rho \grad \cdot v\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -53,7 +52,9 @@
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\pdv{\rho}{t} &amp;#43; v \cdot \grad \rho = - \rho \grad \cdot v\]
+&lt;/span>
 
 &lt;p>Momentum:&lt;/p></description></item><item><title>Reduced Models</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch20-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch20-3/</guid><description>&lt;h2 id="203-reduced-models">
  &lt;strong>20.3&lt;/strong> Reduced Models
@@ -80,9 +81,8 @@
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[a \phi_{xx} &amp;#43; b \phi_{xy} &amp;#43; c \phi_{yy} &amp;#43; d \phi_x &amp;#43; e \phi_y &amp;#43; f \phi = g\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -120,7 +120,9 @@
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[a \phi_{xx} &amp;#43; b \phi_{xy} &amp;#43; c \phi_{yy} &amp;#43; d \phi_x &amp;#43; e \phi_y &amp;#43; f \phi = g\]
+&lt;/span>
 
 &lt;p>where \( x, y \) are any two independent variables. I.e. we could let \( x \rightarrow t \). In this form, we can identify the equation type by transforming into a quadratic form (derivation not shown)&lt;/p></description></item><item><title>Panel Method</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch20-5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch20-5/</guid><description>&lt;h1 id="205-panel-method">
  &lt;strong>20.5&lt;/strong> Panel Method
@@ -131,9 +133,8 @@
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\phi_p = \frac{1}{2 \pi} \int \lambda \ln (r) \dd s\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -171,91 +172,17 @@
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\phi_p = \frac{1}{2 \pi} \int \lambda \ln (r) \dd s\]
+&lt;/span>
 
 &lt;span>
  \[= \frac{1}{2 \pi} \int \lambda \ln \left( \sqrt{ (x_p - x)^2 &amp;#43; (y_p - y)^2}\right) \dd s\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 &lt;span>
  \[\lambda = 2 u_\lambda\]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 &lt;p align="center"> &lt;img alt="Figure 20.2" src="https://peppyhare.github.io/r/img/20.2.png" /> &lt;/p></description></item><item><title>Finite Difference Algorithms</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch21-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch21-1/</guid><description>&lt;h1 id="211-finite-difference-algorithms">
  21.1 Finite Difference Algorithms
@@ -276,10 +203,8 @@
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[ u_j ^{n&amp;#43;1} = f(u_j ^n, u_{j&amp;#43;1} ^n , u_{j&amp;#43;2} ^n \ldots)
- \]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -317,7 +242,10 @@
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[ u_j ^{n&amp;#43;1} = f(u_j ^n, u_{j&amp;#43;1} ^n , u_{j&amp;#43;2} ^n \ldots)
+ \]
+&lt;/span>
 
 &lt;ul>
 &lt;li>&lt;strong>Implicit&lt;/strong> algorithms: Use data from the next time step when advancing the solution. Leads to a system of equations that must be solved simultaneously&lt;/li>
@@ -326,44 +254,6 @@
  \[ u_{j} ^{n&amp;#43;1} = f(u_{j} ^n , u_{j&amp;#43;1} ^{n&amp;#43;1}, u_{j-1} ^{n&amp;#43;1}, \ldots)
  \]
 &lt;/span>
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>
 
 &lt;p>One look at the typical definition of the derivative suggests an algebraic approximation&lt;/p></description></item><item><title>Explicit Finite Difference Algorithms</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch21-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch21-2/</guid><description>&lt;h1 id="explicit-finite-difference-algorithms">
  Explicit Finite Difference Algorithms
@@ -385,9 +275,8 @@ n --------|--------*--------*--------
 &lt;/code>&lt;/pre>
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[u_j ^{n&amp;#43;1} = u_j ^n - \frac{a \Delta t}{\Delta x} (u_{j&amp;#43;1} ^n - u_j ^n)\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -425,7 +314,9 @@ n --------|--------*--------*--------
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[u_j ^{n&amp;#43;1} = u_j ^n - \frac{a \Delta t}{\Delta x} (u_{j&amp;#43;1} ^n - u_j ^n)\]
+&lt;/span>
 
 &lt;p>The accuracy is \( O(\Delta t, \Delta x) \). Previously we saw that the von Neumann stability analysis shows&lt;/p></description></item><item><title>Finite Difference and Finite Volume Methods</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch21-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch21-3/</guid><description>&lt;h1 id="finite-difference-and-finite-volume-methods">
  Finite Difference and Finite Volume Methods
@@ -439,9 +330,8 @@ n --------|--------*--------*--------
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\left| \frac{a \Delta x}{\Delta t} \right| \leq 1\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -479,7 +369,9 @@ n --------|--------*--------*--------
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\left| \frac{a \Delta x}{\Delta t} \right| \leq 1\]
+&lt;/span>
 
 &lt;p>For a given grid, this effectively sets a limit on the time step. The time step can be no larger than the grid spacing divided by the propagation constant \( \Delta t \leq \Delta x / |a| \). As an example, say we have a device of interest that is 1 meter long, and we want a grid resolution such that we can resolve features that are 1mm in size. Say the problem domain is flow over an airfoil&lt;/p></description></item><item><title>Numerical Boundary Conditions</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch21-5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch21-5/</guid><description>&lt;h1 id="numerical-boundary-conditions">
  Numerical Boundary Conditions
@@ -489,9 +381,8 @@ n --------|--------*--------*--------
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\pdv{u}{t} &amp;#43; a \pdv{u}{x} = 0\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -529,6 +420,8 @@ n --------|--------*--------*--------
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\pdv{u}{t} &amp;#43; a \pdv{u}{x} = 0\]
+&lt;/span>
 
 &lt;p>For it to be a well-posed mathematical problem, you also need the Cauchy data (boundary and initial conditions). From the order of the differential operators, we know that we need one boundary condition (constraint on \( u(x_b) \) for all \( t \) ) and one initial condition (constraint on \( u(x) \) at \( t = 0 \)).&lt;/p></description></item></channel></rss>

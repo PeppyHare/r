@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Research Notes on My Notes</title><link>https://peppyhare.github.io/r/notes/research/</link><description>Recent content in Research Notes on My Notes</description><generator>Hugo</generator><language>en</language><atom:link href="https://peppyhare.github.io/r/notes/research/index.xml" rel="self" type="application/rss+xml"/><item><title>Electrodynamic Dory-Guest-Harris Instability</title><link>https://peppyhare.github.io/r/notes/research/dgh-datta/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/dgh-datta/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -40,14 +39,15 @@
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\]
+&lt;/span>
 
 &lt;p>Pretty much entirely based on this paper: 
  &lt;a href="https://doi.org/10.1063/5.0057230">Electromagnetic extension of the Dory– Guest–Harris instability as a benchmark for Vlasov–Maxwell continuum kinetic simulations of magnetized plasmas&lt;/a>&lt;/p></description></item><item><title>Valgrind</title><link>https://peppyhare.github.io/r/notes/research/valgrind/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/valgrind/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -85,7 +85,9 @@
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\]
+&lt;/span>
 
 &lt;h1 id="valgrind">
  Valgrind
@@ -98,9 +100,8 @@
 &lt;/h1>
 &lt;p>WARPXM is an &lt;em>extensible&lt;/em> &lt;em>framework&lt;/em> for solving hyperbolic PDE systems. By &amp;ldquo;framework&amp;rdquo; we mean that it is not a single tool for solving a particular type of system, but rather it contains a number of applications, solvers, and other tools which can be combined to create a wide variety of models. By &amp;ldquo;extensible,&amp;rdquo; we mean the framework allows for defining additional components which can be mixed in with the existing solvers and applications.&lt;/p></description></item><item><title>WARPXM 102 - Code Structure</title><link>https://peppyhare.github.io/r/notes/research/warpxm-102/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/warpxm-102/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>&lt;span>
- \[\]
-&lt;/span>
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+
 &lt;script>
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -138,7 +139,9 @@
  }
  });
  };
-&lt;/script>
+&lt;/script>&lt;span>
+ \[\]
+&lt;/span>
 
 &lt;h1 id="what-happens-when-you-press-go">
  What Happens When You Press Go?
