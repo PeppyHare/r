@@ -1985,7 +1985,7 @@ We define \( \vec \omega_{c, \alpha} \) to be the vector gyrofrequency
  1.6.1: The Helmholtz Theorem
  &lt;a class="anchor" href="#161-the-helmholtz-theorem">#&lt;/a>
 &lt;/h2>
-&lt;p>Ever since Faraday, the laws of electricity and magnetism have been expressed in terms of &lt;em>electric&lt;/em> and &lt;em>magnetic&lt;/em> fields, &lt;strong>E&lt;/strong> and &lt;strong>B&lt;/strong>. Like many physical laws, these are most compactly expressed as differential equations. Since &lt;strong>E&lt;/strong> and &lt;strong>B&lt;/strong> are vectors, the differential equations naturally involve vector derivatives: divergence and curl. Indeed, Maxwell reduced the entire theory to four equations, specifying respectively the divergence and the curl of &lt;strong>E&lt;/strong> and &lt;strong>B&lt;/strong>.&lt;/p></description></item><item><title>Equilibrium for Fusion</title><link>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</guid><description>&lt;h1 id="equilibrium-for-fusion-hahahugoshortcode111s0hbhb">
+&lt;p>Ever since Faraday, the laws of electricity and magnetism have been expressed in terms of &lt;em>electric&lt;/em> and &lt;em>magnetic&lt;/em> fields, &lt;strong>E&lt;/strong> and &lt;strong>B&lt;/strong>. Like many physical laws, these are most compactly expressed as differential equations. Since &lt;strong>E&lt;/strong> and &lt;strong>B&lt;/strong> are vectors, the differential equations naturally involve vector derivatives: divergence and curl. Indeed, Maxwell reduced the entire theory to four equations, specifying respectively the divergence and the curl of &lt;strong>E&lt;/strong> and &lt;strong>B&lt;/strong>.&lt;/p></description></item><item><title>Equilibrium for Fusion</title><link>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</guid><description>&lt;h1 id="equilibrium-for-fusion-hahahugoshortcode110s0hbhb">
  Equilibrium for Fusion (
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
@@ -2032,7 +2032,7 @@ We define \( \vec \omega_{c, \alpha} \) to be the vector gyrofrequency
  \( \beta \)
 &lt;/span>
 )
- &lt;a class="anchor" href="#equilibrium-for-fusion-hahahugoshortcode111s0hbhb">#&lt;/a>
+ &lt;a class="anchor" href="#equilibrium-for-fusion-hahahugoshortcode110s0hbhb">#&lt;/a>
 &lt;/h1>
 &lt;p>For a fusion device we would like to determine a magnetic configuration that confines plasma while it fuses. At fusion temperatures, the power required to maintain the equilibrium will be substantial. For a device to be useful, the power required to sustain the equilibrium must be less than the power released from fusion. Important loss terms for a confined plasma are transport (thermal conduction primarily) and radiation terms. The scaling factors are &lt;span>
  \( P_{Brem} \sim n^2 T^{1/2} \)
@@ -2230,7 +2230,7 @@ which has the general solution
  1-Dimensional Equilibria
  &lt;a class="anchor" href="#1-dimensional-equilibria">#&lt;/a>
 &lt;/h1>
-&lt;h2 id="the-hahahugoshortcode112s0hbhb-pinch">
+&lt;h2 id="the-hahahugoshortcode115s0hbhb-pinch">
  The 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
@@ -2277,7 +2277,7 @@ which has the general solution
  \( \theta \)
 &lt;/span>
 -pinch
- &lt;a class="anchor" href="#the-hahahugoshortcode112s0hbhb-pinch">#&lt;/a>
+ &lt;a class="anchor" href="#the-hahahugoshortcode115s0hbhb-pinch">#&lt;/a>
 &lt;/h2>
 &lt;p>In a &lt;span>
  \( \theta \)
