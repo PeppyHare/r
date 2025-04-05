@@ -38,6 +38,8 @@ In SI units, we have:
 - \\( x_{max} \\): Equal to \\( L / 2 \\)
 - \\( v_i \\): Velocity (meters/s) of particle \\( i \\).
 
+
+
 ## Comparing results to theory
 
 Finding the distance between peaks in the field energy is a good way of measuring the frequency.
@@ -46,3 +48,4 @@ Finding the distance between peaks in the field energy is a good way of measurin
 ## Notes for write-up
 
 When you read a paper, you typically read the title, abstract, introduction, conclusions, and _look at the figures and captions_. Then, if you want more details on something in particular, you dive into the larger sections. The figures are key to this. They should be clearly labelled and captions, and they should clearly convey a specific idea.
+

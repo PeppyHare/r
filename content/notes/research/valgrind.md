@@ -23,13 +23,17 @@ Simple as that!
 
 ## Cachegrind vs. Callgrind
 
-Callgrind and cachegrind are two Valgrind profiling tools that serve very similar functions. Both attempt to profile the runtime cost of your program, giving you a breakdown of how much "cost" was associated with each function call. The exact meaning of "cost" differs between the tool. The profiling data is written to a file named e.g `cachegrind.out.<pid>
+Callgrind and cachegrind are two Valgrind profiling tools that serve very similar functions. Both attempt to profile the runtime cost of your program, giving you a breakdown of how much "cost" was associated with each function call. The exact meaning of "cost" differs by tool, as described below. The profiling data is written to a file named e.g `cachegrind.out.<pid>
 ` where `<pid>` is the process ID of the userspace process.
 
 ### Cachegrind
 
-Cachegrind is a profiling tool that is meant to be **reproducible**. Rather than measuring the execution time of the program, it attempts to measure the exact number of CPU instructions executed by the program.
+Cachegrind is a profiling tool that is meant to be **reproducible**. Rather than measuring the execution time of the program, it attempts to measure the exact number of CPU instructions executed by the program. This provides an extremely precise measurement of the best-case performance of the program which is identical from run to run, and is not subject to the usual noisy measurement problems that time-based profilers face.
 
 ### Callgrind
 
 Callgrind is a profiling tool that records call history events (data reads, cache misses, etc.) and attributes the cost of each event to the relevant function (and its parents, up the call stack).
+
+
+## Reading Cachegrind output
+
