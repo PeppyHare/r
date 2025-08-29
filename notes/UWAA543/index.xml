@@ -1,21 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Computational CFD on My Notes</title><link>https://peppyhare.github.io/r/notes/UWAA543/</link><description>Recent content in Computational CFD on My Notes</description><generator>Hugo</generator><language>en</language><atom:link href="https://peppyhare.github.io/r/notes/UWAA543/index.xml" rel="self" type="application/rss+xml"/><item><title>Introduction to Computational CFD</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch20-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch20-1/</guid><description>&lt;h1 id="201-introduction-to-computational-cfd">
- &lt;strong>20.1&lt;/strong> Introduction to Computational CFD
- &lt;a class="anchor" href="#201-introduction-to-computational-cfd">#&lt;/a>
-&lt;/h1>
-&lt;!-- Eric Meier -->
-&lt;p>&lt;strong>What is computational fluid dynamics?&lt;/strong> Put simply, it&amp;rsquo;s the use of computers to obtain a numerical solution to the governing equations of fluid dynamics. As always, the numerical solution is an approximation to the real solution to the equations, but additionally those equations are themselves only an approximation of the real physics.&lt;/p>
-&lt;p align="center"> &lt;img alt="Figure 20.1" src="https://peppyhare.github.io/r/img/20.1.png" /> &lt;/p>
-&lt;p>We will be interested in speeds much less than \( c \) (\( 3 \cdot 10^8 m/s) \) and distances much greater than the atomic radius \( \alpha_{bohr} = 5 \cdot 10^{-11} m \).&lt;/p></description></item><item><title>Governing Equations</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch20-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch20-2/</guid><description>&lt;h1 id="governing-equations">
- &lt;strong>Governing Equations&lt;/strong>
- &lt;a class="anchor" href="#governing-equations">#&lt;/a>
-&lt;/h1>
-&lt;p>Continuity&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Computational CFD on My Notes</title><link>https://peppyhare.github.io/r/notes/UWAA543/</link><description>Recent content in Computational CFD on My Notes</description><generator>Hugo</generator><language>en</language><atom:link href="https://peppyhare.github.io/r/notes/UWAA543/index.xml" rel="self" type="application/rss+xml"/><item><title>Introduction to Computational CFD</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch20-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch20-1/</guid><description>&lt;h1 id="201-introduction-to-computational-cfd"&gt;
+ &lt;strong&gt;20.1&lt;/strong&gt; Introduction to Computational CFD
+ &lt;a class="anchor" href="#201-introduction-to-computational-cfd"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;!-- Eric Meier --&gt;
+&lt;p&gt;&lt;strong&gt;What is computational fluid dynamics?&lt;/strong&gt; Put simply, it&amp;rsquo;s the use of computers to obtain a numerical solution to the governing equations of fluid dynamics. As always, the numerical solution is an approximation to the real solution to the equations, but additionally those equations are themselves only an approximation of the real physics.&lt;/p&gt;
+&lt;p align="center"&gt; &lt;img alt="Figure 20.1" src="https://peppyhare.github.io/r/img/20.1.png" /&gt; &lt;/p&gt;
+&lt;p&gt;We will be interested in speeds much less than \( c \) (\( 3 \cdot 10^8 m/s) \) and distances much greater than the atomic radius \( \alpha_{bohr} = 5 \cdot 10^{-11} m \).&lt;/p&gt;</description></item><item><title>Governing Equations</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch20-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch20-2/</guid><description>&lt;h1 id="governing-equations"&gt;
+ &lt;strong&gt;Governing Equations&lt;/strong&gt;
+ &lt;a class="anchor" href="#governing-equations"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;Continuity&lt;/p&gt;
 
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
 
-&lt;script>
+&lt;script&gt;
  function loadKatex() {
  renderMathInElement(document.body, {
  delimiters: [
@@ -24,7 +24,7 @@
  { left: "$", right: "$", display: false },
  { left: "\\(", right: "\\)", display: false }],
  throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
  macros: {
  "\\lcm": "\\mathop{\\mathrm{lcm}}",
  "\\sen": '\\text{sen}\\,',
@@ -52,38 +52,38 @@
  }
  });
  };
-&lt;/script>&lt;span>
+&lt;/script&gt;&lt;span&gt;
  \[\pdv{\rho}{t} &amp;#43; v \cdot \grad \rho = - \rho \grad \cdot v\]
-&lt;/span>
+&lt;/span&gt;
 
-&lt;p>Momentum:&lt;/p></description></item><item><title>Reduced Models</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch20-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch20-3/</guid><description>&lt;h2 id="203-reduced-models">
- &lt;strong>20.3&lt;/strong> Reduced Models
- &lt;a class="anchor" href="#203-reduced-models">#&lt;/a>
-&lt;/h2>
-&lt;p>Further simplifications to the fluid models provide equations that are easier to solve. But we have to make sure that the reduced models (anything that&amp;rsquo;s not the full equation system) still capture the relevant physics of the problem.&lt;/p>
-&lt;p>Let&amp;rsquo;s assume the (2D) flow is&lt;/p>
-&lt;ul>
-&lt;li>irrotational \( (\curl v = 0) \)&lt;/li>
-&lt;li>isentropic&lt;/li>
-&lt;li>steady-state&lt;/li>
-&lt;/ul>
-&lt;p>This lets us apply potential flow theory. Since the flow is irrotational, the curl of the velocity field is zero, so we can define a potential&lt;/p></description></item><item><title>Equation Types</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch20-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch20-4/</guid><description>&lt;h1 id="equation-types">
+&lt;p&gt;Momentum:&lt;/p&gt;</description></item><item><title>Reduced Models</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch20-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch20-3/</guid><description>&lt;h2 id="203-reduced-models"&gt;
+ &lt;strong&gt;20.3&lt;/strong&gt; Reduced Models
+ &lt;a class="anchor" href="#203-reduced-models"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Further simplifications to the fluid models provide equations that are easier to solve. But we have to make sure that the reduced models (anything that&amp;rsquo;s not the full equation system) still capture the relevant physics of the problem.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s assume the (2D) flow is&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;irrotational \( (\curl v = 0) \)&lt;/li&gt;
+&lt;li&gt;isentropic&lt;/li&gt;
+&lt;li&gt;steady-state&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This lets us apply potential flow theory. Since the flow is irrotational, the curl of the velocity field is zero, so we can define a potential&lt;/p&gt;</description></item><item><title>Equation Types</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch20-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch20-4/</guid><description>&lt;h1 id="equation-types"&gt;
  Equation Types
- &lt;a class="anchor" href="#equation-types">#&lt;/a>
-&lt;/h1>
-&lt;p>PDE&amp;rsquo;s can be classified as elliptic, parabolic, or hyperbolic. The type of equation will suggest the choice of an appropriate algorithm.&lt;/p>
-&lt;p>The equation type can change for different flow parameters, or even for different regions within the same domain.&lt;/p>
-&lt;h2 id="2041-scalar-equations">
- &lt;strong>20.4.1&lt;/strong> Scalar Equations
- &lt;a class="anchor" href="#2041-scalar-equations">#&lt;/a>
-&lt;/h2>
-&lt;p>All of the scalar equations in fluid dynamics can be written in canonical form as the following 2nd order PDE.&lt;/p>
+ &lt;a class="anchor" href="#equation-types"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;PDE&amp;rsquo;s can be classified as elliptic, parabolic, or hyperbolic. The type of equation will suggest the choice of an appropriate algorithm.&lt;/p&gt;
+&lt;p&gt;The equation type can change for different flow parameters, or even for different regions within the same domain.&lt;/p&gt;
+&lt;h2 id="2041-scalar-equations"&gt;
+ &lt;strong&gt;20.4.1&lt;/strong&gt; Scalar Equations
+ &lt;a class="anchor" href="#2041-scalar-equations"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;All of the scalar equations in fluid dynamics can be written in canonical form as the following 2nd order PDE.&lt;/p&gt;
 
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
 
-&lt;script>
+&lt;script&gt;
  function loadKatex() {
  renderMathInElement(document.body, {
  delimiters: [
@@ -92,7 +92,7 @@
  { left: "$", right: "$", display: false },
  { left: "\\(", right: "\\)", display: false }],
  throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
  macros: {
  "\\lcm": "\\mathop{\\mathrm{lcm}}",
  "\\sen": '\\text{sen}\\,',
@@ -120,22 +120,22 @@
  }
  });
  };
-&lt;/script>&lt;span>
+&lt;/script&gt;&lt;span&gt;
  \[a \phi_{xx} &amp;#43; b \phi_{xy} &amp;#43; c \phi_{yy} &amp;#43; d \phi_x &amp;#43; e \phi_y &amp;#43; f \phi = g\]
-&lt;/span>
+&lt;/span&gt;
 
-&lt;p>where \( x, y \) are any two independent variables. I.e. we could let \( x \rightarrow t \). In this form, we can identify the equation type by transforming into a quadratic form (derivation not shown)&lt;/p></description></item><item><title>Panel Method</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch20-5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch20-5/</guid><description>&lt;h1 id="205-panel-method">
- &lt;strong>20.5&lt;/strong> Panel Method
- &lt;a class="anchor" href="#205-panel-method">#&lt;/a>
-&lt;/h1>
-&lt;p>Panel methods are a classical approach to solving flow problems that is still very useful today when finding solutions to even very complicated geometries. You represent a body as a series of panels.&lt;/p>
-&lt;p>A few definitions first: we say a &lt;strong>source panel&lt;/strong> of strength \( \lambda \) (units m/s) is defined by:&lt;/p>
+&lt;p&gt;where \( x, y \) are any two independent variables. I.e. we could let \( x \rightarrow t \). In this form, we can identify the equation type by transforming into a quadratic form (derivation not shown)&lt;/p&gt;</description></item><item><title>Panel Method</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch20-5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch20-5/</guid><description>&lt;h1 id="205-panel-method"&gt;
+ &lt;strong&gt;20.5&lt;/strong&gt; Panel Method
+ &lt;a class="anchor" href="#205-panel-method"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;Panel methods are a classical approach to solving flow problems that is still very useful today when finding solutions to even very complicated geometries. You represent a body as a series of panels.&lt;/p&gt;
+&lt;p&gt;A few definitions first: we say a &lt;strong&gt;source panel&lt;/strong&gt; of strength \( \lambda \) (units m/s) is defined by:&lt;/p&gt;
 
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
 
-&lt;script>
+&lt;script&gt;
  function loadKatex() {
  renderMathInElement(document.body, {
  delimiters: [
@@ -144,7 +144,7 @@
  { left: "$", right: "$", display: false },
  { left: "\\(", right: "\\)", display: false }],
  throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
  macros: {
  "\\lcm": "\\mathop{\\mathrm{lcm}}",
  "\\sen": '\\text{sen}\\,',
@@ -172,40 +172,40 @@
  }
  });
  };
-&lt;/script>&lt;span>
+&lt;/script&gt;&lt;span&gt;
  \[\phi_p = \frac{1}{2 \pi} \int \lambda \ln (r) \dd s\]
-&lt;/span>
+&lt;/span&gt;
 
-&lt;span>
+&lt;span&gt;
  \[= \frac{1}{2 \pi} \int \lambda \ln \left( \sqrt{ (x_p - x)^2 &amp;#43; (y_p - y)^2}\right) \dd s\]
-&lt;/span>
+&lt;/span&gt;
 
-&lt;span>
+&lt;span&gt;
  \[\lambda = 2 u_\lambda\]
-&lt;/span>
+&lt;/span&gt;
 
-&lt;p align="center"> &lt;img alt="Figure 20.2" src="https://peppyhare.github.io/r/img/20.2.png" /> &lt;/p></description></item><item><title>Finite Difference Algorithms</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch21-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch21-1/</guid><description>&lt;h1 id="211-finite-difference-algorithms">
+&lt;p align="center"&gt; &lt;img alt="Figure 20.2" src="https://peppyhare.github.io/r/img/20.2.png" /&gt; &lt;/p&gt;</description></item><item><title>Finite Difference Algorithms</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch21-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch21-1/</guid><description>&lt;h1 id="211-finite-difference-algorithms"&gt;
  21.1 Finite Difference Algorithms
- &lt;a class="anchor" href="#211-finite-difference-algorithms">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="definitions">
+ &lt;a class="anchor" href="#211-finite-difference-algorithms"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;h2 id="definitions"&gt;
  Definitions
- &lt;a class="anchor" href="#definitions">#&lt;/a>
-&lt;/h2>
-&lt;p>By definition, &lt;strong>Finite Differencing&lt;/strong> is a method to &lt;em>approximate&lt;/em> partial differential equations which we cannot solve, into a system of algebraic equations which we can.&lt;/p>
-&lt;p>Notation to simplify our representations:&lt;/p>
-&lt;ul>
-&lt;li>Superscripts: We use superscripts to denote steps in the time domain \( t^n = n \Delta t \). Here \( n = [0, N] \) is the step index and \( \Delta t \) is the time-step \( T/N \)&lt;/li>
-&lt;li>Subscripts: \( x_j = j \Delta x \). Here \( j = [0, J] \) is the step index and \( \Delta x = L/J \) is the spatial step.&lt;/li>
-&lt;li>Together: \( u_j ^n = u(t^n, x_j) \)&lt;/li>
-&lt;li>&lt;strong>Explicit&lt;/strong> algorithms: Use data that is already known at the present time to advance the solution to the next time step. They are easier and faster to implement, but they introduce stability constraints.&lt;/li>
-&lt;/ul>
+ &lt;a class="anchor" href="#definitions"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;By definition, &lt;strong&gt;Finite Differencing&lt;/strong&gt; is a method to &lt;em&gt;approximate&lt;/em&gt; partial differential equations which we cannot solve, into a system of algebraic equations which we can.&lt;/p&gt;
+&lt;p&gt;Notation to simplify our representations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Superscripts: We use superscripts to denote steps in the time domain \( t^n = n \Delta t \). Here \( n = [0, N] \) is the step index and \( \Delta t \) is the time-step \( T/N \)&lt;/li&gt;
+&lt;li&gt;Subscripts: \( x_j = j \Delta x \). Here \( j = [0, J] \) is the step index and \( \Delta x = L/J \) is the spatial step.&lt;/li&gt;
+&lt;li&gt;Together: \( u_j ^n = u(t^n, x_j) \)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Explicit&lt;/strong&gt; algorithms: Use data that is already known at the present time to advance the solution to the next time step. They are easier and faster to implement, but they introduce stability constraints.&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
 
-&lt;script>
+&lt;script&gt;
  function loadKatex() {
  renderMathInElement(document.body, {
  delimiters: [
@@ -214,7 +214,7 @@
  { left: "$", right: "$", display: false },
  { left: "\\(", right: "\\)", display: false }],
  throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
  macros: {
  "\\lcm": "\\mathop{\\mathrm{lcm}}",
  "\\sen": '\\text{sen}\\,',
@@ -242,97 +242,72 @@
  }
  });
  };
-&lt;/script>&lt;span>
+&lt;/script&gt;&lt;span&gt;
  \[ u_j ^{n&amp;#43;1} = f(u_j ^n, u_{j&amp;#43;1} ^n , u_{j&amp;#43;2} ^n \ldots)
  \]
-&lt;/span>
+&lt;/span&gt;
 
-&lt;ul>
-&lt;li>&lt;strong>Implicit&lt;/strong> algorithms: Use data from the next time step when advancing the solution. Leads to a system of equations that must be solved simultaneously&lt;/li>
-&lt;/ul>
-&lt;span>
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Implicit&lt;/strong&gt; algorithms: Use data from the next time step when advancing the solution. Leads to a system of equations that must be solved simultaneously&lt;/li&gt;
+&lt;/ul&gt;
+&lt;span&gt;
  \[ u_{j} ^{n&amp;#43;1} = f(u_{j} ^n , u_{j&amp;#43;1} ^{n&amp;#43;1}, u_{j-1} ^{n&amp;#43;1}, \ldots)
  \]
-&lt;/span>
+&lt;/span&gt;
 
-&lt;p>One look at the typical definition of the derivative suggests an algebraic approximation&lt;/p></description></item><item><title>Explicit Finite Difference Algorithms</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch21-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch21-2/</guid><description>&lt;h1 id="explicit-finite-difference-algorithms">
+&lt;p&gt;One look at the typical definition of the derivative suggests an algebraic approximation&lt;/p&gt;</description></item><item><title>Explicit Finite Difference Algorithms</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch21-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch21-2/</guid><description>&lt;h1 id="explicit-finite-difference-algorithms"&gt;
  Explicit Finite Difference Algorithms
- &lt;a class="anchor" href="#explicit-finite-difference-algorithms">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="explicit-algorithms">
+ &lt;a class="anchor" href="#explicit-finite-difference-algorithms"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;h2 id="explicit-algorithms"&gt;
  Explicit Algorithms
- &lt;a class="anchor" href="#explicit-algorithms">#&lt;/a>
-&lt;/h2>
-&lt;h3 id="forward-euler-ftfs">
+ &lt;a class="anchor" href="#explicit-algorithms"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="forward-euler-ftfs"&gt;
  Forward Euler (FTFS)
- &lt;a class="anchor" href="#forward-euler-ftfs">#&lt;/a>
-&lt;/h3>
-&lt;pre tabindex="0">&lt;code>n+1 --------|--------*--------|--------
+ &lt;a class="anchor" href="#forward-euler-ftfs"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;n+1 --------|--------*--------|--------
 
 
 n --------|--------*--------*--------
  j-1 j j+1
-&lt;/code>&lt;/pre>
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
-
-&lt;script>
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script>&lt;span>
+&lt;/code&gt;&lt;/pre&gt;&lt;span&gt;
  \[u_j ^{n&amp;#43;1} = u_j ^n - \frac{a \Delta t}{\Delta x} (u_{j&amp;#43;1} ^n - u_j ^n)\]
-&lt;/span>
+&lt;/span&gt;
 
-&lt;p>The accuracy is \( O(\Delta t, \Delta x) \). Previously we saw that the von Neumann stability analysis shows&lt;/p></description></item><item><title>Finite Difference and Finite Volume Methods</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch21-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch21-3/</guid><description>&lt;h1 id="finite-difference-and-finite-volume-methods">
+&lt;p&gt;The accuracy is \( O(\Delta t, \Delta x) \). Previously we saw that the von Neumann stability analysis shows&lt;/p&gt;
+&lt;span&gt;
+ \[a &amp;gt; 0 \rightarrow \text{ Unconditionally unstable}\]
+&lt;/span&gt;
+
+&lt;span&gt;
+ \[a &amp;lt; 0 \rightarrow \left| \frac{ a \Delta t}{\Delta x} \leq 1 \right| \quad \text{ for stability }\]
+&lt;/span&gt;
+
+&lt;h3 id="forward-time-centered-space-ftcs"&gt;
+ Forward-Time Centered Space (FTCS)
+ &lt;a class="anchor" href="#forward-time-centered-space-ftcs"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;span&gt;
+ \[u_j ^{n&amp;#43;1} = u_j ^n - \frac{a \Delta t}{\Delta x} \frac{u_{j&amp;#43;1} ^n - u_{j-1} ^n}{2}\]
+&lt;/span&gt;
+
+&lt;p&gt;We also found that this is unconditionally unstable.&lt;/p&gt;</description></item><item><title>Finite Difference and Finite Volume Methods</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch21-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch21-3/</guid><description>&lt;h1 id="finite-difference-and-finite-volume-methods"&gt;
  Finite Difference and Finite Volume Methods
- &lt;a class="anchor" href="#finite-difference-and-finite-volume-methods">#&lt;/a>
-&lt;/h1>
-&lt;p>Finite volume methods can easily handle arbitrary geometries. You can use arbitrarily shaped cells, irregular meshes, and even unstructured meshes. With an irregular mesh, the cell shapes can distort. In an unstructured mesh, the cell shape can even change. Why would you ever want that, you may ask? Consider a circular shape in the middle of our domain. We&amp;rsquo;ll have a pretty hard time fitting a regular or even irregular mesh to a circle.&lt;/p></description></item><item><title>Implicit Algorithms</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch21-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch21-4/</guid><description>&lt;h1 id="implicit-algorithms">
+ &lt;a class="anchor" href="#finite-difference-and-finite-volume-methods"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;Finite volume methods can easily handle arbitrary geometries. You can use arbitrarily shaped cells, irregular meshes, and even unstructured meshes. With an irregular mesh, the cell shapes can distort. In an unstructured mesh, the cell shape can even change. Why would you ever want that, you may ask? Consider a circular shape in the middle of our domain. We&amp;rsquo;ll have a pretty hard time fitting a regular or even irregular mesh to a circle.&lt;/p&gt;</description></item><item><title>Implicit Algorithms</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch21-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch21-4/</guid><description>&lt;h1 id="implicit-algorithms"&gt;
  Implicit Algorithms
- &lt;a class="anchor" href="#implicit-algorithms">#&lt;/a>
-&lt;/h1>
-&lt;p>Stability conditions are often related to the CFL number, and stability analysis of explicit algorithms usually require us to set a limit to small CFL&lt;/p>
+ &lt;a class="anchor" href="#implicit-algorithms"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;Stability conditions are often related to the CFL number, and stability analysis of explicit algorithms usually require us to set a limit to small CFL&lt;/p&gt;
 
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
 
-&lt;script>
+&lt;script&gt;
  function loadKatex() {
  renderMathInElement(document.body, {
  delimiters: [
@@ -341,7 +316,7 @@ n --------|--------*--------*--------
  { left: "$", right: "$", display: false },
  { left: "\\(", right: "\\)", display: false }],
  throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
  macros: {
  "\\lcm": "\\mathop{\\mathrm{lcm}}",
  "\\sen": '\\text{sen}\\,',
@@ -369,21 +344,21 @@ n --------|--------*--------*--------
  }
  });
  };
-&lt;/script>&lt;span>
+&lt;/script&gt;&lt;span&gt;
  \[\left| \frac{a \Delta x}{\Delta t} \right| \leq 1\]
-&lt;/span>
+&lt;/span&gt;
 
-&lt;p>For a given grid, this effectively sets a limit on the time step. The time step can be no larger than the grid spacing divided by the propagation constant \( \Delta t \leq \Delta x / |a| \). As an example, say we have a device of interest that is 1 meter long, and we want a grid resolution such that we can resolve features that are 1mm in size. Say the problem domain is flow over an airfoil&lt;/p></description></item><item><title>Numerical Boundary Conditions</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch21-5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch21-5/</guid><description>&lt;h1 id="numerical-boundary-conditions">
+&lt;p&gt;For a given grid, this effectively sets a limit on the time step. The time step can be no larger than the grid spacing divided by the propagation constant \( \Delta t \leq \Delta x / |a| \). As an example, say we have a device of interest that is 1 meter long, and we want a grid resolution such that we can resolve features that are 1mm in size. Say the problem domain is flow over an airfoil&lt;/p&gt;</description></item><item><title>Numerical Boundary Conditions</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch21-5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch21-5/</guid><description>&lt;h1 id="numerical-boundary-conditions"&gt;
  Numerical Boundary Conditions
- &lt;a class="anchor" href="#numerical-boundary-conditions">#&lt;/a>
-&lt;/h1>
-&lt;p>The linear advection equation is&lt;/p>
+ &lt;a class="anchor" href="#numerical-boundary-conditions"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;The linear advection equation is&lt;/p&gt;
 
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
 
-&lt;script>
+&lt;script&gt;
  function loadKatex() {
  renderMathInElement(document.body, {
  delimiters: [
@@ -392,7 +367,7 @@ n --------|--------*--------*--------
  { left: "$", right: "$", display: false },
  { left: "\\(", right: "\\)", display: false }],
  throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
  macros: {
  "\\lcm": "\\mathop{\\mathrm{lcm}}",
  "\\sen": '\\text{sen}\\,',
@@ -420,8 +395,8 @@ n --------|--------*--------*--------
  }
  });
  };
-&lt;/script>&lt;span>
+&lt;/script&gt;&lt;span&gt;
  \[\pdv{u}{t} &amp;#43; a \pdv{u}{x} = 0\]
-&lt;/span>
+&lt;/span&gt;
 
-&lt;p>For it to be a well-posed mathematical problem, you also need the Cauchy data (boundary and initial conditions). From the order of the differential operators, we know that we need one boundary condition (constraint on \( u(x_b) \) for all \( t \) ) and one initial condition (constraint on \( u(x) \) at \( t = 0 \)).&lt;/p></description></item></channel></rss>
+&lt;p&gt;For it to be a well-posed mathematical problem, you also need the Cauchy data (boundary and initial conditions). From the order of the differential operators, we know that we need one boundary condition (constraint on \( u(x_b) \) for all \( t \) ) and one initial condition (constraint on \( u(x) \) at \( t = 0 \)).&lt;/p&gt;</description></item></channel></rss>

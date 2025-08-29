@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Plasma Diagnostics on My Notes</title><link>https://peppyhare.github.io/r/notes/UWAA560/</link><description>Recent content in Plasma Diagnostics on My Notes</description><generator>Hugo</generator><language>en</language><atom:link href="https://peppyhare.github.io/r/notes/UWAA560/index.xml" rel="self" type="application/rss+xml"/><item><title>Syllabus</title><link>https://peppyhare.github.io/r/notes/UWAA560/01-syllabus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA560/01-syllabus/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Plasma Diagnostics on My Notes</title><link>https://peppyhare.github.io/r/notes/UWAA560/</link><description>Recent content in Plasma Diagnostics on My Notes</description><generator>Hugo</generator><language>en</language><atom:link href="https://peppyhare.github.io/r/notes/UWAA560/index.xml" rel="self" type="application/rss+xml"/><item><title>Syllabus</title><link>https://peppyhare.github.io/r/notes/UWAA560/01-syllabus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA560/01-syllabus/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
 
-&lt;script>
+&lt;script&gt;
  function loadKatex() {
  renderMathInElement(document.body, {
  delimiters: [
@@ -11,7 +11,7 @@
  { left: "$", right: "$", display: false },
  { left: "\\(", right: "\\)", display: false }],
  throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
  macros: {
  "\\lcm": "\\mathop{\\mathrm{lcm}}",
  "\\sen": '\\text{sen}\\,',
@@ -39,24 +39,24 @@
  }
  });
  };
-&lt;/script>&lt;span>
+&lt;/script&gt;&lt;span&gt;
  \[\]
-&lt;/span>
+&lt;/span&gt;
 
-&lt;h2 id="syllabus">
+&lt;h2 id="syllabus"&gt;
  Syllabus
- &lt;a class="anchor" href="#syllabus">#&lt;/a>
-&lt;/h2>
-&lt;p>The goals of this course are:&lt;/p></description></item><item><title>General Diagnostic Considerations</title><link>https://peppyhare.github.io/r/notes/UWAA560/02-diagnostic-considerations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA560/02-diagnostic-considerations/</guid><description>&lt;h1 id="general-diagnostic-considerations">
+ &lt;a class="anchor" href="#syllabus"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The goals of this course are:&lt;/p&gt;</description></item><item><title>General Diagnostic Considerations</title><link>https://peppyhare.github.io/r/notes/UWAA560/02-diagnostic-considerations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA560/02-diagnostic-considerations/</guid><description>&lt;h1 id="general-diagnostic-considerations"&gt;
  General Diagnostic Considerations
- &lt;a class="anchor" href="#general-diagnostic-considerations">#&lt;/a>
-&lt;/h1>
+ &lt;a class="anchor" href="#general-diagnostic-considerations"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
 
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
 
-&lt;script>
+&lt;script&gt;
  function loadKatex() {
  renderMathInElement(document.body, {
  delimiters: [
@@ -65,7 +65,7 @@
  { left: "$", right: "$", display: false },
  { left: "\\(", right: "\\)", display: false }],
  throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
  macros: {
  "\\lcm": "\\mathop{\\mathrm{lcm}}",
  "\\sen": '\\text{sen}\\,',
@@ -93,21 +93,21 @@
  }
  });
  };
-&lt;/script>&lt;span>
+&lt;/script&gt;&lt;span&gt;
  \[\]
-&lt;/span>
+&lt;/span&gt;
 
-&lt;p>First, let us categorize some broad categories of items to consider when we think about plasma diagnostics by asking a few questions:&lt;/p></description></item><item><title>Magnetic Field Diagnostics</title><link>https://peppyhare.github.io/r/notes/UWAA560/03-magnetic-field-diagnostics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA560/03-magnetic-field-diagnostics/</guid><description>&lt;h1 id="b-dot-probe-diagnostics">
+&lt;p&gt;First, let us categorize some broad categories of items to consider when we think about plasma diagnostics by asking a few questions:&lt;/p&gt;</description></item><item><title>Magnetic Field Diagnostics</title><link>https://peppyhare.github.io/r/notes/UWAA560/03-magnetic-field-diagnostics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA560/03-magnetic-field-diagnostics/</guid><description>&lt;h1 id="b-dot-probe-diagnostics"&gt;
  B-dot Probe Diagnostics
- &lt;a class="anchor" href="#b-dot-probe-diagnostics">#&lt;/a>
-&lt;/h1>
-&lt;p>Faraday&amp;rsquo;s law is the basis for magnetic field coils:&lt;/p>
+ &lt;a class="anchor" href="#b-dot-probe-diagnostics"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;Faraday&amp;rsquo;s law is the basis for magnetic field coils:&lt;/p&gt;
 
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
 
-&lt;script>
+&lt;script&gt;
  function loadKatex() {
  renderMathInElement(document.body, {
  delimiters: [
@@ -116,7 +116,7 @@
  { left: "$", right: "$", display: false },
  { left: "\\(", right: "\\)", display: false }],
  throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
  macros: {
  "\\lcm": "\\mathop{\\mathrm{lcm}}",
  "\\sen": '\\text{sen}\\,',
@@ -144,15 +144,15 @@
  }
  });
  };
-&lt;/script>&lt;span>
+&lt;/script&gt;&lt;span&gt;
  \[\int \pdv{\vec B}{t} \cdot \dd \vec S = - \oint \vec E \cdot \dd \vec l = - V_{emf}\]
-&lt;/span>
+&lt;/span&gt;
 
-&lt;p>For a rigid, perfectly conducting loop of N turns in the presence of a changing magnetic field,&lt;/p></description></item><item><title>Electrostatic Diagnostics</title><link>https://peppyhare.github.io/r/notes/UWAA560/04-electrostatic-diagnostics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA560/04-electrostatic-diagnostics/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+&lt;p&gt;For a rigid, perfectly conducting loop of N turns in the presence of a changing magnetic field,&lt;/p&gt;</description></item><item><title>Electrostatic Diagnostics</title><link>https://peppyhare.github.io/r/notes/UWAA560/04-electrostatic-diagnostics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA560/04-electrostatic-diagnostics/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
 
-&lt;script>
+&lt;script&gt;
  function loadKatex() {
  renderMathInElement(document.body, {
  delimiters: [
@@ -161,7 +161,7 @@
  { left: "$", right: "$", display: false },
  { left: "\\(", right: "\\)", display: false }],
  throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
  macros: {
  "\\lcm": "\\mathop{\\mathrm{lcm}}",
  "\\sen": '\\text{sen}\\,',
@@ -189,19 +189,19 @@
  }
  });
  };
-&lt;/script>&lt;span>
+&lt;/script&gt;&lt;span&gt;
  \[\]
-&lt;/span>
+&lt;/span&gt;
 
-&lt;h1 id="langmuir-probes">
+&lt;h1 id="langmuir-probes"&gt;
  Langmuir Probes
- &lt;a class="anchor" href="#langmuir-probes">#&lt;/a>
-&lt;/h1>
-&lt;p>Langmuir probes are the oldest and simplest plasma diagnostic: You simply insert an electrode into the plasma and measure the \( I \)-\( V \) curve. Doing so is fairly simple, but the probe measurements are often difficult to interpret, since extracting accurate plasma properties from measurements can be challenging.&lt;/p></description></item><item><title>Index of Refraction Measurements</title><link>https://peppyhare.github.io/r/notes/UWAA560/05-index-of-refraction-measurements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA560/05-index-of-refraction-measurements/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+ &lt;a class="anchor" href="#langmuir-probes"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;Langmuir probes are the oldest and simplest plasma diagnostic: You simply insert an electrode into the plasma and measure the \( I \)-\( V \) curve. Doing so is fairly simple, but the probe measurements are often difficult to interpret, since extracting accurate plasma properties from measurements can be challenging.&lt;/p&gt;</description></item><item><title>Index of Refraction Measurements</title><link>https://peppyhare.github.io/r/notes/UWAA560/05-index-of-refraction-measurements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA560/05-index-of-refraction-measurements/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
 
-&lt;script>
+&lt;script&gt;
  function loadKatex() {
  renderMathInElement(document.body, {
  delimiters: [
@@ -210,7 +210,7 @@
  { left: "$", right: "$", display: false },
  { left: "\\(", right: "\\)", display: false }],
  throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
  macros: {
  "\\lcm": "\\mathop{\\mathrm{lcm}}",
  "\\sen": '\\text{sen}\\,',
@@ -238,19 +238,19 @@
  }
  });
  };
-&lt;/script>&lt;span>
+&lt;/script&gt;&lt;span&gt;
  \[\]
-&lt;/span>
+&lt;/span&gt;
 
-&lt;h1 id="index-of-refraction-measurements">
+&lt;h1 id="index-of-refraction-measurements"&gt;
  Index of Refraction Measurements
- &lt;a class="anchor" href="#index-of-refraction-measurements">#&lt;/a>
-&lt;/h1>
-&lt;p>The refractive index is defined as the speed of light (in vacuum) over the phase velocity \( n = \frac{c}{v_{\phi}} \), \( v_\phi = \omega / k \). Recall that in vacuum the phase velocity is just the speed of light (\( n = 1 \) in vacuum). In a plasma, we know that the dispersion relation will be substantially different.&lt;/p></description></item><item><title>Spectroscopic Measurements</title><link>https://peppyhare.github.io/r/notes/UWAA560/06-spectroscopic-measurements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA560/06-spectroscopic-measurements/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+ &lt;a class="anchor" href="#index-of-refraction-measurements"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;The refractive index is defined as the speed of light (in vacuum) over the phase velocity \( n = \frac{c}{v_{\phi}} \), \( v_\phi = \omega / k \). Recall that in vacuum the phase velocity is just the speed of light (\( n = 1 \) in vacuum). In a plasma, we know that the dispersion relation will be substantially different.&lt;/p&gt;</description></item><item><title>Spectroscopic Measurements</title><link>https://peppyhare.github.io/r/notes/UWAA560/06-spectroscopic-measurements/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA560/06-spectroscopic-measurements/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
 
-&lt;script>
+&lt;script&gt;
  function loadKatex() {
  renderMathInElement(document.body, {
  delimiters: [
@@ -259,7 +259,7 @@
  { left: "$", right: "$", display: false },
  { left: "\\(", right: "\\)", display: false }],
  throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
  macros: {
  "\\lcm": "\\mathop{\\mathrm{lcm}}",
  "\\sen": '\\text{sen}\\,',
@@ -287,23 +287,23 @@
  }
  });
  };
-&lt;/script>&lt;span>
+&lt;/script&gt;&lt;span&gt;
  \[\]
-&lt;/span>
+&lt;/span&gt;
 
-&lt;h1 id="spectroscopic-measurements">
+&lt;h1 id="spectroscopic-measurements"&gt;
  Spectroscopic Measurements
- &lt;a class="anchor" href="#spectroscopic-measurements">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="plasma-self-emission">
+ &lt;a class="anchor" href="#spectroscopic-measurements"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;h2 id="plasma-self-emission"&gt;
  Plasma Self-Emission
- &lt;a class="anchor" href="#plasma-self-emission">#&lt;/a>
-&lt;/h2>
-&lt;p>Plasmas emit light (electromagnetic radiation) over a broad range of wavelengths. This can be from the X-ray to UV to visible to IR. The emission depends on the plasma constituents, magnetic field, and plasma properties \( n_e, T_e, T_i, \vec v_i \). We should be able to analyze the self-emission to provide a measurements of these properties. These measurements are both rich in information, and completely non-perturbing. Unfortunately, extracting plasma properties from measurements can be extremely complicated, since the emission is influenced by all of these effects together.&lt;/p></description></item><item><title>Student Lectures</title><link>https://peppyhare.github.io/r/notes/UWAA560/90-student-lectures/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA560/90-student-lectures/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+ &lt;a class="anchor" href="#plasma-self-emission"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Plasmas emit light (electromagnetic radiation) over a broad range of wavelengths. This can be from the X-ray to UV to visible to IR. The emission depends on the plasma constituents, magnetic field, and plasma properties \( n_e, T_e, T_i, \vec v_i \). We should be able to analyze the self-emission to provide a measurements of these properties. These measurements are both rich in information, and completely non-perturbing. Unfortunately, extracting plasma properties from measurements can be extremely complicated, since the emission is influenced by all of these effects together.&lt;/p&gt;</description></item><item><title>Student Lectures</title><link>https://peppyhare.github.io/r/notes/UWAA560/90-student-lectures/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA560/90-student-lectures/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
 
-&lt;script>
+&lt;script&gt;
  function loadKatex() {
  renderMathInElement(document.body, {
  delimiters: [
@@ -312,7 +312,7 @@
  { left: "$", right: "$", display: false },
  { left: "\\(", right: "\\)", display: false }],
  throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
  macros: {
  "\\lcm": "\\mathop{\\mathrm{lcm}}",
  "\\sen": '\\text{sen}\\,',
@@ -340,19 +340,19 @@
  }
  });
  };
-&lt;/script>&lt;span>
+&lt;/script&gt;&lt;span&gt;
  \[\]
-&lt;/span>
+&lt;/span&gt;
 
-&lt;h1 id="particle-diagnostics-neutron-diagnostics-aria-johansen">
+&lt;h1 id="particle-diagnostics-neutron-diagnostics-aria-johansen"&gt;
  Particle Diagnostics: Neutron diagnostics (Aria Johansen)
- &lt;a class="anchor" href="#particle-diagnostics-neutron-diagnostics-aria-johansen">#&lt;/a>
-&lt;/h1>
-&lt;p>Start from the basics: what is a neutron? It&amp;rsquo;s a spin \( 1/2 \) baryon which interacts with all forces. Primarily decays into usually an electron and an antielectron neutron as well as a proton. Another decay process with 1/1000 of intensity decays to gamma. Mass is \( 939.6 MeV/c^2 \), very comparable to proton.&lt;/p></description></item><item><title>My class lecture</title><link>https://peppyhare.github.io/r/notes/UWAA560/91-zeeman-spectroscopy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA560/91-zeeman-spectroscopy/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+ &lt;a class="anchor" href="#particle-diagnostics-neutron-diagnostics-aria-johansen"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;Start from the basics: what is a neutron? It&amp;rsquo;s a spin \( 1/2 \) baryon which interacts with all forces. Primarily decays into usually an electron and an antielectron neutron as well as a proton. Another decay process with 1/1000 of intensity decays to gamma. Mass is \( 939.6 MeV/c^2 \), very comparable to proton.&lt;/p&gt;</description></item><item><title>My class lecture</title><link>https://peppyhare.github.io/r/notes/UWAA560/91-zeeman-spectroscopy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA560/91-zeeman-spectroscopy/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
 
-&lt;script>
+&lt;script&gt;
  function loadKatex() {
  renderMathInElement(document.body, {
  delimiters: [
@@ -361,7 +361,7 @@
  { left: "$", right: "$", display: false },
  { left: "\\(", right: "\\)", display: false }],
  throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
  macros: {
  "\\lcm": "\\mathop{\\mathrm{lcm}}",
  "\\sen": '\\text{sen}\\,',
@@ -389,23 +389,23 @@
  }
  });
  };
-&lt;/script>&lt;span>
+&lt;/script&gt;&lt;span&gt;
  \[\]
-&lt;/span>
+&lt;/span&gt;
 
-&lt;h1 id="zeeman-spectroscopy">
+&lt;h1 id="zeeman-spectroscopy"&gt;
  Zeeman Spectroscopy
- &lt;a class="anchor" href="#zeeman-spectroscopy">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="motivation">
+ &lt;a class="anchor" href="#zeeman-spectroscopy"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;h2 id="motivation"&gt;
  Motivation
- &lt;a class="anchor" href="#motivation">#&lt;/a>
-&lt;/h2>
-&lt;p>In high-energy-density plasmas, the current density distribution is strongly tied to the magnetic field distribution, and in some regions measurement of the B-field is the only way to obtain current density measurements. The magnetic field also determines resistivity, plasma dynamics, and energy balance.&lt;/p></description></item><item><title>Formulary</title><link>https://peppyhare.github.io/r/notes/UWAA560/formulary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA560/formulary/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+ &lt;a class="anchor" href="#motivation"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;In high-energy-density plasmas, the current density distribution is strongly tied to the magnetic field distribution, and in some regions measurement of the B-field is the only way to obtain current density measurements. The magnetic field also determines resistivity, plasma dynamics, and energy balance.&lt;/p&gt;</description></item><item><title>Formulary</title><link>https://peppyhare.github.io/r/notes/UWAA560/formulary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA560/formulary/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
 
-&lt;script>
+&lt;script&gt;
  function loadKatex() {
  renderMathInElement(document.body, {
  delimiters: [
@@ -414,7 +414,7 @@
  { left: "$", right: "$", display: false },
  { left: "\\(", right: "\\)", display: false }],
  throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
  macros: {
  "\\lcm": "\\mathop{\\mathrm{lcm}}",
  "\\sen": '\\text{sen}\\,',
@@ -442,581 +442,581 @@
  }
  });
  };
-&lt;/script>&lt;span>
+&lt;/script&gt;&lt;span&gt;
  \( \)
-&lt;/span>
+&lt;/span&gt;
 
-&lt;h1 id="formulary">
+&lt;h1 id="formulary"&gt;
  Formulary
- &lt;a class="anchor" href="#formulary">#&lt;/a>
-&lt;/h1>
-&lt;blockquote class="book-hint info">
+ &lt;a class="anchor" href="#formulary"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;blockquote class="book-hint info"&gt;
  
 **Kinetic Description**
 
 
-&lt;span>
+&lt;span&gt;
  \[\dv{\vec v}{t} = \frac{q_i}{m_i} (\vec E &amp;#43; \vec v_i \cross \vec B) &amp;#43; \sum_{j \neq i} \left[ \left. \dv{\vec v_{ij}}{t} \right|_{coll} \delta(\vec r_i - \vec r_j) \right]\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\pdv{\vec B}{t} = - \curl \vec E\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\frac{1}{c^2} \pdv{\vec E}{t} = \curl \vec B - \mu_0 \sum_i q_i \vec v_i \delta (\vec r - \vec r_i)\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\div \vec{B} = 0\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\div \vec E = \frac{1}{\epsilon_0} \sum_i q_i \delta (\vec r - \vec r_i)\]
-&lt;/span>
+&lt;/span&gt;
 
 
 Klimontovich equation:
 
-&lt;span>
+&lt;span&gt;
  \[\dv{N}{t} = 0 = \pdv{N}{t} &amp;#43; \pdv{}{q_i} \cdot (\dot{q_i} N) \\
 N \equiv \sum_i \delta (p - p_i) \delta(q - q_i)\]
-&lt;/span>
+&lt;/span&gt;
 
 
 
-&lt;/blockquote>
+&lt;/blockquote&gt;
 
-&lt;blockquote class="book-hint info">
+&lt;blockquote class="book-hint info"&gt;
  
 **Plasma Fluid Description**
  
 Boltzmann Equation
 
-&lt;span>
+&lt;span&gt;
  \[\pdv{f_\alpha}{t} &amp;#43; \vec v \cdot \pdv{f_\alpha}{t} &amp;#43; \frac{q_\alpha}{m_\alpha} (\vec E &amp;#43; \vec v \cross \vec B) \cdot \pdv{f_\alpha}{\vec v} = \left. \pdv{f_\alpha}{t} \right|_{coll} = \sum_{\beta \neq \alpha} C_{\alpha \beta}\]
-&lt;/span>
+&lt;/span&gt;
 
 
 Maxwellian distribution:
 
-&lt;span>
+&lt;span&gt;
  \[f_\alpha (\vec v) = n_\alpha \left( \frac{m_\alpha}{2 \pi T} \right)^{3/2} e^{- \frac{m_\alpha(\vec v - \vec v_\alpha)^2}{2T}}\]
-&lt;/span>
+&lt;/span&gt;
 
 Moments of fluid model (moments of distribution \\( \rightarrow \\) moments of Boltzmann equation:
 
-&lt;span>
+&lt;span&gt;
  \[\text{Continuity:} \qquad n_\alpha = \int f_\alpha \dd \vec v \\
 \quad \rightarrow \pdv{n_\alpha}{t} &amp;#43; \div (n_\alpha \vec v_\alpha) = 0\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\text{Momentum:} \qquad n_\alpha \vec v_\alpha = \int \vec v f_\alpha \dd v \\
 \quad \rightarrow \quad \pdv{}{t} (n_\alpha \vec v_\alpha ) &amp;#43; \div (n_\alpha \vec v_\alpha \vec v_\alpha) &amp;#43; \frac{1}{m_\alpha} \div \vec P_\alpha - \frac{q_\alpha}{m_\alpha} n_\alpha ( \vec E &amp;#43; \vec v _\alpha \cross \vec B) = \sum_{\beta \neq \alpha} \int \vec w C_{\alpha \beta} \dd \vec v\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\rightarrow \rho_\alpha \left(\pdv{\vec v_\alpha}{t} &amp;#43; \vec v_\alpha \cdot \grad \vec v_\alpha \right) &amp;#43; \grad \vec P_\alpha &amp;#43; \div \vec \Pi_\alpha - q_\alpha n_\alpha (\vec E &amp;#43; \vec v_\alpha \cross \vec B) = \sum_{\beta \neq \alpha} \vec R_{\alpha \beta}\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\text{Energy:} \qquad \int \vec v \vec v \pdv{f_\alpha}{t} \dd \vec v = \pdv{}{t} \int \vec v \vec v f_\alpha \dd \vec v = \pdv{}{t} \vec E_\alpha / m_\alpha \rightarrow \pdv{}{t} \vec P_\alpha\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\rightarrow \quad \frac{3}{2} n_\alpha \left( \pdv{T_\alpha}{t} &amp;#43; \vec v_\alpha \cdot \grad T_\alpha \right) &amp;#43; P_\alpha \div \vec v_\alpha &amp;#43; \vec \Pi_\alpha \cdot \cdot \grad \vec v_\alpha &amp;#43; \div \vec h_\alpha = \sum_{\beta \neq \alpha} Q_{\alpha \beta}\]
-&lt;/span>
+&lt;/span&gt;
 
 Closure relations
 
-&lt;span>
+&lt;span&gt;
  \[\vec h_\alpha = - \kappa \grad T_\alpha\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\overline \Pi_ \alpha = \nu \grad \vec v_\alpha\]
-&lt;/span>
+&lt;/span&gt;
 
 
 
-&lt;/blockquote>
+&lt;/blockquote&gt;
 
-&lt;h2 id="ideal-mhd">
+&lt;h2 id="ideal-mhd"&gt;
  Ideal MHD
- &lt;a class="anchor" href="#ideal-mhd">#&lt;/a>
-&lt;/h2>
-&lt;blockquote class="book-hint info">
+ &lt;a class="anchor" href="#ideal-mhd"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;blockquote class="book-hint info"&gt;
  
 **Ideal MHD**
 
 Continuity:
 
-&lt;span>
+&lt;span&gt;
  \[\pdv{\rho}{t} &amp;#43; \div (\rho \vec v) = 0\]
-&lt;/span>
+&lt;/span&gt;
 
 Momentum:
 
-&lt;span>
+&lt;span&gt;
  \[\rho \left( \pdv{\vec v}{t} &amp;#43; \vec v \cdot \grad \vec v \right) &amp;#43; \grad p - \vec j \cross \vec B = 0\]
-&lt;/span>
+&lt;/span&gt;
 
 Generalized Ohm's Law
 
-&lt;span>
+&lt;span&gt;
  \[\vec E &amp;#43; \vec v \cross \vec B = \frac{1}{Zen}\cancel{(\vec j \cross \vec B - \grad p_e)} = 0\]
-&lt;/span>
+&lt;/span&gt;
 
 Energy
 
-&lt;span>
+&lt;span&gt;
  \[\dv{}{t} \left( \frac{p}{\rho^\gamma} \right) = 0\]
-&lt;/span>
+&lt;/span&gt;
 
 
 
-&lt;/blockquote>
+&lt;/blockquote&gt;
 
-&lt;blockquote class="book-hint info">
+&lt;blockquote class="book-hint info"&gt;
  
 "Lawson Criterion"
 
 
-&lt;span>
+&lt;span&gt;
  \[n \tau_E &amp;gt; 10^4 s/m^3\]
-&lt;/span>
+&lt;/span&gt;
 
 
 
-&lt;/blockquote>
+&lt;/blockquote&gt;
 
-&lt;blockquote class="book-hint info">
+&lt;blockquote class="book-hint info"&gt;
  
 **Conservation Law Form of Ideal MHD**
 
 Continuity:
 
-&lt;span>
+&lt;span&gt;
  \[\pdv{\rho}{t} &amp;#43; \div (\rho \vec v) = 0\]
-&lt;/span>
+&lt;/span&gt;
 
 Momentum:
 
-&lt;span>
+&lt;span&gt;
  \[\pdv{(\rho \vec v)}{t} &amp;#43; \div \left[ \rho \vec v \vec v - \frac{\vec B \vec B}{\mu_0} &amp;#43; \left( p &amp;#43; \frac{B^2}{2 \mu_0} \right) \overline{I} \right] = 0\]
-&lt;/span>
+&lt;/span&gt;
 
 Energy:
 
-&lt;span>
+&lt;span&gt;
  \[\pdv{\epsilon}{t} &amp;#43; \div \left[ \left( \epsilon &amp;#43; p &amp;#43; \frac{B^2}{2 \mu_0} \right) \vec v - (\vec B \cdot \vec v) \frac{\vec B}{\mu_0} \right] = 0\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\pdv{\vec B}{t} &amp;#43; \div ( \vec v \vec B - \vec B \vec v) = 0\]
-&lt;/span>
+&lt;/span&gt;
 
 where
 
-&lt;span>
+&lt;span&gt;
  \[\epsilon = \frac{1}{\gamma - 1} p &amp;#43; \frac{1}{2} \rho v^2 &amp;#43; \frac{B^2}{2\mu_0}\]
-&lt;/span>
+&lt;/span&gt;
 
 
 Static Equilibrium:
 
-&lt;span>
+&lt;span&gt;
  \[\vec j \cross \vec B = \grad p\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\frac{B^2}{\mu_0} \vec K = \grad_\perp (p &amp;#43; \frac{B^2}{2 \mu_0})\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\vec K \equiv \frac{\vec B}{|B|} \cdot \grad \frac{ \vec B}{|B|}\]
-&lt;/span>
+&lt;/span&gt;
 
 
 Conservation of flux:
 
-&lt;span>
+&lt;span&gt;
  \[\vec E &amp;#43; \vec v \cross \vec B = 0\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\pdv{\vec B}{t} = - \curl \vec E\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\rightarrow \dv{}{t} \left( \frac{\vec B}{\rho} \right) = \frac{\vec B}{\rho} \cdot \grad \vec v\]
-&lt;/span>
+&lt;/span&gt;
 
 
 
-&lt;/blockquote>
+&lt;/blockquote&gt;
 
-&lt;h2 id="1d-equilibria">
+&lt;h2 id="1d-equilibria"&gt;
  1D Equilibria
- &lt;a class="anchor" href="#1d-equilibria">#&lt;/a>
-&lt;/h2>
-&lt;blockquote class="book-hint info">
+ &lt;a class="anchor" href="#1d-equilibria"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;blockquote class="book-hint info"&gt;
  
 **\\( \theta \\)-pinch**
 
 
-&lt;span>
+&lt;span&gt;
  \[B_\theta = 0\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[j_\theta B_z = \dv{p}{r}\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[j_\theta = - \frac{1}{\mu_0} \dv{B_z}{r}\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\rightarrow p &amp;#43; \frac{B_z ^2}{2 \mu_0} = \frac{B_0 ^2}{2 \mu_0}\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\langle \beta \rangle = \frac{2}{a^2} \int_0 ^a \frac{r p}{B_0 ^2 / 2 \mu_0} \dd r\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[q = \infty\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[W = \frac{\mu_0 r}{B_z ^2} \dv{}{r} \left( p &amp;#43; \frac{B_z ^2}{2 \mu_0} \right) = 0\]
-&lt;/span>
+&lt;/span&gt;
 
 
 
-&lt;/blockquote>
+&lt;/blockquote&gt;
 
-&lt;blockquote class="book-hint info">
+&lt;blockquote class="book-hint info"&gt;
  
 **Z-pinch**
 
 
-&lt;span>
+&lt;span&gt;
  \[B_z =0\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\grad p = \dv{p}{r} = - j_z B_\theta\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[- \dv{}{r} \left( p &amp;#43; \frac{B_\theta ^2}{2 \mu_0} \right) = \frac{B_\theta ^2}{\mu_0 r}\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\langle \beta \rangle = \frac{2 \mu_0}{B_0 ^2 \pi a^2} \int _0 ^a 2 \pi r p \dd r = 1 \quad \text{ if } \quad p(a) = 0\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[q = S = 0\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[W = 1\]
-&lt;/span>
+&lt;/span&gt;
 
 
 
-&lt;/blockquote>
+&lt;/blockquote&gt;
 
-&lt;blockquote class="book-hint info">
+&lt;blockquote class="book-hint info"&gt;
  
 **Screw pinch**
 
 
-&lt;span>
+&lt;span&gt;
  \[\dv{}{r} \left( p &amp;#43; \frac{B^2}{2 \mu_0} \right) = - \frac{B_\theta ^2}{\mu_0 r}\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\beta_t = \frac{2 \mu_0}{B_z (a) ^2} \left( \frac{1}{\pi a^2} \int_0 ^a 2 \pi r p \dd r \right)\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\beta_p = \left( 1 - \frac{\alpha_t}{\beta _t} \right)^{-1} \qquad \alpha_t \equiv \frac{2}{a^2} \int_0 ^a \left(1 - \frac{B_z ^2}{B_0 ^2} \right) r \dd r\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[q = \frac{2 \pi r B_z}{L B_\theta}\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[q_a = \frac{4 \pi ^2 a^2 B_0}{\mu_0 I_a}\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[S = \frac{r}{q} \dv{q}{r}\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[W = - \frac{B_\theta ^2}{B_\theta ^2 &amp;#43; B_z ^2}\]
-&lt;/span>
+&lt;/span&gt;
 
 
 
-&lt;/blockquote>
+&lt;/blockquote&gt;
 
-&lt;blockquote class="book-hint info">
+&lt;blockquote class="book-hint info"&gt;
  
 **Stability**
 
 Shear:
 
-&lt;span>
+&lt;span&gt;
  \[S = 2 \frac{ dq / q}{dV / V} = 2 \frac{d \ln q}{d \ln V}\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[q = \frac{\text{\# long windings}}{\text{\# short windings}} = \dv{\psi_t}{\psi_p}\]
-&lt;/span>
+&lt;/span&gt;
 
 Shear for toroid
 
-&lt;span>
+&lt;span&gt;
  \[q = \frac{r B_\phi}{R B_\theta}\]
-&lt;/span>
+&lt;/span&gt;
 
 Shear for cylinder
 
-&lt;span>
+&lt;span&gt;
  \[q = 2 \pi \frac{r B_z}{L B_\theta}\]
-&lt;/span>
+&lt;/span&gt;
 
 Well
 
-&lt;span>
+&lt;span&gt;
  \[W = \frac{ d \langle p &amp;#43; B^2 / 2 \mu_0 \rangle / \langle B^2 / 2 \mu_0 \rangle}{dV / V}\]
-&lt;/span>
+&lt;/span&gt;
 
 For stabilization, \\( B^2 / 2 \mu_0 \\) should increase faster than \\( p \\) decreases
 
-&lt;/blockquote>
+&lt;/blockquote&gt;
 
-&lt;h2 id="2d-equilibria">
+&lt;h2 id="2d-equilibria"&gt;
  2D Equilibria
- &lt;a class="anchor" href="#2d-equilibria">#&lt;/a>
-&lt;/h2>
-&lt;blockquote class="book-hint info">
+ &lt;a class="anchor" href="#2d-equilibria"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;blockquote class="book-hint info"&gt;
  
 **Grad-Shafranov Equation: Static toroidal equilibrium**
 
 
-&lt;span>
+&lt;span&gt;
  \[\grad p = \vec j_\theta \cross \vec B_\phi &amp;#43; \vec j_\phi \cross \vec B_\theta\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[A_\phi = \frac{\phi}{R} \vu \phi\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\phi = \frac{\phi_p}{2 \pi}\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\vec B_\theta = - \frac{\vu R}{R} \pdv{\psi}{z} &amp;#43; \frac{ \vu z}{R} \pdv{\psi}{R} = \frac{ \grad \psi}{R} \cross \vu \phi\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[F \equiv R B_\phi\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\Delta ^\star \equiv R \pdv{}{R} \frac{1}{R} \pdv{}{R} &amp;#43; \pdv{^2}{z^2}\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\Delta ^\star \psi = \pdv{^2 \psi}{z^2} &amp;#43; \pdv{^2 \psi}{R^2} - \frac{1}{R} \pdv{\psi}{R}\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\vec j_\phi = - \frac{1}{\mu_0 R} \Delta ^\star \psi \vu \phi\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\vec j_\theta = \frac{1}{\mu_0 R} \grad (F) \cross \vu \phi\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[R^2 \mu_0 \pdv{p}{\psi} = - \Delta ^\star \psi - F \pdv{F}{\psi}\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[q(\psi) = \frac{F(\psi)}{2 \pi} \oint_{p} \frac{r \dd \theta}{R^2 B_\theta}\]
-&lt;/span>
+&lt;/span&gt;
 
 Limits:
 
-&lt;span>
+&lt;span&gt;
  \[\text{Force-free:} \qquad \vec j \parallel \vec B\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\rightarrow \Delta ^\star \psi &amp;#43; F F&amp;#39; = 0\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\text{Connected $\theta$ pinch:} \qquad FF&amp;#39; \gg \Delta ^\star \psi\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\rightarrow \grad p \approx \vec j_\theta \cross \vec B_\phi\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\text{Connected Z-pinch:} \qquad FF&amp;#39; \ll \Delta ^\star \phi\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\rightarrow \grad p \approx j_\phi \cross B_\theta\]
-&lt;/span>
+&lt;/span&gt;
 
 
 
-&lt;/blockquote>
+&lt;/blockquote&gt;
 
-&lt;h2 id="mhd-stability">
+&lt;h2 id="mhd-stability"&gt;
  MHD Stability
- &lt;a class="anchor" href="#mhd-stability">#&lt;/a>
-&lt;/h2>
-&lt;blockquote class="book-hint info">
+ &lt;a class="anchor" href="#mhd-stability"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;blockquote class="book-hint info"&gt;
  
 **Linear stability**
  
 
-&lt;span>
+&lt;span&gt;
  \[\pdv{\rho_1}{t} = - \vec v_1 \grad \rho_0 - \rho_0 \div \vec v_1\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\pdv{\vec B_1}{t} = \curl ( \vec v_1 \cross \vec B_0)\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\rho_0 \pdv{\vec v_1}{t} = - \grad p_1 &amp;#43; \vec j_0 \cross \vec B_1 - \vec j_1 \cross \vec B_0\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\pdv{p_1}{t} = - \vec v_1 \cdot \grad p_0 - \gamma p_0 \div \vec v_1\]
-&lt;/span>
+&lt;/span&gt;
 
 For linear perturbation \\( \vec \xi = \int_0 ^t \vec v_1 \dd t \\) the momentum equation becomes
 
-&lt;span>
+&lt;span&gt;
  \[\rho_0 \pdv{^2 \xi}{t^2} = \vec F(\xi)\]
-&lt;/span>
+&lt;/span&gt;
 
 where
 
-&lt;span>
+&lt;span&gt;
  \[F(\xi) = \grad (\xi \cdot \grad p_0 &amp;#43; \gamma p_0 \div \xi) &amp;#43; \frac{1}{\mu_0} \left[ ( \curl \vec B_0) \cross \curl (\xi \cross \vec B_0) &amp;#43; \curl \curl (\xi \cross \vec B_0) \cross \vec B_0 \right]\]
-&lt;/span>
+&lt;/span&gt;
 
 
 Eigenvalues of \\( \frac{1}{\rho_0} \vec F (\xi) = \omega^2 \xi \\) are real and ordered. Only need to check \\( n=0 \\) to determine stability/instability of configuration.
 
 
-&lt;/blockquote>
+&lt;/blockquote&gt;
 
-&lt;blockquote class="book-hint info">
+&lt;blockquote class="book-hint info"&gt;
  
 **\\( \delta W \\) Approach**
 
 \\( \delta W = \\) change in potential energy due to a displacement \\( \xi \\)
 
-&lt;span>
+&lt;span&gt;
  \[\delta W &amp;lt; 0 \rightarrow \text{instability}\]
-&lt;/span>
+&lt;/span&gt;
 
 
-&lt;span>
+&lt;span&gt;
  \[\delta W = - \frac{1}{2} \int \xi \cdot F(\xi) \dd V = \delta W_F &amp;#43; \delta W_S &amp;#43; \delta W_V\]
-&lt;/span>
+&lt;/span&gt;
 
 Surface term:
 
-&lt;span>
+&lt;span&gt;
  \[\delta W_s = \frac{1}{2} \oint \dd S (\vu n \cdot \xi) ^2 \left( \vu n \cdot \grad p_0 &amp;#43; \left[ \vu n \cdot \grad \frac{B_0 ^2}{2 \mu_0} \right]_{jump} \right)\]
-&lt;/span>
+&lt;/span&gt;
 
 Vacuum term:
 
-&lt;span>
+&lt;span&gt;
  \[\delta W_V = \int_{vac} \dd V \frac{B_1 ^2}{\mu_0}\]
-&lt;/span>
+&lt;/span&gt;
 
 Plasma (free) term:
 
-&lt;span>
+&lt;span&gt;
  \[\delta W_F = \frac{1}{2} \int \dd V \frac{ |B_{1, \perp}|^2}{\mu_0} \quad \leftarrow \text{Shear Alfven} \\
 &amp;#43; \mu_0 \left| \frac{B_{1, \parallel}}{\mu_0} - \frac{B_0 \xi \cdot \grad p_0}{B_0} ^2 \right|^2 \quad \leftarrow \text{Fast magnetosonic} \\
 &amp;#43; \Gamma p_0 |\div \xi|^2 \quad \leftarrow \text{Acoustic}\\
 &amp;#43; \frac{\vec j_0 \cdot \vec B_0}{B_0 ^2} (\vec B_0 \cross \vec \xi) \cdot \vec B_1 \quad \leftarrow \text{Current-driven (kink)} \\
 - 2 ( \vec \xi \cdot \grad p_0)(\vec \xi \cdot \vec \kappa) \quad \leftarrow \text{pressure-driven (interchange/balooning)}\]
-&lt;/span>
+&lt;/span&gt;
 
 Shear Alfven, fast magnetosonic, and acoustic modes are stabilizing. Current-driven and pressure-driven modes can lead to instability.
 
-&lt;/blockquote></description></item></channel></rss>
+&lt;/blockquote&gt;</description></item></channel></rss>

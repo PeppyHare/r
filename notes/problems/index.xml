@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Worked Problems on My Notes</title><link>https://peppyhare.github.io/r/notes/problems/</link><description>Recent content in Worked Problems on My Notes</description><generator>Hugo</generator><language>en</language><atom:link href="https://peppyhare.github.io/r/notes/problems/index.xml" rel="self" type="application/rss+xml"/><item><title>Characteristic Parameters of a Plasma</title><link>https://peppyhare.github.io/r/notes/problems/gurnett/ch02/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/problems/gurnett/ch02/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" />
-&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js">&lt;/script>
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();">&lt;/script>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Worked Problems on My Notes</title><link>https://peppyhare.github.io/r/notes/problems/</link><description>Recent content in Worked Problems on My Notes</description><generator>Hugo</generator><language>en</language><atom:link href="https://peppyhare.github.io/r/notes/problems/index.xml" rel="self" type="application/rss+xml"/><item><title>Characteristic Parameters of a Plasma</title><link>https://peppyhare.github.io/r/notes/problems/gurnett/ch02/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/problems/gurnett/ch02/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
 
-&lt;script>
+&lt;script&gt;
  function loadKatex() {
  renderMathInElement(document.body, {
  delimiters: [
@@ -11,7 +11,7 @@
  { left: "$", right: "$", display: false },
  { left: "\\(", right: "\\)", display: false }],
  throwOnError: false,
- trust: (context) => ['\\htmlId', '\\href'].includes(context.command),
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
  macros: {
  "\\lcm": "\\mathop{\\mathrm{lcm}}",
  "\\sen": '\\text{sen}\\,',
@@ -39,8 +39,8 @@
  }
  });
  };
-&lt;/script>&lt;span>
+&lt;/script&gt;&lt;span&gt;
  \[\]
-&lt;/span>
+&lt;/span&gt;
 
-&lt;p>Problems from chapter 2 of Gurnett and Battacharjee - Introduction to Plasma Physics&lt;/p></description></item></channel></rss>
+&lt;p&gt;Problems from chapter 2 of Gurnett and Battacharjee - Introduction to Plasma Physics&lt;/p&gt;</description></item></channel></rss>
