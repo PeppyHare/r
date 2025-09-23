@@ -28,7 +28,7 @@ In broad terms, we can define a hierarchy of plasma time scales.
 
 - \\(k v_A (10^{-9} - 10^{-6} s) \\) Ion cyclotron waves: electrostatics (Bernstein waves), electromagnetic (Alfvén waves)
 
-- \\(k v_s (10^{-6}s) \\) Ion acoustic waves 
+- \\(k v_s (10^{-6}s) \\) Ion acoustic waves
 
 - \\( \omega ^\star (10^{-4}s) \\) Drift waves (\\( \omega ^\star = \\) drift frequency \\( \approx \grad p_e / e B n \\))
 
@@ -39,6 +39,18 @@ In broad terms, we can define a hierarchy of plasma time scales.
 # Hierarchy of Plasma Models
 
 We can define a hierarchy of plasma models, which does not correspond directly with the hierarchy of time scales, but is related.
+
+{{< mermaid >}}
+
+flowchart TD
+    A("N-body particle dynamics") --> B("Distribution function")
+    B --> C("Particle-in-cell")
+    B --> D("Boltzmann equation (collisions)")
+    B --> D1("Vlasov equation (collisionless)")
+    D --> F("Single fluid (MHD)")
+    D --> G("Multi-fluid models")
+{{< /mermaid >}}
+
 
 ## N-Body Model
 
@@ -164,7 +176,7 @@ This is called a "weakly conservative" form, because the right-hand side is not 
 If we assume collisions are small angle scatterings and large angle scattering results as multiple small angle scatterings, then the collision terms can be truncated.
 
 {{< katex display >}}
-\left. \pdv{f}{t} \right|_{coll} = \pdv{}{\vec v} \left( \left\langle \frac{\Delta \vec v}{\Delta t} \right\rangle f \right) + \frac{1}{2} \pdv{}{\vec v} \pdv{}{\vec v} \dot \cdot \left( \left\langle \frac{ \Delta \vec v \Delta \vec v}{\Delta t} \right\rangle f \right) 
+\left. \pdv{f}{t} \right|_{coll} = \pdv{}{\vec v} \left( \left\langle \frac{\Delta \vec v}{\Delta t} \right\rangle f \right) + \frac{1}{2} \pdv{}{\vec v} \pdv{}{\vec v} \dot \cdot \left( \left\langle \frac{ \Delta \vec v \Delta \vec v}{\Delta t} \right\rangle f \right)
 {{< /katex >}}
 {{< katex display >}}
 = \sum_i \pdv{}{v_i} \left( \frac{\Delta v_i}{\Delta t} f \right) + \frac{1}{2} \sum_{j, k} \pdv{}{v_j} \pdv{}{v_k} \left( \langle \frac{\Delta v_j \Delta v_k}{\Delta t} \rangle f \right)
@@ -191,7 +203,7 @@ The first term of the Fokker-Planck collision operator \\( \pdv{}{\vec v} \left(
 Moving on to the second term,
 
 {{< katex display >}}
-\pdv{}{\vec v} \pdv{}{\vec v} \dot \cdot \left( \left\langle \frac{ \Delta \vec v \Delta \vec v}{\Delta t} \right\rangle f \right) 
+\pdv{}{\vec v} \pdv{}{\vec v} \dot \cdot \left( \left\langle \frac{ \Delta \vec v \Delta \vec v}{\Delta t} \right\rangle f \right)
 {{< /katex >}}
 
 this represents the heating of particles due to collisions with a hotter population. It will tend to drive the variances (temperature) together, and so acts as a velocity diffusion term:
