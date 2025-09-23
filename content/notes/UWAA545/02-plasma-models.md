@@ -62,16 +62,16 @@ In an N-body model, each particle is treated classically. Particles interact thr
 
 The collision term only involves collisions between two particles. As we said, we're limiting collisions to binary collisions. The delta function comes from the assumption of infinitesimally small point particles.
 
-To solve the model, we just track each particle \\( (\vec r_i, \vec v_i) \\) in a Lagrangian frame of reference. In a Lagrangian frame of reference, we track each individual particle in its own frame of reference, as opposed to a lab frame or cell frame.
+To solve the model, we just track each particle \\( (\vec r_i, \vec v_i) \\) in a Lagrangian frame of reference. In a Lagrangian frame of reference, we track each individual particle in its own frame of reference, as opposed to an "Eulerian" frame where we track positions relative to the lab frame or cell frame.
 
 The particles couple to the fields as source terms to the Maxwell equations.
 
 {{< katex display >}}
-\rho(\vec r) = \pdv{}{V} \sum_i q_i \delta (\vec r - \vec r_i)
+\rho(\vec r) = \pdv{}{V} \sum_i q_i \delta (\vec r - \vec r_i) \quad \text{(charge density)}
 {{< /katex >}}
 
 {{< katex display >}}
-\vec j (\vec r) = \pdv{}{V} \sum_i q_i \vec v_i \delta(\vec r - \vec r_i)
+\vec j (\vec r) = \pdv{}{V} \sum_i q_i \vec v_i \delta(\vec r - \vec r_i) \quad \text{(current density)}
 {{< /katex >}}
 
 Maxwell's equations give \\( \vec E \\) and \\( \vec B \\) at each particle's position \\( r_i \\)
