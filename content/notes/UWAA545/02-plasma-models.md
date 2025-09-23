@@ -165,6 +165,8 @@ For numerical implementations, it is usually advantageous to write the equation 
 \pdv{Q}{t} + \div ( \vec F) = 0
 {{< /katex >}}
 
+where $Q(\vec{x}, \vec{v}, t)$ is the set of state variables we're solving for and we call $\vec{F(Q, \vec{x}, \vec{v}, t)}$ the "flux function" because it describes the flux of the state variables through phase space. We will come back to the conservative form in much more detail when we talk about fluid models.
+
 If collisions are important, then solve Boltzmann-Maxwell model. The conservation law form of the Boltzmann equation is
 
 {{< katex display >}}
@@ -218,7 +220,7 @@ The Boltzmann H-theorem tells us that "\\( f \\) will tend towards a Maxwellian 
 \left. \pdv{f}{t} \right|_{coll} = \frac{f_{M} - f} {\tau}
 {{< /katex >}}
 
-where \\( f_M \\) is a Maxwellian distribution with the same first three velocity moments (\\( n, \vec u, T \\)) as \\( f \\), and \\( \tau \\) is a relaxation time.
+where \\( f_M \\) is a Maxwellian distribution with the same first three velocity [moments](https://farside.ph.utexas.edu/teaching/plasma/Plasma/node45.html) (\\( n, \vec u, T \\)) as \\( f \\), and \\( \tau \\) is a relaxation time.
 
 {{< katex display >}}
 f_M (\vec v) = n \left( \frac{m}{2 \pi k T} \right) ^{3/2} \exp \left( - \frac{m (\vec v - \vec u)^2}{2 k T}\right)

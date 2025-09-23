@@ -437,37 +437,37 @@ As we've written it, the MHD model is not a scalar equation, but rather a system
 \pdv{\vec Q}{t} + \pdv{\vec F}{\vec x} = 0
 {{< /katex >}}
 
-where \\( \vec Q \\) is the vector of variables, and \\( \vec F \\) is the vector of fluxes. We can define the flux Jacobian \\( \overline \vec A \equiv \pdv{\vec F}{\vec Q} \\) and rewrite the governing system as an eigenvalue problem
+where \\( \vec Q \\) is the vector of variables, and \\( \vec F \\) is the vector of fluxes. We can define the flux Jacobian \\( \overline{\vec A} \equiv \pdv{\vec F}{\vec Q} \\) and rewrite the governing system as an eigenvalue problem
 
 {{< katex display >}}
-\pdv{\vec Q}{t} + \overline \vec A \pdv{\vec Q}{\vec x} = 0
+\pdv{\vec Q}{t} + \overline{\vec A} \pdv{\vec Q}{\vec x} = 0
 {{< /katex >}}
 
 The equation type is given by the characteristics of the flux Jacobian:
 
-- Elliptic if the eigenvalues of \\( \overline \vec A \\) are imaginary.
-- Parabolic if eigenvalues of \\( \overline \vec A \\) are repeated and the eigenvectors are not unique.
-- Hyperbolic if the eigenvalues of \\( \overline \vec A \\) are real and the eigenvectors are unique.
+- Elliptic if the eigenvalues of \\( \overline{\vec A} \\) are imaginary.
+- Parabolic if eigenvalues of \\( \overline{\vec A} \\) are repeated and the eigenvectors are not unique.
+- Hyperbolic if the eigenvalues of \\( \overline{\vec A} \\) are real and the eigenvectors are unique.
 
 ### Equation type of Ideal MHD Model
 
 Let's apply this analysis to our ideal MHD model.
 
 {{< katex display >}}
-\pdv{\vec Q}{t} + \div \overline \vec T = 0
+\pdv{\vec Q}{t} + \div \overline{\vec T} = 0
 {{< /katex >}}
 where the vector of variables is
 
 {{< katex display >}}
-\vec Q = \begin{bmatrix} \rho \\ \rho \vec v \\ \vec B \\ e\end{bmatrix} \qquad e = \frac{P}{\gamma - 1} + \frac{\rho v^2}{2} + \frac{B^2}{2 \mu_0}
+\vec Q = \begin{bmatrix} \rho \\ \rho \vec v \\ \vec B \\ e \end{bmatrix} \qquad e = \frac{P}{\gamma - 1} + \frac{\rho v^2}{2} + \frac{B^2}{2 \mu_0}
 {{< /katex >}}
 
-and the flux tensor is 
+and the flux tensor is
 
 {{< katex display >}}
-\overline \vec T = \begin{bmatrix}
+\overline{\vec T} = \begin{bmatrix}
 \rho \vec v \\
-\rho \vec v \vec v - \frac{ \vec B \vec B}{\mu_0} + \left( P + \frac{B^2}{2 \mu_0} \right) \overline \vec 1 \\
+\rho \vec v \vec v - \frac{ \vec B \vec B}{\mu_0} + \left( P + \frac{B^2}{2 \mu_0} \right) \overline{\vec 1} \\
 \vec v \vec B - \vec B \vec v \\
 \left( e + P + \frac{B^2}{2 \mu_0} \right) \vec v - \frac{\vec B \cdot \vec v}{\mu_0} \vec B
  \end{bmatrix}
