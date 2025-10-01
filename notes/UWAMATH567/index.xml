@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Applied Complex Analysis on My Notes</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/</link><description>Recent content in Applied Complex Analysis on My Notes</description><generator>Hugo</generator><language>en</language><atom:link href="https://peppyhare.github.io/r/notes/UWAMATH567/index.xml" rel="self" type="application/rss+xml"/><item><title>Overview</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/01-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/01-overview/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script&gt;&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;p&gt;TODO: Fill this in with a high level description after we&amp;rsquo;ve gotten through the course materials.&lt;/p&gt;</description></item><item><title>Complex Numbers</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/02-complex-numbers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/02-complex-numbers/</guid><description>&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;p&gt;We enter the topic of complex analysis through the usual lens: trying to take rational powers of real numbers. Within the domain of real numbers, \( (-1)^{1/2} \) is not defined. It turns out that if we deal with this example, we create a number system that is closed under rational powers. We define&lt;/p&gt;
+&lt;span&gt;
+ \[i \equiv \sqrt{-1}\]
+&lt;/span&gt;
+
+&lt;p&gt;so that \( i^2 = -1 \).&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;complex number&lt;/strong&gt; is any expression of the form&lt;/p&gt;</description></item></channel></rss>

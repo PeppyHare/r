@@ -19,7 +19,52 @@
  &lt;a class="anchor" href="#fourier-series--spectral-analysis"&gt;#&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p align="center"&gt; &lt;img alt="fourier_series-011.png" src="https://peppyhare.github.io/r/img/556/fourier_series-011.png" /&gt; &lt;/p&gt; 
-&lt;p&gt;First, let&amp;rsquo;s not get confused between Fourier series and Fourier transforms. A Fourier series is the breakdown of a function defined on a finite interval into &amp;ldquo;frequency components.&amp;rdquo; For example, if we have \( f(x) : x \in [a, b] \), a Fourier series for \( f(x) \) pulls apart the &lt;strong&gt;discrete&lt;/strong&gt; frequency components of the \( e^{ikx} \) modes that make up the function. Starting with a fundamental mode \( f_0 \), a first harmonic \( f_1 \), a second harmonic \( f_2 \), and so on and so forth. We won&amp;rsquo;t end up with any energy in the frequencies between those modes, since it&amp;rsquo;s a discrete series.&lt;/p&gt;</description></item><item><title>Rules of thumb</title><link>https://peppyhare.github.io/r/notes/UWAA557/ch10-0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA557/ch10-0/</guid><description>&lt;h1 id="rules-of-thumb"&gt;
+&lt;p&gt;First, let&amp;rsquo;s not get confused between Fourier series and Fourier transforms. A Fourier series is the breakdown of a function defined on a finite interval into &amp;ldquo;frequency components.&amp;rdquo; For example, if we have \( f(x) : x \in [a, b] \), a Fourier series for \( f(x) \) pulls apart the &lt;strong&gt;discrete&lt;/strong&gt; frequency components of the \( e^{ikx} \) modes that make up the function. Starting with a fundamental mode \( f_0 \), a first harmonic \( f_1 \), a second harmonic \( f_2 \), and so on and so forth. We won&amp;rsquo;t end up with any energy in the frequencies between those modes, since it&amp;rsquo;s a discrete series.&lt;/p&gt;</description></item><item><title>Overview</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/01-overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/01-overview/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script&gt;&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;p&gt;TODO: Fill this in with a high level description after we&amp;rsquo;ve gotten through the course materials.&lt;/p&gt;</description></item><item><title>Rules of thumb</title><link>https://peppyhare.github.io/r/notes/UWAA557/ch10-0/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA557/ch10-0/</guid><description>&lt;h1 id="rules-of-thumb"&gt;
  Rules of thumb
  &lt;a class="anchor" href="#rules-of-thumb"&gt;#&lt;/a&gt;
 &lt;/h1&gt;
@@ -152,7 +197,17 @@
  &lt;em&gt;1.1.1&lt;/em&gt; Vector Operations
  &lt;a class="anchor" href="#111-vector-operations"&gt;#&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;If you walk 4 miles due north and then 3 miles due east (Fig. 1.1), you will have gone a total of 7 miles, but you&amp;rsquo;re &lt;em&gt;not&lt;/em&gt; 7 miles from where you set out-you&amp;rsquo;re only 5. We need an arithmetic to describe quantities like this, which evidently do not add in the ordinary way. The reason they don&amp;rsquo;t, of course, is that &lt;strong&gt;displacements&lt;/strong&gt; (straight line segments going from one point to another) have &lt;em&gt;direction&lt;/em&gt; as well as &lt;em&gt;magnitude&lt;/em&gt; (length), and it is essential to take both into account when you combine them. Such objects are called vectors: velocity, acceleration, force and momentum are other examples. By contrast, quantities that have magnitude but no direction are called scalars: examples include mass, charge, density, and temperature.&lt;/p&gt;</description></item><item><title>Differential Calculus</title><link>https://peppyhare.github.io/r/notes/griffiths/ch1-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch1-2/</guid><description>&lt;h1 id="12-differential-calculus"&gt;
+&lt;p&gt;If you walk 4 miles due north and then 3 miles due east (Fig. 1.1), you will have gone a total of 7 miles, but you&amp;rsquo;re &lt;em&gt;not&lt;/em&gt; 7 miles from where you set out-you&amp;rsquo;re only 5. We need an arithmetic to describe quantities like this, which evidently do not add in the ordinary way. The reason they don&amp;rsquo;t, of course, is that &lt;strong&gt;displacements&lt;/strong&gt; (straight line segments going from one point to another) have &lt;em&gt;direction&lt;/em&gt; as well as &lt;em&gt;magnitude&lt;/em&gt; (length), and it is essential to take both into account when you combine them. Such objects are called vectors: velocity, acceleration, force and momentum are other examples. By contrast, quantities that have magnitude but no direction are called scalars: examples include mass, charge, density, and temperature.&lt;/p&gt;</description></item><item><title>Complex Numbers</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/02-complex-numbers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/02-complex-numbers/</guid><description>&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;p&gt;We enter the topic of complex analysis through the usual lens: trying to take rational powers of real numbers. Within the domain of real numbers, \( (-1)^{1/2} \) is not defined. It turns out that if we deal with this example, we create a number system that is closed under rational powers. We define&lt;/p&gt;
+&lt;span&gt;
+ \[i \equiv \sqrt{-1}\]
+&lt;/span&gt;
+
+&lt;p&gt;so that \( i^2 = -1 \).&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;complex number&lt;/strong&gt; is any expression of the form&lt;/p&gt;</description></item><item><title>Differential Calculus</title><link>https://peppyhare.github.io/r/notes/griffiths/ch1-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/ch1-2/</guid><description>&lt;h1 id="12-differential-calculus"&gt;
  1.2: Differential Calculus
  &lt;a class="anchor" href="#12-differential-calculus"&gt;#&lt;/a&gt;
 &lt;/h1&gt;
@@ -1727,12 +1782,12 @@ We define \( \vec \omega_{c, \alpha} \) to be the vector gyrofrequency
  1.6.1: The Helmholtz Theorem
  &lt;a class="anchor" href="#161-the-helmholtz-theorem"&gt;#&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Ever since Faraday, the laws of electricity and magnetism have been expressed in terms of &lt;em&gt;electric&lt;/em&gt; and &lt;em&gt;magnetic&lt;/em&gt; fields, &lt;strong&gt;E&lt;/strong&gt; and &lt;strong&gt;B&lt;/strong&gt;. Like many physical laws, these are most compactly expressed as differential equations. Since &lt;strong&gt;E&lt;/strong&gt; and &lt;strong&gt;B&lt;/strong&gt; are vectors, the differential equations naturally involve vector derivatives: divergence and curl. Indeed, Maxwell reduced the entire theory to four equations, specifying respectively the divergence and the curl of &lt;strong&gt;E&lt;/strong&gt; and &lt;strong&gt;B&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>Equilibrium for Fusion</title><link>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</guid><description>&lt;h1 id="equilibrium-for-fusion-hahahugoshortcode111s0hbhb"&gt;
+&lt;p&gt;Ever since Faraday, the laws of electricity and magnetism have been expressed in terms of &lt;em&gt;electric&lt;/em&gt; and &lt;em&gt;magnetic&lt;/em&gt; fields, &lt;strong&gt;E&lt;/strong&gt; and &lt;strong&gt;B&lt;/strong&gt;. Like many physical laws, these are most compactly expressed as differential equations. Since &lt;strong&gt;E&lt;/strong&gt; and &lt;strong&gt;B&lt;/strong&gt; are vectors, the differential equations naturally involve vector derivatives: divergence and curl. Indeed, Maxwell reduced the entire theory to four equations, specifying respectively the divergence and the curl of &lt;strong&gt;E&lt;/strong&gt; and &lt;strong&gt;B&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>Equilibrium for Fusion</title><link>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</guid><description>&lt;h1 id="equilibrium-for-fusion-hahahugoshortcode112s0hbhb"&gt;
  Equilibrium for Fusion (&lt;span&gt;
  \( \beta \)
 &lt;/span&gt;
 )
- &lt;a class="anchor" href="#equilibrium-for-fusion-hahahugoshortcode111s0hbhb"&gt;#&lt;/a&gt;
+ &lt;a class="anchor" href="#equilibrium-for-fusion-hahahugoshortcode112s0hbhb"&gt;#&lt;/a&gt;
 &lt;/h1&gt;
 &lt;p&gt;For a fusion device we would like to determine a magnetic configuration that confines plasma while it fuses. At fusion temperatures, the power required to maintain the equilibrium will be substantial. For a device to be useful, the power required to sustain the equilibrium must be less than the power released from fusion. Important loss terms for a confined plasma are transport (thermal conduction primarily) and radiation terms. The scaling factors are &lt;span&gt;
  \( P_{Brem} \sim n^2 T^{1/2} \)
@@ -1905,7 +1960,7 @@ which has the general solution
  1-Dimensional Equilibria
  &lt;a class="anchor" href="#1-dimensional-equilibria"&gt;#&lt;/a&gt;
 &lt;/h1&gt;
-&lt;h2 id="the-hahahugoshortcode112s0hbhb-pinch"&gt;
+&lt;h2 id="the-hahahugoshortcode116s0hbhb-pinch"&gt;
  The 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
@@ -1952,7 +2007,7 @@ which has the general solution
  \( \theta \)
 &lt;/span&gt;
 -pinch
- &lt;a class="anchor" href="#the-hahahugoshortcode112s0hbhb-pinch"&gt;#&lt;/a&gt;
+ &lt;a class="anchor" href="#the-hahahugoshortcode116s0hbhb-pinch"&gt;#&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;In a &lt;span&gt;
  \( \theta \)
