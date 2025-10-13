@@ -53,4 +53,47 @@
 &lt;/span&gt;
 
 &lt;p&gt;so that \( i^2 = -1 \).&lt;/p&gt;
-&lt;p&gt;A &lt;strong&gt;complex number&lt;/strong&gt; is any expression of the form&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;A &lt;strong&gt;complex number&lt;/strong&gt; is any expression of the form&lt;/p&gt;</description></item><item><title>Analytic Functions and Integration</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/03-analytic-functions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/03-analytic-functions/</guid><description>&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;h2 id="analytic-functions"&gt;
+ Analytic Functions
+ &lt;a class="anchor" href="#analytic-functions"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;We have seen that \( f(z) \) is differentiable at \( z \) if the limit&lt;/p&gt;
+&lt;span&gt;
+ \[f&amp;#39;(z) = \lim_{h \rightarrow 0} \frac{f(z &amp;#43; h) - f(z)}{h}\]
+&lt;/span&gt;
+
+&lt;p&gt;exists.&lt;/p&gt;
+&lt;h3 id="definition-analytic"&gt;
+ Definition: &lt;strong&gt;analytic&lt;/strong&gt;
+ &lt;a class="anchor" href="#definition-analytic"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;The function \( f(z) \) is &lt;strong&gt;analytic&lt;/strong&gt; at \( z_0 \) if \( f(z) \) is single-valued and is differentiable in a neighborhood of \( z_0 \). The function \( f(z) \) is analytic in an open set \( S \) if it is analytic at every point of \( S \).&lt;/p&gt;</description></item><item><title>Sequences, series, and singularities</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/04-series/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/04-series/</guid><description>&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;h1 id="series"&gt;
+ Series
+ &lt;a class="anchor" href="#series"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;If we talk to a pure mathematician about series, things can get very complicated, so in this course we will do things starting from a series that we should find very familiar: the geometric series&lt;/p&gt;
+&lt;span&gt;
+ \[S_N = 1 &amp;#43; r &amp;#43; r^2 &amp;#43; \ldots &amp;#43; r^N\]
+&lt;/span&gt;
+
+&lt;p&gt;To sum it up, we multiply by \( r \) and subtract:&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;
+ \[r S_N = r &amp;#43; r^2 &amp;#43; \ldots &amp;#43; r^{N&amp;#43;1}\]
+&lt;/span&gt;
+
+&lt;span&gt;
+ \[(1 - r)S_N = 1 - r^{N&amp;#43;1}\]
+&lt;/span&gt;
+
+&lt;span&gt;
+ \[\rightarrow S_N = \frac{1 - r^{N&amp;#43;1}}{1 - r}\]
+&lt;/span&gt;
+&lt;/p&gt;</description></item></channel></rss>

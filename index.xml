@@ -549,7 +549,25 @@
  Wave Properties in Cold Unmagnetized Plasma
  &lt;a class="anchor" href="#wave-properties-in-cold-unmagnetized-plasma"&gt;#&lt;/a&gt;
 &lt;/h1&gt;
-&lt;p&gt;Before we can get to the wave properties, we first need to be specific about what we mean by a &amp;ldquo;cold&amp;rdquo; plasma. In the fluid formulation, we have a few central equations:&lt;/p&gt;</description></item><item><title>Cold Magnetized Plasma Dispersion Relation</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch02-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch02-3/</guid><description>&lt;span&gt;
+&lt;p&gt;Before we can get to the wave properties, we first need to be specific about what we mean by a &amp;ldquo;cold&amp;rdquo; plasma. In the fluid formulation, we have a few central equations:&lt;/p&gt;</description></item><item><title>Analytic Functions and Integration</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/03-analytic-functions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/03-analytic-functions/</guid><description>&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;h2 id="analytic-functions"&gt;
+ Analytic Functions
+ &lt;a class="anchor" href="#analytic-functions"&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;We have seen that \( f(z) \) is differentiable at \( z \) if the limit&lt;/p&gt;
+&lt;span&gt;
+ \[f&amp;#39;(z) = \lim_{h \rightarrow 0} \frac{f(z &amp;#43; h) - f(z)}{h}\]
+&lt;/span&gt;
+
+&lt;p&gt;exists.&lt;/p&gt;
+&lt;h3 id="definition-analytic"&gt;
+ Definition: &lt;strong&gt;analytic&lt;/strong&gt;
+ &lt;a class="anchor" href="#definition-analytic"&gt;#&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;The function \( f(z) \) is &lt;strong&gt;analytic&lt;/strong&gt; at \( z_0 \) if \( f(z) \) is single-valued and is differentiable in a neighborhood of \( z_0 \). The function \( f(z) \) is analytic in an open set \( S \) if it is analytic at every point of \( S \).&lt;/p&gt;</description></item><item><title>Cold Magnetized Plasma Dispersion Relation</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch02-3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch02-3/</guid><description>&lt;span&gt;
  \[\]
 &lt;/span&gt;
 
@@ -1083,7 +1101,32 @@ We define \( \vec \omega_{c, \alpha} \) to be the vector gyrofrequency
  Dimensions and Normalizations
  &lt;a class="anchor" href="#dimensions-and-normalizations"&gt;#&lt;/a&gt;
 &lt;/h1&gt;
-&lt;p&gt;To make the relevant physics as easy to model and visualize as possible, let&amp;rsquo;s choose units such that time is normalized by the plasma frequency and length scales of interest are of order unity. This will make things a &lt;em&gt;lot&lt;/em&gt; easier to plot and interpret in the long run, even though normalizations like \( m = q /(q / m) \) seem arcane.&lt;/p&gt;</description></item><item><title>The CMA Diagram</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch02-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch02-4/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;p&gt;To make the relevant physics as easy to model and visualize as possible, let&amp;rsquo;s choose units such that time is normalized by the plasma frequency and length scales of interest are of order unity. This will make things a &lt;em&gt;lot&lt;/em&gt; easier to plot and interpret in the long run, even though normalizations like \( m = q /(q / m) \) seem arcane.&lt;/p&gt;</description></item><item><title>Sequences, series, and singularities</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/04-series/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/04-series/</guid><description>&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;h1 id="series"&gt;
+ Series
+ &lt;a class="anchor" href="#series"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;If we talk to a pure mathematician about series, things can get very complicated, so in this course we will do things starting from a series that we should find very familiar: the geometric series&lt;/p&gt;
+&lt;span&gt;
+ \[S_N = 1 &amp;#43; r &amp;#43; r^2 &amp;#43; \ldots &amp;#43; r^N\]
+&lt;/span&gt;
+
+&lt;p&gt;To sum it up, we multiply by \( r \) and subtract:&lt;/p&gt;
+&lt;p&gt;&lt;span&gt;
+ \[r S_N = r &amp;#43; r^2 &amp;#43; \ldots &amp;#43; r^{N&amp;#43;1}\]
+&lt;/span&gt;
+
+&lt;span&gt;
+ \[(1 - r)S_N = 1 - r^{N&amp;#43;1}\]
+&lt;/span&gt;
+
+&lt;span&gt;
+ \[\rightarrow S_N = \frac{1 - r^{N&amp;#43;1}}{1 - r}\]
+&lt;/span&gt;
+&lt;/p&gt;</description></item><item><title>The CMA Diagram</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch02-4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch02-4/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
 
@@ -1782,12 +1825,12 @@ We define \( \vec \omega_{c, \alpha} \) to be the vector gyrofrequency
  1.6.1: The Helmholtz Theorem
  &lt;a class="anchor" href="#161-the-helmholtz-theorem"&gt;#&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Ever since Faraday, the laws of electricity and magnetism have been expressed in terms of &lt;em&gt;electric&lt;/em&gt; and &lt;em&gt;magnetic&lt;/em&gt; fields, &lt;strong&gt;E&lt;/strong&gt; and &lt;strong&gt;B&lt;/strong&gt;. Like many physical laws, these are most compactly expressed as differential equations. Since &lt;strong&gt;E&lt;/strong&gt; and &lt;strong&gt;B&lt;/strong&gt; are vectors, the differential equations naturally involve vector derivatives: divergence and curl. Indeed, Maxwell reduced the entire theory to four equations, specifying respectively the divergence and the curl of &lt;strong&gt;E&lt;/strong&gt; and &lt;strong&gt;B&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>Equilibrium for Fusion</title><link>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</guid><description>&lt;h1 id="equilibrium-for-fusion-hahahugoshortcode112s0hbhb"&gt;
+&lt;p&gt;Ever since Faraday, the laws of electricity and magnetism have been expressed in terms of &lt;em&gt;electric&lt;/em&gt; and &lt;em&gt;magnetic&lt;/em&gt; fields, &lt;strong&gt;E&lt;/strong&gt; and &lt;strong&gt;B&lt;/strong&gt;. Like many physical laws, these are most compactly expressed as differential equations. Since &lt;strong&gt;E&lt;/strong&gt; and &lt;strong&gt;B&lt;/strong&gt; are vectors, the differential equations naturally involve vector derivatives: divergence and curl. Indeed, Maxwell reduced the entire theory to four equations, specifying respectively the divergence and the curl of &lt;strong&gt;E&lt;/strong&gt; and &lt;strong&gt;B&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>Equilibrium for Fusion</title><link>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</guid><description>&lt;h1 id="equilibrium-for-fusion-hahahugoshortcode111s0hbhb"&gt;
  Equilibrium for Fusion (&lt;span&gt;
  \( \beta \)
 &lt;/span&gt;
 )
- &lt;a class="anchor" href="#equilibrium-for-fusion-hahahugoshortcode112s0hbhb"&gt;#&lt;/a&gt;
+ &lt;a class="anchor" href="#equilibrium-for-fusion-hahahugoshortcode111s0hbhb"&gt;#&lt;/a&gt;
 &lt;/h1&gt;
 &lt;p&gt;For a fusion device we would like to determine a magnetic configuration that confines plasma while it fuses. At fusion temperatures, the power required to maintain the equilibrium will be substantial. For a device to be useful, the power required to sustain the equilibrium must be less than the power released from fusion. Important loss terms for a confined plasma are transport (thermal conduction primarily) and radiation terms. The scaling factors are &lt;span&gt;
  \( P_{Brem} \sim n^2 T^{1/2} \)
@@ -1960,7 +2003,7 @@ which has the general solution
  1-Dimensional Equilibria
  &lt;a class="anchor" href="#1-dimensional-equilibria"&gt;#&lt;/a&gt;
 &lt;/h1&gt;
-&lt;h2 id="the-hahahugoshortcode116s0hbhb-pinch"&gt;
+&lt;h2 id="the-hahahugoshortcode112s0hbhb-pinch"&gt;
  The 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
@@ -2007,7 +2050,7 @@ which has the general solution
  \( \theta \)
 &lt;/span&gt;
 -pinch
- &lt;a class="anchor" href="#the-hahahugoshortcode116s0hbhb-pinch"&gt;#&lt;/a&gt;
+ &lt;a class="anchor" href="#the-hahahugoshortcode112s0hbhb-pinch"&gt;#&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;In a &lt;span&gt;
  \( \theta \)
