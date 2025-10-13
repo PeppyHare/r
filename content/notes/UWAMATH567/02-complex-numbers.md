@@ -267,4 +267,35 @@ For many features of complex functions, it suffices to repeat the proof in the r
 \lim_{h \rightarrow 0} \frac{f(z + h) - f(z)}{h} = \lim_{h \rightarrow 0} \frac{\cancel{\overline{z}} + \overline{h} - \cancel{\overline{z}}}{h}
 {{< /katex >}}
 
-If we let \\( h = \epsilon e^{i \theta} \\) 
+If we let \\( h = \epsilon e^{i \theta} \\). Then
+
+{{< katex display >}}
+\lim_{h \rightarrow 0} \frac{f(z + h) - f(z)}{h} = \lim_{h \rightarrow 0} \frac{\overline{h}}{h} \\
+\lim_{\epsilon \rightarrow 0} \frac{\epsilon e^{-i \theta}}{\epsilon e^{i \theta}} = e^{-2 i \theta}
+{{< /katex >}}
+
+This limit is not defined, since the result depends on the direction along which z is approached. It follows that \\( f(z) = \overline{z} \\) is nowhere differentiable. This is reminiscent of the case of a function of two variables like
+
+{{< katex display >}}
+f(x, y) = \frac{x^2}{x^2 + y^2}
+{{< /katex >}}
+
+Here the limit as \\( (x, y) \rightarrow (0, 0) \\) is undefined. Reminiscent but not quite in the same league: the above example \\( f(x) = \overline{z} \\) is nowhere differentiable.
+
+It's easy to show that
+
+{{< katex display >}}
+(f(z) + g(z))' = f'(z) + g'(z)\\
+(f(z)g(z))' = f'(z)g(z) + f(z)g'(z) \\
+[f(g(z))]' = f'(g(z))g'(z)
+{{< /katex >}}
+
+And the regular differentiation formulae work for the elementary functions we defined before:
+
+{{< katex display >}}
+(z^n)' = n z^{n-1}\\
+\frac{d}{dz} e^z = e^z \\
+\frac{d}{dz} \sin z = \cos z \\
+\frac{d}{dz} \cos z = - \sin z
+{{< /katex >}}
+

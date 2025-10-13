@@ -13,3 +13,5 @@ Course notes from AMATH 567 at the University of Washington, Seattle
 
   - [Introduction](01-overview.md)
   - [Complex Numbers](02-complex-numbers.md)
+  - [Analytic Functions and Integration](03-analytic-functions.md)
+  - [Sequences and Series](04-series.md)
