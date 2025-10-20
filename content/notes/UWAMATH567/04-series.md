@@ -218,7 +218,7 @@ The sum of the two will have the smaller radius of convergence
 f(z) = \sum_{n=0} ^\infty - \frac{1}{2} (z/2)^n + (z)^n \qquad |z | < 1
 {{< /katex >}}
 
-b) Convergingn in \\( |z| > 2 \\). Again, expand about \\( z_0 = \infty \\) with
+b) Converging in \\( |z| > 2 \\). Again, expand about \\( z_0 = \infty \\) with
 
 {{< katex display >}}
 \frac{1}{z - 2} = \frac{1}{z} \frac{1}{1 - \frac{2}{z}} = \frac{1}{z} \sum_{n=0} ^\infty (2/z)^n
@@ -247,3 +247,45 @@ The sum is valid in the annulus
 {{< katex display >}}
 f(z) = \sum_{n=-\infty} ^{-1} - z^n + \sum_{n=0} ^{\infty} \frac{1}{2^{n+1}} z^n \qquad 1 < |z| < 2
 {{< /katex >}}
+
+# Singularities
+
+Now we want to classify different types of singularities. We will treat them differently depending on their type. So far, we have just been using the definition"a singularitiy is a point where a function is not analytic."
+
+Recall that in order for a function to be analytic at a point, it must be single-valued, and it must be differentiable (with the limit being well-defined from any direction) within a neighborhood around that point. From this, we can say that a branch point is always a singularity, but branch points are very annoying to define. If you look in different textbooks you will see different definitions. But if we only agree to work on single-valued functions, we never need to deal with them.
+
+As an aside, some definitions of a "branch point" might be:
+
+1. "A branch point is a singularity of a multi-valued function." This isn't relevant to our class because we refuse to deal with multi-valued functions.
+2. "A branch point is one where a circuit around the point yields different values." This is the definition from Ablowitz. This is a much better definition, for instance it handles the \\( z = 0 \\) singularity for \\( z^{1/2} \\) well. It is also related to Riemann sheets: e.g. how many sheets do we go around when circumnavigating a point.
+3. Our definition: "Refuse to deal with multi-valued functions. If we want to call something a branch point, we say that branch points are the terminal points of any branch cut."
+
+From here on out, we will deal with **isolated singularities**: these are singularities where there are no other singularities within a neighborhood.
+
+Around an isolated singularity \\( z_0 \\), the Laurent series is valid in the punctured neighborhood of \\( z_0 \\)  in which \\( f(z) \\) is analytic.
+
+\\( f(n) = \sum_{n=-\infty} ^\infty a_n (z - z_0)^n \\)
+
+**Case 1** If \\( a_n = 0 \\) for all \\( n < 0> \\), then \\( z_0 \\) is not a singularity. Consider the function
+
+{{< katex display >}}
+f(z) = \frac{\sin(z)}{z} = \frac{z - \frac{z^3}{3!} + \frac{z^5}{5!} - \ldots}{z} = 1 - \frac{z^2}{3!} + \frac{z^4}{5!} - \ldots
+{{< /katex >}}
+
+There are no negative powers here, so \\( z_0 = 0 \\) is not a singularity.
+
+**Case 2** If \\( z_{-m} \neq 0 \\) for some \\( m >0 \\) but \\( a_n = 0 \\) for all \\( n < -m \\), then \\( z_0 \\) is a **pole of order \\( m \\)**.
+
+{{< katex display >}}
+f(z) = \frac{1}{z^2} + \frac{1}{z} + 1 + z + \ldots
+{{< /katex >}}
+
+Here \\( z = 0 \\) is a pole of order 2 (sometimes called a double pole).
+
+**Case 3** If \\( a_n \neq 0 \\) for an infinite number of negative \\( n \\), then \\( z_0 \\) is an **"essential" singularity**.
+
+{{< katex display >}}
+f(z) = e^{1/z} = \sum_{n=0} ^{\infty} \frac{z^{-n}}{n!} = 1 + \frac{1}{z} + \frac{1}{2! z^2} + \ldots
+{{< /katex >}}
+
+These singularities tend to be pretty difficult to deal with.

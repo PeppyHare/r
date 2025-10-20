@@ -278,7 +278,7 @@ This comes out to be zero if \\( n \neq 1 \\). But if \\( n=1 \\) then we're try
 \oint_C \frac{1}{z} \dd z
 {{< /katex >}}
 
-This is a special case where the integral above gives us \\( 0/0 \\) and we would need to use L'hospital's rule. But if we just look at the integral
+This is a special case where the integral above gives us \\( 0/0 \\) and we would need to use L'hopital's rule. But if we just look at the integral
 
 {{< katex display >}}
 \int _0 ^{2 \pi} \frac{1}{\rho e^{i \theta}} \rho e^{i \theta} i \dd \theta = \begin{cases} 2 \pi i & \text{if C encloses the origin} \\ 0 & \text{else} \end{cases}
