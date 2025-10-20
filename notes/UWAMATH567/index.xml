@@ -96,4 +96,22 @@
 &lt;span&gt;
  \[\rightarrow S_N = \frac{1 - r^{N&amp;#43;1}}{1 - r}\]
 &lt;/span&gt;
-&lt;/p&gt;</description></item></channel></rss>
+&lt;/p&gt;</description></item><item><title>Residue calculus and applications of contour integration</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/05-residue-calculus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/05-residue-calculus/</guid><description>&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;h1 id="residues"&gt;
+ Residues
+ &lt;a class="anchor" href="#residues"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;If \( z_0 \) is an isolated singularity, and \( f(z) \) can be written as a series&lt;/p&gt;
+&lt;span&gt;
+ \[f(z) = \sum_{n=-\infty} ^\infty a_n (z - z_0)^n\]
+&lt;/span&gt;
+
+&lt;p&gt;which is valid in a punctured neighborhood of \( z_0 \), then&lt;/p&gt;
+&lt;span&gt;
+ \[\oint_C f(z) \dd z = 2 \pi i a_{-1}\]
+&lt;/span&gt;
+
+&lt;p&gt;where \( C \) is a simple closed curve in the neighborhood enclosing \( z_0 \). This is because&lt;/p&gt;</description></item></channel></rss>
