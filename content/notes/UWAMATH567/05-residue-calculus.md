@@ -88,6 +88,25 @@ So, the general recipe is: If \\( f(z) \\) has an \\( m^{th} \\) order pole at \
 
 In the case of an essential singularity with infinite order, we have no choice but to find the Laurent series expansion and pick out the \\( a_{-1} \\) term directly. No differentiation tricks will help us there.
 
+{{% hint info %}}
+{{< katex display >}}
+{{< /katex >}}
+**Residue of rational functions**
+
+This gives us a useful formula to find the residue at a simple pole of \\( z_0 \\) of a rational function
+
+{{< katex display >}}
+f(z) = P(z) / Q(z)
+{{< /katex >}}
+
+where \\( P(z) \\) is analytic and \\( Q(z) \\) has a simple pole at \\( z_0 \\):
+
+{{< katex display >}}
+\text{Res}(z_0) = \frac{P(z_0)}{Q'(z_0)}
+{{< /katex >}}
+
+{{% /hint %}}
+
 # Real Integrals
 
 In real life, we often want to evaluate real integrals, which is to say we want to integrate a real-valued, single-valued function along the real axis. Numerically, this is pretty straightforward to do using a Riemann sum, although it can become difficult if the function goes to zero very slowly.
@@ -266,3 +285,250 @@ and then multiply by \\( (z - z_1) \\):
 {{< katex display >}}
 I = 2 \pi i \left( \frac{1}{i\sqrt{3}} \right) = \frac{2 \pi}{\sqrt{3}}
 {{< /katex >}}
+
+
+It is sometimes convenient, when analyzing the behavior of a function near infinity, to make the change of variables \\( z = 1/t \\). Using \\( dz = - \frac{1}{t^2} dt \\) and noting that the clockwise (positive direction) of \\( C_R: z = R e^{i \theta} \\) transforms to a clockwise rotation (negative direction) in \\( t \\): \\( t = 1/z = (1/R)e^{-i \theta} = \epsilon e^{-i \theta} \\) we have
+
+{{< katex display >}}
+\text{Res}(f(z); \infty) = \frac{1}{2 \pi i} \oint_{C_{\infty}} f(z) \dd z = \frac{1}{2 \pi i} \oint_{C_{\epsilon}} \left( \frac{1}{t^2} \right) f \left( \frac{1}{t} \right) \dd t
+{{< /katex >}}
+
+where \\( C_{\epsilon} \\) is the limit as \\( \epsilon \rightarrow 0 \\) of a small circle around the origin in the \\( t \\) plane. So the residue at \\( \infty \\) is given by
+
+{{< katex display >}}
+\text{Res}(f(z); \infty) = \text{Res} \left[ \frac{1}{t^2} f(\frac{1}{t}); 0\right]
+{{< /katex >}}
+
+that is, the right-hand side is the coefficient of \\( t^{-1} \\) in the expansion of \\( f(1/t)/t^2 \\) near \\( t = 0 \\); the left-hand side is the coefficient of \\( z^{-1} \\) in the expansion of \\( f(z) \\) at \\( z = \infty \\) . Sometimes we write
+
+{{< katex display >}}
+\text{Res}(f(z); \infty) = \lim_{z \rightarrow \infty}(z f(z)) \quad \text{when} \quad f(\infty) = 0
+{{< /katex >}}
+
+The concept of residue at infinity is quite useful when we integrate rational functions. Rational functions have only isolated singular points in the extended plane and are analytic elsewhere. Let \\( z_1, z_2, \ldots, z_N \\) denote the finite singularities. Then, for every rational function,
+
+{{< katex display >}}
+\sum_{j=1}^N \text{Res}(f(z); z_j) = \text{Res}(f(z); \infty)
+{{< /katex >}}
+
+
+{{% hint info %}}
+{{< katex display >}}
+{{< /katex >}}
+**Theorem**
+
+Let \\( f(z) = N(z) / D(z) \\) be a rational function such that the degree of \\( D(z) \\) exceeds the degree of \\( N(z) \\) by at least two. Then
+
+{{< katex display >}}
+\lim_{R \rightarrow \infty} \int_{C_R} f(z) \dd z = 0
+{{< /katex >}}
+
+We write
+
+{{< katex display >}}
+f(z) = \frac{a_n z^n + a_{n-1} z^{n-1} + \ldots + a_1 z + a_0}{b_m z^m + b_{m-1} z^{m-1} + \ldots + b_1 z + b_0}
+{{< /katex >}}
+
+Then, by repeated application of the triangle inequality,
+
+{{< katex display >}}
+\left| \int_{C_R} f(z) \dd z \right| \leq \int _0 ^\pi (R \dd \theta) \frac{ |a_n| |z|^n + |a_{n-1} | |z| ^{n-1} + \ldots + |a_1| |z| + |a_0|}{|b_m||z|^m - |b_{m-1}| |z| ^{m-1} - \ldots - |b_1| |z| - |b_0|} \\
+= \frac{\pi R(|a_n| R^n + \ldots + |a_0|)}{|b_m| R^m - |b_{m-1}| R^{m-1} - \ldots - |b_0|} \rightarrow _{R \rightarrow \infty} 0
+{{< /katex >}}
+
+since \\( m \geq n + 2 \\)
+
+{{% /hint %}}
+
+Some integrals that are closely related to the one described above are of the form
+
+{{< katex display >}}
+I_1 = \int _{-\infty} ^{\infty} f(x) \cos (kx) \dd x
+{{< /katex >}}
+{{< katex display >}}
+I_2 = \int _{-\infty} ^{\infty} f(x) \sin (kx) \dd x
+{{< /katex >}}
+{{< katex display >}}
+I_{3 \pm} = \int_{-\infty} ^{\infty} f(x) e^{\pm ikx} \dd x \qquad (k > 0)
+{{< /katex >}}
+
+where \\( f(x) \\) is a rational function satisfying the conditions of the theorem above. These integrals are evaluated by a method similar to the ones described earlier. When evaluating integrals such as \\( I_1 \\) or \\( I_2 \\), we first replace them by integrals of the form \\( I_3 \\). We evaluate, say  \\( I_{3+} \\) by using the contour \\( C_R \\) above. Again, we need to evaluate the integral along the upper semicircle. Because \\( e^{ikz} = e^{ikx} e^{-ky} \\), we have \\( |e^{ikz}| \leq 1 \\) (where \\( y > 0 \\) ) and
+
+{{< katex display >}}
+\left| \int_{C_R} f(z) e^{ikz} \dd z \right| \leq \int _{0} ^\pi |f(z)| | \dd z| \rightarrow _{R \rightarrow \infty} 0
+{{< /katex >}}
+
+from the results of the theorem. Thus using
+
+{{< katex display >}}
+I_{3+} = \int_{-\infty} ^{\infty} f(x) e^{ikx} \dd x \\
+= \int_{-\infty}^{\infty}f(x) \cos kx \dd x + i \int_{-\infty}^{\infty}f(x) \sin kx \dd x
+{{< /katex >}}
+
+By taking the real and imaginary parts, we can compute \\( I_1 \\) and \\( I_2 \\)
+
+{{< katex display >}}
+I_{3+} = I_1 + i I_2 = 2 \pi i \sum_{j=1}^N \text{Res} (f(z) e^{ikz}; z_j)
+{{< /katex >}}
+
+**Example**
+
+Evaluate
+
+{{< katex display >}}
+I = \int_{-\infty} ^\infty \frac{\cos kx}{(x + b)^2 + a^2} \dd x \qquad k > 0, a > 0, b \in \Reals
+{{< /katex >}}
+
+We consider
+
+{{< katex display >}}
+I_+ = \int_{-\infty} ^\infty \frac{e^{ikx}}{(x + b)^2 + a^2} \dd x
+{{< /katex >}}
+
+and use the contour \\( C_R \\) shown above to find
+
+{{< katex display >}}
+I_+ = 2 \pi i \text{Res} \left( \frac{e^{ikz}}{(z + b)^2 + a^2}; z_0 = ia - b \right) \\
+= 2 \pi i \left( \frac{e^{ikz}}{2 (z+b)} \right) _{z_0 = ia -b } = \frac{\pi}{a} e^{-ka} e^{-ibk}
+{{< /katex >}}
+
+From
+
+{{< katex display >}}
+I_+ = \int_{-\infty} ^\infty \frac{\cos kx}{(x + b)^2 + a^2} \dd x + i \int_{-\infty} ^{\infty} \frac{\sin kx}{(x + b)^2 + a^2} \dd x
+{{< /katex >}}
+
+we have
+
+{{< katex display >}}
+I = \frac{\pi}{a} e^{-ka} \cos bk
+{{< /katex >}}
+
+and
+
+{{< katex display >}}
+J = \int_{-\infty} ^\infty \frac{\sin kx}{(x + b)^2 + a^2} \dd x = \frac{-\pi}{a} e^{-ka} \sin bk
+{{< /katex >}}
+
+If \\( b = 0 \\) the latter formula reduces to \\( J = 0 \\), which also follows directly from the fact that the integrand is odd. The reader can verify that
+
+{{< katex display >}}
+\left| \int_{C_R} \frac{e^{ikz}}{(z + b)^2 + a^2} \dd z \right| \leq \int_{C_R} \frac{|\dd z|}{|z|^2 - 2 |b| |z| - a^2 - b^2} \\
+= \frac{\pi R}{R^2 - 2bR - (a^2 + b^2)} \rightarrow _{R \rightarrow \infty} 0
+{{< /katex >}}
+
+In applications we frequently wish to evaluate integrals like \\( I_{3\pm} \\) involving \\( f(x) \\) for which all that is known is \\( f(x) \rightarrow 0 \\) as \\( |x| \rightarrow \infty \\). From calculus we know that in these cases the integral still converges, conditionally, but our estimates leading to
+
+{{< katex display >}}
+I_{3+} = I_1 + i I_2 = 2 \pi i \sum_{j=1}^N \text{Res} (f(z) e^{ikz}; z_j)
+{{< /katex >}}
+
+must be made more carefully. We say that \\( f(z) \rightarrow 0 \\) **uniformly** as \\( R \rightarrow \infty \\) in \\( C_R \\) if \\( |f(z)| \leq K_R \\), where \\( K_R \\) depends only on \\( R \\) (not on \\( \text{arg}(z) \\) ) and \\( K_R \rightarrow 0 \\) as \\( R \rightarrow \infty \\). We have the following lemma, called Jordan's Lemma
+
+### Jordan's Lemma
+
+{{% hint info %}}
+{{< katex display >}}
+{{< /katex >}}
+**Jordan's Lemma**
+
+Suppose that on the circular arc \\( C_R \\) shown above, we have \\( f(z) \rightarrow 0 \\) uniforly as \\( R \rightarrow \infty \\). Then
+
+{{< katex display >}}
+\lim_{R \rightarrow 0} \int_{C_R} e^{ikz} f(z) \dd z = 0 \qquad (k > 0)
+{{< /katex >}}
+
+With \\( |f(z) \leq K_R \\) where \\( K_R \\) is independent of \\( \theta \\) and \\( K_R \rightarrow 0 \\) as \\( R \rightarrow \infty \\),
+
+{{< katex display >}}
+I = \left| \int_{C_R} e^{ikz} f(z) \dd z \right| \leq \int_{0} ^\pi e^{-ky} K_R R \dd \theta
+{{< /katex >}}
+
+using \\( y = R \sin \theta \\) and \\( \sin(\pi - \theta) = \sin \theta \\)
+
+{{< katex display >}}
+\int_0 ^\pi e^{-ky} \dd \theta = \int_{0}^\pi e^{-kR \sin \theta} \dd \theta = 2 \int_0 ^{\pi / 2} e^{-k R \sin \theta} \dd \theta
+{{< /katex >}}
+
+But in the region \\( 0 \leq \theta \leq \pi / 2 \\) we also have the estimate \\( \sin \theta \geq 2 \theta / \pi \\)
+
+<p align="center"> <img alt="jordan-lemma-1.png" src="/r/img/aa567/jordan-lemma-1.png" /> </p>
+
+Thus
+
+{{< katex display >}}
+I \leq 2 K_R R \int_0 ^{\pi / 2} e ^{-2 k R \theta / \pi} \dd \theta = \frac{2 K_R R \pi}{2kR} (1 - e^{-kR})
+{{< /katex >}}
+
+and \\( I \rightarrow 0 \\) as \\( R \rightarrow \infty \\) because \\( K_R \rightarrow 0 \\)
+
+We note that if \\( k < 0 \\), a similar result holds for the contour in the lower half plane. Moreover, by simply rotating the contour, Jordan's lemma applies to the cases \\( k = il, l \neq 0 \\). Consequently, the result \\( I_{3+} = I_1 + i I_2 = 2 \pi i \sum_{j=1}^N \text{Res} (f(z) e^{ikz}; z_j) \\) follows whenever Jordan's lemma applies.
+
+{{% /hint %}}
+
+Let's see this in action in an example:
+
+**Example**
+
+Evaluate
+
+{{< katex display >}}
+I = 2 \int_{-\infty}^{\infty}\frac{x \sin \alpha x \cos \beta x}{x^2 + \gamma^2} \dd x \qquad \gamma > 0, \beta \in \Reals
+{{< /katex >}}
+
+The trigonometric formula
+
+{{< katex display >}}
+\sin \alpha x \cos \beta x = \frac{1}{2} \left[ \sin(\alpha - \beta)x + \sin(\alpha + \beta)x \right]
+{{< /katex >}}
+
+motivates the introduction of the integrals
+
+{{< katex display >}}
+J = \int_{-\infty}^{\infty}\frac{x e^{i (\alpha - \beta)x}}{x^2 + \gamma ^2} \dd x + \int_{-\infty}^{\infty}\frac{x e^{i (\alpha + \beta)x}}{x^2 + \gamma ^2} \dd x + = J_1 + J_2
+{{< /katex >}}
+
+Jordan's lemma applies because the function \\( f(z) = z / (z^2 + \gamma ^2) \rightarrow 0 \\) uniformly as \\( z \rightarrow \infty \\), and we note that
+
+{{< katex display >}}
+|f| \leq \frac{R}{R^2 - \gamma^2} \equiv K_R
+{{< /katex >}}
+
+We note that the denominator is only one degree higher than the numerator. If \\( \alpha - \beta > 0 \\) then we close our contour in the upper half plane and the only residue is \\( z = i \gamma (\gamma > 0) \\), hence
+
+{{< katex display >}}
+J_1 = i \pi e^{-(\alpha - \beta)\gamma}
+{{< /katex >}}
+
+On the other hand, if \\( \alpha - \beta < 0 \\) we close in the lower half plane and find
+
+{{< katex display >}}
+J_1 = - i \pi e^{(\alpha - \beta) \gamma}
+{{< /katex >}}
+
+Combining the results
+
+{{< katex display >}}
+J_1 = i \pi \text{sgn}(\alpha - \beta)e^{-|\alpha - \beta | \gamma}
+{{< /katex >}}
+
+Similarly, for \\( I_2 \\) we find
+
+{{< katex display >}}
+J_2 = i \pi \text{sgn}(\alpha + \beta) e^{- |\alpha + \beta| \gamma}
+{{< /katex >}}
+
+Thus
+
+{{< katex display >}}
+J = i \pi \left[ \text{sgn}(\alpha - \beta) e^{- |\alpha - \beta| \gamma} + \text{sgn} (\alpha + \beta) e^{- |\alpha + \beta | \gamma} \right]
+{{< /katex >}}
+
+and, by taking the imaginary part,
+
+{{< katex display >}}
+I = i \pi \left[ \text{sgn}(\alpha - \beta) e^{- |\alpha - \beta| \gamma} + \text{sgn} (\alpha + \beta) e^{- |\alpha + \beta | \gamma} \right]
+{{< /katex >}}
+
+If we take \\( \text{sgn}(0) = 0 \\) then the case \\( \alpha = \beta \\) is incorporated in the result. 
+
