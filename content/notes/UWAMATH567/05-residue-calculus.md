@@ -214,6 +214,56 @@ I = \frac{\pi i}{N} \sum_{k=0} ^{N/2 - 1} \frac{1}{z_k ^{N-1}} \\
 = \frac{\pi}{N} \frac{1}{\sin(\pi / N)}
 {{< /katex >}}
 
+**Example: Improper integral of an odd rational function**
+
+Evaluate
+
+{{< katex display >}}
+I = \int_{0} ^\infty \frac{\dd x}{x^3 + a^3} \qquad a > 0
+{{< /katex >}}
+
+Because we have an integral on \\( 0, \infty \\), we can't immediately close the contour using \\( C_R \\) as shown above. We also can't expand the integral to the whole real axis because \\( f(x) \\) is not an even function.
+
+However, there is a useful symmetry we can apply here: \\( (x e^{2 \pi i / 3})^3 = x^3 \\). This suggests using the following contour, where \\( C_R \\) is the sector \\( R e^{i \theta} : 0 \leq \theta \leq 2 \pi / 3 \\):
+
+<p align="center"> <img alt="contour-ex427.png" src="/r/img/aa567/contour-ex427.png" /> </p>
+
+We therefore have:
+
+{{< katex display >}}
+\oint_C \frac{\dd z}{z^3 + a^3} = \left( \int _{C_L} + \int_{C_x} + \int _{C_R} \right) \frac{\dd z}{z^3 + z^3} \\
+ = 2 \pi i \sum_j \text{Res} \left( \frac{1}{z^3 + z^3}; z_j \right)
+{{< /katex >}}
+
+The only pole inside \\( C \\) satisfies \\( z^3 = - a^3 = a^3 e^{i \pi} \\) and is given by \\( z_1 = ae^{i \pi / 3} \\).
+
+The residue is obtained from
+
+{{< katex display >}}
+\text{Res} \left( \frac{1}{z^3 + z^3} ; z_1 \right) = \left( \frac{1}{3 z^3} \right)_{z_1} = \frac{1}{3 a^2 e^{2 \pi i / 3}} = \frac{1}{3 a^2} e^{- 2 \pi i / 3}
+{{< /katex >}}
+
+The integral on \\( C_L \\) is evaluated by making the substitution \\( z = e^{2 \pi i / 3} r \\) (where the orientation is taken into account)
+
+{{< katex display >}}
+\int _{C_L } \frac{ \dd z}{z^3 + a^3} = \int_{r = R} ^0 \frac{e^{2 \pi i / 3}}{r^3 + a^3} \dd r = - e ^{2 \pi i / 3} I
+{{< /katex >}}
+
+Thus taking into account the contributions from \\( C_x  \\) (\\( 0 \leq z = x \leq R \\) ) and from \\( C_L \\), we have
+
+{{< katex display >}}
+I (1 - e^{2 \pi i / 3}) = \lim_{R \rightarrow \infty} \int_0 ^R \frac{ \dd r}{r^3 + a^3} (1 - e^{2 \pi i / 3}) = \frac{2 \pi i}{3a^2} e^{- 2 \pi i / 3}
+{{< /katex >}}
+
+Thus
+
+{{< katex display >}}
+I = \frac{2 \pi i}{3 a^2} \frac{3^{-2 \pi i / 3}}{1 - e^{2 \pi i / 3}} = \frac{\pi}{3 a^2} \left( \frac{2i}{e^{-i \pi / 3} - e^{i \pi / 3}} \right)e^{-i \pi} \\
+= \frac{\pi}{3 a^2 \sin(\pi / 3)} = \frac{2 \pi}{3 \sqrt{3} a^2}
+{{< /katex >}}
+
+### Trigonometric Integrals over a Period
+
 For another example, consider an integral of some trigonometric function over a full period:
 
 {{< katex display >}}
@@ -435,10 +485,10 @@ must be made more carefully. We say that \\( f(z) \rightarrow 0 \\) **uniformly*
 Suppose that on the circular arc \\( C_R \\) shown above, we have \\( f(z) \rightarrow 0 \\) uniforly as \\( R \rightarrow \infty \\). Then
 
 {{< katex display >}}
-\lim_{R \rightarrow 0} \int_{C_R} e^{ikz} f(z) \dd z = 0 \qquad (k > 0)
+\lim_{R \rightarrow \infty} \int_{C_R} e^{ikz} f(z) \dd z = 0 \qquad (k > 0)
 {{< /katex >}}
 
-With \\( |f(z) \leq K_R \\) where \\( K_R \\) is independent of \\( \theta \\) and \\( K_R \rightarrow 0 \\) as \\( R \rightarrow \infty \\),
+With \\( |f(z)| \leq K_R \\) where \\( K_R \\) is independent of \\( \theta \\) and \\( K_R \rightarrow 0 \\) as \\( R \rightarrow \infty \\),
 
 {{< katex display >}}
 I = \left| \int_{C_R} e^{ikz} f(z) \dd z \right| \leq \int_{0} ^\pi e^{-ky} K_R R \dd \theta
@@ -530,5 +580,36 @@ and, by taking the imaginary part,
 I = i \pi \left[ \text{sgn}(\alpha - \beta) e^{- |\alpha - \beta| \gamma} + \text{sgn} (\alpha + \beta) e^{- |\alpha + \beta | \gamma} \right]
 {{< /katex >}}
 
-If we take \\( \text{sgn}(0) = 0 \\) then the case \\( \alpha = \beta \\) is incorporated in the result. 
+If we take \\( \text{sgn}(0) = 0 \\) then the case \\( \alpha = \beta \\) is incorporated in the result.
 
+For another example using Jordan's lemma:
+
+**Example**
+
+{{< katex display >}}
+I = \int _0 ^\infty \frac{x \sin (mx)}{a^2 + x^2} \dd x \qquad a > 0, m > 0
+{{< /katex >}}
+
+Let's turn this into the form of \\( I_{3+} \\) above
+
+{{< katex display >}}
+= \frac{1}{2} \int_{-\infty}^{\infty} \frac{x \sin (mx)}{a^2 + x^2} \dd x = \frac{1}{2} \text{Im} \int_{-\infty}^{\infty}\frac{z e^{imz} \dd z}{a^2 + z^2}
+{{< /katex >}}
+
+Here our \\( f(z) \\) that we want to converge uniformly is
+
+{{< katex display >}}
+f(z) = \frac{z}{a^2 + z^2}
+{{< /katex >}}
+
+{{< katex display >}}
+|f(z) | \leq \left| \frac{R}{a^2 - R^2} \right| \rightarrow 0
+{{< /katex >}}
+
+Note that this is a weaker convergence than \\( |z f(z)| \cancel{\rightarrow} 0 \\), so we can't just disregard the \\( C_R \\) contour. But we can use Jordan's lemma:
+
+{{< katex display >}}
+I = \frac{1}{2} \text{Im} \oint _{UHP} \frac{z}{a^2 + z^2} e^{imz} \dd z \\
+= \frac{1}{2} \text{Im} \left[ 2 \pi i \text{Res} \left( \frac{z e^{imz}}{a^2 + z^2} ; z = ia \right) \right] \\
+= \frac{1}{2} \text{Im} \left[ 2 \pi i \frac{ ai e^{-ma}}{2ai} \right] = \frac{\pi}{2} e^{-ma}
+{{< /katex >}}
