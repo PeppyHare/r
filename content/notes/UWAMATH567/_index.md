@@ -16,3 +16,4 @@ Course notes from AMATH 567 at the University of Washington, Seattle
   - [Analytic Functions and Integration](03-analytic-functions.md)
   - [Sequences and Series](04-series.md)
   - [Residue Calculus and Applications of Contour Integration](05-residue-calculus.md)
+  - [Real Integrals](06-real-integrals.md)
