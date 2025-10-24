@@ -114,4 +114,13 @@
  \[\oint_C f(z) \dd z = 2 \pi i a_{-1}\]
 &lt;/span&gt;
 
-&lt;p&gt;where \( C \) is a simple closed curve in the neighborhood enclosing \( z_0 \). This is because&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;where \( C \) is a simple closed curve in the neighborhood enclosing \( z_0 \). This is because&lt;/p&gt;</description></item><item><title>Real Integrals</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/06-real-integrals/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/06-real-integrals/</guid><description>&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;h1 id="real-integrals"&gt;
+ Real Integrals
+ &lt;a class="anchor" href="#real-integrals"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;In real life, we often want to evaluate real integrals, which is to say we want to integrate a real-valued, single-valued function along the real axis. Numerically, this is pretty straightforward to do using a Riemann sum, although it can become difficult if the function goes to zero very slowly.&lt;/p&gt;
+&lt;p&gt;We can turn a real integral into a complex contour integral by appropriately choosing a contour in the complex plane such that one segment of the contour corresponds directly with the real integral, and the remaining segment can be evaluated (usually as 0) leaving us with a closed contour integral.&lt;/p&gt;</description></item></channel></rss>

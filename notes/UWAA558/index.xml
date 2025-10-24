@@ -204,12 +204,12 @@
  Perfectly Conducting Wall
  &lt;a class="anchor" href="#perfectly-conducting-wall"&gt;#&lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;For the case where the plasma extends out to a perfectly conducting (impermeable) wall. Perfectly conducting walls do not support tangential electric field:&lt;/p&gt;</description></item><item><title>Equilibrium for Fusion</title><link>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</guid><description>&lt;h1 id="equilibrium-for-fusion-hahahugoshortcode112s0hbhb"&gt;
+&lt;p&gt;For the case where the plasma extends out to a perfectly conducting (impermeable) wall. Perfectly conducting walls do not support tangential electric field:&lt;/p&gt;</description></item><item><title>Equilibrium for Fusion</title><link>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</guid><description>&lt;h1 id="equilibrium-for-fusion-hahahugoshortcode113s0hbhb"&gt;
  Equilibrium for Fusion (&lt;span&gt;
  \( \beta \)
 &lt;/span&gt;
 )
- &lt;a class="anchor" href="#equilibrium-for-fusion-hahahugoshortcode112s0hbhb"&gt;#&lt;/a&gt;
+ &lt;a class="anchor" href="#equilibrium-for-fusion-hahahugoshortcode113s0hbhb"&gt;#&lt;/a&gt;
 &lt;/h1&gt;
 &lt;p&gt;For a fusion device we would like to determine a magnetic configuration that confines plasma while it fuses. At fusion temperatures, the power required to maintain the equilibrium will be substantial. For a device to be useful, the power required to sustain the equilibrium must be less than the power released from fusion. Important loss terms for a confined plasma are transport (thermal conduction primarily) and radiation terms. The scaling factors are &lt;span&gt;
  \( P_{Brem} \sim n^2 T^{1/2} \)
@@ -224,7 +224,7 @@
  1-Dimensional Equilibria
  &lt;a class="anchor" href="#1-dimensional-equilibria"&gt;#&lt;/a&gt;
 &lt;/h1&gt;
-&lt;h2 id="the-hahahugoshortcode113s0hbhb-pinch"&gt;
+&lt;h2 id="the-hahahugoshortcode127s0hbhb-pinch"&gt;
  The 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
@@ -271,7 +271,7 @@
  \( \theta \)
 &lt;/span&gt;
 -pinch
- &lt;a class="anchor" href="#the-hahahugoshortcode113s0hbhb-pinch"&gt;#&lt;/a&gt;
+ &lt;a class="anchor" href="#the-hahahugoshortcode127s0hbhb-pinch"&gt;#&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;In a &lt;span&gt;
  \( \theta \)
