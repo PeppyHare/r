@@ -516,12 +516,176 @@ I = \frac{1}{2} \text{Im} \oint _{UHP} \frac{z}{a^2 + z^2} e^{imz} \dd z \\
 {{< /katex >}}
 
 
-## Improper Integrals
+## Improper Integrals (Principal value)
 
-If \\( f(z) \\) has a simple pole at \\( z = z_0 \\), \\( \int_C f(z) \dd z \\) is an improper integral if \\( C \\) passes through \\( z_0 \\). The principal value of an improper integral is the limit
+If \\( f(z) \\) has a simple pole at \\( z = z_0 \\), \\( \int_C f(z) \dd z \\) is an improper integral if \\( C \\) passes through \\( z_0 \\). The **principal value** of an improper integral is the limit
 
 {{< katex display >}}
 P \int_a ^b f(z) \dd z = \lim_{\epsilon \rightarrow 0} \left[ \int_a ^{z_0 - \epsilon} f(z) \dd z + \int_{z_0 + \epsilon} ^b f(z) \dd z \right]
 {{< /katex >}}
 
-Such a limit does not exist if \\( f(z) \\) has a singularity more severe than a single pole on the path of integration.
+Such a limit does not exist if \\( f(z) \\) has a singularity more severe than a single pole on the path of integration. When writing the notation for a principal value, we may use \\( P \int \\), \\( \sout{\int} \\), or \\( \text{P.V.} \int \\). We'll use \\( P \int \\) everywhere here.
+
+Suppose we want to perform a contour integration over \\( C \\), where there is a singularity along the path. Here we **should** refuse to do the problem because the answer depends on how you do it. But if we put a \\( P \\) out in front and \\( z_0 \\) is a simple pole, then the integral becomes well-defined. So how do we go about cutting \\( z_0 \\) out of \\( C \\)?
+
+
+<p align="center"> <img alt="principal-value-with-indent.png" src="/r/img/aa567/principal-value-with-indent.png" /> </p>
+
+We add an indent around \\( z_0 \\) then subtract whatever that would have contributed to the integral. So what does the bump contribute?
+
+{{< katex display >}}
+z = z_0 + \epsilon e^{i \theta}
+{{< /katex >}}
+
+{{< katex display >}}
+\int_{\text{(bump)}} f(z) \dd z = - \int_{\theta_0} ^{\theta_0 + \pi} f(z + \epsilon e^{i \theta}) i \epsilon e^{i \theta} \dd \theta
+{{< /katex >}}
+
+where \\( \theta_0 \\) is whatever angle \\( f(z) \\) makes with the horizontal at \\( z_0 \\). If \\( z_0 \\) is a simple pole, then we have a series expansion of \\( f(z) \\)
+
+{{< katex display >}}
+f(z) = \frac{a_{-1}}{(z - z_0)} + \sum_{n = 0} ^\infty a_n (z - z_0)^n
+{{< /katex >}}
+
+{{< katex display >}}
+f(z_0 + \epsilon e^{i \theta}) = \frac{a_{-1}}{\epsilon e^{i \theta}} + \ldots
+{{< /katex >}}
+
+{{< katex display >}}
+f(z_0 + \epsilon e^{i \theta}) i \epsilon e^{i \theta} = i a_{-1} + i \sum_{n=0} ^\infty a_n (\epsilon e^{i \theta})^n
+{{< /katex >}}
+{{< katex display >}}
+\rightarrow _{\epsilon \rightarrow 0} i a_{-1}
+{{< /katex >}}
+
+{{< katex display >}}
+- \int_{\theta_0} ^{\theta_0 + \pi} f(z + \epsilon e^{i \theta}) i \epsilon e^{i \theta} \dd \theta = \pi i a_{-1}
+{{< /katex >}}
+
+So the principal value is equal to the indented contour integral, plus half the residue of the singularity along the path.
+
+With this, we can write down a modified residue theorem for the principle value integral:
+
+{{% hint info %}}
+{{< katex display >}}
+{{< /katex >}}
+**Modified Residue Theorem**
+
+If \\( f(z) \\) has poles inside and on \\( C \\), then
+
+{{< katex display >}}
+P \oint_C f(z) \dd z = 2 \pi i \sum \text{Res}(f(z); z_0 \text{ inside } C) + \pi i \sum \text{Res}(f(z); z_0 \text{ on } C)
+{{< /katex >}}
+
+{{% /hint %}}
+
+This is only possible if the poles on \\( C \\) are simple poles, otherwise the bump contour integral goes to infinity.
+
+These improper integrals also come up in inverse Laplace transforms, but generally they appear there if we have missed some physical constraint such as causality (e.g. the function you're transforming is assumed to be 0 for all time before \\( t = 0 \\), in order for the transform to be valid).) Improper integrals can also appear in physics PDEs if we ignore viscosity. But we'll find if we put even a little bit of viscosity back in, the singularity moves just off the contour and we see that everything is actually fine.
+
+**Example**
+
+{{< katex display >}}
+I = \int_{-\infty}^{\infty} \frac{\sin(tx)}{x} \dd x
+{{< /katex >}}
+
+Here, this is a proper integral (\\( \lim_{x \rightarrow 0} f(x) = t \\) ). But we want to use Jordan's lemma to calculate the integral, closing it in the upper half plane. But we can't close it because \\( \sin(tx) \\) blows up along the imaginary axis.
+
+Since the original integral is proper, the principal value is the same as the regular value
+
+{{< katex display >}}
+I = PI = P \int_{-\infty}^{\infty}\frac{\sin(tx)}{x} \dd x = P \text{Im} \int_{-\infty}^{\infty}\frac{e^{itx}}{x} \dd x
+{{< /katex >}}
+
+There is a wrong way to do this:
+
+{{< katex display >}}
+I = \int_{-\infty}^{\infty}\frac{ \sin(tx)}{x} \dd x \neq \text{Im} \int_{-\infty}^{\infty}\frac{e^{itx}}{x} \dd x
+{{< /katex >}}
+
+Because the real component of \\( e^{itx}/x \\) has a singularity at \\( x = 0 \\). The real part is what turns it into an improper integral!
+
+Instead, we start with the principal value:
+
+{{< katex display >}}
+P \int_{-\infty}^{\infty}\frac{\sin (tx)}{x} \dd x = P \text{Im} \int_{-\infty}^{\infty}\frac{e^{itx}}{x} \dd x = \text{Im} P \int_{-\infty}^{\infty}\frac{e^{itx}}{x} \dd x
+{{< /katex >}}
+
+Here we've introduced an improper integral \\( \int_{-\infty}^{\infty}\frac{\cos(tx)}{x} \dd x \\)
+
+{{< katex display >}}
+J = P \int_{-\infty}^{\infty} \frac{e^{itz}}{z} \dd z
+{{< /katex >}}
+
+Now we can go back to using Jordan's lemma to compute the result. Since \\( |\frac{1}{z}| \rightarrow 0 \\) as \\( z \rightarrow \infty \\), we can close the contour. We close it in the upper half plane if \\( t > 0 \\), or in the lower half plane if  \\( t < 0 \\).
+
+{{< katex display >}}
+J = P \int _{UHP} \frac{e^{itz}}{z} \dd z
+{{< /katex >}}
+
+We use the modified residue theorem for this one. There are no singularities inside the contour, and the residue at \\( z_0 = 0 \\) is 1, so
+
+{{< katex display >}}
+J = \pi i
+{{< /katex >}}
+
+{{< katex display >}}
+I = \text{Im}(J) = \pi
+{{< /katex >}}
+
+For \\( t < 0 \\) the contour goes clockwise, so we add a negative sign
+
+{{< katex display >}}
+J = - \pi i \qquad t < 0
+{{< /katex >}}
+
+This gives us a pretty good step function:
+
+{{< katex display >}}
+\frac{I}{\pi} = \begin{cases} 1 & t > 0 \\ -1 & t < 0 \end{cases}
+{{< /katex >}}
+
+What about \\( t = 0 \\)?
+
+{{< katex display >}}
+J = P \int_{-\infty}^{\infty} \frac{1}{x} \dd x \\
+= \int _{-R} ^{- \epsilon} \frac{\dd x}{x} + \int _{\epsilon} ^{R} \frac{\dd x}{x} \\
+\lim_{R \rightarrow \infty} \lim_{\epsilon \rightarrow 0} = \ln x |_{-R} ^{-\epsilon} + \ln x |_{\epsilon} ^{R} \\
+= \ln \left( \frac{-\epsilon}{-R} \right) + \ln \left( \frac{R}{\epsilon} \right) \\
+= \ln (1) = 0
+{{< /katex >}}
+
+Another example:
+
+{{< katex display >}}
+I = \int_{-\infty}^{\infty}\frac{\cos(ax) - \cos(bx)}{x^2} \dd x \qquad a > 0, b > 0
+{{< /katex >}}
+
+Note the series expansion of cosine
+
+{{< katex display >}}
+\cos(ax) = 1 - \frac{(ax)^2}{2!} + \ldots
+{{< /katex >}}
+{{< katex display >}}
+\cos(bx) = 1 - \frac{(bx)^2}{2!} + \ldots
+{{< /katex >}}
+
+So the leading terms cancel and this is actually a proper integral
+
+{{< katex display >}}
+PI = I
+{{< /katex >}}
+
+{{< katex display >}}
+I = P \int_{-\infty}^{\infty} () = \text{Re} P \int_{-\infty}^{\infty}\frac{e^{iax} - e^{ibx}}{x^2} \dd x
+{{< /katex >}}
+
+{{< katex display >}}
+J = P \int_{-\infty}^{\infty}\frac{e^{iax} - e^{ibx}}{x^2} \dd x
+{{< /katex >}}
+
+Use residue theorem, to get the residue multiply by \\( x \\) and take the limit as \\( x \rightarrow 0 \\)
+
+{{< katex display >}}
+J = \pi i \text{Res}(z = 0) = \pi (b - a) = I
+{{< /katex >}}
