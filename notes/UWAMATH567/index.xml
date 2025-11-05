@@ -123,4 +123,15 @@
  &lt;a class="anchor" href="#real-integrals"&gt;#&lt;/a&gt;
 &lt;/h1&gt;
 &lt;p&gt;In real life, we often want to evaluate real integrals, which is to say we want to integrate a real-valued, single-valued function along the real axis. Numerically, this is pretty straightforward to do using a Riemann sum, although it can become difficult if the function goes to zero very slowly.&lt;/p&gt;
-&lt;p&gt;We can turn a real integral into a complex contour integral by appropriately choosing a contour in the complex plane such that one segment of the contour corresponds directly with the real integral, and the remaining segment can be evaluated (usually as 0) leaving us with a closed contour integral.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;We can turn a real integral into a complex contour integral by appropriately choosing a contour in the complex plane such that one segment of the contour corresponds directly with the real integral, and the remaining segment can be evaluated (usually as 0) leaving us with a closed contour integral.&lt;/p&gt;</description></item><item><title>Integrals of Multivalued Functions</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/07-integrals-of-multivalued-functions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/07-integrals-of-multivalued-functions/</guid><description>&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;p&gt;Now we&amp;rsquo;re getting to the good stuff that would usually be skipped in undergraduate courses!&lt;/p&gt;
+&lt;p&gt;Consider the example&lt;/p&gt;
+&lt;span&gt;
+ \[I = \int _{0} ^{\infty} \frac{x^{\alpha - 1}}{x &amp;#43; 1} \dd x \qquad 0 &amp;lt; \alpha &amp;lt; 1\]
+&lt;/span&gt;
+
+&lt;p&gt;Previously, we&amp;rsquo;ve said we should refuse to compute the integral of a multi-valued function. But for a real value this integral is legit and well-defined.&lt;/p&gt;
+&lt;p&gt;First, observe that the integrand is a single-valued function. Numerically, you can just take the area under the curve and work out the result. But in the complex plane, we don&amp;rsquo;t know how to do it. The complex function&lt;/p&gt;</description></item></channel></rss>
