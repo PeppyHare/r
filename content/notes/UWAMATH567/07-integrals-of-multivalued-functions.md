@@ -27,7 +27,7 @@ is a multi-valued function. Now, the multi-valuedness that's been introduced is 
 
 We pick \\( 0 < \theta < 2 \pi \\). We find that the function is discontinuous at the branch across \\( 0 \leq x \leq \infty \\) (\\( A \neq B \\) )
 
-<p align="center"> <img alt="abtest-ch7.png" src="/r/img/aa567/abtest-ch7.png" /> </p>
+<p align="center"> <img alt="abtest-ch7.png" src="/r/img/aa567/abtest-ch7.png" width="150" /> </p>
 
 {{< katex display >}}
 A: \quad \theta = 0 \qquad f(A) = \frac{(r e^{i 0})^{\alpha - 1}}{r e^{i 0} + 1} = \frac{r ^{\alpha - 1}}{r + 1}

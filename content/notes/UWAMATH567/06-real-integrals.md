@@ -22,7 +22,7 @@ Suppose we want to evaluate
 
 We can turn this into a contour integral over the upper half plane (or lower half plane) and taking the limit as \\( R \rightarrow \infty \\):
 
-<p align="center"> <img alt="cauchy-contour-integral-1.png" src="/r/img/aa567/cauchy-contour-integral-1.png" /> </p>
+<p align="center"> <img alt="cauchy-contour-integral-1.png" src="/r/img/aa567/cauchy-contour-integral-1.png" width=400px/> </p>
 
 {{< katex display >}}
 \oint_C f(z) \dd z =  \int _{-\infty} ^\infty f(x) \dd x + \int _{C_R} f(z) \dd z
@@ -127,7 +127,7 @@ Because we have an integral on \\( 0, \infty \\), we can't immediately close the
 
 However, there is a useful symmetry we can apply here: \\( (x e^{2 \pi i / 3})^3 = x^3 \\). This suggests using the following contour, where \\( C_R \\) is the sector \\( R e^{i \theta} : 0 \leq \theta \leq 2 \pi / 3 \\):
 
-<p align="center"> <img alt="contour-ex427.png" src="/r/img/aa567/contour-ex427.png" /> </p>
+<p align="center"> <img alt="contour-ex427.png" src="/r/img/aa567/contour-ex427.png" width=400px/> </p>
 
 We therefore have:
 
@@ -529,7 +529,7 @@ Such a limit does not exist if \\( f(z) \\) has a singularity more severe than a
 Suppose we want to perform a contour integration over \\( C \\), where there is a singularity along the path. Here we **should** refuse to do the problem because the answer depends on how you do it. But if we put a \\( P \\) out in front and \\( z_0 \\) is a simple pole, then the integral becomes well-defined. So how do we go about cutting \\( z_0 \\) out of \\( C \\)?
 
 
-<p align="center"> <img alt="principal-value-with-indent.png" src="/r/img/aa567/principal-value-with-indent.png" /> </p>
+<p align="center"> <img alt="principal-value-with-indent.png" src="/r/img/aa567/principal-value-with-indent.png" width=400px /> </p>
 
 We add an indent around \\( z_0 \\) then subtract whatever that would have contributed to the integral. So what does the bump contribute?
 
