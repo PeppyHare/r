@@ -18,3 +18,4 @@ Course notes from AMATH 567 at the University of Washington, Seattle
   - [Residue Calculus and Applications of Contour Integration](05-residue-calculus.md)
   - [Real Integrals](06-real-integrals.md)
   - [Integrals of Multi-valued Functions](07-integrals-of-multivalued-functions.md)
+  - [Fourier Transforms](08-fourier-transform.md)
