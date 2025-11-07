@@ -383,7 +383,7 @@ must be made more carefully. We say that \\( f(z) \rightarrow 0 \\) **uniformly*
 {{< /katex >}}
 **Jordan's Lemma**
 
-Suppose that on the circular arc \\( C_R \\) shown above, we have \\( f(z) \rightarrow 0 \\) uniforly as \\( R \rightarrow \infty \\). Then
+Suppose that on the circular arc \\( C_R \\) shown above, we have \\( f(z) \rightarrow 0 \\) uniformly as \\( R \rightarrow \infty \\). Then
 
 {{< katex display >}}
 \lim_{R \rightarrow \infty} \int_{C_R} e^{ikz} f(z) \dd z = 0 \qquad (k > 0)
@@ -478,7 +478,7 @@ J = i \pi \left[ \text{sgn}(\alpha - \beta) e^{- |\alpha - \beta| \gamma} + \tex
 and, by taking the imaginary part,
 
 {{< katex display >}}
-I = i \pi \left[ \text{sgn}(\alpha - \beta) e^{- |\alpha - \beta| \gamma} + \text{sgn} (\alpha + \beta) e^{- |\alpha + \beta | \gamma} \right]
+I = \pi \left[ \text{sgn}(\alpha - \beta) e^{- |\alpha - \beta| \gamma} + \text{sgn} (\alpha + \beta) e^{- |\alpha + \beta | \gamma} \right]
 {{< /katex >}}
 
 If we take \\( \text{sgn}(0) = 0 \\) then the case \\( \alpha = \beta \\) is incorporated in the result.
