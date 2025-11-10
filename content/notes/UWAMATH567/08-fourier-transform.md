@@ -130,3 +130,60 @@ f(t) = \frac{1}{2 \pi} \int_{-\infty}^{\infty}\frac{i}{\lambda - \lambda_0} e^{-
 {{< /katex >}}
 
 Now we've made ourselves an improper integral. But at least we know how we got here! (it was by letting \\( \text{Im}(\lambda) > 0 \\) ). We should not try to convert this into a principal value integral, because we will get a different answer that way.
+
+Instead, we need to modify the inverse transform! This is because Fourier's theorem is only valid for an integrable function. So how should we fix it? If \\( f(t) \\) is not integrable, but \\( g(t) = e^{- \alpha t} f(t) \\) is integrable (e.g. \\( f(t) \sim e^{a t} \rightarrow g(t) \sim e^{-(\alpha - a)t} \\) if \\( \alpha > a \\) ). The Fourier theorem then applies to \\( g(t) \\)
+
+{{< katex display >}}
+G(\lambda) = \int_{-\infty}^{\infty}e^{i \lambda t} g(t) \dd t = \int_{-\infty}^{\infty}e^{i (\lambda + i \alpha)t} f(t) \dd t \\
+= F(\lambda + i \alpha)
+{{< /katex >}}
+
+So, we can relate \\( G(\lambda) \\) to \\( F(\lambda + i \alpha) \\). We know the inverse transform for \\( G(\lambda) \\)
+
+{{< katex display >}}
+g(t) = \frac{1}{2 \pi } \int_{-\infty}^{\infty}e^{- i \lambda t} G(\lambda) \dd \lambda \\
+= \frac{1}{2 \pi} \int_{-\infty}^{\infty}e^{- i \lambda t} F( \lambda + i \alpha) \dd \lambda
+{{< /katex >}}
+{{< katex display >}}
+f(t) = \frac{1}{2 \pi} \int_{-\infty}^{\infty}e^{-i (\lambda + i \alpha) t} F(\lambda + i \alpha) \dd \lambda
+{{< /katex >}}
+(let \\( \hat{\lambda} = \lambda + i \alpha \\) )
+{{< katex display >}}
+f(t) = \frac{1}{2 \pi} \int_{-\infty + i \alpha}^{\infty + i \alpha} e^{- i \hat{\lambda} t} F(\hat{\lambda}) \dd \hat{\lambda}
+{{< /katex >}}
+
+For our example, we just need \\( \alpha > 0 \\) to make \\( g(t) \\) integrable. Now the contour of integration sits just above the real axis.
+
+<p align="center"> <img alt="fourier-contour-1.png" src="/r/img/aa567/fourier-contour-1.png" width="300px" /> </p>
+
+By Cauchy's theorem, this is the same as the indented contour going just above \\( \lambda_0 \\)
+
+{{< katex display >}}
+f(t) = \frac{1}{2 \pi} \int _{\Omega} \frac{e^{- i \lambda t}}{\lambda - \lambda_0} \dd \lambda
+{{< /katex >}}
+
+We can use Jordan's lemma for this. For \\( t < 0 \\), \\( e^{- i \lambda t} \\) has a positive exponent so we close in the upper half plane. Closing above, we now have a contour that does not contain any singularities, so \\( f(t) = 0 \\). That's exactly what we think we should get for our single-sided function.
+
+For \\( t > 0 \\), we need to close in the lower half plane, so we enclose the singularity at \\( \lambda = \lambda_0 \\)
+
+{{< katex display >}}
+\text{Res} \left[ \frac{e^{- i \lambda t}}{\lambda - \lambda_0}; \lambda = \lambda_0 \right] = \lim_{\lambda \rightarrow \lambda_0} \frac{(\lambda - \lambda_0)e^{- i \lambda t}}{\lambda - \lambda_0} = e^{-i \lambda_0 t}
+{{< /katex >}}
+
+and we've successfully recovered our one-sided \\( f(t) \\).
+
+In general, if we go from \\( f(t) \\) to \\( F(\lambda) \\) and we find that \\( f(t) \\) is not integrable, then \\( F(\lambda) \\) exists for some \\( \text{Im}(\lambda) > \alpha \\)
+
+{{< katex display >}}
+F(\lambda) = \frac{i}{\lambda - \lambda_0}
+{{< /katex >}}
+
+is not singular on the real axis, and the inverse transform should integrate along \\( (- \infty + i \alpha, \infty + i \alpha) \\) i.e. above the axis.
+
+Of course, in most applications we don't have prior knowledge of \\( f(t) \\). We usually end up with a partial differential equation where we have assumed an expression for \\( F(\lambda) \\). Given the \\( F(\lambda) = i / (\lambda - \lambda_0) \\), this appears to give an improper integral
+
+{{< katex display >}}
+f(t) = \frac{1}{2 \pi} \int_{-\infty}^{\infty}e^{-i \lambda t} F(\lambda) \dd \lambda
+{{< /katex >}}
+
+In this case, we should not just take the principal value integral because integrating along the contour is not the same as the principal value limit! The correct approach is to apply the causality condition! If we end up with a singularity on the path of integration, then something must be wrong with the physics of the problem. Taking the indented contour going just above the singularity corresponds with allowing for a small \\( \text{Im}(\lambda) > 0 \\), which means \\( f(t) \\) does not diverge faster than \\( e^{\alpha \lambda} \\) for some \\( \lambda > 0 \\).
