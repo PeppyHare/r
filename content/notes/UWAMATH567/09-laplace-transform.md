@@ -20,7 +20,7 @@ The Laplace transform is the same as the one-sided Fourier transform with \\( -i
 This makes a couple of things clearer. The Laplace transform integral that looked like a completely real integrand actually has a purely imaginary argument in the exponential. And when we look at the inverse Fourier transform, with \\( -s = i \lambda \\), the integral is actually going up and down in the imaginary direction
 
 {{< katex display >}}
-f(t) = \mathcal{K} ^{-1} [\hat{f}(s)] = \frac{1}{2 \pi} \int _{-\infty + i \alpha} ^{\infty + i \alpha} e^{- i \lambda t} F(\lambda) \dd \lambda \\
+f(t) = \mathcal{L} ^{-1} [\hat{f}(s)] = \frac{1}{2 \pi} \int _{-\infty + i \alpha} ^{\infty + i \alpha} e^{- i \lambda t} F(\lambda) \dd \lambda \\
 = \frac{1}{2 \pi i} \int_{-i \infty + \alpha } ^{i \infty + \alpha} e^{st} \hat{f} (s) \dd s
 {{< /katex >}}
 
