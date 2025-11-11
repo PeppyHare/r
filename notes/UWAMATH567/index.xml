@@ -186,4 +186,53 @@
  };
 &lt;/script&gt;&lt;span&gt;
 &lt;p&gt;[]
-&lt;/span&gt;&lt;/p&gt;</description></item></channel></rss>
+&lt;/span&gt;&lt;/p&gt;</description></item><item><title>Laplace Transforms</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/09-laplace-transform/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/09-laplace-transform/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script&gt;&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;h1 id="laplace-transform"&gt;
+ Laplace Transform
+ &lt;a class="anchor" href="#laplace-transform"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;We all know \( \mathcal{L} \) from our undergrad differential equations or electronics classes, but we never got the inverse transform back then, so let&amp;rsquo;s fill in that gap.&lt;/p&gt;</description></item></channel></rss>
