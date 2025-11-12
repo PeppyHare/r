@@ -1852,12 +1852,12 @@ We define \( \vec \omega_{c, \alpha} \) to be the vector gyrofrequency
  1.6.1: The Helmholtz Theorem
  &lt;a class="anchor" href="#161-the-helmholtz-theorem"&gt;#&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;Ever since Faraday, the laws of electricity and magnetism have been expressed in terms of &lt;em&gt;electric&lt;/em&gt; and &lt;em&gt;magnetic&lt;/em&gt; fields, &lt;strong&gt;E&lt;/strong&gt; and &lt;strong&gt;B&lt;/strong&gt;. Like many physical laws, these are most compactly expressed as differential equations. Since &lt;strong&gt;E&lt;/strong&gt; and &lt;strong&gt;B&lt;/strong&gt; are vectors, the differential equations naturally involve vector derivatives: divergence and curl. Indeed, Maxwell reduced the entire theory to four equations, specifying respectively the divergence and the curl of &lt;strong&gt;E&lt;/strong&gt; and &lt;strong&gt;B&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>Equilibrium for Fusion</title><link>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</guid><description>&lt;h1 id="equilibrium-for-fusion-hahahugoshortcode113s0hbhb"&gt;
+&lt;p&gt;Ever since Faraday, the laws of electricity and magnetism have been expressed in terms of &lt;em&gt;electric&lt;/em&gt; and &lt;em&gt;magnetic&lt;/em&gt; fields, &lt;strong&gt;E&lt;/strong&gt; and &lt;strong&gt;B&lt;/strong&gt;. Like many physical laws, these are most compactly expressed as differential equations. Since &lt;strong&gt;E&lt;/strong&gt; and &lt;strong&gt;B&lt;/strong&gt; are vectors, the differential equations naturally involve vector derivatives: divergence and curl. Indeed, Maxwell reduced the entire theory to four equations, specifying respectively the divergence and the curl of &lt;strong&gt;E&lt;/strong&gt; and &lt;strong&gt;B&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>Equilibrium for Fusion</title><link>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</guid><description>&lt;h1 id="equilibrium-for-fusion-hahahugoshortcode112s0hbhb"&gt;
  Equilibrium for Fusion (&lt;span&gt;
  \( \beta \)
 &lt;/span&gt;
 )
- &lt;a class="anchor" href="#equilibrium-for-fusion-hahahugoshortcode113s0hbhb"&gt;#&lt;/a&gt;
+ &lt;a class="anchor" href="#equilibrium-for-fusion-hahahugoshortcode112s0hbhb"&gt;#&lt;/a&gt;
 &lt;/h1&gt;
 &lt;p&gt;For a fusion device we would like to determine a magnetic configuration that confines plasma while it fuses. At fusion temperatures, the power required to maintain the equilibrium will be substantial. For a device to be useful, the power required to sustain the equilibrium must be less than the power released from fusion. Important loss terms for a confined plasma are transport (thermal conduction primarily) and radiation terms. The scaling factors are &lt;span&gt;
  \( P_{Brem} \sim n^2 T^{1/2} \)
@@ -2041,7 +2041,7 @@ which has the general solution
  1-Dimensional Equilibria
  &lt;a class="anchor" href="#1-dimensional-equilibria"&gt;#&lt;/a&gt;
 &lt;/h1&gt;
-&lt;h2 id="the-hahahugoshortcode114s0hbhb-pinch"&gt;
+&lt;h2 id="the-hahahugoshortcode113s0hbhb-pinch"&gt;
  The 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
@@ -2088,7 +2088,7 @@ which has the general solution
  \( \theta \)
 &lt;/span&gt;
 -pinch
- &lt;a class="anchor" href="#the-hahahugoshortcode114s0hbhb-pinch"&gt;#&lt;/a&gt;
+ &lt;a class="anchor" href="#the-hahahugoshortcode113s0hbhb-pinch"&gt;#&lt;/a&gt;
 &lt;/h2&gt;
 &lt;p&gt;In a &lt;span&gt;
  \( \theta \)
@@ -2097,7 +2097,7 @@ which has the general solution
  Finite Difference and Finite Volume Methods
  &lt;a class="anchor" href="#finite-difference-and-finite-volume-methods"&gt;#&lt;/a&gt;
 &lt;/h1&gt;
-&lt;p&gt;Finite volume methods can easily handle arbitrary geometries. You can use arbitrarily shaped cells, irregular meshes, and even unstructured meshes. With an irregular mesh, the cell shapes can distort. In an unstructured mesh, the cell shape can even change. Why would you ever want that, you may ask? Consider a circular shape in the middle of our domain. We&amp;rsquo;ll have a pretty hard time fitting a regular or even irregular mesh to a circle.&lt;/p&gt;</description></item><item><title>Fourier Transforms</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/08-fourier-transform/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/08-fourier-transform/</guid><description>&lt;span&gt;
+&lt;p&gt;Finite volume methods can easily handle arbitrary geometries. You can use arbitrarily shaped cells, irregular meshes, and even unstructured meshes. With an irregular mesh, the cell shapes can distort. In an unstructured mesh, the cell shape can even change. Why would you ever want that, you may ask? Consider a circular shape in the middle of our domain. We&amp;rsquo;ll have a pretty hard time fitting a regular or even irregular mesh to a circle.&lt;/p&gt;</description></item><item><title>Fourier Transforms and Laplace Transforms</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/08-fourier-transform/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/08-fourier-transform/</guid><description>&lt;span&gt;
  \[\]
 &lt;/span&gt;
 
@@ -2368,56 +2368,7 @@ where \( \vec A \) is a J by J matrix. In equilibrium calculations, this comes u
  \[\left| \frac{a \Delta x}{\Delta t} \right| \leq 1\]
 &lt;/span&gt;
 
-&lt;p&gt;For a given grid, this effectively sets a limit on the time step. The time step can be no larger than the grid spacing divided by the propagation constant \( \Delta t \leq \Delta x / |a| \). As an example, say we have a device of interest that is 1 meter long, and we want a grid resolution such that we can resolve features that are 1mm in size. Say the problem domain is flow over an airfoil&lt;/p&gt;</description></item><item><title>Laplace Transforms</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/09-laplace-transform/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/09-laplace-transform/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
-&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
-&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
-
-&lt;script&gt;
- function loadKatex() {
- renderMathInElement(document.body, {
- delimiters: [
- { left: "$$", right: "$$", display: true },
- { left: "\\[", right: "\\]", display: true },
- { left: "$", right: "$", display: false },
- { left: "\\(", right: "\\)", display: false }],
- throwOnError: false,
- trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
- macros: {
- "\\lcm": "\\mathop{\\mathrm{lcm}}",
- "\\sen": '\\text{sen}\\,',
- "\\dd": "\\mathop{\\mathrm{d} #1}",
- "\\abs": "\\lvert #1 \\rvert",
- "\\dd": "\\text{d}",
- "\\cross": "\\times",
- "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
- "\\curl": "\\nabla \\cross #1",
- "\\vu": "\\mathbf{\\hat{#1}}",
- "\\vdot": "\\dot",
- "\\div": "\\nabla \\cdot #1",
- "\\grad": "\\nabla",
- "\\dv": "\\frac{d\\,#1}{d\\,#2}",
- "\\gr": "\\gamma",
- "\\vec": "\\mathbf{#1}",
- "\\tagl": "\\tag{#1}",
- "\\eqref": "(#1)",
- "\\laplacian": "\\mathbf{\\nabla ^2}",
- "\\label": "{}",
- "\\negadelta": "\\nabla",
- "\\eqref": "\\href{###1}{(\\text{#1})}",
- "\\ref": "\\href{###1}{\\text{#1}}",
- "\\label": "\\htmlId{#1}{}",
- }
- });
- };
-&lt;/script&gt;&lt;span&gt;
- \[\]
-&lt;/span&gt;
-
-&lt;h1 id="laplace-transform"&gt;
- Laplace Transform
- &lt;a class="anchor" href="#laplace-transform"&gt;#&lt;/a&gt;
-&lt;/h1&gt;
-&lt;p&gt;We all know \( \mathcal{L} \) from our undergrad differential equations or electronics classes, but we never got the inverse transform back then, so let&amp;rsquo;s fill in that gap.&lt;/p&gt;</description></item><item><title>Equilibrium of 3D Configurations</title><link>https://peppyhare.github.io/r/notes/UWAA558/10-equilibrium-of-3d-configurations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/10-equilibrium-of-3d-configurations/</guid><description>&lt;h1 id="equilibrium-of-3d-configurations"&gt;
+&lt;p&gt;For a given grid, this effectively sets a limit on the time step. The time step can be no larger than the grid spacing divided by the propagation constant \( \Delta t \leq \Delta x / |a| \). As an example, say we have a device of interest that is 1 meter long, and we want a grid resolution such that we can resolve features that are 1mm in size. Say the problem domain is flow over an airfoil&lt;/p&gt;</description></item><item><title>Equilibrium of 3D Configurations</title><link>https://peppyhare.github.io/r/notes/UWAA558/10-equilibrium-of-3d-configurations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/10-equilibrium-of-3d-configurations/</guid><description>&lt;h1 id="equilibrium-of-3d-configurations"&gt;
  Equilibrium of 3D Configurations
  &lt;a class="anchor" href="#equilibrium-of-3d-configurations"&gt;#&lt;/a&gt;
 &lt;/h1&gt;
