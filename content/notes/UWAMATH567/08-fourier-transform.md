@@ -1,5 +1,5 @@
 ---
-title: Fourier Transforms
+title: Fourier Transforms and Laplace Transforms
 weight: 80
 ---
 
@@ -187,3 +187,232 @@ f(t) = \frac{1}{2 \pi} \int_{-\infty}^{\infty}e^{-i \lambda t} F(\lambda) \dd \l
 {{< /katex >}}
 
 In this case, we should not just take the principal value integral because integrating along the contour is not the same as the principal value limit! The correct approach is to apply the causality condition! If we end up with a singularity on the path of integration, then something must be wrong with the physics of the problem. Taking the indented contour going just above the singularity corresponds with allowing for a small \\( \text{Im}(\lambda) > 0 \\), which means \\( f(t) \\) does not diverge faster than \\( e^{\alpha \lambda} \\) for some \\( \lambda > 0 \\).
+
+# Laplace Transform
+
+We all know \\( \mathcal{L} \\) from our undergrad differential equations or electronics classes, but we never got the inverse transform back then, so let's fill in that gap.
+
+The Laplace transform is the same as the one-sided Fourier transform with \\( -i \lambda \\) replaced by \\( s \\) (or \\( -s = + i \lambda \\) )
+
+{{< katex display >}}
+\hat{f}(s) = \mathcal{L} [f(t)] = \int _0 ^{\infty} e^{- s t} f(t) \dd t = F(is) = F(\lambda)
+{{< /katex >}}
+
+This makes a couple of things clearer. The Laplace transform integral that looked like a completely real integrand actually has a purely imaginary argument in the exponential. And when we look at the inverse Fourier transform, with \\( -s = i \lambda \\), the integral is actually going up and down in the imaginary direction
+
+{{< katex display >}}
+f(t) = \mathcal{L} ^{-1} [\hat{f}(s)] = \frac{1}{2 \pi} \int _{-\infty + i \alpha} ^{\infty + i \alpha} e^{- i \lambda t} F(\lambda) \dd \lambda \\
+= \frac{1}{2 \pi i} \int_{-i \infty + \alpha } ^{i \infty + \alpha} e^{st} \hat{f} (s) \dd s
+{{< /katex >}}
+
+<p align="center"> <img alt="laplace-contour.png" src="/r/img/aa567/laplace-contour.png" width="300px" /> </p>
+
+The path we take to close the contour depends on the sign of \\( t \\). For \\( t < 0 \\), we close on the right by Jordan's lemma (just rotate everything by \\( \pi / 2 \\) ). As it turns out, to make the function integrable, we must take \\( \alpha \\) to be to the right of all singularities of \\( f(t) \\). Since that is the case, there are no poles to the right of the contour and we get zero.
+
+Closing to the left,
+
+{{< katex display >}}
+f(t) = \sum \text{Res} [ e^{st} \hat{f}(s)]
+{{< /katex >}}
+
+in the complex plane if there are no branch cuts or branch points. If you do have a branch cut in \\( f(s) \\), then we modify the Bromwich contour like this:
+
+<p align="center"> <img alt="laplace-contour-2.png" src="/r/img/aa567/laplace-contour-2.png" width="300px" /> </p>
+
+Example:
+
+{{< katex display >}}
+\mathcal{L} [1] = \int _0 ^{\infty} e^{-st} \dd t = \frac{e^{-st}}{s} |_{0} ^{\infty} = \frac{1}{s} \quad \text{ if } \text{Re}(s) > 0
+{{< /katex >}}
+{{< katex display >}}
+\mathcal{L}^{-1} [\frac{1}{s}] = \frac{1}{2 \pi i} \int_L e^{st}{s} \dd s = \begin{cases} \text{Res} [\frac{e^{st}}{s}; s = 0] & t > 0 \\ 0 & t < 0 \end{cases} \\
+= \begin{cases} 1 & t > 0 \\ 0 & t < 0 \end{cases}
+{{< /katex >}}
+
+## Laplace Transform of Derivatives
+
+{{< katex display >}}
+\mathcal{L} [f'(t)] = \int _0 ^{\infty} e^{-st} f'(t) \dd t \\
+= e^{-st} f(t) |_0 ^{\infty} + s \int _0 ^\infty e^{-st} f(t) \dd t \\
+= s \mathcal{L} [f(t)] - f(0)
+{{< /katex >}}
+{{< katex display >}}
+\mathcal{L} [f''(t)] = s \mathcal{L} [f(t)] - f(0) - f'(0)
+{{< /katex >}}
+
+where we assume that \\( e^{-st} f(t) \rightarrow 0 \\) and \\( e^{-st} f'(t) \rightarrow 0 \\) as \\( t \rightarrow \infty \\).
+
+We want to use Laplace transforms to solve differential equations. In particular, the spicy partial differential equations. Let's start with the wave equation:
+
+{{< katex display >}}
+\pdv{^2}{t^2} u - c^2 \pdv{^2}{x^2} u = 0 \qquad -\infty < x < \infty \qquad t > 0
+{{< /katex >}}
+with boundary conditions
+
+{{< katex display >}}
+u \rightarrow 0 \quad \text{ as } x \rightarrow \pm \infty
+{{< /katex >}}
+{{< katex display >}}
+u(x, 0) = f(x) \qquad \pdv{}{t} u(x, 0) = 0 \qquad (\text{or } g(x))
+{{< /katex >}}
+First, define \\( U(\lambda, t) \\) as the Fourier transform of \\( u \\) in \\( x \\)
+
+{{< katex display >}}
+U(\lambda, t) = \int_{-\infty}^{\infty}e^{i \lambda x} u(x, t) \dd x
+{{< /katex >}}
+
+Here, we are starting to play fast and loose with the rules, and we will make the pure mathematicians mad :) We *should* prove that a solution \\( u(x, t) \\) to our PDE actually exists, and that the solution is integrable (so its Fourier transform exists). But it's way easier to ask for forgiveness than to ask for permission. We assume both of these. If we find \\( u(x, t) \\), then it exists and we can check for integrability after the fact.
+
+{{< katex display >}}
+\mathcal{F} \left[ \pdv{^2u}{x^2} \right] = \int_{-\infty}^{\infty}e^{i \lambda x} \pdv{^2 u}{x^2} \dd x \\
+= e^{i \lambda x} \pdv{}{x} u |_{-\infty} ^{\infty} - i \lambda \int_{-\infty}^{\infty}e^{i \lambda x} \pdv{}{x} u \dd x \\
+= e ^{i \lambda x} \pdv{}{x} u |_{-\infty} ^{\infty} - i \lambda e^{i \lambda x } u |_{-\infty} ^{\infty} + (i \lambda) ^2 U
+{{< /katex >}}
+
+We aren't given \\( \pdv{}{x} u \rightarrow 0 \\) as \\( x \rightarrow \pm \infty \\), but we'll assume it to get rid of the boundary terms. There's another thing we need to come back and check at the end!
+
+{{< katex display >}}
+\mathcal{F}\left[ \pdv{^2u}{x^2} \right] = - \lambda^2 U
+{{< /katex >}}
+{{< katex display >}}
+\mathcal{F} \left[ \pdv{^2 u}{t^2} \right] = \pdv{^2}{t^2} \mathcal{F}[u]
+{{< /katex >}}
+
+So the wave equation now looks like
+{{< katex display >}}
+\pdv{^2}{t^2} U = - (c \lambda)^2 U
+{{< /katex >}}
+{{< katex display >}}
+\rightarrow U(\lambda, t) = A(\lambda) \cos (c \lambda t) + B(\lambda) \sin (c \lambda t)
+{{< /katex >}}
+
+Applying boundary conditions,
+
+{{< katex display >}}
+\pdv{}{t} U(\lambda, 0) = 0 \qquad U(\lambda, 0) = F(\lambda) = \mathcal{F}[f(x)]
+{{< /katex >}}
+{{< katex display >}}
+\rightarrow B(\lambda) = 0 \qquad A(\lambda) = F(\lambda)
+{{< /katex >}}
+{{< katex display >}}
+U(\lambda, t) = F(\lambda) \cos (c \lambda t)
+{{< /katex >}}
+{{< katex display >}}
+u(x, t) = \mathcal{F}^{-1} [U(\lambda, t)] = \frac{1}{2 \pi} \int_{-\infty}^{\infty}U(\lambda, t) e^{- i \lambda t} \dd \lambda\\
+= \frac{1}{2 \pi } \int_{-\infty}^{\infty}F(\lambda) \cos (c \lambda t) e^{- i \lambda t} \dd \lambda \\
+= \frac{1}{2 \pi} \int_{-\infty}^{\infty}\frac{1}{2} F(\lambda) e^{- i \lambda (x - ct)} \dd \lambda + \frac{1}{2 \pi} \int_{-\infty}^{\infty}\frac{1}{2} F(\lambda) e^{- i \lambda( x + ct)} \dd \lambda
+{{< /katex >}}
+
+But by definition,
+
+{{< katex display >}}
+f(x) = \frac{1}{2 \pi} \int_{-\infty}^{\infty} F(\lambda) e^{-i \lambda t} \dd \lambda
+{{< /katex >}}
+
+so
+
+{{< katex display >}}
+u(x, t) = \frac{1}{2} f(x - ct) + \frac{1}{2} f(x + ct)
+{{< /katex >}}
+
+So, are we done? No! We took some shortcuts that we still need to justify. If \\( f(x) \\) is of compact support, then we're good on the \\( f(x \rightarrow \pm \infty) \\) and \\( f'(x \rightarrow \pm \infty) \\) boundary conditions. Also as long as \\( f(x) \\) has a Fourier transform, then \\( u(x, t) \\) also has a Fourier transform. That means our bases are covered and we have nothing to apologize for.
+
+## Solving the Heat Equation
+
+The heat equation is a nice application for these transforms to solve PDE's:
+
+{{< katex display >}}
+\pdv{u}{t} - \alpha \pdv{^2 u}{x^2} = 0
+{{< /katex >}}
+{{< katex display >}}
+- \infty < x < \infty \qquad t > 0 \qquad \alpha > 0
+{{< /katex >}}
+
+This problem is ill-posed if we try to solve for \\( t < 0 \\)  (imagine trying to solve the diffusuion equation to find the initial distribution of what eventually becomes a uniform distribution everywhere) and \\( \alpha < 0 \\) (for the same reason).
+
+The boundary conditions for the problem are:
+
+{{< katex display >}}
+u \rightarrow 0 \text{ as } x \rightarrow \pm \infty
+{{< /katex >}}
+{{< katex display >}}
+u(x, 0) = g(x)
+{{< /katex >}}
+
+We don't know if \\( u \\) is integrable, but let's assume the Fourier transform exists and come back to check later once we've solved \int_{-\infty}^{\infty}
+
+
+Note: at this point we could have approached this problem in a number of ways. We could take the Fourier transform of \\( u(x, t) \\) in \\( x \\), or we could take the Laplace transform of \\( u(x, t) \\) in \\( t \\), or we could take the one-sided Fourier transform in \\( t \\), or we could take the Laplace transform in \\( x \\). But doing the Fourier transform in \\( x \\) is the right choice here, because we're starting with a homogeneous equation and we have infinite boundary conditions in \\( x \\). This means that once we've taken the transform, we should not end up with any boundary terms and we'll be left with a homogeneous equation. Since the PDE is only first-order in \\( t \\), that means we'll be left with a first-order homogeneous ODE, and that's very easy for us to solve.
+
+{{< katex display >}}
+U (\lambda, t) = \mathcal{F}[u(x, t)] = \int_{-\infty}^{\infty}e^{i \lambda x} u(x, t) \dd x
+{{< /katex >}}
+
+{{< katex display >}}
+\mathcal{F} [ \pdv{u}{t} ] = \pdv{}{t} U
+{{< /katex >}}
+{{< katex display >}}
+\mathcal{F}[\pdv{^2 u}{x^2} ] = \int_{-\infty}^{\infty}e^{i \lambda x} \pdv{^2 u}{x^2} \dd x \\
+= e^{i \lambda x} \pdv{u}{x} |_{-\infty} ^{\infty} - i \lambda \int_{-\infty}^{\infty}e^{i \lambda x} \pdv{u}{x} \dd x \\
+= e^{i \lambda x} \pdv{u}{x} |_{-\infty} ^{\infty} - i \lambda u e^{i \lambda x} |_{-\infty} ^{\infty} + (i \lambda) ^2 U
+{{< /katex >}}
+
+Again, we assume that \\( \pdv{u}{x} \rightarrow 0 \\) as \\( x \rightarrow \pm \infty \\) to get rid of the boundary terms. And again, we'll have to come back and verify this once we're done
+
+{{< katex display >}}
+\rightarrow \pdv{U}{t} = \alpha (i\lambda)^2 U \\
+\rightarrow U(\lambda, t) = A(\lambda) e^{- \alpha \lambda^2 t}
+{{< /katex >}}
+
+Applying our initial conditions,
+
+{{< katex display >}}
+U(\lambda, 0) = A(\lambda) = G(\lambda) = \mathcal{F}[g(x)]
+{{< /katex >}}
+{{< katex display >}}
+U(\lambda, t) = \mathcal{F}[g(x)] e^{- \alpha \lambda ^2 t}
+{{< /katex >}}
+{{< katex display >}}
+u(x, t) = \frac{1}{2 \pi} \int_{-\infty}^{\infty}e^{-i \lambda x} G(\lambda) e^{- \alpha \lambda ^2 t} \dd \lambda
+{{< /katex >}}
+
+We can go further here using the convolution properties of \\( \mathcal{F} \\), but for now let's apply what we have to some examples
+
+{{< katex display >}}
+g(x) = \delta (x) \qquad (\text{Dirac delta function})
+{{< /katex >}}
+{{< katex display >}}
+\mathcal{F}[g(x)] = \int_{-\infty}^{\infty}e^{i \lambda x} g(x) \dd x = \int_{-\infty}^{\infty}e^{i \lambda x} \delta(x) \dd x = e^{i \lambda (0)} = 1
+{{< /katex >}}
+{{< katex display >}}
+u(x, t) = \frac{1}{2 \pi} \int_{-\infty}^{\infty}e^{-i \lambda x} (1) e^{- \alpha \lambda^2 t} \dd \lambda
+{{< /katex >}}
+
+We solve this by completing the square in the exponent to get a Gaussian integral of the form \\( \int e^{- a x^2} = \sqrt{\pi / a} \\). The general formula we'll use for this is:
+
+{{< katex display >}}
+\int_{-\infty}^{\infty}e^{- k^2 x^2 + i \omega x} \dd x = \frac{\sqrt{\pi}}{k} e^{- \omega ^2 / 4k^2}
+{{< /katex >}}
+
+{{< katex display >}}
+u(x, t) = \sqrt{\frac{1}{4 \pi \alpha t}} e^{- x^2 / 4 \alpha t}
+{{< /katex >}}
+
+<p align="center"> <img alt="greenfunction-1.png" src="/r/img/aa567/greenfunction-1.png" width="300px"/> </p>
+
+Now let's consider the intermediate case where we start with a Gaussian
+
+{{< katex display >}}
+g(x) = B e^{- \beta x^2}
+{{< /katex >}}
+Using the formula above,
+{{< katex display >}}
+G(\lambda) = \sqrt{\frac{\pi}{\beta}} B e^{- \lambda ^2 / 4 \beta}
+{{< /katex >}}
+The Fourier transform of a Gaussian is another Gaussian. If the original function was sharply peaked, then the transform is very flat, and vice versa.
+
+{{< katex display >}}
+u(x, t) = \frac{1}{2 \pi} \sqrt{\frac{\pi}{\beta}} B \int_{-\infty}^{\infty}e^{- \frac{\lambda ^2}{4 \beta} - \alpha \lambda ^2 t - i \lambda x } \dd \lambda \\
+= \frac{B}{2 \sqrt{\beta \pi}} \int_{-\infty}^{\infty}e^{- i \lambda x - \lambda ^2 ( \frac{1}{4 \beta} + \alpha)} \dd \lambda \\
+= \frac{B}{\sqrt{1 + 4 \alpha \beta t}} e^{- \frac{\beta x^2}{1 + 4 \alpha \beta t}}
+{{< /katex >}}
