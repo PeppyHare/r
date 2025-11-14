@@ -416,3 +416,177 @@ u(x, t) = \frac{1}{2 \pi} \sqrt{\frac{\pi}{\beta}} B \int_{-\infty}^{\infty}e^{-
 = \frac{B}{2 \sqrt{\beta \pi}} \int_{-\infty}^{\infty}e^{- i \lambda x - \lambda ^2 ( \frac{1}{4 \beta} + \alpha)} \dd \lambda \\
 = \frac{B}{\sqrt{1 + 4 \alpha \beta t}} e^{- \frac{\beta x^2}{1 + 4 \alpha \beta t}}
 {{< /katex >}}
+
+For the \\( \delta(x) \\) initial condition, we took the easy way out by taking the Fourier transform in space to end up with a nice clean homogeneous 1st order ODE. Now let's see what would happen if we do it the stupid way. This is an especially useful approach to go through because some problems don't yield analytic solutions, so we should know a bit about how to apply asymptotic analysis to solve these kinds of problems with inverse Laplace transforms that introduce branch cuts.
+
+{{< katex display >}}
+\text{PDE}: \quad \pdv{u}{t} = \alpha \pdv{^2u}{x^2} \qquad - \infty < x < \infty \qquad t > 0
+{{< /katex >}}
+{{< katex display >}}
+\text{BC:} \quad u \rightarrow 0 \text{ as } x \rightarrow \pm \infty \qquad u(x, 0) = \delta(x)
+{{< /katex >}}
+
+Let's take the Laplace transform in time:
+
+{{< katex display >}}
+\hat{u}(x, s) = \mathcal{L} [u(x, t)] = \int _0 ^{\infty} e^{- st} u(x, t) \dd t
+{{< /katex >}}
+
+{{< katex display >}}
+\mathcal{L} [\pdv{u}{t}] = u(x, t) e^{- st} |_{0} ^\infty + s \hat{u} (x, s)
+{{< /katex >}}
+
+If the real part of \\( s \\) is greater than zero, then this is integrable and
+
+{{< katex display >}}
+\mathcal{L} [\pdv{u}{t}] = s \hat{u} (x, s)
+{{< /katex >}}
+
+{{< katex display >}}
+\mathcal{L} [\pdv{^2 u}{x^2} ] = \pdv{^2}{x^2} \hat{u}
+{{< /katex >}}
+
+{{< katex display >}}
+s \hat{u} - u(x, 0) = \alpha \pdv{^2 \hat{u}}{x^2}
+{{< /katex >}}
+
+Good for us, now we've made a 2nd order non-homogeneous ODE. One approach is to take the Fourier transform, so that \\( \delta(x)  \\) becomes \\( 1 \\), and then we need to take both inverse Fourier and Laplace transforms to get the solution. Here, instead we'll use Green's functions since \\( \delta(x) = 0 \\) if \\( x \neq 0 \\).
+
+For \\( x > 0 \\) :
+
+{{< katex display >}}
+\pdv{^2 \hat{u}}{x^2} - \frac{s}{\alpha} \hat{u} = 0 \quad \rightarrow \quad A e^{- \sqrt{\frac{s}{\alpha}} x} + C e^{\sqrt{\frac{s}{\alpha}} x}
+{{< /katex >}}
+
+There's that square root in the argument, whcih we got from our first-order terms, and that's where we'll get a branch cut.
+
+In the \\( +x \\) direction we can apply \\( u \rightarrow 0 \\) as \\( x \rightarrow \infty \\)
+
+{{< katex display >}}
+\rightarrow C = 0 \text{ if } \text {Re} \sqrt{\frac{s}{\alpha}} > 0
+{{< /katex >}}
+
+otherwise, \\( A = 0 \\). Let's choose \\( C = 0 \\). This seems like an arbitrary decision, but as long as we remain consistent we should get the right answer (modulo some annoying difficulties down the road).
+
+For \\(  x < 0 \\):
+
+{{< katex display >}}
+\pdv{^2 \hat{u}}{x^2} - \frac{s}{\alpha} \hat{u} = 0
+{{< /katex >}}
+{{< katex display >}}
+\hat{u}(x, s) = B e^{\sqrt{\frac{s}{\alpha}} x } + D e^{-\sqrt{\frac{s}{\alpha}} x }
+{{< /katex >}}
+
+{{< katex display >}}
+u \rightarrow 0 \text{ as } x \rightarrow -\infty \qquad \rightarrow \qquad D = 0
+{{< /katex >}}
+
+{{< katex display >}}
+\hat{u}(x, s) = \begin{cases} A e^{-\sqrt{\frac{s}{\alpha}} x } & \text{ if } x > 0 \\ B e^{\sqrt{\frac{s}{\alpha}} x } & \text{ if } x < 0 \end{cases}
+{{< /katex >}}
+
+Now we need to bring in \\( u(0, x) \\) using a matching condition. We'll do this by integrating the ODE across \\( x = 0 \\):
+
+{{< katex display >}}
+\int _{0^-} ^{0^+} \left( \pdv{^2 \hat{u}}{x^2} - \frac{s}{\alpha} \hat{u} \right) \dd x = - \frac{1}{\alpha} \int _{0^-} ^{0^+} \delta (x) \dd x
+{{< /katex >}}
+{{< katex display >}}
+\pdv{}{x} \hat{u} |_{0^-} ^{0^+} - \frac{s}{\alpha} \int _{0^-} ^{0^+} \hat{u} \dd x = - \frac{1}{\alpha}
+{{< /katex >}}
+
+Here we need to make some arguments to determine the form of \\( \hat{u} \\). If \\( \hat{u}(x = 0) \\) is finite, then the integral over a vanishing interval is zero. On the other hand, if \\( \hat{u} \\) itself contains a delta function, then if we plug it back into the original differential equation we see that there is no way to match the singularity of \\( \pdv{^2 u}{x^2} \\) with the other finite terms. So \\( \hat{u} \\) must be finite at \\( x = 0 \\) and we end up with the jump condition
+
+{{< katex display >}}
+\left. \pdv{\hat{u}}{x} \right| _{0^-}^{0^+} = - \frac{1}{\alpha}
+{{< /katex >}}
+
+This is a finite jump condition, so \\( \hat{u} \\) must be continuous across the jump. Otherwise we would have a singularity on the left side that would need to match the constant on the right side.
+
+so, at \\( x = 0 \\), for continuity we must have \\( A = 0 \\)  and
+
+{{< katex display >}}
+\pdv{}{x} \hat{u} |_{0^+} = - A \sqrt{\frac{s}{\alpha}}
+{{< /katex >}}
+{{< katex display >}}
+\pdv{}{x} \hat{u} |_{0^-} = B \sqrt{\frac{s}{\alpha}}
+{{< /katex >}}
+{{< katex display >}}
+\left. \pdv{\hat{u}}{x} \right| _{0^-}^{0^+} = - \frac{1}{\alpha}  \quad \rightarrow \quad A = \frac{1}{2 \sqrt{\alpha s}} = B
+{{< /katex >}}
+{{< katex display >}}
+\hat{u}(x, s) = \frac{1}{2 \sqrt{\alpha s}} e^{- \sqrt{\frac{s}{\alpha}} |x|}
+{{< /katex >}}
+
+We still need to define a branch cut to make \\( \hat{u} \\) single-valued, otherwise we'll have to refuse to integrate it.
+
+{{< katex display >}}
+s = r e^{i \theta} \qquad \sqrt{s} = r^{1/2} e^{i \theta / 2}
+{{< /katex >}}
+
+Here, we need to make use of the fact that we require \\( \text{Re}(s) > 0 \\) for integrability, where
+
+{{< katex display >}}
+\text{Re} \sqrt{s} = r^{1/2} \cos (\theta / 2)
+{{< /katex >}}
+{{< katex display >}}
+\rightarrow \cos (\theta / 2) > 0 \qquad \rightarrow \qquad - \pi < \theta < \pi
+{{< /katex >}}
+
+Now we can attempt the inverse Laplace transform, but the contour we need to use is a bit complicated:
+
+<p align="center"> <img alt="laplace-contour-nasty.png" src="/r/img/aa567/laplace-contour-nasty.png" width="300px"/> </p>
+
+{{< katex display >}}
+u(x, t) = \frac{1}{2 \pi i} \int_C \frac{e^{st - \sqrt{\frac{s}{\alpha}} |x|}}{2 \sqrt{\alpha s}} \dd s \qquad - \pi < 0 < \pi
+{{< /katex >}}
+
+{{< katex display >}}
+C = L + C_R + C_2 + C_3 + C_4
+{{< /katex >}}
+
+There are no singularities contained, so
+
+{{< katex display >}}
+\oint _C = 0 \rightarrow \int _L = - \int _{C_2} - \int _{C_3} - \int_{C_4}
+{{< /katex >}}
+
+On \\( C_2 \\):
+
+{{< katex display >}}
+s = r e^{i \theta} \qquad \theta = \pi ^-
+{{< /katex >}}
+{{< katex display >}}
+\sqrt{s} = r^{1/2} e^{i \pi / 2}
+{{< /katex >}}
+{{< katex display >}}
+\frac{1}{2 \pi i} \int _{C_2} = \frac{1}{2 \pi i} \int _{\infty} ^0 \frac{e^{-r6 - i \sqrt{\frac{r}{\alpha}}|x|} e^{i \pi}}{2 i \sqrt{\alpha r}} \dd r \\
+= - \frac{1}{4 \pi \sqrt{\alpha}} \int_0 ^\infty e^{-rt - i \sqrt{\frac{r}{\alpha}}|x|} \dd r
+{{< /katex >}}
+
+{{< katex display >}}
+\frac{1}{2 \pi i} \int_{C_4} = \frac{1}{2 \pi i} \int_0 ^{\infty} \frac{e^{-rt + i \sqrt{\frac{r}{\alpha}} |x|} e^{- i \pi}}{-2 i (\alpha r)^{1/2}} \dd r \qquad s = r e^{- i \pi ^+}
+{{< /katex >}}
+
+{{< katex display >}}
+\int _{C_3} \rightarrow 0 \text{ as } r \rightarrow 0
+{{< /katex >}}
+
+So we end up with
+
+{{< katex display >}}
+u(x, t) = - \frac{1}{2 \pi i} \int_{C_2} - \frac{1}{2 \pi i} \int _{C_4} \\
+= \frac{1}{4 \pi \sqrt{\alpha}} \int_0 ^{\infty} \frac{ \dd r}{\sqrt{r}} e^{- r t} \left( e^{i \sqrt{\frac{r}{\alpha}} |x|}  + e^{- i \sqrt{\frac{r}{\alpha}}|x|} \right)
+{{< /katex >}}
+
+Let \\( y^2 = r \\) so that \\( 2y \dd y = \dd r \\)  (so that we can get rid of the square roots)
+
+{{< katex display >}}
+u(x, t) = \frac{1}{2 \pi \sqrt{\alpha}} \int_{-\infty}^{\infty}\dd y e^{- y^2 t + i y |x| / \sqrt{\alpha}}
+{{< /katex >}}
+
+Then we can complete the square to get a normal Gaussian integral
+
+{{< katex display >}}
+= \frac{1}{2 \pi \sqrt{\alpha}} e^{- \frac{x^2}{4 \alpha t}} \int_{-\infty}^{\infty}e^{- t ( y - \frac{i |x|}{2 \sqrt{\alpha t}})} \dd y \\
+= \frac{1}{ \sqrt{4 \pi \alpha t}} e^{- \frac{x^2}{4 \alpha t}}
+{{< /katex >}}
