@@ -2268,7 +2268,16 @@ where \( \vec A \) is a J by J matrix. In equilibrium calculations, this comes u
 = \grad p = \dv{p}{r}\]
 &lt;/span&gt;
 
-&lt;p&gt;we move to an axisymmetric 2-dimensional torus, replacing our cylindrical coordinate system with a toroidal one&lt;/p&gt;</description></item><item><title>Fluid stuff</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch04-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch04-1/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;p&gt;we move to an axisymmetric 2-dimensional torus, replacing our cylindrical coordinate system with a toroidal one&lt;/p&gt;</description></item><item><title>Conformal Mappings</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/09-conformal-mapping/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/09-conformal-mapping/</guid><description>&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;h1 id="conformal-mappings"&gt;
+ Conformal Mappings
+ &lt;a class="anchor" href="#conformal-mappings"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;A &lt;strong&gt;conformal mapping&lt;/strong&gt; is a mapping which preserves both the magnitude and sense of angles. The funny thing is when we work with conformal mappings to solve problems, we will mostly be looking for places where a mapping is &lt;em&gt;not&lt;/em&gt; conformal. For the definition:&lt;/p&gt;
+&lt;p&gt;A mapping which preserves the magnitude and sense of the angle between two smooth arcs passing through a specific point is said to be conformal at that point.&lt;/p&gt;</description></item><item><title>Fluid stuff</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch04-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch04-1/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
 
