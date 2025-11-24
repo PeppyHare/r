@@ -194,5 +194,53 @@
  Conformal Mappings
  &lt;a class="anchor" href="#conformal-mappings"&gt;#&lt;/a&gt;
 &lt;/h1&gt;
-&lt;p&gt;A &lt;strong&gt;conformal mapping&lt;/strong&gt; is a mapping which preserves both the magnitude and sense of angles. The funny thing is when we work with conformal mappings to solve problems, we will mostly be looking for places where a mapping is &lt;em&gt;not&lt;/em&gt; conformal. For the definition:&lt;/p&gt;
-&lt;p&gt;A mapping which preserves the magnitude and sense of the angle between two smooth arcs passing through a specific point is said to be conformal at that point.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;There are many physical problems that require us to solve the Laplace equation on a domain \( D \) with some set of boundary conditions. As we&amp;rsquo;ve seen so far, there are certain sets of boundary conditions for which Laplace&amp;rsquo;s equation is relatively easy to solve: for instance a Dirichlet boundary condition on a circle, or in the upper half-plane. But most of the time we are given more complicated geometries for the domain and boundary that require trickier approaches. One way of solving these problems is to perform a specific type of change of variables to map the original complicated domain to a simpler one that we already know how to solve.&lt;/p&gt;</description></item><item><title>Fluid Flow</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/10-fluid-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/10-fluid-flow/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script&gt;&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;h1 id="ideal-fluid-flow"&gt;
+ Ideal Fluid Flow
+ &lt;a class="anchor" href="#ideal-fluid-flow"&gt;#&lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;Suppose we have an irrotational fluid:&lt;/p&gt;</description></item></channel></rss>
