@@ -31,7 +31,7 @@ int main(int argc, char** argv)
 
 {{< /details >}}
 
-The entrypoint for `warpxm` is simple, there are just three calls: `warpxm_init()`, `warpxm_main()`, and `warpxm_finalize()`. We don't need to pay much attention to `warpxm_init`, since it just initializes the MPI and PETSc frameworks. MPI is the message-passing framework that allows for massive parallelization. PETSc is a toolkit that helps us use MPI, parse command-line options, create meshes, and other things.
+The entrypoint for `warpxm` is simple, there are just three calls: `warpxm_init()`, `warpxm_main()`, and `warpxm_finalize()`. We don't need to pay much attention to `warpxm_init`, since it just initializes the MPI and PETSc frameworks. MPI is the message-passing framework that allows for massive parallelization. PETSc is a toolkit that _can_ be used for a wide variety of numerical techniques, but we're currently only using it for parsing command-line options (and handling the installation of mutually compatible versions of various dependencies at install time).
 
 `warpxm_main` is similarly high level:
 
