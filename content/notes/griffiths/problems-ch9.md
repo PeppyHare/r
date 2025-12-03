@@ -11,7 +11,7 @@ weight: 2900
 ## Review Problem 1
 
 {{< tabs "1" >}}
-{{< tab "Q" >}}
+{{% tab "Q" %}}
 
 Current-carrying wire with gap. A large diameter wire of cross-section area \\( A \\)  carries current uniformly over its cross-section. There is a narrow gap of width \\( d \\), forming a parallel-plate capacitor. The current is zero for times \\( t < 0 \\) and the current is \\( I \\) at times \\( t > 0 \\). The charge on the capacitor is zero at \\( t = 0 \\). Neglect fringe fields.
 
@@ -19,8 +19,8 @@ Current-carrying wire with gap. A large diameter wire of cross-section area \\( 
 
 (b) Find the magnetic field in the gap.
 
-{{< /tab >}}
-{{< tab "A" >}}
+{{% /tab %}}
+{{% tab "A" %}}
 
 (a)
 
@@ -50,13 +50,13 @@ B \cdot 2 \pi r = \mu_0 \frac{I \pi r^2}{A} \rightarrow \vec B = \frac{\mu_0 I r
 {{< /katex >}}
 
 
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 
 ## Review Problem 2
 
 {{< tabs "2" >}}
-{{< tab "Q" >}}
+{{% tab "Q" %}}
 
 Waves in non-conductors. A laser beam in vacuum has power 20GW and diameter 1 mm.
 
@@ -66,8 +66,8 @@ Waves in non-conductors. A laser beam in vacuum has power 20GW and diameter 1 mm
 
 (c) The beam then enters lossless glass having index of refraction 1.6. Assuming no reflection at the air-glass interface and the glass is non-magnetic, find the peak values of the \\( \vec E \\) and \\( \vec B \\) fields. Hint: consider whether the Poynting vector changed.
 
-{{< /tab >}}
-{{< tab "A" >}}
+{{% /tab %}}
+{{% tab "A" %}}
 
 To get the magnitude of the Poynting vector, we need to realize that the intensity of the beam is related to the time average of the Poynting vector
 
@@ -113,14 +113,14 @@ B_0 = \frac{E_0 '}{v} = \frac{E_0 / \sqrt{n}}{c / n} = B_0 \sqrt{n}
 {{< /katex >}}
 
 
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 
 
 ## Review Problem 3
 
 {{< tabs "3" >}}
-{{< tab "Q" >}}
+{{% tab "Q" %}}
 
 Waves in conductors. Consider a 1MHz plane wave in a vacuum incident on a thick slab of copper. Copper is a good conductor, non-magnetic, and you can assume its conductivity is \\( 6 \cdot 10^7 \Omega ^{-1}/ m \\).
 
@@ -134,8 +134,8 @@ Waves in conductors. Consider a 1MHz plane wave in a vacuum incident on a thick 
 
 (e) What is the wave's propagation velocity (phase velocity) in the copper?
 
-{{< /tab >}}
-{{< tab "A" >}}
+{{% /tab %}}
+{{% tab "A" %}}
 
 
 To get the skin depth, we want \\( d = 1 / \kappa \\). For a good conductor, we simplify the situation with
@@ -172,14 +172,14 @@ v = \frac{\omega}{k} = \omega d \approx 400 \text{m}/\text{s}
 {{< /katex >}}
 
 
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 
 
 ## Review Problem 4
 
 {{< tabs "4" >}}
-{{< tab "Q" >}}
+{{% tab "Q" %}}
 
 Dispersive Gaseous Medium. A dilute gaseous medium is found to exhibit a single optical resonance at frequency \\( \omega_0 = 2\pi \cdot 10^{15} \\) Hz. The electric field of a plane wave at frequency \\( \omega_0 \\) propagating through this medium is attenuated by a factor of two over a distance of 10 meters. The frequency width of the absorption resonance is \\( \Delta \omega \\).
 
@@ -189,8 +189,8 @@ Dispersive Gaseous Medium. A dilute gaseous medium is found to exhibit a single 
 
 (c) If there were no other resonances in the medium, what are the approximate numerical values of the index of refraction and the propagation velocity on resonance?
 
-{{< /tab >}}
-{{< tab "A" >}}
+{{% /tab %}}
+{{% tab "A" %}}
 
 To recall, for a dilute medium
 
@@ -224,5 +224,5 @@ v( \omega_0 - \Delta \omega / 10 ) < v(\omega_0) < v( \omega_0 + \Delta \omega /
 
 Assuming there are no other resonances, then exactly at resonance \\( n(\omega_0) = 1 \\). Then, \\( v_p(\omega) = \frac{c}{n} = c \\). 
 
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}

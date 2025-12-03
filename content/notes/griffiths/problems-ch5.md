@@ -11,12 +11,12 @@ weight: 2500
 ### Problem 5.5
 
 {{< tabs "5.5" >}}
-{{< tab "Q" >}}
+{{% tab "Q" %}}
 
 A current I flows down a wire of radius a. (a) If it is uniformly distributed over the surface, what is the surface current density K? (b) If it is distributed in such a way that the volume current density is inversely proportional to the distance from the axis, what is J(s)?
 
-{{< /tab >}}
-{{< tab "A" >}}
+{{% /tab %}}
+{{% tab "A" %}}
 
 K is the current per unit width \\( \perp \\) to the direction of the flow.
 
@@ -58,21 +58,21 @@ j = \frac{I}{2 \pi a s}
 {{< /katex >}}
 
 
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 
 
 ### Problem 5.11
 
 {{< tabs "5.11" >}}
-{{< tab "Q" >}}
+{{% tab "Q" %}}
 
 Find the magnetic field at point P on the axis of a tightly wound solenoid (helical coil) consisting of _n_ turns per unit length wrapped around a cylindrical tube of radius _a_ and carrying current _I_ (Fig 5.25). Express your answer in terms of \\( \theta_0 \\) and \\( \theta_2 \\) (it's easiest that way). Consider the turns to be essentially circular and use the result of Ex 5.6. What is the field on the axis of an infinite solenoid (infinite in both directions)?
 
 <p align="center"> <img alt="Figure 5.25" src="/r/img/griffiths/5.25.png" /> </p>
 
-{{< /tab >}}
-{{< tab "A" >}}
+{{% /tab %}}
+{{% tab "A" %}}
 
 If I have _n_ turns per unit length, then I have \\( n \dd z \\) turns along a length \\( \dd z \\) (using the natural cylindrical coordinates of the problem). The total current of the resulting loop is \\( I n \dd z \\). From Ex 5.6, we know the magnetic field due to a circular loop is
 
@@ -119,21 +119,21 @@ B(z) = \frac{\mu_0 n I}{2} (\cos(0) - \cos \theta_1)
 {{< /katex >}}
 
 
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 
 
 ### Problem 5.23
 
 {{< tabs "5.23" >}}
-{{< tab "Q" >}}
+{{% tab "Q" %}}
 
 Find the magnetic vector potential of a finite segment of straight wire carrying a current I. [Put the wire on the z axis, from \\( z_1 \\) to \\( z_2 \\), and use Eq. 5.66.] Check that your answer is consistent with Eq. 5.37.
 
 <p align="center"> <img alt="Figure 5.e.23" src="/r/img/griffiths/5.e.23.png" /> </p>
 
-{{< /tab >}}
-{{< tab "A" >}}
+{{% /tab %}}
+{{% tab "A" %}}
 
 We will get our vector potential using Eq 5.66, as suggested
 
@@ -170,21 +170,21 @@ or, in terms of the angles made between __r__ and the axis of the wire,
 
 which is just what we got back in Eq. 5.37.
 
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
     
 
 ### Problem 5.26
 
 {{< tabs "5.26" >}}
-{{< tab "Q" >}}
+{{% tab "Q" %}}
 
 (a) By whatever means you can think of (short of looking it up), find the vector potential a distance \\( s \\) from an infinite straight wire carrying a current \\( I \\). Check that \\( \div \vec{A} = 0 \\) and \\( \curl \vec{A} = \vec{B} \\).
 
 (b) Find the magnetic potential inside the wire, if it has radius R and the current is uniformly distributed.
 
-{{< /tab >}}
-{{< tab "A" >}}
+{{% /tab %}}
+{{% tab "A" %}}
 
 
 (a)
@@ -259,7 +259,7 @@ One such combination of _a_ and _b_ is \\( a = b = R \\). Then
 {{< /katex >}}
 
 
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 
 
@@ -267,14 +267,14 @@ One such combination of _a_ and _b_ is \\( a = b = R \\). Then
 ### Problem 5.37
 
 {{< tabs "5.37" >}}
-{{< tab "Q" >}}
+{{% tab "Q" %}}
 
 (a) A phonograph record of radius R, carrying a uniform surface charge \\( sigma \\) is rotating at constant angular velocity \\( \omega \\). Find its magnetic dipole moment. 
 
 (b) Find the magnetic dipole moment of the spinning spherical shell in Example 5.11. Show that for points \\( r > R \\) the potential is that of a perfect dipole.
 
-{{< /tab >}}
-{{< tab "A" >}}
+{{% /tab %}}
+{{% tab "A" %}}
 
 (a)
 We get the monopole moment by integrating over the disk of the record. For a ring at radius _r_, \\( m = I \pi r^2 \\). In this case,
@@ -325,5 +325,5 @@ The dipole term in the multipole expansion for __A__ is therefore
 
 This is actually the exact vector potential we calculated (Eq. 5.69); evidently a spinning sphere produces a perfect dipole field, with no higher multipole contributions.
 
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}    

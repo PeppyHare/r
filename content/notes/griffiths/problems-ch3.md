@@ -11,12 +11,12 @@ weight: 2300
 ### Problem 3.24
 
 {{< tabs "p3.24" >}}
-{{< tab "Q" >}}
+{{% tab "Q" %}}
 
 Solve Laplace's equation by separation of variables in cylindrical coordinates, assuming there is no dependence on \\( z \\) (cylindrical symmetry). Make sure you find all solutions to the radial equation; in particular, your result must accomodate the case of an infinite line charge, for which we already know the answer.
 
-{{< /tab >}}
-{{< tab "A" >}}
+{{% /tab %}}
+{{% tab "A" %}}
 
 
 Since we are in cylindrical coordinates, we will write Laplace's equation in cylindrical coordinates \\( (s, \phi, z) \\):
@@ -134,7 +134,7 @@ V(s, \phi) = a_0 + b_0 \ln s + \sum_{k=1} ^\infty \left[ s^k (a_k \cos k \phi + 
 
 We've only been asked for the general solution in cylindrical coordinates (from which we can tell that our solution is independent of _a_), and we must be given boundary conditions in order to solve for the constants \\( a_k, b_k \\).
 
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 
 
@@ -142,7 +142,7 @@ We've only been asked for the general solution in cylindrical coordinates (from 
 ### Problem 3.27
 
 {{< tabs "p3.27" >}}
-{{< tab "Q" >}}
+{{% tab "Q" %}}
 
 A sphere of radius R, centered at the origin, carries charge density 
 
@@ -152,8 +152,8 @@ A sphere of radius R, centered at the origin, carries charge density
 
 where _k_ is a constant, and \\( r, \theta \\) are the usual spherical coordinates. Find the approximate potential for points on the _z_ axis, far from the sphere.
 
-{{< /tab >}}
-{{< tab "A" >}}
+{{% /tab %}}
+{{% tab "A" %}}
 
 We are asked for the _approximate_ potential for points on the z-axis far from the charge distribution, so we'll calculate the terms of our potential from Eq 3.95, and stop when we find the first non-zero term, replacing \\( \theta \\) for \\( \alpha \\) and \\( z \\) for \\( r \\) as we go.
 
@@ -209,14 +209,14 @@ V(\vec{r}) \approx \frac{1}{4 \pi \epsilon_0} \frac{1}{z^3} \frac{1}{2} k R \lef
 = \frac{1}{4 \pi \epsilon_0} \frac{k \pi ^2 R ^5}{48 z^3} \quad \text{(Quadrupole)}
 {{< /katex >}}
 
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 
 
 ### Problem 3.31
 
 {{< tabs "p3.31" >}}
-{{< tab "Q" >}}
+{{% tab "Q" %}}
 
 In Ex. 3.9, we derived the exact potential for a spherical shell of radius _R_, which carries a surface charge
 
@@ -228,8 +228,8 @@ a) Calculate the dipole moment of this charge distribution.
 
 b) Find the approximate potential, at points far from the sphere, and compare the exact answer (Eq 3.87). What can you conclude about the higher multipoles?
 
-{{< /tab >}}
-{{< tab "A" >}}
+{{% /tab %}}
+{{% tab "A" %}}
 
 
 By the symmetry of the problem, __p__ is going to be in the z-direction: \\( \vec{p} = p \vu{z}; \, p = \int z \rho \dd \tau \rightarrow \int z \sigma \dd a \\).
@@ -256,13 +256,13 @@ V_{dip} \approx \frac{1}{4 \pi \epsilon_0} \frac{\vu{r} \cdot \vec{p}}{r^2} = \f
 {{< /katex >}}
 
 
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 
 ### Problem 3.33
 
 {{< tabs "3.33" >}}
-{{< tab "Q" >}}
+{{% tab "Q" %}}
 
 Show that the electric field of a 'pure' dipole can be written in the coordinate-free form 
 
@@ -270,8 +270,8 @@ Show that the electric field of a 'pure' dipole can be written in the coordinate
 \vec{E_{dip}} = \frac{1}{4 \pi \epsilon_0} \frac{1}{r^3} [3 (\vec{p} \cdot \vu{r}) \vu{r} - \vec{p} ]
 {{< /katex >}}
 
-{{< /tab >}}
-{{< tab "A" >}}
+{{% /tab %}}
+{{% tab "A" %}}
 
 We still assume the dipole is pointing in the z-direction and start with spherical coordinates, and then move to a coordinate-free system
 
@@ -304,7 +304,7 @@ So we can directly check this expression against the expression we got as Eqn 3.
 
 So it all checks out.
 
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
     
 
@@ -312,14 +312,14 @@ So it all checks out.
 ### Problem 3.34
 
 {{< tabs "3.34" >}}
-{{< tab "Q" >}}
+{{% tab "Q" %}}
 
 Three point charges are located as shown in Fig 3.38, each a distance _a_ from the origin. Find the approximate electric field at points far from the origin. Express your answer in spherical coordinates, and include the two lowest orders in the multipole expansion.
 
 <p align="center"> <img alt="Figure 3.38" src="/r/img/griffiths/3.38.png" /> </p>
 
-{{< /tab >}}
-{{< tab "A" >}}
+{{% /tab %}}
+{{% tab "A" %}}
 
 We'll get to the electric field by writing down the multipole expansion of the potential, and then using the approximate potential to get the electric field. The total charge is -q, so the monopole term will be
 
@@ -359,6 +359,6 @@ The field is given by
 {{< /katex >}}
 
 
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 

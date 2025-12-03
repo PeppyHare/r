@@ -12,7 +12,7 @@ weight: 2700
 ### Problem 7.7
 
 {{< tabs "7.7" >}}
-{{< tab "Q" >}}
+{{% tab "Q" %}}
 
 A metal bar of mass _m_ slides frictionlessly on two parallel conducting rails a distance _l_ apart. A resistor R is connected across the rails, and a uniform magnetic field __B__ pointing into the page fills the region.
 
@@ -24,8 +24,8 @@ A metal bar of mass _m_ slides frictionlessly on two parallel conducting rails a
 
 (d) The initial kinetic energy of the bar was, of course, \\( 1/2 m v_0 ^2 \\). Check that the energy delivered to the resistor is exactly \\( 1/2 m v_0 ^2 \\)
 
-{{< /tab >}}
-{{< tab "A" >}}
+{{% /tab %}}
+{{% tab "A" %}}
 
 (a) To get the current through the resistor, calculate the flux through the loop:
 
@@ -80,19 +80,19 @@ So energy delivered is
 Hooray!
 
 
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
 
 
 ### Problem 7.34
 
 {{< tabs "7.34" >}}
-{{< tab "Q" >}}
+{{% tab "Q" %}}
 
 A fat wire, radius _a_, carries constant current _I_, uniformly distributed over its cross section. A narrow gap in the wire of width \\( w << a \\) forms a parallel-plate capacitor, as shown. Find the magnetic field in the gap, at a distance \\( s < a \\) from the axis.
 
-{{< /tab >}}
-{{< tab "A" >}}
+{{% /tab %}}
+{{% tab "A" %}}
 
 Within the wire, you can draw an Amperian loop to find B within the wire with 
 
@@ -126,6 +126,6 @@ B(s) = \frac{\mu_0 I}{2 \pi a^2} s \hat{\phi}
 
 
 
-{{< /tab >}}
+{{% /tab %}}
 {{< /tabs >}}
     
