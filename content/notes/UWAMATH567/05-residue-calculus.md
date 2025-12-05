@@ -33,20 +33,19 @@ We call \\( a_{-1} \\) the **residue** at \\( z_0 \\).
 
 Now we can write down the residue theorem:
 
-{{% hint info %}}
-{{< katex display >}}
+> [!IMPORTANT]
+> {{< katex display >}}
 {{< /katex >}}
-**Cauchy's Residue Theorem**
-
-Let \\( C \\) be a simple closed contour within and on which a function \\( f(z) \\) is analytic except for a finite number of isolated singularities \\( z_1, \ldots, z_m  \\). Then
-
-{{< katex display >}}
+> **Cauchy's Residue Theorem**
+> 
+> Let \\( C \\) be a simple closed contour within and on which a function \\( f(z) \\) is analytic except for a finite number of isolated singularities \\( z_1, \ldots, z_m  \\). Then
+> 
+> {{< katex display >}}
 \oint_C f(z) \dd z = 2 \pi i \sum_{n=1} ^m \text{Res}[z_n]
 {{< /katex >}}
+> 
+> where \\( \text{Res}[z_n] \\) is the residue of \\( f(z) \\) at \\( z_n \\).
 
-where \\( \text{Res}[z_n] \\) is the residue of \\( f(z) \\) at \\( z_n \\).
-
-{{% /hint %}}
 
 To make use of this very powerful result to perform contour integrals, the name of the game is completing a contour that properly encloses all singularities while remaining analytic. This is the approach we will take to find residues.
 
@@ -88,22 +87,19 @@ So, the general recipe is: If \\( f(z) \\) has an \\( m^{th} \\) order pole at \
 
 In the case of an essential singularity with infinite order, we have no choice but to find the Laurent series expansion and pick out the \\( a_{-1} \\) term directly. No differentiation tricks will help us there.
 
-{{% hint info %}}
-{{< katex display >}}
+> [!IMPORTANT]
+> {{< katex display >}}
 {{< /katex >}}
-**Residue of rational functions**
-
-This gives us a useful formula to find the residue at a simple pole of \\( z_0 \\) of a rational function
-
-{{< katex display >}}
+> **Residue of rational functions**
+> 
+> This gives us a useful formula to find the residue at a simple pole of \\( z_0 \\) of a rational function
+> 
+> {{< katex display >}}
 f(z) = P(z) / Q(z)
 {{< /katex >}}
-
-where \\( P(z) \\) is analytic and \\( Q(z) \\) has a simple pole at \\( z_0 \\):
-
-{{< katex display >}}
+> 
+> where \\( P(z) \\) is analytic and \\( Q(z) \\) has a simple pole at \\( z_0 \\):
+> 
+> {{< katex display >}}
 \text{Res}(z_0) = \frac{P(z_0)}{Q'(z_0)}
 {{< /katex >}}
-
-{{% /hint %}}
-

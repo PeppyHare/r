@@ -17,14 +17,13 @@ A mapping which preserves the magnitude and sense of the angle between two smoot
 
 <p align="center"> <img alt="conformal-mapping-diagram.png" src="/r/img/aa567/conformal-mapping-diagram.png" /> </p>
 
-{{% hint info %}}
-{{< katex display >}}
+> [!IMPORTANT]
+> {{< katex display >}}
 {{< /katex >}}
-**Theorem**
-
-At each point where \\( w(z) \\) is analytic and \\( w'(z) \neq 0 \\), the mapping \\( w = w(z) \\) is conformal.
-
-{{% /hint %}}
+> **Theorem**
+> 
+> At each point where \\( w(z) \\) is analytic and \\( w'(z) \neq 0 \\), the mapping \\( w = w(z) \\) is conformal.
+> 
 
 We'll come back to prove this later, but that isn't the important part for us.
 

@@ -103,14 +103,14 @@ If we add the electron and ion momentum equations and apply the small electron m
 {{< /katex >}}
 
 
-{{< hint info >}}
-**"MHD Momentum Equation"**
-
-{{< katex display >}}
+> [!NOTE]
+> 
+> **"MHD Momentum Equation"**
+> 
+> {{< katex display >}}
 \rho \left(\pdv{\vec v}{t} + \vec v \cdot \grad \vec v \right) + \grad p - \vec j \cross \vec B = - \div (\vec \Pi _i + \vec \Pi _e)
 {{< /katex >}}
 
-{{< /hint >}}
 
 If we take the electron momentum equation, apply the small electron mass asymptotic approximation and introduce the current density, then we have
 
@@ -126,14 +126,13 @@ Substituting {{< katex >}} \vec R_{ei} = e n_e \eta \vec j {{< /katex >}}
 \vec E + \vec v \cross \vec B = \eta \vec j + \frac{1}{Z e n} \left(\vec j \cross \vec B - \grad p_e - \div \vec \Pi_e \right)
 {{< /katex >}}
 
-{{< hint info >}}
-**"MHD Generalized Ohms Law"**
-
-{{< katex display >}}
+> [!NOTE]
+> 
+> **"MHD Generalized Ohms Law"**
+> 
+> {{< katex display >}}
 \vec E + \vec v \cross \vec B = \eta \vec j + \frac{1}{Z e n} \left(\vec j \cross \vec B - \grad p_e - \div \vec \Pi_e \right)
 {{< /katex >}}
-
-{{< /hint >}}
     
 
 
@@ -212,14 +211,14 @@ Finally we can add the ion energy equation to the electron energy equation to ge
 \frac{\gamma - 1}{\rho^\gamma} \left[ Q_{ie} + Q_{ei} - \div (\vec h_i + \vec h_e) - \vec \pi_i \cdot \cdot \grad \vec v_i - \vec \Pi_e \cdot \cdot \grad \vec v_e \right] + \frac{\vec j}{Z e n} \cdot \grad \frac{p_e}{\rho^\gamma}
 {{< /katex >}}
 
-{{< hint info >}}
-**"MHD Energy Equation"**
-
-{{< katex display >}}
+> [!NOTE]
+> 
+> **"MHD Energy Equation"**
+> 
+> {{< katex display >}}
 \dv{}{t} \left( \frac{p}{\rho^\gamma} \right) = \frac{\gamma - 1}{\rho^\gamma} \left[ Q_{ie} + Q_{ei} - \div (\vec h_i + \vec h_e) - \vec \pi_i \cdot \cdot \grad \vec v_i - \vec \Pi_e \cdot \cdot \grad \vec v_e \right] + \frac{\vec j}{Z e n} \cdot \grad \frac{p_e}{\rho^\gamma}
 {{< /katex >}}
 
-{{< /hint >}} 
 
 Obviously, we've retained a number of terms that are specific to the behavior of the electrons. It is possible to incorporate the electron behavior by using a single-fluid MHD model with two temperatures {{< katex >}} T_i \neq T_e {{< /katex >}}. One can imagine a hierarchy of models, in which the most simplified is the single-fluid MHD model in which you evolve {{< katex >}} \rho {{< /katex >}}, {{< katex >}} \vec v {{< /katex >}}, and {{< katex >}} T {{< /katex >}}. Moving up a level, you have a MHD model with two temperatures in which you evolve {{< katex >}} \rho {{< /katex >}}, {{< katex >}} \vec v {{< /katex >}}, {{< katex >}} T_i {{< /katex >}}, and {{< katex >}} T_e {{< /katex >}}. Upwards from there you move back into the realm of multi-fluid models.
 
@@ -271,14 +270,13 @@ And similarly for electrons
 
 The continuity equation remains unchanged from the extended MHD model
 
-{{< hint info >}}
-**"Ideal MHD Continuity Equation"**
-
-{{< katex display >}}
+> [!NOTE]
+> 
+> **"Ideal MHD Continuity Equation"**
+> 
+> {{< katex display >}}
 \pdv{\rho}{t} + \div (\rho \vec v) = 0
 {{< /katex >}}    
-
-{{< /hint >}}
 
 The momentum equation is
 
@@ -287,14 +285,13 @@ The momentum equation is
 {{< /katex >}}
 Drop the anisotropic pressure
 
-{{< hint info >}}
-**"Ideal MHD Momentum Equation"**
-
-{{< katex display >}}
+> [!NOTE]
+> 
+> **"Ideal MHD Momentum Equation"**
+> 
+> {{< katex display >}}
 \rho \left( \pdv{\vec v}{t} + \vec v \cdot \grad \vec v \right) + \grad p - \vec j \cross \vec B = 0
 {{< /katex >}}
-
-{{< /hint >}}
 
 The generalized Ohm's law is
 
@@ -304,14 +301,13 @@ The generalized Ohm's law is
 
 We're going to drop the entire right hand side
 
-{{< hint info >}}
-**"Ideal MHD Generalized Ohm's Law"**
-
-{{< katex display >}}
+> [!NOTE]
+> 
+> **"Ideal MHD Generalized Ohm's Law"**
+> 
+> {{< katex display >}}
 \vec E + \vec v \cross \vec B = 0
 {{< /katex >}}
-
-{{< /hint >}}
 
 For the energy equation we have
 
@@ -321,14 +317,13 @@ For the energy equation we have
 
 We neglect the entire right-hand side
 
-{{< hint info >}}
-**"Ideal MHD Energy Equation"**
-
-{{< katex display >}}
+> [!NOTE]
+> 
+> **"Ideal MHD Energy Equation"**
+> 
+> {{< katex display >}}
 \pdv{\rho}{t} + \div (p \vec v) = (1 - \gamma) p \div \vec v 
 {{< /katex >}}
-
-{{< /hint >}}
 
 ### Collision/Pressure terms
 

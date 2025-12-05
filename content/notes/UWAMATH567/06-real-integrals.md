@@ -263,33 +263,31 @@ The concept of residue at infinity is quite useful when we integrate rational fu
 {{< /katex >}}
 
 
-{{% hint info %}}
-{{< katex display >}}
+> [!IMPORTANT]
+> {{< katex display >}}
 {{< /katex >}}
-**Theorem**
-
-Let \\( f(z) = N(z) / D(z) \\) be a rational function such that the degree of \\( D(z) \\) exceeds the degree of \\( N(z) \\) by at least two. Then
-
-{{< katex display >}}
+> **Theorem**
+> 
+> Let \\( f(z) = N(z) / D(z) \\) be a rational function such that the degree of \\( D(z) \\) exceeds the degree of \\( N(z) \\) by at least two. Then
+> 
+> {{< katex display >}}
 \lim_{R \rightarrow \infty} \int_{C_R} f(z) \dd z = 0
 {{< /katex >}}
-
-We write
-
-{{< katex display >}}
+> 
+> We write
+> 
+> {{< katex display >}}
 f(z) = \frac{a_n z^n + a_{n-1} z^{n-1} + \ldots + a_1 z + a_0}{b_m z^m + b_{m-1} z^{m-1} + \ldots + b_1 z + b_0}
 {{< /katex >}}
-
-Then, by repeated application of the triangle inequality,
-
-{{< katex display >}}
+> 
+> Then, by repeated application of the triangle inequality,
+> 
+> {{< katex display >}}
 \left| \int_{C_R} f(z) \dd z \right| \leq \int _0 ^\pi (R \dd \theta) \frac{ |a_n| |z|^n + |a_{n-1} | |z| ^{n-1} + \ldots + |a_1| |z| + |a_0|}{|b_m||z|^m - |b_{m-1}| |z| ^{m-1} - \ldots - |b_1| |z| - |b_0|} \\
 = \frac{\pi R(|a_n| R^n + \ldots + |a_0|)}{|b_m| R^m - |b_{m-1}| R^{m-1} - \ldots - |b_0|} \rightarrow _{R \rightarrow \infty} 0
 {{< /katex >}}
-
-since \\( m \geq n + 2 \\)
-
-{{% /hint %}}
+> 
+> since \\( m \geq n + 2 \\)
 
 Some integrals that are closely related to the one described above are of the form
 
@@ -378,44 +376,43 @@ must be made more carefully. We say that \\( f(z) \rightarrow 0 \\) **uniformly*
 
 ### Jordan's Lemma
 
-{{% hint info %}}
-{{< katex display >}}
+> [!IMPORTANT]
+> {{< katex display >}}
 {{< /katex >}}
-**Jordan's Lemma**
-
-Suppose that on the circular arc \\( C_R \\) shown above, we have \\( f(z) \rightarrow 0 \\) uniformly as \\( R \rightarrow \infty \\). Then
-
-{{< katex display >}}
+> **Jordan's Lemma**
+> 
+> Suppose that on the circular arc \\( C_R \\) shown above, we have \\( f(z) \rightarrow 0 \\) uniformly as \\( R \rightarrow \infty \\). Then
+> 
+> {{< katex display >}}
 \lim_{R \rightarrow \infty} \int_{C_R} e^{ikz} f(z) \dd z = 0 \qquad (k > 0)
 {{< /katex >}}
-
-With \\( |f(z)| \leq K_R \\) where \\( K_R \\) is independent of \\( \theta \\) and \\( K_R \rightarrow 0 \\) as \\( R \rightarrow \infty \\),
-
-{{< katex display >}}
+> 
+> With \\( |f(z)| \leq K_R \\) where \\( K_R \\) is independent of \\( \theta \\) and \\( K_R \rightarrow 0 \\) as \\( R \rightarrow \infty \\),
+> 
+> {{< katex display >}}
 I = \left| \int_{C_R} e^{ikz} f(z) \dd z \right| \leq \int_{0} ^\pi e^{-ky} K_R R \dd \theta
 {{< /katex >}}
-
-using \\( y = R \sin \theta \\) and \\( \sin(\pi - \theta) = \sin \theta \\)
-
-{{< katex display >}}
+> 
+> using \\( y = R \sin \theta \\) and \\( \sin(\pi - \theta) = \sin \theta \\)
+> 
+> {{< katex display >}}
 \int_0 ^\pi e^{-ky} \dd \theta = \int_{0}^\pi e^{-kR \sin \theta} \dd \theta = 2 \int_0 ^{\pi / 2} e^{-k R \sin \theta} \dd \theta
 {{< /katex >}}
-
-But in the region \\( 0 \leq \theta \leq \pi / 2 \\) we also have the estimate \\( \sin \theta \geq 2 \theta / \pi \\)
-
-<p align="center"> <img alt="jordan-lemma-1.png" src="/r/img/aa567/jordan-lemma-1.png" /> </p>
-
-Thus
-
-{{< katex display >}}
+> 
+> But in the region \\( 0 \leq \theta \leq \pi / 2 \\) we also have the estimate \\( \sin \theta \geq 2 \theta / \pi \\)
+> 
+> <p align="center"> <img alt="jordan-lemma-1.png" src="/r/img/aa567/jordan-lemma-1.png" /> </p>
+> 
+> Thus
+> 
+> {{< katex display >}}
 I \leq 2 K_R R \int_0 ^{\pi / 2} e ^{-2 k R \theta / \pi} \dd \theta = \frac{2 K_R R \pi}{2kR} (1 - e^{-kR})
 {{< /katex >}}
-
-and \\( I \rightarrow 0 \\) as \\( R \rightarrow \infty \\) because \\( K_R \rightarrow 0 \\)
-
-We note that if \\( k < 0 \\), a similar result holds for the contour in the lower half plane. Moreover, by simply rotating the contour, Jordan's lemma applies to the cases \\( k = il, l \neq 0 \\). Consequently, the result \\( I_{3+} = I_1 + i I_2 = 2 \pi i \sum_{j=1}^N \text{Res} (f(z) e^{ikz}; z_j) \\) follows whenever Jordan's lemma applies.
-
-{{% /hint %}}
+> 
+> and \\( I \rightarrow 0 \\) as \\( R \rightarrow \infty \\) because \\( K_R \rightarrow 0 \\)
+> 
+> We note that if \\( k < 0 \\), a similar result holds for the contour in the lower half plane. Moreover, by simply rotating the contour, Jordan's lemma applies to the cases \\( k = il, l \neq 0 \\). Consequently, the result \\( I_{3+} = I_1 + i I_2 = 2 \pi i \sum_{j=1}^N \text{Res} (f(z) e^{ikz}; z_j) \\) follows whenever Jordan's lemma applies.
+> 
 
 Let's see this in action in an example:
 
@@ -566,20 +563,18 @@ So the principal value is equal to the indented contour integral, plus half the 
 
 With this, we can write down a modified residue theorem for the principle value integral:
 
-{{% hint info %}}
-{{< katex display >}}
+
+> [!IMPORTANT]
+> {{< katex display >}}
 {{< /katex >}}
-**Modified Residue Theorem**
-
-If \\( f(z) \\) has poles inside and on \\( C \\), then
-
-{{< katex display >}}
+> **Modified Residue Theorem**
+> 
+> If \\( f(z) \\) has poles inside and on \\( C \\), then
+> 
+> {{< katex display >}}
 P \oint_C f(z) \dd z = 2 \pi i \sum \text{Res}(f(z); z_0 \text{ inside } C) + \pi i \sum \text{Res}(f(z); z_0 \text{ on } C)
 {{< /katex >}}
-
-{{% /hint %}}
-
-This is only possible if the poles on \\( C \\) are simple poles, otherwise the bump contour integral goes to infinity.
+> This is only possible if the poles on \\( C \\) are simple poles, otherwise the bump contour integral goes to infinity.
 
 These improper integrals also come up in inverse Laplace transforms, but generally they appear there if we have missed some physical constraint such as causality (e.g. the function you're transforming is assumed to be 0 for all time before \\( t = 0 \\), in order for the transform to be valid).) Improper integrals can also appear in physics PDEs if we ignore viscosity. But we'll find if we put even a little bit of viscosity back in, the singularity moves just off the contour and we see that everything is actually fine.
 

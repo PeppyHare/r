@@ -84,35 +84,33 @@ Quaternions do not have commutative multiplication.
 
 The **triangle inequality** will come up very often.
 
-{{% hint info %}}
-{{< katex display >}}
+> [!IMPORTANT]
+> {{< katex display >}}
 {{< /katex >}}
-**Theorem 1.1**
-
-For any \\( z_1, z_2 \in \Complex \\) we have
-
-{{< katex display >}}
+> **Theorem 1.1**
+> 
+> For any \\( z_1, z_2 \in \Complex \\) we have
+> 
+> {{< katex display >}}
 \abs{z_1 + z_2} \leq \abs{z_1} + \abs{z_2} \qquad (i)
 {{< /katex >}}
-
-{{< katex display >}}
+> 
+> {{< katex display >}}
 \abs{z_1 - z_2} \geq \abs{\abs{z_1} - \abs{z_2}} \qquad (ii)
 {{< /katex >}}
-
-**Proof**
-
-We prove (i) first. Consider
-
-{{< katex display >}}
+> 
+> **Proof**
+> 
+> We prove (i) first. Consider
+> 
+> {{< katex display >}}
 |z_1 + z_2| ^2 - (|z_1| + |z_2|^2) = \cancel{|z_1|^2} + \cancel{|z_2|^2} + z_1 \overline{z_2} + \overline{z_1} z_2 - \cancel{|z_1|^2} - \cancel{|z_2|^2} - 2 |z_1| |z_2| \\
 = z_1 \overline{z_2} + \overline{z_1 \overline{z_2}} - 2 |z_1| |\overline{z_2}| \\
 = 2 (Re(z_1 \overline{z_2}) - |z_1 \overline{z_2}|) \\
 \geq 0
 {{< /katex >}}
-
-It follows that \\( |z_1 + z_2| - |z_1| \geq |z_2| \\) . Let \\( w_1 \colonequals z_1 + z_2 \\) and \\( w_2 \colonequals z_1 \\). Then the first inequality becomes \\( |w_1| - |w_2| \leq |w_1 - w_2| \\). Similarly, by switching the indices, we get \\( |w_2| - |w_1| \leq |w_2 - w_1| \\). These results combined give (ii).
-
-{{% /hint %}}
+> 
+> It follows that \\( |z_1 + z_2| - |z_1| \geq |z_2| \\) . Let \\( w_1 \colonequals z_1 + z_2 \\) and \\( w_2 \colonequals z_1 \\). Then the first inequality becomes \\( |w_1| - |w_2| \leq |w_1 - w_2| \\). Similarly, by switching the indices, we get \\( |w_2| - |w_1| \leq |w_2 - w_1| \\). These results combined give (ii).
 
 The triangle inequality is generalized to
 
@@ -243,23 +241,22 @@ f'(z_0) = \lim_{z \rightarrow z_0} \frac{f(z) - f(z_0)}{z - z_0}
 
 The funciton \\( f(z) \\) is differentiable in a region if its derivative at every point in the region is defined.
 
-{{% hint info %}}
-{{< katex display >}}
+> [!IMPORTANT]
+> {{< katex display >}}
 {{< /katex >}}
-**Theorem**
-
-If \\( f(z) \\) is differentiable at \\( z_0 \\) then \\( f(z) \\) is continuous at \\( z_0 \\)
-
-**Proof**
-
-{{< katex display >}}
+> **Theorem**
+> 
+> If \\( f(z) \\) is differentiable at \\( z_0 \\) then \\( f(z) \\) is continuous at \\( z_0 \\)
+> 
+> **Proof**
+> 
+> {{< katex display >}}
 \lim_{z \rightarrow z_0} (f(z) - f(z_0)) = \lim_{z \rightarrow z_0} \left( \frac{f(z) - f(z_0)}{z - z_0} \right) (z - z_0) \\
 = \lim_{z \rightarrow z_0} \left( \frac{f(z) - f(z_0)}{z - z_0} \right) \lim_{z \rightarrow z_0} (z - z_0) \\
 = f'(z_0) \cdot 0 \\
  = 0
 {{< /katex >}}
 
-{{% /hint %}}
 
 For many features of complex functions, it suffices to repeat the proof in the real case in \\( \Reals \\). But there are some important consequences of being in two dimensions. As an example, consider \\( f(z) = \overline{z} \\). We know that this function is continuous for every \\( z_0 \in \Complex \\). However
 
@@ -298,4 +295,3 @@ And the regular differentiation formulae work for the elementary functions we de
 \frac{d}{dz} \sin z = \cos z \\
 \frac{d}{dz} \cos z = - \sin z
 {{< /katex >}}
-

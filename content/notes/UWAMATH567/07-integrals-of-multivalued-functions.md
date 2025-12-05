@@ -238,22 +238,19 @@ I = - \sum \text{Res} \frac{\ln(z)}{z^2 + 3z + 2} = - \frac{\ln (e^{\pi i})}{-1}
 
 To generalize this:
 
-{{% hint info %}}
-{{< katex display >}}
-{{< /katex >}}
-**Computing one-sided improper integrals with \\( \ln (z) \\)**
-
-{{< katex display >}}
+> [!NOTE]
+> 
+> **Computing one-sided improper integrals with \\( \ln (z) \\)**
+> 
+> {{< katex display >}}
 I = \int _0 ^\infty f(x) \dd x = - \sum_{z_j} \text{Res}[ f(z) \ln (z); z_j]
 {{< /katex >}}
-
-where \\( 0 \leq \text{arg}(z) < 2 \pi \\) and \\( z_j \\) are the poles of \\( f(z) \\) which do not lie on the positive real axis or the origin, and
-
-{{< katex display >}}
+> 
+> where \\( 0 \leq \text{arg}(z) < 2 \pi \\) and \\( z_j \\) are the poles of \\( f(z) \\) which do not lie on the positive real axis or the origin, and
+> 
+> {{< katex display >}}
 |z^{1 + \epsilon} f(z) | \rightarrow 0 \text{ as } R \rightarrow \infty, \epsilon > 0
 {{< /katex >}}
-
-{{% /hint %}}
 
 Suppose \\( f(x) \\) itself contains a \\( \ln(x) \\):
 

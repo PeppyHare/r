@@ -17,17 +17,23 @@ f'(z) = \lim_{h \rightarrow 0} \frac{f(z + h) - f(z)}{h}
 
 exists.
 
-### Definition: **analytic**
+> [!NOTE]
+> 
+> 
+> ### Definition: **analytic**
+> 
+> The function \\( f(z) \\) is **analytic** at \\( z_0 \\) if \\( f(z) \\) is single-valued and is differentiable in a neighborhood of \\( z_0 \\). The function \\( f(z) \\)  is analytic in an open set \\( S \\)  if it is analytic at every point of \\( S \\).
+> 
+> Example: \\( e^z \\) is analytic in \\( \Complex \\). The function \\( 1/z^2 \\) is analytic in \\( \Complex \\) except at z = 0.
 
-The function \\( f(z) \\) is **analytic** at \\( z_0 \\) if \\( f(z) \\) is single-valued and is differentiable in a neighborhood of \\( z_0 \\). The function \\( f(z) \\)  is analytic in an open set \\( S \\)  if it is analytic at every point of \\( S \\).
-
-Example: \\( e^z \\) is analytic in \\( \Complex \\). The function \\( 1/z^2 \\) is analytic in \\( \Complex \\) except at z = 0.
-
-### Definition: **entire**
-
-The function \\( f(z) \\) is **entire** if \\( f(z) \\) is analytic in \\( \Complex \\).
-
-Thus, the exponential is an entire function.
+> [!NOTE]
+> 
+> 
+> ### Definition: **entire**
+> 
+> The function \\( f(z) \\) is **entire** if \\( f(z) \\) is analytic in \\( \Complex \\).
+> 
+> Thus, the exponential is an entire function.
 
 As we saw before, \\( f(z) = z^\star \\) is not differentiable anywhere
 
@@ -114,38 +120,36 @@ A function that satisfies Laplace's equation is called **harmonic**. Thus both t
 
 Next we show that the Cauchy-Riemann conditions are not only necessary conditions from analyticity, they are also sufficient.
 
-{{% hint info %}}
-{{< katex display >}}
-{{< /katex >}}
-**Theorem**
-
-The function \\( f(z) = u(x, y) + iv(x, y) \\) is analytic at \\( x + iy \\) if and only if \\( u_x, v_x, u_y \\) and \\( v_y \\) are continuous and satisfy the Cauchy-Riemann conditions.
-
-**Proof**
-
-We've already proven that the conditions are necessary. To prove sufficiency, we have
-
-{{< katex display >}}
+> [!IMPORTANT]
+> 
+> **Theorem**
+> 
+> The function \\( f(z) = u(x, y) + iv(x, y) \\) is analytic at \\( x + iy \\) if and only if \\( u_x, v_x, u_y \\) and \\( v_y \\) are continuous and satisfy the Cauchy-Riemann conditions.
+> 
+> **Proof**
+> 
+> We've already proven that the conditions are necessary. To prove sufficiency, we have
+> 
+> {{< katex display >}}
 \Delta u = u_x \Delta x + u_y \Delta y + \epsilon_1 |\Delta z| \\
 \Delta v = v_x \Delta x + v_y \Delta y + \epsilon_2 |\Delta z|
 {{< /katex >}}
-
-where \\( |\Delta z| = \sqrt{(\Delta x)^2 + (\Delta y)^2} \\) and \\( \lim_{\Delta z \rightarrow 0} \epsilon_{1, 2} = 0 \\).
-
-{{< katex display >}}
+> 
+> where \\( |\Delta z| = \sqrt{(\Delta x)^2 + (\Delta y)^2} \\) and \\( \lim_{\Delta z \rightarrow 0} \epsilon_{1, 2} = 0 \\).
+> 
+> {{< katex display >}}
 \frac{\Delta f}{\Delta z} = \frac{\Delta u + i \Delta v}{\Delta z} \\
 = \frac{u_x \Delta x + u_y \Delta y + i v_x \Delta x + i v_y \Delta y + \epsilon_1|\Delta z| + i \epsilon_2 |\Delta z|}{\Delta z} \\
 = \frac{(u_x + i v_x)\Delta x - v_x \Delta y + i u_x \Delta y + \epsilon_1 |\Delta z| + i \epsilon_2 |\Delta z|}{\Delta z} \\
 = \frac{(u_x + i v_x)(\Delta x + i \Delta y)}{\Delta z} + (\epsilon_1 + i \epsilon_2)\frac{|\Delta z|}{\Delta z}
 {{< /katex >}}
-
-where we have used the Cauchy-Riemann conditions. Let \\( \Delta z = \epsilon e^{i \theta} \\). then
-
-{{< katex display >}}
+> 
+> where we have used the Cauchy-Riemann conditions. Let \\( \Delta z = \epsilon e^{i \theta} \\). then
+> 
+> {{< katex display >}}
 \lim_{\Delta z \rightarrow 0} \frac{\Delta f}{\Delta z} = u_x + i v_x + \lim_{\Delta z \rightarrow 0} (\epsilon_1 + i \epsilon_2) e^{-i \theta} = f'(z)
 {{< /katex >}}
 
-{{% /hint %}}
 
 ## Integration
 
@@ -203,52 +207,48 @@ Going back to our closed contour integral in the complex plane,
 
 These integrals are both zero if the function is analytic on the domain enclosed, by the Cauchy-Riemann condition. That brings us to Cauchy's theorem:
 
-{{% hint info %}}
-{{< katex display >}}
-{{< /katex >}}
-**Cauchy's Theorem**
-
-If \\( f(z) \\) is analytic inside and on a simple closed curve \\( C \\), then
-
-{{< katex display >}}
+> [!IMPORTANT]
+> 
+> **Cauchy's Theorem**
+> 
+> If \\( f(z) \\) is analytic inside and on a simple closed curve \\( C \\), then
+> 
+> {{< katex display >}}
 \oint_C f(z) \dd z = 0
 {{< /katex >}}
 
-{{% /hint %}}
 
 This is important because it gives us path independence. If \\( f \\) is analytic, it doesn't matter what direction we take \\( C \\)  as long as the path can be deformed from \\( C \\) without leaving the region of analyticity. This is because the difference between two such paths is a closed contour integral. This is very useful for turning a nasty contour into a simple one.
 
-{{% hint info %}}
-{{< katex display >}}
-{{< /katex >}}
-**Theorem**
-
-The integral of an analytic function is also an analytic function of its upper limit
-
-{{< katex display >}}
+> [!IMPORTANT]
+> 
+> **Theorem**
+> 
+> The integral of an analytic function is also an analytic function of its upper limit
+> 
+> {{< katex display >}}
 F(z) = \int_{z_0} ^z f(z') \dd z'
 {{< /katex >}}
-
-We get this by showing that \\( \frac{d}{dz} F \\) exists independent of \\( \Delta z \\)
-
-{{< katex display >}}
+> 
+> We get this by showing that \\( \frac{d}{dz} F \\) exists independent of \\( \Delta z \\)
+> 
+> {{< katex display >}}
 \dv{F}{z} = \lim_{\Delta z \rightarrow 0} \frac{F(z + \Delta z) - F(z)}{\Delta z} \\
 = \lim_{\Delta z \rightarrow 0} \frac{1}{\Delta z} \int_z ^{z + \Delta z} f(z') \dd z'
 {{< /katex >}}
-
-Consider
-
-{{< katex display >}}
+> 
+> Consider
+> 
+> {{< katex display >}}
 \frac{1}{\Delta z} \int _z ^{z + \Delta z} f(z) \dd z' = \frac{f(z) \Delta z}{\Delta z} = f(z)
 {{< /katex >}}
-
-
-{{< katex display >}}
+> 
+> 
+> {{< katex display >}}
 \frac{F(z + \Delta z) - F(z)}{\Delta z} - f(z) = \frac{1}{\Delta z} \int_z ^{z + \Delta z} \left[ f(z') - f(z) \right] \dd z = 0 \quad \text{as} \quad \Delta z \rightarrow 0
 {{< /katex >}}
-Since \\( f \\)  is continuous, \\( |f(z') - f(z) | < \epsilon \\) if \\( \Delta z < \delta> \\). So we've shown that \\( \dv{F}{z} = f(z) \\) . Since this derivative exists, it is an analytic function.
+> Since \\( f \\)  is continuous, \\( |f(z') - f(z) | < \epsilon \\) if \\( \Delta z < \delta> \\). So we've shown that \\( \dv{F}{z} = f(z) \\) . Since this derivative exists, it is an analytic function.
 
-{{% /hint %}}
 
 Let's do some examples:
 
@@ -309,44 +309,42 @@ This neat trick will give us the residue theorem.
 
 In this course, we tend to skip proofs of some formulas that are not that useful in practice, but are mostly useful for proving theorems. This one is a bit of both:
 
-{{% hint info %}}
-{{< katex display >}}
+> [!IMPORTANT]
+> {{< katex display >}}
 {{< /katex >}}
-**Theorem**
-
-Let \\( f(z) \\) be analytic. Then \\( f(z)/(z - \xi) \\) is analytic except at \\( z = \xi \\)
-
-To get \\( \oint_C \frac{f(z)}{z - \xi} \dd z \\) we move the contour to a circle centered at \\( \xi \\) with radius \\( \rho \\)
-
-{{< katex display >}}
+> **Theorem**
+> 
+> Let \\( f(z) \\) be analytic. Then \\( f(z)/(z - \xi) \\) is analytic except at \\( z = \xi \\)
+> 
+> To get \\( \oint_C \frac{f(z)}{z - \xi} \dd z \\) we move the contour to a circle centered at \\( \xi \\) with radius \\( \rho \\)
+> 
+> {{< katex display >}}
 z - \xi = \rho e^{i \theta}
 {{< /katex >}}
-
-{{< katex display >}}
+> 
+> {{< katex display >}}
 \oint_C \frac{f(z)}{z - \xi} \dd z = \int _{0} ^{2 \pi} \frac{f(\xi + \rho e^{i \theta}) i \rho e^{i \theta} \dd \theta}{\rho e^{i \theta}}
 {{< /katex >}}
-{{< katex display >}}
+> {{< katex display >}}
 = \int_0 ^{2 \pi} f(\xi + \rho e^{i \theta}) i \dd \theta
 {{< /katex >}}
-We can take \\( \rho \\) approaching zero
-
-{{< katex display >}}
+> We can take \\( \rho \\) approaching zero
+> 
+> {{< katex display >}}
 \rightarrow \int_0 ^{2 \pi} f(\xi) i \dd \theta = 2 \pi i f(\xi)
 {{< /katex >}}
-
-Turning this around, we get **Cauchy's integral formula**:
-
-{{< katex display >}}
+> 
+> Turning this around, we get **Cauchy's integral formula**:
+> 
+> {{< katex display >}}
 f(\xi) = \frac{1}{2 \pi i} \oint_C \frac{f(z) \dd z}{z - \xi} \quad \text{ if }\xi\text{ is inside }C
 {{< /katex >}}
-
-or, turning it the other way,
-
-{{< katex display >}}
+> 
+> or, turning it the other way,
+> 
+> {{< katex display >}}
 f(z) = \frac{1}{2 \pi i} \oint _C \frac{f(\xi) \dd \xi}{\xi - z}
 {{< /katex >}}
-
-{{% /hint %}}
 
 Looking at this expression, it tells us that if \\( f(z) \\) is known at the boundaries (on the contour \\( C \\)), then \\( f(z) \\) is known in the interior. The boundary value entirely determines the function's value. This is the case for analytic functions because they are solutiosn of Laplace's equation, which has the property that it is completely determined by its boundary condition.
 

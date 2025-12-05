@@ -62,64 +62,60 @@ This converges, but \\( \sum_{n=1} ^{\infty} \frac{1}{n} \\) does not.
 
 A complex series \\( \sum_{n=0} ^{\infty} c_n \\) is convergent if \\( \sum_{n=0} ^{\infty} |c_n| \\) is convergent. We can compare the absolute convergence with \\( \sum_{n=0} ^{\infty} r^n \\). \\( \sum_{n=0}^{\infty} |c_n| \\) is convergent if \\( \left| \frac{c_{n+1}}{c_n} \right| < 1 \\) by the same principle.
 
-{{% hint info %}}
-{{< katex display >}}
+> [!IMPORTANT]
+> {{< katex display >}}
 {{< /katex >}}
-**Comparison test**
-
-Suppose the series \\( \sum_{n=0} ^\infty a_n (z - z_0)^n \\) is convergent for \\( |z - z_0| < R \\). Then if for \\( n \geq N \\) we can show that
-
-{{< katex display >}}
+> **Comparison test**
+> 
+> Suppose the series \\( \sum_{n=0} ^\infty a_n (z - z_0)^n \\) is convergent for \\( |z - z_0| < R \\). Then if for \\( n \geq N \\) we can show that
+> 
+> {{< katex display >}}
 |b_n| \leq |a_n|
 {{< /katex >}}
+> 
+> then the series \\( \sum_{n=0} ^\infty b_n(z - z_0)^n \\) is also convergent for \\( |z - z_0| < R \\)
 
-then the series \\( \sum_{n=0} ^\infty b_n(z - z_0)^n \\) is also convergent for \\( |z - z_0| < R \\)
-
-{{% /hint %}}
 
 ## Cauchy-Taylor theorem
 
-{{% hint info %}}
-{{< katex display >}}
+> [!IMPORTANT]
+> {{< katex display >}}
 {{< /katex >}}
-**Cauchy-Taylor theorem**
-
-If \\( f(z) \\) is analytic throughout the circular disk \\( |z - z_0| < R> \\) , then it can be expanded in a Taylor series about the point \\( z_0 \\), and that series is convergent everywhere inside the disk.
-
-{{< katex display >}}
+> **Cauchy-Taylor theorem**
+> 
+> If \\( f(z) \\) is analytic throughout the circular disk \\( |z - z_0| < R> \\) , then it can be expanded in a Taylor series about the point \\( z_0 \\), and that series is convergent everywhere inside the disk.
+> 
+> {{< katex display >}}
 f(z) = \sum_{n=0} ^\infty A_n (z - z_0)^n \qquad A_n = \frac{f^{(n)}(z_0)}{n!} = \frac{1}{2 \pi i} \oint_C \frac{f(\xi) \dd \xi}{(\xi - z_0)^{n+1}}
 {{< /katex >}}
-
-**Proof**
-
-Starting with the Cauchy integral formula,
-
-{{< katex display >}}
+> 
+> **Proof**
+> 
+> Starting with the Cauchy integral formula,
+> 
+> {{< katex display >}}
 f(z) = \oint_C \frac{1}{2 \pi i} \frac{f(\xi) \dd \xi}{\xi - z}
 {{< /katex >}}
-
-We take \\( C \\) to be the biggest circle centered at \\( z_0 \\) on and inside which \\( f(\xi) \\) is analytic. Then, we expand the denominator about \\( z_0 \\).
-
-{{< katex display >}}
+> 
+> We take \\( C \\) to be the biggest circle centered at \\( z_0 \\) on and inside which \\( f(\xi) \\) is analytic. Then, we expand the denominator about \\( z_0 \\).
+> 
+> {{< katex display >}}
 \frac{1}{\xi - z} = \frac{1}{(\xi - z_0) - (z - z_0)} \\
 = \frac{1}{(\xi - z_0)(1 - \frac{z - z_0}{\xi - z_0})} \\
 = \frac{1}{(\xi - z_0)}\frac{1}{1 - r} \qquad r \equiv \frac{z - z_0}{\xi - z_0}
 {{< /katex >}}
-
-We've shown that for \\( |r | < 1 \\) the geometric series holds for \\( \frac{1}{1 - r} = \sum_{n=0} ^\infty r^n \\). Along the contour, \\( |z - z_0| < |\xi - z_0| = R \\). Changing the order of integration and summation,
-
-{{< katex display >}}
+> 
+> We've shown that for \\( |r | < 1 \\) the geometric series holds for \\( \frac{1}{1 - r} = \sum_{n=0} ^\infty r^n \\). Along the contour, \\( |z - z_0| < |\xi - z_0| = R \\). Changing the order of integration and summation,
+> 
+> {{< katex display >}}
 f(z) = \frac{1}{2 \pi i} \sum_{n=0} ^\infty \oint_C \frac{f(\xi) \dd \xi (z - z_0)^n}{(\xi - z_0)^{n+1}} \\
 = \frac{1}{2\pi i} \sum_{n=0} ^\infty \frac{2 \pi i f^{(n)}(z_0)}{n!}\\
 = \sum_{n=0} ^\infty A_n (z - z_0)^n \qquad |z - z_0 | < R
 {{< /katex >}}
-
-This gives us our series.
+> 
+> This gives us our series.
 
 (note: we can integrate term by term since the geometric series converges _uniformly_.)
-
-{{% /hint %}}
-
 The addition to the normal Taylor series we're used to is the aspect of convergence. If we want to expand about \\( z_0 \\), we can expand the radius of convergenze (where the series converges) out from \\( z_0 \\) as far as we want until we hit a point where \\( f(z) \\) is no longer analytic. That is the only thing that determines the radius of convergence.
 
 For example, looking at \\( \frac{1}{1 - z} = 1 + z + z^2 + \ldots  \\) we can say that the series converges for \\( |z| < 1 \\) because it has a singularity at \\( z = 1 \\).

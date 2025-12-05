@@ -19,4 +19,3 @@ Course notes from AA545 at the University of Washington, Seattle
   - [Fluid Models for Plasmas](06-fluid-models.md)
   - [Finite Difference Methods for MHD](07-finite-difference-models.md)
   - [MHD Equilibrium Calculations](08-mhd-equilibrium.md)
-  - [Formulary](formulary.md)

@@ -30,8 +30,8 @@ Building the `warpxm` executable itself is the most important part. It is a C++ 
 - HDF5: Library used to read & write HDF5-formatted simulation data to disk.
 - METIS: Graph and mesh partitioning library.
 
-{{< hint info >}}
-**Mac OS**
+{{< tabs >}}
+{{% tab "MacOS" %}}
 
 In my experience, the simplest way to install the required dependencies (especially on the newer M1/M2 Apple architecture) is to simply use the pre-packaged [Homebrew](https://brew.sh/) formulas to install the required dependencies at the system level:
 
@@ -53,9 +53,9 @@ That's it, all of the C++/CMake dependencies are now installed at the system lev
 
 {{< /details >}}
 
-{{< /hint >}}
+{{% /tab %}}
 
-{{< hint info >}}
+{{% tab "Ubuntu Linux" %}}
 **Ubuntu Linux**
 
 There are two general types of installation you can try:
@@ -126,8 +126,8 @@ sudo make PETSC_DIR="$PETSC_DIR" PETSC_ARCH=arch-linux-c-opt install
 You can follow the [Pre-install setup for Ubuntu Linux desktop instructions for on the wiki](http://faculty.washington.edu/shumlak/WARPX/html/install.html) to install `openmpi`, `cmake`, and `libblas` from the apt package repositories, then get PETSc to download and install the rest to your own home directory, using the `--prefix=$HOME/usr` flag when configuring PETSc.
 
 {{< /details >}}
-
-{{< /hint >}}
+{{% /tab %}}
+{{< /tabs >}}
 
 ## Prerequisites: Warpy
 

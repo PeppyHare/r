@@ -226,10 +226,9 @@ F_r = p S_{outer} - p S_{inner} \\
 \sim p (R_0 + a) a - p (R_0 - a) a \sim 2 a^2 p
 {{< /katex >}}
 
-{{< hint info >}}
-**"Missing content here on how to balance radial forces for purely poloidal fields (axisymmetric) with a conducting wall"**
-{{< /hint >}}
-
+> [!NOTE]
+> 
+> **"Missing content here on how to balance radial forces for purely poloidal fields (axisymmetric) with a conducting wall"**
 
 Alternatively, we can use vertical external field coils to increase the field strength near the outer wall. They will also tend to center the plasma between the coils, so they have the advantage of preventing the plasma from drifting upwards or downwards
 

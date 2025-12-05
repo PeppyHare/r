@@ -19,4 +19,3 @@ Course notes from AA560 at the University of Washington, Seattle
   - [Spectroscopic Measurements](06-spectroscopic-measurements.md)
   - [Student Lectures](90-student-lectures.md)
   - [Zeeman Spectroscopy](91-zeeman-spectroscopy.md) 
-  - [Formulary](formulary.md)

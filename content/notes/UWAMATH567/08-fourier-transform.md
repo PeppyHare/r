@@ -11,39 +11,35 @@ weight: 80
 
 It's good to start out with the definition of a Fourier transform:
 
-{{% hint info %}}
-{{< katex display >}}
-{{< /katex >}}
-**Fourier Transform**
-
-{{< katex display >}}
+> [!NOTE]
+> 
+> **Fourier Transform**
+> 
+> {{< katex display >}}
 \mathcal{F}(f(t)) \equiv F(\lambda) \equiv \int_{-\infty}^{\infty}e^{i \lambda t} f(t) \dd t
 {{< /katex >}}
-
-Note: \\( t \\) does not necessarily denote time, as it generally does in the Laplace transform. It's just a dummy variable in the integration and is often a spatial coordinate.
-
-To recover \\( f(t) \\) we also have the inverse Fourier transform
-
-{{< katex display >}}
+> 
+> Note: \\( t \\) does not necessarily denote time, as it generally does in the Laplace transform. It's just a dummy variable in the integration and is often a spatial coordinate.
+> 
+> To recover \\( f(t) \\) we also have the inverse Fourier transform
+> 
+> {{< katex display >}}
 f(t) = \mathcal{F} ^{-1} (F(\lambda)) = \frac{1}{2 \pi} \int_{-\infty}^{\infty}e^{- i \lambda t} F(\lambda) \dd \lambda
 {{< /katex >}}
 
-{{% /hint %}}
-
-{{% hint info %}}
-{{< katex display >}}
+> [!IMPORTANT]
+> {{< katex display >}}
 {{< /katex >}}
-**Fourier's Theorem**
-
-This is what gives us the ability to write down the inverse transform. We won't derive the theorem here since that is usually done in an earlier course. The general approach starts with the Fourier series expansion and takes the limit to converge to the Riemann sum of the integral. The theorem states:
-
-{{< katex display >}}
+> **Fourier's Theorem**
+> 
+> This is what gives us the ability to write down the inverse transform. We won't derive the theorem here since that is usually done in an earlier course. The general approach starts with the Fourier series expansion and takes the limit to converge to the Riemann sum of the integral. The theorem states:
+> 
+> {{< katex display >}}
 f(t) = \frac{1}{2 \pi} \int_{-\infty}^{\infty} \dd \lambda \int_{-\infty}^{\infty}\dd \tau e^{i \lambda ( \tau - t)} f(\tau)
 {{< /katex >}}
+> 
+> This is valid for any piecewise smooth \\( f(t) \\) which is integrable.
 
-This is valid for any piecewise smooth \\( f(t) \\) which is integrable.
-
-{{% /hint %}}
 
 If we think about it, it's amazing that we can recover \\( f(t) \\) after all of that. The key is that \\( e^{i \lambda t}, e^{-i \lambda t} \\) form a complete, orthogonal basis for all piecewise smooth integrable functions.
 
@@ -192,9 +188,12 @@ In this case, we should not just take the principal value integral because integ
 
 We all know \\( \mathcal{L} \\) from our undergrad differential equations or electronics classes, but we never got the inverse transform back then, so let's fill in that gap.
 
-The Laplace transform is the same as the one-sided Fourier transform with \\( -i \lambda \\) replaced by \\( s \\) (or \\( -s = + i \lambda \\) )
 
-{{< katex display >}}
+> [!NOTE]
+> 
+> The Laplace transform is the same as the one-sided Fourier transform with \\( -i \lambda \\) replaced by \\( s \\) (or \\( -s = + i \lambda \\) )
+> 
+> {{< katex display >}}
 \hat{f}(s) = \mathcal{L} [f(t)] = \int _0 ^{\infty} e^{- s t} f(t) \dd t = F(is) = F(\lambda)
 {{< /katex >}}
 
