@@ -43,110 +43,10 @@
  \[\]
 &lt;/span&gt;
 
-&lt;p&gt;TODO: Fill this in with a high level description after we&amp;rsquo;ve gotten through the course materials.&lt;/p&gt;</description></item><item><title>Complex Numbers</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/02-complex-numbers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/02-complex-numbers/</guid><description>&lt;span&gt;
- \[\]
-&lt;/span&gt;
-
-&lt;p&gt;We enter the topic of complex analysis through the usual lens: trying to take rational powers of real numbers. Within the domain of real numbers, \( (-1)^{1/2} \) is not defined. It turns out that if we deal with this example, we create a number system that is closed under rational powers. We define&lt;/p&gt;
-&lt;span&gt;
- \[i \equiv \sqrt{-1}\]
-&lt;/span&gt;
-
-&lt;p&gt;so that \( i^2 = -1 \).&lt;/p&gt;
-&lt;p&gt;A &lt;strong&gt;complex number&lt;/strong&gt; is any expression of the form&lt;/p&gt;</description></item><item><title>Analytic Functions and Integration</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/03-analytic-functions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/03-analytic-functions/</guid><description>&lt;span&gt;
- \[\]
-&lt;/span&gt;
-
-&lt;h2 id="analytic-functions"&gt;
- Analytic Functions
- &lt;a class="anchor" href="#analytic-functions"&gt;#&lt;/a&gt;
-&lt;/h2&gt;
-&lt;p&gt;We have seen that \( f(z) \) is differentiable at \( z \) if the limit&lt;/p&gt;
-&lt;span&gt;
- \[f&amp;#39;(z) = \lim_{h \rightarrow 0} \frac{f(z &amp;#43; h) - f(z)}{h}\]
-&lt;/span&gt;
-
-&lt;p&gt;exists.&lt;/p&gt;
-&lt;h3 id="definition-analytic"&gt;
- Definition: &lt;strong&gt;analytic&lt;/strong&gt;
- &lt;a class="anchor" href="#definition-analytic"&gt;#&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;The function \( f(z) \) is &lt;strong&gt;analytic&lt;/strong&gt; at \( z_0 \) if \( f(z) \) is single-valued and is differentiable in a neighborhood of \( z_0 \). The function \( f(z) \) is analytic in an open set \( S \) if it is analytic at every point of \( S \).&lt;/p&gt;</description></item><item><title>Sequences, series, and singularities</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/04-series/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/04-series/</guid><description>&lt;span&gt;
- \[\]
-&lt;/span&gt;
-
-&lt;h1 id="series"&gt;
- Series
- &lt;a class="anchor" href="#series"&gt;#&lt;/a&gt;
-&lt;/h1&gt;
-&lt;p&gt;If we talk to a pure mathematician about series, things can get very complicated, so in this course we will do things starting from a series that we should find very familiar: the geometric series&lt;/p&gt;
-&lt;span&gt;
- \[S_N = 1 &amp;#43; r &amp;#43; r^2 &amp;#43; \ldots &amp;#43; r^N\]
-&lt;/span&gt;
-
-&lt;p&gt;To sum it up, we multiply by \( r \) and subtract:&lt;/p&gt;
-&lt;p&gt;&lt;span&gt;
- \[r S_N = r &amp;#43; r^2 &amp;#43; \ldots &amp;#43; r^{N&amp;#43;1}\]
-&lt;/span&gt;
-
-&lt;span&gt;
- \[(1 - r)S_N = 1 - r^{N&amp;#43;1}\]
-&lt;/span&gt;
-
-&lt;span&gt;
- \[\rightarrow S_N = \frac{1 - r^{N&amp;#43;1}}{1 - r}\]
-&lt;/span&gt;
-&lt;/p&gt;</description></item><item><title>Residue calculus and applications of contour integration</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/05-residue-calculus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/05-residue-calculus/</guid><description>&lt;span&gt;
- \[\]
-&lt;/span&gt;
-
-&lt;h1 id="residues"&gt;
- Residues
- &lt;a class="anchor" href="#residues"&gt;#&lt;/a&gt;
-&lt;/h1&gt;
-&lt;p&gt;If \( z_0 \) is an isolated singularity, and \( f(z) \) can be written as a series&lt;/p&gt;
-&lt;span&gt;
- \[f(z) = \sum_{n=-\infty} ^\infty a_n (z - z_0)^n\]
-&lt;/span&gt;
-
-&lt;p&gt;which is valid in a punctured neighborhood of \( z_0 \), then&lt;/p&gt;
-&lt;span&gt;
- \[\oint_C f(z) \dd z = 2 \pi i a_{-1}\]
-&lt;/span&gt;
-
-&lt;p&gt;where \( C \) is a simple closed curve in the neighborhood enclosing \( z_0 \). This is because&lt;/p&gt;</description></item><item><title>Real Integrals</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/06-real-integrals/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/06-real-integrals/</guid><description>&lt;span&gt;
- \[\]
-&lt;/span&gt;
-
-&lt;h1 id="real-integrals"&gt;
- Real Integrals
- &lt;a class="anchor" href="#real-integrals"&gt;#&lt;/a&gt;
-&lt;/h1&gt;
-&lt;p&gt;In real life, we often want to evaluate real integrals, which is to say we want to integrate a real-valued, single-valued function along the real axis. Numerically, this is pretty straightforward to do using a Riemann sum, although it can become difficult if the function goes to zero very slowly.&lt;/p&gt;
-&lt;p&gt;We can turn a real integral into a complex contour integral by appropriately choosing a contour in the complex plane such that one segment of the contour corresponds directly with the real integral, and the remaining segment can be evaluated (usually as 0) leaving us with a closed contour integral.&lt;/p&gt;</description></item><item><title>Integrals of Multivalued Functions</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/07-integrals-of-multivalued-functions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/07-integrals-of-multivalued-functions/</guid><description>&lt;span&gt;
- \[\]
-&lt;/span&gt;
-
-&lt;p&gt;Now we&amp;rsquo;re getting to the good stuff that would usually be skipped in undergraduate courses!&lt;/p&gt;
-&lt;p&gt;Consider the example&lt;/p&gt;
-&lt;span&gt;
- \[I = \int _{0} ^{\infty} \frac{x^{\alpha - 1}}{x &amp;#43; 1} \dd x \qquad 0 &amp;lt; \alpha &amp;lt; 1\]
-&lt;/span&gt;
-
-&lt;p&gt;Previously, we&amp;rsquo;ve said we should refuse to compute the integral of a multi-valued function. But for a real value this integral is legit and well-defined.&lt;/p&gt;
-&lt;p&gt;First, observe that the integrand is a single-valued function. Numerically, you can just take the area under the curve and work out the result. But in the complex plane, we don&amp;rsquo;t know how to do it. The complex function&lt;/p&gt;</description></item><item><title>Fourier Transforms and Laplace Transforms</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/08-fourier-transform/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/08-fourier-transform/</guid><description>&lt;span&gt;
- \[\]
-&lt;/span&gt;
-
-&lt;h1 id="fourier-transform"&gt;
- Fourier Transform
- &lt;a class="anchor" href="#fourier-transform"&gt;#&lt;/a&gt;
-&lt;/h1&gt;
-&lt;p&gt;It&amp;rsquo;s good to start out with the definition of a Fourier transform:&lt;/p&gt;
-&lt;blockquote class="book-hint info"&gt;
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;p&gt;TODO: Fill this in with a high level description after we&amp;rsquo;ve gotten through the course materials.&lt;/p&gt;</description></item><item><title>Complex Numbers</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/02-complex-numbers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/02-complex-numbers/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
+
 &lt;script&gt;
  function loadKatex() {
  renderMathInElement(document.body, {
@@ -185,15 +85,330 @@
  });
  };
 &lt;/script&gt;&lt;span&gt;
-&lt;p&gt;[]
-&lt;/span&gt;&lt;/p&gt;</description></item><item><title>Conformal Mappings</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/09-conformal-mapping/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/09-conformal-mapping/</guid><description>&lt;span&gt;
  \[\]
 &lt;/span&gt;
 
-&lt;h1 id="conformal-mappings"&gt;
- Conformal Mappings
- &lt;a class="anchor" href="#conformal-mappings"&gt;#&lt;/a&gt;
-&lt;/h1&gt;
+&lt;p&gt;We enter the topic of complex analysis through the usual lens: trying to take rational powers of real numbers. Within the domain of real numbers, \( (-1)^{1/2} \) is not defined. It turns out that if we deal with this example, we create a number system that is closed under rational powers. We define&lt;/p&gt;</description></item><item><title>Analytic Functions and Integration</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/03-analytic-functions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/03-analytic-functions/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script&gt;&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;h2 id="analytic-functions"&gt;Analytic Functions&lt;a class="anchor" href="#analytic-functions"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;We have seen that \( f(z) \) is differentiable at \( z \) if the limit&lt;/p&gt;</description></item><item><title>Sequences, series, and singularities</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/04-series/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/04-series/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script&gt;&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;h1 id="series"&gt;Series&lt;a class="anchor" href="#series"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;If we talk to a pure mathematician about series, things can get very complicated, so in this course we will do things starting from a series that we should find very familiar: the geometric series&lt;/p&gt;</description></item><item><title>Residue calculus and applications of contour integration</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/05-residue-calculus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/05-residue-calculus/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script&gt;&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;h1 id="residues"&gt;Residues&lt;a class="anchor" href="#residues"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;If \( z_0 \) is an isolated singularity, and \( f(z) \) can be written as a series&lt;/p&gt;</description></item><item><title>Real Integrals</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/06-real-integrals/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/06-real-integrals/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script&gt;&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;h1 id="real-integrals"&gt;Real Integrals&lt;a class="anchor" href="#real-integrals"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;In real life, we often want to evaluate real integrals, which is to say we want to integrate a real-valued, single-valued function along the real axis. Numerically, this is pretty straightforward to do using a Riemann sum, although it can become difficult if the function goes to zero very slowly.&lt;/p&gt;</description></item><item><title>Integrals of Multivalued Functions</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/07-integrals-of-multivalued-functions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/07-integrals-of-multivalued-functions/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script&gt;&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;p&gt;Now we&amp;rsquo;re getting to the good stuff that would usually be skipped in undergraduate courses!&lt;/p&gt;</description></item><item><title>Fourier Transforms and Laplace Transforms</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/08-fourier-transform/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/08-fourier-transform/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script&gt;&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;h1 id="fourier-transform"&gt;Fourier Transform&lt;a class="anchor" href="#fourier-transform"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;It&amp;rsquo;s good to start out with the definition of a Fourier transform:&lt;/p&gt;</description></item><item><title>Conformal Mappings</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/09-conformal-mapping/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/09-conformal-mapping/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script&gt;&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;h1 id="conformal-mappings"&gt;Conformal Mappings&lt;a class="anchor" href="#conformal-mappings"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;There are many physical problems that require us to solve the Laplace equation on a domain \( D \) with some set of boundary conditions. As we&amp;rsquo;ve seen so far, there are certain sets of boundary conditions for which Laplace&amp;rsquo;s equation is relatively easy to solve: for instance a Dirichlet boundary condition on a circle, or in the upper half-plane. But most of the time we are given more complicated geometries for the domain and boundary that require trickier approaches. One way of solving these problems is to perform a specific type of change of variables to map the original complicated domain to a simpler one that we already know how to solve.&lt;/p&gt;</description></item><item><title>Fluid Flow</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/10-fluid-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/10-fluid-flow/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
@@ -239,8 +454,5 @@
  \[\]
 &lt;/span&gt;
 
-&lt;h1 id="ideal-fluid-flow"&gt;
- Ideal Fluid Flow
- &lt;a class="anchor" href="#ideal-fluid-flow"&gt;#&lt;/a&gt;
-&lt;/h1&gt;
+&lt;h1 id="ideal-fluid-flow"&gt;Ideal Fluid Flow&lt;a class="anchor" href="#ideal-fluid-flow"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;Suppose we have an irrotational fluid:&lt;/p&gt;</description></item></channel></rss>

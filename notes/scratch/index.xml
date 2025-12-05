@@ -43,11 +43,7 @@
  \[\]
 &lt;/span&gt;
 
-&lt;p&gt;Here is a good reference list of the pre-defined HTML colors: 
- &lt;a href="https://developer.mozilla.org/en-US/docs/Web/CSS/named-color"&gt;https://developer.mozilla.org/en-US/docs/Web/CSS/named-color&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Crews (2018)</title><link>https://peppyhare.github.io/r/notes/scratch/crews2018/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/scratch/crews2018/</guid><description>&lt;h1 id="development-of-a-collisionless-plasma-kinetic-solver-and-an-investigation-of-one-dimensional-plasma-waves-and-instabilities"&gt;
- Development of a Collisionless Plasma Kinetic Solver and an Investigation of One-Dimensional Plasma Waves and Instabilities
- &lt;a class="anchor" href="#development-of-a-collisionless-plasma-kinetic-solver-and-an-investigation-of-one-dimensional-plasma-waves-and-instabilities"&gt;#&lt;/a&gt;
-&lt;/h1&gt;
+&lt;p&gt;Here is a good reference list of the pre-defined HTML colors: &lt;a href="https://developer.mozilla.org/en-US/docs/Web/CSS/named-color"&gt;https://developer.mozilla.org/en-US/docs/Web/CSS/named-color&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Crews (2018)</title><link>https://peppyhare.github.io/r/notes/scratch/crews2018/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/scratch/crews2018/</guid><description>&lt;h1 id="development-of-a-collisionless-plasma-kinetic-solver-and-an-investigation-of-one-dimensional-plasma-waves-and-instabilities"&gt;Development of a Collisionless Plasma Kinetic Solver and an Investigation of One-Dimensional Plasma Waves and Instabilities&lt;a class="anchor" href="#development-of-a-collisionless-plasma-kinetic-solver-and-an-investigation-of-one-dimensional-plasma-waves-and-instabilities"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;Shielded potential of a test electron:&lt;/p&gt;
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
@@ -102,14 +98,8 @@
  \[\]
 &lt;/span&gt;
 
-&lt;h1 id="a-domain-hybridized-plasma-model-using-discontinuous-galerkin-finite-elements"&gt;
- A Domain-Hybridized Plasma Model Using Discontinuous Galerkin Finite Elements
- &lt;a class="anchor" href="#a-domain-hybridized-plasma-model-using-discontinuous-galerkin-finite-elements"&gt;#&lt;/a&gt;
-&lt;/h1&gt;
-&lt;h2 id="models"&gt;
- Models
- &lt;a class="anchor" href="#models"&gt;#&lt;/a&gt;
-&lt;/h2&gt;
+&lt;h1 id="a-domain-hybridized-plasma-model-using-discontinuous-galerkin-finite-elements"&gt;A Domain-Hybridized Plasma Model Using Discontinuous Galerkin Finite Elements&lt;a class="anchor" href="#a-domain-hybridized-plasma-model-using-discontinuous-galerkin-finite-elements"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="models"&gt;Models&lt;a class="anchor" href="#models"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Keep in mind that the behavior of a plasma is primarily determined by the ratio between a spatial length of interest and the following reference lengths. The appropriate model for describing a plasma depends on the regime defined by these lengths.&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
@@ -133,14 +123,8 @@
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id="continuum-kinetic-model"&gt;
- Continuum Kinetic Model
- &lt;a class="anchor" href="#continuum-kinetic-model"&gt;#&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;The continuum kinetic model is the most complete description, taking into account the forces acting upon each particle:&lt;/p&gt;</description></item><item><title>Drawing Diagrams</title><link>https://peppyhare.github.io/r/notes/scratch/drawing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/scratch/drawing/</guid><description>&lt;h3 id="graphics"&gt;
- Graphics
- &lt;a class="anchor" href="#graphics"&gt;#&lt;/a&gt;
-&lt;/h3&gt;
+&lt;h3 id="continuum-kinetic-model"&gt;Continuum Kinetic Model&lt;a class="anchor" href="#continuum-kinetic-model"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The continuum kinetic model is the most complete description, taking into account the forces acting upon each particle:&lt;/p&gt;</description></item><item><title>Drawing Diagrams</title><link>https://peppyhare.github.io/r/notes/scratch/drawing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/scratch/drawing/</guid><description>&lt;h3 id="graphics"&gt;Graphics&lt;a class="anchor" href="#graphics"&gt;#&lt;/a&gt;&lt;/h3&gt;
 
 
 
@@ -272,10 +256,7 @@
  &lt;/svg&gt;
  
 &lt;/div&gt;
-&lt;h3 id="complex"&gt;
- Complex
- &lt;a class="anchor" href="#complex"&gt;#&lt;/a&gt;
-&lt;/h3&gt;
+&lt;h3 id="complex"&gt;Complex&lt;a class="anchor" href="#complex"&gt;#&lt;/a&gt;&lt;/h3&gt;
 
 
 
@@ -703,10 +684,7 @@
  &lt;/svg&gt;
  
 &lt;/div&gt;
-&lt;h3 id="process"&gt;
- Process
- &lt;a class="anchor" href="#process"&gt;#&lt;/a&gt;
-&lt;/h3&gt;
+&lt;h3 id="process"&gt;Process&lt;a class="anchor" href="#process"&gt;#&lt;/a&gt;&lt;/h3&gt;
 
 
 
@@ -865,19 +843,12 @@
  &lt;/svg&gt;
  
 &lt;/div&gt;
-&lt;h3 id="file-tree"&gt;
- File tree
- &lt;a class="anchor" href="#file-tree"&gt;#&lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;Created from 
- &lt;a href="https://arthursonzogni.com/Diagon/#Tree"&gt;https://arthursonzogni.com/Diagon/#Tree&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Goedbloed (2019)</title><link>https://peppyhare.github.io/r/notes/scratch/goedbloed/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/scratch/goedbloed/</guid><description>&lt;span&gt;
+&lt;h3 id="file-tree"&gt;File tree&lt;a class="anchor" href="#file-tree"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Created from &lt;a href="https://arthursonzogni.com/Diagon/#Tree"&gt;https://arthursonzogni.com/Diagon/#Tree&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Goedbloed (2019)</title><link>https://peppyhare.github.io/r/notes/scratch/goedbloed/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/scratch/goedbloed/</guid><description>&lt;span&gt;
  \[\]
 &lt;/span&gt;
 
-&lt;h2 id="thermonuclear-fusion-and-plasma-confinement"&gt;
- Thermonuclear fusion and plasma confinement
- &lt;a class="anchor" href="#thermonuclear-fusion-and-plasma-confinement"&gt;#&lt;/a&gt;
-&lt;/h2&gt;
+&lt;h2 id="thermonuclear-fusion-and-plasma-confinement"&gt;Thermonuclear fusion and plasma confinement&lt;a class="anchor" href="#thermonuclear-fusion-and-plasma-confinement"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Nuclear reactions release net energy if there is a mass defect, i.e. if&lt;/p&gt;
 &lt;span&gt;
  \[(m_A) &amp;#43; m_B) c ^2 &amp;gt; (m_C &amp;#43; m_D) c^2\]

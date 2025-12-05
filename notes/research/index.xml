@@ -1,31 +1,66 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Research Notes on My Notes</title><link>https://peppyhare.github.io/r/notes/research/</link><description>Recent content in Research Notes on My Notes</description><generator>Hugo</generator><language>en</language><atom:link href="https://peppyhare.github.io/r/notes/research/index.xml" rel="self" type="application/rss+xml"/><item><title>Apollo dynamic tuning framework for RAJA</title><link>https://peppyhare.github.io/r/notes/research/apollo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/apollo/</guid><description>&lt;p&gt;Uri mentioned a project by David Beckingsale at LLNL called &amp;ldquo;Apollo&amp;rdquo; that attempts to tune kernel parameters at runtime in order to optimize for the available hardware. It&amp;rsquo;s especially for codes with adaptive capabalities (like adaptive mesh refinement) in which the runtime characteristics of the compute kernels tend to be very input dependent.&lt;/p&gt;
-&lt;p&gt;This is the main paper they put out: 
- &lt;a href="https://computing.llnl.gov/sites/default/files/Apollo-Fast-Lightweight-Dynamic-Tuning-Data-Dependent-Code-LLNL-paper_0.pdf"&gt;https://computing.llnl.gov/sites/default/files/Apollo-Fast-Lightweight-Dynamic-Tuning-Data-Dependent-Code-LLNL-paper_0.pdf&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;And here&amp;rsquo;s the github repository: 
- &lt;a href="https://github.com/LLNL/apollo"&gt;https://github.com/LLNL/apollo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This is the main paper they put out: &lt;a href="https://computing.llnl.gov/sites/default/files/Apollo-Fast-Lightweight-Dynamic-Tuning-Data-Dependent-Code-LLNL-paper_0.pdf"&gt;https://computing.llnl.gov/sites/default/files/Apollo-Fast-Lightweight-Dynamic-Tuning-Data-Dependent-Code-LLNL-paper_0.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;And here&amp;rsquo;s the github repository: &lt;a href="https://github.com/LLNL/apollo"&gt;https://github.com/LLNL/apollo&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The approach they take is: At runtime, for each kernel execution apollo collects the runtime and a &amp;ldquo;feature vector&amp;rdquo; describing various features of the kernel. These features include:&lt;/p&gt;</description></item><item><title>Electrodynamic Dory-Guest-Harris Instability</title><link>https://peppyhare.github.io/r/notes/research/dgh-datta/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/dgh-datta/</guid><description>&lt;span&gt;
  \[\]
 &lt;/span&gt;
 
-&lt;p&gt;Pretty much entirely based on this paper: 
- &lt;a href="https://doi.org/10.1063/5.0057230"&gt;Electromagnetic extension of the Dory– Guest–Harris instability as a benchmark for Vlasov–Maxwell continuum kinetic simulations of magnetized plasmas&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id="closed-integral-form-of-dispersion-relation"&gt;
- Closed Integral Form of Dispersion Relation
- &lt;a class="anchor" href="#closed-integral-form-of-dispersion-relation"&gt;#&lt;/a&gt;
-&lt;/h1&gt;
-&lt;p&gt;Iman&amp;rsquo;s done a great job deriving a closed-form integral representation of the dispersion relation for the Dory-Guest-Harris instability. The trick to computing solutions to the dispersion relation is in getting all of the the normalization correct and computing the correct quadrature across both integrals (over $v_\perp$ and $\theta$).&lt;/p&gt;</description></item><item><title>Valgrind</title><link>https://peppyhare.github.io/r/notes/research/valgrind/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/valgrind/</guid><description>&lt;span&gt;
+&lt;p&gt;Pretty much entirely based on this paper: &lt;a href="https://doi.org/10.1063/5.0057230"&gt;Electromagnetic extension of the Dory– Guest–Harris instability as a benchmark for Vlasov–Maxwell continuum kinetic simulations of magnetized plasmas&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="closed-integral-form-of-dispersion-relation"&gt;Closed Integral Form of Dispersion Relation&lt;a class="anchor" href="#closed-integral-form-of-dispersion-relation"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Iman&amp;rsquo;s done a great job deriving a closed-form integral representation of the dispersion relation for the Dory-Guest-Harris instability. The trick to computing solutions to the dispersion relation is in getting all of the the normalization correct and computing the correct quadrature across both integrals (over $v_\perp$ and $\theta$).&lt;/p&gt;</description></item><item><title>Installation tricks</title><link>https://peppyhare.github.io/r/notes/research/install-tricks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/install-tricks/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script&gt;&lt;span&gt;
  \[\]
 &lt;/span&gt;
 
-&lt;h1 id="valgrind"&gt;
- Valgrind
- &lt;a class="anchor" href="#valgrind"&gt;#&lt;/a&gt;
-&lt;/h1&gt;
-&lt;p&gt;
- &lt;a href="https://valgrind.org/"&gt;Valgrind&lt;/a&gt; is an instrumentation framework which supplies several very useful debugging and profiling tools. Among these are the popular &lt;code&gt;memcheck&lt;/code&gt;, which thoroughly checks for incorrect memory access, and &lt;code&gt;cachegrind&lt;/code&gt;, which profiles the CPU usage of a program. I have found this to be a really well-designed, useful tool to measure the performance of a WARPXM run, without the need to add any custom instrumentation to the code.&lt;/p&gt;</description></item><item><title>WARPXM 101 - Getting Started</title><link>https://peppyhare.github.io/r/notes/research/warpxm-101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/warpxm-101/</guid><description>&lt;h1 id="what-is-warpxm"&gt;
- What is WARPXM
- &lt;a class="anchor" href="#what-is-warpxm"&gt;#&lt;/a&gt;
-&lt;/h1&gt;
+&lt;h1 id="rocmhipcc"&gt;ROCm/HIPCC&lt;a class="anchor" href="#rocmhipcc"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Installing ROCm on an older machine in the lab (the linux box that runs the WARPXM CI builds) so that I can test out some RAJA programming. It has a Radeon HD 7970 card installed, which is pretty old but it should still be supported.&lt;/p&gt;</description></item><item><title>Valgrind</title><link>https://peppyhare.github.io/r/notes/research/valgrind/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/valgrind/</guid><description>&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;h1 id="valgrind"&gt;Valgrind&lt;a class="anchor" href="#valgrind"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://valgrind.org/"&gt;Valgrind&lt;/a&gt; is an instrumentation framework which supplies several very useful debugging and profiling tools. Among these are the popular &lt;code&gt;memcheck&lt;/code&gt;, which thoroughly checks for incorrect memory access, and &lt;code&gt;cachegrind&lt;/code&gt;, which profiles the CPU usage of a program. I have found this to be a really well-designed, useful tool to measure the performance of a WARPXM run, without the need to add any custom instrumentation to the code.&lt;/p&gt;
+&lt;h2 id="how-it-works"&gt;How it works&lt;a class="anchor" href="#how-it-works"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Valgrind adds instrumentation to any existing executable by intercepting all instructions from the unmodified code and emulating the CPU, adding instrumentation code in the middle. There is no need to modify the existing code to obtain profiling measurements, just run &lt;code&gt;valgrind&lt;/code&gt; directly against the executable, for example:&lt;/p&gt;</description></item><item><title>WARPXM 101 - Getting Started</title><link>https://peppyhare.github.io/r/notes/research/warpxm-101/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/warpxm-101/</guid><description>&lt;h1 id="what-is-warpxm"&gt;What is WARPXM&lt;a class="anchor" href="#what-is-warpxm"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;WARPXM is an &lt;em&gt;extensible&lt;/em&gt; &lt;em&gt;framework&lt;/em&gt; for solving hyperbolic PDE systems. By &amp;ldquo;framework&amp;rdquo; we mean that it is not a single tool for solving a particular type of system, but rather it contains a number of applications, solvers, and other tools which can be combined to create a wide variety of models. By &amp;ldquo;extensible,&amp;rdquo; we mean the framework allows for defining additional components which can be mixed in with the existing solvers and applications.&lt;/p&gt;</description></item><item><title>WARPXM 102 - Code Structure</title><link>https://peppyhare.github.io/r/notes/research/warpxm-102/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/warpxm-102/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
@@ -71,10 +106,7 @@
  \[\]
 &lt;/span&gt;
 
-&lt;h1 id="what-happens-when-you-press-go"&gt;
- What Happens When You Press Go?
- &lt;a class="anchor" href="#what-happens-when-you-press-go"&gt;#&lt;/a&gt;
-&lt;/h1&gt;
+&lt;h1 id="what-happens-when-you-press-go"&gt;What Happens When You Press Go?&lt;a class="anchor" href="#what-happens-when-you-press-go"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;Following the sequence of events that take place in a WARPXM simulation by stepping through in the debugger has helped me to understand the code structure and concepts. I would highly recommend going through the process at least once. I have tried to explain what happens in plain English in the hopes that it will help me (and maybe someone else) to better understand how things are structured and what to expect when working with WARPXM.&lt;/p&gt;</description></item><item><title>WARPXM 201 - Unstructured Geometry</title><link>https://peppyhare.github.io/r/notes/research/warpxm-201/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/warpxm-201/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
