@@ -83,7 +83,7 @@ A complex series \\( \sum_{n=0} ^{\infty} c_n \\) is convergent if \\( \sum_{n=0
 {{< /katex >}}
 > **Cauchy-Taylor theorem**
 > 
-> If \\( f(z) \\) is analytic throughout the circular disk \\( |z - z_0| < R> \\) , then it can be expanded in a Taylor series about the point \\( z_0 \\), and that series is convergent everywhere inside the disk.
+> If \\( f(z) \\) is analytic throughout the circular disk \\( |z - z_0| < R \\) , then it can be expanded in a Taylor series about the point \\( z_0 \\), and that series is convergent everywhere inside the disk.
 > 
 > {{< katex display >}}
 f(z) = \sum_{n=0} ^\infty A_n (z - z_0)^n \qquad A_n = \frac{f^{(n)}(z_0)}{n!} = \frac{1}{2 \pi i} \oint_C \frac{f(\xi) \dd \xi}{(\xi - z_0)^{n+1}}
