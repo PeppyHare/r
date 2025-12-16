@@ -43,7 +43,8 @@
  \[\]
 &lt;/span&gt;
 
-&lt;p&gt;TODO: Fill this in with a high level description after we&amp;rsquo;ve gotten through the course materials.&lt;/p&gt;</description></item><item><title>Complex Numbers</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/02-complex-numbers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/02-complex-numbers/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;h1 id="applications-of-complex-analysis-amath-567"&gt;Applications of Complex Analysis (AMATH 567)&lt;a class="anchor" href="#applications-of-complex-analysis-amath-567"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;This course focuses on practical applications of complex analysis. In particular we focus on the use of contour integration to solve otherwise troublesome real integrals and partial differential equations. Important topics covered in this course are:&lt;/p&gt;</description></item><item><title>Complex Numbers</title><link>https://peppyhare.github.io/r/notes/UWAMATH567/02-complex-numbers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAMATH567/02-complex-numbers/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
 
