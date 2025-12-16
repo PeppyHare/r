@@ -20,3 +20,4 @@ Course notes from AMATH 567 at the University of Washington, Seattle
   - [Integrals of Multi-valued Functions](07-integrals-of-multivalued-functions.md)
   - [Fourier Transforms and Laplace Transforms](08-fourier-transform.md)
   - [Conformal Mappings](09-conformal-mapping.md)
+  - [Inviscid Irrotational Fluid Flow](10-fluid-flow.md)
