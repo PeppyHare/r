@@ -534,7 +534,7 @@ The effect of the magnetic field is to rotate the particle's trajectory. To comp
 
 Both \\( \vec E \\) and \\( \vec B \\) must be centered in time relative to \\( \vec v \\). The Leap frog method advances \\( \vec v ^{n - 1/2} \\) to \\( \vec v^{n + 1/2} \\) using force and fields at time \\( n \\).
 
-\\( \vec v \\) is known at \\( n \pm \frac{1}{2} \\), but we need to compute \\( \vec B \\) at \\( n \\). One solution is to use Strang splitting to split the advance (acceleration \\( q \vec E \\)) with the rotation \\( q (\vec v \cross \vec B) = \omega_c (\vec v \cross \vec \vu z) \\). The way this works is we apply half of the acceleration, then we apply the rotation, then the other half of the acceleration.
+\\( \vec v \\) is known at \\( n \pm \frac{1}{2} \\), but we need to compute \\( \vec B \\) at \\( n \\). One solution is to use Strang splitting to split the advance (acceleration \\( q \vec E \\)) with the rotation \\( q (\vec{v} \cross \vec{B}) = \omega_c (\vec{v} \cross \vec{\vu z}) \\). The way this works is we apply half of the acceleration, then we apply the rotation, then the other half of the acceleration.
 
 - Half acceleration
 {{< katex display >}}

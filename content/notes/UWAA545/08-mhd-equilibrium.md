@@ -33,7 +33,7 @@ I' = \pdv{I}{\psi} \qquad p' = \pdv{p}{\psi}
 {{< /katex >}}
 and
 {{< katex display >}}
-\Delta ^\star \equiv r \pdv{}{r} \frac{r}{r} \pdv{}{r} + \pdv{^2}{z^2}
+\Delta ^\star \equiv r \pdv{}{r} \frac{1}{r} \pdv{}{r} + \pdv{^2}{z^2}
 {{< /katex >}}
 
 The Grad-Shafranov equation is a nonlinear equation, and we often assume a power series expansion of the current density and pressure
