@@ -8,7 +8,7 @@
 
 @import "plugins/scrollbars";
 
-img {
+img:not(.book-icon) {
     min-width: 60%;
 }
 
@@ -77,9 +77,25 @@ aside nav ul li {
   cursor: pointer;
 }
 
-// Allow section names to expand to fill the toggle width
-.book-collapse-section{
-    flex: 1;
+// Make nav items with chevrons have uniform width aligned with search bar
+.book-menu nav ul li {
+    display: flex;
+    flex-direction: column;
+
+    > label.flex {
+        width: 100%;
+        justify-content: space-between;
+
+        > a {
+            flex: 1;
+            min-width: 0; // Allow text to shrink and wrap
+        }
+
+        > img.book-icon {
+            flex-shrink: 0;
+            margin-left: auto;
+        }
+    }
 }
 
 // Margins around external link section
