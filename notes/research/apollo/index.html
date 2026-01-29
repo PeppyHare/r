@@ -8,7 +8,7 @@ And here’s the github repository: https://github.com/LLNL/apollo
 The approach they take is: At runtime, for each kernel execution apollo collects the runtime and a “feature vector” describing various features of the kernel. These features include:"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="notes"><meta property="article:modified_time" content="2025-10-23T17:20:40-07:00"><meta itemprop=name content="Apollo dynamic tuning framework for RAJA"><meta itemprop=description content="Uri mentioned a project by David Beckingsale at LLNL called “Apollo” that attempts to tune kernel parameters at runtime in order to optimize for the available hardware. It’s especially for codes with adaptive capabalities (like adaptive mesh refinement) in which the runtime characteristics of the compute kernels tend to be very input dependent.
 This is the main paper they put out: https://computing.llnl.gov/sites/default/files/Apollo-Fast-Lightweight-Dynamic-Tuning-Data-Dependent-Code-LLNL-paper_0.pdf
 And here’s the github repository: https://github.com/LLNL/apollo
-The approach they take is: At runtime, for each kernel execution apollo collects the runtime and a “feature vector” describing various features of the kernel. These features include:"><meta itemprop=dateModified content="2025-10-23T17:20:40-07:00"><meta itemprop=wordCount content="5742"><title>Apollo dynamic tuning framework for RAJA | My Notes</title><link rel=icon href=/r/favicon.png><link rel=manifest href=/r/manifest.json><link rel=canonical href=https://peppyhare.github.io/r/notes/research/apollo/><link rel=stylesheet href=/r/book.min.bff56aeef7242395ec77303d273e044b6e6131a5e670ccb81dfa0f44a300fae2.css integrity="sha256-v/Vq7vckI5XsdzA9Jz4ES25hMaXmcMy4HfoPRKMA+uI=" crossorigin=anonymous><script defer src=/r/fuse.min.js></script><script defer src=/r/en.search.min.4830000b0faf4bbd9ac091edd8b1dfe8d3d9187ca2f750e40c5b2622ac6382dd.js integrity="sha256-SDAACw+vS72awJHt2LHf6NPZGHyi91DkDFsmIqxjgt0=" crossorigin=anonymous></script><script defer src=/r/sw.min.9e3a83f0b071ebe0141a16a33db93faadb2bdf712473a218febeed35ed243c08.js integrity="sha256-njqD8LBx6+AUGhajPbk/qtsr33Ekc6IY/r7tNe0kPAg=" crossorigin=anonymous></script><link rel=preload href=/r/katex/fonts/KaTeX_Main-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Main-Bold.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Main-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Math-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Size2-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Size3-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/fonts/roboto-v27-latin-regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/fonts/roboto-v27-latin-700.woff2 as=font type=font/woff2 crossorigin=anonymous></head><body dir=ltr class="book-kind-page book-type-notes"><input type=checkbox class="hidden toggle" id=menu-control>
+The approach they take is: At runtime, for each kernel execution apollo collects the runtime and a “feature vector” describing various features of the kernel. These features include:"><meta itemprop=dateModified content="2025-10-23T17:20:40-07:00"><meta itemprop=wordCount content="5742"><title>Apollo dynamic tuning framework for RAJA | My Notes</title><link rel=icon href=/r/favicon.png><link rel=manifest href=/r/manifest.json><link rel=canonical href=https://peppyhare.github.io/r/notes/research/apollo/><link rel=stylesheet href=/r/book.min.bff56aeef7242395ec77303d273e044b6e6131a5e670ccb81dfa0f44a300fae2.css integrity="sha256-v/Vq7vckI5XsdzA9Jz4ES25hMaXmcMy4HfoPRKMA+uI=" crossorigin=anonymous><script defer src=/r/fuse.min.js></script><script defer src=/r/en.search.min.5e8feb54b55a41d100208e6f1ed252bf1e4e9295dc34670cc00a78dd5ef848ba.js integrity="sha256-Xo/rVLVaQdEAII5vHtJSvx5OkpXcNGcMwAp43V74SLo=" crossorigin=anonymous></script><script defer src=/r/sw.min.9e3a83f0b071ebe0141a16a33db93faadb2bdf712473a218febeed35ed243c08.js integrity="sha256-njqD8LBx6+AUGhajPbk/qtsr33Ekc6IY/r7tNe0kPAg=" crossorigin=anonymous></script><link rel=preload href=/r/katex/fonts/KaTeX_Main-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Main-Bold.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Main-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Math-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Size2-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Size3-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/fonts/roboto-v27-latin-regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/fonts/roboto-v27-latin-700.woff2 as=font type=font/woff2 crossorigin=anonymous></head><body dir=ltr class="book-kind-page book-type-notes"><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/r/><span>My Notes</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul class=book-languages><li><input type=checkbox id=languages class=toggle>
 <label for=languages class=flex><a role=button><img src=/r/icons/translate.svg class=book-icon alt=Languages>
 English
@@ -34,7 +34,7 @@ English
 <label for=section-05ac7760b68f0e0530d0e609833f6902 class=flex><a role=button>Scratch</a>
 <img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/r/notes/scratch/colors/>Adding Color</a></li><li><a href=/r/notes/scratch/crews2018/>Crews (2018)</a></li><li><a href=/r/notes/scratch/datta2021/>Datta (2021)</a></li><li><a href=/r/notes/scratch/drawing/>Drawing Diagrams</a></li><li><a href=/r/notes/scratch/goedbloed/>Goedbloed (2019)</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-c8688d5789736c2ae128963cf705a441 class=toggle>
 <label for=section-c8688d5789736c2ae128963cf705a441 class=flex><a href=/r/notes/griffiths/>Griffiths Introduction to Electrodynamics</a>
-<img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/r/notes/griffiths/ch1-1/>(1.1) Vector Algebra</a></li><li><a href=/r/notes/griffiths/ch1-2/>(1.2) Differential Calculus</a></li><li><a href=/r/notes/griffiths/ch1-3/>(1.3) Integral Calculus</a></li><li><a href=/r/notes/griffiths/ch1-4/>(1.4) Curvilinear Coordinates</a></li><li><a href=/r/notes/griffiths/ch1-5/>(1.5) The Dirac Delta Function</a></li><li><a href=/r/notes/griffiths/ch1-6/>(1.6) The Theory of Vector Fields</a></li><li><a href=/r/notes/griffiths/ch2-1/>(2.1) The Electric Field</a></li><li><a href=/r/notes/griffiths/ch2-2/>(2.2) Divergence and Curl of Electrostatic Fields</a></li><li><a href=/r/notes/griffiths/ch2-3/>(2.3) Electric Potential</a></li><li><a href=/r/notes/griffiths/ch2-4/>(2.4) Work and Energy in Electrostatics</a></li><li><a href=/r/notes/griffiths/ch2-5/>(2.5) Conductors</a></li><li><a href=/r/notes/griffiths/ch3-1/>(3.1) Laplace's Equation</a></li><li><a href=/r/notes/griffiths/ch3-2/>(3.2) The Method of Images</a></li><li><a href=/r/notes/griffiths/ch3-3/>(3.3) Separation of Variables</a></li><li><a href=/r/notes/griffiths/ch3-4/>(3.4) Multipole Expansion</a></li><li><a href=/r/notes/griffiths/ch4-1/>(4.1) Polarization</a></li><li><a href=/r/notes/griffiths/ch4-2/>(4.2) The Field of a Polarized Object</a></li><li><a href=/r/notes/griffiths/ch4-3/>(4.3) The Electric Displacement</a></li><li><a href=/r/notes/griffiths/ch4-4/>(4.4) The Linear Dielectrics</a></li><li><a href=/r/notes/griffiths/ch5-1/>(5.1) The Lorentz Force Law</a></li><li><a href=/r/notes/griffiths/ch5-2/>(5.2) The Biot-Savart Law</a></li><li><a href=/r/notes/griffiths/ch5-3/>(5.3) The Divergence and Curl of B</a></li><li><a href=/r/notes/griffiths/ch5-4/>(5.4) Magnetic Vector Potential</a></li><li><a href=/r/notes/griffiths/ch6-1/>(6.1) Magnetization</a></li><li><a href=/r/notes/griffiths/ch6-2/>(6.2) The Field of a Magnetized Object</a></li><li><a href=/r/notes/griffiths/ch6-3/>(6.3) The Auxiliary Field H</a></li><li><a href=/r/notes/griffiths/ch6-4/>(6.4) Linear and Nonlinear Media</a></li><li><a href=/r/notes/griffiths/ch7-1/>(7.1) Electromotive Force</a></li><li><a href=/r/notes/griffiths/ch7-2/>(7.2) Electromagnetic Induction</a></li><li><a href=/r/notes/griffiths/ch7-3/>(7.3) Maxwell's Equations</a></li><li><a href=/r/notes/griffiths/ch8-0/>(8.0) Phys 544 Introduction</a></li><li><a href=/r/notes/griffiths/ch8-1/>(8.1) Charge and Energy</a></li><li><a href=/r/notes/griffiths/ch8-2/>(8.2) Momentum</a></li><li><a href=/r/notes/griffiths/ch9-1/>(9.1) Electromagnetic Waves in One Dimension</a></li><li><a href=/r/notes/griffiths/ch9-2/>(9.2) Wave Equation for E and B</a></li><li><a href=/r/notes/griffiths/ch9-3/>(9.3) Electromagnetic Waves in Matter</a></li><li><a href=/r/notes/griffiths/ch9-4/>(9.4) Electromagnetic Waves in Conductors</a></li><li><a href=/r/notes/griffiths/ch9-5/>(9.5) Guided Waves</a></li><li><a href=/r/notes/griffiths/ch10-1/>(10.1) Scalar and Vector Potentials</a></li><li><a href=/r/notes/griffiths/ch10-2/>(10.2) Retarded Potentials</a></li><li><a href=/r/notes/griffiths/ch10-3/>(10.3) Point Charges</a></li><li><a href=/r/notes/griffiths/ch11-1/>(11.1) Dipole Radiation</a></li><li><a href=/r/notes/griffiths/problems-ch3/>Solved Problems Ch3</a></li><li><a href=/r/notes/griffiths/problems-ch5/>Solved Problems Ch5</a></li><li><a href=/r/notes/griffiths/problems-ch7/>Solved Problems Ch7</a></li><li><a href=/r/notes/griffiths/problems-ch9/>Solved Problems Ch9</a></li></ul></li></ul></li></ul><ul class=book-menu-hugo><li><a href=https://github.com/Peppyhare/r target=_blank rel=noopener>Github</a></li><li><a href=https://themes.gohugo.io/hugo-book/ target=_blank rel=noopener>Hugo Themes</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><label for=menu-control><img src=/r/icons/menu.svg class=book-icon alt=Menu></label><h3>Apollo dynamic tuning framework for RAJA</h3><label for=toc-control></label></div></header><article class="markdown book-article"><p>Uri mentioned a project by David Beckingsale at LLNL called &ldquo;Apollo&rdquo; that attempts to tune kernel parameters at runtime in order to optimize for the available hardware. It&rsquo;s especially for codes with adaptive capabalities (like adaptive mesh refinement) in which the runtime characteristics of the compute kernels tend to be very input dependent.</p><p>This is the main paper they put out: <a href=https://computing.llnl.gov/sites/default/files/Apollo-Fast-Lightweight-Dynamic-Tuning-Data-Dependent-Code-LLNL-paper_0.pdf>https://computing.llnl.gov/sites/default/files/Apollo-Fast-Lightweight-Dynamic-Tuning-Data-Dependent-Code-LLNL-paper_0.pdf</a></p><p>And here&rsquo;s the github repository: <a href=https://github.com/LLNL/apollo>https://github.com/LLNL/apollo</a></p><p>The approach they take is: At runtime, for each kernel execution apollo collects the runtime and a &ldquo;feature vector&rdquo; describing various features of the kernel. These features include:</p><ul><li>Parameters passed to the RAJA <code>forall</code></li><li>Instruction features gathered from the kernel body</li><li>Runtime measurements</li><li>Optional features specified by the developer</li></ul><p align=center><img alt=img/research/apollo-features.png src=/r/img/research/apollo-features.png width=400></p><p>To be able to change the execution policy at runtime (which is generally not possible in RAJA), they added a RAJA extension</p><p>I&rsquo;d really like to see it in action, so let&rsquo;s see if we can get a simple project using their framework to compile. We can eventually get Claude to spit out something like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c++ data-lang=c++><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
+<img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/r/notes/griffiths/ch1-1/>(1.1) Vector Algebra</a></li><li><a href=/r/notes/griffiths/ch1-2/>(1.2) Differential Calculus</a></li><li><a href=/r/notes/griffiths/ch1-3/>(1.3) Integral Calculus</a></li><li><a href=/r/notes/griffiths/ch1-4/>(1.4) Curvilinear Coordinates</a></li><li><a href=/r/notes/griffiths/ch1-5/>(1.5) The Dirac Delta Function</a></li><li><a href=/r/notes/griffiths/ch1-6/>(1.6) The Theory of Vector Fields</a></li><li><a href=/r/notes/griffiths/ch2-1/>(2.1) The Electric Field</a></li><li><a href=/r/notes/griffiths/ch2-2/>(2.2) Divergence and Curl of Electrostatic Fields</a></li><li><a href=/r/notes/griffiths/ch2-3/>(2.3) Electric Potential</a></li><li><a href=/r/notes/griffiths/ch2-4/>(2.4) Work and Energy in Electrostatics</a></li><li><a href=/r/notes/griffiths/ch2-5/>(2.5) Conductors</a></li><li><a href=/r/notes/griffiths/ch3-1/>(3.1) Laplace's Equation</a></li><li><a href=/r/notes/griffiths/ch3-2/>(3.2) The Method of Images</a></li><li><a href=/r/notes/griffiths/ch3-3/>(3.3) Separation of Variables</a></li><li><a href=/r/notes/griffiths/ch3-4/>(3.4) Multipole Expansion</a></li><li><a href=/r/notes/griffiths/ch4-1/>(4.1) Polarization</a></li><li><a href=/r/notes/griffiths/ch4-2/>(4.2) The Field of a Polarized Object</a></li><li><a href=/r/notes/griffiths/ch4-3/>(4.3) The Electric Displacement</a></li><li><a href=/r/notes/griffiths/ch4-4/>(4.4) The Linear Dielectrics</a></li><li><a href=/r/notes/griffiths/ch5-1/>(5.1) The Lorentz Force Law</a></li><li><a href=/r/notes/griffiths/ch5-2/>(5.2) The Biot-Savart Law</a></li><li><a href=/r/notes/griffiths/ch5-3/>(5.3) The Divergence and Curl of B</a></li><li><a href=/r/notes/griffiths/ch5-4/>(5.4) Magnetic Vector Potential</a></li><li><a href=/r/notes/griffiths/ch6-1/>(6.1) Magnetization</a></li><li><a href=/r/notes/griffiths/ch6-2/>(6.2) The Field of a Magnetized Object</a></li><li><a href=/r/notes/griffiths/ch6-3/>(6.3) The Auxiliary Field H</a></li><li><a href=/r/notes/griffiths/ch6-4/>(6.4) Linear and Nonlinear Media</a></li><li><a href=/r/notes/griffiths/ch7-1/>(7.1) Electromotive Force</a></li><li><a href=/r/notes/griffiths/ch7-2/>(7.2) Electromagnetic Induction</a></li><li><a href=/r/notes/griffiths/ch7-3/>(7.3) Maxwell's Equations</a></li><li><a href=/r/notes/griffiths/ch8-0/>(8.0) Phys 544 Introduction</a></li><li><a href=/r/notes/griffiths/ch8-1/>(8.1) Charge and Energy</a></li><li><a href=/r/notes/griffiths/ch8-2/>(8.2) Momentum</a></li><li><a href=/r/notes/griffiths/ch9-1/>(9.1) Electromagnetic Waves in One Dimension</a></li><li><a href=/r/notes/griffiths/ch9-2/>(9.2) Wave Equation for E and B</a></li><li><a href=/r/notes/griffiths/ch9-3/>(9.3) Electromagnetic Waves in Matter</a></li><li><a href=/r/notes/griffiths/ch9-4/>(9.4) Electromagnetic Waves in Conductors</a></li><li><a href=/r/notes/griffiths/ch9-5/>(9.5) Guided Waves</a></li><li><a href=/r/notes/griffiths/ch10-1/>(10.1) Scalar and Vector Potentials</a></li><li><a href=/r/notes/griffiths/ch10-2/>(10.2) Retarded Potentials</a></li><li><a href=/r/notes/griffiths/ch10-3/>(10.3) Point Charges</a></li><li><a href=/r/notes/griffiths/ch11-1/>(11.1) Dipole Radiation</a></li><li><a href=/r/notes/griffiths/problems-ch3/>Solved Problems Ch3</a></li><li><a href=/r/notes/griffiths/problems-ch5/>Solved Problems Ch5</a></li><li><a href=/r/notes/griffiths/problems-ch7/>Solved Problems Ch7</a></li><li><a href=/r/notes/griffiths/problems-ch9/>Solved Problems Ch9</a></li></ul></li></ul></li></ul><ul class=book-menu-hugo><li><a href=https://github.com/Peppyhare/r target=_blank rel=noopener>Github</a></li><li><a href=https://themes.gohugo.io/hugo-book/ target=_blank rel=noopener>Hugo Themes</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><label for=menu-control><img src=/r/icons/menu.svg class=book-icon alt=Menu></label><h3>Apollo dynamic tuning framework for RAJA</h3><label for=toc-control></label></div></header><article class="markdown book-article"><p>Uri mentioned a project by David Beckingsale at LLNL called &ldquo;Apollo&rdquo; that attempts to tune kernel parameters at runtime in order to optimize for the available hardware. It&rsquo;s especially for codes with adaptive capabalities (like adaptive mesh refinement) in which the runtime characteristics of the compute kernels tend to be very input dependent.</p><p>This is the main paper they put out: <a href=https://computing.llnl.gov/sites/default/files/Apollo-Fast-Lightweight-Dynamic-Tuning-Data-Dependent-Code-LLNL-paper_0.pdf>https://computing.llnl.gov/sites/default/files/Apollo-Fast-Lightweight-Dynamic-Tuning-Data-Dependent-Code-LLNL-paper_0.pdf</a></p><p>And here&rsquo;s the github repository: <a href=https://github.com/LLNL/apollo>https://github.com/LLNL/apollo</a></p><p>The approach they take is: At runtime, for each kernel execution apollo collects the runtime and a &ldquo;feature vector&rdquo; describing various features of the kernel. These features include:</p><ul><li>Parameters passed to the RAJA <code>forall</code></li><li>Instruction features gathered from the kernel body</li><li>Runtime measurements</li><li>Optional features specified by the developer</li></ul><p align=center><img alt=img/research/apollo-features.png src=/r/img/research/apollo-features.png width=400></p><p>To be able to change the execution policy at runtime (which is generally not possible in RAJA), they added a RAJA extension</p><p>I&rsquo;d really like to see it in action, so let&rsquo;s see if we can get a simple project using their framework to compile. We can eventually get Claude to spit out something like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-c++ data-lang=c++><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
 </span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iomanip&gt;</span><span style=color:#75715e>
 </span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;vector&gt;</span><span style=color:#75715e>
 </span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;memory&gt;</span><span style=color:#75715e>
@@ -45,23 +45,23 @@ English
 </span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;random&gt;</span><span style=color:#75715e>
 </span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstring&gt;</span><span style=color:#75715e>
 </span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;thread&gt;</span><span style=color:#75715e>
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&#34;RAJA/RAJA.hpp&#34;</span><span style=color:#75715e>
 </span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&#34;apollo/Apollo.h&#34;</span><span style=color:#75715e>
 </span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&#34;apollo/Region.h&#34;</span><span style=color:#75715e>
 </span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&#34;kernels.h&#34;</span><span style=color:#75715e>
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// Define execution policies for CPU
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> sequential_policy <span style=color:#f92672>=</span> RAJA<span style=color:#f92672>::</span>seq_exec;
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>using</span> sequential_policy <span style=color:#f92672>=</span> RAJA<span style=color:#f92672>::</span>seq_exec;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>#ifdef RAJA_ENABLE_OPENMP
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> omp_policy_1 <span style=color:#f92672>=</span> RAJA<span style=color:#f92672>::</span>omp_parallel_for_exec;
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>using</span> omp_policy_1 <span style=color:#f92672>=</span> RAJA<span style=color:#f92672>::</span>omp_parallel_for_exec;
 </span></span><span style=display:flex><span><span style=color:#66d9ef>using</span> omp_policy_static <span style=color:#f92672>=</span> RAJA<span style=color:#f92672>::</span>omp_parallel_for_static_exec<span style=color:#f92672>&lt;</span><span style=color:#ae81ff>16</span><span style=color:#f92672>&gt;</span>;
 </span></span><span style=display:flex><span><span style=color:#66d9ef>using</span> omp_policy_dynamic <span style=color:#f92672>=</span> RAJA<span style=color:#f92672>::</span>omp_parallel_for_dynamic_exec<span style=color:#f92672>&lt;</span><span style=color:#ae81ff>8</span><span style=color:#f92672>&gt;</span>;
 </span></span><span style=display:flex><span><span style=color:#66d9ef>using</span> omp_policy_guided <span style=color:#f92672>=</span> RAJA<span style=color:#f92672>::</span>omp_parallel_for_guided_exec<span style=color:#f92672>&lt;&gt;</span>;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// Policy list for Apollo to choose from
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> CPUPolicyList <span style=color:#f92672>=</span> RAJA<span style=color:#f92672>::</span>list<span style=color:#f92672>&lt;</span>
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>using</span> CPUPolicyList <span style=color:#f92672>=</span> RAJA<span style=color:#f92672>::</span>list<span style=color:#f92672>&lt;</span>
 </span></span><span style=display:flex><span>    sequential_policy,
 </span></span><span style=display:flex><span>    omp_policy_1,
 </span></span><span style=display:flex><span>    omp_policy_static,
@@ -78,16 +78,16 @@ English
 </span></span><span style=display:flex><span>    <span style=color:#e6db74>&#34;OpenMP Guided&#34;</span>
 </span></span><span style=display:flex><span>};
 </span></span><span style=display:flex><span><span style=color:#75715e>#else
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#75715e>// If OpenMP is not available, use only sequential
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>using</span> CPUPolicyList <span style=color:#f92672>=</span> RAJA<span style=color:#f92672>::</span>list<span style=color:#f92672>&lt;</span>sequential_policy<span style=color:#f92672>&gt;</span>;
+</span></span></span><span style=display:flex><span><span style=color:#75715e>// If OpenMP is not available, use only sequential
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>using</span> CPUPolicyList <span style=color:#f92672>=</span> RAJA<span style=color:#f92672>::</span>list<span style=color:#f92672>&lt;</span>sequential_policy<span style=color:#f92672>&gt;</span>;
 </span></span><span style=display:flex><span><span style=color:#66d9ef>constexpr</span> <span style=color:#66d9ef>int</span> NUM_POLICIES <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
 </span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#66d9ef>char</span><span style=color:#f92672>*</span> policy_names[] <span style=color:#f92672>=</span> {<span style=color:#e6db74>&#34;Sequential&#34;</span>};
 </span></span><span style=display:flex><span><span style=color:#75715e>#endif
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>namespace</span> apollo_demo {
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// Timer utility
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Timer</span> {
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Timer</span> {
 </span></span><span style=display:flex><span><span style=color:#66d9ef>private</span><span style=color:#f92672>:</span>
 </span></span><span style=display:flex><span>    std<span style=color:#f92672>::</span>chrono<span style=color:#f92672>::</span>high_resolution_clock<span style=color:#f92672>::</span>time_point start_time;
 </span></span><span style=display:flex><span>    std<span style=color:#f92672>::</span>chrono<span style=color:#f92672>::</span>high_resolution_clock<span style=color:#f92672>::</span>time_point end_time;
@@ -108,7 +108,7 @@ English
 </span></span><span style=display:flex><span>};
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// Benchmark runner for a specific kernel
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>KernelBenchmark</span> {
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>KernelBenchmark</span> {
 </span></span><span style=display:flex><span><span style=color:#66d9ef>private</span><span style=color:#f92672>:</span>
 </span></span><span style=display:flex><span>    std<span style=color:#f92672>::</span>unique_ptr<span style=color:#f92672>&lt;</span>KernelBase<span style=color:#f92672>&gt;</span> kernel;
 </span></span><span style=display:flex><span>    Apollo<span style=color:#f92672>::</span>Region<span style=color:#f92672>*</span> region;
@@ -125,12 +125,12 @@ English
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (use_apollo) {
 </span></span><span style=display:flex><span>            <span style=color:#75715e>// Create Apollo region with 5 features (from KernelFeatures)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            region <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Apollo<span style=color:#f92672>::</span>Region(
+</span></span></span><span style=display:flex><span>            region <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Apollo<span style=color:#f92672>::</span>Region(
 </span></span><span style=display:flex><span>                <span style=color:#ae81ff>5</span>,  <span style=color:#75715e>// number of features
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>                kernel<span style=color:#f92672>-&gt;</span>getName(),
+</span></span></span><span style=display:flex><span>                kernel<span style=color:#f92672>-&gt;</span>getName(),
 </span></span><span style=display:flex><span>                NUM_POLICIES,
 </span></span><span style=display:flex><span>                <span style=color:#ae81ff>50</span>  <span style=color:#75715e>// minimum training data before making predictions
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            );
+</span></span></span><span style=display:flex><span>            );
 </span></span><span style=display:flex><span>        }
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>
@@ -153,25 +153,25 @@ English
 </span></span><span style=display:flex><span>        }
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// Extract features for Apollo
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        KernelFeatures features <span style=color:#f92672>=</span> k<span style=color:#f92672>-&gt;</span>extractFeatures(config);
+</span></span></span><span style=display:flex><span>        KernelFeatures features <span style=color:#f92672>=</span> k<span style=color:#f92672>-&gt;</span>extractFeatures(config);
 </span></span><span style=display:flex><span>        std<span style=color:#f92672>::</span>vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>float</span><span style=color:#f92672>&gt;</span> feature_vec <span style=color:#f92672>=</span> features.toVector();
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// Start Apollo region
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        Apollo<span style=color:#f92672>::</span>RegionContext<span style=color:#f92672>*</span> context <span style=color:#f92672>=</span> region<span style=color:#f92672>-&gt;</span>begin(feature_vec);
+</span></span></span><span style=display:flex><span>        Apollo<span style=color:#f92672>::</span>RegionContext<span style=color:#f92672>*</span> context <span style=color:#f92672>=</span> region<span style=color:#f92672>-&gt;</span>begin(feature_vec);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// Get policy recommendation from Apollo
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>int</span> policy_idx <span style=color:#f92672>=</span> region<span style=color:#f92672>-&gt;</span>getPolicyIndex(context);
+</span></span></span><span style=display:flex><span>        <span style=color:#66d9ef>int</span> policy_idx <span style=color:#f92672>=</span> region<span style=color:#f92672>-&gt;</span>getPolicyIndex(context);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        Timer timer;
 </span></span><span style=display:flex><span>        timer.start();
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// Execute with selected policy
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>switch</span>(policy_idx) {
+</span></span></span><span style=display:flex><span>        <span style=color:#66d9ef>switch</span>(policy_idx) {
 </span></span><span style=display:flex><span>            <span style=color:#66d9ef>case</span> <span style=color:#ae81ff>0</span><span style=color:#f92672>:</span>
 </span></span><span style=display:flex><span>                k<span style=color:#f92672>-&gt;</span><span style=color:#66d9ef>template</span> execute<span style=color:#f92672>&lt;</span>sequential_policy<span style=color:#f92672>&gt;</span>();
 </span></span><span style=display:flex><span>                <span style=color:#66d9ef>break</span>;
 </span></span><span style=display:flex><span><span style=color:#75715e>#ifdef RAJA_ENABLE_OPENMP
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            <span style=color:#66d9ef>case</span> <span style=color:#ae81ff>1</span><span style=color:#f92672>:</span>
+</span></span></span><span style=display:flex><span>            <span style=color:#66d9ef>case</span> <span style=color:#ae81ff>1</span><span style=color:#f92672>:</span>
 </span></span><span style=display:flex><span>                k<span style=color:#f92672>-&gt;</span><span style=color:#66d9ef>template</span> execute<span style=color:#f92672>&lt;</span>omp_policy_1<span style=color:#f92672>&gt;</span>();
 </span></span><span style=display:flex><span>                <span style=color:#66d9ef>break</span>;
 </span></span><span style=display:flex><span>            <span style=color:#66d9ef>case</span> <span style=color:#ae81ff>2</span><span style=color:#f92672>:</span>
@@ -184,7 +184,7 @@ English
 </span></span><span style=display:flex><span>                k<span style=color:#f92672>-&gt;</span><span style=color:#66d9ef>template</span> execute<span style=color:#f92672>&lt;</span>omp_policy_guided<span style=color:#f92672>&gt;</span>();
 </span></span><span style=display:flex><span>                <span style=color:#66d9ef>break</span>;
 </span></span><span style=display:flex><span><span style=color:#75715e>#endif
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            <span style=color:#66d9ef>default</span><span style=color:#f92672>:</span>
+</span></span></span><span style=display:flex><span>            <span style=color:#66d9ef>default</span><span style=color:#f92672>:</span>
 </span></span><span style=display:flex><span>                k<span style=color:#f92672>-&gt;</span><span style=color:#66d9ef>template</span> execute<span style=color:#f92672>&lt;</span>sequential_policy<span style=color:#f92672>&gt;</span>();
 </span></span><span style=display:flex><span>                <span style=color:#66d9ef>break</span>;
 </span></span><span style=display:flex><span>        }
@@ -193,7 +193,7 @@ English
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>double</span> elapsed <span style=color:#f92672>=</span> timer.getElapsedMilliseconds();
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// End Apollo region with performance metric
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        region<span style=color:#f92672>-&gt;</span>end(context, elapsed);
+</span></span></span><span style=display:flex><span>        region<span style=color:#f92672>-&gt;</span>end(context, elapsed);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (policy_idx <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>0</span> <span style=color:#f92672>&amp;&amp;</span> policy_idx <span style=color:#f92672>&lt;</span> NUM_POLICIES) {
 </span></span><span style=display:flex><span>            std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;  Apollo selected: &#34;</span> <span style=color:#f92672>&lt;&lt;</span> policy_names[policy_idx]
@@ -242,7 +242,7 @@ English
 </span></span><span style=display:flex><span>                }
 </span></span><span style=display:flex><span>            } <span style=color:#66d9ef>else</span> {
 </span></span><span style=display:flex><span>                <span style=color:#75715e>// Run with default policy (sequential)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>                <span style=color:#66d9ef>if</span> (<span style=color:#66d9ef>auto</span><span style=color:#f92672>*</span> k <span style=color:#f92672>=</span> <span style=color:#66d9ef>dynamic_cast</span><span style=color:#f92672>&lt;</span>VectorAddKernel<span style=color:#f92672>*&gt;</span>(kernel.get())) {
+</span></span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> (<span style=color:#66d9ef>auto</span><span style=color:#f92672>*</span> k <span style=color:#f92672>=</span> <span style=color:#66d9ef>dynamic_cast</span><span style=color:#f92672>&lt;</span>VectorAddKernel<span style=color:#f92672>*&gt;</span>(kernel.get())) {
 </span></span><span style=display:flex><span>                    elapsed <span style=color:#f92672>=</span> runWithPolicy<span style=color:#f92672>&lt;</span>VectorAddKernel, sequential_policy<span style=color:#f92672>&gt;</span>(k);
 </span></span><span style=display:flex><span>                } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (<span style=color:#66d9ef>auto</span><span style=color:#f92672>*</span> k <span style=color:#f92672>=</span> <span style=color:#66d9ef>dynamic_cast</span><span style=color:#f92672>&lt;</span>DaxpyKernel<span style=color:#f92672>*&gt;</span>(kernel.get())) {
 </span></span><span style=display:flex><span>                    elapsed <span style=color:#f92672>=</span> runWithPolicy<span style=color:#f92672>&lt;</span>DaxpyKernel, sequential_policy<span style=color:#f92672>&gt;</span>(k);
@@ -266,7 +266,7 @@ English
 </span></span><span style=display:flex><span>        }
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// Compute statistics
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>double</span> avg_time <span style=color:#f92672>=</span> std<span style=color:#f92672>::</span>accumulate(times.begin(), times.end(), <span style=color:#ae81ff>0.0</span>) <span style=color:#f92672>/</span> times.size();
+</span></span></span><span style=display:flex><span>        <span style=color:#66d9ef>double</span> avg_time <span style=color:#f92672>=</span> std<span style=color:#f92672>::</span>accumulate(times.begin(), times.end(), <span style=color:#ae81ff>0.0</span>) <span style=color:#f92672>/</span> times.size();
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>double</span> min_time <span style=color:#f92672>=</span> <span style=color:#f92672>*</span>std<span style=color:#f92672>::</span>min_element(times.begin(), times.end());
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>double</span> max_time <span style=color:#f92672>=</span> <span style=color:#f92672>*</span>std<span style=color:#f92672>::</span>max_element(times.begin(), times.end());
 </span></span><span style=display:flex><span>
@@ -291,7 +291,7 @@ English
 </span></span><span style=display:flex><span>};
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// Scenario runner - runs different problem configurations
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ScenarioRunner</span> {
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ScenarioRunner</span> {
 </span></span><span style=display:flex><span><span style=color:#66d9ef>private</span><span style=color:#f92672>:</span>
 </span></span><span style=display:flex><span>    Apollo<span style=color:#f92672>*</span> apollo;
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>bool</span> verbose;
@@ -306,35 +306,35 @@ English
 </span></span><span style=display:flex><span>        std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>string(<span style=color:#ae81ff>60</span>, <span style=color:#e6db74>&#39;=&#39;</span>) <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// Create benchmarks for different kernels
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        std<span style=color:#f92672>::</span>vector<span style=color:#f92672>&lt;</span>std<span style=color:#f92672>::</span>unique_ptr<span style=color:#f92672>&lt;</span>KernelBenchmark<span style=color:#f92672>&gt;&gt;</span> benchmarks;
+</span></span></span><span style=display:flex><span>        std<span style=color:#f92672>::</span>vector<span style=color:#f92672>&lt;</span>std<span style=color:#f92672>::</span>unique_ptr<span style=color:#f92672>&lt;</span>KernelBenchmark<span style=color:#f92672>&gt;&gt;</span> benchmarks;
 </span></span><span style=display:flex><span>        benchmarks.push_back(std<span style=color:#f92672>::</span>make_unique<span style=color:#f92672>&lt;</span>KernelBenchmark<span style=color:#f92672>&gt;</span>(<span style=color:#e6db74>&#34;VectorAdd&#34;</span>, true));
 </span></span><span style=display:flex><span>        benchmarks.push_back(std<span style=color:#f92672>::</span>make_unique<span style=color:#f92672>&lt;</span>KernelBenchmark<span style=color:#f92672>&gt;</span>(<span style=color:#e6db74>&#34;DAXPY&#34;</span>, true));
 </span></span><span style=display:flex><span>        benchmarks.push_back(std<span style=color:#f92672>::</span>make_unique<span style=color:#f92672>&lt;</span>KernelBenchmark<span style=color:#f92672>&gt;</span>(<span style=color:#e6db74>&#34;Stencil1D&#34;</span>, true));
 </span></span><span style=display:flex><span>        benchmarks.push_back(std<span style=color:#f92672>::</span>make_unique<span style=color:#f92672>&lt;</span>KernelBenchmark<span style=color:#f92672>&gt;</span>(<span style=color:#e6db74>&#34;Reduction&#34;</span>, true));
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// Different problem configurations to test adaptation
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        std<span style=color:#f92672>::</span>vector<span style=color:#f92672>&lt;</span>ProblemConfig<span style=color:#f92672>&gt;</span> configs;
+</span></span></span><span style=display:flex><span>        std<span style=color:#f92672>::</span>vector<span style=color:#f92672>&lt;</span>ProblemConfig<span style=color:#f92672>&gt;</span> configs;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// Small problems
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        ProblemConfig small_config;
+</span></span></span><span style=display:flex><span>        ProblemConfig small_config;
 </span></span><span style=display:flex><span>        small_config.size <span style=color:#f92672>=</span> <span style=color:#ae81ff>10000</span>;
 </span></span><span style=display:flex><span>        small_config.iterations <span style=color:#f92672>=</span> <span style=color:#ae81ff>5</span>;
 </span></span><span style=display:flex><span>        configs.push_back(small_config);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// Medium problems
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        ProblemConfig medium_config;
+</span></span></span><span style=display:flex><span>        ProblemConfig medium_config;
 </span></span><span style=display:flex><span>        medium_config.size <span style=color:#f92672>=</span> <span style=color:#ae81ff>100000</span>;
 </span></span><span style=display:flex><span>        medium_config.iterations <span style=color:#f92672>=</span> <span style=color:#ae81ff>5</span>;
 </span></span><span style=display:flex><span>        configs.push_back(medium_config);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// Large problems
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        ProblemConfig large_config;
+</span></span></span><span style=display:flex><span>        ProblemConfig large_config;
 </span></span><span style=display:flex><span>        large_config.size <span style=color:#f92672>=</span> <span style=color:#ae81ff>1000000</span>;
 </span></span><span style=display:flex><span>        large_config.iterations <span style=color:#f92672>=</span> <span style=color:#ae81ff>5</span>;
 </span></span><span style=display:flex><span>        configs.push_back(large_config);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// Very large problems
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        ProblemConfig xlarge_config;
+</span></span></span><span style=display:flex><span>        ProblemConfig xlarge_config;
 </span></span><span style=display:flex><span>        xlarge_config.size <span style=color:#f92672>=</span> <span style=color:#ae81ff>10000000</span>;
 </span></span><span style=display:flex><span>        xlarge_config.iterations <span style=color:#f92672>=</span> <span style=color:#ae81ff>5</span>;
 </span></span><span style=display:flex><span>        configs.push_back(xlarge_config);
@@ -342,7 +342,7 @@ English
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>int</span> global_step <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// Run exploration phase
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>--- EXPLORATION PHASE ---&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
+</span></span></span><span style=display:flex><span>        std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>--- EXPLORATION PHASE ---&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
 </span></span><span style=display:flex><span>        std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;Apollo explores different policies...&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> (size_t config_idx <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; config_idx <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>2</span>; <span style=color:#f92672>++</span>config_idx) {
@@ -353,12 +353,12 @@ English
 </span></span><span style=display:flex><span>        }
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// Trigger training
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>--- TRAINING PHASE ---&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
+</span></span></span><span style=display:flex><span>        std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>--- TRAINING PHASE ---&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
 </span></span><span style=display:flex><span>        apollo<span style=color:#f92672>-&gt;</span>train(<span style=color:#ae81ff>0</span>);
 </span></span><span style=display:flex><span>        std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;Apollo has trained models based on exploration data&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// Run exploitation phase
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>--- EXPLOITATION PHASE ---&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
+</span></span></span><span style=display:flex><span>        std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>--- EXPLOITATION PHASE ---&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
 </span></span><span style=display:flex><span>        std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;Apollo uses learned models to select optimal policies...&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> (size_t config_idx <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>; config_idx <span style=color:#f92672>&lt;</span> configs.size(); <span style=color:#f92672>++</span>config_idx) {
@@ -367,14 +367,14 @@ English
 </span></span><span style=display:flex><span>                global_step<span style=color:#f92672>++</span>;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>                <span style=color:#75715e>// Periodically retrain to adapt
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>                <span style=color:#66d9ef>if</span> (global_step <span style=color:#f92672>%</span> <span style=color:#ae81ff>10</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>) {
+</span></span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> (global_step <span style=color:#f92672>%</span> <span style=color:#ae81ff>10</span> <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>) {
 </span></span><span style=display:flex><span>                    apollo<span style=color:#f92672>-&gt;</span>train(global_step <span style=color:#f92672>/</span> <span style=color:#ae81ff>10</span>);
 </span></span><span style=display:flex><span>                }
 </span></span><span style=display:flex><span>            }
 </span></span><span style=display:flex><span>        }
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// Clean up benchmarks explicitly
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>auto</span><span style=color:#f92672>&amp;</span> benchmark : benchmarks) {
+</span></span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>auto</span><span style=color:#f92672>&amp;</span> benchmark : benchmarks) {
 </span></span><span style=display:flex><span>            benchmark<span style=color:#f92672>-&gt;</span>cleanupRegion();
 </span></span><span style=display:flex><span>        }
 </span></span><span style=display:flex><span>        benchmarks.clear();
@@ -394,21 +394,21 @@ English
 </span></span><span style=display:flex><span>        apollo_bench.runBenchmark(config, <span style=color:#ae81ff>20</span>);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// Train after exploration
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        apollo<span style=color:#f92672>-&gt;</span>train(<span style=color:#ae81ff>1</span>);
+</span></span></span><span style=display:flex><span>        apollo<span style=color:#f92672>-&gt;</span>train(<span style=color:#ae81ff>1</span>);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>--- Running with Apollo (after training) ---&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
 </span></span><span style=display:flex><span>        apollo_bench.runBenchmark(config, <span style=color:#ae81ff>10</span>);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// Clean up benchmark
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        apollo_bench.cleanupRegion();
+</span></span></span><span style=display:flex><span>        apollo_bench.cleanupRegion();
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>#ifdef RAJA_ENABLE_OPENMP
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>--- Running with fixed Sequential policy ---&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
+</span></span></span><span style=display:flex><span>        std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>--- Running with fixed Sequential policy ---&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
 </span></span><span style=display:flex><span>        KernelBenchmark seq_bench(<span style=color:#e6db74>&#34;VectorAdd&#34;</span>, false);
 </span></span><span style=display:flex><span>        seq_bench.runBenchmark(config, <span style=color:#ae81ff>10</span>);
 </span></span><span style=display:flex><span>        seq_bench.cleanupRegion();
 </span></span><span style=display:flex><span><span style=color:#75715e>#endif
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    }
+</span></span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>runDataDependentScenario</span>() {
 </span></span><span style=display:flex><span>        std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>string(<span style=color:#ae81ff>60</span>, <span style=color:#e6db74>&#39;=&#39;</span>) <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
@@ -419,7 +419,7 @@ English
 </span></span><span style=display:flex><span>        KernelBenchmark indirect_bench(<span style=color:#e6db74>&#34;Indirect&#34;</span>, true);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// Test with different sparsity levels
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        std<span style=color:#f92672>::</span>vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>double</span><span style=color:#f92672>&gt;</span> sparsity_levels <span style=color:#f92672>=</span> {<span style=color:#ae81ff>0.01</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>0.5</span>, <span style=color:#ae81ff>0.9</span>, <span style=color:#ae81ff>0.99</span>};
+</span></span></span><span style=display:flex><span>        std<span style=color:#f92672>::</span>vector<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>double</span><span style=color:#f92672>&gt;</span> sparsity_levels <span style=color:#f92672>=</span> {<span style=color:#ae81ff>0.01</span>, <span style=color:#ae81ff>0.1</span>, <span style=color:#ae81ff>0.5</span>, <span style=color:#ae81ff>0.9</span>, <span style=color:#ae81ff>0.99</span>};
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>double</span> sparsity : sparsity_levels) {
 </span></span><span style=display:flex><span>            std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>--- Sparsity Level: &#34;</span> <span style=color:#f92672>&lt;&lt;</span> (sparsity <span style=color:#f92672>*</span> <span style=color:#ae81ff>100</span>) <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;% ---&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
@@ -432,14 +432,14 @@ English
 </span></span><span style=display:flex><span>            spmv_bench.runBenchmark(config, <span style=color:#ae81ff>10</span>);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>            <span style=color:#75715e>// Train after each sparsity level
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            apollo<span style=color:#f92672>-&gt;</span>train(<span style=color:#66d9ef>static_cast</span><span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span>(sparsity <span style=color:#f92672>*</span> <span style=color:#ae81ff>100</span>));
+</span></span></span><span style=display:flex><span>            apollo<span style=color:#f92672>-&gt;</span>train(<span style=color:#66d9ef>static_cast</span><span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span>(sparsity <span style=color:#f92672>*</span> <span style=color:#ae81ff>100</span>));
 </span></span><span style=display:flex><span>        }
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// Clean up benchmarks
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        spmv_bench.cleanupRegion();
+</span></span></span><span style=display:flex><span>        spmv_bench.cleanupRegion();
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// Test with different access patterns
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>--- Testing Indirect Access Patterns ---&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
+</span></span></span><span style=display:flex><span>        std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>--- Testing Indirect Access Patterns ---&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        ProblemConfig seq_config;
 </span></span><span style=display:flex><span>        seq_config.size <span style=color:#f92672>=</span> <span style=color:#ae81ff>1000000</span>;
@@ -458,19 +458,19 @@ English
 </span></span><span style=display:flex><span>        indirect_bench.runBenchmark(rand_config, <span style=color:#ae81ff>10</span>);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// Clean up benchmark
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        indirect_bench.cleanupRegion();
+</span></span></span><span style=display:flex><span>        indirect_bench.cleanupRegion();
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>};
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>} <span style=color:#75715e>// namespace apollo_demo
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// Main function
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(<span style=color:#66d9ef>int</span> argc, <span style=color:#66d9ef>char</span><span style=color:#f92672>**</span> argv) {
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>int</span> <span style=color:#a6e22e>main</span>(<span style=color:#66d9ef>int</span> argc, <span style=color:#66d9ef>char</span><span style=color:#f92672>**</span> argv) {
 </span></span><span style=display:flex><span>    std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;Apollo-RAJA CPU Demonstration&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
 </span></span><span style=display:flex><span>    std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;==============================&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Print configuration
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>Configuration:&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
+</span></span></span><span style=display:flex><span>    std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>Configuration:&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
 </span></span><span style=display:flex><span>    std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;  Number of policies: &#34;</span> <span style=color:#f92672>&lt;&lt;</span> NUM_POLICIES <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
 </span></span><span style=display:flex><span>    std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;  Available policies:&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> NUM_POLICIES; <span style=color:#f92672>++</span>i) {
@@ -478,19 +478,19 @@ English
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>#ifdef RAJA_ENABLE_OPENMP
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>int</span> num_threads <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> num_threads <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
 </span></span><span style=display:flex><span>    <span style=color:#75715e>#pragma omp parallel
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    {
+</span></span></span><span style=display:flex><span>    {
 </span></span><span style=display:flex><span>        <span style=color:#75715e>#pragma omp single
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        num_threads <span style=color:#f92672>=</span> omp_get_num_threads();
+</span></span></span><span style=display:flex><span>        num_threads <span style=color:#f92672>=</span> omp_get_num_threads();
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>    std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;  OpenMP threads: &#34;</span> <span style=color:#f92672>&lt;&lt;</span> num_threads <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
 </span></span><span style=display:flex><span><span style=color:#75715e>#else
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;  OpenMP: DISABLED&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
+</span></span></span><span style=display:flex><span>    std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;  OpenMP: DISABLED&#34;</span> <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
 </span></span><span style=display:flex><span><span style=color:#75715e>#endif
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Check for Apollo environment variables
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>const</span> <span style=color:#66d9ef>char</span><span style=color:#f92672>*</span> policy_model <span style=color:#f92672>=</span> std<span style=color:#f92672>::</span>getenv(<span style=color:#e6db74>&#34;APOLLO_POLICY_MODEL&#34;</span>);
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#66d9ef>char</span><span style=color:#f92672>*</span> policy_model <span style=color:#f92672>=</span> std<span style=color:#f92672>::</span>getenv(<span style=color:#e6db74>&#34;APOLLO_POLICY_MODEL&#34;</span>);
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (policy_model) {
 </span></span><span style=display:flex><span>        std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> <span style=color:#e6db74>&#34;  Apollo Policy Model: &#34;</span> <span style=color:#f92672>&lt;&lt;</span> policy_model <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
 </span></span><span style=display:flex><span>    } <span style=color:#66d9ef>else</span> {
@@ -505,7 +505,7 @@ English
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Parse command line arguments
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>bool</span> run_all <span style=color:#f92672>=</span> true;
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>bool</span> run_all <span style=color:#f92672>=</span> true;
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>bool</span> run_adaptive <span style=color:#f92672>=</span> false;
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>bool</span> run_comparison <span style=color:#f92672>=</span> false;
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>bool</span> run_data_dependent <span style=color:#f92672>=</span> false;
@@ -538,10 +538,10 @@ English
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Create scenario runner
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    apollo_demo<span style=color:#f92672>::</span>ScenarioRunner runner(false);
+</span></span></span><span style=display:flex><span>    apollo_demo<span style=color:#f92672>::</span>ScenarioRunner runner(false);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Run selected scenarios
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>if</span> (run_all <span style=color:#f92672>||</span> run_adaptive) {
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (run_all <span style=color:#f92672>||</span> run_adaptive) {
 </span></span><span style=display:flex><span>        runner.runAdaptiveScenario();
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>
@@ -558,44 +558,44 @@ English
 </span></span><span style=display:flex><span>    std<span style=color:#f92672>::</span>cout <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>string(<span style=color:#ae81ff>60</span>, <span style=color:#e6db74>&#39;=&#39;</span>) <span style=color:#f92672>&lt;&lt;</span> std<span style=color:#f92672>::</span>endl;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Give some time for cleanup
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    std<span style=color:#f92672>::</span>this_thread<span style=color:#f92672>::</span>sleep_for(std<span style=color:#f92672>::</span>chrono<span style=color:#f92672>::</span>milliseconds(<span style=color:#ae81ff>100</span>));
+</span></span></span><span style=display:flex><span>    std<span style=color:#f92672>::</span>this_thread<span style=color:#f92672>::</span>sleep_for(std<span style=color:#f92672>::</span>chrono<span style=color:#f92672>::</span>milliseconds(<span style=color:#ae81ff>100</span>));
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>0</span>;
-</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>with a wide variety of compute kernels defined in <code>kernels.h</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c++ data-lang=c++><span style=display:flex><span><span style=color:#75715e>// kernels.h
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><p>with a wide variety of compute kernels defined in <code>kernels.h</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-c++ data-lang=c++><span style=display:flex><span><span style=color:#75715e>// kernels.h
 </span></span></span><span style=display:flex><span><span style=color:#75715e>//
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#75715e>#ifndef APOLLO_RAJA_DEMO_KERNELS_H
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#ifndef APOLLO_RAJA_DEMO_KERNELS_H
 </span></span></span><span style=display:flex><span><span style=color:#75715e>#define APOLLO_RAJA_DEMO_KERNELS_H
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;vector&gt;</span><span style=color:#75715e>
 </span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;memory&gt;</span><span style=color:#75715e>
 </span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cmath&gt;</span><span style=color:#75715e>
 </span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;algorithm&gt;</span><span style=color:#75715e>
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&#34;RAJA/RAJA.hpp&#34;</span><span style=color:#75715e>
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>namespace</span> apollo_demo {
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// Structure to hold problem configuration
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>ProblemConfig</span> {
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>ProblemConfig</span> {
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> size;              <span style=color:#75715e>// Problem size
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>int</span> iterations;        <span style=color:#75715e>// Number of iterations
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>double</span> sparsity;       <span style=color:#75715e>// Sparsity level (0.0 to 1.0)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>int</span> stencil_size;      <span style=color:#75715e>// Size of stencil pattern
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>bool</span> use_indirect;     <span style=color:#75715e>// Use indirect access pattern
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> iterations;        <span style=color:#75715e>// Number of iterations
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>double</span> sparsity;       <span style=color:#75715e>// Sparsity level (0.0 to 1.0)
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> stencil_size;      <span style=color:#75715e>// Size of stencil pattern
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>bool</span> use_indirect;     <span style=color:#75715e>// Use indirect access pattern
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    ProblemConfig()
 </span></span><span style=display:flex><span>        <span style=color:#f92672>:</span> size(<span style=color:#ae81ff>1000000</span>), iterations(<span style=color:#ae81ff>100</span>), sparsity(<span style=color:#ae81ff>0.0</span>),
 </span></span><span style=display:flex><span>          stencil_size(<span style=color:#ae81ff>5</span>), use_indirect(false) {}
 </span></span><span style=display:flex><span>};
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// Features that Apollo can use for tuning decisions
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>KernelFeatures</span> {
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>KernelFeatures</span> {
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>float</span> problem_size_log;     <span style=color:#75715e>// Log of problem size
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>float</span> memory_footprint;      <span style=color:#75715e>// Estimated memory footprint in MB
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>float</span> arithmetic_intensity;  <span style=color:#75715e>// Ops per byte
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>float</span> sparsity_level;        <span style=color:#75715e>// Sparsity of data (0-1)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>float</span> access_pattern;        <span style=color:#75715e>// 0 for sequential, 1 for random
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>float</span> memory_footprint;      <span style=color:#75715e>// Estimated memory footprint in MB
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>float</span> arithmetic_intensity;  <span style=color:#75715e>// Ops per byte
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>float</span> sparsity_level;        <span style=color:#75715e>// Sparsity of data (0-1)
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>float</span> access_pattern;        <span style=color:#75715e>// 0 for sequential, 1 for random
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    KernelFeatures()
 </span></span><span style=display:flex><span>        <span style=color:#f92672>:</span> problem_size_log(<span style=color:#ae81ff>0</span>), memory_footprint(<span style=color:#ae81ff>0</span>),
 </span></span><span style=display:flex><span>          arithmetic_intensity(<span style=color:#ae81ff>0</span>), sparsity_level(<span style=color:#ae81ff>0</span>), access_pattern(<span style=color:#ae81ff>0</span>) {}
@@ -607,7 +607,7 @@ English
 </span></span><span style=display:flex><span>};
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// Base class for kernels
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>KernelBase</span> {
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>KernelBase</span> {
 </span></span><span style=display:flex><span><span style=color:#66d9ef>public</span><span style=color:#f92672>:</span>
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>virtual</span> <span style=color:#f92672>~</span>KernelBase() <span style=color:#f92672>=</span> <span style=color:#66d9ef>default</span>;
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>virtual</span> <span style=color:#66d9ef>const</span> <span style=color:#66d9ef>char</span><span style=color:#f92672>*</span> <span style=color:#a6e22e>getName</span>() <span style=color:#66d9ef>const</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
@@ -617,7 +617,7 @@ English
 </span></span><span style=display:flex><span>};
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// Vector addition kernel: c = a + b
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>VectorAddKernel</span> <span style=color:#f92672>:</span> <span style=color:#66d9ef>public</span> KernelBase {
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>VectorAddKernel</span> <span style=color:#f92672>:</span> <span style=color:#66d9ef>public</span> KernelBase {
 </span></span><span style=display:flex><span><span style=color:#66d9ef>private</span><span style=color:#f92672>:</span>
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> a;
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> b;
@@ -646,7 +646,7 @@ English
 </span></span><span style=display:flex><span>};
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// DAXPY kernel: y = alpha * x + y
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>DaxpyKernel</span> <span style=color:#f92672>:</span> <span style=color:#66d9ef>public</span> KernelBase {
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>DaxpyKernel</span> <span style=color:#f92672>:</span> <span style=color:#66d9ef>public</span> KernelBase {
 </span></span><span style=display:flex><span><span style=color:#66d9ef>private</span><span style=color:#f92672>:</span>
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> x;
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> y;
@@ -676,12 +676,12 @@ English
 </span></span><span style=display:flex><span>};
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// Matrix-vector multiplication: y = A * x
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>MatVecKernel</span> <span style=color:#f92672>:</span> <span style=color:#66d9ef>public</span> KernelBase {
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>MatVecKernel</span> <span style=color:#f92672>:</span> <span style=color:#66d9ef>public</span> KernelBase {
 </span></span><span style=display:flex><span><span style=color:#66d9ef>private</span><span style=color:#f92672>:</span>
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> A;  <span style=color:#75715e>// Matrix in row-major format
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> x;  <span style=color:#75715e>// Input vector
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> y;  <span style=color:#75715e>// Output vector
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>int</span> rows;
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> x;  <span style=color:#75715e>// Input vector
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> y;  <span style=color:#75715e>// Output vector
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> rows;
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> cols;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>public</span><span style=color:#f92672>:</span>
@@ -710,7 +710,7 @@ English
 </span></span><span style=display:flex><span>};
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// 1D Stencil computation
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Stencil1DKernel</span> <span style=color:#f92672>:</span> <span style=color:#66d9ef>public</span> KernelBase {
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Stencil1DKernel</span> <span style=color:#f92672>:</span> <span style=color:#66d9ef>public</span> KernelBase {
 </span></span><span style=display:flex><span><span style=color:#66d9ef>private</span><span style=color:#f92672>:</span>
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> input;
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> output;
@@ -746,7 +746,7 @@ English
 </span></span><span style=display:flex><span>};
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// Reduction kernel: sum all elements
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ReductionKernel</span> <span style=color:#f92672>:</span> <span style=color:#66d9ef>public</span> KernelBase {
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ReductionKernel</span> <span style=color:#f92672>:</span> <span style=color:#66d9ef>public</span> KernelBase {
 </span></span><span style=display:flex><span><span style=color:#66d9ef>private</span><span style=color:#f92672>:</span>
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> data;
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> size;
@@ -778,15 +778,15 @@ English
 </span></span><span style=display:flex><span>};
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// Sparse matrix-vector multiplication
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>SpMVKernel</span> <span style=color:#f92672>:</span> <span style=color:#66d9ef>public</span> KernelBase {
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>SpMVKernel</span> <span style=color:#f92672>:</span> <span style=color:#66d9ef>public</span> KernelBase {
 </span></span><span style=display:flex><span><span style=color:#66d9ef>private</span><span style=color:#f92672>:</span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// CSR format
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> values;     <span style=color:#75715e>// Non-zero values
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>int</span><span style=color:#f92672>*</span> col_indices;   <span style=color:#75715e>// Column indices
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>int</span><span style=color:#f92672>*</span> row_ptr;       <span style=color:#75715e>// Row pointers
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> x;          <span style=color:#75715e>// Input vector
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> y;          <span style=color:#75715e>// Output vector
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>int</span> num_rows;
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> values;     <span style=color:#75715e>// Non-zero values
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span><span style=color:#f92672>*</span> col_indices;   <span style=color:#75715e>// Column indices
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span><span style=color:#f92672>*</span> row_ptr;       <span style=color:#75715e>// Row pointers
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> x;          <span style=color:#75715e>// Input vector
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> y;          <span style=color:#75715e>// Output vector
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> num_rows;
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> num_nonzeros;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>public</span><span style=color:#f92672>:</span>
@@ -816,7 +816,7 @@ English
 </span></span><span style=display:flex><span>};
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// Indirect memory access kernel (gather-scatter pattern)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>IndirectKernel</span> <span style=color:#f92672>:</span> <span style=color:#66d9ef>public</span> KernelBase {
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>IndirectKernel</span> <span style=color:#f92672>:</span> <span style=color:#66d9ef>public</span> KernelBase {
 </span></span><span style=display:flex><span><span style=color:#66d9ef>private</span><span style=color:#f92672>:</span>
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> src;
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> dst;
@@ -845,27 +845,27 @@ English
 </span></span><span style=display:flex><span>};
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// Factory function to create kernels
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>std<span style=color:#f92672>::</span>unique_ptr<span style=color:#f92672>&lt;</span>KernelBase<span style=color:#f92672>&gt;</span> createKernel(<span style=color:#66d9ef>const</span> std<span style=color:#f92672>::</span>string<span style=color:#f92672>&amp;</span> kernel_name);
+</span></span></span><span style=display:flex><span>std<span style=color:#f92672>::</span>unique_ptr<span style=color:#f92672>&lt;</span>KernelBase<span style=color:#f92672>&gt;</span> createKernel(<span style=color:#66d9ef>const</span> std<span style=color:#f92672>::</span>string<span style=color:#f92672>&amp;</span> kernel_name);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// Utility functions
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>initializeRandomData</span>(<span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> data, <span style=color:#66d9ef>int</span> size, <span style=color:#66d9ef>double</span> min_val <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.0</span>, <span style=color:#66d9ef>double</span> max_val <span style=color:#f92672>=</span> <span style=color:#ae81ff>1.0</span>);
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>initializeRandomData</span>(<span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> data, <span style=color:#66d9ef>int</span> size, <span style=color:#66d9ef>double</span> min_val <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.0</span>, <span style=color:#66d9ef>double</span> max_val <span style=color:#f92672>=</span> <span style=color:#ae81ff>1.0</span>);
 </span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>initializeRandomIndices</span>(<span style=color:#66d9ef>int</span><span style=color:#f92672>*</span> indices, <span style=color:#66d9ef>int</span> size, <span style=color:#66d9ef>int</span> max_index);
 </span></span><span style=display:flex><span><span style=color:#66d9ef>double</span> <span style=color:#a6e22e>computeChecksum</span>(<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> data, <span style=color:#66d9ef>int</span> size);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>} <span style=color:#75715e>// namespace apollo_demo
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>#endif </span><span style=color:#75715e>// APOLLO_RAJA_DEMO_KERNELS_H
-</span></span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c++ data-lang=c++><span style=display:flex><span><span style=color:#75715e>// kernels.cpp
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#75715e>#include</span> <span style=color:#75715e>&#34;kernels.h&#34;</span><span style=color:#75715e>
+</span></span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-c++ data-lang=c++><span style=display:flex><span><span style=color:#75715e>// kernels.cpp
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&#34;kernels.h&#34;</span><span style=color:#75715e>
 </span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;cstring&gt;</span><span style=color:#75715e>
 </span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;random&gt;</span><span style=color:#75715e>
 </span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;algorithm&gt;</span><span style=color:#75715e>
 </span></span></span><span style=display:flex><span><span style=color:#75715e>#include</span> <span style=color:#75715e>&lt;iostream&gt;</span><span style=color:#75715e>
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>namespace</span> apollo_demo {
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// Utility functions implementation
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>initializeRandomData</span>(<span style=color:#66d9ef>double</span><span style=color:#f92672>*</span> data, <span style=color:#66d9ef>int</span> size, <span style=color:#66d9ef>double</span> min_val, <span style=color:#66d9ef>double</span> max_val) {
 </span></span><span style=display:flex><span>    std<span style=color:#f92672>::</span>random_device rd;
 </span></span><span style=display:flex><span>    std<span style=color:#f92672>::</span>mt19937 gen(rd());
@@ -895,17 +895,17 @@ English
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// VectorAddKernel implementation
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> VectorAddKernel<span style=color:#f92672>::</span>initialize(<span style=color:#66d9ef>const</span> ProblemConfig<span style=color:#f92672>&amp;</span> config) {
 </span></span><span style=display:flex><span>    size <span style=color:#f92672>=</span> config.size;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Allocate memory
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    a <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[size];
+</span></span></span><span style=display:flex><span>    a <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[size];
 </span></span><span style=display:flex><span>    b <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[size];
 </span></span><span style=display:flex><span>    c <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[size];
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Initialize with random data
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    initializeRandomData(a, size, <span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>1.0</span>);
+</span></span></span><span style=display:flex><span>    initializeRandomData(a, size, <span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>1.0</span>);
 </span></span><span style=display:flex><span>    initializeRandomData(b, size, <span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>1.0</span>);
 </span></span><span style=display:flex><span>    std<span style=color:#f92672>::</span>memset(c, <span style=color:#ae81ff>0</span>, size <span style=color:#f92672>*</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>double</span>));
 </span></span><span style=display:flex><span>}
@@ -922,23 +922,23 @@ English
 </span></span><span style=display:flex><span>    KernelFeatures features;
 </span></span><span style=display:flex><span>    features.problem_size_log <span style=color:#f92672>=</span> std<span style=color:#f92672>::</span>log10(<span style=color:#66d9ef>static_cast</span><span style=color:#f92672>&lt;</span><span style=color:#66d9ef>float</span><span style=color:#f92672>&gt;</span>(config.size));
 </span></span><span style=display:flex><span>    features.memory_footprint <span style=color:#f92672>=</span> (<span style=color:#ae81ff>3.0f</span> <span style=color:#f92672>*</span> config.size <span style=color:#f92672>*</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>double</span>)) <span style=color:#f92672>/</span> (<span style=color:#ae81ff>1024.0f</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>1024.0f</span>); <span style=color:#75715e>// MB
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    features.arithmetic_intensity <span style=color:#f92672>=</span> <span style=color:#ae81ff>1.0f</span> <span style=color:#f92672>/</span> (<span style=color:#ae81ff>3.0f</span> <span style=color:#f92672>*</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>double</span>)); <span style=color:#75715e>// 1 op per 3 memory accesses
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    features.sparsity_level <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.0f</span>; <span style=color:#75715e>// Dense operation
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    features.access_pattern <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.0f</span>; <span style=color:#75715e>// Sequential access
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>return</span> features;
+</span></span></span><span style=display:flex><span>    features.arithmetic_intensity <span style=color:#f92672>=</span> <span style=color:#ae81ff>1.0f</span> <span style=color:#f92672>/</span> (<span style=color:#ae81ff>3.0f</span> <span style=color:#f92672>*</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>double</span>)); <span style=color:#75715e>// 1 op per 3 memory accesses
+</span></span></span><span style=display:flex><span>    features.sparsity_level <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.0f</span>; <span style=color:#75715e>// Dense operation
+</span></span></span><span style=display:flex><span>    features.access_pattern <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.0f</span>; <span style=color:#75715e>// Sequential access
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> features;
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// DaxpyKernel implementation
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> DaxpyKernel<span style=color:#f92672>::</span>initialize(<span style=color:#66d9ef>const</span> ProblemConfig<span style=color:#f92672>&amp;</span> config) {
 </span></span><span style=display:flex><span>    size <span style=color:#f92672>=</span> config.size;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Allocate memory
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    x <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[size];
+</span></span></span><span style=display:flex><span>    x <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[size];
 </span></span><span style=display:flex><span>    y <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[size];
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Initialize with random data
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    initializeRandomData(x, size, <span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>1.0</span>);
+</span></span></span><span style=display:flex><span>    initializeRandomData(x, size, <span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>1.0</span>);
 </span></span><span style=display:flex><span>    initializeRandomData(y, size, <span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>1.0</span>);
 </span></span><span style=display:flex><span>    alpha <span style=color:#f92672>=</span> <span style=color:#ae81ff>2.5</span>;
 </span></span><span style=display:flex><span>}
@@ -955,25 +955,25 @@ English
 </span></span><span style=display:flex><span>    features.problem_size_log <span style=color:#f92672>=</span> std<span style=color:#f92672>::</span>log10(<span style=color:#66d9ef>static_cast</span><span style=color:#f92672>&lt;</span><span style=color:#66d9ef>float</span><span style=color:#f92672>&gt;</span>(config.size));
 </span></span><span style=display:flex><span>    features.memory_footprint <span style=color:#f92672>=</span> (<span style=color:#ae81ff>2.0f</span> <span style=color:#f92672>*</span> config.size <span style=color:#f92672>*</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>double</span>)) <span style=color:#f92672>/</span> (<span style=color:#ae81ff>1024.0f</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>1024.0f</span>);
 </span></span><span style=display:flex><span>    features.arithmetic_intensity <span style=color:#f92672>=</span> <span style=color:#ae81ff>2.0f</span> <span style=color:#f92672>/</span> (<span style=color:#ae81ff>3.0f</span> <span style=color:#f92672>*</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>double</span>)); <span style=color:#75715e>// 2 ops per 3 memory accesses
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    features.sparsity_level <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.0f</span>;
+</span></span></span><span style=display:flex><span>    features.sparsity_level <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.0f</span>;
 </span></span><span style=display:flex><span>    features.access_pattern <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.0f</span>;
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> features;
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// MatVecKernel implementation
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> MatVecKernel<span style=color:#f92672>::</span>initialize(<span style=color:#66d9ef>const</span> ProblemConfig<span style=color:#f92672>&amp;</span> config) {
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Make it a square matrix for simplicity
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    rows <span style=color:#f92672>=</span> <span style=color:#66d9ef>static_cast</span><span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span>(std<span style=color:#f92672>::</span>sqrt(config.size));
+</span></span></span><span style=display:flex><span>    rows <span style=color:#f92672>=</span> <span style=color:#66d9ef>static_cast</span><span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span>(std<span style=color:#f92672>::</span>sqrt(config.size));
 </span></span><span style=display:flex><span>    cols <span style=color:#f92672>=</span> rows;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Allocate memory
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    A <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[rows <span style=color:#f92672>*</span> cols];
+</span></span></span><span style=display:flex><span>    A <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[rows <span style=color:#f92672>*</span> cols];
 </span></span><span style=display:flex><span>    x <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[cols];
 </span></span><span style=display:flex><span>    y <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[rows];
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Initialize with random data
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    initializeRandomData(A, rows <span style=color:#f92672>*</span> cols, <span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>1.0</span>);
+</span></span></span><span style=display:flex><span>    initializeRandomData(A, rows <span style=color:#f92672>*</span> cols, <span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>1.0</span>);
 </span></span><span style=display:flex><span>    initializeRandomData(x, cols, <span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>1.0</span>);
 </span></span><span style=display:flex><span>    std<span style=color:#f92672>::</span>memset(y, <span style=color:#ae81ff>0</span>, rows <span style=color:#f92672>*</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>double</span>));
 </span></span><span style=display:flex><span>}
@@ -992,28 +992,28 @@ English
 </span></span><span style=display:flex><span>    features.problem_size_log <span style=color:#f92672>=</span> std<span style=color:#f92672>::</span>log10(<span style=color:#66d9ef>static_cast</span><span style=color:#f92672>&lt;</span><span style=color:#66d9ef>float</span><span style=color:#f92672>&gt;</span>(matrix_size <span style=color:#f92672>*</span> matrix_size));
 </span></span><span style=display:flex><span>    features.memory_footprint <span style=color:#f92672>=</span> ((matrix_size <span style=color:#f92672>*</span> matrix_size <span style=color:#f92672>+</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> matrix_size) <span style=color:#f92672>*</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>double</span>)) <span style=color:#f92672>/</span> (<span style=color:#ae81ff>1024.0f</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>1024.0f</span>);
 </span></span><span style=display:flex><span>    features.arithmetic_intensity <span style=color:#f92672>=</span> <span style=color:#ae81ff>2.0f</span> <span style=color:#f92672>/</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>double</span>); <span style=color:#75715e>// 2 ops per memory access
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    features.sparsity_level <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.0f</span>;
+</span></span></span><span style=display:flex><span>    features.sparsity_level <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.0f</span>;
 </span></span><span style=display:flex><span>    features.access_pattern <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.2f</span>; <span style=color:#75715e>// Some non-sequential due to matrix access
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>return</span> features;
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> features;
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// Stencil1DKernel implementation
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> Stencil1DKernel<span style=color:#f92672>::</span>initialize(<span style=color:#66d9ef>const</span> ProblemConfig<span style=color:#f92672>&amp;</span> config) {
 </span></span><span style=display:flex><span>    size <span style=color:#f92672>=</span> config.size;
 </span></span><span style=display:flex><span>    stencil_radius <span style=color:#f92672>=</span> std<span style=color:#f92672>::</span>min(config.stencil_size <span style=color:#f92672>/</span> <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>4</span>); <span style=color:#75715e>// Cap at 4 for safety
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Allocate memory
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    input <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[size];
+</span></span></span><span style=display:flex><span>    input <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[size];
 </span></span><span style=display:flex><span>    output <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[size];
 </span></span><span style=display:flex><span>    weights <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[<span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> stencil_radius <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>];
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Initialize with random data
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    initializeRandomData(input, size, <span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>1.0</span>);
+</span></span></span><span style=display:flex><span>    initializeRandomData(input, size, <span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>1.0</span>);
 </span></span><span style=display:flex><span>    std<span style=color:#f92672>::</span>memset(output, <span style=color:#ae81ff>0</span>, size <span style=color:#f92672>*</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>double</span>));
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Initialize stencil weights (normalized)
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>double</span> total_weight <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.0</span>;
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>double</span> total_weight <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.0</span>;
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>2</span> <span style=color:#f92672>*</span> stencil_radius <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>; <span style=color:#f92672>++</span>i) {
 </span></span><span style=display:flex><span>        weights[i] <span style=color:#f92672>=</span> <span style=color:#ae81ff>1.0</span> <span style=color:#f92672>/</span> (std<span style=color:#f92672>::</span>abs(i <span style=color:#f92672>-</span> stencil_radius) <span style=color:#f92672>+</span> <span style=color:#ae81ff>1.0</span>);
 </span></span><span style=display:flex><span>        total_weight <span style=color:#f92672>+=</span> weights[i];
@@ -1040,19 +1040,19 @@ English
 </span></span><span style=display:flex><span>    features.arithmetic_intensity <span style=color:#f92672>=</span> <span style=color:#66d9ef>static_cast</span><span style=color:#f92672>&lt;</span><span style=color:#66d9ef>float</span><span style=color:#f92672>&gt;</span>(stencil_size) <span style=color:#f92672>/</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>double</span>);
 </span></span><span style=display:flex><span>    features.sparsity_level <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.0f</span>;
 </span></span><span style=display:flex><span>    features.access_pattern <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.1f</span>; <span style=color:#75715e>// Mostly sequential with some locality
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>return</span> features;
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> features;
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// ReductionKernel implementation
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> ReductionKernel<span style=color:#f92672>::</span>initialize(<span style=color:#66d9ef>const</span> ProblemConfig<span style=color:#f92672>&amp;</span> config) {
 </span></span><span style=display:flex><span>    size <span style=color:#f92672>=</span> config.size;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Allocate memory
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    data <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[size];
+</span></span></span><span style=display:flex><span>    data <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[size];
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Initialize with random data
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    initializeRandomData(data, size, <span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>1.0</span>);
+</span></span></span><span style=display:flex><span>    initializeRandomData(data, size, <span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>1.0</span>);
 </span></span><span style=display:flex><span>    result <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.0</span>;
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
@@ -1068,32 +1068,32 @@ English
 </span></span><span style=display:flex><span>    features.problem_size_log <span style=color:#f92672>=</span> std<span style=color:#f92672>::</span>log10(<span style=color:#66d9ef>static_cast</span><span style=color:#f92672>&lt;</span><span style=color:#66d9ef>float</span><span style=color:#f92672>&gt;</span>(config.size));
 </span></span><span style=display:flex><span>    features.memory_footprint <span style=color:#f92672>=</span> (config.size <span style=color:#f92672>*</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>double</span>)) <span style=color:#f92672>/</span> (<span style=color:#ae81ff>1024.0f</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>1024.0f</span>);
 </span></span><span style=display:flex><span>    features.arithmetic_intensity <span style=color:#f92672>=</span> <span style=color:#ae81ff>1.0f</span> <span style=color:#f92672>/</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>double</span>); <span style=color:#75715e>// 1 op per memory access
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    features.sparsity_level <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.0f</span>;
+</span></span></span><span style=display:flex><span>    features.sparsity_level <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.0f</span>;
 </span></span><span style=display:flex><span>    features.access_pattern <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.0f</span>; <span style=color:#75715e>// Pure sequential
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>return</span> features;
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> features;
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// SpMVKernel implementation
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> SpMVKernel<span style=color:#f92672>::</span>initialize(<span style=color:#66d9ef>const</span> ProblemConfig<span style=color:#f92672>&amp;</span> config) {
 </span></span><span style=display:flex><span>    num_rows <span style=color:#f92672>=</span> <span style=color:#66d9ef>static_cast</span><span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span>(std<span style=color:#f92672>::</span>sqrt(config.size));
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> num_cols <span style=color:#f92672>=</span> num_rows;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Generate sparse matrix in CSR format
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// Number of non-zeros based on sparsity level
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>double</span> density <span style=color:#f92672>=</span> <span style=color:#ae81ff>1.0</span> <span style=color:#f92672>-</span> config.sparsity;
+</span></span></span><span style=display:flex><span>    <span style=color:#75715e>// Number of non-zeros based on sparsity level
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>double</span> density <span style=color:#f92672>=</span> <span style=color:#ae81ff>1.0</span> <span style=color:#f92672>-</span> config.sparsity;
 </span></span><span style=display:flex><span>    num_nonzeros <span style=color:#f92672>=</span> <span style=color:#66d9ef>static_cast</span><span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span>(num_rows <span style=color:#f92672>*</span> num_cols <span style=color:#f92672>*</span> density);
 </span></span><span style=display:flex><span>    num_nonzeros <span style=color:#f92672>=</span> std<span style=color:#f92672>::</span>max(num_rows, num_nonzeros); <span style=color:#75715e>// At least one per row
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Allocate memory
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    values <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[num_nonzeros];
+</span></span></span><span style=display:flex><span>    values <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[num_nonzeros];
 </span></span><span style=display:flex><span>    col_indices <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>int</span>[num_nonzeros];
 </span></span><span style=display:flex><span>    row_ptr <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>int</span>[num_rows <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>];
 </span></span><span style=display:flex><span>    x <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[num_cols];
 </span></span><span style=display:flex><span>    y <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[num_rows];
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Initialize sparse matrix
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    std<span style=color:#f92672>::</span>random_device rd;
+</span></span></span><span style=display:flex><span>    std<span style=color:#f92672>::</span>random_device rd;
 </span></span><span style=display:flex><span>    std<span style=color:#f92672>::</span>mt19937 gen(rd());
 </span></span><span style=display:flex><span>    std<span style=color:#f92672>::</span>uniform_real_distribution<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>double</span><span style=color:#f92672>&gt;</span> val_dist(<span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>1.0</span>);
 </span></span><span style=display:flex><span>    std<span style=color:#f92672>::</span>uniform_int_distribution<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>&gt;</span> col_dist(<span style=color:#ae81ff>0</span>, num_cols <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>);
@@ -1121,7 +1121,7 @@ English
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Initialize vectors
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    initializeRandomData(x, num_cols, <span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>1.0</span>);
+</span></span></span><span style=display:flex><span>    initializeRandomData(x, num_cols, <span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>1.0</span>);
 </span></span><span style=display:flex><span>    std<span style=color:#f92672>::</span>memset(y, <span style=color:#ae81ff>0</span>, num_rows <span style=color:#f92672>*</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>double</span>));
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
@@ -1143,32 +1143,32 @@ English
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>float</span> density <span style=color:#f92672>=</span> <span style=color:#ae81ff>1.0f</span> <span style=color:#f92672>-</span> config.sparsity;
 </span></span><span style=display:flex><span>    features.memory_footprint <span style=color:#f92672>=</span> ((config.size <span style=color:#f92672>*</span> density <span style=color:#f92672>+</span> config.size) <span style=color:#f92672>*</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>double</span>)) <span style=color:#f92672>/</span> (<span style=color:#ae81ff>1024.0f</span> <span style=color:#f92672>*</span> <span style=color:#ae81ff>1024.0f</span>);
 </span></span><span style=display:flex><span>    features.arithmetic_intensity <span style=color:#f92672>=</span> <span style=color:#ae81ff>2.0f</span> <span style=color:#f92672>/</span> (<span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>double</span>) <span style=color:#f92672>+</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>int</span>)); <span style=color:#75715e>// 2 ops per value+index access
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    features.sparsity_level <span style=color:#f92672>=</span> config.sparsity;
+</span></span></span><span style=display:flex><span>    features.sparsity_level <span style=color:#f92672>=</span> config.sparsity;
 </span></span><span style=display:flex><span>    features.access_pattern <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.5f</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>0.5f</span> <span style=color:#f92672>*</span> config.sparsity; <span style=color:#75715e>// More random with higher sparsity
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>return</span> features;
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> features;
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// IndirectKernel implementation
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>void</span> IndirectKernel<span style=color:#f92672>::</span>initialize(<span style=color:#66d9ef>const</span> ProblemConfig<span style=color:#f92672>&amp;</span> config) {
 </span></span><span style=display:flex><span>    size <span style=color:#f92672>=</span> config.size;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Allocate memory
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    src <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[size];
+</span></span></span><span style=display:flex><span>    src <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[size];
 </span></span><span style=display:flex><span>    dst <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>double</span>[size];
 </span></span><span style=display:flex><span>    indices <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>int</span>[size];
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Initialize data
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    initializeRandomData(src, size, <span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>1.0</span>);
+</span></span></span><span style=display:flex><span>    initializeRandomData(src, size, <span style=color:#ae81ff>0.0</span>, <span style=color:#ae81ff>1.0</span>);
 </span></span><span style=display:flex><span>    std<span style=color:#f92672>::</span>memset(dst, <span style=color:#ae81ff>0</span>, size <span style=color:#f92672>*</span> <span style=color:#66d9ef>sizeof</span>(<span style=color:#66d9ef>double</span>));
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Initialize indices
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>if</span> (config.use_indirect) {
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (config.use_indirect) {
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// Random access pattern
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        initializeRandomIndices(indices, size, size);
+</span></span></span><span style=display:flex><span>        initializeRandomIndices(indices, size, size);
 </span></span><span style=display:flex><span>    } <span style=color:#66d9ef>else</span> {
 </span></span><span style=display:flex><span>        <span style=color:#75715e>// Sequential access pattern
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> size; <span style=color:#f92672>++</span>i) {
+</span></span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; i <span style=color:#f92672>&lt;</span> size; <span style=color:#f92672>++</span>i) {
 </span></span><span style=display:flex><span>            indices[i] <span style=color:#f92672>=</span> i;
 </span></span><span style=display:flex><span>        }
 </span></span><span style=display:flex><span>    }
@@ -1194,7 +1194,7 @@ English
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// Factory function
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>std<span style=color:#f92672>::</span>unique_ptr<span style=color:#f92672>&lt;</span>KernelBase<span style=color:#f92672>&gt;</span> createKernel(<span style=color:#66d9ef>const</span> std<span style=color:#f92672>::</span>string<span style=color:#f92672>&amp;</span> kernel_name) {
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (kernel_name <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;VectorAdd&#34;</span>) {
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> std<span style=color:#f92672>::</span>make_unique<span style=color:#f92672>&lt;</span>VectorAddKernel<span style=color:#f92672>&gt;</span>();

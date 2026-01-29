@@ -1858,10 +1858,10 @@ We define \( \vec \omega_{c, \alpha} \) to be the vector gyrofrequency
 
 &lt;h1 id="spectroscopic-measurements"&gt;Spectroscopic Measurements&lt;a class="anchor" href="#spectroscopic-measurements"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;h2 id="plasma-self-emission"&gt;Plasma Self-Emission&lt;a class="anchor" href="#plasma-self-emission"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Plasmas emit light (electromagnetic radiation) over a broad range of wavelengths. This can be from the X-ray to UV to visible to IR. The emission depends on the plasma constituents, magnetic field, and plasma properties \( n_e, T_e, T_i, \vec v_i \). We should be able to analyze the self-emission to provide a measurements of these properties. These measurements are both rich in information, and completely non-perturbing. Unfortunately, extracting plasma properties from measurements can be extremely complicated, since the emission is influenced by all of these effects together.&lt;/p&gt;</description></item><item><title>Equilibrium for Fusion</title><link>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</guid><description>&lt;h1 id="equilibrium-for-fusion-hahahugoshortcode113s0hbhb"&gt;Equilibrium for Fusion (&lt;span&gt;
+&lt;p&gt;Plasmas emit light (electromagnetic radiation) over a broad range of wavelengths. This can be from the X-ray to UV to visible to IR. The emission depends on the plasma constituents, magnetic field, and plasma properties \( n_e, T_e, T_i, \vec v_i \). We should be able to analyze the self-emission to provide a measurements of these properties. These measurements are both rich in information, and completely non-perturbing. Unfortunately, extracting plasma properties from measurements can be extremely complicated, since the emission is influenced by all of these effects together.&lt;/p&gt;</description></item><item><title>Equilibrium for Fusion</title><link>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</guid><description>&lt;h1 id="equilibrium-for-fusion-hahahugoshortcode101s0hbhb"&gt;Equilibrium for Fusion (&lt;span&gt;
  \( \beta \)
 &lt;/span&gt;
-)&lt;a class="anchor" href="#equilibrium-for-fusion-hahahugoshortcode113s0hbhb"&gt;#&lt;/a&gt;&lt;/h1&gt;
+)&lt;a class="anchor" href="#equilibrium-for-fusion-hahahugoshortcode101s0hbhb"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;For a fusion device we would like to determine a magnetic configuration that confines plasma while it fuses. At fusion temperatures, the power required to maintain the equilibrium will be substantial. For a device to be useful, the power required to sustain the equilibrium must be less than the power released from fusion. Important loss terms for a confined plasma are transport (thermal conduction primarily) and radiation terms. The scaling factors are &lt;span&gt;
  \( P_{Brem} \sim n^2 T^{1/2} \)
 &lt;/span&gt;
@@ -2097,7 +2097,7 @@ which has the general solution
 
 &lt;h1 id="waves-in-hot-magnetized-plasma"&gt;Waves in Hot Magnetized Plasma&lt;a class="anchor" href="#waves-in-hot-magnetized-plasma"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;Just like in the cold plasma dispersion relation, finding the dielectric tensor helps with the dispersion relation. The process involves multiple steps. We will only look at the overview here.&lt;/p&gt;</description></item><item><title>1-D Equilibria</title><link>https://peppyhare.github.io/r/notes/UWAA558/08-1d-equilibria/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/08-1d-equilibria/</guid><description>&lt;h1 id="1-dimensional-equilibria"&gt;1-Dimensional Equilibria&lt;a class="anchor" href="#1-dimensional-equilibria"&gt;#&lt;/a&gt;&lt;/h1&gt;
-&lt;h2 id="the-hahahugoshortcode114s0hbhb-pinch"&gt;The 
+&lt;h2 id="the-hahahugoshortcode102s0hbhb-pinch"&gt;The 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
@@ -2142,7 +2142,7 @@ which has the general solution
 &lt;/script&gt;&lt;span&gt;
  \( \theta \)
 &lt;/span&gt;
--pinch&lt;a class="anchor" href="#the-hahahugoshortcode114s0hbhb-pinch"&gt;#&lt;/a&gt;&lt;/h2&gt;
+-pinch&lt;a class="anchor" href="#the-hahahugoshortcode102s0hbhb-pinch"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;In a &lt;span&gt;
  \( \theta \)
 &lt;/span&gt;
@@ -3855,725 +3855,55 @@ where \( \vec A \) is a J by J matrix. In equilibrium calculations, this comes u
 &lt;/table&gt;
 &lt;h3 id="continuum-kinetic-model"&gt;Continuum Kinetic Model&lt;a class="anchor" href="#continuum-kinetic-model"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;The continuum kinetic model is the most complete description, taking into account the forces acting upon each particle:&lt;/p&gt;</description></item><item><title>Drawing Diagrams</title><link>https://peppyhare.github.io/r/notes/scratch/drawing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/scratch/drawing/</guid><description>&lt;h3 id="graphics"&gt;Graphics&lt;a class="anchor" href="#graphics"&gt;#&lt;/a&gt;&lt;/h3&gt;
-
-
-
-&lt;div class="goat svg-container "&gt;
- 
- &lt;svg
- xmlns="http://www.w3.org/2000/svg"
- font-family="Menlo,Lucida Console,monospace"
- 
- viewBox="0 0 712 185"
- &gt;
- &lt;g transform='translate(8,16)'&gt;
-&lt;path d='M 40,32 L 104,32' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 24,64 L 88,64' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 520,64 L 584,64' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 584,64 L 648,64' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 320,80 L 352,80' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 368,80 L 408,80' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 40,96 L 80,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 96,96 L 104,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 168,96 L 216,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 528,96 L 592,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 24,128 L 88,128' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 288,144 L 440,144' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 640,144 L 688,144' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 24,64 L 24,128' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 40,32 L 40,48' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 40,80 L 40,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 88,64 L 88,128' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 104,32 L 104,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 168,48 L 168,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 504,128 L 504,160' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 24,64 L 40,32' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 24,128 L 40,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 88,64 L 104,32' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 88,128 L 104,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 152,128 L 168,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 288,144 L 320,80' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 472,32 L 480,16' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 504,128 L 520,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 592,48 L 616,0' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 640,144 L 664,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 328,16 L 368,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 408,80 L 440,144' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 472,32 L 480,48' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 560,16 L 584,64' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 664,96 L 688,144' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 40,48 L 40,56' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 40,72 L 40,80' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;polygon points='164.000000,128.000000 152.000000,122.400002 152.000000,133.600006' fill='currentColor' transform='rotate(120.000000, 152.000000, 128.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='176.000000,48.000000 164.000000,42.400002 164.000000,53.599998' fill='currentColor' transform='rotate(270.000000, 168.000000, 48.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='224.000000,96.000000 212.000000,90.400002 212.000000,101.599998' fill='currentColor' transform='rotate(0.000000, 216.000000, 96.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='380.000000,96.000000 368.000000,90.400002 368.000000,101.599998' fill='currentColor' transform='rotate(60.000000, 368.000000, 96.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='512.000000,160.000000 500.000000,154.399994 500.000000,165.600006' fill='currentColor' transform='rotate(90.000000, 504.000000, 160.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='536.000000,96.000000 524.000000,90.400002 524.000000,101.599998' fill='currentColor' transform='rotate(180.000000, 528.000000, 96.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='572.000000,16.000000 560.000000,10.400000 560.000000,21.600000' fill='currentColor' transform='rotate(240.000000, 560.000000, 16.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='604.000000,48.000000 592.000000,42.400002 592.000000,53.599998' fill='currentColor' transform='rotate(120.000000, 592.000000, 48.000000)'&gt;&lt;/polygon&gt;
-&lt;path d='M 512,96 A 16,16 0 0,0 496,112' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 512,96 A 16,16 0 0,1 528,112' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 496,112 A 16,16 0 0,0 512,128' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 528,112 A 16,16 0 0,1 512,128' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;circle cx='24' cy='64' r='6' stroke='currentColor' fill='currentColor'&gt;&lt;/circle&gt;
-&lt;circle cx='24' cy='128' r='6' stroke='currentColor' fill='currentColor'&gt;&lt;/circle&gt;
-&lt;circle cx='40' cy='32' r='6' stroke='currentColor' fill='currentColor'&gt;&lt;/circle&gt;
-&lt;circle cx='40' cy='96' r='6' stroke='currentColor' fill='currentColor'&gt;&lt;/circle&gt;
-&lt;circle cx='88' cy='64' r='6' stroke='currentColor' fill='currentColor'&gt;&lt;/circle&gt;
-&lt;circle cx='88' cy='128' r='6' stroke='currentColor' fill='currentColor'&gt;&lt;/circle&gt;
-&lt;circle cx='104' cy='32' r='6' stroke='currentColor' fill='currentColor'&gt;&lt;/circle&gt;
-&lt;circle cx='104' cy='96' r='6' stroke='currentColor' fill='currentColor'&gt;&lt;/circle&gt;
-&lt;circle cx='288' cy='144' r='6' stroke='currentColor' fill='currentColor'&gt;&lt;/circle&gt;
-&lt;circle cx='320' cy='80' r='6' stroke='currentColor' fill='currentColor'&gt;&lt;/circle&gt;
-&lt;circle cx='328' cy='16' r='6' stroke='currentColor' fill='currentColor'&gt;&lt;/circle&gt;
-&lt;circle cx='376' cy='112' r='6' stroke='currentColor' fill='#fff'&gt;&lt;/circle&gt;
-&lt;circle cx='408' cy='80' r='6' stroke='currentColor' fill='currentColor'&gt;&lt;/circle&gt;
-&lt;circle cx='440' cy='144' r='6' stroke='currentColor' fill='currentColor'&gt;&lt;/circle&gt;
-&lt;circle cx='584' cy='64' r='6' stroke='currentColor' fill='currentColor'&gt;&lt;/circle&gt;
-&lt;circle cx='640' cy='144' r='6' stroke='currentColor' fill='#fff'&gt;&lt;/circle&gt;
-&lt;circle cx='664' cy='96' r='6' stroke='currentColor' fill='#fff'&gt;&lt;/circle&gt;
-&lt;circle cx='688' cy='144' r='6' stroke='currentColor' fill='#fff'&gt;&lt;/circle&gt;
-&lt;text text-anchor='middle' x='16' y='52' fill='currentColor' style='font-size:1em'&gt;1&lt;/text&gt;
-&lt;text text-anchor='middle' x='16' y='148' fill='currentColor' style='font-size:1em'&gt;5&lt;/text&gt;
-&lt;text text-anchor='middle' x='32' y='20' fill='currentColor' style='font-size:1em'&gt;0&lt;/text&gt;
-&lt;text text-anchor='middle' x='48' y='84' fill='currentColor' style='font-size:1em'&gt;4&lt;/text&gt;
-&lt;text text-anchor='middle' x='80' y='52' fill='currentColor' style='font-size:1em'&gt;2&lt;/text&gt;
-&lt;text text-anchor='middle' x='80' y='148' fill='currentColor' style='font-size:1em'&gt;6&lt;/text&gt;
-&lt;text text-anchor='middle' x='96' y='20' fill='currentColor' style='font-size:1em'&gt;3&lt;/text&gt;
-&lt;text text-anchor='middle' x='112' y='84' fill='currentColor' style='font-size:1em'&gt;7&lt;/text&gt;
-&lt;text text-anchor='middle' x='136' y='148' fill='currentColor' style='font-size:1em'&gt;+&lt;/text&gt;
-&lt;text text-anchor='middle' x='144' y='148' fill='currentColor' style='font-size:1em'&gt;z&lt;/text&gt;
-&lt;text text-anchor='middle' x='160' y='36' fill='currentColor' style='font-size:1em'&gt;+&lt;/text&gt;
-&lt;text text-anchor='middle' x='168' y='36' fill='currentColor' style='font-size:1em'&gt;y&lt;/text&gt;
-&lt;text text-anchor='middle' x='232' y='100' fill='currentColor' style='font-size:1em'&gt;+&lt;/text&gt;
-&lt;text text-anchor='middle' x='240' y='100' fill='currentColor' style='font-size:1em'&gt;x&lt;/text&gt;
-&lt;text text-anchor='middle' x='264' y='148' fill='currentColor' style='font-size:1em'&gt;v&lt;/text&gt;
-&lt;text text-anchor='middle' x='272' y='148' fill='currentColor' style='font-size:1em'&gt;1&lt;/text&gt;
-&lt;text text-anchor='middle' x='304' y='68' fill='currentColor' style='font-size:1em'&gt;v&lt;/text&gt;
-&lt;text text-anchor='middle' x='312' y='20' fill='currentColor' style='font-size:1em'&gt;P&lt;/text&gt;
-&lt;text text-anchor='middle' x='312' y='68' fill='currentColor' style='font-size:1em'&gt;0&lt;/text&gt;
-&lt;text text-anchor='middle' x='384' y='100' fill='currentColor' style='font-size:1em'&gt;X&lt;/text&gt;
-&lt;text text-anchor='middle' x='416' y='68' fill='currentColor' style='font-size:1em'&gt;v&lt;/text&gt;
-&lt;text text-anchor='middle' x='424' y='68' fill='currentColor' style='font-size:1em'&gt;3&lt;/text&gt;
-&lt;text text-anchor='middle' x='448' y='20' fill='currentColor' style='font-size:1em'&gt;E&lt;/text&gt;
-&lt;text text-anchor='middle' x='456' y='20' fill='currentColor' style='font-size:1em'&gt;y&lt;/text&gt;
-&lt;text text-anchor='middle' x='456' y='148' fill='currentColor' style='font-size:1em'&gt;v&lt;/text&gt;
-&lt;text text-anchor='middle' x='464' y='20' fill='currentColor' style='font-size:1em'&gt;e&lt;/text&gt;
-&lt;text text-anchor='middle' x='464' y='148' fill='currentColor' style='font-size:1em'&gt;2&lt;/text&gt;
-&lt;text text-anchor='middle' x='544' y='116' fill='currentColor' style='font-size:1em'&gt;R&lt;/text&gt;
-&lt;text text-anchor='middle' x='552' y='116' fill='currentColor' style='font-size:1em'&gt;e&lt;/text&gt;
-&lt;text text-anchor='middle' x='560' y='116' fill='currentColor' style='font-size:1em'&gt;f&lt;/text&gt;
-&lt;text text-anchor='middle' x='568' y='116' fill='currentColor' style='font-size:1em'&gt;r&lt;/text&gt;
-&lt;text text-anchor='middle' x='576' y='116' fill='currentColor' style='font-size:1em'&gt;a&lt;/text&gt;
-&lt;text text-anchor='middle' x='584' y='116' fill='currentColor' style='font-size:1em'&gt;c&lt;/text&gt;
-&lt;text text-anchor='middle' x='592' y='116' fill='currentColor' style='font-size:1em'&gt;t&lt;/text&gt;
-&lt;text text-anchor='middle' x='600' y='116' fill='currentColor' style='font-size:1em'&gt;i&lt;/text&gt;
-&lt;text text-anchor='middle' x='608' y='116' fill='currentColor' style='font-size:1em'&gt;o&lt;/text&gt;
-&lt;text text-anchor='middle' x='616' y='116' fill='currentColor' style='font-size:1em'&gt;n&lt;/text&gt;
-&lt;text text-anchor='middle' x='624' y='36' fill='currentColor' style='font-size:1em'&gt;R&lt;/text&gt;
-&lt;text text-anchor='middle' x='632' y='36' fill='currentColor' style='font-size:1em'&gt;e&lt;/text&gt;
-&lt;text text-anchor='middle' x='640' y='36' fill='currentColor' style='font-size:1em'&gt;f&lt;/text&gt;
-&lt;text text-anchor='middle' x='648' y='36' fill='currentColor' style='font-size:1em'&gt;l&lt;/text&gt;
-&lt;text text-anchor='middle' x='656' y='36' fill='currentColor' style='font-size:1em'&gt;e&lt;/text&gt;
-&lt;text text-anchor='middle' x='664' y='36' fill='currentColor' style='font-size:1em'&gt;c&lt;/text&gt;
-&lt;text text-anchor='middle' x='672' y='36' fill='currentColor' style='font-size:1em'&gt;t&lt;/text&gt;
-&lt;text text-anchor='middle' x='680' y='36' fill='currentColor' style='font-size:1em'&gt;i&lt;/text&gt;
-&lt;text text-anchor='middle' x='688' y='36' fill='currentColor' style='font-size:1em'&gt;o&lt;/text&gt;
-&lt;text text-anchor='middle' x='696' y='36' fill='currentColor' style='font-size:1em'&gt;n&lt;/text&gt;
-&lt;/g&gt;
-
- &lt;/svg&gt;
- 
-&lt;/div&gt;
-&lt;h3 id="complex"&gt;Complex&lt;a class="anchor" href="#complex"&gt;#&lt;/a&gt;&lt;/h3&gt;
-
-
-
-&lt;div class="goat svg-container "&gt;
- 
- &lt;svg
- xmlns="http://www.w3.org/2000/svg"
- font-family="Menlo,Lucida Console,monospace"
- 
- viewBox="0 0 752 393"
- &gt;
- &lt;g transform='translate(8,16)'&gt;
-&lt;path d='M 0,0 L 160,0' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 568,0 L 600,0' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 184,16 L 208,16' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 280,16 L 304,16' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 232,32 L 256,32' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 472,32 L 496,32' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 0,48 L 160,48' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 536,64 L 568,64' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 568,64 L 584,64' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 24,80 L 160,80' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 192,80 L 240,80' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 288,80 L 376,80' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 456,80 L 520,80' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 192,112 L 200,112' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 232,112 L 240,112' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 464,112 L 488,112' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 488,112 L 512,112' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 568,112 L 584,112' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 584,112 L 600,112' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 664,112 L 736,112' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 8,128 L 32,128' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 32,128 L 136,128' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 136,128 L 144,128' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 184,128 L 192,128' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 264,128 L 328,128' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 328,128 L 400,128' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 232,144 L 248,144' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 456,144 L 520,144' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 648,144 L 664,144' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 664,144 L 720,144' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 40,160 L 128,160' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 128,176 L 152,176' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 224,176 L 248,176' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 288,176 L 384,176' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 504,176 L 528,176' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 576,176 L 600,176' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 8,192 L 160,192' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 304,192 L 368,192' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 384,192 L 408,192' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 160,208 L 192,208' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 248,208 L 280,208' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 304,224 L 368,224' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 392,224 L 408,224' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 8,240 L 160,240' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 208,240 L 232,240' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 288,240 L 312,240' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 312,240 L 384,240' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 440,240 L 464,240' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 480,240 L 504,240' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 688,240 L 696,240' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 32,256 L 64,256' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 64,256 L 112,256' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 536,256 L 552,256' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 112,288 L 152,288' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 216,288 L 232,288' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 232,288 L 248,288' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 440,288 L 464,288' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 480,288 L 504,288' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 536,288 L 544,288' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 568,288 L 584,288' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 688,288 L 720,288' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 8,304 L 32,304' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 32,304 L 64,304' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 64,304 L 112,304' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 688,320 L 720,320' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 152,336 L 176,336' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 176,336 L 240,336' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 312,352 L 344,352' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 344,352 L 376,352' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 376,352 L 392,352' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 152,368 L 224,368' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 224,368 L 240,368' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 624,368 L 640,368' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 160,24 L 184,24' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 208,24 L 232,24' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 256,24 L 280,24' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 0,0 L 0,48' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 8,96 L 8,128' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 8,192 L 8,240' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 32,128 L 32,176' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 32,256 L 32,304' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 64,256 L 64,304' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 112,256 L 112,288' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 112,288 L 112,304' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 136,128 L 136,160' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 160,0 L 160,48' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 160,80 L 160,112' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 160,192 L 160,208' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 160,208 L 160,240' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 168,144 L 168,160' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 176,288 L 176,320' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 176,320 L 176,336' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 208,144 L 208,160' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 232,272 L 232,288' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 232,288 L 232,304' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 288,176 L 288,240' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 304,192 L 304,224' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 312,240 L 312,272' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 328,128 L 328,160' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 344,256 L 344,272' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 368,192 L 368,224' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 384,0 L 384,32' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 384,176 L 384,192' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 384,192 L 384,240' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 440,240 L 440,288' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 456,80 L 456,144' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 464,240 L 464,288' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 472,328 L 472,344' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 480,240 L 480,288' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 480,328 L 480,344' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 488,96 L 488,112' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 488,112 L 488,128' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 504,240 L 504,288' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 520,80 L 520,144' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 552,224 L 552,256' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 568,0 L 568,48' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 568,80 L 568,112' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 584,64 L 584,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 584,128 L 584,144' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 600,0 L 600,112' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 600,256 L 600,272' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 632,336 L 632,352' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 664,144 L 664,176' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 664,176 L 664,192' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 664,288 L 664,304' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 688,288 L 688,320' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 704,336 L 704,352' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 712,160 L 712,224' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 720,288 L 720,320' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 264,128 L 288,80' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 232,240 L 248,208' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 224,304 L 232,288' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 232,288 L 240,272' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 336,368 L 344,352' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 344,352 L 352,336' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 480,288 L 504,240' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 552,224 L 576,176' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 648,144 L 664,112' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 640,240 L 664,192' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 720,144 L 736,112' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 664,288 L 688,240' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 192,208 L 208,240' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 224,272 L 232,288' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 232,288 L 240,304' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 440,240 L 464,288' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 376,80 L 400,128' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 552,256 L 568,288' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 528,176 L 552,224' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 640,240 L 664,288' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 664,192 L 688,240' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 136,160 L 136,168' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 184,16 L 184,24' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 208,16 L 208,24' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 232,24 L 232,32' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 256,24 L 256,32' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 280,16 L 280,24' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 488,88 L 488,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 488,128 L 488,136' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;polygon points='16.000000,304.000000 4.000000,298.399994 4.000000,309.600006' fill='currentColor' transform='rotate(180.000000, 8.000000, 304.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='48.000000,160.000000 36.000000,154.399994 36.000000,165.600006' fill='currentColor' transform='rotate(180.000000, 40.000000, 160.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='136.000000,160.000000 124.000000,154.399994 124.000000,165.600006' fill='currentColor' transform='rotate(0.000000, 128.000000, 160.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='136.000000,176.000000 124.000000,170.399994 124.000000,181.600006' fill='currentColor' transform='rotate(180.000000, 128.000000, 176.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='160.000000,288.000000 148.000000,282.399994 148.000000,293.600006' fill='currentColor' transform='rotate(0.000000, 152.000000, 288.000000)'&gt;&lt;/polygon&gt;
-&lt;path d='M 176,320 L 176,328' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;polygon points='192.000000,320.000000 180.000000,314.399994 180.000000,325.600006' fill='currentColor' transform='rotate(90.000000, 176.000000, 320.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='288.000000,208.000000 276.000000,202.399994 276.000000,213.600006' fill='currentColor' transform='rotate(0.000000, 280.000000, 208.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='312.000000,16.000000 300.000000,10.400000 300.000000,21.600000' fill='currentColor' transform='rotate(0.000000, 304.000000, 16.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='320.000000,352.000000 308.000000,346.399994 308.000000,357.600006' fill='currentColor' transform='rotate(180.000000, 312.000000, 352.000000)'&gt;&lt;/polygon&gt;
-&lt;path d='M 328,160 L 328,168' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;polygon points='344.000000,160.000000 332.000000,154.399994 332.000000,165.600006' fill='currentColor' transform='rotate(90.000000, 328.000000, 160.000000)'&gt;&lt;/polygon&gt;
-&lt;path d='M 344,248 L 344,256' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;polygon points='360.000000,256.000000 348.000000,250.399994 348.000000,261.600006' fill='currentColor' transform='rotate(270.000000, 344.000000, 256.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='384.000000,352.000000 372.000000,346.399994 372.000000,357.600006' fill='currentColor' transform='rotate(180.000000, 376.000000, 352.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='392.000000,0.000000 380.000000,-5.600000 380.000000,5.600000' fill='currentColor' transform='rotate(270.000000, 384.000000, 0.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='392.000000,32.000000 380.000000,26.400000 380.000000,37.599998' fill='currentColor' transform='rotate(90.000000, 384.000000, 32.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='400.000000,224.000000 388.000000,218.399994 388.000000,229.600006' fill='currentColor' transform='rotate(180.000000, 392.000000, 224.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='480.000000,32.000000 468.000000,26.400000 468.000000,37.599998' fill='currentColor' transform='rotate(180.000000, 472.000000, 32.000000)'&gt;&lt;/polygon&gt;
-&lt;path d='M 632,352 L 632,360' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;polygon points='648.000000,352.000000 636.000000,346.399994 636.000000,357.600006' fill='currentColor' transform='rotate(90.000000, 632.000000, 352.000000)'&gt;&lt;/polygon&gt;
-&lt;path d='M 664,176 L 664,184' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;polygon points='680.000000,176.000000 668.000000,170.399994 668.000000,181.600006' fill='currentColor' transform='rotate(90.000000, 664.000000, 176.000000)'&gt;&lt;/polygon&gt;
-&lt;path d='M 704,328 L 704,336' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;polygon points='720.000000,336.000000 708.000000,330.399994 708.000000,341.600006' fill='currentColor' transform='rotate(270.000000, 704.000000, 336.000000)'&gt;&lt;/polygon&gt;
-&lt;path d='M 712,152 L 712,160' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;polygon points='728.000000,160.000000 716.000000,154.399994 716.000000,165.600006' fill='currentColor' transform='rotate(270.000000, 712.000000, 160.000000)'&gt;&lt;/polygon&gt;
-&lt;path d='M 448,16 A 16,16 0 0,0 432,32' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 448,16 A 16,16 0 0,1 464,32' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 432,32 A 16,16 0 0,0 448,48' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 464,32 A 16,16 0 0,1 448,48' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 24,80 A 16,16 0 0,0 8,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 192,80 A 16,16 0 0,0 176,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 240,80 A 16,16 0 0,1 256,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 176,96 A 16,16 0 0,0 192,112' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 200,112 A 16,16 0 0,1 216,128' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 232,112 A 16,16 0 0,0 216,128' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 256,96 A 16,16 0 0,1 240,112' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 160,112 A 16,16 0 0,1 144,128' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 184,128 A 16,16 0 0,0 168,144' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 192,128 A 16,16 0 0,1 208,144' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 216,128 A 16,16 0 0,0 232,144' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 248,144 A 16,16 0 0,1 264,160' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 168,160 A 16,16 0 0,1 152,176' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 208,160 A 16,16 0 0,0 224,176' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 264,160 A 16,16 0 0,1 248,176' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 408,192 A 16,16 0 0,1 424,208' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 424,208 A 16,16 0 0,1 408,224' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 584,240 A 16,16 0 0,0 568,256' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 584,240 A 16,16 0 0,1 600,256' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 712,224 A 16,16 0 0,1 696,240' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 536,256 A 16,16 0 0,0 520,272' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 312,272 A 16,16 0 0,0 328,288' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 344,272 A 16,16 0 0,1 328,288' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 520,272 A 16,16 0 0,0 536,288' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 600,272 A 16,16 0 0,1 584,288' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 648,320 A 16,16 0 0,0 632,336' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 664,304 A 16,16 0 0,1 648,320' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 24,336 A 16,16 0 0,0 8,352' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 24,336 A 16,16 0 0,1 40,352' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 152,336 A 16,16 0 0,0 136,352' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 240,336 A 16,16 0 0,1 256,352' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 8,352 A 16,16 0 0,0 24,368' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 40,352 A 16,16 0 0,1 24,368' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 136,352 A 16,16 0 0,0 152,368' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 256,352 A 16,16 0 0,1 240,368' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;circle cx='176' cy='288' r='6' stroke='currentColor' fill='#fff'&gt;&lt;/circle&gt;
-&lt;circle cx='232' cy='288' r='6' stroke='currentColor' fill='#fff'&gt;&lt;/circle&gt;
-&lt;circle cx='448' cy='32' r='6' stroke='currentColor' fill='currentColor'&gt;&lt;/circle&gt;
-&lt;circle cx='536' cy='64' r='6' stroke='currentColor' fill='currentColor'&gt;&lt;/circle&gt;
-&lt;path d='M 568,48 L 568,56' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 568,72 L 568,80' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 568,56 A 9,9 0 0,0 568,72' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 584,96 L 584,104' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 584,120 L 584,128' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 584,104 A 9,9 0 0,1 584,120' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;text text-anchor='middle' x='24' y='116' fill='currentColor' style='font-size:1em'&gt;&amp;amp;&lt;/text&gt;
-&lt;text text-anchor='middle' x='40' y='20' fill='currentColor' style='font-size:1em'&gt;A&lt;/text&gt;
-&lt;text text-anchor='middle' x='40' y='100' fill='currentColor' style='font-size:1em'&gt;M&lt;/text&gt;
-&lt;text text-anchor='middle' x='40' y='116' fill='currentColor' style='font-size:1em'&gt;S&lt;/text&gt;
-&lt;text text-anchor='middle' x='40' y='212' fill='currentColor' style='font-size:1em'&gt;i&lt;/text&gt;
-&lt;text text-anchor='middle' x='40' y='228' fill='currentColor' style='font-size:1em'&gt;o&lt;/text&gt;
-&lt;text text-anchor='middle' x='48' y='100' fill='currentColor' style='font-size:1em'&gt;i&lt;/text&gt;
-&lt;text text-anchor='middle' x='48' y='116' fill='currentColor' style='font-size:1em'&gt;q&lt;/text&gt;
-&lt;text text-anchor='middle' x='48' y='212' fill='currentColor' style='font-size:1em'&gt;f&lt;/text&gt;
-&lt;text text-anchor='middle' x='48' y='228' fill='currentColor' style='font-size:1em'&gt;b&lt;/text&gt;
-&lt;text text-anchor='middle' x='56' y='20' fill='currentColor' style='font-size:1em'&gt;B&lt;/text&gt;
-&lt;text text-anchor='middle' x='56' y='100' fill='currentColor' style='font-size:1em'&gt;x&lt;/text&gt;
-&lt;text text-anchor='middle' x='56' y='116' fill='currentColor' style='font-size:1em'&gt;u&lt;/text&gt;
-&lt;text text-anchor='middle' x='56' y='228' fill='currentColor' style='font-size:1em'&gt;j&lt;/text&gt;
-&lt;text text-anchor='middle' x='64' y='20' fill='currentColor' style='font-size:1em'&gt;o&lt;/text&gt;
-&lt;text text-anchor='middle' x='64' y='100' fill='currentColor' style='font-size:1em'&gt;e&lt;/text&gt;
-&lt;text text-anchor='middle' x='64' y='116' fill='currentColor' style='font-size:1em'&gt;a&lt;/text&gt;
-&lt;text text-anchor='middle' x='64' y='212' fill='currentColor' style='font-size:1em'&gt;(&lt;/text&gt;
-&lt;text text-anchor='middle' x='64' y='228' fill='currentColor' style='font-size:1em'&gt;-&lt;/text&gt;
-&lt;text text-anchor='middle' x='72' y='20' fill='currentColor' style='font-size:1em'&gt;x&lt;/text&gt;
-&lt;text text-anchor='middle' x='72' y='100' fill='currentColor' style='font-size:1em'&gt;d&lt;/text&gt;
-&lt;text text-anchor='middle' x='72' y='116' fill='currentColor' style='font-size:1em'&gt;r&lt;/text&gt;
-&lt;text text-anchor='middle' x='72' y='212' fill='currentColor' style='font-size:1em'&gt;a&lt;/text&gt;
-&lt;text text-anchor='middle' x='72' y='228' fill='currentColor' style='font-size:1em'&gt;&amp;gt;&lt;/text&gt;
-&lt;text text-anchor='middle' x='80' y='116' fill='currentColor' style='font-size:1em'&gt;e&lt;/text&gt;
-&lt;text text-anchor='middle' x='80' y='228' fill='currentColor' style='font-size:1em'&gt;f&lt;/text&gt;
-&lt;text text-anchor='middle' x='88' y='100' fill='currentColor' style='font-size:1em'&gt;R&lt;/text&gt;
-&lt;text text-anchor='middle' x='88' y='212' fill='currentColor' style='font-size:1em'&gt;&amp;gt;&lt;/text&gt;
-&lt;text text-anchor='middle' x='88' y='228' fill='currentColor' style='font-size:1em'&gt;c&lt;/text&gt;
-&lt;text text-anchor='middle' x='96' y='100' fill='currentColor' style='font-size:1em'&gt;o&lt;/text&gt;
-&lt;text text-anchor='middle' x='96' y='116' fill='currentColor' style='font-size:1em'&gt;C&lt;/text&gt;
-&lt;text text-anchor='middle' x='96' y='228' fill='currentColor' style='font-size:1em'&gt;n&lt;/text&gt;
-&lt;text text-anchor='middle' x='104' y='100' fill='currentColor' style='font-size:1em'&gt;u&lt;/text&gt;
-&lt;text text-anchor='middle' x='104' y='116' fill='currentColor' style='font-size:1em'&gt;o&lt;/text&gt;
-&lt;text text-anchor='middle' x='104' y='212' fill='currentColor' style='font-size:1em'&gt;b&lt;/text&gt;
-&lt;text text-anchor='middle' x='104' y='228' fill='currentColor' style='font-size:1em'&gt;(&lt;/text&gt;
-&lt;text text-anchor='middle' x='112' y='100' fill='currentColor' style='font-size:1em'&gt;n&lt;/text&gt;
-&lt;text text-anchor='middle' x='112' y='116' fill='currentColor' style='font-size:1em'&gt;r&lt;/text&gt;
-&lt;text text-anchor='middle' x='112' y='212' fill='currentColor' style='font-size:1em'&gt;)&lt;/text&gt;
-&lt;text text-anchor='middle' x='112' y='228' fill='currentColor' style='font-size:1em'&gt;)&lt;/text&gt;
-&lt;text text-anchor='middle' x='120' y='100' fill='currentColor' style='font-size:1em'&gt;d&lt;/text&gt;
-&lt;text text-anchor='middle' x='120' y='116' fill='currentColor' style='font-size:1em'&gt;n&lt;/text&gt;
-&lt;text text-anchor='middle' x='128' y='100' fill='currentColor' style='font-size:1em'&gt;e&lt;/text&gt;
-&lt;text text-anchor='middle' x='128' y='116' fill='currentColor' style='font-size:1em'&gt;e&lt;/text&gt;
-&lt;text text-anchor='middle' x='128' y='276' fill='currentColor' style='font-size:1em'&gt;J&lt;/text&gt;
-&lt;text text-anchor='middle' x='136' y='100' fill='currentColor' style='font-size:1em'&gt;d&lt;/text&gt;
-&lt;text text-anchor='middle' x='136' y='116' fill='currentColor' style='font-size:1em'&gt;r&lt;/text&gt;
-&lt;text text-anchor='middle' x='136' y='276' fill='currentColor' style='font-size:1em'&gt;o&lt;/text&gt;
-&lt;text text-anchor='middle' x='144' y='116' fill='currentColor' style='font-size:1em'&gt;s&lt;/text&gt;
-&lt;text text-anchor='middle' x='144' y='276' fill='currentColor' style='font-size:1em'&gt;i&lt;/text&gt;
-&lt;text text-anchor='middle' x='152' y='276' fill='currentColor' style='font-size:1em'&gt;n&lt;/text&gt;
-&lt;text text-anchor='middle' x='168' y='356' fill='currentColor' style='font-size:1em'&gt;N&lt;/text&gt;
-&lt;text text-anchor='middle' x='176' y='356' fill='currentColor' style='font-size:1em'&gt;o&lt;/text&gt;
-&lt;text text-anchor='middle' x='184' y='68' fill='currentColor' style='font-size:1em'&gt;R&lt;/text&gt;
-&lt;text text-anchor='middle' x='184' y='196' fill='currentColor' style='font-size:1em'&gt;D&lt;/text&gt;
-&lt;text text-anchor='middle' x='184' y='356' fill='currentColor' style='font-size:1em'&gt;t&lt;/text&gt;
-&lt;text text-anchor='middle' x='192' y='68' fill='currentColor' style='font-size:1em'&gt;o&lt;/text&gt;
-&lt;text text-anchor='middle' x='192' y='196' fill='currentColor' style='font-size:1em'&gt;i&lt;/text&gt;
-&lt;text text-anchor='middle' x='200' y='68' fill='currentColor' style='font-size:1em'&gt;u&lt;/text&gt;
-&lt;text text-anchor='middle' x='200' y='196' fill='currentColor' style='font-size:1em'&gt;a&lt;/text&gt;
-&lt;text text-anchor='middle' x='200' y='356' fill='currentColor' style='font-size:1em'&gt;a&lt;/text&gt;
-&lt;text text-anchor='middle' x='208' y='68' fill='currentColor' style='font-size:1em'&gt;n&lt;/text&gt;
-&lt;text text-anchor='middle' x='208' y='196' fill='currentColor' style='font-size:1em'&gt;g&lt;/text&gt;
-&lt;text text-anchor='middle' x='216' y='68' fill='currentColor' style='font-size:1em'&gt;d&lt;/text&gt;
-&lt;text text-anchor='middle' x='216' y='356' fill='currentColor' style='font-size:1em'&gt;d&lt;/text&gt;
-&lt;text text-anchor='middle' x='224' y='196' fill='currentColor' style='font-size:1em'&gt;l&lt;/text&gt;
-&lt;text text-anchor='middle' x='224' y='356' fill='currentColor' style='font-size:1em'&gt;o&lt;/text&gt;
-&lt;text text-anchor='middle' x='232' y='196' fill='currentColor' style='font-size:1em'&gt;i&lt;/text&gt;
-&lt;text text-anchor='middle' x='232' y='356' fill='currentColor' style='font-size:1em'&gt;t&lt;/text&gt;
-&lt;text text-anchor='middle' x='240' y='196' fill='currentColor' style='font-size:1em'&gt;n&lt;/text&gt;
-&lt;text text-anchor='middle' x='248' y='196' fill='currentColor' style='font-size:1em'&gt;e&lt;/text&gt;
-&lt;text text-anchor='middle' x='296' y='100' fill='currentColor' style='font-size:1em'&gt;D&lt;/text&gt;
-&lt;text text-anchor='middle' x='304' y='100' fill='currentColor' style='font-size:1em'&gt;i&lt;/text&gt;
-&lt;text text-anchor='middle' x='312' y='100' fill='currentColor' style='font-size:1em'&gt;a&lt;/text&gt;
-&lt;text text-anchor='middle' x='320' y='100' fill='currentColor' style='font-size:1em'&gt;g&lt;/text&gt;
-&lt;text text-anchor='middle' x='328' y='100' fill='currentColor' style='font-size:1em'&gt;o&lt;/text&gt;
-&lt;text text-anchor='middle' x='336' y='100' fill='currentColor' style='font-size:1em'&gt;n&lt;/text&gt;
-&lt;text text-anchor='middle' x='344' y='100' fill='currentColor' style='font-size:1em'&gt;a&lt;/text&gt;
-&lt;text text-anchor='middle' x='352' y='100' fill='currentColor' style='font-size:1em'&gt;l&lt;/text&gt;
-&lt;text text-anchor='middle' x='360' y='100' fill='currentColor' style='font-size:1em'&gt;s&lt;/text&gt;
-&lt;text text-anchor='middle' x='360' y='276' fill='currentColor' style='font-size:1em'&gt;C&lt;/text&gt;
-&lt;text text-anchor='middle' x='360' y='292' fill='currentColor' style='font-size:1em'&gt;V&lt;/text&gt;
-&lt;text text-anchor='middle' x='368' y='276' fill='currentColor' style='font-size:1em'&gt;u&lt;/text&gt;
-&lt;text text-anchor='middle' x='368' y='292' fill='currentColor' style='font-size:1em'&gt;e&lt;/text&gt;
-&lt;text text-anchor='middle' x='376' y='276' fill='currentColor' style='font-size:1em'&gt;r&lt;/text&gt;
-&lt;text text-anchor='middle' x='376' y='292' fill='currentColor' style='font-size:1em'&gt;r&lt;/text&gt;
-&lt;text text-anchor='middle' x='384' y='276' fill='currentColor' style='font-size:1em'&gt;v&lt;/text&gt;
-&lt;text text-anchor='middle' x='384' y='292' fill='currentColor' style='font-size:1em'&gt;t&lt;/text&gt;
-&lt;text text-anchor='middle' x='392' y='276' fill='currentColor' style='font-size:1em'&gt;e&lt;/text&gt;
-&lt;text text-anchor='middle' x='392' y='292' fill='currentColor' style='font-size:1em'&gt;i&lt;/text&gt;
-&lt;text text-anchor='middle' x='400' y='276' fill='currentColor' style='font-size:1em'&gt;d&lt;/text&gt;
-&lt;text text-anchor='middle' x='400' y='292' fill='currentColor' style='font-size:1em'&gt;c&lt;/text&gt;
-&lt;text text-anchor='middle' x='408' y='292' fill='currentColor' style='font-size:1em'&gt;a&lt;/text&gt;
-&lt;text text-anchor='middle' x='416' y='292' fill='currentColor' style='font-size:1em'&gt;l&lt;/text&gt;
-&lt;text text-anchor='middle' x='416' y='324' fill='currentColor' style='font-size:1em'&gt;n&lt;/text&gt;
-&lt;text text-anchor='middle' x='424' y='324' fill='currentColor' style='font-size:1em'&gt;o&lt;/text&gt;
-&lt;text text-anchor='middle' x='432' y='324' fill='currentColor' style='font-size:1em'&gt;t&lt;/text&gt;
-&lt;text text-anchor='middle' x='432' y='356' fill='currentColor' style='font-size:1em'&gt;A&lt;/text&gt;
-&lt;text text-anchor='middle' x='432' y='372' fill='currentColor' style='font-size:1em'&gt;N&lt;/text&gt;
-&lt;text text-anchor='middle' x='440' y='212' fill='currentColor' style='font-size:1em'&gt;C&lt;/text&gt;
-&lt;text text-anchor='middle' x='440' y='324' fill='currentColor' style='font-size:1em'&gt;:&lt;/text&gt;
-&lt;text text-anchor='middle' x='440' y='372' fill='currentColor' style='font-size:1em'&gt;o&lt;/text&gt;
-&lt;text text-anchor='middle' x='448' y='212' fill='currentColor' style='font-size:1em'&gt;u&lt;/text&gt;
-&lt;text text-anchor='middle' x='448' y='324' fill='currentColor' style='font-size:1em'&gt;l&lt;/text&gt;
-&lt;text text-anchor='middle' x='448' y='356' fill='currentColor' style='font-size:1em'&gt;d&lt;/text&gt;
-&lt;text text-anchor='middle' x='448' y='372' fill='currentColor' style='font-size:1em'&gt;r&lt;/text&gt;
-&lt;text text-anchor='middle' x='456' y='212' fill='currentColor' style='font-size:1em'&gt;r&lt;/text&gt;
-&lt;text text-anchor='middle' x='456' y='324' fill='currentColor' style='font-size:1em'&gt;i&lt;/text&gt;
-&lt;text text-anchor='middle' x='456' y='340' fill='currentColor' style='font-size:1em'&gt;A&lt;/text&gt;
-&lt;text text-anchor='middle' x='456' y='356' fill='currentColor' style='font-size:1em'&gt;a&lt;/text&gt;
-&lt;text text-anchor='middle' x='456' y='372' fill='currentColor' style='font-size:1em'&gt;/&lt;/text&gt;
-&lt;text text-anchor='middle' x='464' y='164' fill='currentColor' style='font-size:1em'&gt;I&lt;/text&gt;
-&lt;text text-anchor='middle' x='464' y='212' fill='currentColor' style='font-size:1em'&gt;v&lt;/text&gt;
-&lt;text text-anchor='middle' x='464' y='324' fill='currentColor' style='font-size:1em'&gt;n&lt;/text&gt;
-&lt;text text-anchor='middle' x='464' y='356' fill='currentColor' style='font-size:1em'&gt;s&lt;/text&gt;
-&lt;text text-anchor='middle' x='464' y='372' fill='currentColor' style='font-size:1em'&gt;i&lt;/text&gt;
-&lt;text text-anchor='middle' x='472' y='164' fill='currentColor' style='font-size:1em'&gt;n&lt;/text&gt;
-&lt;text text-anchor='middle' x='472' y='212' fill='currentColor' style='font-size:1em'&gt;e&lt;/text&gt;
-&lt;text text-anchor='middle' x='472' y='324' fill='currentColor' style='font-size:1em'&gt;e&lt;/text&gt;
-&lt;text text-anchor='middle' x='472' y='356' fill='currentColor' style='font-size:1em'&gt;h&lt;/text&gt;
-&lt;text text-anchor='middle' x='472' y='372' fill='currentColor' style='font-size:1em'&gt;s&lt;/text&gt;
-&lt;text text-anchor='middle' x='480' y='164' fill='currentColor' style='font-size:1em'&gt;t&lt;/text&gt;
-&lt;text text-anchor='middle' x='480' y='212' fill='currentColor' style='font-size:1em'&gt;d&lt;/text&gt;
-&lt;text text-anchor='middle' x='480' y='356' fill='currentColor' style='font-size:1em'&gt;-&lt;/text&gt;
-&lt;text text-anchor='middle' x='488' y='164' fill='currentColor' style='font-size:1em'&gt;e&lt;/text&gt;
-&lt;text text-anchor='middle' x='488' y='356' fill='currentColor' style='font-size:1em'&gt;-&lt;/text&gt;
-&lt;text text-anchor='middle' x='488' y='372' fill='currentColor' style='font-size:1em'&gt;t&lt;/text&gt;
-&lt;text text-anchor='middle' x='496' y='164' fill='currentColor' style='font-size:1em'&gt;r&lt;/text&gt;
-&lt;text text-anchor='middle' x='496' y='212' fill='currentColor' style='font-size:1em'&gt;l&lt;/text&gt;
-&lt;text text-anchor='middle' x='496' y='340' fill='currentColor' style='font-size:1em'&gt;B&lt;/text&gt;
-&lt;text text-anchor='middle' x='496' y='356' fill='currentColor' style='font-size:1em'&gt;i&lt;/text&gt;
-&lt;text text-anchor='middle' x='496' y='372' fill='currentColor' style='font-size:1em'&gt;h&lt;/text&gt;
-&lt;text text-anchor='middle' x='504' y='164' fill='currentColor' style='font-size:1em'&gt;i&lt;/text&gt;
-&lt;text text-anchor='middle' x='504' y='212' fill='currentColor' style='font-size:1em'&gt;i&lt;/text&gt;
-&lt;text text-anchor='middle' x='504' y='356' fill='currentColor' style='font-size:1em'&gt;s&lt;/text&gt;
-&lt;text text-anchor='middle' x='504' y='372' fill='currentColor' style='font-size:1em'&gt;i&lt;/text&gt;
-&lt;text text-anchor='middle' x='512' y='164' fill='currentColor' style='font-size:1em'&gt;o&lt;/text&gt;
-&lt;text text-anchor='middle' x='512' y='212' fill='currentColor' style='font-size:1em'&gt;n&lt;/text&gt;
-&lt;text text-anchor='middle' x='512' y='324' fill='currentColor' style='font-size:1em'&gt;'&lt;/text&gt;
-&lt;text text-anchor='middle' x='512' y='372' fill='currentColor' style='font-size:1em'&gt;s&lt;/text&gt;
-&lt;text text-anchor='middle' x='520' y='164' fill='currentColor' style='font-size:1em'&gt;r&lt;/text&gt;
-&lt;text text-anchor='middle' x='520' y='212' fill='currentColor' style='font-size:1em'&gt;e&lt;/text&gt;
-&lt;text text-anchor='middle' x='520' y='324' fill='currentColor' style='font-size:1em'&gt;q&lt;/text&gt;
-&lt;text text-anchor='middle' x='520' y='356' fill='currentColor' style='font-size:1em'&gt;n&lt;/text&gt;
-&lt;text text-anchor='middle' x='520' y='372' fill='currentColor' style='font-size:1em'&gt;.&lt;/text&gt;
-&lt;text text-anchor='middle' x='528' y='324' fill='currentColor' style='font-size:1em'&gt;u&lt;/text&gt;
-&lt;text text-anchor='middle' x='528' y='340' fill='currentColor' style='font-size:1em'&gt;*&lt;/text&gt;
-&lt;text text-anchor='middle' x='528' y='356' fill='currentColor' style='font-size:1em'&gt;o&lt;/text&gt;
-&lt;text text-anchor='middle' x='536' y='324' fill='currentColor' style='font-size:1em'&gt;o&lt;/text&gt;
-&lt;text text-anchor='middle' x='536' y='340' fill='currentColor' style='font-size:1em'&gt;b&lt;/text&gt;
-&lt;text text-anchor='middle' x='536' y='356' fill='currentColor' style='font-size:1em'&gt;t&lt;/text&gt;
-&lt;text text-anchor='middle' x='544' y='324' fill='currentColor' style='font-size:1em'&gt;t&lt;/text&gt;
-&lt;text text-anchor='middle' x='544' y='340' fill='currentColor' style='font-size:1em'&gt;o&lt;/text&gt;
-&lt;text text-anchor='middle' x='552' y='324' fill='currentColor' style='font-size:1em'&gt;e&lt;/text&gt;
-&lt;text text-anchor='middle' x='552' y='340' fill='currentColor' style='font-size:1em'&gt;l&lt;/text&gt;
-&lt;text text-anchor='middle' x='552' y='356' fill='currentColor' style='font-size:1em'&gt;a&lt;/text&gt;
-&lt;text text-anchor='middle' x='560' y='324' fill='currentColor' style='font-size:1em'&gt;s&lt;/text&gt;
-&lt;text text-anchor='middle' x='560' y='340' fill='currentColor' style='font-size:1em'&gt;d&lt;/text&gt;
-&lt;text text-anchor='middle' x='568' y='324' fill='currentColor' style='font-size:1em'&gt;'&lt;/text&gt;
-&lt;text text-anchor='middle' x='568' y='340' fill='currentColor' style='font-size:1em'&gt;*&lt;/text&gt;
-&lt;text text-anchor='middle' x='568' y='356' fill='currentColor' style='font-size:1em'&gt;l&lt;/text&gt;
-&lt;text text-anchor='middle' x='576' y='356' fill='currentColor' style='font-size:1em'&gt;i&lt;/text&gt;
-&lt;text text-anchor='middle' x='584' y='356' fill='currentColor' style='font-size:1em'&gt;n&lt;/text&gt;
-&lt;text text-anchor='middle' x='592' y='356' fill='currentColor' style='font-size:1em'&gt;e&lt;/text&gt;
-&lt;text text-anchor='middle' x='648' y='244' fill='currentColor' style='font-size:1em'&gt;D&lt;/text&gt;
-&lt;text text-anchor='middle' x='656' y='244' fill='currentColor' style='font-size:1em'&gt;o&lt;/text&gt;
-&lt;text text-anchor='middle' x='664' y='244' fill='currentColor' style='font-size:1em'&gt;n&lt;/text&gt;
-&lt;text text-anchor='middle' x='672' y='132' fill='currentColor' style='font-size:1em'&gt;S&lt;/text&gt;
-&lt;text text-anchor='middle' x='672' y='244' fill='currentColor' style='font-size:1em'&gt;e&lt;/text&gt;
-&lt;text text-anchor='middle' x='680' y='132' fill='currentColor' style='font-size:1em'&gt;e&lt;/text&gt;
-&lt;text text-anchor='middle' x='680' y='244' fill='currentColor' style='font-size:1em'&gt;?&lt;/text&gt;
-&lt;text text-anchor='middle' x='688' y='132' fill='currentColor' style='font-size:1em'&gt;a&lt;/text&gt;
-&lt;text text-anchor='middle' x='696' y='132' fill='currentColor' style='font-size:1em'&gt;r&lt;/text&gt;
-&lt;text text-anchor='middle' x='704' y='132' fill='currentColor' style='font-size:1em'&gt;c&lt;/text&gt;
-&lt;text text-anchor='middle' x='704' y='308' fill='currentColor' style='font-size:1em'&gt;3&lt;/text&gt;
-&lt;text text-anchor='middle' x='712' y='132' fill='currentColor' style='font-size:1em'&gt;h&lt;/text&gt;
-&lt;/g&gt;
-
- &lt;/svg&gt;
- 
-&lt;/div&gt;
-&lt;h3 id="process"&gt;Process&lt;a class="anchor" href="#process"&gt;#&lt;/a&gt;&lt;/h3&gt;
-
-
-
-&lt;div class="goat svg-container "&gt;
- 
- &lt;svg
- xmlns="http://www.w3.org/2000/svg"
- font-family="Menlo,Lucida Console,monospace"
- 
- viewBox="0 0 728 233"
- &gt;
- &lt;g transform='translate(8,16)'&gt;
-&lt;path d='M 32,16 L 96,16' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 392,32 L 408,32' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 408,32 L 472,32' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 472,32 L 488,32' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 32,48 L 64,48' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 64,48 L 96,48' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 152,48 L 200,48' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 224,64 L 272,64' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 336,64 L 384,64' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 488,64 L 520,64' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 640,64 L 672,64' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 152,80 L 200,80' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 32,96 L 112,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 392,96 L 408,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 408,96 L 440,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 440,96 L 472,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 472,96 L 488,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 16,128 L 64,128' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 64,128 L 96,128' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 16,176 L 112,176' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 256,176 L 304,176' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 304,176 L 352,176' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 112,192 L 248,192' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 360,192 L 416,192' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 16,208 L 112,208' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 256,208 L 352,208' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 540,40 L 628,40' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 540,88 L 628,88' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 16,176 L 16,208' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 64,48 L 64,80' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 64,128 L 64,160' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 112,176 L 112,192' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 112,192 L 112,208' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 256,176 L 256,208' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 304,144 L 304,176' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 352,176 L 352,208' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 392,32 L 392,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 408,32 L 408,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 472,32 L 472,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 488,32 L 488,64' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 488,64 L 488,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 16,128 L 32,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 96,128 L 112,96' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 272,64 L 304,0' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 304,128 L 336,64' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 528,64 L 540,40' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 628,88 L 640,64' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 272,64 L 304,128' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 304,0 L 336,64' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 528,64 L 540,88' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 628,40 L 640,64' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 64,80 L 64,88' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;polygon points='80.000000,80.000000 68.000000,74.400002 68.000000,85.599998' fill='currentColor' transform='rotate(90.000000, 64.000000, 80.000000)'&gt;&lt;/polygon&gt;
-&lt;path d='M 64,160 L 64,168' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;polygon points='80.000000,160.000000 68.000000,154.399994 68.000000,165.600006' fill='currentColor' transform='rotate(90.000000, 64.000000, 160.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='232.000000,64.000000 220.000000,58.400002 220.000000,69.599998' fill='currentColor' transform='rotate(180.000000, 224.000000, 64.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='256.000000,192.000000 244.000000,186.399994 244.000000,197.600006' fill='currentColor' transform='rotate(0.000000, 248.000000, 192.000000)'&gt;&lt;/polygon&gt;
-&lt;path d='M 304,136 L 304,144' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;polygon points='320.000000,144.000000 308.000000,138.399994 308.000000,149.600006' fill='currentColor' transform='rotate(270.000000, 304.000000, 144.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='368.000000,192.000000 356.000000,186.399994 356.000000,197.600006' fill='currentColor' transform='rotate(180.000000, 360.000000, 192.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='392.000000,64.000000 380.000000,58.400002 380.000000,69.599998' fill='currentColor' transform='rotate(0.000000, 384.000000, 64.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='528.000000,64.000000 516.000000,58.400002 516.000000,69.599998' fill='currentColor' transform='rotate(0.000000, 520.000000, 64.000000)'&gt;&lt;/polygon&gt;
-&lt;polygon points='680.000000,64.000000 668.000000,58.400002 668.000000,69.599998' fill='currentColor' transform='rotate(0.000000, 672.000000, 64.000000)'&gt;&lt;/polygon&gt;
-&lt;path d='M 32,16 A 16,16 0 0,0 16,32' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 96,16 A 16,16 0 0,1 112,32' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 16,32 A 16,16 0 0,0 32,48' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 112,32 A 16,16 0 0,1 96,48' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 152,48 A 16,16 0 0,0 136,64' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 200,48 A 16,16 0 0,1 216,64' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 696,48 A 16,16 0 0,0 680,64' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 696,48 A 16,16 0 0,1 712,64' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 136,64 A 16,16 0 0,0 152,80' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 216,64 A 16,16 0 0,1 200,80' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 680,64 A 16,16 0 0,0 696,80' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 712,64 A 16,16 0 0,1 696,80' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 432,176 A 16,16 0 0,0 416,192' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 432,176 A 16,16 0 0,1 448,192' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 416,192 A 16,16 0 0,0 432,208' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;path d='M 448,192 A 16,16 0 0,1 432,208' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
-&lt;text text-anchor='middle' x='40' y='196' fill='currentColor' style='font-size:1em'&gt;P&lt;/text&gt;
-&lt;text text-anchor='middle' x='48' y='36' fill='currentColor' style='font-size:1em'&gt;S&lt;/text&gt;
-&lt;text text-anchor='middle' x='48' y='116' fill='currentColor' style='font-size:1em'&gt;I&lt;/text&gt;
-&lt;text text-anchor='middle' x='48' y='196' fill='currentColor' style='font-size:1em'&gt;R&lt;/text&gt;
-&lt;text text-anchor='middle' x='56' y='36' fill='currentColor' style='font-size:1em'&gt;T&lt;/text&gt;
-&lt;text text-anchor='middle' x='56' y='116' fill='currentColor' style='font-size:1em'&gt;N&lt;/text&gt;
-&lt;text text-anchor='middle' x='56' y='196' fill='currentColor' style='font-size:1em'&gt;O&lt;/text&gt;
-&lt;text text-anchor='middle' x='64' y='36' fill='currentColor' style='font-size:1em'&gt;A&lt;/text&gt;
-&lt;text text-anchor='middle' x='64' y='116' fill='currentColor' style='font-size:1em'&gt;P&lt;/text&gt;
-&lt;text text-anchor='middle' x='64' y='196' fill='currentColor' style='font-size:1em'&gt;C&lt;/text&gt;
-&lt;text text-anchor='middle' x='72' y='36' fill='currentColor' style='font-size:1em'&gt;R&lt;/text&gt;
-&lt;text text-anchor='middle' x='72' y='116' fill='currentColor' style='font-size:1em'&gt;U&lt;/text&gt;
-&lt;text text-anchor='middle' x='72' y='196' fill='currentColor' style='font-size:1em'&gt;E&lt;/text&gt;
-&lt;text text-anchor='middle' x='80' y='36' fill='currentColor' style='font-size:1em'&gt;T&lt;/text&gt;
-&lt;text text-anchor='middle' x='80' y='116' fill='currentColor' style='font-size:1em'&gt;T&lt;/text&gt;
-&lt;text text-anchor='middle' x='80' y='196' fill='currentColor' style='font-size:1em'&gt;S&lt;/text&gt;
-&lt;text text-anchor='middle' x='88' y='196' fill='currentColor' style='font-size:1em'&gt;S&lt;/text&gt;
-&lt;text text-anchor='middle' x='168' y='68' fill='currentColor' style='font-size:1em'&gt;E&lt;/text&gt;
-&lt;text text-anchor='middle' x='176' y='68' fill='currentColor' style='font-size:1em'&gt;N&lt;/text&gt;
-&lt;text text-anchor='middle' x='184' y='68' fill='currentColor' style='font-size:1em'&gt;D&lt;/text&gt;
-&lt;text text-anchor='middle' x='248' y='52' fill='currentColor' style='font-size:1em'&gt;A&lt;/text&gt;
-&lt;text text-anchor='middle' x='280' y='68' fill='currentColor' style='font-size:1em'&gt;C&lt;/text&gt;
-&lt;text text-anchor='middle' x='280' y='196' fill='currentColor' style='font-size:1em'&gt;P&lt;/text&gt;
-&lt;text text-anchor='middle' x='288' y='68' fill='currentColor' style='font-size:1em'&gt;H&lt;/text&gt;
-&lt;text text-anchor='middle' x='288' y='196' fill='currentColor' style='font-size:1em'&gt;R&lt;/text&gt;
-&lt;text text-anchor='middle' x='296' y='68' fill='currentColor' style='font-size:1em'&gt;O&lt;/text&gt;
-&lt;text text-anchor='middle' x='296' y='196' fill='currentColor' style='font-size:1em'&gt;O&lt;/text&gt;
-&lt;text text-anchor='middle' x='304' y='68' fill='currentColor' style='font-size:1em'&gt;I&lt;/text&gt;
-&lt;text text-anchor='middle' x='304' y='196' fill='currentColor' style='font-size:1em'&gt;C&lt;/text&gt;
-&lt;text text-anchor='middle' x='312' y='68' fill='currentColor' style='font-size:1em'&gt;C&lt;/text&gt;
-&lt;text text-anchor='middle' x='312' y='196' fill='currentColor' style='font-size:1em'&gt;E&lt;/text&gt;
-&lt;text text-anchor='middle' x='320' y='68' fill='currentColor' style='font-size:1em'&gt;E&lt;/text&gt;
-&lt;text text-anchor='middle' x='320' y='196' fill='currentColor' style='font-size:1em'&gt;S&lt;/text&gt;
-&lt;text text-anchor='middle' x='328' y='196' fill='currentColor' style='font-size:1em'&gt;S&lt;/text&gt;
-&lt;text text-anchor='middle' x='360' y='52' fill='currentColor' style='font-size:1em'&gt;B&lt;/text&gt;
-&lt;text text-anchor='middle' x='416' y='52' fill='currentColor' style='font-size:1em'&gt;C&lt;/text&gt;
-&lt;text text-anchor='middle' x='416' y='84' fill='currentColor' style='font-size:1em'&gt;P&lt;/text&gt;
-&lt;text text-anchor='middle' x='424' y='52' fill='currentColor' style='font-size:1em'&gt;O&lt;/text&gt;
-&lt;text text-anchor='middle' x='424' y='84' fill='currentColor' style='font-size:1em'&gt;R&lt;/text&gt;
-&lt;text text-anchor='middle' x='432' y='52' fill='currentColor' style='font-size:1em'&gt;M&lt;/text&gt;
-&lt;text text-anchor='middle' x='432' y='84' fill='currentColor' style='font-size:1em'&gt;O&lt;/text&gt;
-&lt;text text-anchor='middle' x='432' y='196' fill='currentColor' style='font-size:1em'&gt;X&lt;/text&gt;
-&lt;text text-anchor='middle' x='440' y='52' fill='currentColor' style='font-size:1em'&gt;P&lt;/text&gt;
-&lt;text text-anchor='middle' x='440' y='84' fill='currentColor' style='font-size:1em'&gt;C&lt;/text&gt;
-&lt;text text-anchor='middle' x='448' y='52' fill='currentColor' style='font-size:1em'&gt;L&lt;/text&gt;
-&lt;text text-anchor='middle' x='448' y='84' fill='currentColor' style='font-size:1em'&gt;E&lt;/text&gt;
-&lt;text text-anchor='middle' x='456' y='52' fill='currentColor' style='font-size:1em'&gt;E&lt;/text&gt;
-&lt;text text-anchor='middle' x='456' y='84' fill='currentColor' style='font-size:1em'&gt;S&lt;/text&gt;
-&lt;text text-anchor='middle' x='464' y='52' fill='currentColor' style='font-size:1em'&gt;X&lt;/text&gt;
-&lt;text text-anchor='middle' x='464' y='84' fill='currentColor' style='font-size:1em'&gt;S&lt;/text&gt;
-&lt;text text-anchor='middle' x='544' y='68' fill='currentColor' style='font-size:1em'&gt;P&lt;/text&gt;
-&lt;text text-anchor='middle' x='552' y='68' fill='currentColor' style='font-size:1em'&gt;R&lt;/text&gt;
-&lt;text text-anchor='middle' x='560' y='68' fill='currentColor' style='font-size:1em'&gt;E&lt;/text&gt;
-&lt;text text-anchor='middle' x='568' y='68' fill='currentColor' style='font-size:1em'&gt;P&lt;/text&gt;
-&lt;text text-anchor='middle' x='576' y='68' fill='currentColor' style='font-size:1em'&gt;A&lt;/text&gt;
-&lt;text text-anchor='middle' x='584' y='68' fill='currentColor' style='font-size:1em'&gt;R&lt;/text&gt;
-&lt;text text-anchor='middle' x='592' y='68' fill='currentColor' style='font-size:1em'&gt;A&lt;/text&gt;
-&lt;text text-anchor='middle' x='600' y='68' fill='currentColor' style='font-size:1em'&gt;T&lt;/text&gt;
-&lt;text text-anchor='middle' x='608' y='68' fill='currentColor' style='font-size:1em'&gt;I&lt;/text&gt;
-&lt;text text-anchor='middle' x='616' y='68' fill='currentColor' style='font-size:1em'&gt;O&lt;/text&gt;
-&lt;text text-anchor='middle' x='624' y='68' fill='currentColor' style='font-size:1em'&gt;N&lt;/text&gt;
-&lt;text text-anchor='middle' x='696' y='68' fill='currentColor' style='font-size:1em'&gt;X&lt;/text&gt;
-&lt;/g&gt;
-
- &lt;/svg&gt;
- 
-&lt;/div&gt;
-&lt;h3 id="file-tree"&gt;File tree&lt;a class="anchor" href="#file-tree"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-goat" data-lang="goat"&gt; .
+ 0 3 P * Eye / ^ /
+ *-------* +y \ +) \ / Reflection
+ 1 /| 2 /| ^ \ \ \ v
+ *-------* | | v0 \ v3 --------*--------
+ | |4 | |7 | *----\-----*
+ | *-----|-* +-----&amp;gt; +x / v X \ .-.&amp;lt;-------- o
+ |/ |/ / / o \ | / | Refraction / \
+ *-------* v / \ +-&amp;#39; / \
+ 5 6 +z v1 *------------------* v2 | o-----o
+ v&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="complex"&gt;Complex&lt;a class="anchor" href="#complex"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-goat" data-lang="goat"&gt;+-------------------+ ^ .---.
+| A Box |__.--.__ __.--&amp;gt; | .-. | |
+| | &amp;#39;--&amp;#39; v | * |&amp;lt;--- | |
++-------------------+ &amp;#39;-&amp;#39; | |
+ Round *---(-. |
+ .-----------------. .-------. .----------. .-------. | | |
+ | Mixed Rounded | | | / Diagonals \ | | | | | |
+ | &amp;amp; Square Corners | &amp;#39;--. .--&amp;#39; / \ |---+---| &amp;#39;-)-&amp;#39; .--------.
+ &amp;#39;--+------------+-&amp;#39; .--. | &amp;#39;-------+--------&amp;#39; | | | | / Search /
+ | | | | &amp;#39;---. | &amp;#39;-------&amp;#39; | &amp;#39;-+------&amp;#39;
+ |&amp;lt;----------&amp;gt;| | | | v Interior | ^
+ &amp;#39; &amp;lt;---&amp;#39; &amp;#39;----&amp;#39; .-----------. ---. .--- v |
+ .------------------. Diag line | .-------. +---. \ / . |
+ | if (a &amp;gt; b) +---. .---&amp;gt;| | | | | Curved line \ / / \ |
+ | obj-&amp;gt;fcn() | \ / | &amp;#39;-------&amp;#39; |&amp;lt;--&amp;#39; + / \ |
+ &amp;#39;------------------&amp;#39; &amp;#39;--&amp;#39; &amp;#39;--+--------&amp;#39; .--. .--. | .-. +Done?+-&amp;#39;
+ .---+-----. | ^ |\ | | /| .--+ | | \ /
+ | | | Join \|/ | | Curved | \| |/ | | \ | \ /
+ | | +----&amp;gt; o --o-- &amp;#39;-&amp;#39; Vertical &amp;#39;--&amp;#39; &amp;#39;--&amp;#39; &amp;#39;-- &amp;#39;--&amp;#39; + .---.
+ &amp;lt;--+---+-----&amp;#39; | /|\ | | 3 |
+ v not:line &amp;#39;quotes&amp;#39; .-&amp;#39; &amp;#39;---&amp;#39;
+ .-. .---+--------. / A || B *bold* | ^
+ | | | Not a dot | &amp;lt;---+---&amp;lt;-- A dash--is not a line v |
+ &amp;#39;-&amp;#39; &amp;#39;---------+--&amp;#39; / Nor/is this. ---&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="process"&gt;Process&lt;a class="anchor" href="#process"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-goat" data-lang="goat"&gt; .
+ .---------. / \
+ | START | / \ .-+-------+-. ___________
+ &amp;#39;----+----&amp;#39; .-------. A / \ B | |COMPLEX| | / \ .-.
+ | | END |&amp;lt;-----+CHOICE +-----&amp;gt;| | | +---&amp;gt;+ PREPARATION +---&amp;gt;| X |
+ v &amp;#39;-------&amp;#39; \ / | |PROCESS| | \___________/ &amp;#39;-&amp;#39;
+ .---------. \ / &amp;#39;-+---+---+-&amp;#39;
+ / INPUT / \ /
+ &amp;#39;-----+---&amp;#39; &amp;#39;
+ | ^
+ v |
+ .-----------. .-----+-----. .-.
+ | PROCESS +----------------&amp;gt;| PROCESS |&amp;lt;------+ X |
+ &amp;#39;-----------&amp;#39; &amp;#39;-----------&amp;#39; &amp;#39;-&amp;#39;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="file-tree"&gt;File tree&lt;a class="anchor" href="#file-tree"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Created from &lt;a href="https://arthursonzogni.com/Diagon/#Tree"&gt;https://arthursonzogni.com/Diagon/#Tree&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Electrodynamic Dory-Guest-Harris Instability</title><link>https://peppyhare.github.io/r/notes/research/dgh-datta/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/dgh-datta/</guid><description>&lt;span&gt;
  \[\]
 &lt;/span&gt;
