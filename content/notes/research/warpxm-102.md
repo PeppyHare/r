@@ -14,7 +14,7 @@ There are some code listings (as they appear in the WARPXM code base) included f
 
 ## Entrypoint
 
-{{< details title="`warpxm.cc: int main(int argc, char** argv)`" open=false >}}
+{{% details title="`warpxm.cc: int main(int argc, char** argv)`" open=false %}}
 
 ```c++
 int main(int argc, char** argv)
@@ -29,13 +29,13 @@ int main(int argc, char** argv)
 }
 ```
 
-{{< /details >}}
+{{% /details %}}
 
 The entrypoint for `warpxm` is simple, there are just three calls: `warpxm_init()`, `warpxm_main()`, and `warpxm_finalize()`. We don't need to pay much attention to `warpxm_init`, since it just initializes the MPI and PETSc frameworks. MPI is the message-passing framework that allows for massive parallelization. PETSc is a toolkit that _can_ be used for a wide variety of numerical techniques, but we're currently only using it for parsing command-line options (and handling the installation of mutually compatible versions of various dependencies at install time).
 
 `warpxm_main` is similarly high level:
 
-{{< details title="`warpxm.cc: int warpxm_main(int argc, char** argv)`" open=false >}}
+{{% details title="`warpxm.cc: int warpxm_main(int argc, char** argv)`" open=false %}}
 
 ```c++
 int warpxm_main(int argc, char** argv)
@@ -76,7 +76,7 @@ int warpxm_main(int argc, char** argv)
 }
 ```
 
-{{< /details >}}
+{{% /details %}}
 
 - Initialize our `WmSimulation` object. Nothing much happens when we init this other than creating a message-passing client (`WxMpiMsg`) and HDF5 i/o client (`WxHdf5Io`) that will be used to read/write data.
 - Parse the command-line options, simply reading the values of command-line flags.
@@ -90,7 +90,7 @@ int warpxm_main(int argc, char** argv)
 
 ## Setup
 
-{{< details title="`wmsimulation.cc: void WmSimulation::setup(const WxCryptSet& wxc)`" open=false >}}
+{{% details title="`wmsimulation.cc: void WmSimulation::setup(const WxCryptSet& wxc)`" open=false %}}
 
 ```c++
 
@@ -238,7 +238,7 @@ void WmSimulation::setup(const WxCryptSet& wxc)
 }
 ```
 
-{{< /details >}}
+{{% /details %}}
 
 A lot of things going on in `WmSimulation::setup`!
 
@@ -281,7 +281,7 @@ A lot of things going on in `WmSimulation::setup`!
 
 This is where the real work happens, so we need to pay extra attention here
 
-{{< details title="`wmsolver.cc: void WmSolver::solve()`" open=false >}}
+{{% details title="`wmsolver.cc: void WmSolver::solve()`" open=false %}}
 
 ```c++
 
@@ -355,50 +355,53 @@ void WmSolver::solve()
 
 ```
 
-{{< /details >}}
+{{% /details %}}
 
 ### Pre-solve Actions
 
 - First, we run through the `presolve` steps:
-  {{< details title="`wmsolver.cc: void WmSolver::presolve()`" open=false >}}
-```c++
-void WmSolver::presolve()
-{
-    // fetch stream for logging messages
-    WxLogger* log = WxLogger::get("warpx-root.console");
-    WxLogStream infStrm = log->getInfoStream();
-    WxLogStream debStrm = log->getDebugStream();
+  <details>
+  <summary><code>wmsolver.cc: void WmSolver::presolve()</code></summary>
 
-    const bool fromRestart = (getCurrentFrame() != 0);
+  ```c++
+  void WmSolver::presolve()
+  {
+      // fetch stream for logging messages
+      WxLogger* log = WxLogger::get("warpx-root.console");
+      WxLogStream infStrm = log->getInfoStream();
+      WxLogStream debStrm = log->getDebugStream();
+  
+      const bool fromRestart = (getCurrentFrame() != 0);
+  
+      // initialize hostactions
+      for (auto& ha : _hostActions)
+      {
+          ha.second->init();
+      }
+  
+      // initialize subsolvers
+      for (auto& ss : _subSolvers)
+      {
+          ss.second->init();
+      }
+  
+      // Run the initialization steps
+      if (fromRestart)
+      {
+          // run startOnly subsolvers
+          debStrm << "Running Restart steps...\n" << std::endl;
+          restart();
+      }
+      else
+      {
+          // run startOnly subsolvers
+          debStrm << "Running StartOnly steps...\n" << std::endl;
+          startOnly();
+      }
+  }
+  ```
 
-    // initialize hostactions
-    for (auto& ha : _hostActions)
-    {
-        ha.second->init();
-    }
-
-    // initialize subsolvers
-    for (auto& ss : _subSolvers)
-    {
-        ss.second->init();
-    }
-
-    // Run the initialization steps
-    if (fromRestart)
-    {
-        // run startOnly subsolvers
-        debStrm << "Running Restart steps...\n" << std::endl;
-        restart();
-    }
-    else
-    {
-        // run startOnly subsolvers
-        debStrm << "Running StartOnly steps...\n" << std::endl;
-        startOnly();
-    }
-}
-```
-  {{< /details >}}
+  </details>
   - Call the optional `init()` function for each defined host action and sub-solver
   - Then, we perform a single `ha->step()` for each host action in the sim's `start_only_group` list. Per the definition in the parent `WxStepper` class, the `step()` method for a host action must advance the state of the object by the assigned time step dt, getDt(). This is where we set the initial conditions for each defined variable. In warpy, these are defined by supplying a list of variable adjusters to the `initial_conditions` parameter of a `warpy.dg_sim` object.
     - For a `va_runner` host action, `step()` means:
@@ -409,10 +412,10 @@ void WmSolver::presolve()
 - In the main loop, we try to advance the solution from the current frame (0 at the start) to the next frame until we reach the end of the time interval (the last frame). The total number of frames we need to advance is the total number of write-out steps specified in the input file. For example, if our input file has `Time = [0, 10.0]` and `Out = 100` in the top-level `<sim>` block, we will have 100 frames that correspond with `t = [0.0, 0.1, 0.2, ..., 10.0]`. Each pass of the `for (size_t i = getCurrentFrame(); i < _nout; ++i)` loop calls `WmSolver::advance()` to advance to the next frame.
 - In between each frame, we write out informational log messages (that show the amount of actual time we took to advance to the next frame and the value of the most restrictive timestep) to provide some feedback while the sim is running.
 
-  {{< details title="`wmsolver.cc: TimestepConstraint WmSolver::advance()`" open=false >}}
+{{% details title="`wmsolver.cc: TimestepConstraint WmSolver::advance()`" open=false %}}
 ```c++
 
-TimestepConstraint WmSolver::advance(real tend)
+std::pair<TimestepConstraint, TimestepDecision> WmSolver::advance(real tend)
 {
     WxLogger* log = WxLogger::get("warpx-root.console");
     WxLogStream debStrm = log->getDebugStream();
@@ -420,164 +423,205 @@ TimestepConstraint WmSolver::advance(real tend)
 
     unsigned nstep = 1;
     auto tstart = getCurrentTime();
-    // This says to not set the timestep below this limit
+    
+    // The limit_dt is smallest reasonable time step considering numerical precision.
     const real limit_dt = std::max(std::fabs(tend), std::fabs(tstart)) * 100.0 *
                           std::numeric_limits<real>::epsilon();
 
-    const real limit_t = tend * (1 - 5 * std::numeric_limits<real>::epsilon());
-
     WxMsgBase& msg = getMsg();
 
+    // Initialize variables for tracking the smallest physics time step constraint
+    //  and the smallest time step used during this frame
     TimestepConstraint most_restrictive_tc = TimestepConstraint();
-
-    // loop advancing solution using adaptive time-stepping
+    TimestepDecision smallest_td = TimestepDecision();
+    
+    // Advance solution using time-stepper of choice until time reaches
+    // end time of current frame, minus some small delta. WHY??
+    const real limit_t = tend * (1 - 5 * std::numeric_limits<real>::epsilon());
     while (getCurrentTime() < limit_t)
     {
-        auto t = getCurrentTime();
-        auto dt = getDt();
-        if (!flexible_writeout)
+        // If flexible frame write outs not allowed, chose dt that will not exceed
+        // frame interval.
+        real t = getCurrentTime();
+        real dt_try = _timestep_status.getDtToTry();
+        if (!flexible_writeout && dt_try > limit_t - t)
         {
-            dt = std::min<real>(dt, limit_t - t);
+            dt_try = limit_t - t;
+            std::stringstream expl;
+            expl << "dt of " << _timestep_status.getDtToTry()  << " limited to "  << dt_try
+                 << " to arrive at frame end time.";
+            TimestepDecision td = TimestepDecision(
+                true, dt_try , std::make_shared<std::string>(expl.str()));
+            _timestep_status.setTdToTry(td);
         }
+        
+        // Take the time step, which will also update _timestep_status
+        debStrm << "  Attempting time step " << nstep << " with dt = " << dt_try << std::endl;
+        debStrm << "    Explanation: " << *_timestep_status.getTryExplanation() << std::endl;
 
-        // Instantiate new iterations total and timestep constraint
-        int iters;
-        std::shared_ptr<TimestepConstraint> tc;
-
-        // Take time step
-        auto tmp = step_dt(dt, limit_dt);
-        iters = tmp.first;
-        tc = tmp.second.get_tc();
-
+        step_dt(limit_dt);
+        auto dt_taken =  _timestep_status.getDtTaken();
+        auto dt_next = _timestep_status.getDtNext();
+        auto num_trys = _timestep_status.getNumTrys();
+        
         // Let user know that the step has ended
-        debStrm << " Ending Step " << nstep << " after " << iters + 1
-                << " attempts for t = " << t << " -> " << getCurrentTime()
-                << " using dt = " << tc->getDt() << std::endl;
+        debStrm << "  Time step " << nstep << " successful after " << num_trys
+                << " attempts for t = " << t << " -> " << getCurrentTime() << std::endl << std::endl;
 
-        // Report the physics and location that restrict the time step dt
-        debStrm << "\t tc = {dt = " << tc->getDt() << ", "
-                << "physics = '" << *(tc->getPhysics()) << ", "
-                << "x = (" << tc->getX()[0] << ", " << tc->getX()[1] << ", "
-                << tc->getX()[2] << ")}\n\n";
-
-        setDt(tc->getDt());
-        most_restrictive_tc = TimestepConstraint::minDt(*tc, most_restrictive_tc);
-
+        setDt(dt_next);
+        most_restrictive_tc = TimestepConstraint::minDt(*_timestep_status.getConstraint(), most_restrictive_tc);
+        if (_timestep_status.getDtTaken() != 0) // Ignore initial time step, which always has dt=0
+        {
+            smallest_td = TimestepDecision::minDt(smallest_td, _timestep_status.getTdTaken());
+        }
+        _timestep_status.updateForNextStep();
         ++nstep;
     }
 
-    return most_restrictive_tc;
+    return std::make_pair(most_restrictive_tc, smallest_td);
 }
 
 ```
-  {{< /details >}}
+{{% /details %}}
 
 - Note that within `advance()`, we have a `while (getCurrentTime() < limit_t)` loop to increment forwards in time. We continue stepping until we have reached the next frame, which could require many many individual `dt` timesteps.
 - On the first step, the solver attempts to advance time by the `dt_controller`'s initial `dt`. Subsequent steps may try to advance by a larger or smaller `dt` if the `dt_controller` provided in the input file is not a `time_stepper.fixed_dt`.
 - For each host action in the per-step group, we tick forward with `host_action->step()`
   - We can peek at `tools/warpy/dg_sim.py` to see what host actions should be the per-step group for a DG sim. With some abbreviation, we see:
-    {{< details title="`tools/warpy/dg_sim.py: dg_sim.__init__()`" open=false >}}
+    <details>
+    <summary><code>tools/warpy/dg_sim.py: dg_sim.__init__()</code></summary>
 
-```python
-# w_group is the group of writer host actions provided in the warpy input file
-w_group = solver_sequence.sequence_group(name='write_group', actions=writers)
-# ps_group contains the temporal solvers provided in the warpy input file,
-# sandwiched between any optional pre- or post-time-integration actions
-ps_group = solver_sequence.sequence_group(
-  name='perstep_group',
-  actions=pre_ti_host_actions + temporal_solvers + post_ti_host_actions
-)
-# swap_group
-swapper = host_actions.swapper(
-  name='swapper',
-  srcs=[v.name(0) for v in evolve_vars],
-  dsts=[v.name(v.output_stage if (hasattr(v, 'output_stage')) else None) for v in evolve_vars]
-)
-swap_group = solver_sequence.sequence_group(name='swap_group', actions=[swapper])
-# So per-step host actions are the writers, followed by the temporal solvers, followed by swappers
-ps_step = [w_group, ps_group, swap_group]
-ss = solver_sequence.solver_sequence(
-  start_only=so_step,
-  per_step=ps_step,
-  per_redo_per_step=r_step,
-  end_only=eo_step,
-  restart=res_step
-)
-super(dg_sim, self).__init__(solver_sequence=ss, ...)
-```
-      {{< /details >}}
-    - The big one is of course the temporal solver. For pretty much everything we're using WARPXM for, that's going to be a `Kind = explicit_runge_kutta` host action (the implicit solver still exists but is rarely used), which maps to a `WmTemporalSolver_RK`.
+    ```python
+    # w_group is the group of writer host actions provided in the warpy input file
+    w_group = solver_sequence.sequence_group(name='write_group', actions=writers)
+    # ps_group contains the temporal solvers provided in the warpy input file,
+    # sandwiched between any optional pre- or post-time-integration actions
+    ps_group = solver_sequence.sequence_group(
+      name='perstep_group',
+      actions=pre_ti_host_actions + temporal_solvers + post_ti_host_actions
+    )
+    # swap_group
+    swapper = host_actions.swapper(
+      name='swapper',
+      srcs=[v.name(0) for v in evolve_vars],
+      dsts=[v.name(v.output_stage if (hasattr(v, 'output_stage')) else None) for v in evolve_vars]
+    )
+    swap_group = solver_sequence.sequence_group(name='swap_group', actions=[swapper])
+    # So per-step host actions are the writers, followed by the temporal solvers, followed by swappers
+    ps_step = [w_group, ps_group, swap_group]
+    ss = solver_sequence.solver_sequence(
+      start_only=so_step,
+      per_step=ps_step,
+      per_redo_per_step=r_step,
+      end_only=eo_step,
+      restart=res_step
+    )
+    super(dg_sim, self).__init__(solver_sequence=ss, ...)
+    ```
 
-      {{< details title="`src/dfem/temporal_solvers/wmtemporalsolver_rk.h: WxStepperStatus WmTemporalSolver_RK::step()`" open=false >}}
+    </details>
 
-```c++
-WxStepperStatus WmTemporalSolver_RK::step()
-{
-    wxm::timer::TIMER.start("rk_solver/step");
-    time_t time = getCurrentTime();
-    time_t dt = getDt();
-	std::shared_ptr<TimestepConstraint> sugg_tc = std::make_shared<TimestepConstraint>();
-    for (int rk_stage = 0; rk_stage < scheme_->getNumStages(); rk_stage++)
+  - The big one is of course the temporal solver. For pretty much everything we're using WARPXM for, that's going to be a `Kind = explicit_runge_kutta` host action (the implicit solver still exists but is rarely used), which maps to a `WmTemporalSolver_RK`.
+    <details>
+    <summary><code>src/dfem/temporal_solvers/wmtemporalsolver_rk.cc: WxStepperStatus WmTemporalSolver_RK::step()</code></summary>
+
+    ```c++
+    WxStepperStatus WmTemporalSolver_RK::step()
     {
-        const real current_time = time + scheme_->getTimeUpdate(rk_stage) * dt;
-        variables_type& q_n = variables_[rk_stage];
-        variables_type& q_p = variables_[rk_stage + 1];
-
-        // zero out q_p which are temporal vars
-        fill_local(rk_stage + 1);
-        // TODO: this is only here until zero_fluxes is implemented with scopes
-        for (auto& ss : spatial_solvers_)
+        wxm::timer::TIMER.start("rk_solver/step");
+        time_t time = getCurrentTime();
+        time_t dt = getDt();
+        std::shared_ptr<TimestepConstraint> sugg_tc = std::make_shared<TimestepConstraint>();
+        for (int rk_stage = 0; rk_stage < scheme_->getNumStages(); rk_stage++)
         {
-            ss->zero_fluxes();
-        }
-        // run all variable adjusters
-        {
-            size_t idx = 0;
-            for (size_t i = min_priority; i <= max_priority; ++i)
+            const real current_time = time + scheme_->getTimeUpdate(rk_stage) * dt;
+            variables_type& q_n = variables_[rk_stage];
+            variables_type& q_p = variables_[rk_stage + 1];
+    
+            // zero out q_p which are temporal vars
+            fill_local(rk_stage + 1);
+            // TODO: this is only here until zero_fluxes is implemented with scopes
+            for (auto& ss : spatial_solvers_)
             {
-                while (idx < va_priorities.size() && va_priorities[idx] <= i)
-                {
-                    adjusters_[idx]->solve(current_time, q_n);
-                    adjusters_[idx]->Barrier(getMsg(), current_time, q_n);
-                    ++idx;
-                }
-                wxm::timer::TIMER.start("rk_sync");
-                // Initiate syncing on every MPI rank
-                start_sync(rk_stage);
-                // Wait for syncing to finish
-                finish_sync(rk_stage);
-                wxm::timer::TIMER.stop();
+                ss->zero_fluxes();
             }
+            // run all variable adjusters
+            {
+                wxm::timer::TIMER.start("variable_adjusters");
+                size_t idx = 0;
+                for (size_t i = min_priority; i <= max_priority; ++i)
+                {
+                    wxm::timer::TIMER.start("priority = " + std::to_string(i));
+                    wxm::timer::TIMER.start("solve");
+                    size_t pidx = idx;
+                    while (idx < va_priorities.size() && va_priorities[idx] <= i)
+                    {
+                        wxm::timer::TIMER.start(adjusters_[idx]->name("") + "/solve");
+                        adjusters_[idx]->solve(current_time, q_n, dt);
+                        ++idx;
+                        wxm::timer::TIMER.stop();
+                    }
+                    wxm::timer::TIMER.stop(); // solve
+    
+                    wxm::timer::TIMER.start("barrier");
+                    idx = pidx;
+                    while (idx < va_priorities.size() && va_priorities[idx] <= i)
+                    {
+                        wxm::timer::TIMER.start(adjusters_[idx]->name("") + "/barrier");
+                        adjusters_[idx]->Barrier(getMsg(), current_time, q_n);
+                        ++idx;
+                        wxm::timer::TIMER.stop();
+                    }
+                    wxm::timer::TIMER.stop(); // barrier
+                    wxm::timer::TIMER.stop(); // priority
+    
+                    wxm::timer::TIMER.start("va_rk_sync");
+                    // Initiate syncing on every MPI rank
+                    start_sync(rk_stage);
+                    // Wait for syncing to finish
+                    finish_sync(rk_stage);
+                    wxm::timer::TIMER.stop(); // va_rk_sync
+                }
+                wxm::timer::TIMER.stop(); // variable_adjusters
+            }
+    
+            // run the spatial solvers
+            wxm::timer::TIMER.start("spatial_solvers");
+            for (auto& ss : spatial_solvers_)
+            {
+                wxm::timer::TIMER.start(ss->name("") + "/solve");
+                std::shared_ptr<TimestepConstraint> tc = ss->solve(current_time, q_n, q_p);
+                wxm::timer::TIMER.stop(); // ss_rk_solve
+    
+                // Comparing spatial_solver's suggested time step with current minimum
+                // suggested time step. Updating sugg_tc if new minimum
+                *sugg_tc = TimestepConstraint::minDt(*sugg_tc, *tc);
+    
+                wxm::timer::TIMER.start(ss->name("") + "/barrier");
+                ss->Barrier(getMsg(), current_time, q_p);
+                wxm::timer::TIMER.stop(); // ss_rk_barrier
+            }
+            // rhs is now in q_p; need to accumulate with previous q's to get actual q_p
+            scheme_->calc_stage(rk_stage, temporal_vars_, variables_, dt);
+    
+            wxm::timer::TIMER.start("ss_rk_sync");
+            // Initiate syncing on every MPI rank
+            start_sync(rk_stage + 1);
+            // Wait for syncing to finish
+            finish_sync(rk_stage + 1);
+            wxm::timer::TIMER.stop(); // ss_rk_sync
+            wxm::timer::TIMER.stop(); // spatial_solvers
         }
-
-        // run the spatial solvers
-        for (auto& ss : spatial_solvers_)
-        {
-			std::shared_ptr<TimestepConstraint> tc = ss->solve(current_time, q_n, q_p);
-            // Comparing spatial_solver's suggested time step with current minimum suggested time step.
-            // Updating sugg_tc if new minimum
-            *sugg_tc = TimestepConstraint::minDt(*sugg_tc, *tc);
-
-            ss->Barrier(getMsg(), current_time, q_p);
-        }
-        // rhs is now in q_p; need to accumulate with previous q's to get actual q_p
-        scheme_->calc_stage(rk_stage, temporal_vars_, variables_, dt);
-
-        wxm::timer::TIMER.start("rk_sync");
-        // Initiate syncing on every MPI rank
-        start_sync(rk_stage + 1);
-        // Wait for syncing to finish
-        finish_sync(rk_stage + 1);
-        wxm::timer::TIMER.stop();
+    
+        wxm::timer::TIMER.stop(); // for "rk_solver/step"
+    
+        // TODO: how to get time step limit to take into account sources/diffusion/advection?
+        return WxStepperStatus(dt <= sugg_tc->getDt(), sugg_tc);
     }
 
-    wxm::timer::TIMER.stop(); // for "rk_solver/step"
+    ```
 
-    // TODO: how to get time step limit to take into account sources/diffusion/advection?
-    return WxStepperStatus(dt <= sugg_tc->getDt(), sugg_tc);
-}
-```
-{{< /details >}}
+    </details>
 
 The Runge-Kutta temporal solver has multiple "stages", depending on the temporal order specified in the input file. These stages are the standard Runge-Kutta intermediate approximations of the solution in between `t` and `t + dt` which are combined in a weighted average to advance the solution. For each stage:
 - Run any variable adjusters associated with the temporal solver. In the case of the `advection.py` example, we use a shock-capturing limiter (`warpy.variable_adjusters.limiters.dg_moe_rossmanith`) which enforces local bounds on variables by damping the high-order corrections.
@@ -620,4 +664,4 @@ I'm interested in the kinetic solver in particular. It would be useful to follow
 
 ## Setup
 
-The first difference is in the `WmSolver::setup` step that comes within `WmSimulation::setup` as previously discussed. The kinetic spatial solver is a patch action, 
+The first difference is in the `WmSolver::setup` step that comes within `WmSimulation::setup` as previously discussed. The kinetic spatial solver is a patch action,

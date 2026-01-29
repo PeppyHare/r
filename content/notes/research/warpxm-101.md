@@ -41,7 +41,8 @@ brew install petsc hdf5-mpi cmake gcc metis openblas scalapack pkg-config
 
 That's it, all of the C++/CMake dependencies are now installed at the system level! No need to modify any `PATH`/`LD_LIBRARY_PATH`/`PKG_CONFIG_PATH` environment variables.
 
-{{< details title="Debugging steps" open=false >}}
+<details>
+<summary>Debugging steps</summary>
 
 - If installing C++ compilers for the first time on a new Mac, you probably need to run `xcode-select --install` to accept the Xcode license and enable installing compilers provided by Apple. One of the above homebrew formulae will probably prompt you do to so when it is installed.
 - `brew install petsc` may implicitly install the `hdf5` formlua, which is not compatible with WARPXM. If you get an error message along the lines of "HDF5 was not compiled with MPI", try removing the non-mpi version and re-installing the mpi version of hdf5:
@@ -51,7 +52,7 @@ That's it, all of the C++/CMake dependencies are now installed at the system lev
     ```
 - If you have already tried to build WARPXM and needed to re-install some `brew` formula, you should get rid of any CMake caches that were created when you last tried to build. The easiest way to do this is to delete the whole build folder, then run `cmake /path/to/warpxm` again. This will force CMake to attempt to locate the dependencies in their new location, rather than trying to re-use an installation that you have already removed.
 
-{{< /details >}}
+</details>
 
 {{% /tab %}}
 
@@ -65,7 +66,8 @@ There are two general types of installation you can try:
 
 ### System-wide Installation
 
-{{< details title="Install steps" open=false >}}
+<details>
+<summary>Install steps</summary>
 
 If you run into issues with user-specific PETSc configuration, or are running into conflicts between system-level METIS/libblas/open-mpi packages and the PETSc dependencies, then it may help to use PETSc itself to install all of the dependencies at the system level. This avoids the need to set any `PATH`/`LD_LIBRARY_PATH`/`PKG_CONFIG_PATH` environment variables, as all of the required libraries will be installed in the default locations.
 
@@ -117,15 +119,16 @@ make PETSC_DIR="$PETSC_DIR" PETSC_ARCH=arch-linux-c-opt all check
 sudo make PETSC_DIR="$PETSC_DIR" PETSC_ARCH=arch-linux-c-opt install
 ```
 
-{{< /details >}}
+</details>
 
 ### User Installation
 
-{{< details title="Install steps" open=false >}}
+<details>
+<summary>Install steps</summary>
 
 You can follow the [Pre-install setup for Ubuntu Linux desktop instructions for on the wiki](http://faculty.washington.edu/shumlak/WARPX/html/install.html) to install `openmpi`, `cmake`, and `libblas` from the apt package repositories, then get PETSc to download and install the rest to your own home directory, using the `--prefix=$HOME/usr` flag when configuring PETSc.
 
-{{< /details >}}
+</details>
 {{% /tab %}}
 {{< /tabs >}}
 
