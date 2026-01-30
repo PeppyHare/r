@@ -624,8 +624,9 @@ std::pair<TimestepConstraint, TimestepDecision> WmSolver::advance(real tend)
     </details>
 
 The Runge-Kutta temporal solver has multiple "stages", depending on the temporal order specified in the input file. These stages are the standard Runge-Kutta intermediate approximations of the solution in between `t` and `t + dt` which are combined in a weighted average to advance the solution. For each stage:
-- Run any variable adjusters associated with the temporal solver. In the case of the `advection.py` example, we use a shock-capturing limiter (`warpy.variable_adjusters.limiters.dg_moe_rossmanith`) which enforces local bounds on variables by damping the high-order corrections.
-- The DG spatial solver comes next, and this is where the really heavy lifting happens. The actual flux calculations are up to the `WmApplication`(s) that we've defined in our input file. To express the physics of the problem in the language of DG, an application can define:
+- We start with the current state in `q_n`. We then run any variable adjusters associated with the temporal solver. In the case of the `advection.py` example, we use a shock-capturing limiter (`warpy.variable_adjusters.limiters.dg_moe_rossmanith`) which enforces local bounds on variables by damping the high-order corrections. These can modify the value of `q_n` before the spatial solvers act on it.
+- We perform a full `start_sync()`/`finish_sync()` to sync the MPI halo data.
+- The DG spatial solver comes next, and this is where the really heavy lifting happens: `ndg_t::solve(const real time, const variables_type& input, variables_type& output)`. The actual flux calculations are up to the `WmApplication`(s) that we've defined in our input file. To express the physics of the problem in the language of DG, an application can define:
     - `numerical_flux()`: Compute boundary flux over the surface of a DG element
     - `internal_flux()`: Compute volume flux within a DG element
     - `source()`: Contribute a source/sink term
@@ -642,6 +643,8 @@ I don't pretend to fully understand the DG implementation in WARPXM just yet, so
 \underbrace{\pdv{}{t} q_{ij} ^ \lambda}_{\text{rhs\_kernel}} = \underbrace{J_ {ml} ^\lambda \Upsilon _{jlk} f^ \lambda _{imk}}_{\text{in\_kernel}} - \underbrace{\sum_{\gamma \in \tilde{\Gamma} _\lambda} G_{\lambda \gamma} \Xi _{jk} ^{\lambda \gamma} F_{ik} ^{\lambda \gamma} + \Psi _{jk} s_{ik} ^{\lambda}}_{\text{ex\_kernel}}
 {{< /katex >}}
 where $f^\lambda _{imk}$ is the internal flux computed above, $F _{ik} ^{\lambda \gamma}$ is the external flux computed above, $s _ {ik} ^{\lambda}$ is the source flux, and $ J _ {ml} ^\lambda \Upsilon _ {jlk} $, $ G _ {\lambda \gamma} \Xi _ {jk} ^{\lambda \gamma}$, and $\Psi _ {jk}$ are computed directly from the geometry and nodal basis for each element.
+
+- `rhs_kernel` dumps its output into `variables_[rk_stage + 1]`. Then, based on the RK scheme `scheme_->calc_stage(rk_stage, temporal_vars_, variables_, dt)` accumulates the results for the stage. We get another `start_sync()`/`finish_sync()` before moving on to the next stage.
 
 - Each of these flux calculations and patch processes results may produce a timestep constraint, which gives the minimum allowable `dt` for the next step based on e.g. CFL condition. We always take the smallest constraint before moving forward.
 
