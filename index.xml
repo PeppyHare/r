@@ -1858,10 +1858,10 @@ We define \( \vec \omega_{c, \alpha} \) to be the vector gyrofrequency
 
 &lt;h1 id="spectroscopic-measurements"&gt;Spectroscopic Measurements&lt;a class="anchor" href="#spectroscopic-measurements"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;h2 id="plasma-self-emission"&gt;Plasma Self-Emission&lt;a class="anchor" href="#plasma-self-emission"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Plasmas emit light (electromagnetic radiation) over a broad range of wavelengths. This can be from the X-ray to UV to visible to IR. The emission depends on the plasma constituents, magnetic field, and plasma properties \( n_e, T_e, T_i, \vec v_i \). We should be able to analyze the self-emission to provide a measurements of these properties. These measurements are both rich in information, and completely non-perturbing. Unfortunately, extracting plasma properties from measurements can be extremely complicated, since the emission is influenced by all of these effects together.&lt;/p&gt;</description></item><item><title>Equilibrium for Fusion</title><link>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</guid><description>&lt;h1 id="equilibrium-for-fusion-hahahugoshortcode110s0hbhb"&gt;Equilibrium for Fusion (&lt;span&gt;
+&lt;p&gt;Plasmas emit light (electromagnetic radiation) over a broad range of wavelengths. This can be from the X-ray to UV to visible to IR. The emission depends on the plasma constituents, magnetic field, and plasma properties \( n_e, T_e, T_i, \vec v_i \). We should be able to analyze the self-emission to provide a measurements of these properties. These measurements are both rich in information, and completely non-perturbing. Unfortunately, extracting plasma properties from measurements can be extremely complicated, since the emission is influenced by all of these effects together.&lt;/p&gt;</description></item><item><title>Equilibrium for Fusion</title><link>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</guid><description>&lt;h1 id="equilibrium-for-fusion-hahahugoshortcode127s0hbhb"&gt;Equilibrium for Fusion (&lt;span&gt;
  \( \beta \)
 &lt;/span&gt;
-)&lt;a class="anchor" href="#equilibrium-for-fusion-hahahugoshortcode110s0hbhb"&gt;#&lt;/a&gt;&lt;/h1&gt;
+)&lt;a class="anchor" href="#equilibrium-for-fusion-hahahugoshortcode127s0hbhb"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;For a fusion device we would like to determine a magnetic configuration that confines plasma while it fuses. At fusion temperatures, the power required to maintain the equilibrium will be substantial. For a device to be useful, the power required to sustain the equilibrium must be less than the power released from fusion. Important loss terms for a confined plasma are transport (thermal conduction primarily) and radiation terms. The scaling factors are &lt;span&gt;
  \( P_{Brem} \sim n^2 T^{1/2} \)
 &lt;/span&gt;
@@ -2097,7 +2097,7 @@ which has the general solution
 
 &lt;h1 id="waves-in-hot-magnetized-plasma"&gt;Waves in Hot Magnetized Plasma&lt;a class="anchor" href="#waves-in-hot-magnetized-plasma"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;Just like in the cold plasma dispersion relation, finding the dielectric tensor helps with the dispersion relation. The process involves multiple steps. We will only look at the overview here.&lt;/p&gt;</description></item><item><title>1-D Equilibria</title><link>https://peppyhare.github.io/r/notes/UWAA558/08-1d-equilibria/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/08-1d-equilibria/</guid><description>&lt;h1 id="1-dimensional-equilibria"&gt;1-Dimensional Equilibria&lt;a class="anchor" href="#1-dimensional-equilibria"&gt;#&lt;/a&gt;&lt;/h1&gt;
-&lt;h2 id="the-hahahugoshortcode111s0hbhb-pinch"&gt;The 
+&lt;h2 id="the-hahahugoshortcode128s0hbhb-pinch"&gt;The 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
@@ -2142,7 +2142,7 @@ which has the general solution
 &lt;/script&gt;&lt;span&gt;
  \( \theta \)
 &lt;/span&gt;
--pinch&lt;a class="anchor" href="#the-hahahugoshortcode111s0hbhb-pinch"&gt;#&lt;/a&gt;&lt;/h2&gt;
+-pinch&lt;a class="anchor" href="#the-hahahugoshortcode128s0hbhb-pinch"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;In a &lt;span&gt;
  \( \theta \)
 &lt;/span&gt;
