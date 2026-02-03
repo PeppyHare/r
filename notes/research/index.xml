@@ -7,7 +7,15 @@
 
 &lt;p&gt;Pretty much entirely based on this paper: &lt;a href="https://doi.org/10.1063/5.0057230"&gt;Electromagnetic extension of the Dory– Guest–Harris instability as a benchmark for Vlasov–Maxwell continuum kinetic simulations of magnetized plasmas&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id="closed-integral-form-of-dispersion-relation"&gt;Closed Integral Form of Dispersion Relation&lt;a class="anchor" href="#closed-integral-form-of-dispersion-relation"&gt;#&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;Iman&amp;rsquo;s done a great job deriving a closed-form integral representation of the dispersion relation for the Dory-Guest-Harris instability. The trick to computing solutions to the dispersion relation is in getting all of the the normalization correct and computing the correct quadrature across both integrals (over $v_\perp$ and $\theta$).&lt;/p&gt;</description></item><item><title>Installation tricks</title><link>https://peppyhare.github.io/r/notes/research/install-tricks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/install-tricks/</guid><description>&lt;span&gt;
+&lt;p&gt;Iman&amp;rsquo;s done a great job deriving a closed-form integral representation of the dispersion relation for the Dory-Guest-Harris instability. The trick to computing solutions to the dispersion relation is in getting all of the the normalization correct and computing the correct quadrature across both integrals (over $v_\perp$ and $\theta$).&lt;/p&gt;</description></item><item><title>Hyak HPC</title><link>https://peppyhare.github.io/r/notes/research/hyak/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/hyak/</guid><description>&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;h1 id="hyak-hpc"&gt;Hyak HPC&lt;a class="anchor" href="#hyak-hpc"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Just keeping any useful tips/tricks/hard-fought successful build scripts I find for working with UW&amp;rsquo;s compute clusters Klone and Tillicum&lt;/p&gt;
+&lt;h2 id="gpu-klone-nodes"&gt;GPU Klone Nodes&lt;a class="anchor" href="#gpu-klone-nodes"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;In the &lt;code&gt;aaplasma&lt;/code&gt; account we don&amp;rsquo;t have direct access to any GPU-enabled partitions, but there&amp;rsquo;s always the checkpoint partition. To simply get an interactive session for a single node with a GPU attached, we can:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;salloc -A aaplasma --partition=ckpt-all --gpus-per-node=1 --mem=24G --time=2:00:00&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Sort of unfortunately, the nodes are a real mix of different GPU architectures, so you can&amp;rsquo;t really tell what sort of device you&amp;rsquo;re going to get that way. As of January 2026, these seem to be the different flavors available:&lt;/p&gt;</description></item><item><title>Installation tricks</title><link>https://peppyhare.github.io/r/notes/research/install-tricks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/install-tricks/</guid><description>&lt;span&gt;
  \[\]
 &lt;/span&gt;
 
