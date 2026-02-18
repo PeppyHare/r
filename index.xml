@@ -4,7 +4,14 @@
 &lt;!-- Eric Meier --&gt;
 &lt;p&gt;&lt;strong&gt;What is computational fluid dynamics?&lt;/strong&gt; Put simply, it&amp;rsquo;s the use of computers to obtain a numerical solution to the governing equations of fluid dynamics. As always, the numerical solution is an approximation to the real solution to the equations, but additionally those equations are themselves only an approximation of the real physics.&lt;/p&gt;
 &lt;p align="center"&gt; &lt;img alt="Figure 20.1" src="https://peppyhare.github.io/r/img/20.1.png" /&gt; &lt;/p&gt;
-&lt;p&gt;We will be interested in speeds much less than \( c \) (\( 3 \cdot 10^8 m/s) \) and distances much greater than the atomic radius \( \alpha_{bohr} = 5 \cdot 10^{-11} m \).&lt;/p&gt;</description></item><item><title>Mathematical review</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch01-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch01-1/</guid><description>&lt;span&gt;
+&lt;p&gt;We will be interested in speeds much less than \( c \) (\( 3 \cdot 10^8 m/s) \) and distances much greater than the atomic radius \( \alpha_{bohr} = 5 \cdot 10^{-11} m \).&lt;/p&gt;</description></item><item><title>Introduction, Building, and Parallel Dispatch</title><link>https://peppyhare.github.io/r/notes/kokkos/01-intro/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/kokkos/01-intro/</guid><description>&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;h1 id="introduction"&gt;Introduction&lt;a class="anchor" href="#introduction"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Here we will talk about where Kokkos comes from, how to do simple things with parallel dispatch in Kokkos, and how to integrate it into a build system and make it work together with your applications.&lt;/p&gt;
+&lt;h2 id="what-is-kokkos"&gt;What is Kokkos?&lt;a class="anchor" href="#what-is-kokkos"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Kokkos is a performance portability framework for C++. It allows you to write single-source implementations using a descriptive programming model in ISO standard C++, and allows you to compile your code for CPUs and GPUs.&lt;/p&gt;</description></item><item><title>Mathematical review</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch01-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch01-1/</guid><description>&lt;span&gt;
  \[\]
 &lt;/span&gt;
 
@@ -473,7 +480,53 @@
 &lt;!-- TA office: AERB 430 --&gt;
 &lt;h2 id="1011-very-large-numbers"&gt;&lt;strong&gt;10.1.1&lt;/strong&gt; Very Large Numbers&lt;a class="anchor" href="#1011-very-large-numbers"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Before getting started with real plasma physics concepts, we need to quickly review some statistical mechanics with the goal of deriving the Maxwell-Boltzmann distribution.&lt;/p&gt;
-&lt;p&gt;As we all know, if we have \( N \) unique objects, there are \( N! \) ways of arranging them. If \( n_1 \ldots n_k \) are identical with N things, the number of combinations is&lt;/p&gt;</description></item><item><title>Wave Properties in Cold Unmagnetized Plasma</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch02-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch02-2/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;p&gt;As we all know, if we have \( N \) unique objects, there are \( N! \) ways of arranging them. If \( n_1 \ldots n_k \) are identical with N things, the number of combinations is&lt;/p&gt;</description></item><item><title>Views and Spaces</title><link>https://peppyhare.github.io/r/notes/kokkos/02-views-and-spaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/kokkos/02-views-and-spaces/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script&gt;&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;h1 id="views-and-spaces"&gt;Views and Spaces&lt;a class="anchor" href="#views-and-spaces"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Let&amp;rsquo;s say we have a simple problem: we want to run a vector add and we want to run it on the GPU. We may start with a code that looks like this:&lt;/p&gt;</description></item><item><title>Wave Properties in Cold Unmagnetized Plasma</title><link>https://peppyhare.github.io/r/notes/UWAA556/ch02-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA556/ch02-2/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
 
@@ -1858,10 +1911,10 @@ We define \( \vec \omega_{c, \alpha} \) to be the vector gyrofrequency
 
 &lt;h1 id="spectroscopic-measurements"&gt;Spectroscopic Measurements&lt;a class="anchor" href="#spectroscopic-measurements"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;h2 id="plasma-self-emission"&gt;Plasma Self-Emission&lt;a class="anchor" href="#plasma-self-emission"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Plasmas emit light (electromagnetic radiation) over a broad range of wavelengths. This can be from the X-ray to UV to visible to IR. The emission depends on the plasma constituents, magnetic field, and plasma properties \( n_e, T_e, T_i, \vec v_i \). We should be able to analyze the self-emission to provide a measurements of these properties. These measurements are both rich in information, and completely non-perturbing. Unfortunately, extracting plasma properties from measurements can be extremely complicated, since the emission is influenced by all of these effects together.&lt;/p&gt;</description></item><item><title>Equilibrium for Fusion</title><link>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</guid><description>&lt;h1 id="equilibrium-for-fusion-hahahugoshortcode100s0hbhb"&gt;Equilibrium for Fusion (&lt;span&gt;
+&lt;p&gt;Plasmas emit light (electromagnetic radiation) over a broad range of wavelengths. This can be from the X-ray to UV to visible to IR. The emission depends on the plasma constituents, magnetic field, and plasma properties \( n_e, T_e, T_i, \vec v_i \). We should be able to analyze the self-emission to provide a measurements of these properties. These measurements are both rich in information, and completely non-perturbing. Unfortunately, extracting plasma properties from measurements can be extremely complicated, since the emission is influenced by all of these effects together.&lt;/p&gt;</description></item><item><title>Equilibrium for Fusion</title><link>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/07-equilibrium-for-fusion/</guid><description>&lt;h1 id="equilibrium-for-fusion-hahahugoshortcode135s0hbhb"&gt;Equilibrium for Fusion (&lt;span&gt;
  \( \beta \)
 &lt;/span&gt;
-)&lt;a class="anchor" href="#equilibrium-for-fusion-hahahugoshortcode100s0hbhb"&gt;#&lt;/a&gt;&lt;/h1&gt;
+)&lt;a class="anchor" href="#equilibrium-for-fusion-hahahugoshortcode135s0hbhb"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;For a fusion device we would like to determine a magnetic configuration that confines plasma while it fuses. At fusion temperatures, the power required to maintain the equilibrium will be substantial. For a device to be useful, the power required to sustain the equilibrium must be less than the power released from fusion. Important loss terms for a confined plasma are transport (thermal conduction primarily) and radiation terms. The scaling factors are &lt;span&gt;
  \( P_{Brem} \sim n^2 T^{1/2} \)
 &lt;/span&gt;
@@ -2097,7 +2150,7 @@ which has the general solution
 
 &lt;h1 id="waves-in-hot-magnetized-plasma"&gt;Waves in Hot Magnetized Plasma&lt;a class="anchor" href="#waves-in-hot-magnetized-plasma"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;Just like in the cold plasma dispersion relation, finding the dielectric tensor helps with the dispersion relation. The process involves multiple steps. We will only look at the overview here.&lt;/p&gt;</description></item><item><title>1-D Equilibria</title><link>https://peppyhare.github.io/r/notes/UWAA558/08-1d-equilibria/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA558/08-1d-equilibria/</guid><description>&lt;h1 id="1-dimensional-equilibria"&gt;1-Dimensional Equilibria&lt;a class="anchor" href="#1-dimensional-equilibria"&gt;#&lt;/a&gt;&lt;/h1&gt;
-&lt;h2 id="the-hahahugoshortcode101s0hbhb-pinch"&gt;The 
+&lt;h2 id="the-hahahugoshortcode136s0hbhb-pinch"&gt;The 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
@@ -2142,7 +2195,7 @@ which has the general solution
 &lt;/script&gt;&lt;span&gt;
  \( \theta \)
 &lt;/span&gt;
--pinch&lt;a class="anchor" href="#the-hahahugoshortcode101s0hbhb-pinch"&gt;#&lt;/a&gt;&lt;/h2&gt;
+-pinch&lt;a class="anchor" href="#the-hahahugoshortcode136s0hbhb-pinch"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;In a &lt;span&gt;
  \( \theta \)
 &lt;/span&gt;
@@ -3933,7 +3986,7 @@ where \( \vec A \) is a J by J matrix. In equilibrium calculations, this comes u
 &lt;p&gt;Just keeping any useful tips/tricks/hard-fought successful build scripts I find for working with UW&amp;rsquo;s compute clusters Klone and Tillicum&lt;/p&gt;
 &lt;h2 id="gpu-klone-nodes"&gt;GPU Klone Nodes&lt;a class="anchor" href="#gpu-klone-nodes"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;In the &lt;code&gt;aaplasma&lt;/code&gt; account we don&amp;rsquo;t have direct access to any GPU-enabled partitions, but there&amp;rsquo;s always the checkpoint partition. To simply get an interactive session for a single node with a GPU attached, we can:&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;salloc -A aaplasma --partition=ckpt-all --gpus-per-node=1 --mem=24G --time=2:00:00&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Sort of unfortunately, the nodes are a real mix of different GPU architectures, so you can&amp;rsquo;t really tell what sort of device you&amp;rsquo;re going to get that way. As of January 2026, these seem to be the different flavors available:&lt;/p&gt;</description></item><item><title>Installation tricks</title><link>https://peppyhare.github.io/r/notes/research/install-tricks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/install-tricks/</guid><description>&lt;span&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;salloc -A aaplasma --partition=ckpt-all --gpus-per-node=1 --mem=24G --time=2:00:00&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Sort of unfortunately, the nodes are a real mix of different GPU architectures, so you can&amp;rsquo;t really tell what sort of device you&amp;rsquo;re going to get that way. As of January 2026, these seem to be the different flavors available:&lt;/p&gt;</description></item><item><title>Hyak HPC</title><link>https://peppyhare.github.io/r/notes/research/kokkos-warpxm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/kokkos-warpxm/</guid><description>&lt;h1 id="gpu-enabled-warpxm-with-kokkos"&gt;GPU-Enabled WARPXM with Kokkos&lt;a class="anchor" href="#gpu-enabled-warpxm-with-kokkos"&gt;#&lt;/a&gt;&lt;/h1&gt;</description></item><item><title>Installation tricks</title><link>https://peppyhare.github.io/r/notes/research/install-tricks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/install-tricks/</guid><description>&lt;span&gt;
  \[\]
 &lt;/span&gt;
 

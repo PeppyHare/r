@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>The Kokkos Lectures on My Notes</title><link>https://peppyhare.github.io/r/notes/kokkos/</link><description>Recent content in The Kokkos Lectures on My Notes</description><generator>Hugo</generator><language>en</language><atom:link href="https://peppyhare.github.io/r/notes/kokkos/index.xml" rel="self" type="application/rss+xml"/><item><title>Introduction, Building, and Parallel Dispatch</title><link>https://peppyhare.github.io/r/notes/kokkos/01-intro/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/kokkos/01-intro/</guid><description>&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;h1 id="introduction"&gt;Introduction&lt;a class="anchor" href="#introduction"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Here we will talk about where Kokkos comes from, how to do simple things with parallel dispatch in Kokkos, and how to integrate it into a build system and make it work together with your applications.&lt;/p&gt;
+&lt;h2 id="what-is-kokkos"&gt;What is Kokkos?&lt;a class="anchor" href="#what-is-kokkos"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Kokkos is a performance portability framework for C++. It allows you to write single-source implementations using a descriptive programming model in ISO standard C++, and allows you to compile your code for CPUs and GPUs.&lt;/p&gt;</description></item><item><title>Views and Spaces</title><link>https://peppyhare.github.io/r/notes/kokkos/02-views-and-spaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/kokkos/02-views-and-spaces/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
+&lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+ function loadKatex() {
+ renderMathInElement(document.body, {
+ delimiters: [
+ { left: "$$", right: "$$", display: true },
+ { left: "\\[", right: "\\]", display: true },
+ { left: "$", right: "$", display: false },
+ { left: "\\(", right: "\\)", display: false }],
+ throwOnError: false,
+ trust: (context) =&gt; ['\\htmlId', '\\href'].includes(context.command),
+ macros: {
+ "\\lcm": "\\mathop{\\mathrm{lcm}}",
+ "\\sen": '\\text{sen}\\,',
+ "\\dd": "\\mathop{\\mathrm{d} #1}",
+ "\\abs": "\\lvert #1 \\rvert",
+ "\\dd": "\\text{d}",
+ "\\cross": "\\times",
+ "\\pdv": "\\frac{\\partial #1}{\\partial #2}",
+ "\\curl": "\\nabla \\cross #1",
+ "\\vu": "\\mathbf{\\hat{#1}}",
+ "\\vdot": "\\dot",
+ "\\div": "\\nabla \\cdot #1",
+ "\\grad": "\\nabla",
+ "\\dv": "\\frac{d\\,#1}{d\\,#2}",
+ "\\gr": "\\gamma",
+ "\\vec": "\\mathbf{#1}",
+ "\\tagl": "\\tag{#1}",
+ "\\eqref": "(#1)",
+ "\\laplacian": "\\mathbf{\\nabla ^2}",
+ "\\label": "{}",
+ "\\negadelta": "\\nabla",
+ "\\eqref": "\\href{###1}{(\\text{#1})}",
+ "\\ref": "\\href{###1}{\\text{#1}}",
+ "\\label": "\\htmlId{#1}{}",
+ }
+ });
+ };
+&lt;/script&gt;&lt;span&gt;
+ \[\]
+&lt;/span&gt;
+
+&lt;h1 id="views-and-spaces"&gt;Views and Spaces&lt;a class="anchor" href="#views-and-spaces"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Let&amp;rsquo;s say we have a simple problem: we want to run a vector add and we want to run it on the GPU. We may start with a code that looks like this:&lt;/p&gt;</description></item></channel></rss>
