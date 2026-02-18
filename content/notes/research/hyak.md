@@ -81,3 +81,8 @@ ar -x /mmfs1/gscratch/aaplasma/embluhm/tools/METIS/lib/libmetis.a
 ar -rcs /mmfs1/gscratch/aaplasma/embluhm/tools/METIS/lib/libmetis.a *.o
 cd && rm -rf /tmp/metis_combined
 ```
+
+## Building Kokkos
+
+1. Grab the Kokkos source from a [GitHub release](https://github.com/kokkos/kokkos/releases) (latest is probably good)
+2. 
