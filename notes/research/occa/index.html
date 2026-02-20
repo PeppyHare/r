@@ -1,0 +1,320 @@
+<!doctype html><html lang=en dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="OCCA# While reading “Implementing Multi-GPU Scientific Computing Miniapps Across Performance Portable Frameworks” the OCCA framework caught my attention. It was not particularly performant in their comparison, but one thing that stands out is their support for the Metal backend. Metal is Apple’s proprietary graphics API, and it is (as far as I know) the only API supported by the GPU on Apple silicon (e.g. M1 macs). So I wanted to see if it actually worked.
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://peppyhare.github.io/r/notes/research/occa/"><meta property="og:site_name" content="My Notes"><meta property="og:title" content="OCCA"><meta property="og:description" content="OCCA# While reading “Implementing Multi-GPU Scientific Computing Miniapps Across Performance Portable Frameworks” the OCCA framework caught my attention. It was not particularly performant in their comparison, but one thing that stands out is their support for the Metal backend. Metal is Apple’s proprietary graphics API, and it is (as far as I know) the only API supported by the GPU on Apple silicon (e.g. M1 macs). So I wanted to see if it actually worked."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="notes"><meta property="article:modified_time" content="2026-02-19T16:23:36-08:00"><meta itemprop=name content="OCCA"><meta itemprop=description content="OCCA# While reading “Implementing Multi-GPU Scientific Computing Miniapps Across Performance Portable Frameworks” the OCCA framework caught my attention. It was not particularly performant in their comparison, but one thing that stands out is their support for the Metal backend. Metal is Apple’s proprietary graphics API, and it is (as far as I know) the only API supported by the GPU on Apple silicon (e.g. M1 macs). So I wanted to see if it actually worked."><meta itemprop=dateModified content="2026-02-19T16:23:36-08:00"><meta itemprop=wordCount content="1649"><title>OCCA | My Notes</title><link rel=icon href=/r/favicon.png><link rel=manifest href=/r/manifest.json><link rel=canonical href=https://peppyhare.github.io/r/notes/research/occa/><link rel=stylesheet href=/r/book.min.ba28f313a83446a28b57b814dee23b24f1f381a68a01c0464ef5577ab2f61ded.css integrity="sha256-uijzE6g0RqKLV7gU3uI7JPHzgaaKAcBGTvVXerL2He0=" crossorigin=anonymous><script defer src=/r/fuse.min.js></script><script defer src=/r/en.search.min.51157c44a17e71661170d0482b98cf6069e7b04aaef1658af352b7855757bc77.js integrity="sha256-URV8RKF+cWYRcNBIK5jPYGnnsEqu8WWK81K3hVdXvHc=" crossorigin=anonymous></script><script defer src=/r/sw.min.9e3a83f0b071ebe0141a16a33db93faadb2bdf712473a218febeed35ed243c08.js integrity="sha256-njqD8LBx6+AUGhajPbk/qtsr33Ekc6IY/r7tNe0kPAg=" crossorigin=anonymous></script><link rel=preload href=/r/katex/fonts/KaTeX_Main-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Main-Bold.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Main-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Math-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Size2-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Size3-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/fonts/roboto-v27-latin-regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/fonts/roboto-v27-latin-700.woff2 as=font type=font/woff2 crossorigin=anonymous></head><body dir=ltr class="book-kind-page book-type-notes"><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/r/><span>My Notes</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul class=book-languages><li><input type=checkbox id=languages class=toggle>
+<label for=languages class=flex><a role=button><img src=/r/icons/translate.svg class=book-icon alt=Languages>
+English
+</a><img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul></ul></li></ul><ul><li class=book-section-flat><a>Notes</a><ul><li class=book-section-flat><input type=checkbox id=section-f04c181c9b16a37431fe06303d58b7a0 class=toggle>
+<label for=section-f04c181c9b16a37431fe06303d58b7a0 class=flex><a href=/r/notes/UWAA545/>Computational Methods For Plasmas</a>
+<img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/r/notes/UWAA545/01-syllabus/>Syllabus</a></li><li><a href=/r/notes/UWAA545/02-plasma-models/>Plasma Models</a></li><li><a href=/r/notes/UWAA545/03-pic-method/>Particle in Cell Model</a></li><li><a href=/r/notes/UWAA545/04-pic-example/>PIC - Example Implementation</a></li><li><a href=/r/notes/UWAA545/05-electrodynamic-pic/>Multidimensional Electrodynamic PIC</a></li><li><a href=/r/notes/UWAA545/06-fluid-models/>Fluid Models for Plasmas</a></li><li><a href=/r/notes/UWAA545/07-finite-difference-models/>Finite Difference Methods for MHD</a></li><li><a href=/r/notes/UWAA545/08-mhd-equilibrium/>MHD Equilibrium Calculations</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-b6bdf3598cf4214623cd2f8ff7b6e0f2 class=toggle>
+<label for=section-b6bdf3598cf4214623cd2f8ff7b6e0f2 class=flex><a href=/r/notes/UWAA560/>Plasma Diagnostics</a>
+<img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/r/notes/UWAA560/01-syllabus/>Syllabus</a></li><li><a href=/r/notes/UWAA560/02-diagnostic-considerations/>General Diagnostic Considerations</a></li><li><a href=/r/notes/UWAA560/03-magnetic-field-diagnostics/>Magnetic Field Diagnostics</a></li><li><a href=/r/notes/UWAA560/04-electrostatic-diagnostics/>Electrostatic Diagnostics</a></li><li><a href=/r/notes/UWAA560/05-index-of-refraction-measurements/>Index of Refraction Measurements</a></li><li><a href=/r/notes/UWAA560/06-spectroscopic-measurements/>Spectroscopic Measurements</a></li><li><a href=/r/notes/UWAA560/90-student-lectures/>Student Lectures</a></li><li><a href=/r/notes/UWAA560/91-zeeman-spectroscopy/>My class lecture</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-5b051410be8cdb0f46ad32fc2ad5a20d class=toggle>
+<label for=section-5b051410be8cdb0f46ad32fc2ad5a20d class=flex><a href=/r/notes/UWAA558/>MHD Theory</a>
+<img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/r/notes/UWAA558/01-syllabus/>Syllabus</a></li><li><a href=/r/notes/UWAA558/02-plasma-models/>Plasma Models</a></li><li><a href=/r/notes/UWAA558/03-plasma-fluid-model/>Plasma Fluid Model</a></li><li><a href=/r/notes/UWAA558/04-two-fluid-plasma-model/>Two-Fluid Plasma Model</a></li><li><a href=/r/notes/UWAA558/05-mhd-model/>Magnetohydrodynamic (MHD) Model</a></li><li><a href=/r/notes/UWAA558/06-boundary-conditions/>Boundary Conditions</a></li><li><a href=/r/notes/UWAA558/07-equilibrium-for-fusion/>Equilibrium for Fusion</a></li><li><a href=/r/notes/UWAA558/08-1d-equilibria/>1-D Equilibria</a></li><li><a href=/r/notes/UWAA558/09-2d-equilibria/>2D Equilibria</a></li><li><a href=/r/notes/UWAA558/10-equilibrium-of-3d-configurations/>Equilibrium of 3D Configurations</a></li><li><a href=/r/notes/UWAA558/11-mhd-stability/>MHD Stability</a></li><li><a href=/r/notes/UWAA558/formulary/>Formulary</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-c3201a1057283cb12ab09a42fe89bfb2 class=toggle checked>
+<label for=section-c3201a1057283cb12ab09a42fe89bfb2 class=flex><a href=/r/notes/research/>Research Notes</a>
+<img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/r/notes/research/apollo/>Apollo dynamic tuning framework for RAJA</a></li><li><a href=/r/notes/research/dgh-datta/>Electrodynamic Dory-Guest-Harris Instability</a></li><li><a href=/r/notes/research/hyak/>Hyak HPC</a></li><li><a href=/r/notes/research/install-tricks/>Installation tricks</a></li><li><a href=/r/notes/research/occa/ class=active>OCCA</a></li><li><a href=/r/notes/research/valgrind/>Valgrind</a></li><li><a href=/r/notes/research/warpxm-101/>WARPXM 101 - Getting Started</a></li><li><a href=/r/notes/research/warpxm-102/>WARPXM 102 - Code Structure</a></li><li><a href=/r/notes/research/warpxm-201/>WARPXM 201 - Unstructured Geometry</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-e5101c35c8277102365bd86ab3e99a0d class=toggle>
+<label for=section-e5101c35c8277102365bd86ab3e99a0d class=flex><a href=/r/notes/UWAMATH567/>Applied Complex Analysis</a>
+<img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/r/notes/UWAMATH567/01-overview/>Overview</a></li><li><a href=/r/notes/UWAMATH567/02-complex-numbers/>Complex Numbers</a></li><li><a href=/r/notes/UWAMATH567/03-analytic-functions/>Analytic Functions and Integration</a></li><li><a href=/r/notes/UWAMATH567/04-series/>Sequences, series, and singularities</a></li><li><a href=/r/notes/UWAMATH567/05-residue-calculus/>Residue calculus and applications of contour integration</a></li><li><a href=/r/notes/UWAMATH567/06-real-integrals/>Real Integrals</a></li><li><a href=/r/notes/UWAMATH567/07-integrals-of-multivalued-functions/>Integrals of Multivalued Functions</a></li><li><a href=/r/notes/UWAMATH567/08-fourier-transform/>Fourier Transforms and Laplace Transforms</a></li><li><a href=/r/notes/UWAMATH567/09-conformal-mapping/>Conformal Mappings</a></li><li><a href=/r/notes/UWAMATH567/10-fluid-flow/>Fluid Flow</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-34991d35561e8d266d64d5d323e97c7a class=toggle>
+<label for=section-34991d35561e8d266d64d5d323e97c7a class=flex><a href=/r/notes/UWAA557/>Physics of Fusion Plasmas</a>
+<img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/r/notes/UWAA557/ch10-0/>Rules of thumb</a></li><li><a href=/r/notes/UWAA557/ch10-1/>Statistical Mechanics</a></li><li><a href=/r/notes/UWAA557/ch10-2/>Review of E&amp;M</a></li><li><a href=/r/notes/UWAA557/ch10-3/>Lagrange Multipliers</a></li><li><a href=/r/notes/UWAA557/ch11-1/>Wall-supported Plasma</a></li><li><a href=/r/notes/UWAA557/ch11-2/>Collisions</a></li><li><a href=/r/notes/UWAA557/ch11-3/>Oscillations</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-7c7b4e4d4494a744744faedd969cb670 class=toggle>
+<label for=section-7c7b4e4d4494a744744faedd969cb670 class=flex><a href=/r/notes/UWAA543/>Computational CFD</a>
+<img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/r/notes/UWAA543/ch20-1/>Introduction to Computational CFD</a></li><li><a href=/r/notes/UWAA543/ch20-2/>Governing Equations</a></li><li><a href=/r/notes/UWAA543/ch20-3/>Reduced Models</a></li><li><a href=/r/notes/UWAA543/ch20-4/>Equation Types</a></li><li><a href=/r/notes/UWAA543/ch20-5/>Panel Method</a></li><li><a href=/r/notes/UWAA543/ch21-1/>Finite Difference Algorithms</a></li><li><a href=/r/notes/UWAA543/ch21-2/>Explicit Finite Difference Algorithms</a></li><li><a href=/r/notes/UWAA543/ch21-3/>Finite Difference and Finite Volume Methods</a></li><li><a href=/r/notes/UWAA543/ch21-4/>Implicit Algorithms</a></li><li><a href=/r/notes/UWAA543/ch21-5/>Numerical Boundary Conditions</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-e5f141895443fc824f58730f7904d483 class=toggle>
+<label for=section-e5f141895443fc824f58730f7904d483 class=flex><a href=/r/notes/UWAA556/>Plasma Waves</a>
+<img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/r/notes/UWAA556/ch01-1/>Mathematical review</a></li><li><a href=/r/notes/UWAA556/ch02-1/>Plasma Waves in General Dielectric Media</a></li><li><a href=/r/notes/UWAA556/ch02-2/>Wave Properties in Cold Unmagnetized Plasma</a></li><li><a href=/r/notes/UWAA556/ch02-3/>Cold Magnetized Plasma Dispersion Relation</a></li><li><a href=/r/notes/UWAA556/ch02-4/>The CMA Diagram</a></li><li><a href=/r/notes/UWAA556/ch03-1/>Introduction to Kinetic Theory</a></li><li><a href=/r/notes/UWAA556/ch03-2/>Landau Damping</a></li><li><a href=/r/notes/UWAA556/ch03-3/>Waves in Hot Magnetized Plasma</a></li><li><a href=/r/notes/UWAA556/ch04-1/>Fluid stuff</a></li><li><a href=/r/notes/UWAA556/ch04-2/>Quasi-Linear Theory</a></li><li><a href=/r/notes/UWAA556/ch05-1/>Diffusion and Resistivity</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-3a2759a8b11b3422da800ed19897932a class=toggle>
+<label for=section-3a2759a8b11b3422da800ed19897932a class=flex><a href=/r/notes/problems/>Worked Problems</a>
+<img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/r/notes/problems/gurnett/ch02/>Characteristic Parameters of a Plasma</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-05ac7760b68f0e0530d0e609833f6902 class=toggle>
+<label for=section-05ac7760b68f0e0530d0e609833f6902 class=flex><a role=button>Scratch</a>
+<img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/r/notes/scratch/colors/>Adding Color</a></li><li><a href=/r/notes/scratch/crews2018/>Crews (2018)</a></li><li><a href=/r/notes/scratch/datta2021/>Datta (2021)</a></li><li><a href=/r/notes/scratch/drawing/>Drawing Diagrams</a></li><li><a href=/r/notes/scratch/goedbloed/>Goedbloed (2019)</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-c8688d5789736c2ae128963cf705a441 class=toggle>
+<label for=section-c8688d5789736c2ae128963cf705a441 class=flex><a href=/r/notes/griffiths/>Griffiths Introduction to Electrodynamics</a>
+<img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/r/notes/griffiths/ch1-1/>(1.1) Vector Algebra</a></li><li><a href=/r/notes/griffiths/ch1-2/>(1.2) Differential Calculus</a></li><li><a href=/r/notes/griffiths/ch1-3/>(1.3) Integral Calculus</a></li><li><a href=/r/notes/griffiths/ch1-4/>(1.4) Curvilinear Coordinates</a></li><li><a href=/r/notes/griffiths/ch1-5/>(1.5) The Dirac Delta Function</a></li><li><a href=/r/notes/griffiths/ch1-6/>(1.6) The Theory of Vector Fields</a></li><li><a href=/r/notes/griffiths/ch2-1/>(2.1) The Electric Field</a></li><li><a href=/r/notes/griffiths/ch2-2/>(2.2) Divergence and Curl of Electrostatic Fields</a></li><li><a href=/r/notes/griffiths/ch2-3/>(2.3) Electric Potential</a></li><li><a href=/r/notes/griffiths/ch2-4/>(2.4) Work and Energy in Electrostatics</a></li><li><a href=/r/notes/griffiths/ch2-5/>(2.5) Conductors</a></li><li><a href=/r/notes/griffiths/ch3-1/>(3.1) Laplace's Equation</a></li><li><a href=/r/notes/griffiths/ch3-2/>(3.2) The Method of Images</a></li><li><a href=/r/notes/griffiths/ch3-3/>(3.3) Separation of Variables</a></li><li><a href=/r/notes/griffiths/ch3-4/>(3.4) Multipole Expansion</a></li><li><a href=/r/notes/griffiths/ch4-1/>(4.1) Polarization</a></li><li><a href=/r/notes/griffiths/ch4-2/>(4.2) The Field of a Polarized Object</a></li><li><a href=/r/notes/griffiths/ch4-3/>(4.3) The Electric Displacement</a></li><li><a href=/r/notes/griffiths/ch4-4/>(4.4) The Linear Dielectrics</a></li><li><a href=/r/notes/griffiths/ch5-1/>(5.1) The Lorentz Force Law</a></li><li><a href=/r/notes/griffiths/ch5-2/>(5.2) The Biot-Savart Law</a></li><li><a href=/r/notes/griffiths/ch5-3/>(5.3) The Divergence and Curl of B</a></li><li><a href=/r/notes/griffiths/ch5-4/>(5.4) Magnetic Vector Potential</a></li><li><a href=/r/notes/griffiths/ch6-1/>(6.1) Magnetization</a></li><li><a href=/r/notes/griffiths/ch6-2/>(6.2) The Field of a Magnetized Object</a></li><li><a href=/r/notes/griffiths/ch6-3/>(6.3) The Auxiliary Field H</a></li><li><a href=/r/notes/griffiths/ch6-4/>(6.4) Linear and Nonlinear Media</a></li><li><a href=/r/notes/griffiths/ch7-1/>(7.1) Electromotive Force</a></li><li><a href=/r/notes/griffiths/ch7-2/>(7.2) Electromagnetic Induction</a></li><li><a href=/r/notes/griffiths/ch7-3/>(7.3) Maxwell's Equations</a></li><li><a href=/r/notes/griffiths/ch8-0/>(8.0) Phys 544 Introduction</a></li><li><a href=/r/notes/griffiths/ch8-1/>(8.1) Charge and Energy</a></li><li><a href=/r/notes/griffiths/ch8-2/>(8.2) Momentum</a></li><li><a href=/r/notes/griffiths/ch9-1/>(9.1) Electromagnetic Waves in One Dimension</a></li><li><a href=/r/notes/griffiths/ch9-2/>(9.2) Wave Equation for E and B</a></li><li><a href=/r/notes/griffiths/ch9-3/>(9.3) Electromagnetic Waves in Matter</a></li><li><a href=/r/notes/griffiths/ch9-4/>(9.4) Electromagnetic Waves in Conductors</a></li><li><a href=/r/notes/griffiths/ch9-5/>(9.5) Guided Waves</a></li><li><a href=/r/notes/griffiths/ch10-1/>(10.1) Scalar and Vector Potentials</a></li><li><a href=/r/notes/griffiths/ch10-2/>(10.2) Retarded Potentials</a></li><li><a href=/r/notes/griffiths/ch10-3/>(10.3) Point Charges</a></li><li><a href=/r/notes/griffiths/ch11-1/>(11.1) Dipole Radiation</a></li><li><a href=/r/notes/griffiths/problems-ch3/>Solved Problems Ch3</a></li><li><a href=/r/notes/griffiths/problems-ch5/>Solved Problems Ch5</a></li><li><a href=/r/notes/griffiths/problems-ch7/>Solved Problems Ch7</a></li><li><a href=/r/notes/griffiths/problems-ch9/>Solved Problems Ch9</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-6c5dc24aced8215291402ee2d61ccac2 class=toggle>
+<label for=section-6c5dc24aced8215291402ee2d61ccac2 class=flex><a href=/r/notes/kokkos/>The Kokkos Lectures</a>
+<img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/r/notes/kokkos/01-intro/>Introduction, Building, and Parallel Dispatch</a></li><li><a href=/r/notes/kokkos/02-views-and-spaces/>Views and Spaces</a></li></ul></li></ul></li></ul><ul class=book-menu-hugo><li><a href=https://github.com/Peppyhare/r target=_blank rel=noopener>Github</a></li><li><a href=https://themes.gohugo.io/hugo-book/ target=_blank rel=noopener>Hugo Themes</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class="book-header hidden"><div class="flex align-center justify-between"><label for=menu-control><img src=/r/icons/menu.svg class=book-icon alt=Menu></label><h3>OCCA</h3><label for=toc-control><img src=/r/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class=hidden><nav id=TableOfContents><ul><li><a href=#occa>OCCA</a><ul><li><a href=#occa-1>OCCA</a></li><li><a href=#metal-backend>Metal backend</a></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=occa>OCCA<a class=anchor href=#occa>#</a></h1><p>While reading &ldquo;Implementing Multi-GPU Scientific Computing Miniapps Across Performance Portable Frameworks&rdquo; the OCCA framework caught my attention. It was not particularly performant in their comparison, but one thing that stands out is their support for the Metal backend. Metal is Apple&rsquo;s proprietary graphics API, and it is (as far as I know) the only API supported by the GPU on Apple silicon (e.g. M1 macs). So I wanted to see if it actually worked.</p><h2 id=occa-1>OCCA<a class=anchor href=#occa-1>#</a></h2><p>OCCA is a single-source library with support for a wide variety of backends (including CUDA, OpenMP, OpenCL, and others). They define a domain-specific kernel language (an extension to C). Users provide computational kernels in this kernel language (OCL), and kernels are just-in-time compiled to the appropriate backend. This is a pretty neat concept, and is pretty different from the frameworks I&rsquo;ve been using that all try their best to look like standard ISO C++. It reminds me of Firedrake, which is a library with a similar goal.</p><h2 id=metal-backend>Metal backend<a class=anchor href=#metal-backend>#</a></h2><p>I checked out OCCA on my 2020 M1 macbook air to see what it could do. With a lot of help from Claude and from <a href=https://github.com/libocca/occa/pull/766>https://github.com/libocca/occa/pull/766</a> I was able to get it working properly. The demo kernel I was working with is a 2D Laplacian stencil. Here&rsquo;s the demo application that uses the kernel and computes a rough estimate of the memory bandwidth:</p><details><summary><code>laplacian.okl</code></summary><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>// laplacian.okl
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>@kernel void laplacian(const int N, const float * in, float * out) {
+</span></span><span style=display:flex><span>  for (int bj = 0; bj &lt; N; bj += BLOCK_Y; @outer(1)) {
+</span></span><span style=display:flex><span>    for (int bi = 0; bi &lt; N; bi += BLOCK_X; @outer(0)) {
+</span></span><span style=display:flex><span>      for (int j = bj; j &lt; bj + BLOCK_Y; ++j; @inner(1)) {
+</span></span><span style=display:flex><span>        for (int i = bi; i &lt; bi + BLOCK_X; ++i; @inner(0)) {
+</span></span><span style=display:flex><span>          if (i &gt; 0 &amp;&amp; i &lt; (N - 1) &amp;&amp; j &gt; 0 &amp;&amp; j &lt; (N - 1)) {
+</span></span><span style=display:flex><span>            const int id = j * N + i;
+</span></span><span style=display:flex><span>            out[id] = -4.0f * in[id]
+</span></span><span style=display:flex><span>                      + in[id - 1]     // left
+</span></span><span style=display:flex><span>                      + in[id + 1]     // right
+</span></span><span style=display:flex><span>                      + in[id - N]     // up
+</span></span><span style=display:flex><span>                      + in[id + N];    // down
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}</span></span></code></pre></div></details><details><summary><code>benchmark.cpp</code></summary><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-cpp data-lang=cpp><span style=display:flex><span><span style=color:#080;background-color:#0f140f;font-style:italic>// benchmark.cpp
+</span></span></span><span style=display:flex><span><span style=color:#ff0007;background-color:#0f140f;font-weight:700;font-style:italic>#include</span> <span style=color:#ff0007;background-color:#0f140f;font-weight:700;font-style:italic>&lt;iostream&gt;</span><span style=color:#ff0007;background-color:#0f140f;font-weight:700;font-style:italic>
+</span></span></span><span style=display:flex><span><span style=color:#ff0007;background-color:#0f140f;font-weight:700;font-style:italic>#include</span> <span style=color:#ff0007;background-color:#0f140f;font-weight:700;font-style:italic>&lt;iomanip&gt;</span><span style=color:#ff0007;background-color:#0f140f;font-weight:700;font-style:italic>
+</span></span></span><span style=display:flex><span><span style=color:#ff0007;background-color:#0f140f;font-weight:700;font-style:italic>#include</span> <span style=color:#ff0007;background-color:#0f140f;font-weight:700;font-style:italic>&lt;cmath&gt;</span><span style=color:#ff0007;background-color:#0f140f;font-weight:700;font-style:italic>
+</span></span></span><span style=display:flex><span><span style=color:#ff0007;background-color:#0f140f;font-weight:700;font-style:italic>#include</span> <span style=color:#ff0007;background-color:#0f140f;font-weight:700;font-style:italic>&lt;chrono&gt;</span><span style=color:#ff0007;background-color:#0f140f;font-weight:700;font-style:italic>
+</span></span></span><span style=display:flex><span><span style=color:#ff0007;background-color:#0f140f;font-weight:700;font-style:italic>#include</span> <span style=color:#ff0007;background-color:#0f140f;font-weight:700;font-style:italic>&lt;string&gt;</span><span style=color:#ff0007;background-color:#0f140f;font-weight:700;font-style:italic>
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#ff0007;background-color:#0f140f;font-weight:700;font-style:italic>#include</span> <span style=color:#ff0007;background-color:#0f140f;font-weight:700;font-style:italic>&lt;occa.hpp&gt;</span><span style=color:#ff0007;background-color:#0f140f;font-weight:700;font-style:italic>
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#fb660a;font-weight:700>struct</span> BenchResult {
+</span></span><span style=display:flex><span>  std::string mode;
+</span></span><span style=display:flex><span>  <span style=color:#cdcaa9;font-weight:700>double</span> setupTime;
+</span></span><span style=display:flex><span>  <span style=color:#cdcaa9;font-weight:700>double</span> kernelTime;
+</span></span><span style=display:flex><span>  <span style=color:#cdcaa9;font-weight:700>double</span> bandwidth;
+</span></span><span style=display:flex><span>  <span style=color:#cdcaa9;font-weight:700>double</span> gflops;
+</span></span><span style=display:flex><span>  <span style=color:#cdcaa9;font-weight:700>double</span> maxError;
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>BenchResult <span style=color:#ff0086;font-weight:700>runBenchmark</span>(<span style=color:#fb660a;font-weight:700>const</span> std::string &amp;modeJson, <span style=color:#cdcaa9;font-weight:700>int</span> N, <span style=color:#cdcaa9;font-weight:700>int</span> iterations) {
+</span></span><span style=display:flex><span>  BenchResult result;
+</span></span><span style=display:flex><span>  result.mode = modeJson;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#fb660a;font-weight:700>auto</span> t0 = std::chrono::high_resolution_clock::now();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#080;background-color:#0f140f;font-style:italic>// --- Device &amp; kernel setup ---
+</span></span></span><span style=display:flex><span>  occa::device device;
+</span></span><span style=display:flex><span>  device.setup(modeJson);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  occa::json kernelProps;
+</span></span><span style=display:flex><span>  kernelProps[<span style=color:#0086d2>&#34;defines/BLOCK_X&#34;</span>] = <span style=color:#0086f7;font-weight:700>16</span>;
+</span></span><span style=display:flex><span>  kernelProps[<span style=color:#0086d2>&#34;defines/BLOCK_Y&#34;</span>] = <span style=color:#0086f7;font-weight:700>16</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  occa::kernel laplacian = device.buildKernel(
+</span></span><span style=display:flex><span>    <span style=color:#0086d2>&#34;laplacian.okl&#34;</span>, <span style=color:#0086d2>&#34;laplacian&#34;</span>, kernelProps
+</span></span><span style=display:flex><span>  );
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#080;background-color:#0f140f;font-style:italic>// --- Allocate and initialize ---
+</span></span></span><span style=display:flex><span>  <span style=color:#cdcaa9;font-weight:700>float</span> *h_in  = <span style=color:#fb660a;font-weight:700>new</span> <span style=color:#cdcaa9;font-weight:700>float</span>[N * N];
+</span></span><span style=display:flex><span>  <span style=color:#cdcaa9;font-weight:700>float</span> *h_out = <span style=color:#fb660a;font-weight:700>new</span> <span style=color:#cdcaa9;font-weight:700>float</span>[N * N];
+</span></span><span style=display:flex><span>  <span style=color:#cdcaa9;font-weight:700>float</span> *h_ref = <span style=color:#fb660a;font-weight:700>new</span> <span style=color:#cdcaa9;font-weight:700>float</span>[N * N];
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#fb660a;font-weight:700>for</span> (<span style=color:#cdcaa9;font-weight:700>int</span> j = <span style=color:#0086f7;font-weight:700>0</span>; j &lt; N; ++j) {
+</span></span><span style=display:flex><span>    <span style=color:#fb660a;font-weight:700>for</span> (<span style=color:#cdcaa9;font-weight:700>int</span> i = <span style=color:#0086f7;font-weight:700>0</span>; i &lt; N; ++i) {
+</span></span><span style=display:flex><span>      <span style=color:#cdcaa9;font-weight:700>float</span> x = (<span style=color:#cdcaa9;font-weight:700>float</span>)i / (N - <span style=color:#0086f7;font-weight:700>1</span>);
+</span></span><span style=display:flex><span>      <span style=color:#cdcaa9;font-weight:700>float</span> y = (<span style=color:#cdcaa9;font-weight:700>float</span>)j / (N - <span style=color:#0086f7;font-weight:700>1</span>);
+</span></span><span style=display:flex><span>      h_in[j * N + i] = sinf(M_PI * x) * sinf(M_PI * y);
+</span></span><span style=display:flex><span>      h_out[j * N + i] = <span style=color:#0086f7;font-weight:700>0.0f</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  occa::memory o_in  = device.malloc&lt;<span style=color:#cdcaa9;font-weight:700>float</span>&gt;(N * N);
+</span></span><span style=display:flex><span>  occa::memory o_out = device.malloc&lt;<span style=color:#cdcaa9;font-weight:700>float</span>&gt;(N * N);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  o_in.copyFrom(h_in);
+</span></span><span style=display:flex><span>  o_out.copyFrom(h_out);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#fb660a;font-weight:700>auto</span> t1 = std::chrono::high_resolution_clock::now();
+</span></span><span style=display:flex><span>  result.setupTime = std::chrono::duration&lt;<span style=color:#cdcaa9;font-weight:700>double</span>, std::milli&gt;(t1 - t0).count();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#080;background-color:#0f140f;font-style:italic>// --- Warmup ---
+</span></span></span><span style=display:flex><span>  laplacian(N, o_in, o_out);
+</span></span><span style=display:flex><span>  device.finish();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#080;background-color:#0f140f;font-style:italic>// --- Timed iterations ---
+</span></span></span><span style=display:flex><span>  <span style=color:#fb660a;font-weight:700>auto</span> t2 = std::chrono::high_resolution_clock::now();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#fb660a;font-weight:700>for</span> (<span style=color:#cdcaa9;font-weight:700>int</span> iter = <span style=color:#0086f7;font-weight:700>0</span>; iter &lt; iterations; ++iter) {
+</span></span><span style=display:flex><span>    laplacian(N, o_in, o_out);
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  device.finish();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#fb660a;font-weight:700>auto</span> t3 = std::chrono::high_resolution_clock::now();
+</span></span><span style=display:flex><span>  <span style=color:#cdcaa9;font-weight:700>double</span> elapsed = std::chrono::duration&lt;<span style=color:#cdcaa9;font-weight:700>double</span>, std::milli&gt;(t3 - t2).count();
+</span></span><span style=display:flex><span>  result.kernelTime = elapsed / iterations;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#080;background-color:#0f140f;font-style:italic>// --- Compute bandwidth and GFLOPS ---
+</span></span></span><span style=display:flex><span>  <span style=color:#080;background-color:#0f140f;font-style:italic>// Each interior point: 1 read of out, 5 reads of in, 1 write = 7 memory ops
+</span></span></span><span style=display:flex><span>  <span style=color:#080;background-color:#0f140f;font-style:italic>// (approximate: borders are skipped but negligible for large N)
+</span></span></span><span style=display:flex><span>  <span style=color:#cdcaa9;font-weight:700>long</span> <span style=color:#cdcaa9;font-weight:700>long</span> interiorPoints = (<span style=color:#cdcaa9;font-weight:700>long</span> <span style=color:#cdcaa9;font-weight:700>long</span>)(N - <span style=color:#0086f7;font-weight:700>2</span>) * (N - <span style=color:#0086f7;font-weight:700>2</span>);
+</span></span><span style=display:flex><span>  <span style=color:#cdcaa9;font-weight:700>double</span> bytesPerIter = interiorPoints * <span style=color:#0086f7;font-weight:700>7.0</span> * <span style=color:#fb660a;font-weight:700>sizeof</span>(<span style=color:#cdcaa9;font-weight:700>float</span>);
+</span></span><span style=display:flex><span>  result.bandwidth = (bytesPerIter / (result.kernelTime * <span style=color:#0086f7;font-weight:700>1e-3</span>)) / <span style=color:#0086f7;font-weight:700>1e9</span>; <span style=color:#080;background-color:#0f140f;font-style:italic>// GB/s
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#080;background-color:#0f140f;font-style:italic>// Each interior point: 4 adds + 1 multiply = 5 flops
+</span></span></span><span style=display:flex><span>  <span style=color:#cdcaa9;font-weight:700>double</span> flopsPerIter = interiorPoints * <span style=color:#0086f7;font-weight:700>5.0</span>;
+</span></span><span style=display:flex><span>  result.gflops = (flopsPerIter / (result.kernelTime * <span style=color:#0086f7;font-weight:700>1e-3</span>)) / <span style=color:#0086f7;font-weight:700>1e9</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#080;background-color:#0f140f;font-style:italic>// --- Verify correctness ---
+</span></span></span><span style=display:flex><span>  o_out.copyTo(h_out);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#080;background-color:#0f140f;font-style:italic>// Compute reference on CPU
+</span></span></span><span style=display:flex><span>  <span style=color:#fb660a;font-weight:700>for</span> (<span style=color:#cdcaa9;font-weight:700>int</span> j = <span style=color:#0086f7;font-weight:700>1</span>; j &lt; N - <span style=color:#0086f7;font-weight:700>1</span>; ++j) {
+</span></span><span style=display:flex><span>    <span style=color:#fb660a;font-weight:700>for</span> (<span style=color:#cdcaa9;font-weight:700>int</span> i = <span style=color:#0086f7;font-weight:700>1</span>; i &lt; N - <span style=color:#0086f7;font-weight:700>1</span>; ++i) {
+</span></span><span style=display:flex><span>      <span style=color:#cdcaa9;font-weight:700>int</span> id = j * N + i;
+</span></span><span style=display:flex><span>      h_ref[id] = -<span style=color:#0086f7;font-weight:700>4.0f</span> * h_in[id]
+</span></span><span style=display:flex><span>                  + h_in[id - <span style=color:#0086f7;font-weight:700>1</span>] + h_in[id + <span style=color:#0086f7;font-weight:700>1</span>]
+</span></span><span style=display:flex><span>                  + h_in[id - N] + h_in[id + N];
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  result.maxError = <span style=color:#0086f7;font-weight:700>0.0</span>;
+</span></span><span style=display:flex><span>  <span style=color:#fb660a;font-weight:700>for</span> (<span style=color:#cdcaa9;font-weight:700>int</span> j = <span style=color:#0086f7;font-weight:700>1</span>; j &lt; N - <span style=color:#0086f7;font-weight:700>1</span>; ++j) {
+</span></span><span style=display:flex><span>    <span style=color:#fb660a;font-weight:700>for</span> (<span style=color:#cdcaa9;font-weight:700>int</span> i = <span style=color:#0086f7;font-weight:700>1</span>; i &lt; N - <span style=color:#0086f7;font-weight:700>1</span>; ++i) {
+</span></span><span style=display:flex><span>      <span style=color:#cdcaa9;font-weight:700>double</span> err = fabs(h_out[j * N + i] - h_ref[j * N + i]);
+</span></span><span style=display:flex><span>      <span style=color:#fb660a;font-weight:700>if</span> (err &gt; result.maxError) result.maxError = err;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#fb660a;font-weight:700>delete</span>[] h_in;
+</span></span><span style=display:flex><span>  <span style=color:#fb660a;font-weight:700>delete</span>[] h_out;
+</span></span><span style=display:flex><span>  <span style=color:#fb660a;font-weight:700>delete</span>[] h_ref;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#fb660a;font-weight:700>return</span> result;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#cdcaa9;font-weight:700>void</span> <span style=color:#ff0086;font-weight:700>printResult</span>(<span style=color:#fb660a;font-weight:700>const</span> BenchResult &amp;r, <span style=color:#fb660a;font-weight:700>const</span> std::string &amp;label) {
+</span></span><span style=display:flex><span>  std::cout &lt;&lt; std::left &lt;&lt; std::setw(<span style=color:#0086f7;font-weight:700>12</span>) &lt;&lt; label
+</span></span><span style=display:flex><span>            &lt;&lt; <span style=color:#0086d2>&#34; | Setup: &#34;</span> &lt;&lt; std::right &lt;&lt; std::setw(<span style=color:#0086f7;font-weight:700>8</span>) &lt;&lt; std::fixed
+</span></span><span style=display:flex><span>            &lt;&lt; std::setprecision(<span style=color:#0086f7;font-weight:700>1</span>) &lt;&lt; r.setupTime &lt;&lt; <span style=color:#0086d2>&#34; ms&#34;</span>
+</span></span><span style=display:flex><span>            &lt;&lt; <span style=color:#0086d2>&#34; | Kernel: &#34;</span> &lt;&lt; std::setw(<span style=color:#0086f7;font-weight:700>8</span>) &lt;&lt; std::setprecision(<span style=color:#0086f7;font-weight:700>3</span>)
+</span></span><span style=display:flex><span>            &lt;&lt; r.kernelTime &lt;&lt; <span style=color:#0086d2>&#34; ms&#34;</span>
+</span></span><span style=display:flex><span>            &lt;&lt; <span style=color:#0086d2>&#34; | BW: &#34;</span> &lt;&lt; std::setw(<span style=color:#0086f7;font-weight:700>6</span>) &lt;&lt; std::setprecision(<span style=color:#0086f7;font-weight:700>1</span>)
+</span></span><span style=display:flex><span>            &lt;&lt; r.bandwidth &lt;&lt; <span style=color:#0086d2>&#34; GB/s&#34;</span>
+</span></span><span style=display:flex><span>            &lt;&lt; <span style=color:#0086d2>&#34; | GFLOPS: &#34;</span> &lt;&lt; std::setw(<span style=color:#0086f7;font-weight:700>6</span>) &lt;&lt; std::setprecision(<span style=color:#0086f7;font-weight:700>2</span>)
+</span></span><span style=display:flex><span>            &lt;&lt; r.gflops
+</span></span><span style=display:flex><span>            &lt;&lt; <span style=color:#0086d2>&#34; | MaxErr: &#34;</span> &lt;&lt; std::scientific &lt;&lt; std::setprecision(<span style=color:#0086f7;font-weight:700>2</span>)
+</span></span><span style=display:flex><span>            &lt;&lt; r.maxError
+</span></span><span style=display:flex><span>            &lt;&lt; std::endl;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#cdcaa9;font-weight:700>int</span> <span style=color:#ff0086;font-weight:700>main</span>(<span style=color:#cdcaa9;font-weight:700>int</span> argc, <span style=color:#fb660a;font-weight:700>const</span> <span style=color:#cdcaa9;font-weight:700>char</span> **argv) {
+</span></span><span style=display:flex><span>  <span style=color:#fb660a;font-weight:700>const</span> <span style=color:#cdcaa9;font-weight:700>int</span> N = <span style=color:#0086f7;font-weight:700>8192</span>;
+</span></span><span style=display:flex><span>  <span style=color:#fb660a;font-weight:700>const</span> <span style=color:#cdcaa9;font-weight:700>int</span> iterations = <span style=color:#0086f7;font-weight:700>400</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  std::cout &lt;&lt; <span style=color:#0086d2>&#34;============================================================</span><span style=color:#0086d2>\n</span><span style=color:#0086d2>&#34;</span>;
+</span></span><span style=display:flex><span>  std::cout &lt;&lt; <span style=color:#0086d2>&#34;  OCCA 2D Laplacian Stencil Benchmark</span><span style=color:#0086d2>\n</span><span style=color:#0086d2>&#34;</span>;
+</span></span><span style=display:flex><span>  std::cout &lt;&lt; <span style=color:#0086d2>&#34;  Grid: &#34;</span> &lt;&lt; N &lt;&lt; <span style=color:#0086d2>&#34; x &#34;</span> &lt;&lt; N
+</span></span><span style=display:flex><span>            &lt;&lt; <span style=color:#0086d2>&#34; (&#34;</span> &lt;&lt; (N * N * <span style=color:#fb660a;font-weight:700>sizeof</span>(<span style=color:#cdcaa9;font-weight:700>float</span>)) / (<span style=color:#0086f7;font-weight:700>1024.0</span> * <span style=color:#0086f7;font-weight:700>1024.0</span>)
+</span></span><span style=display:flex><span>            &lt;&lt; <span style=color:#0086d2>&#34; MB per field)</span><span style=color:#0086d2>\n</span><span style=color:#0086d2>&#34;</span>;
+</span></span><span style=display:flex><span>  std::cout &lt;&lt; <span style=color:#0086d2>&#34;  Iterations: &#34;</span> &lt;&lt; iterations &lt;&lt; <span style=color:#0086d2>&#34;</span><span style=color:#0086d2>\n</span><span style=color:#0086d2>&#34;</span>;
+</span></span><span style=display:flex><span>  std::cout &lt;&lt; <span style=color:#0086d2>&#34;============================================================</span><span style=color:#0086d2>\n\n</span><span style=color:#0086d2>&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#080;background-color:#0f140f;font-style:italic>// Serial
+</span></span></span><span style=display:flex><span>  <span style=color:#fb660a;font-weight:700>auto</span> serial = runBenchmark(<span style=color:#0086d2>&#34;{mode: &#39;Serial&#39;}&#34;</span>, N, iterations);
+</span></span><span style=display:flex><span>  printResult(serial, <span style=color:#0086d2>&#34;Serial&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#080;background-color:#0f140f;font-style:italic>// Metal
+</span></span></span><span style=display:flex><span>  <span style=color:#fb660a;font-weight:700>auto</span> metal = runBenchmark(<span style=color:#0086d2>&#34;{mode: &#39;Metal&#39;, device_id: 0}&#34;</span>, N, iterations);
+</span></span><span style=display:flex><span>  printResult(metal, <span style=color:#0086d2>&#34;Metal&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#080;background-color:#0f140f;font-style:italic>// OpenCL
+</span></span></span><span style=display:flex><span>  <span style=color:#fb660a;font-weight:700>auto</span> opencl = runBenchmark(<span style=color:#0086d2>&#34;{mode: &#39;OpenCL&#39;, platform_id: 0, device_id: 0}&#34;</span>, N, iterations);
+</span></span><span style=display:flex><span>  printResult(opencl, <span style=color:#0086d2>&#34;OpenCL&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#080;background-color:#0f140f;font-style:italic>// Summary
+</span></span></span><span style=display:flex><span>  std::cout &lt;&lt; <span style=color:#0086d2>&#34;</span><span style=color:#0086d2>\n</span><span style=color:#0086d2>--- Speedup over Serial ---</span><span style=color:#0086d2>\n</span><span style=color:#0086d2>&#34;</span>;
+</span></span><span style=display:flex><span>  std::cout &lt;&lt; <span style=color:#0086d2>&#34;  Metal  : &#34;</span> &lt;&lt; std::fixed &lt;&lt; std::setprecision(<span style=color:#0086f7;font-weight:700>1</span>)
+</span></span><span style=display:flex><span>            &lt;&lt; serial.kernelTime / metal.kernelTime &lt;&lt; <span style=color:#0086d2>&#34;x</span><span style=color:#0086d2>\n</span><span style=color:#0086d2>&#34;</span>;
+</span></span><span style=display:flex><span>  std::cout &lt;&lt; <span style=color:#0086d2>&#34;  OpenCL : &#34;</span> &lt;&lt; std::fixed &lt;&lt; std::setprecision(<span style=color:#0086f7;font-weight:700>1</span>)
+</span></span><span style=display:flex><span>            &lt;&lt; serial.kernelTime / opencl.kernelTime &lt;&lt; <span style=color:#0086d2>&#34;x</span><span style=color:#0086d2>\n</span><span style=color:#0086d2>&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#fb660a;font-weight:700>return</span> <span style=color:#0086f7;font-weight:700>0</span>;
+</span></span><span style=display:flex><span>}</span></span></code></pre></div></details><p>Now, to get this to build, I need to first build OCCA with the Metal backend enabled. This ended up being a lot trickier than I expected. Trying to use it out of the box, the cmake build was successful but there were segfaults all over the place. Looking at /github.com/libocca/occa/pull/766 and getting Claude to try a bunch of different things, I ended up with these modifications</p><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-diff data-lang=diff><span style=display:flex><span><span style=font-weight:700>diff --git a/cmake/FindMETAL.cmake b/cmake/FindMETAL.cmake
+</span></span></span><span style=display:flex><span><span style=font-weight:700>index cfbdcfb3..e6f80aa1 100644
+</span></span></span><span style=display:flex><span>--- a/cmake/FindMETAL.cmake
+</span></span><span style=display:flex><span>+++ b/cmake/FindMETAL.cmake
+</span></span><span style=display:flex><span><span style=font-weight:700>@@ -3,24 +3,24 @@
+</span></span></span><span style=display:flex><span> # This Find module is also distributed alongside the occa package config file!
+</span></span><span style=display:flex><span> ###############################################################################
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>+find_library(FOUNDATION_LIBRARY Foundation)
+</span></span><span style=display:flex><span> find_library(METAL_LIBRARY Metal)
+</span></span><span style=display:flex><span>-find_library(CORE_SERVICES CoreServices)
+</span></span><span style=display:flex><span>-find_library(APP_KIT AppKit)
+</span></span><span style=display:flex><span>+find_library(METAL_KIT_LIBRARY MetalKit)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> include(FindPackageHandleStandardArgs)
+</span></span><span style=display:flex><span> find_package_handle_standard_args(
+</span></span><span style=display:flex><span>     METAL
+</span></span><span style=display:flex><span>     REQUIRED_VARS
+</span></span><span style=display:flex><span>+    FOUNDATION_LIBRARY
+</span></span><span style=display:flex><span>     METAL_LIBRARY
+</span></span><span style=display:flex><span>-    CORE_SERVICES
+</span></span><span style=display:flex><span>-    APP_KIT
+</span></span><span style=display:flex><span>-    )
+</span></span><span style=display:flex><span>+    METAL_KIT_LIBRARY
+</span></span><span style=display:flex><span>+)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> if(METAL_FOUND AND NOT TARGET OCCA::depends::METAL)
+</span></span><span style=display:flex><span>   # Create our wrapper imported target
+</span></span><span style=display:flex><span>   # Put it in the OCCA namespace to make it clear that we created it.
+</span></span><span style=display:flex><span>   add_library(OCCA::depends::METAL INTERFACE IMPORTED)
+</span></span><span style=display:flex><span>-  set_target_properties(OCCA::depends::METAL PROPERTIES
+</span></span><span style=display:flex><span>-    INTERFACE_LINK_LIBRARIES &#34;${METAL_LIBRARY} ${CORE_SERVICES} ${APP_KIT}&#34;
+</span></span><span style=display:flex><span>+  target_link_libraries(OCCA::depends::METAL INTERFACE
+</span></span><span style=display:flex><span>+    ${FOUNDATION_LIBRARY} ${METAL_LIBRARY} ${METAL_KIT_LIBRARY}
+</span></span><span style=display:flex><span>   )
+</span></span><span style=display:flex><span>-endif()
+</span></span><span style=display:flex><span>+endif()
+</span></span><span style=display:flex><span>\ No newline at end of file
+</span></span><span style=display:flex><span><span style=font-weight:700>diff --git a/scripts/codegen/setup_kernel_operators.py b/scripts/codegen/setup_kernel_operators.py
+</span></span></span><span style=display:flex><span><span style=font-weight:700>index 41ec7f8e..8dacbc18 100755
+</span></span></span><span style=display:flex><span>--- a/scripts/codegen/setup_kernel_operators.py
+</span></span><span style=display:flex><span>+++ b/scripts/codegen/setup_kernel_operators.py
+</span></span><span style=display:flex><span><span style=font-weight:700>@@ -89,9 +89,17 @@ def run_function_from_arguments(N):
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> def run_function_from_argument(N):
+</span></span><span style=display:flex><span>     content  = &#39;  case {N}:\n&#39;.format(N=N)
+</span></span><span style=display:flex><span>-    content += &#39;    f(&#39;
+</span></span><span style=display:flex><span>-    indent = &#39; &#39; * 6  # &#39;    f(&#39;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>+    # Cast function pointer to a non-variadic type with the correct
+</span></span><span style=display:flex><span>+    # number of void* parameters. This is required on ARM64 (Apple
+</span></span><span style=display:flex><span>+    # Silicon) where the calling convention for variadic functions
+</span></span><span style=display:flex><span>+    # differs from non-variadic ones.
+</span></span><span style=display:flex><span>+    param_types = &#39;, &#39;.join([&#39;void*&#39;] * N) if N &gt; 0 else &#39;void&#39;
+</span></span><span style=display:flex><span>+    cast = &#39;(void (*)({params}))&#39;.format(params=param_types)
+</span></span><span style=display:flex><span>+    call_prefix = &#39;    ({cast}f)(&#39;.format(cast=cast)
+</span></span><span style=display:flex><span>+    indent = &#39; &#39; * len(call_prefix)
+</span></span><span style=display:flex><span>+
+</span></span><span style=display:flex><span>+    content += call_prefix
+</span></span><span style=display:flex><span>     for n in range(N):
+</span></span><span style=display:flex><span>         content += &#39;args[{n}]&#39;.format(n=n)
+</span></span><span style=display:flex><span>         if n &lt; (N - 1):
+</span></span></code></pre></div><p>With that, the demo app actually compiles and runs correctly:</p><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>cmake -S /Users/evan/GitHub/occa <span style=color:#0086d2>\
+</span></span></span><span style=display:flex><span>  -B /Users/evan/GitHub/occa/build <span style=color:#0086d2>\
+</span></span></span><span style=display:flex><span>  -DOCCA_ENABLE_EXAMPLES=ON <span style=color:#0086d2>\
+</span></span></span><span style=display:flex><span>  -DCMAKE_BUILD_TYPE=Release 2&gt;&amp;<span style=color:#0086f7;font-weight:700>1</span> <span style=color:#0086d2>\
+</span></span></span><span style=display:flex><span>  | tail -5 &amp;&amp; cmake --build /Users/evan/GitHub/occa/build <span style=color:#0086d2>\
+</span></span></span><span style=display:flex><span>    --parallel <span style=color:#fb660a;font-weight:700>$(</span>sysctl -n hw.ncpu<span style=color:#fb660a;font-weight:700>)</span> 2&gt;&amp;<span style=color:#0086f7;font-weight:700>1</span> <span style=color:#0086d2>\
+</span></span></span><span style=display:flex><span>  | tail -15
+</span></span><span style=display:flex><span>-- METAL core services:
+</span></span><span style=display:flex><span>-- METAL app kit:
+</span></span><span style=display:flex><span>-- Configuring <span style=color:#fb660a;font-weight:700>done</span> (0.6s)
+</span></span><span style=display:flex><span>-- Generating <span style=color:#fb660a;font-weight:700>done</span> (0.1s)
+</span></span><span style=display:flex><span>-- Build files have been written to: /Users/evan/GitHub/occa/build
+</span></span><span style=display:flex><span>[ 91%] Built target examples_c_generic_inline_kernel
+</span></span><span style=display:flex><span>[ 91%] Built target examples_c_add_vector
+</span></span><span style=display:flex><span>[ 92%] Built target examples_cpp_add_vectors
+</span></span><span style=display:flex><span>[ 92%] Built target examples_cpp_arrays
+</span></span><span style=display:flex><span>[ 93%] Built target examples_cpp_generic_inline_kernel
+</span></span><span style=display:flex><span>[ 93%] Built target examples_cpp_for_loops
+</span></span><span style=display:flex><span>[ 94%] Built target examples_cpp_custom_types
+</span></span><span style=display:flex><span>[ 94%] Built target examples_cpp_shared_memory
+</span></span><span style=display:flex><span>[ 94%] Built target examples_cpp_native_c_kernels
+</span></span><span style=display:flex><span>[ 95%] Built target examples_cpp_memory_pool
+</span></span><span style=display:flex><span>[ 96%] Built target examples_cpp_native_cpp_kernels
+</span></span><span style=display:flex><span>[ 97%] Built target examples_cpp_nonblocking_streams
+</span></span><span style=display:flex><span>[ 98%] Built target examples_cpp_streams
+</span></span><span style=display:flex><span>[ 99%] Built target examples_cpp_device_function
+</span></span><span style=display:flex><span>[100%] Built target occa</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-bash data-lang=bash><span style=display:flex><span>cd /Users/evan/GitHub/occa/build/benchmark &amp;&amp; c++ -std=c++17 -O3 <span style=color:#0086d2>\
+</span></span></span><span style=display:flex><span>          -I/Users/evan/GitHub/occa/include <span style=color:#0086d2>\
+</span></span></span><span style=display:flex><span>          -I/Users/evan/GitHub/occa/build/include <span style=color:#0086d2>\
+</span></span></span><span style=display:flex><span>          benchmark.cpp <span style=color:#0086d2>\
+</span></span></span><span style=display:flex><span>          -L/Users/evan/GitHub/occa/build/lib -locca <span style=color:#0086d2>\
+</span></span></span><span style=display:flex><span>          -Wl,-rpath,/Users/evan/GitHub/occa/build/lib <span style=color:#0086d2>\
+</span></span></span><span style=display:flex><span>          -o benchmark 2&gt;&amp;<span style=color:#0086f7;font-weight:700>1</span> &amp;&amp; ./benchmark
+</span></span><span style=display:flex><span>============================================================
+</span></span><span style=display:flex><span>  OCCA 2D Laplacian Stencil Benchmark
+</span></span><span style=display:flex><span>  Grid: <span style=color:#0086f7;font-weight:700>8192</span> x <span style=color:#0086f7;font-weight:700>8192</span> (<span style=color:#0086f7;font-weight:700>256</span> MB per field)
+</span></span><span style=display:flex><span>  Iterations: <span style=color:#fb660a>400</span>
+</span></span><span style=display:flex><span>============================================================
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Serial       | Setup:    631.2 ms | Kernel:   77.993 ms | BW:   24.1 GB/s | GFLOPS:   4.30 | MaxErr: 0.00e+00
+</span></span><span style=display:flex><span>Metal        | Setup:    434.7 ms | Kernel:    9.535 ms | BW:  197.0 GB/s | GFLOPS:  35.17 | MaxErr: 0.00e+00
+</span></span><span style=display:flex><span>OpenCL       | Setup:    268.3 ms | Kernel:    9.220 ms | BW:  203.7 GB/s | GFLOPS:  36.37 | MaxErr: 0.00e+00
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>--- Speedup over Serial ---
+</span></span><span style=display:flex><span>  Metal  : 8.2x
+</span></span><span style=display:flex><span>  OpenCL : 8.5x</span></span></code></pre></div><p>That&rsquo;s pretty cool! It&rsquo;s not like any HPC environments will be needing the Metal backend, so there&rsquo;s not much real benefit to it, but it&rsquo;s nice to know that there&rsquo;s a framework that&rsquo;s better than OpenCL that makes it possible to get some reasonably good accelerator performance on a modern Macbook :)</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=/r/notes/research/install-tricks/ class="flex align-center"><img src=/r/icons/backward.svg class=book-icon alt=Backward>
+<span>Installation tricks</span>
+</a></span><span><a href=/r/notes/research/valgrind/ class="flex align-center"><span>Valgrind</span>
+<img src=/r/icons/forward.svg class=book-icon alt=Forward></a></span></div><div class=book-comments></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#occa>OCCA</a><ul><li><a href=#occa-1>OCCA</a></li><li><a href=#metal-backend>Metal backend</a></li></ul></li></ul></nav></div></aside></main></body></html>

@@ -1,5 +1,5 @@
 <!doctype html><html lang=en dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content=" \[\] Pretty much entirely based on this paper: Electromagnetic extension of the Dory– Guest–Harris instability as a benchmark for Vlasov–Maxwell continuum kinetic simulations of magnetized plasmas
-"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://peppyhare.github.io/r/notes/research/dgh-datta/"><meta property="og:site_name" content="My Notes"><meta property="og:title" content="Electrodynamic Dory-Guest-Harris Instability"><meta property="og:description" content="\[\] Pretty much entirely based on this paper: Electromagnetic extension of the Dory– Guest–Harris instability as a benchmark for Vlasov–Maxwell continuum kinetic simulations of magnetized plasmas"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="notes"><meta property="article:modified_time" content="2023-05-26T15:52:23-07:00"><meta itemprop=name content="Electrodynamic Dory-Guest-Harris Instability"><meta itemprop=description content="\[\] Pretty much entirely based on this paper: Electromagnetic extension of the Dory– Guest–Harris instability as a benchmark for Vlasov–Maxwell continuum kinetic simulations of magnetized plasmas"><meta itemprop=dateModified content="2023-05-26T15:52:23-07:00"><meta itemprop=wordCount content="3213"><title>Electrodynamic Dory-Guest-Harris Instability | My Notes</title><link rel=icon href=/r/favicon.png><link rel=manifest href=/r/manifest.json><link rel=canonical href=https://peppyhare.github.io/r/notes/research/dgh-datta/><link rel=stylesheet href=/r/book.min.ba28f313a83446a28b57b814dee23b24f1f381a68a01c0464ef5577ab2f61ded.css integrity="sha256-uijzE6g0RqKLV7gU3uI7JPHzgaaKAcBGTvVXerL2He0=" crossorigin=anonymous><script defer src=/r/fuse.min.js></script><script defer src=/r/en.search.min.3fc2e18fb52ae1724b1c67383025165fbb38dfdaf1bb090821f1364ca886bfca.js integrity="sha256-P8Lhj7Uq4XJLHGc4MCUWX7s439rxuwkIIfE2TKiGv8o=" crossorigin=anonymous></script><script defer src=/r/sw.min.9e3a83f0b071ebe0141a16a33db93faadb2bdf712473a218febeed35ed243c08.js integrity="sha256-njqD8LBx6+AUGhajPbk/qtsr33Ekc6IY/r7tNe0kPAg=" crossorigin=anonymous></script><link rel=preload href=/r/katex/fonts/KaTeX_Main-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Main-Bold.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Main-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Math-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Size2-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Size3-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/fonts/roboto-v27-latin-regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/fonts/roboto-v27-latin-700.woff2 as=font type=font/woff2 crossorigin=anonymous></head><body dir=ltr class="book-kind-page book-type-notes"><input type=checkbox class="hidden toggle" id=menu-control>
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://peppyhare.github.io/r/notes/research/dgh-datta/"><meta property="og:site_name" content="My Notes"><meta property="og:title" content="Electrodynamic Dory-Guest-Harris Instability"><meta property="og:description" content="\[\] Pretty much entirely based on this paper: Electromagnetic extension of the Dory– Guest–Harris instability as a benchmark for Vlasov–Maxwell continuum kinetic simulations of magnetized plasmas"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="notes"><meta property="article:modified_time" content="2023-05-26T15:52:23-07:00"><meta itemprop=name content="Electrodynamic Dory-Guest-Harris Instability"><meta itemprop=description content="\[\] Pretty much entirely based on this paper: Electromagnetic extension of the Dory– Guest–Harris instability as a benchmark for Vlasov–Maxwell continuum kinetic simulations of magnetized plasmas"><meta itemprop=dateModified content="2023-05-26T15:52:23-07:00"><meta itemprop=wordCount content="3213"><title>Electrodynamic Dory-Guest-Harris Instability | My Notes</title><link rel=icon href=/r/favicon.png><link rel=manifest href=/r/manifest.json><link rel=canonical href=https://peppyhare.github.io/r/notes/research/dgh-datta/><link rel=stylesheet href=/r/book.min.ba28f313a83446a28b57b814dee23b24f1f381a68a01c0464ef5577ab2f61ded.css integrity="sha256-uijzE6g0RqKLV7gU3uI7JPHzgaaKAcBGTvVXerL2He0=" crossorigin=anonymous><script defer src=/r/fuse.min.js></script><script defer src=/r/en.search.min.51157c44a17e71661170d0482b98cf6069e7b04aaef1658af352b7855757bc77.js integrity="sha256-URV8RKF+cWYRcNBIK5jPYGnnsEqu8WWK81K3hVdXvHc=" crossorigin=anonymous></script><script defer src=/r/sw.min.9e3a83f0b071ebe0141a16a33db93faadb2bdf712473a218febeed35ed243c08.js integrity="sha256-njqD8LBx6+AUGhajPbk/qtsr33Ekc6IY/r7tNe0kPAg=" crossorigin=anonymous></script><link rel=preload href=/r/katex/fonts/KaTeX_Main-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Main-Bold.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Main-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Math-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Size2-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Size3-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/fonts/roboto-v27-latin-regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/fonts/roboto-v27-latin-700.woff2 as=font type=font/woff2 crossorigin=anonymous></head><body dir=ltr class="book-kind-page book-type-notes"><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/r/><span>My Notes</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul class=book-languages><li><input type=checkbox id=languages class=toggle>
 <label for=languages class=flex><a role=button><img src=/r/icons/translate.svg class=book-icon alt=Languages>
 English
@@ -11,7 +11,7 @@ English
 <label for=section-5b051410be8cdb0f46ad32fc2ad5a20d class=flex><a href=/r/notes/UWAA558/>MHD Theory</a>
 <img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/r/notes/UWAA558/01-syllabus/>Syllabus</a></li><li><a href=/r/notes/UWAA558/02-plasma-models/>Plasma Models</a></li><li><a href=/r/notes/UWAA558/03-plasma-fluid-model/>Plasma Fluid Model</a></li><li><a href=/r/notes/UWAA558/04-two-fluid-plasma-model/>Two-Fluid Plasma Model</a></li><li><a href=/r/notes/UWAA558/05-mhd-model/>Magnetohydrodynamic (MHD) Model</a></li><li><a href=/r/notes/UWAA558/06-boundary-conditions/>Boundary Conditions</a></li><li><a href=/r/notes/UWAA558/07-equilibrium-for-fusion/>Equilibrium for Fusion</a></li><li><a href=/r/notes/UWAA558/08-1d-equilibria/>1-D Equilibria</a></li><li><a href=/r/notes/UWAA558/09-2d-equilibria/>2D Equilibria</a></li><li><a href=/r/notes/UWAA558/10-equilibrium-of-3d-configurations/>Equilibrium of 3D Configurations</a></li><li><a href=/r/notes/UWAA558/11-mhd-stability/>MHD Stability</a></li><li><a href=/r/notes/UWAA558/formulary/>Formulary</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-c3201a1057283cb12ab09a42fe89bfb2 class=toggle checked>
 <label for=section-c3201a1057283cb12ab09a42fe89bfb2 class=flex><a href=/r/notes/research/>Research Notes</a>
-<img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/r/notes/research/apollo/>Apollo dynamic tuning framework for RAJA</a></li><li><a href=/r/notes/research/dgh-datta/ class=active>Electrodynamic Dory-Guest-Harris Instability</a></li><li><a href=/r/notes/research/hyak/>Hyak HPC</a></li><li><a href=/r/notes/research/kokkos-warpxm/>Hyak HPC</a></li><li><a href=/r/notes/research/install-tricks/>Installation tricks</a></li><li><a href=/r/notes/research/valgrind/>Valgrind</a></li><li><a href=/r/notes/research/warpxm-101/>WARPXM 101 - Getting Started</a></li><li><a href=/r/notes/research/warpxm-102/>WARPXM 102 - Code Structure</a></li><li><a href=/r/notes/research/warpxm-201/>WARPXM 201 - Unstructured Geometry</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-e5101c35c8277102365bd86ab3e99a0d class=toggle>
+<img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/r/notes/research/apollo/>Apollo dynamic tuning framework for RAJA</a></li><li><a href=/r/notes/research/dgh-datta/ class=active>Electrodynamic Dory-Guest-Harris Instability</a></li><li><a href=/r/notes/research/hyak/>Hyak HPC</a></li><li><a href=/r/notes/research/install-tricks/>Installation tricks</a></li><li><a href=/r/notes/research/occa/>OCCA</a></li><li><a href=/r/notes/research/valgrind/>Valgrind</a></li><li><a href=/r/notes/research/warpxm-101/>WARPXM 101 - Getting Started</a></li><li><a href=/r/notes/research/warpxm-102/>WARPXM 102 - Code Structure</a></li><li><a href=/r/notes/research/warpxm-201/>WARPXM 201 - Unstructured Geometry</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-e5101c35c8277102365bd86ab3e99a0d class=toggle>
 <label for=section-e5101c35c8277102365bd86ab3e99a0d class=flex><a href=/r/notes/UWAMATH567/>Applied Complex Analysis</a>
 <img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/r/notes/UWAMATH567/01-overview/>Overview</a></li><li><a href=/r/notes/UWAMATH567/02-complex-numbers/>Complex Numbers</a></li><li><a href=/r/notes/UWAMATH567/03-analytic-functions/>Analytic Functions and Integration</a></li><li><a href=/r/notes/UWAMATH567/04-series/>Sequences, series, and singularities</a></li><li><a href=/r/notes/UWAMATH567/05-residue-calculus/>Residue calculus and applications of contour integration</a></li><li><a href=/r/notes/UWAMATH567/06-real-integrals/>Real Integrals</a></li><li><a href=/r/notes/UWAMATH567/07-integrals-of-multivalued-functions/>Integrals of Multivalued Functions</a></li><li><a href=/r/notes/UWAMATH567/08-fourier-transform/>Fourier Transforms and Laplace Transforms</a></li><li><a href=/r/notes/UWAMATH567/09-conformal-mapping/>Conformal Mappings</a></li><li><a href=/r/notes/UWAMATH567/10-fluid-flow/>Fluid Flow</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-34991d35561e8d266d64d5d323e97c7a class=toggle>
 <label for=section-34991d35561e8d266d64d5d323e97c7a class=flex><a href=/r/notes/UWAA557/>Physics of Fusion Plasmas</a>
@@ -301,45 +301,45 @@ $$</p><p>Still not pretty, but we can give it a try. Let&rsquo;s try using <a hr
 </span></span><span style=display:flex><span>    println(<span style=color:#0086d2>&#34;w = &#34;</span>, round(Optim.minimizer(result)[<span style=color:#0086f7;font-weight:700>1</span>] * case.wpwc, digits=<span style=color:#0086f7;font-weight:700>5</span>), <span style=color:#0086d2>&#34; + &#34;</span>, round(Optim.minimizer(result)[<span style=color:#0086f7;font-weight:700>2</span>] * case.wpwc, digits=<span style=color:#0086f7;font-weight:700>5</span>), <span style=color:#0086d2>&#34;i&#34;</span>)
 </span></span><span style=display:flex><span>  <span style=color:#fb660a;font-weight:700>end</span>
 </span></span><span style=display:flex><span><span style=color:#fb660a;font-weight:700>end</span>
-</span></span><span style=display:flex><span>find_zero(cases[<span style=color:#0086f7;font-weight:700>1</span>])</span></span></code></pre></div><pre tabindex=0><code>========== Case A ==========
-Searching for zero near w = 0.0 + 0.5i
- * Status: success
-
- * Candidate solution
-    Final objective value:     2.739900e-08
-
- * Found with
-    Algorithm:     Nelder-Mead
-
- * Convergence measures
-    √(Σ(yᵢ-ȳ)²)/n ≤ 1.0e-08
-
- * Work counters
-    Seconds run:   3  (vs limit Inf)
-    Iterations:    94
-    f(x) calls:    184
-Case A:
-Did we find a root? Maybe! We think there is a root at:
-w = 0.0 + 0.49123i</code></pre><p>So far so good! But I am very suspicious that I don&rsquo;t see any other growing modes. From Iman&rsquo;s paper I would expect to see another solution near $\tilde{\omega} = 1.9 + 0.2i$ Let&rsquo;s try a different case, setting $\tilde{k} = 4.65$. This is &ldquo;Case B&rdquo; in the paper, and I expect a solution at $\tilde{\omega} = 1.0363 + 0.2900i$:</p><pre tabindex=0><code>========== Case B ==========
-Searching for zero near w = 1.0 + 0.3i
- * Status: success
-
- * Candidate solution
-    Final objective value:     2.216717e-08
-
- * Found with
-    Algorithm:     Nelder-Mead
-
- * Convergence measures
-    √(Σ(yᵢ-ȳ)²)/n ≤ 1.0e-08
-
- * Work counters
-    Seconds run:   3  (vs limit Inf)
-    Iterations:    89
-    f(x) calls:    175
-Case B:
-Did we find a root? Maybe! We think there is a root at:
-w = 1.03461 + 0.28968i</code></pre><p>Hmm, that is much further off than I would like. Decreasing the tolerance for the QuadGK integrals does not change the result, and increasing the number of Gauss-Legendre quadrature points also makes no difference.</p><p>How about we try doing the v integrals by quadrature as well?</p><p>No quadrature, two contour plots with 400pts each: 16.7 sec
+</span></span><span style=display:flex><span>find_zero(cases[<span style=color:#0086f7;font-weight:700>1</span>])</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>========== Case A ==========
+</span></span><span style=display:flex><span>Searching for zero near w = 0.0 + 0.5i
+</span></span><span style=display:flex><span> * Status: success
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> * Candidate solution
+</span></span><span style=display:flex><span>    Final objective value:     2.739900e-08
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> * Found with
+</span></span><span style=display:flex><span>    Algorithm:     Nelder-Mead
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> * Convergence measures
+</span></span><span style=display:flex><span>    √(Σ(yᵢ-ȳ)²)/n ≤ 1.0e-08
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> * Work counters
+</span></span><span style=display:flex><span>    Seconds run:   3  (vs limit Inf)
+</span></span><span style=display:flex><span>    Iterations:    94
+</span></span><span style=display:flex><span>    f(x) calls:    184
+</span></span><span style=display:flex><span>Case A:
+</span></span><span style=display:flex><span>Did we find a root? Maybe! We think there is a root at:
+</span></span><span style=display:flex><span>w = 0.0 + 0.49123i</span></span></code></pre></div><p>So far so good! But I am very suspicious that I don&rsquo;t see any other growing modes. From Iman&rsquo;s paper I would expect to see another solution near $\tilde{\omega} = 1.9 + 0.2i$ Let&rsquo;s try a different case, setting $\tilde{k} = 4.65$. This is &ldquo;Case B&rdquo; in the paper, and I expect a solution at $\tilde{\omega} = 1.0363 + 0.2900i$:</p><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>========== Case B ==========
+</span></span><span style=display:flex><span>Searching for zero near w = 1.0 + 0.3i
+</span></span><span style=display:flex><span> * Status: success
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> * Candidate solution
+</span></span><span style=display:flex><span>    Final objective value:     2.216717e-08
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> * Found with
+</span></span><span style=display:flex><span>    Algorithm:     Nelder-Mead
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> * Convergence measures
+</span></span><span style=display:flex><span>    √(Σ(yᵢ-ȳ)²)/n ≤ 1.0e-08
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> * Work counters
+</span></span><span style=display:flex><span>    Seconds run:   3  (vs limit Inf)
+</span></span><span style=display:flex><span>    Iterations:    89
+</span></span><span style=display:flex><span>    f(x) calls:    175
+</span></span><span style=display:flex><span>Case B:
+</span></span><span style=display:flex><span>Did we find a root? Maybe! We think there is a root at:
+</span></span><span style=display:flex><span>w = 1.03461 + 0.28968i</span></span></code></pre></div><p>Hmm, that is much further off than I would like. Decreasing the tolerance for the QuadGK integrals does not change the result, and increasing the number of Gauss-Legendre quadrature points also makes no difference.</p><p>How about we try doing the v integrals by quadrature as well?</p><p>No quadrature, two contour plots with 400pts each: 16.7 sec
 Quadrature, two contour plots with 400pts each: 6.1 sec!</p><p>Back to the original attempt code, evaluating with 1600pts each and threading I get 30.7s with QuadGK, and 6.3s with my own quadrature! Let&rsquo;s definitely use that instead:</p><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-julia data-lang=julia><span style=display:flex><span><span style=color:#fb660a;font-weight:700>function</span> solve_em_dispersion(; knorm, j, width, wpwc, w_array)
 </span></span><span style=display:flex><span>  <span style=color:#080;background-color:#0f140f;font-style:italic># All normalization parameters</span>
 </span></span><span style=display:flex><span>  Ze = -<span style=color:#0086f7;font-weight:700>1.0</span>  <span style=color:#080;background-color:#0f140f;font-style:italic># Charge ratio for species</span>

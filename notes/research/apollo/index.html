@@ -8,7 +8,7 @@ And here’s the github repository: https://github.com/LLNL/apollo
 The approach they take is: At runtime, for each kernel execution apollo collects the runtime and a “feature vector” describing various features of the kernel. These features include:"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="notes"><meta property="article:modified_time" content="2025-10-23T17:20:40-07:00"><meta itemprop=name content="Apollo dynamic tuning framework for RAJA"><meta itemprop=description content="Uri mentioned a project by David Beckingsale at LLNL called “Apollo” that attempts to tune kernel parameters at runtime in order to optimize for the available hardware. It’s especially for codes with adaptive capabalities (like adaptive mesh refinement) in which the runtime characteristics of the compute kernels tend to be very input dependent.
 This is the main paper they put out: https://computing.llnl.gov/sites/default/files/Apollo-Fast-Lightweight-Dynamic-Tuning-Data-Dependent-Code-LLNL-paper_0.pdf
 And here’s the github repository: https://github.com/LLNL/apollo
-The approach they take is: At runtime, for each kernel execution apollo collects the runtime and a “feature vector” describing various features of the kernel. These features include:"><meta itemprop=dateModified content="2025-10-23T17:20:40-07:00"><meta itemprop=wordCount content="5742"><title>Apollo dynamic tuning framework for RAJA | My Notes</title><link rel=icon href=/r/favicon.png><link rel=manifest href=/r/manifest.json><link rel=canonical href=https://peppyhare.github.io/r/notes/research/apollo/><link rel=stylesheet href=/r/book.min.ba28f313a83446a28b57b814dee23b24f1f381a68a01c0464ef5577ab2f61ded.css integrity="sha256-uijzE6g0RqKLV7gU3uI7JPHzgaaKAcBGTvVXerL2He0=" crossorigin=anonymous><script defer src=/r/fuse.min.js></script><script defer src=/r/en.search.min.3fc2e18fb52ae1724b1c67383025165fbb38dfdaf1bb090821f1364ca886bfca.js integrity="sha256-P8Lhj7Uq4XJLHGc4MCUWX7s439rxuwkIIfE2TKiGv8o=" crossorigin=anonymous></script><script defer src=/r/sw.min.9e3a83f0b071ebe0141a16a33db93faadb2bdf712473a218febeed35ed243c08.js integrity="sha256-njqD8LBx6+AUGhajPbk/qtsr33Ekc6IY/r7tNe0kPAg=" crossorigin=anonymous></script><link rel=preload href=/r/katex/fonts/KaTeX_Main-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Main-Bold.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Main-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Math-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Size2-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Size3-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/fonts/roboto-v27-latin-regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/fonts/roboto-v27-latin-700.woff2 as=font type=font/woff2 crossorigin=anonymous></head><body dir=ltr class="book-kind-page book-type-notes"><input type=checkbox class="hidden toggle" id=menu-control>
+The approach they take is: At runtime, for each kernel execution apollo collects the runtime and a “feature vector” describing various features of the kernel. These features include:"><meta itemprop=dateModified content="2025-10-23T17:20:40-07:00"><meta itemprop=wordCount content="5742"><title>Apollo dynamic tuning framework for RAJA | My Notes</title><link rel=icon href=/r/favicon.png><link rel=manifest href=/r/manifest.json><link rel=canonical href=https://peppyhare.github.io/r/notes/research/apollo/><link rel=stylesheet href=/r/book.min.ba28f313a83446a28b57b814dee23b24f1f381a68a01c0464ef5577ab2f61ded.css integrity="sha256-uijzE6g0RqKLV7gU3uI7JPHzgaaKAcBGTvVXerL2He0=" crossorigin=anonymous><script defer src=/r/fuse.min.js></script><script defer src=/r/en.search.min.51157c44a17e71661170d0482b98cf6069e7b04aaef1658af352b7855757bc77.js integrity="sha256-URV8RKF+cWYRcNBIK5jPYGnnsEqu8WWK81K3hVdXvHc=" crossorigin=anonymous></script><script defer src=/r/sw.min.9e3a83f0b071ebe0141a16a33db93faadb2bdf712473a218febeed35ed243c08.js integrity="sha256-njqD8LBx6+AUGhajPbk/qtsr33Ekc6IY/r7tNe0kPAg=" crossorigin=anonymous></script><link rel=preload href=/r/katex/fonts/KaTeX_Main-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Main-Bold.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Main-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Math-Italic.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Size2-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/katex/fonts/KaTeX_Size3-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/fonts/roboto-v27-latin-regular.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/r/fonts/roboto-v27-latin-700.woff2 as=font type=font/woff2 crossorigin=anonymous></head><body dir=ltr class="book-kind-page book-type-notes"><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/r/><span>My Notes</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul class=book-languages><li><input type=checkbox id=languages class=toggle>
 <label for=languages class=flex><a role=button><img src=/r/icons/translate.svg class=book-icon alt=Languages>
 English
@@ -20,7 +20,7 @@ English
 <label for=section-5b051410be8cdb0f46ad32fc2ad5a20d class=flex><a href=/r/notes/UWAA558/>MHD Theory</a>
 <img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/r/notes/UWAA558/01-syllabus/>Syllabus</a></li><li><a href=/r/notes/UWAA558/02-plasma-models/>Plasma Models</a></li><li><a href=/r/notes/UWAA558/03-plasma-fluid-model/>Plasma Fluid Model</a></li><li><a href=/r/notes/UWAA558/04-two-fluid-plasma-model/>Two-Fluid Plasma Model</a></li><li><a href=/r/notes/UWAA558/05-mhd-model/>Magnetohydrodynamic (MHD) Model</a></li><li><a href=/r/notes/UWAA558/06-boundary-conditions/>Boundary Conditions</a></li><li><a href=/r/notes/UWAA558/07-equilibrium-for-fusion/>Equilibrium for Fusion</a></li><li><a href=/r/notes/UWAA558/08-1d-equilibria/>1-D Equilibria</a></li><li><a href=/r/notes/UWAA558/09-2d-equilibria/>2D Equilibria</a></li><li><a href=/r/notes/UWAA558/10-equilibrium-of-3d-configurations/>Equilibrium of 3D Configurations</a></li><li><a href=/r/notes/UWAA558/11-mhd-stability/>MHD Stability</a></li><li><a href=/r/notes/UWAA558/formulary/>Formulary</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-c3201a1057283cb12ab09a42fe89bfb2 class=toggle checked>
 <label for=section-c3201a1057283cb12ab09a42fe89bfb2 class=flex><a href=/r/notes/research/>Research Notes</a>
-<img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/r/notes/research/apollo/ class=active>Apollo dynamic tuning framework for RAJA</a></li><li><a href=/r/notes/research/dgh-datta/>Electrodynamic Dory-Guest-Harris Instability</a></li><li><a href=/r/notes/research/hyak/>Hyak HPC</a></li><li><a href=/r/notes/research/kokkos-warpxm/>Hyak HPC</a></li><li><a href=/r/notes/research/install-tricks/>Installation tricks</a></li><li><a href=/r/notes/research/valgrind/>Valgrind</a></li><li><a href=/r/notes/research/warpxm-101/>WARPXM 101 - Getting Started</a></li><li><a href=/r/notes/research/warpxm-102/>WARPXM 102 - Code Structure</a></li><li><a href=/r/notes/research/warpxm-201/>WARPXM 201 - Unstructured Geometry</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-e5101c35c8277102365bd86ab3e99a0d class=toggle>
+<img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/r/notes/research/apollo/ class=active>Apollo dynamic tuning framework for RAJA</a></li><li><a href=/r/notes/research/dgh-datta/>Electrodynamic Dory-Guest-Harris Instability</a></li><li><a href=/r/notes/research/hyak/>Hyak HPC</a></li><li><a href=/r/notes/research/install-tricks/>Installation tricks</a></li><li><a href=/r/notes/research/occa/>OCCA</a></li><li><a href=/r/notes/research/valgrind/>Valgrind</a></li><li><a href=/r/notes/research/warpxm-101/>WARPXM 101 - Getting Started</a></li><li><a href=/r/notes/research/warpxm-102/>WARPXM 102 - Code Structure</a></li><li><a href=/r/notes/research/warpxm-201/>WARPXM 201 - Unstructured Geometry</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-e5101c35c8277102365bd86ab3e99a0d class=toggle>
 <label for=section-e5101c35c8277102365bd86ab3e99a0d class=flex><a href=/r/notes/UWAMATH567/>Applied Complex Analysis</a>
 <img src=/r/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/r/notes/UWAMATH567/01-overview/>Overview</a></li><li><a href=/r/notes/UWAMATH567/02-complex-numbers/>Complex Numbers</a></li><li><a href=/r/notes/UWAMATH567/03-analytic-functions/>Analytic Functions and Integration</a></li><li><a href=/r/notes/UWAMATH567/04-series/>Sequences, series, and singularities</a></li><li><a href=/r/notes/UWAMATH567/05-residue-calculus/>Residue calculus and applications of contour integration</a></li><li><a href=/r/notes/UWAMATH567/06-real-integrals/>Real Integrals</a></li><li><a href=/r/notes/UWAMATH567/07-integrals-of-multivalued-functions/>Integrals of Multivalued Functions</a></li><li><a href=/r/notes/UWAMATH567/08-fourier-transform/>Fourier Transforms and Laplace Transforms</a></li><li><a href=/r/notes/UWAMATH567/09-conformal-mapping/>Conformal Mappings</a></li><li><a href=/r/notes/UWAMATH567/10-fluid-flow/>Fluid Flow</a></li></ul></li><li class=book-section-flat><input type=checkbox id=section-34991d35561e8d266d64d5d323e97c7a class=toggle>
 <label for=section-34991d35561e8d266d64d5d323e97c7a class=flex><a href=/r/notes/UWAA557/>Physics of Fusion Plasmas</a>
@@ -1217,360 +1217,360 @@ English
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>} <span style=color:#080;background-color:#0f140f;font-style:italic>// namespace apollo_demo
-</span></span></span></code></pre></div><p>Reading through the Apollo documentation, I think this setup could be a lot less verbose if I were to use the Apollo-enabled RAJA fork from (<a href=https://github.com/LLNL/RAJA/compare/develop...ggeorgakoudis:RAJA:feature/apollo%29>https://github.com/LLNL/RAJA/compare/develop...ggeorgakoudis:RAJA:feature/apollo)</a>. But at this point that&rsquo;s an extremely old version of RAJA, and I don&rsquo;t really trust Claude to be able to cope with the older API and any important changes that might have happened since.</p><p>For the parameters that it chose by default, we don&rsquo;t really get anything exciting out of Apollo. It determines that for all of those kernels, with an input size of around 10^5 the fastest execution policy is just the serial one and that the OpenMP thread overhead isn&rsquo;t worth it. But if I increase the problem size by a factor of 100, it starts picking other OpenMP policies. It also really helps if I make sure my system isn&rsquo;t doing anything else at the time, as the OpenMP policies with explicit batch policies are the ones that suffer the most if other processes are taking resources:</p><pre tabindex=0><code>Command: APOLLO_POLICY_MODEL=&#39;DecisionTree,explore=RoundRobin,max_depth=4&#39; ./apollo_raja_demo_cpu --adaptive
-
-Apollo-RAJA CPU Demonstration
-==============================
-
-Configuration:
-  Number of policies: 5
-  Available policies:
-    0: Sequential
-    1: OpenMP Default
-    2: OpenMP Static-16
-    3: OpenMP Dynamic-8
-    4: OpenMP Guided
-  OpenMP threads: 8
-  Apollo Policy Model: DecisionTree,explore=RoundRobin,max_depth=4
-== APOLLO: Looked for APOLLO_COLLECTIVE_TRAINING with getenv(), found nothing, using &#39;0&#39; (default) instead.
-== APOLLO: Looked for APOLLO_LOCAL_TRAINING with getenv(), found nothing, using &#39;1&#39; (default) instead.
-== APOLLO: Looked for APOLLO_SINGLE_MODEL with getenv(), found nothing, using &#39;0&#39; (default) instead.
-== APOLLO: Looked for APOLLO_REGION_MODEL with getenv(), found nothing, using &#39;1&#39; (default) instead.
-== APOLLO: Looked for APOLLO_GLOBAL_TRAIN_PERIOD with getenv(), found nothing, using &#39;0&#39; (default) instead.
-== APOLLO: Looked for APOLLO_PER_REGION_TRAIN_PERIOD with getenv(), found nothing, using &#39;0&#39; (default) instead.
-== APOLLO: Looked for APOLLO_TRACE_POLICY with getenv(), found nothing, using &#39;0&#39; (default) instead.
-== APOLLO: Looked for APOLLO_STORE_MODELS with getenv(), found nothing, using &#39;0&#39; (default) instead.
-== APOLLO: Looked for APOLLO_TRACE_RETRAIN with getenv(), found nothing, using &#39;0&#39; (default) instead.
-== APOLLO: Looked for APOLLO_TRACE_ALLGATHER with getenv(), found nothing, using &#39;0&#39; (default) instead.
-== APOLLO: Looked for APOLLO_TRACE_BEST_POLICIES with getenv(), found nothing, using &#39;0&#39; (default) instead.
-== APOLLO: Looked for APOLLO_RETRAIN_ENABLE with getenv(), found nothing, using &#39;0&#39; (default) instead.
-== APOLLO: Looked for APOLLO_RETRAIN_TIME_THRESHOLD with getenv(), found nothing, using &#39;2.0&#39; (default) instead.
-== APOLLO: Looked for APOLLO_RETRAIN_REGION_THRESHOLD with getenv(), found nothing, using &#39;0.5&#39; (default) instead.
-== APOLLO: Looked for APOLLO_TRACE_CSV with getenv(), found nothing, using &#39;0&#39; (default) instead.
-== APOLLO: Looked for APOLLO_PERSISTENT_DATASETS with getenv(), found nothing, using &#39;0&#39; (default) instead.
-== APOLLO: Looked for APOLLO_STORE_EXEC_INFO with getenv(), found nothing, using &#39;0&#39; (default) instead.
-== APOLLO: Looked for APOLLO_OUTPUT_DIR with getenv(), found nothing, using &#39;.apollo&#39; (default) instead.
-== APOLLO: Looked for APOLLO_DATASETS_DIR with getenv(), found nothing, using &#39;datasets&#39; (default) instead.
-== APOLLO: Looked for APOLLO_TRACES_DIR with getenv(), found nothing, using &#39;traces&#39; (default) instead.
-== APOLLO: Looked for APOLLO_MODELS_DIR with getenv(), found nothing, using &#39;models&#39; (default) instead.
-
-============================================================
-ADAPTIVE SCENARIO: Apollo learns optimal policies
-============================================================
-
---- EXPLORATION PHASE ---
-Apollo explores different policies...
-
-=== Running VectorAdd Kernel ===
-Problem size: 100000
-Iterations: 5
-  Apollo selected: Sequential (policy 0)
-  Iteration  1: 0.032 ms
-  Apollo selected: OpenMP Default (policy 1)
-  Iteration  2: 0.182 ms
-  Apollo selected: OpenMP Static-16 (policy 2)
-  Iteration  3: 0.173 ms
-  Apollo selected: OpenMP Dynamic-8 (policy 3)
-  Iteration  4: 0.799 ms
-  Apollo selected: OpenMP Guided (policy 4)
-  Iteration  5: 0.092 ms
-
-Statistics:
-  Average: 0.256 ms
-  Min:     0.032 ms
-  Max:     0.799 ms
-
-=== Running DAXPY Kernel ===
-Problem size: 100000
-Iterations: 5
-  Apollo selected: Sequential (policy 0)
-  Iteration  1: 0.025 ms
-  Apollo selected: OpenMP Default (policy 1)
-  Iteration  2: 0.054 ms
-  Apollo selected: OpenMP Static-16 (policy 2)
-  Iteration  3: 0.086 ms
-  Apollo selected: OpenMP Dynamic-8 (policy 3)
-  Iteration  4: 0.126 ms
-  Apollo selected: OpenMP Guided (policy 4)
-  Iteration  5: 0.124 ms
-
-Statistics:
-  Average: 0.083 ms
-  Min:     0.025 ms
-  Max:     0.126 ms
-
-=== Running Stencil1D Kernel ===
-Problem size: 100000
-Iterations: 5
-  Apollo selected: Sequential (policy 0)
-  Iteration  1: 0.132 ms
-  Apollo selected: OpenMP Default (policy 1)
-  Iteration  2: 0.131 ms
-  Apollo selected: OpenMP Static-16 (policy 2)
-  Iteration  3: 0.145 ms
-  Apollo selected: OpenMP Dynamic-8 (policy 3)
-  Iteration  4: 0.172 ms
-  Apollo selected: OpenMP Guided (policy 4)
-  Iteration  5: 0.140 ms
-
-Statistics:
-  Average: 0.144 ms
-  Min:     0.131 ms
-  Max:     0.172 ms
-
-=== Running Reduction Kernel ===
-Problem size: 100000
-Iterations: 5
-  Apollo selected: Sequential (policy 0)
-  Iteration  1: 0.100 ms
-  Apollo selected: OpenMP Default (policy 1)
-  Iteration  2: 0.086 ms
-  Apollo selected: OpenMP Static-16 (policy 2)
-  Iteration  3: 0.077 ms
-  Apollo selected: OpenMP Dynamic-8 (policy 3)
-  Iteration  4: 0.129 ms
-  Apollo selected: OpenMP Guided (policy 4)
-  Iteration  5: 0.102 ms
-
-Statistics:
-  Average: 0.099 ms
-  Min:     0.077 ms
-  Max:     0.129 ms
-
-=== Running VectorAdd Kernel ===
-Problem size: 1000000
-Iterations: 5
-  Apollo selected: Sequential (policy 0)
-  Iteration  1: 1.090 ms
-  Apollo selected: OpenMP Default (policy 1)
-  Iteration  2: 0.569 ms
-  Apollo selected: OpenMP Static-16 (policy 2)
-  Iteration  3: 1.090 ms
-  Apollo selected: OpenMP Dynamic-8 (policy 3)
-  Iteration  4: 0.679 ms
-  Apollo selected: OpenMP Guided (policy 4)
-  Iteration  5: 0.522 ms
-
-Statistics:
-  Average: 0.790 ms
-  Min:     0.522 ms
-  Max:     1.090 ms
-
-=== Running DAXPY Kernel ===
-Problem size: 1000000
-Iterations: 5
-  Apollo selected: Sequential (policy 0)
-  Iteration  1: 1.183 ms
-  Apollo selected: OpenMP Default (policy 1)
-  Iteration  2: 0.459 ms
-  Apollo selected: OpenMP Static-16 (policy 2)
-  Iteration  3: 0.733 ms
-  Apollo selected: OpenMP Dynamic-8 (policy 3)
-  Iteration  4: 0.709 ms
-  Apollo selected: OpenMP Guided (policy 4)
-  Iteration  5: 0.369 ms
-
-Statistics:
-  Average: 0.691 ms
-  Min:     0.369 ms
-  Max:     1.183 ms
-
-=== Running Stencil1D Kernel ===
-Problem size: 1000000
-Iterations: 5
-  Apollo selected: Sequential (policy 0)
-  Iteration  1: 1.275 ms
-  Apollo selected: OpenMP Default (policy 1)
-  Iteration  2: 0.764 ms
-  Apollo selected: OpenMP Static-16 (policy 2)
-  Iteration  3: 0.950 ms
-  Apollo selected: OpenMP Dynamic-8 (policy 3)
-  Iteration  4: 0.965 ms
-  Apollo selected: OpenMP Guided (policy 4)
-  Iteration  5: 0.618 ms
-
-Statistics:
-  Average: 0.914 ms
-  Min:     0.618 ms
-  Max:     1.275 ms
-
-=== Running Reduction Kernel ===
-Problem size: 1000000
-Iterations: 5
-  Apollo selected: Sequential (policy 0)
-  Iteration  1: 0.983 ms
-  Apollo selected: OpenMP Default (policy 1)
-  Iteration  2: 0.416 ms
-  Apollo selected: OpenMP Static-16 (policy 2)
-  Iteration  3: 0.385 ms
-  Apollo selected: OpenMP Dynamic-8 (policy 3)
-  Iteration  4: 0.616 ms
-  Apollo selected: OpenMP Guided (policy 4)
-  Iteration  5: 0.305 ms
-
-Statistics:
-  Average: 0.541 ms
-  Min:     0.305 ms
-  Max:     0.983 ms
-
---- TRAINING PHASE ---
-Apollo has trained models based on exploration data
-
---- EXPLOITATION PHASE ---
-Apollo uses learned models to select optimal policies...
-
-=== Running VectorAdd Kernel ===
-Problem size: 10000000
-Iterations: 5
-  Apollo selected: Sequential (policy 0)
-  Iteration  1: 18.672 ms
-  Apollo selected: Sequential (policy 0)
-  Iteration  2: 5.530 ms
-  Apollo selected: Sequential (policy 0)
-  Iteration  3: 5.048 ms
-  Apollo selected: Sequential (policy 0)
-  Iteration  4: 5.151 ms
-  Apollo selected: Sequential (policy 0)
-  Iteration  5: 5.259 ms
-
-Statistics:
-  Average: 7.932 ms
-  Min:     5.048 ms
-  Max:     18.672 ms
-
-=== Running DAXPY Kernel ===
-Problem size: 10000000
-Iterations: 5
-  Apollo selected: Sequential (policy 0)
-  Iteration  1: 4.582 ms
-  Apollo selected: Sequential (policy 0)
-  Iteration  2: 4.827 ms
-  Apollo selected: Sequential (policy 0)
-  Iteration  3: 4.528 ms
-  Apollo selected: Sequential (policy 0)
-  Iteration  4: 4.759 ms
-  Apollo selected: Sequential (policy 0)
-  Iteration  5: 4.752 ms
-
-Statistics:
-  Average: 4.690 ms
-  Min:     4.528 ms
-  Max:     4.827 ms
-
-=== Running Stencil1D Kernel ===
-Problem size: 10000000
-Iterations: 5
-  Apollo selected: OpenMP Default (policy 1)
-  Iteration  1: 5.894 ms
-  Apollo selected: OpenMP Default (policy 1)
-  Iteration  2: 6.527 ms
-  Apollo selected: OpenMP Default (policy 1)
-  Iteration  3: 6.348 ms
-  Apollo selected: OpenMP Default (policy 1)
-  Iteration  4: 6.901 ms
-  Apollo selected: OpenMP Default (policy 1)
-  Iteration  5: 6.106 ms
-
-Statistics:
-  Average: 6.355 ms
-  Min:     5.894 ms
-  Max:     6.901 ms
-
-=== Running Reduction Kernel ===
-Problem size: 10000000
-Iterations: 5
-  Apollo selected: OpenMP Static-16 (policy 2)
-  Iteration  1: 3.036 ms
-  Apollo selected: OpenMP Static-16 (policy 2)
-  Iteration  2: 2.883 ms
-  Apollo selected: OpenMP Static-16 (policy 2)
-  Iteration  3: 3.074 ms
-  Apollo selected: OpenMP Static-16 (policy 2)
-  Iteration  4: 2.620 ms
-  Apollo selected: OpenMP Static-16 (policy 2)
-  Iteration  5: 2.647 ms
-
-
-Statistics:
-  Average: 2.852 ms
-  Min:     2.620 ms
-  Max:     3.074 ms
-
-=== Running VectorAdd Kernel ===
-Problem size: 100000000
-Iterations: 5
-  Apollo selected: Sequential (policy 0)
-  Iteration  1: 526.750 ms
-  Apollo selected: Sequential (policy 0)
-  Iteration  2: 84.982 ms
-  Apollo selected: Sequential (policy 0)
-  Iteration  3: 48.321 ms
-  Apollo selected: Sequential (policy 0)
-  Iteration  4: 59.781 ms
-  Apollo selected: Sequential (policy 0)
-  Iteration  5: 751.197 ms
-
-Statistics:
-  Average: 294.206 ms
-  Min:     48.321 ms
-  Max:     751.197 ms
-
-=== Running DAXPY Kernel ===
-Problem size: 100000000
-Iterations: 5
-  Apollo selected: Sequential (policy 0)
-  Iteration  1: 81.666 ms
-  Apollo selected: Sequential (policy 0)
-  Iteration  2: 72.213 ms
-  Apollo selected: Sequential (policy 0)
-  Iteration  3: 46.080 ms
-  Apollo selected: Sequential (policy 0)
-  Iteration  4: 43.956 ms
-  Apollo selected: Sequential (policy 0)
-  Iteration  5: 44.062 ms
-
-Statistics:
-  Average: 57.595 ms
-  Min:     43.956 ms
-  Max:     81.666 ms
-
-=== Running Stencil1D Kernel ===
-Problem size: 100000000
-Iterations: 5
-  Apollo selected: OpenMP Default (policy 1)
-  Iteration  1: 63.077 ms
-  Apollo selected: OpenMP Default (policy 1)
-  Iteration  2: 52.470 ms
-  Apollo selected: OpenMP Default (policy 1)
-  Iteration  3: 52.742 ms
-  Apollo selected: OpenMP Default (policy 1)
-  Iteration  4: 52.084 ms
-  Apollo selected: OpenMP Default (policy 1)
-  Iteration  5: 53.496 ms
-
-Statistics:
-  Average: 54.774 ms
-  Min:     52.084 ms
-  Max:     63.077 ms
-
-=== Running Reduction Kernel ===
-Problem size: 100000000
-Iterations: 5
-  Apollo selected: OpenMP Static-16 (policy 2)
-  Iteration  1: 41.429 ms
-  Apollo selected: OpenMP Static-16 (policy 2)
-  Iteration  2: 25.145 ms
-  Apollo selected: OpenMP Static-16 (policy 2)
-  Iteration  3: 25.065 ms
-  Apollo selected: OpenMP Static-16 (policy 2)
-  Iteration  4: 24.666 ms
-  Apollo selected: OpenMP Static-16 (policy 2)
-  Iteration  5: 25.017 ms
-
-Statistics:
-  Average: 28.264 ms
-  Min:     24.666 ms
-  Max:     41.429 ms</code></pre><p>So overall pretty interesting! In the state the project is currently in, it is not at all obvious to me how I would use it in a codebase that isn&rsquo;t already structured around RAJA execution policies.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=/r/notes/research/ class="flex align-center"><img src=/r/icons/backward.svg class=book-icon alt=Backward>
+</span></span></span></code></pre></div><p>Reading through the Apollo documentation, I think this setup could be a lot less verbose if I were to use the Apollo-enabled RAJA fork from (<a href=https://github.com/LLNL/RAJA/compare/develop...ggeorgakoudis:RAJA:feature/apollo%29>https://github.com/LLNL/RAJA/compare/develop...ggeorgakoudis:RAJA:feature/apollo)</a>. But at this point that&rsquo;s an extremely old version of RAJA, and I don&rsquo;t really trust Claude to be able to cope with the older API and any important changes that might have happened since.</p><p>For the parameters that it chose by default, we don&rsquo;t really get anything exciting out of Apollo. It determines that for all of those kernels, with an input size of around 10^5 the fastest execution policy is just the serial one and that the OpenMP thread overhead isn&rsquo;t worth it. But if I increase the problem size by a factor of 100, it starts picking other OpenMP policies. It also really helps if I make sure my system isn&rsquo;t doing anything else at the time, as the OpenMP policies with explicit batch policies are the ones that suffer the most if other processes are taking resources:</p><div class=highlight><pre tabindex=0 style=color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>Command: APOLLO_POLICY_MODEL=&#39;DecisionTree,explore=RoundRobin,max_depth=4&#39; ./apollo_raja_demo_cpu --adaptive
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Apollo-RAJA CPU Demonstration
+</span></span><span style=display:flex><span>==============================
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Configuration:
+</span></span><span style=display:flex><span>  Number of policies: 5
+</span></span><span style=display:flex><span>  Available policies:
+</span></span><span style=display:flex><span>    0: Sequential
+</span></span><span style=display:flex><span>    1: OpenMP Default
+</span></span><span style=display:flex><span>    2: OpenMP Static-16
+</span></span><span style=display:flex><span>    3: OpenMP Dynamic-8
+</span></span><span style=display:flex><span>    4: OpenMP Guided
+</span></span><span style=display:flex><span>  OpenMP threads: 8
+</span></span><span style=display:flex><span>  Apollo Policy Model: DecisionTree,explore=RoundRobin,max_depth=4
+</span></span><span style=display:flex><span>== APOLLO: Looked for APOLLO_COLLECTIVE_TRAINING with getenv(), found nothing, using &#39;0&#39; (default) instead.
+</span></span><span style=display:flex><span>== APOLLO: Looked for APOLLO_LOCAL_TRAINING with getenv(), found nothing, using &#39;1&#39; (default) instead.
+</span></span><span style=display:flex><span>== APOLLO: Looked for APOLLO_SINGLE_MODEL with getenv(), found nothing, using &#39;0&#39; (default) instead.
+</span></span><span style=display:flex><span>== APOLLO: Looked for APOLLO_REGION_MODEL with getenv(), found nothing, using &#39;1&#39; (default) instead.
+</span></span><span style=display:flex><span>== APOLLO: Looked for APOLLO_GLOBAL_TRAIN_PERIOD with getenv(), found nothing, using &#39;0&#39; (default) instead.
+</span></span><span style=display:flex><span>== APOLLO: Looked for APOLLO_PER_REGION_TRAIN_PERIOD with getenv(), found nothing, using &#39;0&#39; (default) instead.
+</span></span><span style=display:flex><span>== APOLLO: Looked for APOLLO_TRACE_POLICY with getenv(), found nothing, using &#39;0&#39; (default) instead.
+</span></span><span style=display:flex><span>== APOLLO: Looked for APOLLO_STORE_MODELS with getenv(), found nothing, using &#39;0&#39; (default) instead.
+</span></span><span style=display:flex><span>== APOLLO: Looked for APOLLO_TRACE_RETRAIN with getenv(), found nothing, using &#39;0&#39; (default) instead.
+</span></span><span style=display:flex><span>== APOLLO: Looked for APOLLO_TRACE_ALLGATHER with getenv(), found nothing, using &#39;0&#39; (default) instead.
+</span></span><span style=display:flex><span>== APOLLO: Looked for APOLLO_TRACE_BEST_POLICIES with getenv(), found nothing, using &#39;0&#39; (default) instead.
+</span></span><span style=display:flex><span>== APOLLO: Looked for APOLLO_RETRAIN_ENABLE with getenv(), found nothing, using &#39;0&#39; (default) instead.
+</span></span><span style=display:flex><span>== APOLLO: Looked for APOLLO_RETRAIN_TIME_THRESHOLD with getenv(), found nothing, using &#39;2.0&#39; (default) instead.
+</span></span><span style=display:flex><span>== APOLLO: Looked for APOLLO_RETRAIN_REGION_THRESHOLD with getenv(), found nothing, using &#39;0.5&#39; (default) instead.
+</span></span><span style=display:flex><span>== APOLLO: Looked for APOLLO_TRACE_CSV with getenv(), found nothing, using &#39;0&#39; (default) instead.
+</span></span><span style=display:flex><span>== APOLLO: Looked for APOLLO_PERSISTENT_DATASETS with getenv(), found nothing, using &#39;0&#39; (default) instead.
+</span></span><span style=display:flex><span>== APOLLO: Looked for APOLLO_STORE_EXEC_INFO with getenv(), found nothing, using &#39;0&#39; (default) instead.
+</span></span><span style=display:flex><span>== APOLLO: Looked for APOLLO_OUTPUT_DIR with getenv(), found nothing, using &#39;.apollo&#39; (default) instead.
+</span></span><span style=display:flex><span>== APOLLO: Looked for APOLLO_DATASETS_DIR with getenv(), found nothing, using &#39;datasets&#39; (default) instead.
+</span></span><span style=display:flex><span>== APOLLO: Looked for APOLLO_TRACES_DIR with getenv(), found nothing, using &#39;traces&#39; (default) instead.
+</span></span><span style=display:flex><span>== APOLLO: Looked for APOLLO_MODELS_DIR with getenv(), found nothing, using &#39;models&#39; (default) instead.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>============================================================
+</span></span><span style=display:flex><span>ADAPTIVE SCENARIO: Apollo learns optimal policies
+</span></span><span style=display:flex><span>============================================================
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>--- EXPLORATION PHASE ---
+</span></span><span style=display:flex><span>Apollo explores different policies...
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>=== Running VectorAdd Kernel ===
+</span></span><span style=display:flex><span>Problem size: 100000
+</span></span><span style=display:flex><span>Iterations: 5
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  1: 0.032 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Default (policy 1)
+</span></span><span style=display:flex><span>  Iteration  2: 0.182 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Static-16 (policy 2)
+</span></span><span style=display:flex><span>  Iteration  3: 0.173 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Dynamic-8 (policy 3)
+</span></span><span style=display:flex><span>  Iteration  4: 0.799 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Guided (policy 4)
+</span></span><span style=display:flex><span>  Iteration  5: 0.092 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Statistics:
+</span></span><span style=display:flex><span>  Average: 0.256 ms
+</span></span><span style=display:flex><span>  Min:     0.032 ms
+</span></span><span style=display:flex><span>  Max:     0.799 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>=== Running DAXPY Kernel ===
+</span></span><span style=display:flex><span>Problem size: 100000
+</span></span><span style=display:flex><span>Iterations: 5
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  1: 0.025 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Default (policy 1)
+</span></span><span style=display:flex><span>  Iteration  2: 0.054 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Static-16 (policy 2)
+</span></span><span style=display:flex><span>  Iteration  3: 0.086 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Dynamic-8 (policy 3)
+</span></span><span style=display:flex><span>  Iteration  4: 0.126 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Guided (policy 4)
+</span></span><span style=display:flex><span>  Iteration  5: 0.124 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Statistics:
+</span></span><span style=display:flex><span>  Average: 0.083 ms
+</span></span><span style=display:flex><span>  Min:     0.025 ms
+</span></span><span style=display:flex><span>  Max:     0.126 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>=== Running Stencil1D Kernel ===
+</span></span><span style=display:flex><span>Problem size: 100000
+</span></span><span style=display:flex><span>Iterations: 5
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  1: 0.132 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Default (policy 1)
+</span></span><span style=display:flex><span>  Iteration  2: 0.131 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Static-16 (policy 2)
+</span></span><span style=display:flex><span>  Iteration  3: 0.145 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Dynamic-8 (policy 3)
+</span></span><span style=display:flex><span>  Iteration  4: 0.172 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Guided (policy 4)
+</span></span><span style=display:flex><span>  Iteration  5: 0.140 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Statistics:
+</span></span><span style=display:flex><span>  Average: 0.144 ms
+</span></span><span style=display:flex><span>  Min:     0.131 ms
+</span></span><span style=display:flex><span>  Max:     0.172 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>=== Running Reduction Kernel ===
+</span></span><span style=display:flex><span>Problem size: 100000
+</span></span><span style=display:flex><span>Iterations: 5
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  1: 0.100 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Default (policy 1)
+</span></span><span style=display:flex><span>  Iteration  2: 0.086 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Static-16 (policy 2)
+</span></span><span style=display:flex><span>  Iteration  3: 0.077 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Dynamic-8 (policy 3)
+</span></span><span style=display:flex><span>  Iteration  4: 0.129 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Guided (policy 4)
+</span></span><span style=display:flex><span>  Iteration  5: 0.102 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Statistics:
+</span></span><span style=display:flex><span>  Average: 0.099 ms
+</span></span><span style=display:flex><span>  Min:     0.077 ms
+</span></span><span style=display:flex><span>  Max:     0.129 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>=== Running VectorAdd Kernel ===
+</span></span><span style=display:flex><span>Problem size: 1000000
+</span></span><span style=display:flex><span>Iterations: 5
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  1: 1.090 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Default (policy 1)
+</span></span><span style=display:flex><span>  Iteration  2: 0.569 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Static-16 (policy 2)
+</span></span><span style=display:flex><span>  Iteration  3: 1.090 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Dynamic-8 (policy 3)
+</span></span><span style=display:flex><span>  Iteration  4: 0.679 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Guided (policy 4)
+</span></span><span style=display:flex><span>  Iteration  5: 0.522 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Statistics:
+</span></span><span style=display:flex><span>  Average: 0.790 ms
+</span></span><span style=display:flex><span>  Min:     0.522 ms
+</span></span><span style=display:flex><span>  Max:     1.090 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>=== Running DAXPY Kernel ===
+</span></span><span style=display:flex><span>Problem size: 1000000
+</span></span><span style=display:flex><span>Iterations: 5
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  1: 1.183 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Default (policy 1)
+</span></span><span style=display:flex><span>  Iteration  2: 0.459 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Static-16 (policy 2)
+</span></span><span style=display:flex><span>  Iteration  3: 0.733 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Dynamic-8 (policy 3)
+</span></span><span style=display:flex><span>  Iteration  4: 0.709 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Guided (policy 4)
+</span></span><span style=display:flex><span>  Iteration  5: 0.369 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Statistics:
+</span></span><span style=display:flex><span>  Average: 0.691 ms
+</span></span><span style=display:flex><span>  Min:     0.369 ms
+</span></span><span style=display:flex><span>  Max:     1.183 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>=== Running Stencil1D Kernel ===
+</span></span><span style=display:flex><span>Problem size: 1000000
+</span></span><span style=display:flex><span>Iterations: 5
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  1: 1.275 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Default (policy 1)
+</span></span><span style=display:flex><span>  Iteration  2: 0.764 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Static-16 (policy 2)
+</span></span><span style=display:flex><span>  Iteration  3: 0.950 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Dynamic-8 (policy 3)
+</span></span><span style=display:flex><span>  Iteration  4: 0.965 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Guided (policy 4)
+</span></span><span style=display:flex><span>  Iteration  5: 0.618 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Statistics:
+</span></span><span style=display:flex><span>  Average: 0.914 ms
+</span></span><span style=display:flex><span>  Min:     0.618 ms
+</span></span><span style=display:flex><span>  Max:     1.275 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>=== Running Reduction Kernel ===
+</span></span><span style=display:flex><span>Problem size: 1000000
+</span></span><span style=display:flex><span>Iterations: 5
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  1: 0.983 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Default (policy 1)
+</span></span><span style=display:flex><span>  Iteration  2: 0.416 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Static-16 (policy 2)
+</span></span><span style=display:flex><span>  Iteration  3: 0.385 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Dynamic-8 (policy 3)
+</span></span><span style=display:flex><span>  Iteration  4: 0.616 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Guided (policy 4)
+</span></span><span style=display:flex><span>  Iteration  5: 0.305 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Statistics:
+</span></span><span style=display:flex><span>  Average: 0.541 ms
+</span></span><span style=display:flex><span>  Min:     0.305 ms
+</span></span><span style=display:flex><span>  Max:     0.983 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>--- TRAINING PHASE ---
+</span></span><span style=display:flex><span>Apollo has trained models based on exploration data
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>--- EXPLOITATION PHASE ---
+</span></span><span style=display:flex><span>Apollo uses learned models to select optimal policies...
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>=== Running VectorAdd Kernel ===
+</span></span><span style=display:flex><span>Problem size: 10000000
+</span></span><span style=display:flex><span>Iterations: 5
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  1: 18.672 ms
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  2: 5.530 ms
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  3: 5.048 ms
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  4: 5.151 ms
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  5: 5.259 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Statistics:
+</span></span><span style=display:flex><span>  Average: 7.932 ms
+</span></span><span style=display:flex><span>  Min:     5.048 ms
+</span></span><span style=display:flex><span>  Max:     18.672 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>=== Running DAXPY Kernel ===
+</span></span><span style=display:flex><span>Problem size: 10000000
+</span></span><span style=display:flex><span>Iterations: 5
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  1: 4.582 ms
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  2: 4.827 ms
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  3: 4.528 ms
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  4: 4.759 ms
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  5: 4.752 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Statistics:
+</span></span><span style=display:flex><span>  Average: 4.690 ms
+</span></span><span style=display:flex><span>  Min:     4.528 ms
+</span></span><span style=display:flex><span>  Max:     4.827 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>=== Running Stencil1D Kernel ===
+</span></span><span style=display:flex><span>Problem size: 10000000
+</span></span><span style=display:flex><span>Iterations: 5
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Default (policy 1)
+</span></span><span style=display:flex><span>  Iteration  1: 5.894 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Default (policy 1)
+</span></span><span style=display:flex><span>  Iteration  2: 6.527 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Default (policy 1)
+</span></span><span style=display:flex><span>  Iteration  3: 6.348 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Default (policy 1)
+</span></span><span style=display:flex><span>  Iteration  4: 6.901 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Default (policy 1)
+</span></span><span style=display:flex><span>  Iteration  5: 6.106 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Statistics:
+</span></span><span style=display:flex><span>  Average: 6.355 ms
+</span></span><span style=display:flex><span>  Min:     5.894 ms
+</span></span><span style=display:flex><span>  Max:     6.901 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>=== Running Reduction Kernel ===
+</span></span><span style=display:flex><span>Problem size: 10000000
+</span></span><span style=display:flex><span>Iterations: 5
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Static-16 (policy 2)
+</span></span><span style=display:flex><span>  Iteration  1: 3.036 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Static-16 (policy 2)
+</span></span><span style=display:flex><span>  Iteration  2: 2.883 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Static-16 (policy 2)
+</span></span><span style=display:flex><span>  Iteration  3: 3.074 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Static-16 (policy 2)
+</span></span><span style=display:flex><span>  Iteration  4: 2.620 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Static-16 (policy 2)
+</span></span><span style=display:flex><span>  Iteration  5: 2.647 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Statistics:
+</span></span><span style=display:flex><span>  Average: 2.852 ms
+</span></span><span style=display:flex><span>  Min:     2.620 ms
+</span></span><span style=display:flex><span>  Max:     3.074 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>=== Running VectorAdd Kernel ===
+</span></span><span style=display:flex><span>Problem size: 100000000
+</span></span><span style=display:flex><span>Iterations: 5
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  1: 526.750 ms
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  2: 84.982 ms
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  3: 48.321 ms
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  4: 59.781 ms
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  5: 751.197 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Statistics:
+</span></span><span style=display:flex><span>  Average: 294.206 ms
+</span></span><span style=display:flex><span>  Min:     48.321 ms
+</span></span><span style=display:flex><span>  Max:     751.197 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>=== Running DAXPY Kernel ===
+</span></span><span style=display:flex><span>Problem size: 100000000
+</span></span><span style=display:flex><span>Iterations: 5
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  1: 81.666 ms
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  2: 72.213 ms
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  3: 46.080 ms
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  4: 43.956 ms
+</span></span><span style=display:flex><span>  Apollo selected: Sequential (policy 0)
+</span></span><span style=display:flex><span>  Iteration  5: 44.062 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Statistics:
+</span></span><span style=display:flex><span>  Average: 57.595 ms
+</span></span><span style=display:flex><span>  Min:     43.956 ms
+</span></span><span style=display:flex><span>  Max:     81.666 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>=== Running Stencil1D Kernel ===
+</span></span><span style=display:flex><span>Problem size: 100000000
+</span></span><span style=display:flex><span>Iterations: 5
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Default (policy 1)
+</span></span><span style=display:flex><span>  Iteration  1: 63.077 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Default (policy 1)
+</span></span><span style=display:flex><span>  Iteration  2: 52.470 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Default (policy 1)
+</span></span><span style=display:flex><span>  Iteration  3: 52.742 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Default (policy 1)
+</span></span><span style=display:flex><span>  Iteration  4: 52.084 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Default (policy 1)
+</span></span><span style=display:flex><span>  Iteration  5: 53.496 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Statistics:
+</span></span><span style=display:flex><span>  Average: 54.774 ms
+</span></span><span style=display:flex><span>  Min:     52.084 ms
+</span></span><span style=display:flex><span>  Max:     63.077 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>=== Running Reduction Kernel ===
+</span></span><span style=display:flex><span>Problem size: 100000000
+</span></span><span style=display:flex><span>Iterations: 5
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Static-16 (policy 2)
+</span></span><span style=display:flex><span>  Iteration  1: 41.429 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Static-16 (policy 2)
+</span></span><span style=display:flex><span>  Iteration  2: 25.145 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Static-16 (policy 2)
+</span></span><span style=display:flex><span>  Iteration  3: 25.065 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Static-16 (policy 2)
+</span></span><span style=display:flex><span>  Iteration  4: 24.666 ms
+</span></span><span style=display:flex><span>  Apollo selected: OpenMP Static-16 (policy 2)
+</span></span><span style=display:flex><span>  Iteration  5: 25.017 ms
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Statistics:
+</span></span><span style=display:flex><span>  Average: 28.264 ms
+</span></span><span style=display:flex><span>  Min:     24.666 ms
+</span></span><span style=display:flex><span>  Max:     41.429 ms</span></span></code></pre></div><p>So overall pretty interesting! In the state the project is currently in, it is not at all obvious to me how I would use it in a codebase that isn&rsquo;t already structured around RAJA execution policies.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=/r/notes/research/ class="flex align-center"><img src=/r/icons/backward.svg class=book-icon alt=Backward>
 <span>Research Notes</span>
 </a></span><span><a href=/r/notes/research/dgh-datta/ class="flex align-center"><span>Electrodynamic Dory-Guest-Harris Instability</span>
 <img src=/r/icons/forward.svg class=book-icon alt=Forward></a></span></div><div class=book-comments></div><script>(function(){document.querySelectorAll("pre:has(code)").forEach(e=>{e.addEventListener("click",e.focus),e.addEventListener("copy",function(t){if(t.preventDefault(),navigator.clipboard){const t=window.getSelection().toString()||e.textContent;navigator.clipboard.writeText(t)}})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div></main></body></html>

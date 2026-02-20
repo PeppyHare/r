@@ -234,11 +234,11 @@
 &lt;p&gt;One look at the typical definition of the derivative suggests an algebraic approximation&lt;/p&gt;</description></item><item><title>Explicit Finite Difference Algorithms</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch21-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch21-2/</guid><description>&lt;h1 id="explicit-finite-difference-algorithms"&gt;Explicit Finite Difference Algorithms&lt;a class="anchor" href="#explicit-finite-difference-algorithms"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;h2 id="explicit-algorithms"&gt;Explicit Algorithms&lt;a class="anchor" href="#explicit-algorithms"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id="forward-euler-ftfs"&gt;Forward Euler (FTFS)&lt;a class="anchor" href="#forward-euler-ftfs"&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;n+1 --------|--------*--------|--------
-
-
-n --------|--------*--------*--------
- j-1 j j+1&lt;/code&gt;&lt;/pre&gt;&lt;span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;n+1 --------|--------*--------|--------
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;n --------|--------*--------*--------
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; j-1 j j+1&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;span&gt;
  \[u_j ^{n&amp;#43;1} = u_j ^n - \frac{a \Delta t}{\Delta x} (u_{j&amp;#43;1} ^n - u_j ^n)\]
 &lt;/span&gt;
 
