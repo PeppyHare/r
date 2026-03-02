@@ -82,7 +82,113 @@ ar -rcs /mmfs1/gscratch/aaplasma/embluhm/tools/METIS/lib/libmetis.a *.o
 cd && rm -rf /tmp/metis_combined
 ```
 
+## Building HDF5-parallel
+
+With no HDF5 module to rely on, we can just build it ourselves. It's not too bad, as long as we get lucky :)
+
+```bash
+salloc -A aaplasma -c 20 --mem=24G --time=2:00:00
+module purge
+module load ompi/4.1.6-2 gcc/13.2.0
+wget https://github.com/HDFGroup/hdf5/releases/download/hdf5_1.14.6/hdf5-1.14.6.tar.gz
+tar -zxvf hdf5-1.14.6.tar.gz
+cd hdf5-1.14.6/
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release  -DHDF5_ENABLE_PARALLEL=ON  -DBUILD_SHARED_LIBS=ON  -DBUILD_TESTING=ON  -DCMAKE_INSTALL_PREFIX=/gscratch/aaplasma/embluhm/tools/hdf5-mpi-1.14.6 -DCMAKE_C_COMPILER=/sw/ompi/4.1.6-2/bin/mpicc -DMPI_HOME=/sw/ompi/4.1.6-2 -DMPIEXEC_MAX_NUMPROCS=4 ..
+make -j20 install
+```
+
 ## Building Kokkos
 
 1. Grab the Kokkos source from a [GitHub release](https://github.com/kokkos/kokkos/releases) (latest is probably good)
-2. 
+2. Create a build script (e.g. build_kokkos.sh). I've chosen to only enable the CUDA backend and not the OpenMP backend, because I'm not using OpenMP thread parallelism and I don't want to have to deal with setting OpenMP environment variables every time I run something just to avoid it spinning up OpenMP threads to do nothing. If you want OpenMP enabled, just turn on that option. I've picked CUDA arch 7.5 as the minimum version to use. 
+    ```
+    #!/bin/bash -ex
+    
+    module purge
+    module load cuda/12.9.1 ompi/4.1.6-2 gcc/13.2.0
+    
+    rm -rf build
+    mkdir -p build
+    cmake -B build/ \
+      -DCMAKE_INSTALL_PREFIX=/gscratch/aaplasma/embluhm/tools/kokkos-cuda12.9.1 \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DKokkos_ENABLE_CUDA=ON -DCUDA_ROOT=/sw/cuda/12.9.1 -DKokkos_ARCH_TURING75=ON \
+      -DKokkos_ENABLE_OPENMP=OFF \
+      -DKokkos_ENABLE_SERIAL=ON  
+    cmake --build build/ -j20
+    cd build
+    make install
+    ln -s /gscratch/aaplasma/embluhm/tools/kokkos-cuda12.9.1/lib64 /gscratch/aaplasma/embluhm/tools/kokkos-cuda12.9.1/lib
+    ```
+3. Make it executable
+    ```
+    chmod +x build_kokkos.sh
+     ```
+4. Submit a job to build Kokkos using the build script. This will take a little while. Afterwards, Kokkos will be installed at the location specified by CMAKE_INSTALL_PREFIX in the build script (can be wherever you want)
+    ```
+    salloc -A aaplasma -c 20 --mem=24G --time=2:00:00 srun ./build_kokkos.sh
+    ```
+
+## Building Kokkos-enabled WARPXM
+
+Now that I've added a whole bunch of Kokkos-related dependencies to WARPXM, I can't just use the existing PETSc-based modules for all of the other dependencies. At present, the dependencies required to build all of the WARPXM features (other than the old PETSc-based implicit solver) are:
+- MPI implementation (OpenMPI)
+- CMake
+- METIS
+- HDF5 (linked against MPI)
+- Kokkos (with CUDA)
+
+There are modules for CUDA-aware OpenMPI, so we don't have to worry about that. We just
+
+```
+module load cuda/12.9.1 ompi/4.1.6-2 gcc/13.2.0
+```
+
+We do need HDF5 and METIS, so let's go ahead and build them first, following the instructions above.
+
+The script that I'm using to put all of this together and build WARPXM looks like this:
+
+```bash
+#!/bin/bash -ex
+module purge
+module load cuda/12.9.1 ompi/4.1.6-2 gcc/13.2.0
+export HDF5_DIR=/gscratch/aaplasma/embluhm/tools/hdf5-mpi-1.14.6/cmake
+export OMPI_CXX=/gscratch/aaplasma/embluhm/tools/kokkos-cuda12.9.1/bin/nvcc_wrapper
+export PKG_CONFIG_PATH=/sw/ompi/4.1.6-2/lib/pkgconfig:$PKG_CONFIG_PATH
+cd /gscratch/aaplasma/embluhm/code/warpxm || return 1
+
+if [ ! -d build ]; then
+    mkdir build || return 1
+else
+    rm -f build/CMakeCache.txt
+fi
+
+# RelWithDebInfo
+cmake -B build/ \
+    -DWXM_ENABLE_KOKKOS=ON \
+    -DHDF5_ROOT=/gscratch/aaplasma/embluhm/tools/hdf5-mpi-1.14.6 \
+    -DMetis_ROOT=/gscratch/aaplasma/embluhm/tools/METIS \
+    -DKokkos_ROOT=/gscratch/aaplasma/embluhm/tools/kokkos-cuda12.9.1 \
+    -DCMAKE_BUILD_TYPE=Debug \
+    -DCMAKE_C_COMPILER=/sw/ompi/4.1.6-2/bin/mpicc \
+    -DCMAKE_CXX_COMPILER=/sw/ompi/4.1.6-2/bin/mpicxx \
+    -DWXM_ENABLE_TRACY= \
+    -DCUDAToolkit_ROOT=/sw/cuda/12.9.1 \
+    -DPython_EXECUTABLE=/gscratch/aaplasma/embluhm/conda/python3-11/bin/python3 \
+    -DMPI_HOME=/sw/ompi/4.1.6-2 \
+    . || return 1
+
+cmake --build build/ -j20 || return 1
+
+cd build || return 1
+ctest -j20 --output-on-failure --label-regex "Unit" || return 1
+```
+
+I put all of this into a `klone_build_script.sh`, and then kick off a build with:
+
+```bash
+salloc -A aaplasma -c 20 --mem=24G --time=2:00:00 srun ./klone_build_script.sh
+```
+
