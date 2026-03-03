@@ -30,6 +30,242 @@ Sort of unfortunately, the nodes are a real mix of different GPU architectures, 
 | L40 / L40s | Lovelace | 8.9 | l40 / l40s | 48GB of GDDR6 memory per GPU card |
 | H200 | Hopper | 9.0 | h200 | 141 GB memory (but not allowed on checkpoint partition) |
 
+To get a sense of just what these cards can do, I've used this exceptionally useful OpenCL benchmark demo: https://github.com/ProjectPhysX/OpenCL-Benchmark
+
+
+{{< tabs >}}
+{{% tab "P100" %}}
+
+```
+.-----------------------------------------------------------------------------.
+|----------------.------------------------------------------------------------|
+| Device ID    0 | Tesla P100-PCIE-16GB                                       |
+|----------------'------------------------------------------------------------|
+|----------------.------------------------------------------------------------|
+| Device ID      | 0                                                          |
+| Device Name    | Tesla P100-PCIE-16GB                                       |
+| Device Vendor  | NVIDIA Corporation                                         |
+| Device Driver  | 580.126.16 (Linux)                                         |
+| OpenCL Version | OpenCL C 3.0                                               |
+| Compute Units  | 56 at 1328 MHz (3584 cores, 9.519 TFLOPs/s)                |
+| Memory, Cache  | 16269 MB VRAM, 1344 KB global / 48 KB local                |
+| Buffer Limits  | 4067 MB global, 64 KB constant                             |
+|----------------'------------------------------------------------------------|
+| Info: OpenCL C code successfully compiled.                                  |
+| FP64  compute                                         3.508 TFLOPs/s (1/3 ) |
+| FP32  compute                                         8.634 TFLOPs/s ( 1x ) |
+| FP16  compute                                        17.573 TFLOPs/s ( 2x ) |
+| INT64 compute                                         1.199  TIOPs/s (1/8 ) |
+| INT32 compute                                         3.119  TIOPs/s (1/3 ) |
+| INT16 compute                                         8.871  TIOPs/s ( 1x ) |
+| INT8  compute                                         1.765  TIOPs/s (1/8 ) |
+| Memory Bandwidth ( coalesced read      )                        544.50 GB/s |
+| Memory Bandwidth ( coalesced      write)                        595.68 GB/s |
+| Memory Bandwidth (misaligned read      )                        303.00 GB/s |
+| Memory Bandwidth (misaligned      write)                         90.52 GB/s |
+| PCIe   Bandwidth (send                 )                         10.97 GB/s |
+| PCIe   Bandwidth (   receive           )                          8.96 GB/s |
+| PCIe   Bandwidth (        bidirectional)            (Gen4 x16)    9.59 GB/s |
+|-----------------------------------------------------------------------------|
+'-----------------------------------------------------------------------------'
+```
+
+{{% /tab %}}
+
+{{% tab "2080 Ti" %}}
+
+```
+.-----------------------------------------------------------------------------.
+|----------------.------------------------------------------------------------|
+| Device ID    0 | NVIDIA GeForce RTX 2080 Ti                                 |
+|----------------'------------------------------------------------------------|
+|----------------.------------------------------------------------------------|
+| Device ID      | 0                                                          |
+| Device Name    | NVIDIA GeForce RTX 2080 Ti                                 |
+| Device Vendor  | NVIDIA Corporation                                         |
+| Device Driver  | 580.126.16 (Linux)                                         |
+| OpenCL Version | OpenCL C 3.0                                               |
+| Compute Units  | 68 at 1545 MHz (4352 cores, 13.448 TFLOPs/s)               |
+| Memory, Cache  | 10820 MB VRAM, 2176 KB global / 48 KB local                |
+| Buffer Limits  | 2705 MB global, 64 KB constant                             |
+|----------------'------------------------------------------------------------|
+| Info: OpenCL C code successfully compiled.                                  |
+| FP64  compute                                         0.490 TFLOPs/s (1/32) |
+| FP32  compute                                        15.753 TFLOPs/s ( 1x ) |
+| FP16  compute                                        31.114 TFLOPs/s ( 2x ) |
+| INT64 compute                                         3.400  TIOPs/s (1/4 ) |
+| INT32 compute                                        15.274  TIOPs/s ( 1x ) |
+| INT16 compute                                        12.920  TIOPs/s ( 1x ) |
+| INT8  compute                                        53.973  TIOPs/s ( 4x ) |
+| Memory Bandwidth ( coalesced read      )                        535.62 GB/s |
+| Memory Bandwidth ( coalesced      write)                        538.19 GB/s |
+| Memory Bandwidth (misaligned read      )                        491.31 GB/s |
+| Memory Bandwidth (misaligned      write)                        149.62 GB/s |
+| PCIe   Bandwidth (send                 )                          4.97 GB/s |
+| PCIe   Bandwidth (   receive           )                          5.04 GB/s |
+| PCIe   Bandwidth (        bidirectional)            (Gen3 x16)    4.82 GB/s |
+|-----------------------------------------------------------------------------|
+'-----------------------------------------------------------------------------'
+```
+
+{{% /tab %}}
+
+{{% tab "RTX 6000" %}}
+
+```
+.-----------------------------------------------------------------------------.
+|----------------.------------------------------------------------------------|
+| Device ID    0 | Quadro RTX 6000                                            |
+|----------------'------------------------------------------------------------|
+|----------------.------------------------------------------------------------|
+| Device ID      | 0                                                          |
+| Device Name    | Quadro RTX 6000                                            |
+| Device Vendor  | NVIDIA Corporation                                         |
+| Device Driver  | 580.126.16 (Linux)                                         |
+| OpenCL Version | OpenCL C 3.0                                               |
+| Compute Units  | 72 at 1770 MHz (4608 cores, 16.312 TFLOPs/s)               |
+| Memory, Cache  | 24021 MB VRAM, 2304 KB global / 48 KB local                |
+| Buffer Limits  | 6005 MB global, 64 KB constant                             |
+|----------------'------------------------------------------------------------|
+| Info: OpenCL C code successfully compiled.                                  |
+| FP64  compute                                         0.561 TFLOPs/s (1/32) |
+| FP32  compute                                        17.944 TFLOPs/s ( 1x ) |
+| FP16  compute                                        35.632 TFLOPs/s ( 2x ) |
+| INT64 compute                                         3.588  TIOPs/s (1/4 ) |
+| INT32 compute                                        17.475  TIOPs/s ( 1x ) |
+| INT16 compute                                        14.607  TIOPs/s ( 1x ) |
+| INT8  compute                                        60.096  TIOPs/s ( 4x ) |
+| Memory Bandwidth ( coalesced read      )                        557.27 GB/s |
+| Memory Bandwidth ( coalesced      write)                        594.67 GB/s |
+| Memory Bandwidth (misaligned read      )                        559.38 GB/s |
+| Memory Bandwidth (misaligned      write)                        170.52 GB/s |
+| PCIe   Bandwidth (send                 )                          4.85 GB/s |
+| PCIe   Bandwidth (   receive           )                          5.27 GB/s |
+| PCIe   Bandwidth (        bidirectional)            (Gen3 x16)    4.96 GB/s |
+|-----------------------------------------------------------------------------|
+'-----------------------------------------------------------------------------'
+```
+
+{{% /tab %}}
+
+{{% tab "A40" %}}
+
+```
+.-----------------------------------------------------------------------------.
+|----------------.------------------------------------------------------------|
+| Device ID    0 | NVIDIA L40                                                 |
+|----------------'------------------------------------------------------------|
+|----------------.------------------------------------------------------------|
+| Device ID      | 0                                                          |
+| Device Name    | NVIDIA L40                                                 |
+| Device Vendor  | NVIDIA Corporation                                         |
+| Device Driver  | 580.126.16 (Linux)                                         |
+| OpenCL Version | OpenCL C 3.0                                               |
+| Compute Units  | 142 at 2490 MHz (18176 cores, 90.516 TFLOPs/s)             |
+| Memory, Cache  | 45457 MB VRAM, 3976 KB global / 48 KB local                |
+| Buffer Limits  | 11364 MB global, 64 KB constant                            |
+|----------------'------------------------------------------------------------|
+| Info: OpenCL C code successfully compiled.                                  |
+| FP64  compute                                         1.391 TFLOPs/s (1/64) |
+| FP32  compute                                        84.231 TFLOPs/s ( 1x ) |
+| FP16  compute                                        87.831 TFLOPs/s ( 1x ) |
+| INT64 compute                                         3.629  TIOPs/s (1/24) |
+| INT32 compute                                        44.001  TIOPs/s (1/2 ) |
+| INT16 compute                                        33.487  TIOPs/s (1/3 ) |
+| INT8  compute                                        98.593  TIOPs/s ( 1x ) |
+| Memory Bandwidth ( coalesced read      )                        712.78 GB/s |
+| Memory Bandwidth ( coalesced      write)                        472.19 GB/s |
+| Memory Bandwidth (misaligned read      )                        723.88 GB/s |
+| Memory Bandwidth (misaligned      write)                        240.26 GB/s |
+| PCIe   Bandwidth (send                 )                         16.92 GB/s |
+| PCIe   Bandwidth (   receive           )                         16.56 GB/s |
+| PCIe   Bandwidth (        bidirectional)            (Gen4 x16)   14.45 GB/s |
+|-----------------------------------------------------------------------------|
+'-----------------------------------------------------------------------------'
+```
+
+
+{{% /tab %}}
+
+{{% tab "A100" %}}
+
+```
+.-----------------------------------------------------------------------------.
+|----------------.------------------------------------------------------------|
+| Device ID    0 | NVIDIA A100 80GB PCIe                                      |
+|----------------'------------------------------------------------------------|
+|----------------.------------------------------------------------------------|
+| Device ID      | 0                                                          |
+| Device Name    | NVIDIA A100 80GB PCIe                                      |
+| Device Vendor  | NVIDIA Corporation                                         |
+| Device Driver  | 580.126.16 (Linux)                                         |
+| OpenCL Version | OpenCL C 3.0                                               |
+| Compute Units  | 108 at 1410 MHz (6912 cores, 19.492 TFLOPs/s)              |
+| Memory, Cache  | 81151 MB VRAM, 3024 KB global / 48 KB local                |
+| Buffer Limits  | 20287 MB global, 64 KB constant                            |
+|----------------'------------------------------------------------------------|
+| Info: OpenCL C code successfully compiled.                                  |
+| FP64  compute                                         9.557 TFLOPs/s (1/2 ) |
+| FP32  compute                                        19.234 TFLOPs/s ( 1x ) |
+| FP16  compute                                        72.486 TFLOPs/s ( 4x ) |
+| INT64 compute                                         2.652  TIOPs/s (1/8 ) |
+| INT32 compute                                        19.416  TIOPs/s ( 1x ) |
+| INT16 compute                                        17.616  TIOPs/s ( 1x ) |
+| INT8  compute                                        71.156  TIOPs/s ( 4x ) |
+| Memory Bandwidth ( coalesced read      )                       1514.39 GB/s |
+| Memory Bandwidth ( coalesced      write)                       1804.67 GB/s |
+| Memory Bandwidth (misaligned read      )                       1219.07 GB/s |
+| Memory Bandwidth (misaligned      write)                        209.38 GB/s |
+| PCIe   Bandwidth (send                 )                          5.70 GB/s |
+| PCIe   Bandwidth (   receive           )                          8.24 GB/s |
+| PCIe   Bandwidth (        bidirectional)            (Gen3 x16)    6.54 GB/s |
+|-----------------------------------------------------------------------------|
+'-----------------------------------------------------------------------------'
+```
+
+{{% /tab %}}
+
+{{% tab "L40" %}}
+
+```
+.-----------------------------------------------------------------------------.
+|----------------.------------------------------------------------------------|
+| Device ID    0 | NVIDIA L40                                                 |
+|----------------'------------------------------------------------------------|
+|----------------.------------------------------------------------------------|
+| Device ID      | 0                                                          |
+| Device Name    | NVIDIA L40                                                 |
+| Device Vendor  | NVIDIA Corporation                                         |
+| Device Driver  | 580.126.16 (Linux)                                         |
+| OpenCL Version | OpenCL C 3.0                                               |
+| Compute Units  | 142 at 2490 MHz (18176 cores, 90.516 TFLOPs/s)             |
+| Memory, Cache  | 45457 MB VRAM, 3976 KB global / 48 KB local                |
+| Buffer Limits  | 11364 MB global, 64 KB constant                            |
+|----------------'------------------------------------------------------------|
+| Info: OpenCL C code successfully compiled.                                  |
+| FP64  compute                                         1.391 TFLOPs/s (1/64) |
+| FP32  compute                                        84.753 TFLOPs/s ( 1x ) |
+| FP16  compute                                        88.687 TFLOPs/s ( 1x ) |
+| INT64 compute                                         3.696  TIOPs/s (1/24) |
+| INT32 compute                                        44.439  TIOPs/s (1/2 ) |
+| INT16 compute                                        35.483  TIOPs/s (1/3 ) |
+| INT8  compute                                       103.977  TIOPs/s ( 1x ) |
+| Memory Bandwidth ( coalesced read      )                        713.57 GB/s |
+| Memory Bandwidth ( coalesced      write)                        474.25 GB/s |
+| Memory Bandwidth (misaligned read      )                        725.41 GB/s |
+| Memory Bandwidth (misaligned      write)                        240.57 GB/s |
+| PCIe   Bandwidth (send                 )                         21.92 GB/s |
+| PCIe   Bandwidth (   receive           )                         21.94 GB/s |
+| PCIe   Bandwidth (        bidirectional)            (Gen4 x16)   20.65 GB/s |
+|-----------------------------------------------------------------------------|
+'-----------------------------------------------------------------------------'
+```
+
+{{% /tab %}}
+
+{{< /tabs >}}
+
+
 ## Kokkos/RAJA on Klone
 
 ### Requesting Nodes
