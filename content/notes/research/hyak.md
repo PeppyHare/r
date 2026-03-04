@@ -8,7 +8,7 @@ bookToc: true
 
 # Hyak HPC
 
-Just keeping any useful tips/tricks/hard-fought successful build scripts I find for working with UW's compute clusters Klone and Tillicum
+Just keeping any useful tips/tricks/hard-fought successful build scripts I find for working with UW's compute clusters [Klone](https://hyak.uw.edu/docs/klone/architecture) and [Tillicum](https://hyak.uw.edu/docs/tillicum/architecture)
 
 ## GPU Klone Nodes
 
@@ -18,17 +18,17 @@ In the `aaplasma` account we don't have direct access to any GPU-enabled partiti
 salloc -A aaplasma --partition=ckpt-all --gpus-per-node=1  --mem=24G --time=2:00:00
 ```
 
-Sort of unfortunately, the nodes are a real mix of different GPU architectures, so you can't really tell what sort of device you're going to get that way. As of January 2026, these seem to be the different flavors available:
+Sort of unfortunately, the nodes are a real mix of different GPU architectures, so you can't really tell what sort of device you're going to get that way. As of January 2026, these seem to be the different flavors available on the public checkpoint partition:
 
-| GPU | Architecture | CUDA compute capability | Klone restriction ID |  Memory |
-| --- |  ---         |  ---                    |         ---          | --- |
-| P100 | Pascal | 6.0  | p100 |  16GB of HBM2 memory per GPU card |
-| 2080 Ti | Turing | 7.5 | 2080ti | 11GB of GDDR6 memory per GPU card |
-| RTX 6000 | Turing | 7.5 | rtx6k |  48GB of GDDR6 memory per GPU card |
-| A40 | Ampere | 8.6 | a40 | 48GB of GDDR6 memory per GPU card |
-| A100 | Ampere | 8.0 | a100 | 40GB of HBM2 memory per GPU card |
-| L40 / L40s | Lovelace | 8.9 | l40 / l40s | 48GB of GDDR6 memory per GPU card |
-| H200 | Hopper | 9.0 | h200 | 141 GB memory (but not allowed on checkpoint partition) |
+| GPU      | Architecture | CUDA Arch | Klone restriction | Memory per GPU                  | GPU/node | # nodes |
+| -------- | ------------ | --------- | ----------------- | ------------------------------- | -------- | ------- |
+| P100     | Pascal       | 6.0       | p100              | 16GB HBM2                       | 4        | 2       |
+| 2080 Ti  | Turing       | 7.5       | 2080ti            | 11GB GDDR6                      | 8        | 10      |
+| RTX 6000 | Turing       | 7.5       | rtx6k             | 48GB GDDR6                      | 8        | 11      |
+| A40      | Ampere       | 8.6       | a40               | 48GB GDDR6                      | 8        | 32      |
+| A100     | Ampere       | 8.0       | a100              | 40GB HBM2                       | 8        | 8       |
+| L40      | Lovelace     | 8.9       | l40 / l40s        | 48GB GDDR6                      | 8        | 15 / 25 |
+| H200     | Hopper       | 9.0       | h200              | 141 (not allowed on checkpoint) | 8        | 8       |
 
 To get a sense of just what these cards can do, I've used this exceptionally useful OpenCL benchmark demo: https://github.com/ProjectPhysX/OpenCL-Benchmark
 
