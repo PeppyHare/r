@@ -110,6 +110,29 @@ ar -rcs /mmfs1/gscratch/aaplasma/embluhm/tools/METIS/lib/libmetis.a *.o
 cd && rm -rf /tmp/metis_combined
 ```
 
+### Static build with -fPIC
+
+At some point for some reason, my build stopped working without building METIS with support for position-independent code (the -fPIC option for most compilers). This means building metis and gklib with the shared=1 option, and making some fixes to their build pipeline. For this, I've chosen to use the same prefix for both gklib and metis, since that solves a lot of dependency resolution problems and gets rid of the need for that archive mess above:
+
+```
+module load gcc/13.2.0
+git clone https://github.com/KarypisLab/METIS.git
+git clone https://github.com/KarypisLab/GKlib.git
+
+cd GKlib
+make config shared=1 prefix=/mmfs1/gscratch/aaplasma/embluhm/tools/METIS
+cd build/Linux-x86_64 && make -j12 install
+# For reasons I do not understand, METIS is looking for the new static libGKlib.so under lib/, but the 
+# GKlib build puts it under lib64/libGKlib.so.0.0.1, so we need to add a symbolic link to where METIS is looking
+ln -s /gscratch/aaplasma/embluhm/tools/METIS/lib64/libGKlib.so /gscratch/aaplasma/embluhm/tools/METIS/lib/
+ln -s /gscratch/aaplasma/embluhm/tools/METIS/lib64/libGKlib.so.0 /gscratch/aaplasma/embluhm/tools/METIS/lib/
+ln -s /gscratch/aaplasma/embluhm/tools/METIS/lib64/libGKlib.so.0.0.1 /gscratch/aaplasma/embluhm/tools/METIS/lib/
+
+cd ../../../METIS
+make config shared=1 prefix=/mmfs1/gscratch/aaplasma/embluhm/tools/METIS
+cd build && make -j12 install
+```
+
 ## Building HDF5-parallel
 
 With no HDF5 module to rely on, we can just build it ourselves. It's not too bad, as long as we get lucky :)
@@ -214,9 +237,8 @@ cd build || return 1
 ctest -j20 --output-on-failure --label-regex "Unit" || return 1
 ```
 
-I put all of this into a `klone_build_script.sh`, and then kick off a build with:
+I put all of this into a `klone_build_script.sh` in the warpxm project root, and then kick off a build with:
 
 ```bash
 salloc -A aaplasma -c 20 --mem=24G --time=2:00:00 srun ./klone_build_script.sh
 ```
-
