@@ -2,7 +2,7 @@
 &lt;!-- Eric Meier --&gt;
 &lt;p&gt;&lt;strong&gt;What is computational fluid dynamics?&lt;/strong&gt; Put simply, it&amp;rsquo;s the use of computers to obtain a numerical solution to the governing equations of fluid dynamics. As always, the numerical solution is an approximation to the real solution to the equations, but additionally those equations are themselves only an approximation of the real physics.&lt;/p&gt;
 &lt;p align="center"&gt; &lt;img alt="Figure 20.1" src="https://peppyhare.github.io/r/img/20.1.png" /&gt; &lt;/p&gt;
-&lt;p&gt;We will be interested in speeds much less than \( c \) (\( 3 \cdot 10^8 m/s) \) and distances much greater than the atomic radius \( \alpha_{bohr} = 5 \cdot 10^{-11} m \).&lt;/p&gt;</description></item><item><title>Governing Equations</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch20-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch20-2/</guid><description>&lt;h1 id="governing-equations"&gt;&lt;strong&gt;Governing Equations&lt;/strong&gt;&lt;a class="anchor" href="#governing-equations"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;We will be interested in speeds much less than \( c \) (\( 3 \cdot 10^8 \) m/s) and distances much greater than the atomic radius \( \alpha_{bohr} = 5 \cdot 10^{-11} \) m.&lt;/p&gt;</description></item><item><title>Governing Equations</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch20-2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch20-2/</guid><description>&lt;h1 id="governing-equations"&gt;&lt;strong&gt;Governing Equations&lt;/strong&gt;&lt;a class="anchor" href="#governing-equations"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;Continuity&lt;/p&gt;
 
 &lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
@@ -109,11 +109,7 @@
  \[a \phi_{xx} &amp;#43; b \phi_{xy} &amp;#43; c \phi_{yy} &amp;#43; d \phi_x &amp;#43; e \phi_y &amp;#43; f \phi = g\]
 &lt;/span&gt;
 
-&lt;p&gt;where \( x, y \) are any two independent variables. I.e. we could let \( x \rightarrow t \). In this form, we can identify the equation type by transforming into a quadratic form (derivation not shown)&lt;/p&gt;</description></item><item><title>Panel Method</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch20-5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch20-5/</guid><description>&lt;h1 id="205-panel-method"&gt;&lt;strong&gt;20.5&lt;/strong&gt; Panel Method&lt;a class="anchor" href="#205-panel-method"&gt;#&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;Panel methods are a classical approach to solving flow problems that is still very useful today when finding solutions to even very complicated geometries. You represent a body as a series of panels.&lt;/p&gt;
-&lt;p&gt;A few definitions first: we say a &lt;strong&gt;source panel&lt;/strong&gt; of strength \( \lambda \) (units m/s) is defined by:&lt;/p&gt;
-
-&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
+&lt;p&gt;where \( x, y \) are any two independent variables. I.e. we could let \( x \rightarrow t \). In this form, we can identify the equation type by transforming into a quadratic form (derivation not shown)&lt;/p&gt;</description></item><item><title>Panel Method</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch20-5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch20-5/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/auto-render.min.js" onload="loadKatex();"&gt;&lt;/script&gt;
 
@@ -155,18 +151,11 @@
  });
  };
 &lt;/script&gt;&lt;span&gt;
- \[\phi_p = \frac{1}{2 \pi} \int \lambda \ln (r) \dd s\]
+ \[\]
 &lt;/span&gt;
 
-&lt;span&gt;
- \[= \frac{1}{2 \pi} \int \lambda \ln \left( \sqrt{ (x_p - x)^2 &amp;#43; (y_p - y)^2}\right) \dd s\]
-&lt;/span&gt;
-
-&lt;span&gt;
- \[\lambda = 2 u_\lambda\]
-&lt;/span&gt;
-
-&lt;p align="center"&gt; &lt;img alt="Figure 20.2" src="https://peppyhare.github.io/r/img/20.2.png" /&gt; &lt;/p&gt;</description></item><item><title>Finite Difference Algorithms</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch21-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch21-1/</guid><description>&lt;h1 id="211-finite-difference-algorithms"&gt;21.1 Finite Difference Algorithms&lt;a class="anchor" href="#211-finite-difference-algorithms"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id="205-panel-method"&gt;&lt;strong&gt;20.5&lt;/strong&gt; Panel Method&lt;a class="anchor" href="#205-panel-method"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Panel methods are a classical approach to solving flow problems that is still very useful today when finding solutions to even very complicated geometries. You represent a body as a series of panels.&lt;/p&gt;</description></item><item><title>Finite Difference Algorithms</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch21-1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch21-1/</guid><description>&lt;h1 id="211-finite-difference-algorithms"&gt;21.1 Finite Difference Algorithms&lt;a class="anchor" href="#211-finite-difference-algorithms"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;h2 id="definitions"&gt;Definitions&lt;a class="anchor" href="#definitions"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;By definition, &lt;strong&gt;Finite Differencing&lt;/strong&gt; is a method to &lt;em&gt;approximate&lt;/em&gt; partial differential equations which we cannot solve, into a system of algebraic equations which we can.&lt;/p&gt;
 &lt;p&gt;Notation to simplify our representations:&lt;/p&gt;
@@ -302,7 +291,7 @@
  });
  };
 &lt;/script&gt;&lt;span&gt;
- \[\left| \frac{a \Delta x}{\Delta t} \right| \leq 1\]
+ \[\left| \frac{a \Delta t}{\Delta x} \right| \leq 1\]
 &lt;/span&gt;
 
 &lt;p&gt;For a given grid, this effectively sets a limit on the time step. The time step can be no larger than the grid spacing divided by the propagation constant \( \Delta t \leq \Delta x / |a| \). As an example, say we have a device of interest that is 1 meter long, and we want a grid resolution such that we can resolve features that are 1mm in size. Say the problem domain is flow over an airfoil&lt;/p&gt;</description></item><item><title>Numerical Boundary Conditions</title><link>https://peppyhare.github.io/r/notes/UWAA543/ch21-5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/UWAA543/ch21-5/</guid><description>&lt;h1 id="numerical-boundary-conditions"&gt;Numerical Boundary Conditions&lt;a class="anchor" href="#numerical-boundary-conditions"&gt;#&lt;/a&gt;&lt;/h1&gt;
