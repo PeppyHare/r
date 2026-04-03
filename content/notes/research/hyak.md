@@ -57,6 +57,99 @@ To get a sense of just what these cards can do, I've used this exceptionally use
 | PCIe Bidirectional (GB/s)   |     9.59 |     4.82 |     4.96 |     7.10 |     6.54 |    20.65 |
 | PCIe Generation             | Gen4 x16 | Gen3 x16 | Gen3 x16 | Gen3 x16 | Gen3 x16 | Gen4 x16 |
 
+## Checking GPU availability
+
+The `sinfo` command they provide in their documentation here https://hyak.uw.edu/docs/gpus/gpu_start/#gpu-jobs will list the nodes with GPUs and their usage status, but it's a bit hard to glance at. I've got a big `awk` command to parse it out and make it a bit easier to read:
+
+<details>
+<summary>gpucount bash command</summary>
+
+```bash
+# Show available GPU counts by type on the ckpt-all partition
+gpucount() {
+    sinfo -p ckpt-all -O nodehost,cpusstate,freemem,gres,gresused -S nodehost \
+  | grep -v null \
+  | tail -n +2 \
+  | awk '
+{
+    # Parse GRES column: gpu:<type>:<total>
+    split($4, gres, ":")
+    gpu_type = gres[2]
+    total = gres[3] + 0
+
+    # Parse GRES_USED column: gpu:<type>:<used>(IDX:...)
+    split($5, used_parts, ":")
+    # used count is the number before "(" in the third field
+    split(used_parts[3], used_num, "(")
+    used = used_num[1] + 0
+
+    # Check if node is down/offline (O > 0 in A/I/O/T)
+    split($2, cpu, "/")
+    offline = cpu[3] + 0
+    total_cpus = cpu[4] + 0
+    if (offline == total_cpus && total_cpus > 0) next
+
+    avail = total - used
+    available[gpu_type] += avail
+    total_gpus[gpu_type] += total
+    in_use[gpu_type] += used
+    nodes[gpu_type]++
+    if (used == 0) empty[gpu_type]++
+}
+END {
+    # Sort by GPU type
+    n = asorti(available, sorted)
+
+    printf "%-12s  %5s  %5s  %5s  %5s  %5s\n", \
+        "GPU TYPE", "AVAIL", "USED", "TOTAL", "NODES", "EMPTY"
+    printf "%-12s  %5s  %5s  %5s  %5s  %5s\n", \
+        "--------", "-----", "----", "-----", "-----", "-----"
+
+    total_avail = 0
+    total_used = 0
+    total_total = 0
+    total_nodes_up = 0
+    total_empty = 0
+
+    for (i = 1; i <= n; i++) {
+        t = sorted[i]
+        printf "%-12s  %5d  %5d  %5d  %5d  %5d\n", \
+            t, available[t], in_use[t], total_gpus[t], nodes[t], empty[t]+0
+        total_avail += available[t]
+        total_used += in_use[t]
+        total_total += total_gpus[t]
+        total_nodes_up += nodes[t]
+        total_empty += empty[t]+0
+    }
+
+    printf "%-12s  %5s  %5s  %5s  %5s  %5s\n", \
+        "--------", "-----", "----", "-----", "-----", "-----"
+    printf "%-12s  %5d  %5d  %5d  %5d  %5d\n", \
+        "TOTAL", total_avail, total_used, total_total, total_nodes_up, total_empty
+}
+'
+}
+```
+
+</details>
+
+This gives us something like this, which is a bit easier for a human to parse:
+
+```
+[embluhm@klone-login03 runs]$ gpucount
+GPU TYPE      AVAIL   USED  TOTAL  NODES  EMPTY
+--------      -----   ----  -----  -----  -----
+2080ti           13     47     60      8      1
+a100             12     52     64      8      0
+a40              78    162    240     30      2
+h200              8     56     64      8      1
+l40              31     81    112     14      0
+l40s             83    101    184     23      6
+p100              0      8      8      2      0
+rtx6k            50     38     88     11      3
+--------      -----   ----  -----  -----  -----
+TOTAL           275    545    820    104     13
+```
 
 ## Kokkos/RAJA on Klone
 
