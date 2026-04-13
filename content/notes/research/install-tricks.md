@@ -353,12 +353,32 @@ I don't have a mac with a proper GPU any more (most people don't!), so I'm just 
 
 For my purposes, I want ADIOS2 with the Kokkos backend enabled so that I can get direct GPU I/O with the WARPXM writer host action. So we build ADIOS2 from source and point it at an existing Kokkos installation:
 
-```bash
-export OMPI_CXX=/gscratch/aaplasma/embluhm/tools/kokkos-cuda12.9.1/bin/nvcc_wrapper
-export PKG_CONFIG_PATH=/sw/ompi/4.1.6-2/lib/pkgconfig:$PKG_CONFIG_PATH
+1. Check out the ADIOS2 source repo
+    ```
+     git clone https://github.com/ornladios/ADIOS2.git
+    ```
+2. Create a build script for submitting to a job queue
+    ```bash
+    # build_adios.sh
+    module purge
+    module load cuda/12.9.1 ompi/4.1.6-2 gcc/13.2.0
+    rm -rf build
+    mkdir -p build
+    cmake -B build/ \
+      -DADIOS2_USE_MPI=ON \
+      -DADIOS2_USE_Kokkos=ON \
+      -DADIOS2_USE_Python=OFF\
+      -DADIOS2_BUILD_EXAMPLES=OFF\
+      -DKokkos_ROOT=/gscratch/aaplasma/embluhm/tools/kokkos-cuda12.9.1\
+      -DCUDAToolkit_ROOT=/sw/cuda/12.9.1\
+      -DCMAKE_INSTALL_PREFIX=/gscratch/aaplasma/embluhm/tools/ADIOS2
+    cd build && make -j20 install
+    ```
+3. Submit the build:
+    ```
+    salloc -A aaplasma -c 40 --mem=24G --time=2:00:00 srun bash ./build_adios.sh
+    ```
 
-
-```
 
 {{% /tab %}}
 
