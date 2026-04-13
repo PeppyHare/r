@@ -277,18 +277,131 @@ Aurora has first-class support for the Intel DPCPP compiler, so just use `icpx` 
 {{< /tabs >}}
 
 
+# Kokkos
 
-# ROCm/HIPCC
+{{< tabs >}}
 
-Installing ROCm on an older machine in the lab (the linux box that runs the WARPXM CI builds) so that I can test out some RAJA programming. It has a Radeon HD 7970 card installed, which is pretty old but it should still be supported.
+{{% tab "MacOS" %}}
 
-{{% details "Title" open %}}
-## Markdown content
-Lorem markdownum insigne...
-{{% /details %}}
+I don't have a mac with a proper GPU any more (most people don't!), so I'm just building for the OpenMP backend here. Performance isn't very good, but at least it runs.
+
+1. Grab the Kokkos source from a [GitHub release](https://github.com/kokkos/kokkos/releases) (latest is probably good)
+2. Install `llvm` with homebrew, so that we can use the OpenMP target
+    ```
+    brew install llvm
+    ```
+3. Build it! We build with `-fPIC` so that we can load it as a shared library when building both WARPXM and ADIOS2
+    ```bash
+    mkdir build
+    cd build && \
+    cmake \
+      -DCMAKE_CXX_COMPILER=/opt/homebrew/opt/llvm/bin/clang++ \
+      -DCMAKE_INSTALL_PREFIX=/Users/evan/tools/kokkos \
+      -DKokkos_ENABLE_OPENMP=ON \
+      -DKokkos_ENABLE_SERIAL=ON \
+      -DKokkos_ENABLE_TUNING=ON \
+      -DCMAKE_POSITION_INDEPENDENT_CODE=ON .. \
+    && make -j6 install
+    ```
+
+{{% /tab %}}
+
+{{% tab "Hyak" %}}
+
+1. Grab the Kokkos source from a [GitHub release](https://github.com/kokkos/kokkos/releases) (latest is probably good)
+2. Create a build script (e.g. build_kokkos.sh). I've chosen to only enable the CUDA backend and not the OpenMP backend, because I'm not using OpenMP thread parallelism and I don't want to have to deal with setting OpenMP environment variables every time I run something just to avoid it spinning up OpenMP threads to do nothing. If you want OpenMP enabled, just turn on that option. I've picked CUDA arch 7.5 as the minimum version to use. 
+    ```
+    #!/bin/bash -ex
+    
+    module purge
+    module load cuda/12.9.1 ompi/4.1.6-2 gcc/13.2.0
+    
+    rm -rf build
+    mkdir -p build
+    cmake -B build/ \
+      -DCMAKE_INSTALL_PREFIX=/gscratch/aaplasma/embluhm/tools/kokkos-cuda12.9.1 \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DKokkos_ENABLE_CUDA=ON -DCUDA_ROOT=/sw/cuda/12.9.1 -DKokkos_ARCH_TURING75=ON \
+      -DKokkos_ENABLE_OPENMP=OFF -DKokkos_ENABLE_SERIAL=ON \
+      -DCMAKE_POSITION_INDEPENDENT_CODE=ON
+    cmake --build build/ -j20
+    cd build
+    make install
+    ln -s /gscratch/aaplasma/embluhm/tools/kokkos-cuda12.9.1/lib64 /gscratch/aaplasma/embluhm/tools/kokkos-cuda12.9.1/lib
+    ```
+3. Make it executable
+    ```
+    chmod +x build_kokkos.sh
+     ```
+4. Submit a job to build Kokkos using the build script. This will take a little while. Afterwards, Kokkos will be installed at the location specified by CMAKE_INSTALL_PREFIX in the build script (can be wherever you want)
+    ```
+    salloc -A aaplasma -c 20 --mem=24G --time=2:00:00 srun ./build_kokkos.sh
+    ```
+
+{{% /tab %}}
+
+{{< /tabs >}}
 
 
-> [!NOTE]
-> **Markdown content**  
-> Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
-> stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
+
+# ADIOS2
+
+
+{{< tabs >}}
+
+{{% tab "Hyak" %}}
+
+For my purposes, I want ADIOS2 with the Kokkos backend enabled so that I can get direct GPU I/O with the WARPXM writer host action. So we build ADIOS2 from source and point it at an existing Kokkos installation:
+
+```bash
+export OMPI_CXX=/gscratch/aaplasma/embluhm/tools/kokkos-cuda12.9.1/bin/nvcc_wrapper
+export PKG_CONFIG_PATH=/sw/ompi/4.1.6-2/lib/pkgconfig:$PKG_CONFIG_PATH
+
+
+```
+
+{{% /tab %}}
+
+{{% tab "MacOS" %}}
+
+I'm not sure how useful it will be on a macos system, but I'd still like to test out the Kokkos backend for WARPXM on a mac, and I might as well exercise the adios writer while I'm at it. This seems to work, with the Kokkos I've already installed at /Users/evan/tools/kokkos
+
+```bash
+BUILD_DIR="$(cd "$(dirname "$0")" && pwd)/build"
+INSTALL_PREFIX="/Users/evan/tools/ADIOS2"
+KOKKOS_ROOT="/Users/evan/tools/kokkos"
+OPENMPI_PREFIX="$(brew --prefix open-mpi)"
+LIBOMP_PREFIX="$(brew --prefix libomp)"
+
+rm -rf "$BUILD_DIR"
+
+cmake -B "$BUILD_DIR" \
+  -DCMAKE_C_COMPILER=/usr/bin/clang \
+  -DCMAKE_CXX_COMPILER=/usr/bin/clang++ \
+  -DADIOS2_USE_MPI=ON \
+  -DADIOS2_USE_Kokkos=ON \
+  -DADIOS2_USE_Python=OFF \
+  -DADIOS2_BUILD_EXAMPLES=OFF \
+  -DBUILD_SHARED_LIBS=OFF \
+  -DKokkos_ROOT="$KOKKOS_ROOT" \
+  -DCMAKE_PREFIX_PATH="$OPENMPI_PREFIX" \
+  -DCMAKE_INSTALL_PREFIX="$INSTALL_PREFIX" \
+  -DOpenMP_CXX_FLAGS="-Xclang -fopenmp" \
+  -DOpenMP_CXX_LIB_NAMES="omp" \
+  -DOpenMP_omp_LIBRARY="$LIBOMP_PREFIX/lib/libomp.dylib" \
+  -DOpenMP_C_FLAGS="-Xclang -fopenmp" \
+  -DOpenMP_C_LIB_NAMES="omp" \
+  -DCMAKE_CXX_FLAGS="-I$LIBOMP_PREFIX/include" \
+  -DCMAKE_C_FLAGS="-I$LIBOMP_PREFIX/include"
+
+cmake --build "$BUILD_DIR" -j"$(sysctl -n hw.ncpu)"
+
+export CMAKE_PREFIX_PATH="$KOKKOS_ROOT:${CMAKE_PREFIX_PATH:-}"
+cmake --install "$BUILD_DIR"
+
+```
+
+{{% /tab %}}
+
+
+{{< /tabs >}}
