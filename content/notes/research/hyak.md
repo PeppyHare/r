@@ -335,3 +335,268 @@ I put all of this into a `klone_build_script.sh` in the warpxm project root, and
 ```bash
 salloc -A aaplasma -c 20 --mem=24G --time=2:00:00 srun ./klone_build_script.sh
 ```
+
+## Spack
+
+`spack` is a software build system geared towards HPC applications with lots of complicated dependencies. The [documentation for Spack](https://spack.readthedocs.io/en/latest) gives a good overview.
+
+There are a few quirks to using Spack on Hyak.
+
+### Set-up prereqs
+
+- Spack wants a Python version higher than 3.8, so the default `/usr/bin/python3` doesn't cut it. I've had good luck using miniconda for my python environment. [The Hyak documentation](https://hyak.uw.edu/docs/tools/python) has a good set of instructions for installing miniconda on Hyak in a way that actually works. Since I'm using miniconda, I set this environment variable:
+    ```bash
+    # ~/.bashrc
+    export SPACK_PYTHON=/gscratch/aaplasma/embluhm/tools/miniconda3/bin/python3
+    ```
+- As usual, the slow GPFS filesystem makes the spack package cache nearly useless, and it can take ~30+ minutes just to refresh the latest package registries. To fix this, we can tell it to use the local scratch disk `/scr` for the local downloads
+    ```bash
+    # ~/.bashrc
+    export SPACK_USER_CACHE_PATH=/scr/embluhm/.spack
+    export spack_user_config_path=/scr/embluhm/.spack
+    ```
+
+### Install Spack
+
+Spack is just a collection of Python and Bash scripts, so installing is as simple as cloning the repo. I tend to keep everything in my folder in the departmental gscratch space:
+
+```bash
+git clone https://github.com/spack/spack.git /gscratch/aaplasma/embluhm/tools/spack
+```
+
+To load the spack commands into our shell, we source their setup file
+
+```bash
+# ~/.bashrc
+. /gscratch/aaplasma/embluhm/tools/spack/share/spack/setup-env.sh
+```
+
+### Configure Spack
+
+Now, before we start actually using spack to do anything, I find it useful to configure it for the Hyak environment. Specifically, I want Spack to use the same `gcc` compiler module that I'm using to compile my code. I also want to tell it about the system `mpi` and `cuda` modules, and  I want to install the resulting Spack-compiled packages into my own directory. There are three config files I use to do this:
+
+```bash
+mkdir -p ~/.spack
+```
+
+```yaml
+# ~/.spack/config.yaml
+config:
+  install_tree:
+    root: /mmfs1/gscratch/aaplasma/embluhm/spack-install
+  build_stage:
+    - /tmp/embluhm/spack-stage
+  source_cache: /mmfs1/gscratch/aaplasma/embluhm/spack-cache
+  misc_cache: /mmfs1/gscratch/aaplasma/embluhm/spack-misc-cache
+```
+
+```yaml
+# ~/.spack/packages.yaml
+packages:
+  all:
+    providers:
+      mpi: [openmpi]
+  gcc:
+    externals:
+    - spec: gcc@13.2.0
+      prefix: /sw/gcc/13.2.0
+      extra_attributes:
+        compilers:
+          c: /sw/gcc/13.2.0/bin/gcc
+          cxx: /sw/gcc/13.2.0/bin/g++
+          fortran: /sw/gcc/13.2.0/bin/gfortran
+    buildable: false
+  cuda:
+    externals:
+    - spec: cuda@12.9.86
+      prefix: /sw/cuda/12.9.1
+    buildable: false
+  mpi:
+    require: openmpi@4.1.6
+  openmpi:
+    externals:
+    - spec: openmpi@4.1.6
+      prefix: /sw/ompi/4.1.6-2
+    buildable: false
+```
+
+```yaml
+# ~/.spack/modules.yaml
+modules:
+  default:
+    roots:
+      lmod: /mmfs1/gscratch/aaplasma/embluhm/spack-modules/lmod
+    enable:
+    - lmod
+    lmod:
+      hpctoolkit:
+        autoload: none
+      all:
+        autoload: direct
+      core_compilers:
+      - gcc@13.2.0
+```
+
+### Using Spack
+
+With all of our configuration in place, we can use spack to install a package. First, let's run `spack compiler find` to check that Spack knows about our compiler modules. The first spack command we run will cause it to fetch some package info, so it'll take a little bit longer
+
+```bash
+salloc -A aaplasma -c 40 --mem=24G --time=2:00:00
+(base) [embluhm@n3363 embluhm]$ spack compiler find
+remote: Enumerating objects: 20139, done.
+remote: Counting objects: 100% (20139/20139), done.
+remote: Compressing objects: 100% (10881/10881), done.
+remote: Total 20139 (delta 1313), reused 14041 (delta 1145), pack-reused 0 (from 0)
+==> Added 1 new compiler to /mmfs1/home/embluhm/.spack/packages.yaml
+    gcc@8.5.0
+==> Compilers are defined in the following files:
+    /mmfs1/home/embluhm/.spack/packages.yaml
+
+(base) [embluhm@n3363 embluhm]$ spack compiler list
+==> Available compilers
+-- gcc rocky8-x86_64 --------------------------------------------
+[e]  gcc@8.5.0  [e]  gcc@13.2.0
+```
+
+Run `spack solve` on a small package, which causes Spack to install the concretizer (the component that determines how best to build the latest version of a new package) and show how it would build the package for us
+
+```bash
+(base) [embluhm@n3363 embluhm]$ spack solve zlib
+==> Installing "clingo-bootstrap@=spack~apps~docs+ipo+optimized+python+static_libstdcpp build_system=cmake build_type=Release commit=2a025667090d71b2c9dce60fe924feb6bde8f667 generator=make patches:=bebb819,ec99431 platform=linux os=centos7 target=x86_64" from a buildcache
+==> Best of 1 considered solutions.
+
+  Priority  Value  Criterion
+         1      0  requirement weight
+         2      0  deprecated versions used
+         3      0  version badness (roots)
+         4      0  variant penalty (roots)
+         5      0  default values of variants not being used (roots)
+         6      0  preferred compilers
+         7      0  compiler penalty from reuse
+         8      0  variant penalty (non-roots)
+         9      0  preferred providers (excluded compilers and language runtimes)
+        10      0  number of compilers used on the same node
+        11      0  non-preferred OS's
+        12      0  version badness (non roots)
+        13      0  default values of variants not being used (non-roots)
+        14      0  target mismatches
+        15      0  non-preferred targets
+        16      0  preferred providers (language runtimes)
+        17      0  version badness (runtimes)
+        18      0  non-preferred targets (runtimes)
+        19      0  providers on edges
+        20      0  version badness on edges
+        21      0  penalty on symmetric duplicates
+        22      1  number of packages to build (vs. reuse)
+        23      0  number of nodes from the same package
+        24      0  build unification sets
+        25      0  deprecated versions used
+        26      0  version badness (roots)
+        27      0  variant penalty (roots)
+        28      0  default values of variants not being used (roots)
+        29      0  preferred compilers
+        30      0  compiler penalty from reuse
+        31      0  variant penalty (non-roots)
+        32      0  preferred providers (excluded compilers and language runtimes)
+        33      0  number of compilers used on the same node
+        34      0  non-preferred OS's
+        35      5  version badness (non roots)
+        36      0  default values of variants not being used (non-roots)
+        37      0  target mismatches
+        38     14  non-preferred targets
+        39      0  preferred providers (language runtimes)
+        40     12  version badness (runtimes)
+        41     14  non-preferred targets (runtimes)
+        42      0  providers on edges
+        43     10  version badness on edges
+        44      0  penalty on symmetric duplicates
+
+
+  Legend:
+    Specs to be built
+    Reused specs
+    Other criteria
+
+ -   zlib@1.3.2+optimize+pic+shared build_system=makefile platform=linux os=rocky8 target=cascadelake %c,cxx=gcc@13.2.0
+[+]      ^compiler-wrapper@1.0 build_system=generic platform=linux os=rocky8 target=cascadelake
+[e]      ^gcc@13.2.0+binutils+bootstrap~graphite+libsanitizer~mold~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages:='c,c++,fortran' platform=linux os=rocky8 target=x86_64
+[+]      ^gcc-runtime@13.2.0 build_system=generic platform=linux os=rocky8 target=cascadelake
+[e]      ^glibc@2.28 build_system=autotools platform=linux os=rocky8 target=x86_64
+[+]      ^gmake@4.4.1~guile build_system=generic platform=linux os=rocky8 target=cascadelake %c=gcc@13.2.0
+```
+
+If we install it, then Spack should fetch and build all of the relevant build tools and dependencies, and install the package into the config.install_tree.root that we specified
+
+```bash
+(base) [embluhm@n3363 embluhm]$ spack install zlib
+[+] dbyksgm zlib@1.3.2 /mmfs1/gscratch/aaplasma/embluhm/spack-install/linux-cascadelake/zlib-1.3.2-dbyksgmjtrsrjxyt5vevardk4ltnycxl (13s)
+```
+
+To use the package, we can use the `spack load` command to set the appropriate environment variables
+
+```bash
+(base) [embluhm@n3363 embluhm]$ spack load zlib
+(base) [embluhm@n3363 embluhm]$ env | grep zlib
+CMAKE_PREFIX_PATH=/mmfs1/gscratch/aaplasma/embluhm/spack-install/linux-cascadelake/zlib-1.3.2-dbyksgmjtrsrjxyt5vevardk4ltnycxl:/mmfs1/gscratch/aaplasma/embluhm/spack-install/linux-cascadelake/gcc-runtime-13.2.0-hopjej6gea46kacn3xvpmqn4cn6f7uln
+MANPATH=/mmfs1/gscratch/aaplasma/embluhm/spack-install/linux-cascadelake/zlib-1.3.2-dbyksgmjtrsrjxyt5vevardk4ltnycxl/share/man:/usr/share/man:/opt/ohpc/admin/lmod/lmod/share/man:
+PKG_CONFIG_PATH=/mmfs1/gscratch/aaplasma/embluhm/spack-install/linux-cascadelake/zlib-1.3.2-dbyksgmjtrsrjxyt5vevardk4ltnycxl/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib64/pkgconfig:/mmfs1/home/embluhm/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:/mmfs1/home/embluhm/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:
+```
+
+## HPCToolkit
+
+You've got to use Spack to install `hpctoolkit`, so follow the Spack instructions first!
+
+Once Spack is all set up, installing it should be a breeze (even though it may take quite a while)
+
+```bash
+salloc -A aaplasma -c 40 --mem=24G --time=2:00:00 srun spack install -j20 hpctoolkit +cuda +mpi
+[+] ky4iupi hpctoolkit@2025.1.2 /mmfs1/gscratch/aaplasma/embluhm/spack-install/linux-cascadelake/hpctoolkit-2025.1.2-ky4iupieagu5ojporiq76f4nwtqu7n4l (2m59s)
+```
+
+Once installed, we can use `hpcrun` to profile a WARPXM run
+
+```bash
+# Interactive session, with modules loaded as appropriate for WARPXM
+spack load hpctoolkit
+hpcrun -o hpctoolkit-warpxm-t \
+  -e CPUTIME -e gpu=cuda,pc -t \
+  /gscratch/aaplasma/embluhm/code/warpxm/build/bin/warpxm \
+    -i khi_A1-16x16x16x16-kokkos-short.inp
+```
+
+Here the `-e gpu=cuda,pc` flag tells it to monitor GPU events. The `-t` flag tells it to gather timeline information. Make sure that WARPXM is compiled with `-DCMAKE_BUILD_TYPE=RelWithDebInfo` to include source line information in the executable. The sim should run as normal. We then use a couple of other tools to analyze the profiling data and create a database that we can analyze locally with `hpcviewer`.
+
+```bash
+# Analyze CPU/GPU program structure
+hpcstruct -j10 --gpucfg yes hpctoolkit-warpxm-t
+# Interpret hpcrun profile and correlate with source information
+hpcprof -o hpctoolkit-warpxm-db hpctoolkit-warpxm-t
+```
+
+Now we can `scp` the resulting database `hpctoolkit-warpxm-db` to our local machine and view the results. Follow the installation docs to find the pre-built `hpcviewer` binaries for your machine: https://gitlab.com/hpctoolkit/hpcviewer/-/blob/main/INSTALL.md. Then open up hpcviewer and 'Open local database' -> hpctoolkit-warpxm-db. You should see a Profile tab and a Trace tab.
+
+The Profile tab lets you drill down in the call stack to the source code locations where the program spends the majority of its time:
+
+<p align="center"> <img alt="hpctoolkit-profile-tab.png" src="/r/img/research/hpctoolkit-profile-tab.png"/> </p>
+
+The Trace tab gives us a timeline of the program, where each color represents a different function in the stack. Each row in the main panel corresponds with a thread, either on the CPU or the GPU. Here, we've got a single-rank run using one GPU device with two streams. We can use 'Filter' -> 'Filter execution contexts' to narrow it down to CPU thread 0, GPU thread 0, and GPU thread 1 since those are the only interesting threads for WARPXM. If we click anywhere in the main view, it takes us to the call stack at that time so we can see what's currently happening at that time
+
+<p align="center"> <img alt="hpctoolkit-timeline-tab.png" src="/r/img/research/hpctoolkit-timeline-tab.png"/> </p>
+
+Here, the top row is the CPU thread, the middle row is the default CUDA stream, and the bottom row is a second CUDA stream. We can select and drag a region of the timeline to zoom in. Clicking on a line in the call stack pane causes the timeline to display the colors of each function at that specific call stack depth, which is useful for visualizing what's going on at a specific level of the program. For example, we can select a depth right below the `WmTemporalSolver::step()` function to visualize the lifecycle of each time step
+
+<p align="center"> <img alt="hpctoolkit-timeline-stepdt.png" src="/r/img/research/hpctoolkit-timeline-stepdt.png"/> </p>
+
+It's not the most intuitive visualization tool I've ever seen, and it doesn't give us detailed information about kernel performance or cache usage, but for really parallel programs with tons of MPI ranks it can be a really useful tool for identifying bottlenecks and load imbalances.
+
+`hpcrun` is a _sampling_ profiler, which means it takes measurements at periodic intervals. If the interval is too long, you'll miss some events. You can [set the frequency of event monitoring via hpcrun command-line arguments](https://hpctoolkit.gitlab.io/hpctoolkit/2025.1.2/users/quickstart.html#specifying-cpu-sample-sources). For example, to monitor CPU timeline data at a frequency of 200 samples/second, we would say
+
+```bash
+hpcrun -o hpctoolkit-warpxm-t \
+  -e CPUTIME@f200 -e gpu=cuda,pc -t \
+  /gscratch/aaplasma/embluhm/code/warpxm/build/bin/warpxm \
+    -i khi_A1-16x16x16x16-kokkos-short.inp
+```
+
+There are a variety of other metrics we can gather, as described [in the hpctoolkit documentation](https://hpctoolkit.gitlab.io/hpctoolkit/2025.1.2/users/hpcrun/hpcrun.html#).
