@@ -61,6 +61,8 @@ To get a sense of just what these cards can do, I've used this exceptionally use
 
 {{< csvtable src="data/gpu-benchmarks.csv" sticky="true" >}}
 
+(I've just included data for the RTX3090 in my personal desktop for comparison.)
+
 ## Checking GPU availability
 
 The `sinfo` command they provide in their documentation here https://hyak.uw.edu/docs/gpus/gpu_start/#gpu-jobs will list the nodes with GPUs and their usage status, but it's a bit hard to glance at. I've got a big `awk` command to parse it out and make it a bit easier to read:
