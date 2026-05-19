@@ -32,7 +32,7 @@ Sort of unfortunately, the nodes are a real mix of different GPU architectures, 
 
 To get a sense of just what these cards can do, I've used this exceptionally useful OpenCL benchmark demo: https://github.com/ProjectPhysX/OpenCL-Benchmark
 
-
+<!--
 |                             |  2080 Ti | RTX 6000 |      A40 |      L40 |     A100 |     P100 | RTX 3090 |
 | --------------------------- | -------: | -------: | -------: | -------: | -------: | -------: | -------: |
 | Compute Units               |       68 |       72 |       84 |      142 |      108 |       56 |       82 |
@@ -56,6 +56,10 @@ To get a sense of just what these cards can do, I've used this exceptionally use
 | PCIe Receive (GB/s)         |     5.04 |     5.27 |     4.56 |    21.94 |     8.24 |     8.96 |     5.06 |
 | PCIe Bidirectional (GB/s)   |     4.82 |     4.96 |     7.10 |    20.65 |     6.54 |     9.59 |     5.34 |
 | PCIe Generation             | Gen3 x16 | Gen3 x16 | Gen3 x16 | Gen4 x16 | Gen3 x16 | Gen4 x16 | Gen3 x16 |
+
+### Inverted View-->
+
+{{< csvtable src="data/gpu-benchmarks.csv" sticky="true" >}}
 
 ## Checking GPU availability
 

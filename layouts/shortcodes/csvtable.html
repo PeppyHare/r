@@ -1,0 +1,49 @@
+{{- /*
+  csvtable: render a CSV file from assets/ as an HTML table.
+
+  Params:
+    src    - path to the CSV file, relative to assets/  (required)
+    sticky - "true" to wrap the table in a .sticky-first-col div (optional)
+    class  - extra class(es) applied to the wrapper div (optional)
+
+  Cells whose value looks numeric (integers, decimals, simple fractions
+  like 1/32) are tagged with class="num" so they right-align via _custom.scss.
+*/ -}}
+
+{{- $src := .Get "src" -}}
+{{- if not $src -}}{{- errorf "csvtable: missing required 'src' parameter" -}}{{- end -}}
+
+{{- $file := resources.Get $src -}}
+{{- if not $file -}}{{- errorf "csvtable: file not found in assets/: %s" $src -}}{{- end -}}
+
+{{- $rows := $file | transform.Unmarshal (dict "delimiter" ",") -}}
+{{- $header := index $rows 0 -}}
+{{- $body := after 1 $rows -}}
+{{- $numericRE := `^[+-]?[0-9]+([./][0-9]+)?$` -}}
+
+{{- $classes := slice -}}
+{{- if eq (.Get "sticky") "true" -}}{{- $classes = $classes | append "sticky-first-col" -}}{{- end -}}
+{{- with .Get "class" -}}{{- $classes = $classes | append . -}}{{- end -}}
+{{- $wrap := gt (len $classes) 0 -}}
+
+{{ if $wrap }}<div class="{{ delimit $classes " " }}">{{ end }}
+<table>
+  <thead>
+    <tr>
+    {{- range $header }}
+      <th>{{ . }}</th>
+    {{- end }}
+    </tr>
+  </thead>
+  <tbody>
+  {{- range $body }}
+    <tr>
+    {{- range . -}}
+      {{- $isNum := findRE $numericRE . 1 -}}
+      <td{{ if $isNum }} class="num"{{ end }}>{{ . }}</td>
+    {{- end }}
+    </tr>
+  {{- end }}
+  </tbody>
+</table>
+{{ if $wrap }}</div>{{ end }}
