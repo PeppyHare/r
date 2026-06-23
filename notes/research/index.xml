@@ -21,13 +21,13 @@
 
 &lt;h1 id="adaptivecpp"&gt;AdaptiveCPP&lt;a class="anchor" href="#adaptivecpp"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://adaptivecpp.github.io/AdaptiveCpp/"&gt;AdaptiveCPP&lt;/a&gt; is an extremely useful compiler once it&amp;rsquo;s installed properly, but man is it a pain to get working in the first place. Here&amp;rsquo;s what I&amp;rsquo;ve done in the past:&lt;/p&gt;
-&lt;div class="book-tabs"&gt;
-&lt;input type="radio" class="toggle" name="tabs-1" id="tabs-1-0" checked="checked" /&gt;&lt;label for="tabs-1-0"&gt;MacOS&lt;/label&gt;&lt;div class="book-tabs-content markdown-inner"&gt;
+&lt;div class="book-tabs" &gt;
+&lt;input type="radio" class="toggle" name="tabs-4" id="tabs-4-0" checked="checked" /&gt;&lt;label for="tabs-4-0"&gt;MacOS&lt;/label&gt;&lt;div class="book-tabs-content markdown-inner"&gt;
 &lt;p&gt;&lt;strong&gt;MacOS&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Just use the homebrew formula. It works great on the latest Apple hardware and you don&amp;rsquo;t need to do anything extra&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew install adaptivecpp&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;input type="radio" class="toggle" name="tabs-1" id="tabs-1-1" /&gt;&lt;label for="tabs-1-1"&gt;Ubuntu Linux / WSL&lt;/label&gt;&lt;div class="book-tabs-content markdown-inner"&gt;
+&lt;input type="radio" class="toggle" name="tabs-4" id="tabs-4-1" /&gt;&lt;label for="tabs-4-1"&gt;Ubuntu Linux / WSL&lt;/label&gt;&lt;div class="book-tabs-content markdown-inner"&gt;
 &lt;p&gt;&lt;strong&gt;Ubuntu Linux&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;To be able to use the most useful &amp;ldquo;generic&amp;rdquo; backend, you really need to build &lt;code&gt;acpp&lt;/code&gt; with a recent, compatible version of LLVM, and it needs to have been built with lld and openmp enabled (which most distribution versions don&amp;rsquo;t have). On a HPC system, the version of LLVM needs to be compatible with the CUDA/ROCm version, but on a personal machine this is pretty easy. Just go with LLVM 20:&lt;/p&gt;</description></item><item><title>OCCA</title><link>https://peppyhare.github.io/r/notes/research/occa/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/occa/</guid><description>&lt;h1 id="occa"&gt;OCCA&lt;a class="anchor" href="#occa"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;While reading &amp;ldquo;Implementing Multi-GPU Scientific Computing Miniapps Across Performance Portable Frameworks&amp;rdquo; the OCCA framework caught my attention. It was not particularly performant in their comparison, but one thing that stands out is their support for the Metal backend. Metal is Apple&amp;rsquo;s proprietary graphics API, and it is (as far as I know) the only API supported by the GPU on Apple silicon (e.g. M1 macs). So I wanted to see if it actually worked.&lt;/p&gt;</description></item><item><title>Valgrind</title><link>https://peppyhare.github.io/r/notes/research/valgrind/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/valgrind/</guid><description>&lt;span&gt;

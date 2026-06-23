@@ -3615,7 +3615,7 @@ where \( \vec A \) is a J by J matrix. In equilibrium calculations, this comes u
 &lt;/span&gt;
 
 &lt;h3 id="problem-324"&gt;Problem 3.24&lt;a class="anchor" href="#problem-324"&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="book-tabs"&gt;
+&lt;div class="book-tabs" &gt;
 &lt;input type="radio" class="toggle" name="tabs-1" id="tabs-1-0" checked="checked" /&gt;&lt;label for="tabs-1-0"&gt;Q&lt;/label&gt;&lt;div class="book-tabs-content markdown-inner"&gt;
 &lt;p&gt;Solve Laplace&amp;rsquo;s equation by separation of variables in cylindrical coordinates, assuming there is no dependence on \( z \) (cylindrical symmetry). Make sure you find all solutions to the radial equation; in particular, your result must accomodate the case of an infinite line charge, for which we already know the answer.&lt;/p&gt;</description></item><item><title>Solved Problems Ch5</title><link>https://peppyhare.github.io/r/notes/griffiths/problems-ch5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/problems-ch5/</guid><description>&lt;h2 id="chapter-5-solved-problems"&gt;Chapter 5 Solved Problems&lt;a class="anchor" href="#chapter-5-solved-problems"&gt;#&lt;/a&gt;&lt;/h2&gt;
 
@@ -3665,7 +3665,7 @@ where \( \vec A \) is a J by J matrix. In equilibrium calculations, this comes u
 &lt;/span&gt;
 
 &lt;h3 id="problem-55"&gt;Problem 5.5&lt;a class="anchor" href="#problem-55"&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="book-tabs"&gt;
+&lt;div class="book-tabs" &gt;
 &lt;input type="radio" class="toggle" name="tabs-1" id="tabs-1-0" checked="checked" /&gt;&lt;label for="tabs-1-0"&gt;Q&lt;/label&gt;&lt;div class="book-tabs-content markdown-inner"&gt;
 &lt;p&gt;A current I flows down a wire of radius a. (a) If it is uniformly distributed over the surface, what is the surface current density K? (b) If it is distributed in such a way that the volume current density is inversely proportional to the distance from the axis, what is J(s)?&lt;/p&gt;</description></item><item><title>Solved Problems Ch7</title><link>https://peppyhare.github.io/r/notes/griffiths/problems-ch7/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/problems-ch7/</guid><description>&lt;h2 id="chapter-7-solved-problems"&gt;Chapter 7 Solved Problems&lt;a class="anchor" href="#chapter-7-solved-problems"&gt;#&lt;/a&gt;&lt;/h2&gt;
 
@@ -3715,7 +3715,7 @@ where \( \vec A \) is a J by J matrix. In equilibrium calculations, this comes u
 &lt;/span&gt;
 
 &lt;h3 id="problem-77"&gt;Problem 7.7&lt;a class="anchor" href="#problem-77"&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="book-tabs"&gt;
+&lt;div class="book-tabs" &gt;
 &lt;input type="radio" class="toggle" name="tabs-1" id="tabs-1-0" checked="checked" /&gt;&lt;label for="tabs-1-0"&gt;Q&lt;/label&gt;&lt;div class="book-tabs-content markdown-inner"&gt;
 &lt;p&gt;A metal bar of mass &lt;em&gt;m&lt;/em&gt; slides frictionlessly on two parallel conducting rails a distance &lt;em&gt;l&lt;/em&gt; apart. A resistor R is connected across the rails, and a uniform magnetic field &lt;strong&gt;B&lt;/strong&gt; pointing into the page fills the region.&lt;/p&gt;</description></item><item><title>Solved Problems Ch9</title><link>https://peppyhare.github.io/r/notes/griffiths/problems-ch9/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/problems-ch9/</guid><description>&lt;h2 id="chapter-9-solved-problems"&gt;Chapter 9 Solved Problems&lt;a class="anchor" href="#chapter-9-solved-problems"&gt;#&lt;/a&gt;&lt;/h2&gt;
 
@@ -3765,7 +3765,7 @@ where \( \vec A \) is a J by J matrix. In equilibrium calculations, this comes u
 &lt;/span&gt;
 
 &lt;h2 id="review-problem-1"&gt;Review Problem 1&lt;a class="anchor" href="#review-problem-1"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="book-tabs"&gt;
+&lt;div class="book-tabs" &gt;
 &lt;input type="radio" class="toggle" name="tabs-1" id="tabs-1-0" checked="checked" /&gt;&lt;label for="tabs-1-0"&gt;Q&lt;/label&gt;&lt;div class="book-tabs-content markdown-inner"&gt;
 &lt;p&gt;Current-carrying wire with gap. A large diameter wire of cross-section area \( A \) carries current uniformly over its cross-section. There is a narrow gap of width \( d \), forming a parallel-plate capacitor. The current is zero for times \( t &amp;lt; 0 \) and the current is \( I \) at times \( t &amp;gt; 0 \). The charge on the capacitor is zero at \( t = 0 \). Neglect fringe fields.&lt;/p&gt;</description></item><item><title>Adding Color</title><link>https://peppyhare.github.io/r/notes/scratch/colors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/scratch/colors/</guid><description>&lt;link rel="stylesheet" href="https://peppyhare.github.io/r/katex/katex.min.css" /&gt;
 &lt;script defer src="https://peppyhare.github.io/r/katex/katex.min.js"&gt;&lt;/script&gt;
@@ -3874,26 +3874,26 @@ where \( \vec A \) is a J by J matrix. In equilibrium calculations, this comes u
 &lt;h2 id="models"&gt;Models&lt;a class="anchor" href="#models"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Keep in mind that the behavior of a plasma is primarily determined by the ratio between a spatial length of interest and the following reference lengths. The appropriate model for describing a plasma depends on the regime defined by these lengths.&lt;/p&gt;
 &lt;table&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- &lt;th&gt;&lt;/th&gt;
- &lt;th&gt;Reference length&lt;/th&gt;
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- &lt;tr&gt;
- &lt;td&gt;Degree of magnetization&lt;/td&gt;
- &lt;td&gt;Larmor radius \( r_L \)&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;Charge separation&lt;/td&gt;
- &lt;td&gt;Debye length \( \lambda_D \)&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;Collisionality&lt;/td&gt;
- &lt;td&gt;Mean free path \( \lambda_{mfp} \)&lt;/td&gt;
- &lt;/tr&gt;
- &lt;/tbody&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;&lt;/th&gt;
+					&lt;th&gt;Reference length&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;Degree of magnetization&lt;/td&gt;
+					&lt;td&gt;Larmor radius \( r_L \)&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;Charge separation&lt;/td&gt;
+					&lt;td&gt;Debye length \( \lambda_D \)&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;Collisionality&lt;/td&gt;
+					&lt;td&gt;Mean free path \( \lambda_{mfp} \)&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id="continuum-kinetic-model"&gt;Continuum Kinetic Model&lt;a class="anchor" href="#continuum-kinetic-model"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;The continuum kinetic model is the most complete description, taking into account the forces acting upon each particle:&lt;/p&gt;</description></item><item><title>Drawing Diagrams</title><link>https://peppyhare.github.io/r/notes/scratch/drawing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/scratch/drawing/</guid><description>&lt;h3 id="graphics"&gt;Graphics&lt;a class="anchor" href="#graphics"&gt;#&lt;/a&gt;&lt;/h3&gt;
@@ -3901,14 +3901,14 @@ where \( \vec A \) is a J by J matrix. In equilibrium calculations, this comes u
 
 
 &lt;div class="goat svg-container "&gt;
- 
- &lt;svg
- xmlns="http://www.w3.org/2000/svg"
- font-family="Menlo,Lucida Console,monospace"
- 
- viewBox="0 0 712 185"
- &gt;
- &lt;g transform='translate(8,16)'&gt;
+	
+		&lt;svg
+			xmlns="http://www.w3.org/2000/svg"
+			font-family="Menlo,Lucida Console,monospace"
+			
+				viewBox="0 0 712 185"
+			&gt;
+			&lt;g transform='translate(8,16)'&gt;
 &lt;path d='M 40,32 L 104,32' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
 &lt;path d='M 24,64 L 88,64' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
 &lt;path d='M 520,64 L 584,64' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
@@ -4025,22 +4025,22 @@ where \( \vec A \) is a J by J matrix. In equilibrium calculations, this comes u
 &lt;text text-anchor='middle' x='696' y='36' fill='currentColor' style='font-size:1em'&gt;n&lt;/text&gt;
 &lt;/g&gt;
 
- &lt;/svg&gt;
- 
+		&lt;/svg&gt;
+	
 &lt;/div&gt;
 &lt;h3 id="complex"&gt;Complex&lt;a class="anchor" href="#complex"&gt;#&lt;/a&gt;&lt;/h3&gt;
 
 
 
 &lt;div class="goat svg-container "&gt;
- 
- &lt;svg
- xmlns="http://www.w3.org/2000/svg"
- font-family="Menlo,Lucida Console,monospace"
- 
- viewBox="0 0 752 393"
- &gt;
- &lt;g transform='translate(8,16)'&gt;
+	
+		&lt;svg
+			xmlns="http://www.w3.org/2000/svg"
+			font-family="Menlo,Lucida Console,monospace"
+			
+				viewBox="0 0 752 393"
+			&gt;
+			&lt;g transform='translate(8,16)'&gt;
 &lt;path d='M 0,0 L 160,0' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
 &lt;path d='M 568,0 L 600,0' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
 &lt;path d='M 184,16 L 208,16' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
@@ -4453,22 +4453,22 @@ where \( \vec A \) is a J by J matrix. In equilibrium calculations, this comes u
 &lt;text text-anchor='middle' x='712' y='132' fill='currentColor' style='font-size:1em'&gt;h&lt;/text&gt;
 &lt;/g&gt;
 
- &lt;/svg&gt;
- 
+		&lt;/svg&gt;
+	
 &lt;/div&gt;
 &lt;h3 id="process"&gt;Process&lt;a class="anchor" href="#process"&gt;#&lt;/a&gt;&lt;/h3&gt;
 
 
 
 &lt;div class="goat svg-container "&gt;
- 
- &lt;svg
- xmlns="http://www.w3.org/2000/svg"
- font-family="Menlo,Lucida Console,monospace"
- 
- viewBox="0 0 728 233"
- &gt;
- &lt;g transform='translate(8,16)'&gt;
+	
+		&lt;svg
+			xmlns="http://www.w3.org/2000/svg"
+			font-family="Menlo,Lucida Console,monospace"
+			
+				viewBox="0 0 728 233"
+			&gt;
+			&lt;g transform='translate(8,16)'&gt;
 &lt;path d='M 32,16 L 96,16' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
 &lt;path d='M 392,32 L 408,32' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
 &lt;path d='M 408,32 L 472,32' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
@@ -4612,8 +4612,8 @@ where \( \vec A \) is a J by J matrix. In equilibrium calculations, this comes u
 &lt;text text-anchor='middle' x='696' y='68' fill='currentColor' style='font-size:1em'&gt;X&lt;/text&gt;
 &lt;/g&gt;
 
- &lt;/svg&gt;
- 
+		&lt;/svg&gt;
+	
 &lt;/div&gt;
 &lt;h3 id="file-tree"&gt;File tree&lt;a class="anchor" href="#file-tree"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Created from &lt;a href="https://arthursonzogni.com/Diagon/#Tree"&gt;https://arthursonzogni.com/Diagon/#Tree&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Electrodynamic Dory-Guest-Harris Instability</title><link>https://peppyhare.github.io/r/notes/research/dgh-datta/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/dgh-datta/</guid><description>&lt;span&gt;
@@ -4651,13 +4651,13 @@ where \( \vec A \) is a J by J matrix. In equilibrium calculations, this comes u
 
 &lt;h1 id="adaptivecpp"&gt;AdaptiveCPP&lt;a class="anchor" href="#adaptivecpp"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://adaptivecpp.github.io/AdaptiveCpp/"&gt;AdaptiveCPP&lt;/a&gt; is an extremely useful compiler once it&amp;rsquo;s installed properly, but man is it a pain to get working in the first place. Here&amp;rsquo;s what I&amp;rsquo;ve done in the past:&lt;/p&gt;
-&lt;div class="book-tabs"&gt;
-&lt;input type="radio" class="toggle" name="tabs-1" id="tabs-1-0" checked="checked" /&gt;&lt;label for="tabs-1-0"&gt;MacOS&lt;/label&gt;&lt;div class="book-tabs-content markdown-inner"&gt;
+&lt;div class="book-tabs" &gt;
+&lt;input type="radio" class="toggle" name="tabs-4" id="tabs-4-0" checked="checked" /&gt;&lt;label for="tabs-4-0"&gt;MacOS&lt;/label&gt;&lt;div class="book-tabs-content markdown-inner"&gt;
 &lt;p&gt;&lt;strong&gt;MacOS&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Just use the homebrew formula. It works great on the latest Apple hardware and you don&amp;rsquo;t need to do anything extra&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew install adaptivecpp&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;input type="radio" class="toggle" name="tabs-1" id="tabs-1-1" /&gt;&lt;label for="tabs-1-1"&gt;Ubuntu Linux / WSL&lt;/label&gt;&lt;div class="book-tabs-content markdown-inner"&gt;
+&lt;input type="radio" class="toggle" name="tabs-4" id="tabs-4-1" /&gt;&lt;label for="tabs-4-1"&gt;Ubuntu Linux / WSL&lt;/label&gt;&lt;div class="book-tabs-content markdown-inner"&gt;
 &lt;p&gt;&lt;strong&gt;Ubuntu Linux&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;To be able to use the most useful &amp;ldquo;generic&amp;rdquo; backend, you really need to build &lt;code&gt;acpp&lt;/code&gt; with a recent, compatible version of LLVM, and it needs to have been built with lld and openmp enabled (which most distribution versions don&amp;rsquo;t have). On a HPC system, the version of LLVM needs to be compatible with the CUDA/ROCm version, but on a personal machine this is pretty easy. Just go with LLVM 20:&lt;/p&gt;</description></item><item><title>OCCA</title><link>https://peppyhare.github.io/r/notes/research/occa/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/occa/</guid><description>&lt;h1 id="occa"&gt;OCCA&lt;a class="anchor" href="#occa"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;While reading &amp;ldquo;Implementing Multi-GPU Scientific Computing Miniapps Across Performance Portable Frameworks&amp;rdquo; the OCCA framework caught my attention. It was not particularly performant in their comparison, but one thing that stands out is their support for the Metal backend. Metal is Apple&amp;rsquo;s proprietary graphics API, and it is (as far as I know) the only API supported by the GPU on Apple silicon (e.g. M1 macs). So I wanted to see if it actually worked.&lt;/p&gt;</description></item><item><title>Valgrind</title><link>https://peppyhare.github.io/r/notes/research/valgrind/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/research/valgrind/</guid><description>&lt;span&gt;

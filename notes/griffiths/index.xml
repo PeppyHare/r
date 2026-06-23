@@ -827,7 +827,7 @@
 &lt;/span&gt;
 
 &lt;h3 id="problem-324"&gt;Problem 3.24&lt;a class="anchor" href="#problem-324"&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="book-tabs"&gt;
+&lt;div class="book-tabs" &gt;
 &lt;input type="radio" class="toggle" name="tabs-1" id="tabs-1-0" checked="checked" /&gt;&lt;label for="tabs-1-0"&gt;Q&lt;/label&gt;&lt;div class="book-tabs-content markdown-inner"&gt;
 &lt;p&gt;Solve Laplace&amp;rsquo;s equation by separation of variables in cylindrical coordinates, assuming there is no dependence on \( z \) (cylindrical symmetry). Make sure you find all solutions to the radial equation; in particular, your result must accomodate the case of an infinite line charge, for which we already know the answer.&lt;/p&gt;</description></item><item><title>Solved Problems Ch5</title><link>https://peppyhare.github.io/r/notes/griffiths/problems-ch5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/problems-ch5/</guid><description>&lt;h2 id="chapter-5-solved-problems"&gt;Chapter 5 Solved Problems&lt;a class="anchor" href="#chapter-5-solved-problems"&gt;#&lt;/a&gt;&lt;/h2&gt;
 
@@ -877,7 +877,7 @@
 &lt;/span&gt;
 
 &lt;h3 id="problem-55"&gt;Problem 5.5&lt;a class="anchor" href="#problem-55"&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="book-tabs"&gt;
+&lt;div class="book-tabs" &gt;
 &lt;input type="radio" class="toggle" name="tabs-1" id="tabs-1-0" checked="checked" /&gt;&lt;label for="tabs-1-0"&gt;Q&lt;/label&gt;&lt;div class="book-tabs-content markdown-inner"&gt;
 &lt;p&gt;A current I flows down a wire of radius a. (a) If it is uniformly distributed over the surface, what is the surface current density K? (b) If it is distributed in such a way that the volume current density is inversely proportional to the distance from the axis, what is J(s)?&lt;/p&gt;</description></item><item><title>Solved Problems Ch7</title><link>https://peppyhare.github.io/r/notes/griffiths/problems-ch7/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/problems-ch7/</guid><description>&lt;h2 id="chapter-7-solved-problems"&gt;Chapter 7 Solved Problems&lt;a class="anchor" href="#chapter-7-solved-problems"&gt;#&lt;/a&gt;&lt;/h2&gt;
 
@@ -927,7 +927,7 @@
 &lt;/span&gt;
 
 &lt;h3 id="problem-77"&gt;Problem 7.7&lt;a class="anchor" href="#problem-77"&gt;#&lt;/a&gt;&lt;/h3&gt;
-&lt;div class="book-tabs"&gt;
+&lt;div class="book-tabs" &gt;
 &lt;input type="radio" class="toggle" name="tabs-1" id="tabs-1-0" checked="checked" /&gt;&lt;label for="tabs-1-0"&gt;Q&lt;/label&gt;&lt;div class="book-tabs-content markdown-inner"&gt;
 &lt;p&gt;A metal bar of mass &lt;em&gt;m&lt;/em&gt; slides frictionlessly on two parallel conducting rails a distance &lt;em&gt;l&lt;/em&gt; apart. A resistor R is connected across the rails, and a uniform magnetic field &lt;strong&gt;B&lt;/strong&gt; pointing into the page fills the region.&lt;/p&gt;</description></item><item><title>Solved Problems Ch9</title><link>https://peppyhare.github.io/r/notes/griffiths/problems-ch9/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/griffiths/problems-ch9/</guid><description>&lt;h2 id="chapter-9-solved-problems"&gt;Chapter 9 Solved Problems&lt;a class="anchor" href="#chapter-9-solved-problems"&gt;#&lt;/a&gt;&lt;/h2&gt;
 
@@ -977,6 +977,6 @@
 &lt;/span&gt;
 
 &lt;h2 id="review-problem-1"&gt;Review Problem 1&lt;a class="anchor" href="#review-problem-1"&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;div class="book-tabs"&gt;
+&lt;div class="book-tabs" &gt;
 &lt;input type="radio" class="toggle" name="tabs-1" id="tabs-1-0" checked="checked" /&gt;&lt;label for="tabs-1-0"&gt;Q&lt;/label&gt;&lt;div class="book-tabs-content markdown-inner"&gt;
 &lt;p&gt;Current-carrying wire with gap. A large diameter wire of cross-section area \( A \) carries current uniformly over its cross-section. There is a narrow gap of width \( d \), forming a parallel-plate capacitor. The current is zero for times \( t &amp;lt; 0 \) and the current is \( I \) at times \( t &amp;gt; 0 \). The charge on the capacitor is zero at \( t = 0 \). Neglect fringe fields.&lt;/p&gt;</description></item></channel></rss>

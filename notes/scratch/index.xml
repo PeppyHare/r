@@ -102,26 +102,26 @@
 &lt;h2 id="models"&gt;Models&lt;a class="anchor" href="#models"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Keep in mind that the behavior of a plasma is primarily determined by the ratio between a spatial length of interest and the following reference lengths. The appropriate model for describing a plasma depends on the regime defined by these lengths.&lt;/p&gt;
 &lt;table&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- &lt;th&gt;&lt;/th&gt;
- &lt;th&gt;Reference length&lt;/th&gt;
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- &lt;tr&gt;
- &lt;td&gt;Degree of magnetization&lt;/td&gt;
- &lt;td&gt;Larmor radius \( r_L \)&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;Charge separation&lt;/td&gt;
- &lt;td&gt;Debye length \( \lambda_D \)&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;Collisionality&lt;/td&gt;
- &lt;td&gt;Mean free path \( \lambda_{mfp} \)&lt;/td&gt;
- &lt;/tr&gt;
- &lt;/tbody&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;&lt;/th&gt;
+					&lt;th&gt;Reference length&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;Degree of magnetization&lt;/td&gt;
+					&lt;td&gt;Larmor radius \( r_L \)&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;Charge separation&lt;/td&gt;
+					&lt;td&gt;Debye length \( \lambda_D \)&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;Collisionality&lt;/td&gt;
+					&lt;td&gt;Mean free path \( \lambda_{mfp} \)&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h3 id="continuum-kinetic-model"&gt;Continuum Kinetic Model&lt;a class="anchor" href="#continuum-kinetic-model"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;The continuum kinetic model is the most complete description, taking into account the forces acting upon each particle:&lt;/p&gt;</description></item><item><title>Drawing Diagrams</title><link>https://peppyhare.github.io/r/notes/scratch/drawing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/scratch/drawing/</guid><description>&lt;h3 id="graphics"&gt;Graphics&lt;a class="anchor" href="#graphics"&gt;#&lt;/a&gt;&lt;/h3&gt;
@@ -129,14 +129,14 @@
 
 
 &lt;div class="goat svg-container "&gt;
- 
- &lt;svg
- xmlns="http://www.w3.org/2000/svg"
- font-family="Menlo,Lucida Console,monospace"
- 
- viewBox="0 0 712 185"
- &gt;
- &lt;g transform='translate(8,16)'&gt;
+	
+		&lt;svg
+			xmlns="http://www.w3.org/2000/svg"
+			font-family="Menlo,Lucida Console,monospace"
+			
+				viewBox="0 0 712 185"
+			&gt;
+			&lt;g transform='translate(8,16)'&gt;
 &lt;path d='M 40,32 L 104,32' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
 &lt;path d='M 24,64 L 88,64' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
 &lt;path d='M 520,64 L 584,64' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
@@ -253,22 +253,22 @@
 &lt;text text-anchor='middle' x='696' y='36' fill='currentColor' style='font-size:1em'&gt;n&lt;/text&gt;
 &lt;/g&gt;
 
- &lt;/svg&gt;
- 
+		&lt;/svg&gt;
+	
 &lt;/div&gt;
 &lt;h3 id="complex"&gt;Complex&lt;a class="anchor" href="#complex"&gt;#&lt;/a&gt;&lt;/h3&gt;
 
 
 
 &lt;div class="goat svg-container "&gt;
- 
- &lt;svg
- xmlns="http://www.w3.org/2000/svg"
- font-family="Menlo,Lucida Console,monospace"
- 
- viewBox="0 0 752 393"
- &gt;
- &lt;g transform='translate(8,16)'&gt;
+	
+		&lt;svg
+			xmlns="http://www.w3.org/2000/svg"
+			font-family="Menlo,Lucida Console,monospace"
+			
+				viewBox="0 0 752 393"
+			&gt;
+			&lt;g transform='translate(8,16)'&gt;
 &lt;path d='M 0,0 L 160,0' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
 &lt;path d='M 568,0 L 600,0' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
 &lt;path d='M 184,16 L 208,16' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
@@ -681,22 +681,22 @@
 &lt;text text-anchor='middle' x='712' y='132' fill='currentColor' style='font-size:1em'&gt;h&lt;/text&gt;
 &lt;/g&gt;
 
- &lt;/svg&gt;
- 
+		&lt;/svg&gt;
+	
 &lt;/div&gt;
 &lt;h3 id="process"&gt;Process&lt;a class="anchor" href="#process"&gt;#&lt;/a&gt;&lt;/h3&gt;
 
 
 
 &lt;div class="goat svg-container "&gt;
- 
- &lt;svg
- xmlns="http://www.w3.org/2000/svg"
- font-family="Menlo,Lucida Console,monospace"
- 
- viewBox="0 0 728 233"
- &gt;
- &lt;g transform='translate(8,16)'&gt;
+	
+		&lt;svg
+			xmlns="http://www.w3.org/2000/svg"
+			font-family="Menlo,Lucida Console,monospace"
+			
+				viewBox="0 0 728 233"
+			&gt;
+			&lt;g transform='translate(8,16)'&gt;
 &lt;path d='M 32,16 L 96,16' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
 &lt;path d='M 392,32 L 408,32' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
 &lt;path d='M 408,32 L 472,32' fill='none' stroke='currentColor'&gt;&lt;/path&gt;
@@ -840,8 +840,8 @@
 &lt;text text-anchor='middle' x='696' y='68' fill='currentColor' style='font-size:1em'&gt;X&lt;/text&gt;
 &lt;/g&gt;
 
- &lt;/svg&gt;
- 
+		&lt;/svg&gt;
+	
 &lt;/div&gt;
 &lt;h3 id="file-tree"&gt;File tree&lt;a class="anchor" href="#file-tree"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Created from &lt;a href="https://arthursonzogni.com/Diagon/#Tree"&gt;https://arthursonzogni.com/Diagon/#Tree&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Goedbloed (2019)</title><link>https://peppyhare.github.io/r/notes/scratch/goedbloed/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://peppyhare.github.io/r/notes/scratch/goedbloed/</guid><description>&lt;span&gt;
