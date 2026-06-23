@@ -27,15 +27,15 @@ enableEmoji: true
 # And https://gohugo.io/content-management/multilingual/#translation-by-content-directory
 languages:
   en:
-    languageName: English
+    label: English
     contentDir: content
     weight: 1
   ru:
-    languageName: Russian
+    label: Russian
     contentDir: content.ru
     weight: 2
   zh:
-    languageName: Chinese
+    label: Chinese
     contentDir: content.zh
     weight: 3
 

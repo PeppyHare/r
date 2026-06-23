@@ -580,7 +580,7 @@ hpcstruct -j10 --gpucfg yes hpctoolkit-warpxm-t
 hpcprof -o hpctoolkit-warpxm-db hpctoolkit-warpxm-t
 ```
 
-Now we can `scp` the resulting database `hpctoolkit-warpxm-db` to our local machine and view the results. Follow the installation docs to find the pre-built `hpcviewer` binaries for your machine: https://gitlab.com/hpctoolkit/hpcviewer/-/blob/main/INSTALL.md. Then open up hpcviewer and 'Open local database' -> hpctoolkit-warpxm-db. You should see a Profile tab and a Trace tab.
+These can take a few minutes to churn through everything. When they're done we can `scp` the resulting database `hpctoolkit-warpxm-db` to our local machine and view the results. Follow the installation docs to find the pre-built `hpcviewer` binaries for your machine: https://gitlab.com/hpctoolkit/hpcviewer/-/blob/main/INSTALL.md. Then open up hpcviewer and 'Open local database' -> hpctoolkit-warpxm-db. You should see a Profile tab and a Trace tab.
 
 The Profile tab lets you drill down in the call stack to the source code locations where the program spends the majority of its time:
 
