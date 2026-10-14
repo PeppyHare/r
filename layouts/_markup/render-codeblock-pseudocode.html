@@ -1,0 +1,30 @@
+{{- /* Render ```pseudocode fenced blocks (algorithm/algorithmic LaTeX) with pseudocode.js.
+     Accepts both algorithmic (\STATE, \ENDFOR) and algpseudocode (\State, \EndFor) spellings.
+     Optional fence attributes: {lineNumber=true noEnd=true} */ -}}
+<pre class="pseudocode"
+  {{- with .Attributes.lineNumber }} data-line-number="{{ . }}"{{ end }}
+  {{- with .Attributes.noEnd }} data-no-end="{{ . }}"{{ end }}>
+{{- .Inner | replaceRE `\\ElsIf\b` `\ELIF` | htmlEscape | safeHTML -}}
+</pre>
+{{- if not (.Page.Store.Get "pseudocode") -}}
+<script defer src="{{ "pseudocode/pseudocode.min.js" | relURL }}"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    function render() {
+      document.querySelectorAll("pre.pseudocode").forEach(function (el) {
+        pseudocode.renderElement(el, {
+          lineNumber: el.dataset.lineNumber === "true",
+          noEnd: el.dataset.noEnd === "true",
+        });
+      });
+    }
+    // KaTeX is normally already loaded by the katex shortcode on the same page
+    if (window.katex) return render();
+    var s = document.createElement("script");
+    s.src = "{{ "katex/katex.min.js" | relURL }}";
+    s.onload = render;
+    document.head.appendChild(s);
+  });
+</script>
+{{- .Page.Store.Set "pseudocode" true -}}
+{{- end -}}

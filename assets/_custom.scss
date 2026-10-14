@@ -144,3 +144,40 @@ aside nav ul li {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
+
+// Algorithm blocks rendered by pseudocode.js from ```pseudocode fences (see
+// layouts/_markup/render-codeblock-pseudocode.html). Adapted from
+// pseudocode.min.css, using currentColor so the rules follow dark mode.
+.ps-root {
+  font-family: KaTeX_Main, 'Times New Roman', Times, serif;
+  font-size: 1em;
+  overflow-x: auto;
+
+  .ps-algorithm {
+    margin: .8em 0;
+    border-top: 3px solid currentColor;
+    border-bottom: 2px solid currentColor;
+  }
+  .ps-algorithm.with-caption > .ps-line:first-child {
+    border-bottom: 2px solid currentColor;
+  }
+  .katex { text-indent: 0; font-size: 1em; }
+  .ps-line { margin: 0; padding: 0; line-height: 1.6; }
+  .ps-funcname { font-weight: 400; font-variant: small-caps; }
+  .ps-keyword { font-weight: 700; }
+  .ps-comment { font-weight: 400; }
+  .ps-linenum {
+    font-size: .8em;
+    line-height: 1em;
+    width: 1.6em;
+    text-align: right;
+    display: inline-block;
+    position: relative;
+    padding-right: .3em;
+  }
+  .ps-algorithmic.with-linenum .ps-line.ps-code { text-indent: -1.6em; }
+  .ps-algorithmic.with-linenum .ps-line.ps-code > span { text-indent: 0; }
+}
+
+// Unrendered fallback before pseudocode.js runs
+pre.pseudocode { visibility: hidden; }
