@@ -125,7 +125,7 @@ Consider the "test ODE"
 
 with exact solution \\( u(t) = c e^{\lambda t} \\). We allow complex \\( \lambda \\) because this becomes important when we deal with systems. Below, \\( \lambda = -0.8 + 0.2i \\), \\( c = 1 \\), on \\( [0, 10] \\).
 
-<p align="center"> <img alt="img/amath581/test_ode_euler_dt0.5.png" src="/r/img/amath581/test_ode_euler_dt0.5.png" width="49%" style="min-width: 0" /> <img alt="img/amath581/test_ode_euler_dt2.2.png" src="/r/img/amath581/test_ode_euler_dt2.2.png" width="49%" style="min-width: 0" /> </p>
+<p align="center"> <img alt="img/amath581/test_ode_euler_dt0.5.svg" src="/r/img/amath581/test_ode_euler_dt0.5.svg" width="49%" style="min-width: 0" /> <img alt="img/amath581/test_ode_euler_dt2.2.svg" src="/r/img/amath581/test_ode_euler_dt2.2.svg" width="49%" style="min-width: 0" /> </p>
 
 <p align="center"><em>Forward and backward Euler on the test ODE. Left: \( \Delta t = 0.5 \). Right: \( \Delta t = 2.2 \).</em></p>
 

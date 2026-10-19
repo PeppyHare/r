@@ -45,7 +45,7 @@ With these, the problem can be solved analytically
 u(t) = u_0 \cos(\omega t) + \frac{v_0}{\omega} \sin(\omega t) \qquad \forall \, t \geq 0
 {{< /katex >}}
 
-<p align="center"> <img alt="img/amath581/harmonic_oscillator.png" src="/r/img/amath581/harmonic_oscillator.png" width="400" /> </p>
+<p align="center"> <img alt="img/amath581/harmonic_oscillator.svg" src="/r/img/amath581/harmonic_oscillator.svg" width="400" /> </p>
 
 <p align="center"><em>Analytic solution with \( u_0 = 1 \), \( v_0 = 0.5 \), \( \omega = 2 \).</em></p>
 
@@ -82,7 +82,7 @@ Consider the spread of disease in a population, divided into compartments by dis
 
 This is the "SIR" model (Kermack & McKendrick, 1927). It's overly simple: it assumes recovered people gain permanent immunity. Still, different choices of \\( \beta, \gamma \\) give qualitatively different dynamics: a fast and severe epidemic, a slow and mild one, or the disease dying out entirely. We need ICs for all three compartments; below uses \\( S(0) = 0.95 \\), \\( I(0) = 0.05 \\), \\( R(0) = 0 \\).
 
-<p align="center"> <img alt="img/amath581/sir_dynamics.png" src="/r/img/amath581/sir_dynamics.png" /> </p>
+<p align="center"> <img alt="img/amath581/sir_dynamics.svg" src="/r/img/amath581/sir_dynamics.svg" /> </p>
 
 <p align="center"><em>SIR dynamics from a forward Euler solver. Left: fast, severe epidemic. Center: slower, milder epidemic. Right: the disease dies out.</em></p>
 
@@ -118,7 +118,7 @@ and an initial condition
 u(0, x) = u_0(x) \qquad x \in [0, L]
 {{< /katex >}}
 
-<p align="center"> <img alt="img/amath581/heat_equation.png" src="/r/img/amath581/heat_equation.png" /> </p>
+<p align="center"> <img alt="img/amath581/heat_equation.svg" src="/r/img/amath581/heat_equation.svg" /> </p>
 
 <p align="center"><em>Left: an unstable numerical solution giving nonsense. Right: a stable numerical solution.</em></p>
 

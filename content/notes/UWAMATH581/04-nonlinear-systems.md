@@ -121,7 +121,7 @@ u(t) = \sqrt{2Dt + c^2}
 
 The ice grows like \\( \sqrt{t} \\): thickening slows down over time.
 
-<p align="center"> <img alt="img/amath581/stefan_ice_growth_dt0.01.png" src="/r/img/amath581/stefan_ice_growth_dt0.01.png" width="66%" style="min-width: 0" /> <img alt="img/amath581/stefan_newton_iters_dt0.01.png" src="/r/img/amath581/stefan_newton_iters_dt0.01.png" width="32%" style="min-width: 0" /> </p>
+<p align="center"> <img alt="img/amath581/stefan_ice_growth_dt0.01.svg" src="/r/img/amath581/stefan_ice_growth_dt0.01.svg" width="66%" style="min-width: 0" /> <img alt="img/amath581/stefan_newton_iters_dt0.01.svg" src="/r/img/amath581/stefan_newton_iters_dt0.01.svg" width="32%" style="min-width: 0" /> </p>
 
 <p align="center"><em>Stefan's ice-growth law, \( \Delta t = 0.01 \). Left: numerical solutions against the truth. Middle: errors. Right: Newton sub-iterations per step.</em></p>
 
@@ -224,6 +224,6 @@ D_{\vec{u}}\vec{f}(t, \vec{u}) = \begin{bmatrix} \alpha - \beta u_2 & -\beta u_1
 
 This gives us everything we need to plug and chug.
 
-<p align="center"> <img alt="img/amath581/lotka_volterra.png" src="/r/img/amath581/lotka_volterra.png" width="600" /> </p>
+<p align="center"> <img alt="img/amath581/lotka_volterra.svg" src="/r/img/amath581/lotka_volterra.svg" width="600" /> </p>
 
 <p align="center"><em>Lotka-Volterra with \( (\alpha, \beta, \gamma, \delta) = (1, 1, 1.5, 0.075) \), computed with backward Euler + Newton sub-iterations.</em></p>

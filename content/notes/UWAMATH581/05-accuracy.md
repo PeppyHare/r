@@ -31,7 +31,7 @@ The definition can be adjusted for different purposes, e.g. if we only care abou
 
 Empirically, convergence looks like the numerical solution approaching the truth as \\( \Delta t \\) shrinks. For forward Euler on the test ODE (real \\( \lambda \\)):
 
-<p align="center"> <img alt="img/amath581/test_ode_convergence_solution.png" src="/r/img/amath581/test_ode_convergence_solution.png" width="32%" style="min-width: 0" /> <img alt="img/amath581/test_ode_convergence_error.png" src="/r/img/amath581/test_ode_convergence_error.png" width="32%" style="min-width: 0" /> <img alt="img/amath581/test_ode_convergence_error_semilogy.png" src="/r/img/amath581/test_ode_convergence_error_semilogy.png" width="32%" style="min-width: 0" /> </p>
+<p align="center"> <img alt="img/amath581/test_ode_convergence_solution.svg" src="/r/img/amath581/test_ode_convergence_solution.svg" width="32%" style="min-width: 0" /> <img alt="img/amath581/test_ode_convergence_error.svg" src="/r/img/amath581/test_ode_convergence_error.svg" width="32%" style="min-width: 0" /> <img alt="img/amath581/test_ode_convergence_error_semilogy.svg" src="/r/img/amath581/test_ode_convergence_error_semilogy.svg" width="32%" style="min-width: 0" /> </p>
 
 <p align="center"><em>Left: numerical solutions approach the truth. Middle: errors \( |u(t_n) - u_n| \) shrink with \( \Delta t \). Right: the same errors on a semilog scale, which we routinely use since errors are small.</em></p>
 
@@ -110,7 +110,7 @@ Since the error bound holds uniformly in \\( n \\), it's usually sufficient to u
 
 For example, forward Euler on [Stefan's ice-growth problem](../04-nonlinear-systems/#example-growing-ice-thickness), with exact solution \\( u(t) = \sqrt{2Dt + c^2} \\):
 
-<p align="center"> <img alt="img/amath581/stefan_forward_euler_convergence.png" src="/r/img/amath581/stefan_forward_euler_convergence.png" width="450" /> </p>
+<p align="center"> <img alt="img/amath581/stefan_forward_euler_convergence.svg" src="/r/img/amath581/stefan_forward_euler_convergence.svg" width="450" /> </p>
 
 <p align="center"><em>\( \max_n |e_n| \) against \( \Delta t \) for forward Euler on Stefan's ice-growth problem.</em></p>
 

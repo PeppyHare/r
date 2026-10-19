@@ -17,3 +17,6 @@ Course notes from AMATH 581 at the University of Washington, Seattle. Supplement
   - [Extension to Nonlinear Systems of ODEs](04-nonlinear-systems.md)
   - [Accuracy](05-accuracy.md)
   - [Order of Convergence of Forward Euler and the Lax Equivalence Theorem](06-convergence-and-lax.md)
+  - [Absolute Stability](07-absolute-stability.md)
+  - [Stability for Systems and Stiffness](08-stiffness.md)
+  - [Higher Order Methods I: The Runge-Kutta Family](09-runge-kutta.md)
