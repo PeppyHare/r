@@ -28,7 +28,7 @@ Sort of unfortunately, the nodes are a real mix of different GPU architectures, 
 | A40      | Ampere       | 8.6       | a40               | 48GB GDDR6                      | 8        | 32      |
 | A100     | Ampere       | 8.0       | a100              | 40GB HBM2                       | 8        | 8       |
 | L40      | Lovelace     | 8.9       | l40 / l40s        | 48GB GDDR6                      | 8        | 15 / 25 |
-| H200     | Hopper       | 9.0       | h200              | 141 (not allowed on checkpoint) | 8        | 8       |
+| H200     | Hopper       | 9.0       | h200              | 141GB GDDR6                     | 8        | 24      |
 
 To get a sense of just what these cards can do, I've used this exceptionally useful OpenCL benchmark demo: https://github.com/ProjectPhysX/OpenCL-Benchmark
 
