@@ -134,6 +134,8 @@ The important intuition from the calculation above is that the global error ends
 
 Think of {{< katex >}} v_n {{< /katex >}} and {{< katex >}} w_n {{< /katex >}} as two numerical solutions of the ODE. 0-stability says that, for small enough \\( \Delta t \\), the difference between them stays bounded by the difference in initial conditions plus the perturbations introduced through the difference operator. The "0" refers to requiring \\( \Delta t \\) sufficiently small: it's a notion of stability in the limit \\( \Delta t \to 0 \\).
 
+For forward Euler we've already verified first-order consistency. Proving that it's 0-stable is a homework exercise, and follows a similar calculation to the convergence proof above.
+
 This brings us to the Lax equivalence theorem, due to Peter Lax.
 
 > [!IMPORTANT]
@@ -156,3 +158,53 @@ The proof is simple, which means most of the work in showing the order of conver
 2. Prove the resulting difference operator \\( \mathcal{N}_{\Delta t} \\) is 0-stable
 
 Both steps lean heavily on Taylor expansions and additional smoothness assumptions, as in the forward Euler example. (Our forward Euler proof is essentially a hands-on version of this argument: the recurrence {{< katex >}} |e_n| \leq (1 + \Delta t L)|e_{n-1}| + \Delta t |\tau_n| {{< /katex >}} sums to {{< katex >}} |e_n| \leq \frac{e^{TL} - 1}{L} \max_j |\tau_j| {{< /katex >}}, so the stability constant is \\( C = (e^{TL} - 1)/L \\).)
+
+## Motivation for Stability Analysis
+
+Now that we have an idea of how error analysis works for an ODE solver, we turn to other issues that affect the quality of numerical solutions, in particular **stability**. (Despite the name, this will turn out to be very different from 0-stability.) To motivate it, consider
+
+{{< katex display >}}
+\dv{u}{t} = -100 \left( u - \sin(t) \right) \qquad u(0) = 1
+{{< /katex >}}
+
+<p align="center"> <img alt="img/amath581/stiff_forward_euler.svg" src="/r/img/amath581/stiff_forward_euler.svg" width="49%" style="min-width: 0" /> <img alt="img/amath581/stiff_backward_euler.svg" src="/r/img/amath581/stiff_backward_euler.svg" width="49%" style="min-width: 0" /> </p>
+
+<p align="center"><em>Forward Euler (left) and backward Euler (right). Forward Euler produces spurious oscillations that vanish for sufficiently small \( \Delta t \); backward Euler never has them.</em></p>
+
+When \\( \Delta t \\) is large, the two schemes behave very differently: forward Euler predicts large spurious oscillations that aren't in the backward Euler solution. The goal of stability analysis is to understand this phenomenon and come up with conditions or constraints that avoid it.
+
+> [!NOTE]
+>
+> Accuracy and convergence analysis study the asymptotic behavior of a method in the small \\( \Delta t \\) limit. Stability analysis is concerned with the behavior of algorithms for *larger* values of \\( \Delta t \\).
+
+Motivated by this, consider an even simpler problem, the test ODE
+
+{{< katex display >}}
+\dv{u}{t} = \lambda u \qquad u(0) = c \qquad \lambda, c, u(t) \in \mathbb{C}
+{{< /katex >}}
+
+Suppose we make a small error in prescribing \\( c \\), and instead of \\( u \\) we compute \\( u_\epsilon \\), which solves
+
+{{< katex display >}}
+\dv{u_\epsilon}{t} = \lambda u_\epsilon \qquad u_\epsilon(0) = c_\epsilon
+{{< /katex >}}
+
+where we have in mind that \\( u(t) - u_\epsilon(t) \\) is small. The difference satisfies the same ODE
+
+{{< katex display >}}
+\dv{(u - u_\epsilon)}{t} = \lambda (u - u_\epsilon) \qquad (u - u_\epsilon)(0) = c - c_\epsilon
+{{< /katex >}}
+
+We hope that the difference vanishes for large \\( t \\), which is clearly the case for the ODE provided \\( \text{Re}(\lambda) < 0 \\). Does a numerical scheme share this property? Do small errors made along the way die out, or do they get amplified and corrupt the whole solution? Applying forward Euler to the difference,
+
+{{< katex display >}}
+(u - u_\epsilon)_n = (u - u_\epsilon)_{n-1} + \Delta t \lambda (u - u_\epsilon)_{n-1} = (1 + \Delta t \lambda)(u - u_\epsilon)_{n-1}
+{{< /katex >}}
+
+so
+
+{{< katex display >}}
+(u - u_\epsilon)_n = (1 + \Delta t \lambda)^n (u - u_\epsilon)_0
+{{< /katex >}}
+
+The magnitude of the error stays controlled as \\( n \to \infty \\) only if \\( |1 + \Delta t \lambda| \leq 1 \\). This is a restriction on how large \\( \Delta t \\) can be if we want to avoid spurious oscillations in the numerical solution, which we formalize as [absolute stability](../07-absolute-stability/).
